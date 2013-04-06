@@ -1,0 +1,316 @@
+#MainDiv{
+    position: absolute;
+    left: 30%;
+    top: 5%;
+
+}
+
+.slide-out-div {
+  padding: 20px;
+  width: 250px;
+  background: #ccc;
+  border: 1px solid #29216d;
+}     
+
+
+
+#overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+
+#modal {
+    position:absolute;
+    /*background:url(tint20.png) 0 0 repeat;*/
+    /*background:rgba(0,0,0,0.2);*/
+    background: white;
+    border-radius:14px;
+    padding:8px;
+}
+
+#content {
+    border-radius:8px;
+    background:#fff;
+    padding:20px; 
+   background:url(../images/ajax-loader.gif) 0 0 no-repeat;
+}
+
+
+
+
+
+FONT.sec-H {
+	color: red
+}
+
+FONT.sec-Hsub {
+	background-color: red;
+	color: white
+}
+
+FONT.sec-pH {
+	background-color: red;
+	color: white
+}
+
+FONT.sec-E {
+	color: blue
+}
+
+FONT.sec-Esub {
+	background-color: blue;
+	color: white
+}
+
+FONT.sec-pE {
+	background-color: blue;
+	color: white
+}
+
+FONT.sec-L {
+	color: green
+}
+
+FONT.sec-Lsub {
+	background-color: green;
+	color: white
+}
+
+FONT.sec-pL {
+	background-color: green;
+	color: white
+}
+
+FONT.sec-0 {
+	color: silver
+}
+
+FONT.sec-1 {
+	color: silver
+}
+
+FONT.sec-2 {
+	color: silver
+}
+
+FONT.sec-3 {
+	color: silver
+}
+
+FONT.sec-4 {
+	color: gray
+}
+
+FONT.sec-5 {
+	color: gray
+}
+
+FONT.sec-6 {
+	color: gray
+}
+
+FONT.sec-7 {
+	color: black
+}
+
+FONT.sec-8 {
+	color: black
+}
+
+FONT.sec-9 {
+	color: black
+}
+
+FONT.acc-e {
+	color: aqua
+}
+
+FONT.acc-esub {
+	background-color: aqua;
+	color: white
+}
+
+FONT.acc-i {
+	color: gray
+}
+
+FONT.acc-isub {
+	background-color: gray;
+	color: white
+}
+
+FONT.acc-b {
+	color: maroon
+}
+
+FONT.acc-bsub {
+	background-color: maroon;
+	color: white
+}
+
+FONT.acc-0 {
+	color: silver
+}
+
+FONT.acc-0 {
+	color: silver
+}
+
+FONT.acc-1 {
+	color: silver
+}
+
+FONT.acc-2 {
+	color: gray
+}
+
+FONT.acc-3 {
+	color: gray
+}
+
+FONT.acc-4 {
+	color: gray
+}
+
+FONT.acc-5 {
+	color: black
+}
+
+FONT.acc-6 {
+	color: black
+}
+
+FONT.acc-7 {
+	color: black
+}
+
+FONT.acc-8 {
+	color: black
+}
+
+FONT.acc-9 {
+	color: black
+}
+
+FONT.acc-PREL {
+	background-color: gray;
+	color: white
+}
+
+FONT.acc-OREL {
+	background-color: gray;
+	color: white
+}
+
+FONT.htm-T {
+	color: purple
+}
+
+FONT.htm-Tsub {
+	background-color: purple;
+	color: white
+}
+
+FONT.htm-pT {
+	background-color: purple;
+	color: white
+}
+
+FONT.htm-M {
+	color: purple
+}
+
+FONT.htm-Msub {
+	background-color: purple;
+	color: white
+}
+
+FONT.htm-pM {
+	background-color: purple;
+	color: white
+}
+
+FONT.htm-N {
+	color: olive
+}
+
+FONT.htm-Nsub {
+	background-color: olive;
+	color: white
+}
+
+FONT.htm-pN {
+	background-color: olive;
+	color: white
+}
+
+FONT.htm-i {
+	color: olive
+}
+
+FONT.htm-o {
+	color: teal
+}
+
+FONT.htm-0 {
+	color: silver
+}
+
+FONT.htm-1 {
+	color: silver
+}
+
+FONT.htm-2 {
+	color: silver
+}
+
+FONT.htm-3 {
+	color: silver
+}
+
+FONT.htm-4 {
+	color: silver
+}
+
+FONT.htm-5 {
+	color: gray
+}
+
+FONT.htm-6 {
+	color: gray
+}
+
+FONT.htm-7 {
+	color: gray
+}
+
+FONT.htm-8 {
+	color: black
+}
+
+FONT.htm-9 {
+	color: black
+}
+
+FONT.res-E {
+	color: red
+}
+
+FONT.res-D {
+	color: red
+}
+
+FONT.res-K {
+	color: blue
+}
+
+FONT.res-R {
+	color: blue
+}

@@ -1,0 +1,181 @@
+ <head>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 	<!-- Styles -->
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../bootstrap/css/docs.css" rel="stylesheet" media="screen">
+    <link href="css/pp-results.css" rel="stylesheet" media="screen">
+    
+    <!-- BioJS -->
+    <link rel="stylesheet" href="../biojs/dependencies/jquery/jquery.tooltip.css"/>
+	<link rel="stylesheet" href="../biojs/dependencies/jquery/jquery-ui-1.8.2.css">
+	<link href="../biojs/css/Biojs.HpaSummaryFeature.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+	  <div class="span3 bs-docs-sidebar">
+
+	  	<!-- Sidebar NAV -->
+		<ul class="nav nav-list bs-docs-sidenav">
+			<li class="nav-header">Views</li>
+			<li class="active">
+				<a id='menu-feature-view' href="#">Feature View
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li>
+				<a id='menu-feature-Map' href="#">Feature Map
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+
+			<li>
+				<a id='menu-summary' href="#">PredictProtein Summary
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			
+			<li class="nav-header">Detailed Predictions</li>
+				
+			<li> 
+				<a id='SS-detail' href="#">Secondary Structure and Solvent Accessibilty
+				<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li> 
+				<a id='HTM-detail' href="#">Transmembrane Regions
+				<i class="icon-chevron-right"></i>
+			</a>
+				
+			</li>
+			<li> 
+				<a id='NORS-detail' href="#">Non-Regular Secondary Structure
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li> 
+				<a id='MD-detail' href="#">Protein Disorder and Flexibility
+						<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li> 
+				<a id='DISUL-detail' href="#">Disulphide and Metal Binding
+						<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li> 
+				<a id='ISIS-detail' href="#">Binding Sites
+						<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li> 
+				<a id='LOC-detail' href="#">Subcellular Localization
+						<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			<li> 
+				<a id='TMB-detail' href="#">Transmembrane Betta-barrels
+						<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			
+			<li class="nav-header">Further Analysis
+			</li>
+			<li>
+			<a  id='menu-snap' href="#">
+				SNAP
+					<i class="icon-chevron-right"></i>
+			</a>
+			</li>
+			<li>
+				<a href="#">
+				Pubseq
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+		
+
+		
+			<li class="nav-header">Additional Formats
+			</li>
+			<li>
+			<a href="#">
+				XML/RDF
+					<i class="icon-chevron-right"></i>
+			</a>
+			</li>
+			<li>
+				<a href="#">
+				Text
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+		</ul>
+		<!-- Sidebar NAV -->
+	  </div>
+
+
+    <div class="span9">
+      <!--Body content-->
+      	<div id="output" /><br>
+			<div id="SequenceView">
+				<div class="slide-out-div">
+				 	<a class="handle" href="http://link-for-non-js-users.html">Content</a>
+					<label for 'chk-disulfind'>Disulphide Regions</label><input id='chk-disulfind' type=checkbox checked /><br/>
+					<label for 'chk-solvacc'>Solvent Accessibility</label><input id='chk-solvacc' type=checkbox checked /><br/>
+					<hr>
+					<label for 'chk-formatSel'>Format Switcher</label><input id='chk-formatSel' type=checkbox /><br/>
+				 </div>
+			</div><br>
+			<div id='DetailView'></div>
+			<div id="FeatureMap" ></div><br>
+		</div>
+		 <div id="disqus_thread"></div>
+		 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+
+
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery-1.4.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js" ></script>
+
+ <!-- External Sctipts -->
+<script src="library/jquery.tabSlideOut.v1.3.js"></script>
+
+ <!-- PP-Results specific scripts  -->
+<script type="text/javascript" language="JavaScript" src="javascript/modal.js" ></script>
+<script type="text/javascript" language="JavaScript" src="javascript/pp-results.js" ></script>
+<script type="text/javascript" language="JavaScript" src="javascript/sequence-view.js" ></script>
+<script type="text/javascript" language="JavaScript" src="javascript/featuremap-view.js" ></script>
+<script type="text/javascript" language="JavaScript" src="javascript/disqus.js" ></script>
+
+<script type="text/javascript">
+	window.onload = function() {	sequenceViewer();	}
+</script>
+
+<script language="JavaScript" type="text/javascript" src="../biojs//Biojs.js" ></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/Biojs.Sequence.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/Biojs.FeatureViewer.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/Biojs.HpaSummaryFeature.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery.tooltip.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery.bgiframe.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery.delegate.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery.url.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/graphics/raphael.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/graphics/canvg.js"></script>
+<script language="JavaScript" type="text/javascript" src="../biojs/dependencies/graphics/rgbcolor.js"></script>
+
