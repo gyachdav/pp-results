@@ -1,0 +1,1389 @@
+
+#PERL-RDB
+#SEQLENGTH	 742
+#ID	:	identifier of the aligned (homologous) protein
+#LSEQ2	:	length of the entire sequence of the aligned protein
+#LALI	:	length of the alignment excluding insertions and deletions
+#%IDE	:	percent indentity
+#%SIM	:	percent similarity
+#LGAP	:	total gap length
+#BSCORE	:	blast score (bits)
+#BEXPECT	:	blast expectation value
+#PROTEIN	:	one-line description of aligned protein
+#'!'	:	indicates lower scoring alignment that is combined with 
+#the higher scoring adjacent one  
+##ID	LSEQ2	%IDE	%SIM	LALI	LGAP	BSCORE	BEXPECT	PROTEIN
+sp|A4GSN8|NUA_ARATH	2093	13	27	382	48	52.2	1e-04	Nuclear-pore anchor OS=Arabidopsis thaliana
+sp|A6S9V4|IRS4_BOTFB	885	16	28	231	27	44.1	0.032	Increased rDNA silencing protein 4
+sp|B5DUH6|NO66_DROPS	946	16	28	298	23	61.1	3e-07	Lysine-specific demethylase NO66 OS=Drosophila
+sp|B7ZCC9|GP112_MOUSE	3073	13	26	319	28	42.6	0.12	Probable G-protein coupled receptor 112
+sp|O01761|UNC89_CAEEL	8081	9	23	384	39	51.5	2e-04	Muscle M-line assembly protein unc-89
+sp|O35930|GP1BA_MOUSE	734	15	27	232	23	58.0	3e-06	Platelet glycoprotein Ib alpha chain OS=Mus
+sp|O42854|YFHH_SCHPO	1611	11	19	338	29	41.4	0.26	SH3 domain-containing protein C23A1.17
+sp|O43493|TGON2_HUMAN	480	15	31	333	26	49.2	0.001	Trans-Golgi network integral membrane protein
+sp|O88799|ZAN_MOUSE	5376	13	24	415	47	85.7	1e-14	Zonadhesin OS=Mus musculus GN=Zan PE=2 SV=1
+sp|O94854|K0754_HUMAN	1291	13	23	300	16	48.8	0.001	Uncharacterized protein KIAA0754 OS=Homo
+sp|P03200|VGP3_EBVB9	907	13	25	315	31	52.6	1e-04	Envelope glycoprotein GP340/GP220
+sp|P07898|PGCA_CHICK	2109	14	25	559	56	171	2e-40	Aggrecan core protein OS=Gallus gallus GN=ACAN
+sp|P15941|MUC1_HUMAN	1255	13	23	384	21	44.9	0.023	Mucin-1 OS=Homo sapiens GN=MUC1 PE=1 SV=3
+sp|P16070|CD44_HUMAN	742	100	100	742	0	909	0.0	CD44 antigen OS=Homo sapiens GN=CD44 PE=1 SV=3
+sp|P16112|PGCA_HUMAN	2415	14	27	357	36	191	2e-46	Aggrecan core protein OS=Homo sapiens GN=ACAN
+sp|P26051|CD44_RAT	503	46	57	388	33	298	1e-78	CD44 antigen OS=Rattus norvegicus GN=Cd44 PE=1
+sp|P35658|NU214_HUMAN	2090	13	23	411	24	43.4	0.056	Nuclear pore complex protein Nup214 OS=Homo
+sp|P39653|DEXT_STRDO	1337	11	24	472	40	50.3	5e-04	Dextranase OS=Streptococcus downei GN=dex PE=1
+sp|P41809|HKR1_YEAST	1802	11	27	292	26	45.3	0.017	Hansenula MRAKII killer toxin-resistant
+sp|P45384|IGA2_HAEIN	1702	12	26	329	24	48.8	0.002	Immunoglobulin A1 protease autotransporter
+sp|P45386|IGA4_HAEIN	1849	11	25	389	24	58.4	2e-06	Immunoglobulin A1 protease autotransporter
+sp|P46590|ALS1_CANAL	1260	16	31	444	19	54.9	2e-05	Agglutinin-like protein 1 OS=Candida albicans
+sp|P54197|CHI2_COCP7	855	13	26	253	25	44.9	0.023	Endochitinase 2 OS=Coccidioides posadasii
+sp|P55066|NCAN_MOUSE	1268	14	24	577	112	213	4e-53	Neurocan core protein OS=Mus musculus GN=Ncan
+sp|P68343|VGP3_EBVA8	886	13	24	373	28	52.6	1e-04	Envelope glycoprotein GP340 OS=Epstein-Barr
+sp|P70670|NACAM_MOUSE	2187	13	25	434	21	45.7	0.014	Nascent polypeptide-associated complex subunit
+sp|P81282|CSPG2_BOVIN	3381	13	24	609	71	192	1e-46	Versican core protein OS=Bos taurus GN=VCAN
+sp|Q06852|SLAP1_CLOTH	2313	13	23	473	18	134	3e-29	Cell surface glycoprotein 1 OS=Clostridium
+sp|Q14676|MDC1_HUMAN	2089	13	23	460	63	73.8	4e-11	Mediator of DNA damage checkpoint protein 1
+sp|Q1EAR5|CHI2_COCIM	895	17	29	249	8	53.8	4e-05	Endochitinase 2 OS=Coccidioides immitis
+sp|Q1L8U8|STB1A_DANRE	1436	10	25	344	33	58.8	2e-06	Histone-lysine N-methyltransferase SETDB1-A
+sp|Q28062|PGCB_BOVIN	912	14	27	450	59	216	4e-54	Brevican core protein OS=Bos taurus GN=BCAN
+sp|Q28343|PGCA_CANFA	2333	14	26	515	49	207	3e-51	Aggrecan core protein OS=Canis familiaris
+sp|Q28858|CSPG2_MACNE	862	14	24	368	30	126	5e-27	Versican core protein (Fragments) OS=Macaca
+sp|Q28983|ZAN_PIG	2476	13	22	355	35	40.7	0.45	Zonadhesin OS=Sus scrofa GN=ZAN PE=1 SV=1
+sp|Q29435|MUC1_HYLLA	475	17	29	225	12	42.2	0.13	Mucin-1 OS=Hylobates lar GN=MUC1 PE=3 SV=1
+sp|Q2EG98|PK1L3_MOUSE	2201	14	26	449	40	104	3e-20	Polycystic kidney disease protein 1-like 3
+sp|Q2GXM1|SEC16_CHAGB	1865	14	25	293	22	46.1	0.011	COPII coat assembly protein SEC16
+sp|Q2Q0I9|FNDC1_RAT	1779	13	25	466	34	41.8	0.18	Fibronectin type III domain-containing protein 1
+sp|Q2Y2L9|VGLG_AMPV1	585	12	23	387	9	41.1	0.27	Major surface glycoprotein G OS=Avian
+sp|Q5D862|FILA2_HUMAN	2391	16	24	377	28	53.0	8e-05	Filaggrin-2 OS=Homo sapiens GN=FLG2 PE=1 SV=1
+sp|Q5PSV9|MDC1_MOUSE	1707	12	20	381	45	53.0	8e-05	Mediator of DNA damage checkpoint protein 1
+sp|Q5TM68|MDC1_MACMU	2173	11	22	482	71	71.5	2e-10	Mediator of DNA damage checkpoint protein 1
+sp|Q60528|MUC1_MESAU	676	11	24	427	10	48.8	0.001	Mucin-1 OS=Mesocricetus auratus GN=MUC1 PE=2
+sp|Q61361|PGCB_MOUSE	883	11	25	482	53	196	5e-48	Brevican core protein OS=Mus musculus GN=Bcan
+sp|Q62059|CSPG2_MOUSE	3357	17	29	519	63	196	5e-48	Versican core protein OS=Mus musculus GN=Vcan
+sp|Q63661|MUC4_RAT	2344	14	26	488	54	51.1	3e-04	Mucin-4 OS=Rattus norvegicus GN=Muc4 PE=1 SV=2
+sp|Q66IN2|QSER1_XENLA	1673	12	25	434	30	46.5	0.008	Glutamine and serine-rich protein 1
+sp|Q685J3|MUC17_HUMAN	4493	14	27	449	27	56.1	9e-06	Mucin-17 OS=Homo sapiens GN=MUC17 PE=1 SV=2
+sp|Q68DN1|CB016_HUMAN	1984	14	25	410	61	63.0	8e-08	Uncharacterized protein C2orf16 OS=Homo sapiens
+sp|Q6H236|PEG3_BOVIN	2387	12	25	477	24	69.2	1e-09	Paternally-expressed gene 3 protein OS=Bos
+sp|Q6R8J2|HEG_DANRE	977	15	30	402	46	51.9	2e-04	Protein HEG OS=Danio rerio GN=heg PE=2 SV=1
+sp|Q6UC88|LYVE1_BOVIN	322	30	44	158	10	141	1e-31	Lymphatic vessel endothelial hyaluronic acid
+sp|Q6W4X9|MUC6_HUMAN	2392	14	23	414	47	67.3	4e-09	Mucin-6 OS=Homo sapiens GN=MUC6 PE=1 SV=2
+sp|Q767L8|MDC1_PIG	2042	13	22	405	56	59.9	6e-07	Mediator of DNA damage checkpoint protein 1 OS=Sus
+sp|Q7Z5P9|MUC19_HUMAN	6254	15	25	409	10	48.0	0.003	Mucin-19 OS=Homo sapiens GN=MUC19 PE=1 SV=2
+sp|Q7Z7G0|TARSH_HUMAN	1075	12	21	377	50	43.4	0.068	Target of Nesh-SH3 OS=Homo sapiens GN=ABI3BP
+sp|Q80T03|MUC6_MOUSE	2850	17	30	454	33	74.2	3e-11	Mucin-6 OS=Mus musculus GN=Muc6 PE=2 SV=1
+sp|Q86UW8|HPLN4_HUMAN	402	16	26	191	31	149	9e-34	Hyaluronan and proteoglycan link protein 4
+sp|Q872I5|INO80_NEUCR	1997	13	26	361	42	41.8	0.19	Putative DNA helicase ino-80 OS=Neurospora
+sp|Q8BHE4|TM108_MOUSE	574	14	23	352	27	40.7	0.40	Transmembrane protein 108 OS=Mus musculus
+sp|Q8BV57|SRCRL_MOUSE	1371	13	24	201	26	44.9	0.022	Scavenger receptor cysteine-rich
+sp|Q8JZM8|MUC4_MOUSE	3443	11	24	432	23	41.8	0.19	Mucin-4 OS=Mus musculus GN=Muc4 PE=2 SV=1
+sp|Q8R4U0|STAB2_MOUSE	2559	19	37	231	25	155	8e-36	Stabilin-2 OS=Mus musculus GN=Stab2 PE=1 SV=1
+sp|Q8TGE1|AWA1_YEAST	1713	13	28	283	15	42.6	0.11	Cell wall protein AWA1 OS=Saccharomyces
+sp|Q8WWQ8|STAB2_HUMAN	2551	17	31	235	19	160	3e-37	Stabilin-2 OS=Homo sapiens GN=STAB2 PE=1 SV=3
+sp|Q8WXI7|MUC16_HUMAN	22152	13	26	445	39	64.6	3e-08	Mucin-16 OS=Homo sapiens GN=MUC16 PE=1 SV=2
+sp|Q90953|CSPG2_CHICK	3562	14	25	545	82	179	6e-43	Versican core protein OS=Gallus gallus
+sp|Q923D3|PARM1_MOUSE	296	13	25	196	8	43.4	0.060	Prostate androgen-regulated mucin-like
+sp|Q92954|PRG4_HUMAN	1404	15	23	339	20	53.4	6e-05	Proteoglycan 4 OS=Homo sapiens GN=PRG4 PE=1
+sp|Q96S86|HPLN3_HUMAN	360	17	28	180	20	198	9e-49	Hyaluronan and proteoglycan link protein 3
+sp|Q96WV6|YHU2_SCHPO	3971	13	30	430	6	54.2	3e-05	Uncharacterized threonine-rich GPI-anchored
+sp|Q97QP7|IGA1A_STRPN	2004	13	28	353	40	67.6	3e-09	Immunoglobulin A1 protease OS=Streptococcus
+sp|Q99102|MUC4_HUMAN	2169	16	27	386	36	66.9	5e-09	Mucin-4 OS=Homo sapiens GN=MUC4 PE=1 SV=3
+sp|Q99KW3|TARA_MOUSE	2014	14	28	303	33	54.9	2e-05	TRIO and F-actin-binding protein OS=Mus
+sp|Q9C0Y2|YKL1_SCHPO	1220	14	24	400	12	41.8	0.18	Putative cell agglutination protein PB2C8.01
+sp|Q9D8N1|CK024_MOUSE	392	12	24	262	8	39.5	0.99	Uncharacterized protein C11orf24 homolog
+sp|Q9ERB4|CSPG2_RAT	2738	15	26	554	77	210	3e-52	Versican core protein (Fragments) OS=Rattus
+sp|Q9ESM3|HPLN2_MOUSE	341	19	33	197	18	210	3e-52	Hyaluronan and proteoglycan link protein 2
+sp|Q9GLP1|FA5_PIG	2258	17	28	463	37	72.3	1e-10	Coagulation factor V OS=Sus scrofa GN=F5 PE=2 SV=1
+sp|Q9H2D6|TARA_HUMAN	2365	12	25	366	12	45.3	0.017	TRIO and F-actin-binding protein OS=Homo
+sp|Q9HBB8|CDHR5_HUMAN	845	14	23	218	27	56.9	5e-06	Cadherin-related family member 5 OS=Homo
+sp|Q9HC84|MUC5B_HUMAN	5762	15	23	167	21	44.9	0.020	Mucin-5B OS=Homo sapiens GN=MUC5B PE=1 SV=3
+sp|Q9HCI5|MAGE1_HUMAN	957	15	26	387	52	69.6	7e-10	Melanoma-associated antigen E1 OS=Homo
+sp|Q9JIK1|CDHR5_RAT	862	12	25	182	5	55.7	1e-05	Cadherin-related family member 5 OS=Rattus
+sp|Q9JM99|PRG4_MOUSE	1054	11	20	283	12	49.5	8e-04	Proteoglycan 4 OS=Mus musculus GN=Prg4 PE=1
+sp|Q9PU36|PCLO_CHICK	5120	11	24	497	61	41.4	0.23	Protein piccolo (Fragment) OS=Gallus gallus
+sp|Q9QUP5|HPLN1_MOUSE	356	20	32	175	16	206	5e-51	Hyaluronan and proteoglycan link protein 1
+sp|Q9R0M4|PODXL_MOUSE	503	12	28	289	9	46.1	0.009	Podocalyxin OS=Mus musculus GN=Podxl PE=1
+sp|Q9UKN1|MUC12_HUMAN	5478	13	28	450	8	64.9	2e-08	Mucin-12 OS=Homo sapiens GN=MUC12 PE=1 SV=2
+sp|Q9URU4|YBKF_SCHPO	1283	13	25	490	32	41.8	0.16	Putative cell agglutination protein C1289.15
+sp|Q9XIB6|PLRX2_ARATH	847	13	21	139	2	41.1	0.28	Pollen-specific leucine-rich repeat
+sp|Q9Y493|ZAN_HUMAN	2812	14	25	435	54	62.6	1e-07	Zonadhesin OS=Homo sapiens GN=ZAN PE=2 SV=3
+sp|Q9Y5Y7|LYVE1_HUMAN	322	29	44	140	4	160	5e-37	Lymphatic vessel endothelial hyaluronic acid
+tr|A0BDH9|A0BDH9_PARTE	970	12	22	426	13	51.5	2e-04	Chromosome undetermined scaffold_100, whole
+tr|A0BWN0|A0BWN0_PARTE	870	11	23	335	11	44.1	0.035	Chromosome undetermined scaffold_132, whole
+tr|A0DML3|A0DML3_PARTE	1418	12	28	347	35	85.4	2e-14	Chromosome undetermined scaffold_56, whole
+tr|A0JCW5|A0JCW5_9HYME	766	14	26	405	55	46.1	0.009	Lipoprotein-like protein OS=Glyptapanteles
+tr|A0JCY8|A0JCY8_9HYME	1131	13	29	449	26	48.0	0.002	Dentin-like protein OS=Glyptapanteles
+tr|A0MWE1|A0MWE1_ACAVI	900	11	25	422	20	65.3	2e-08	Chitinase III OS=Acanthocheilonema viteae
+tr|A0QTJ8|A0QTJ8_MYCS2	1265	13	25	292	19	50.7	4e-04	Putative uncharacterized protein
+tr|A0T3F4|A0T3F4_HUMAN	1437	13	25	457	9	51.5	2e-04	Mucin 4 (Fragment) OS=Homo sapiens PE=2 SV=1
+tr|A0YIC2|A0YIC2_LYNSP	1551	12	29	413	39	64.6	3e-08	Putative uncharacterized protein OS=Lyngbya
+tr|A0YK95|A0YK95_LYNSP	909	13	24	441	56	53.4	6e-05	Putative uncharacterized protein OS=Lyngbya
+tr|A0YKP6|A0YKP6_LYNSP	681	12	23	374	29	61.5	2e-07	Hemolysin-type calcium-binding toxin
+tr|A0YMJ5|A0YMJ5_LYNSP	665	16	28	264	35	47.2	0.004	FHA domain containing protein OS=Lyngbya sp.
+tr|A0YQH4|A0YQH4_LYNSP	869	17	30	260	15	47.6	0.003	Calcium binding hemolysin protein, putative
+tr|A0YT75|A0YT75_LYNSP	1532	11	20	255	15	70.3	5e-10	Putative uncharacterized protein OS=Lyngbya
+tr|A1C962|A1C962_ASPCL	1061	13	25	456	21	49.2	0.001	Putative uncharacterized protein
+tr|A1CBF5|A1CBF5_ASPCL	853	13	26	424	46	56.1	1e-05	Putative uncharacterized protein
+tr|A1CJB7|A1CJB7_ASPCL	1067	13	26	479	57	44.1	0.034	LYR family protein OS=Aspergillus clavatus
+tr|A1CK17|A1CK17_ASPCL	527	12	23	376	13	47.2	0.004	Cell surface protein, putative
+tr|A1CL43|A1CL43_ASPCL	855	17	28	162	11	40.7	0.38	Extracellular serine-threonine rich protein
+tr|A1D6B4|A1D6B4_NEOFI	766	14	27	179	17	44.9	0.020	Extracellular serine-threonine rich protein
+tr|A1DDY4|A1DDY4_NEOFI	849	13	26	380	34	59.9	6e-07	Putative uncharacterized protein
+tr|A1DNE7|A1DNE7_NEOFI	1010	10	24	456	26	39.5	0.83	RNA polymerase Rpb1 C-terminal repeat domain
+tr|A1ZB24|A1ZB24_DROME	485	12	23	275	9	48.4	0.002	Mucin 55B OS=Drosophila melanogaster
+tr|A2APM1|A2APM1_MOUSE	657	47	55	646	107	522	e-146	CD44 antigen OS=Mus musculus GN=Cd44 PE=4
+tr|A2APM2|A2APM2_MOUSE	780	66	74	736	50	796	0.0	CD44 antigen OS=Mus musculus GN=Cd44 PE=4
+tr|A2APM3|A2APM3_MOUSE	464	50	59	316	36	315	7e-84	CD44 antigen OS=Mus musculus GN=Cd44 PE=4
+tr|A2APM4|A2APM4_MOUSE	498	60	68	312	15	347	2e-93	CD44 antigen OS=Mus musculus GN=Cd44 PE=4
+tr|A2APM5|A2APM5_MOUSE	434	50	60	315	8	311	2e-82	CD44 antigen OS=Mus musculus GN=Cd44 PE=4
+tr|A2AW96|A2AW96_DANRE	1044	17	26	298	17	49.5	8e-04	Novel protein containing SEA domains
+tr|A2CF10|A2CF10_DANRE	337	21	35	189	17	208	1e-51	Hapln2 protein OS=Danio rerio GN=hapln2 PE=2
+tr|A2DA31|A2DA31_TRIVA	538	17	30	154	13	44.1	0.037	Putative uncharacterized protein
+tr|A2DH16|A2DH16_TRIVA	909	13	23	308	38	59.6	9e-07	Putative uncharacterized protein
+tr|A2DIC2|A2DIC2_TRIVA	799	15	28	304	20	49.2	0.001	Cellulosomal scaffoldin anchoring protein,
+tr|A2DP92|A2DP92_TRIVA	825	16	24	351	41	49.5	8e-04	Mucin 2 percursor, putative OS=Trichomonas
+tr|A2EIH8|A2EIH8_TRIVA	638	14	25	333	28	41.4	0.23	Putative uncharacterized protein
+tr|A2EIX6|A2EIX6_TRIVA	829	14	25	351	33	52.2	1e-04	Cellulosomal scaffoldin anchoring protein C,
+tr|A2EN17|A2EN17_TRIVA	559	16	29	220	17	55.3	2e-05	Putative uncharacterized protein
+tr|A2ER43|A2ER43_TRIVA	700	15	26	241	17	42.6	0.11	Putative uncharacterized protein
+tr|A2ESW9|A2ESW9_TRIVA	714	14	26	349	29	50.3	5e-04	Putative uncharacterized protein
+tr|A2EVP6|A2EVP6_TRIVA	612	18	26	245	9	60.3	4e-07	Putative uncharacterized protein
+tr|A2EYM0|A2EYM0_TRIVA	606	15	28	285	9	66.5	8e-09	Putative uncharacterized protein
+tr|A2EYM7|A2EYM7_TRIVA	738	17	27	318	21	72.7	9e-11	Mucin, putative OS=Trichomonas vaginalis
+tr|A2EZ68|A2EZ68_TRIVA	927	19	28	87	10	44.1	0.036	Surface antigen BspA-like OS=Trichomonas
+tr|A2EZ73|A2EZ73_TRIVA	516	16	28	256	15	40.7	0.45	Putative uncharacterized protein
+tr|A2F5X4|A2F5X4_TRIVA	1102	17	28	149	3	55.3	2e-05	Surface antigen BspA-like OS=Trichomonas
+tr|A2F6M4|A2F6M4_TRIVA	536	15	25	276	15	57.2	4e-06	Chagas antigen, putative (Fragment)
+tr|A2FE75|A2FE75_TRIVA	812	22	29	255	33	135	2e-29	Polymorphic outer membrane protein, putative
+tr|A2FGN7|A2FGN7_TRIVA	1037	12	24	415	51	45.7	0.013	Putative uncharacterized protein
+tr|A2FK24|A2FK24_TRIVA	751	12	25	212	8	64.6	3e-08	Putative uncharacterized protein
+tr|A2FL35|A2FL35_TRIVA	590	18	27	137	6	64.2	4e-08	Polymorphic repeat outer membrane protein,
+tr|A2FRN9|A2FRN9_TRIVA	660	13	25	311	19	41.4	0.24	Putative uncharacterized protein
+tr|A2FS26|A2FS26_TRIVA	318	16	25	193	19	41.8	0.20	Putative uncharacterized protein
+tr|A2FUW4|A2FUW4_TRIVA	858	15	25	312	26	53.4	6e-05	Putative uncharacterized protein
+tr|A2G409|A2G409_TRIVA	509	13	25	229	6	39.5	0.83	Putative uncharacterized protein
+tr|A2GF19|A2GF19_TRIVA	834	14	25	252	16	69.6	7e-10	Polymorphic outer membrane protein, putative
+tr|A2GH59|A2GH59_TRIVA	518	16	28	272	22	44.1	0.039	Putative uncharacterized protein
+tr|A2P9C8|A2P9C8_VIBCH	1428	11	23	385	49	41.4	0.26	Putative uncharacterized protein OS=Vibrio
+tr|A2Q0H3|A2Q0H3_9VIRU	505	14	28	177	17	39.5	0.95	N gene-c9.1 OS=Hyposoter fugitivus
+tr|A2QGN6|A2QGN6_ASPNC	1203	14	29	380	26	49.9	6e-04	Contig An03c0120, complete genome
+tr|A2QPA3|A2QPA3_ASPNC	1043	12	23	350	7	50.3	5e-04	Contig An07c0300, complete genome
+tr|A2QRW8|A2QRW8_ASPNC	790	13	27	259	10	48.8	0.001	Similarity to eyelid - Drosophila
+tr|A2QW01|A2QW01_ASPNC	1043	11	22	367	57	44.5	0.027	Contig An11c0150, complete genome
+tr|A2R8Y2|A2R8Y2_ASPNC	1310	12	26	376	50	41.4	0.23	Contig An16c0280, complete genome
+tr|A2TBB3|A2TBB3_XENLA	3852	15	27	596	81	174	2e-41	Chondroitin sulfate proteoglycan 2
+tr|A2YXV7|A2YXV7_ORYSI	1254	15	32	290	29	43.8	0.048	Putative uncharacterized protein OS=Oryza
+tr|A3CR74|A3CR74_STRSV	1164	12	24	275	60	57.6	3e-06	Putative uncharacterized protein
+tr|A3IMP9|A3IMP9_9CHRO	563	10	23	190	11	46.8	0.006	Putative uncharacterized protein
+tr|A3KNB1|A3KNB1_XENLA	1343	14	28	449	27	75.7	1e-11	LOC100049101 protein (Fragment) OS=Xenopus
+tr|A3KQB0|A3KQB0_DANRE	271	29	47	109	3	95.8	1e-17	Novel protein (Fragment) OS=Danio rerio
+tr|A3N9P1|A3N9P1_BURP6	962	14	30	299	2	57.6	3e-06	Putative outer membrane protein
+tr|A3PWA2|A3PWA2_MYCSJ	1059	13	26	284	20	39.5	0.79	Putative uncharacterized protein
+tr|A3SB97|A3SB97_9RHOB	568	15	22	255	17	49.5	8e-04	Putative uncharacterized protein
+tr|A3TYK5|A3TYK5_9RHOB	1246	11	22	358	24	47.6	0.003	Putative uncharacterized protein
+tr|A4JYN2|A4JYN2_DANRE	1295	16	30	576	95	282	6e-74	Bcan OS=Danio rerio GN=bcan PE=2 SV=1
+tr|A4MW33|A4MW33_HAEIN	1647	12	26	408	43	60.7	3e-07	IgA-specific serine endopeptidase
+tr|A4N1T0|A4N1T0_HAEIN	1550	15	29	289	15	41.8	0.19	Immunoglobin A1 protease OS=Haemophilus
+tr|A4N875|A4N875_HAEIN	1745	13	25	319	13	60.7	3e-07	Isopropylmalate isomerase large subunit
+tr|A4NDF9|A4NDF9_HAEIN	1726	11	25	348	18	45.3	0.015	Isopropylmalate isomerase large subunit
+tr|A4NQ58|A4NQ58_HAEIN	1781	13	27	328	30	66.5	6e-09	Immunoglobin A1 protease OS=Haemophilus
+tr|A4NW82|A4NW82_HAEIN	796	9	24	328	17	44.5	0.027	IgA-specific serine endopeptidase
+tr|A4QR45|A4QR45_MAGO7	671	13	27	318	34	41.1	0.27	Predicted protein OS=Magnaporthe oryzae
+tr|A4QRZ2|A4QRZ2_MAGO7	1126	11	25	349	5	47.6	0.003	Putative uncharacterized protein
+tr|A4QVP8|A4QVP8_MAGO7	1275	12	22	410	40	52.6	1e-04	Putative uncharacterized protein
+tr|A4QWD4|A4QWD4_MAGO7	804	14	26	423	20	46.5	0.007	Putative uncharacterized protein
+tr|A4R067|A4R067_MAGO7	1551	15	27	297	23	47.2	0.005	Putative uncharacterized protein
+tr|A4RFY7|A4RFY7_MAGO7	5319	15	25	444	12	71.1	3e-10	Putative uncharacterized protein
+tr|A4RG73|A4RG73_MAGO7	751	11	25	339	33	47.6	0.003	Putative uncharacterized protein
+tr|A4RJC2|A4RJC2_MAGO7	909	15	25	461	43	57.2	5e-06	Putative uncharacterized protein
+tr|A4RKN8|A4RKN8_MAGO7	1097	13	26	433	44	51.1	3e-04	Putative uncharacterized protein
+tr|A4S5W1|A4S5W1_OSTLU	1082	13	24	258	33	43.4	0.065	Predicted protein OS=Ostreococcus
+tr|A4X4V1|A4X4V1_SALTO	3437	13	30	160	5	39.9	0.63	Putative uncharacterized protein
+tr|A5BGS4|A5BGS4_VITVI	1081	16	27	368	91	210	4e-52	Putative uncharacterized protein OS=Vitis
+tr|A5DCL6|A5DCL6_PICGU	834	13	26	236	25	53.0	7e-05	Putative uncharacterized protein OS=Pichia
+tr|A5DCL7|A5DCL7_PICGU	725	16	28	195	19	43.0	0.077	Putative uncharacterized protein OS=Pichia
+tr|A5DIQ7|A5DIQ7_PICGU	961	12	29	419	13	43.8	0.046	Putative uncharacterized protein OS=Pichia
+tr|A5DJ79|A5DJ79_PICGU	1396	13	20	245	19	46.1	0.008	Putative uncharacterized protein OS=Pichia
+tr|A5DTP8|A5DTP8_LODEL	996	14	26	449	32	40.7	0.36	Putative uncharacterized protein
+tr|A5DYU9|A5DYU9_LODEL	1286	14	25	237	20	41.8	0.20	Putative uncharacterized protein
+tr|A5DZD4|A5DZD4_LODEL	1351	11	23	467	9	66.1	8e-09	Putative uncharacterized protein
+tr|A5E3T4|A5E3T4_LODEL	3226	15	29	455	13	43.4	0.054	Putative uncharacterized protein
+tr|A5E4F6|A5E4F6_LODEL	977	15	27	290	10	48.0	0.003	Putative uncharacterized protein
+tr|A5E7R2|A5E7R2_LODEL	3496	14	27	248	19	49.2	0.001	Putative uncharacterized protein
+tr|A5EV49|A5EV49_DICNV	1120	13	23	316	17	65.3	1e-08	Putative uncharacterized protein
+tr|A5JSJ3|A5JSJ3_STRSU	1121	15	29	446	38	43.0	0.071	Putative uncharacterized protein
+tr|A5JYV9|A5JYV9_CAEEL	2938	16	26	289	47	68.4	2e-09	Protein T01D3.7, partially confirmed by
+tr|A5UD81|A5UD81_HAEIE	1758	12	25	351	25	58.8	1e-06	Recombination protein F OS=Haemophilus
+tr|A5UPI6|A5UPI6_ROSS1	605	11	21	301	18	48.8	0.001	Putative uncharacterized protein
+tr|A5V021|A5V021_ROSS1	1159	13	23	158	8	39.5	0.88	Laminin G, sub domain 2 OS=Roseiflexus sp.
+tr|A5V249|A5V249_ROSS1	830	15	27	291	16	77.7	3e-12	Integrin alpha beta-propellor repeat protein
+tr|A5VWV3|A5VWV3_PSEP1	9030	14	26	424	51	46.5	0.007	Conserved repeat domain OS=Pseudomonas putida
+tr|A5WGU5|A5WGU5_PSYWF	491	14	27	148	0	45.3	0.014	Putative uncharacterized protein
+tr|A6FUE6|A6FUE6_9RHOB	2931	12	24	445	14	53.4	6e-05	Surface adhesion protein, putative
+tr|A6H571|A6H571_RUMFL	1503	19	34	80	4	46.5	0.008	Putative cellulosomal scaffoldin protein
+tr|A6LWL3|A6LWL3_CLOB8	914	13	21	460	18	48.4	0.002	Collagen triple helix repeat OS=Clostridium
+tr|A6NDN4|A6NDN4_HUMAN	395	75	79	301	8	312	5e-83	CD44 antigen (Indian blood group), isoform
+tr|A6R6D3|A6R6D3_AJECN	1305	13	24	364	33	50.7	4e-04	Predicted protein OS=Ajellomyces capsulata
+tr|A6R910|A6R910_AJECN	717	13	23	239	16	45.3	0.018	Predicted protein OS=Ajellomyces capsulata
+tr|A6R9Y6|A6R9Y6_AJECN	1320	15	29	258	12	43.8	0.041	Predicted protein OS=Ajellomyces capsulata
+tr|A6RCA5|A6RCA5_AJECN	801	12	25	410	10	49.5	0.001	Predicted protein OS=Ajellomyces capsulata
+tr|A6RKY0|A6RKY0_BOTFB	727	14	26	316	32	44.5	0.025	Putative uncharacterized protein
+tr|A6RWT0|A6RWT0_BOTFB	1280	15	26	315	23	40.3	0.51	Putative uncharacterized protein
+tr|A6RXC1|A6RXC1_BOTFB	1053	15	26	284	19	46.8	0.005	Putative uncharacterized protein
+tr|A6RY02|A6RY02_BOTFB	1626	14	26	429	22	39.5	0.91	Putative uncharacterized protein
+tr|A6SJW2|A6SJW2_BOTFB	903	13	26	458	36	41.4	0.21	Predicted protein OS=Botryotinia fuckeliana
+tr|A6W5H3|A6W5H3_KINRD	736	14	25	191	33	41.1	0.34	Metal dependent phosphohydrolase
+tr|A6ZXB1|A6ZXB1_YEAS7	1060	14	25	265	17	49.2	0.001	Hub1p ubiquitin-like protein substrate
+tr|A7APC9|A7APC9_BABBO	1780	16	25	468	88	65.7	1e-08	SAC3/GANP family protein OS=Babesia bovis
+tr|A7AWR9|A7AWR9_BABBO	1519	13	26	449	47	73.0	7e-11	Putative uncharacterized protein OS=Babesia
+tr|A7EB18|A7EB18_SCLS1	1849	13	25	394	18	53.4	6e-05	Putative uncharacterized protein
+tr|A7F242|A7F242_SCLS1	2629	12	23	456	56	63.4	5e-08	Putative uncharacterized protein
+tr|A7NH56|A7NH56_ROSCS	625	10	21	258	0	45.7	0.013	Putative uncharacterized protein
+tr|A7RGE0|A7RGE0_NEMVE	727	21	43	96	4	116	7e-24	Predicted protein OS=Nematostella vectensis
+tr|A7RGS9|A7RGS9_NEMVE	566	13	25	277	10	58.4	2e-06	Predicted protein OS=Nematostella vectensis
+tr|A7RM36|A7RM36_NEMVE	2700	13	23	342	34	44.9	0.022	Predicted protein OS=Nematostella vectensis
+tr|A7RNV2|A7RNV2_NEMVE	1045	17	27	183	15	39.9	0.71	Predicted protein OS=Nematostella vectensis
+tr|A7RPV4|A7RPV4_NEMVE	1120	17	29	219	25	43.8	0.053	Predicted protein OS=Nematostella vectensis
+tr|A7RT22|A7RT22_NEMVE	1437	14	29	345	25	53.4	6e-05	Predicted protein (Fragment) OS=Nematostella
+tr|A7SD47|A7SD47_NEMVE	327	21	35	147	21	116	6e-24	Predicted protein OS=Nematostella vectensis
+tr|A7SD49|A7SD49_NEMVE	257	22	38	133	12	115	2e-23	Predicted protein OS=Nematostella vectensis
+tr|A7STL2|A7STL2_NEMVE	655	15	24	340	31	67.6	3e-09	Predicted protein OS=Nematostella vectensis
+tr|A7TIF0|A7TIF0_VANPO	2284	12	24	306	6	46.5	0.008	Putative uncharacterized protein (Fragment)
+tr|A7TJN8|A7TJN8_VANPO	4380	12	28	458	7	44.1	0.034	Putative uncharacterized protein
+tr|A7TLG3|A7TLG3_VANPO	2929	15	28	447	31	49.2	0.001	Putative uncharacterized protein
+tr|A7TPR1|A7TPR1_VANPO	3711	14	27	515	17	56.5	8e-06	Putative uncharacterized protein
+tr|A7TPU8|A7TPU8_VANPO	2886	14	29	446	18	40.7	0.44	Putative uncharacterized protein
+tr|A7TR97|A7TR97_VANPO	6351	12	25	523	17	47.2	0.004	Putative uncharacterized protein
+tr|A7TS44|A7TS44_VANPO	6330	15	28	493	17	48.4	0.002	Putative uncharacterized protein (Fragment)
+tr|A7TS46|A7TS46_VANPO	2404	14	27	515	17	44.1	0.032	Putative uncharacterized protein (Fragment)
+tr|A7TSG3|A7TSG3_VANPO	8724	13	26	523	17	47.2	0.004	Putative uncharacterized protein (Fragment)
+tr|A7TSG7|A7TSG7_VANPO	559	12	26	391	20	58.8	2e-06	Putative uncharacterized protein
+tr|A7TT12|A7TT12_VANPO	5451	15	30	226	0	41.1	0.31	Putative uncharacterized protein (Fragment)
+tr|A7TTG0|A7TTG0_VANPO	3886	13	26	515	17	44.5	0.028	Putative uncharacterized protein (Fragment)
+tr|A7TTH0|A7TTH0_VANPO	590	23	34	110	8	39.9	0.74	Putative uncharacterized protein
+tr|A7Y9J9|A7Y9J9_HUMAN	6207	15	27	381	26	49.5	9e-04	Mucin 5AC, oligomeric mucus/gel-forming
+tr|A8IBD2|A8IBD2_CHLRE	1747	15	27	388	43	58.4	2e-06	Speract/scavenger receptor, transmembrane
+tr|A8J9A6|A8J9A6_CHLRE	1769	12	24	427	17	68.8	1e-09	Predicted protein OS=Chlamydomonas
+tr|A8JV00|A8JV00_DROME	4979	13	25	338	45	41.1	0.34	CG34417, isoform H OS=Drosophila melanogaster
+tr|A8L089|A8L089_FRASN	1085	11	20	446	36	39.5	0.96	Putative uncharacterized protein OS=Frankia
+tr|A8LV91|A8LV91_SALAI	5185	11	21	338	46	43.0	0.081	Putative uncharacterized protein
+tr|A8N710|A8N710_COPC7	844	17	32	177	4	48.4	0.002	Sex determining protein OS=Coprinopsis
+tr|A8NAG5|A8NAG5_COPC7	1186	14	25	365	39	43.8	0.048	Putative uncharacterized protein
+tr|A8NC41|A8NC41_COPC7	1399	14	27	259	37	43.8	0.042	Putative uncharacterized protein
+tr|A8NFX1|A8NFX1_COPC7	596	15	28	219	20	44.9	0.022	Putative uncharacterized protein
+tr|A8NSX0|A8NSX0_COPC7	779	15	24	276	22	40.7	0.40	Putative uncharacterized protein
+tr|A8P3D9|A8P3D9_COPC7	1139	16	27	300	18	46.1	0.009	Putative uncharacterized protein
+tr|A8P811|A8P811_COPC7	1154	11	23	328	15	44.9	0.022	Putative uncharacterized protein
+tr|A8QAK5|A8QAK5_MALGO	633	12	24	299	29	42.2	0.13	Putative uncharacterized protein
+tr|A8RI14|A8RI14_9CLOT	1344	14	29	263	22	41.1	0.27	Putative uncharacterized protein
+tr|A8RJJ7|A8RJJ7_9CLOT	569	12	26	348	22	42.2	0.15	Putative uncharacterized protein
+tr|A8RRI0|A8RRI0_9CLOT	2628	17	30	327	47	193	5e-47	Putative uncharacterized protein
+tr|A8WAA6|A8WAA6_XENLA	483	19	30	145	17	155	1e-35	Chondroitin sulfate proteoglycan 2 variant
+tr|A8WIP5|A8WIP5_DANRE	1993	14	27	339	39	41.1	0.30	Novel protein similar to host cell factor C1
+tr|A8WL67|A8WL67_CAEBR	1419	15	25	312	20	48.8	0.002	Putative uncharacterized protein
+tr|A8WLI0|A8WLI0_CAEBR	403	15	25	326	51	39.9	0.67	Putative uncharacterized protein
+tr|A8WM46|A8WM46_CAEBR	3928	13	24	305	19	68.8	1e-09	CBR-FBN-1 protein OS=Caenorhabditis briggsae
+tr|A8WRF6|A8WRF6_CAEBR	1276	13	29	478	9	70.3	5e-10	Putative uncharacterized protein (Fragment)
+tr|A8WRF8|A8WRF8_CAEBR	2456	14	29	456	15	75.0	2e-11	Putative uncharacterized protein (Fragment)
+tr|A8WRP1|A8WRP1_CAEBR	1012	11	24	429	69	43.4	0.064	CBR-NRA-3 protein OS=Caenorhabditis briggsae
+tr|A8WWI2|A8WWI2_CAEBR	1165	13	25	372	47	42.6	0.12	CBR-HSR-9 protein OS=Caenorhabditis briggsae
+tr|A8WXF2|A8WXF2_CAEBR	594	11	22	441	33	45.3	0.015	Putative uncharacterized protein
+tr|A8WYA7|A8WYA7_CAEBR	1125	13	27	466	32	42.2	0.12	Putative uncharacterized protein
+tr|A8WYE8|A8WYE8_CAEBR	1328	17	31	378	28	93.1	8e-17	Putative uncharacterized protein
+tr|A8XCU4|A8XCU4_CAEBR	3278	14	26	347	32	50.7	4e-04	Putative uncharacterized protein
+tr|A8XEH5|A8XEH5_CAEBR	6561	12	27	278	21	56.5	7e-06	CBR-UNC-89 protein (Fragment)
+tr|A8XFL2|A8XFL2_CAEBR	1905	11	23	127	4	40.7	0.35	CBR-LET-526 protein OS=Caenorhabditis
+tr|A8XLQ2|A8XLQ2_CAEBR	665	14	28	138	4	41.4	0.21	Putative uncharacterized protein
+tr|A8XLZ1|A8XLZ1_CAEBR	1325	12	22	326	5	47.6	0.004	Putative uncharacterized protein
+tr|A8XZS6|A8XZS6_CAEBR	1677	15	29	214	11	59.6	8e-07	Putative uncharacterized protein
+tr|A8Y2B0|A8Y2B0_CAEBR	1156	15	23	287	19	46.5	0.007	Putative uncharacterized protein
+tr|A8Y4K4|A8Y4K4_CAEBR	2419	15	32	483	15	98.5	2e-18	CBR-CLEC-223 protein OS=Caenorhabditis
+tr|A9B2K6|A9B2K6_HERA2	1394	13	26	204	18	41.8	0.16	AAA ATPase containing von Willebrand factor
+tr|A9ERW7|A9ERW7_SORC5	6365	14	23	288	20	48.4	0.002	Putative uncharacterized protein
+tr|A9IWK6|A9IWK6_BART1	1103	12	28	304	21	48.0	0.002	Inducible Bartonella autotransporter E
+tr|A9IXX1|A9IXX1_BART1	1136	14	23	372	19	65.3	1e-08	Phage-related protein OS=Bartonella
+tr|A9UTD9|A9UTD9_MONBE	1599	14	25	468	37	62.3	1e-07	Predicted protein OS=Monosiga brevicollis
+tr|A9UZF7|A9UZF7_MONBE	1428	14	25	284	27	44.5	0.027	Predicted protein OS=Monosiga brevicollis
+tr|A9V189|A9V189_MONBE	2329	13	27	406	27	43.0	0.089	Predicted protein OS=Monosiga brevicollis
+tr|A9V5R8|A9V5R8_MONBE	964	15	24	202	23	43.8	0.044	Predicted protein OS=Monosiga brevicollis
+tr|A9V646|A9V646_MONBE	1389	22	29	131	7	56.9	5e-06	Predicted protein OS=Monosiga brevicollis
+tr|A9V802|A9V802_MONBE	1405	14	25	295	19	49.2	0.001	Predicted protein OS=Monosiga brevicollis
+tr|A9VBD2|A9VBD2_MONBE	1089	13	24	343	40	44.1	0.041	Predicted protein OS=Monosiga brevicollis
+tr|A9WC61|A9WC61_CHLAA	1320	15	27	442	34	104	2e-20	Autotransporter-associated beta strand repeat
+tr|B0C1L4|B0C1L4_ACAM1	2418	15	29	382	12	45.7	0.013	Putative uncharacterized protein
+tr|B0CWA8|B0CWA8_LACBS	678	16	29	180	13	46.8	0.005	Predicted protein OS=Laccaria bicolor
+tr|B0D7E5|B0D7E5_LACBS	901	15	25	372	45	47.6	0.003	Predicted protein OS=Laccaria bicolor
+tr|B0DH65|B0DH65_LACBS	1446	15	27	319	45	46.5	0.007	SAC3 domain-containing protein OS=Laccaria
+tr|B0DHE3|B0DHE3_LACBS	2266	14	24	188	10	43.4	0.062	Predicted protein OS=Laccaria bicolor (strain
+tr|B0DJT6|B0DJT6_LACBS	1382	12	22	367	54	44.9	0.023	Predicted protein OS=Laccaria bicolor
+tr|B0E5P2|B0E5P2_ENTDI	1226	16	31	239	43	62.3	1e-07	Putative uncharacterized protein
+tr|B0EHK6|B0EHK6_ENTDI	776	18	29	158	12	54.5	3e-05	Cylicin-1, putative OS=Entamoeba dispar
+tr|B0FXV3|B0FXV3_BACTU	455	14	20	272	7	54.2	4e-05	Putative uncharacterized protein OS=Bacillus
+tr|B0KGY2|B0KGY2_PSEPG	6753	13	27	434	26	47.6	0.003	Conserved repeat domain protein
+tr|B0N802|B0N802_9FIRM	578	12	20	338	22	41.4	0.26	Putative uncharacterized protein
+tr|B0P9M4|B0P9M4_9FIRM	1074	16	33	220	10	72.7	1e-10	Putative uncharacterized protein
+tr|B0UY56|B0UY56_DANRE	271	30	44	119	15	153	4e-35	Novel protein similar to vertebrate tumor
+tr|B0W514|B0W514_CULQU	1705	13	26	233	34	61.5	2e-07	Crumbs OS=Culex quinquefasciatus
+tr|B0W7W0|B0W7W0_CULQU	856	13	24	280	36	50.3	5e-04	Putative uncharacterized protein OS=Culex
+tr|B0WC66|B0WC66_CULQU	1182	13	24	378	9	41.8	0.18	Putative uncharacterized protein OS=Culex
+tr|B0WKF6|B0WKF6_CULQU	1660	12	25	434	13	53.8	5e-05	Putative uncharacterized protein OS=Culex
+tr|B0WNG0|B0WNG0_CULQU	1372	11	24	387	23	44.5	0.029	Putative uncharacterized protein OS=Culex
+tr|B0WQH7|B0WQH7_CULQU	736	14	25	358	24	67.6	3e-09	Putative uncharacterized protein OS=Culex
+tr|B0WUZ3|B0WUZ3_CULQU	2531	12	24	489	8	47.6	0.003	Aggrecan core protein OS=Culex
+tr|B0WZU3|B0WZU3_CULQU	571	15	22	420	17	40.3	0.48	Putative uncharacterized protein OS=Culex
+tr|B0X1G5|B0X1G5_CULQU	4575	10	25	502	43	47.2	0.004	Microtubule-associated protein futsch OS=Culex
+tr|B0X413|B0X413_CULQU	982	14	26	365	12	43.8	0.051	Putative uncharacterized protein OS=Culex
+tr|B0XBV3|B0XBV3_CULQU	965	13	23	466	44	48.0	0.003	Putative uncharacterized protein OS=Culex
+tr|B0XPM0|B0XPM0_ASPFC	609	12	25	347	13	40.3	0.55	Putative uncharacterized protein
+tr|B0XWJ0|B0XWJ0_ASPFC	719	16	31	286	8	39.9	0.65	Extracellular serine-threonine rich protein
+tr|B0XYY9|B0XYY9_ASPFC	1087	12	24	355	29	48.4	0.002	Putative uncharacterized protein
+tr|B0Y6F1|B0Y6F1_ASPFC	980	15	23	320	35	46.1	0.009	GPI anchored protein, putative
+tr|B1AWG4|B1AWG4_MOUSE	3215	15	26	336	36	44.5	0.031	Leucine rich repeat containing 37A (Fragment)
+tr|B1MCR7|B1MCR7_MYCA9	682	17	27	151	17	41.4	0.23	Putative uncharacterized protein
+tr|B1N5F6|B1N5F6_ENTHI	422	14	30	305	20	53.8	5e-05	Mucin-like protein 1, putative OS=Entamoeba
+tr|B1Q2P0|B1Q2P0_STRCG	1200	10	24	427	41	49.2	0.001	Dextranase OS=Streptococcus criceti GN=dex
+tr|B1YHP5|B1YHP5_EXIS2	897	19	28	156	6	58.0	2e-06	Glycosyl transferase family 51
+tr|B1YVB3|B1YVB3_BURA4	737	12	26	380	39	42.6	0.11	YadA domain protein OS=Burkholderia
+tr|B2AS34|B2AS34_PODAN	545	11	21	273	4	43.4	0.059	Predicted CDS Pa_1_22185 (Fragment)
+tr|B2ATZ6|B2ATZ6_PODAN	692	14	25	215	19	42.6	0.11	Predicted CDS Pa_1_17480 OS=Podospora
+tr|B2AUQ7|B2AUQ7_PODAN	1048	13	26	394	28	48.4	0.002	Predicted CDS Pa_1_19950 OS=Podospora
+tr|B2AZ08|B2AZ08_PODAN	835	13	24	419	32	51.9	2e-04	Predicted CDS Pa_3_3710 OS=Podospora
+tr|B2AZN7|B2AZN7_PODAN	1867	15	26	338	50	53.8	5e-05	Predicted CDS Pa_3_5040 OS=Podospora anserina
+tr|B2GTW7|B2GTW7_DANRE	325	22	41	176	36	132	8e-29	LOC560618 protein (Fragment) OS=Danio rerio
+tr|B2GV31|B2GV31_RAT	655	18	28	308	27	54.2	4e-05	Muc1 protein OS=Rattus norvegicus GN=Muc1 PE=2
+tr|B2MZ08|B2MZ08_ILTV	995	15	25	365	21	53.4	6e-05	Glycoprotein J OS=Infectious
+tr|B2VW07|B2VW07_PYRTR	2856	13	22	429	35	40.7	0.45	Predicted protein OS=Pyrenophora
+tr|B2W0S5|B2W0S5_PYRTR	1562	13	24	420	40	55.7	1e-05	Predicted protein OS=Pyrenophora
+tr|B2WD02|B2WD02_PYRTR	2195	13	24	325	11	43.0	0.076	Putative uncharacterized protein
+tr|B2WL02|B2WL02_PYRTR	1241	11	25	409	25	63.4	5e-08	Bacteriodes thetaiotaomicron symbiotic
+tr|B2ZZ14|B2ZZ14_DANRE	2033	12	25	433	39	41.4	0.26	Hypothetical microtubule-associated protein 1b
+tr|B3AEE0|B3AEE0_ECO57	1255	15	26	326	35	55.3	1e-05	DNA primase OS=Escherichia coli O157:H7 str.
+tr|B3KSK0|B3KSK0_HUMAN	482	25	41	119	10	148	2e-33	cDNA FLJ36455 fis, clone THYMU2014323,
+tr|B3L5F9|B3L5F9_PLAKH	977	15	28	271	21	75.0	2e-11	Protein phosphatase, putative OS=Plasmodium
+tr|B3LV80|B3LV80_DROAN	2884	20	32	169	18	42.2	0.12	GF16440 OS=Drosophila ananassae GN=GF16440
+tr|B3LWT2|B3LWT2_DROAN	2096	13	25	158	9	47.2	0.005	GF16888 OS=Drosophila ananassae GN=GF16888
+tr|B3LWZ3|B3LWZ3_DROAN	2634	9	22	506	9	51.5	2e-04	GF16318 OS=Drosophila ananassae GN=GF16318
+tr|B3M4C2|B3M4C2_DROAN	965	14	29	457	21	68.4	2e-09	GF24516 OS=Drosophila ananassae GN=GF24516
+tr|B3M4N1|B3M4N1_DROAN	1254	16	28	513	20	83.4	6e-14	GF24494 OS=Drosophila ananassae GN=GF24494
+tr|B3M9X6|B3M9X6_DROAN	2580	16	30	262	57	44.1	0.034	GF10896 OS=Drosophila ananassae GN=GF10896
+tr|B3MF54|B3MF54_DROAN	1205	12	27	377	27	41.1	0.31	GF13572 OS=Drosophila ananassae GN=GF13572
+tr|B3MIF6|B3MIF6_DROAN	1628	12	21	349	40	44.1	0.039	GF13240 OS=Drosophila ananassae GN=GF13240
+tr|B3MJ88|B3MJ88_DROAN	2107	15	30	321	49	42.2	0.16	GF11037 OS=Drosophila ananassae GN=GF11037
+tr|B3MLV2|B3MLV2_DROAN	8366	16	27	287	20	48.8	0.001	GF14380 OS=Drosophila ananassae GN=GF14380
+tr|B3MRD6|B3MRD6_DROAN	5476	10	25	492	31	43.8	0.044	GF21016 OS=Drosophila ananassae GN=GF21016
+tr|B3MVT0|B3MVT0_DROAN	1299	13	23	459	14	58.4	2e-06	GF22558 OS=Drosophila ananassae GN=GF22558
+tr|B3MXS4|B3MXS4_DROAN	1507	14	24	290	12	46.5	0.007	GF19382 OS=Drosophila ananassae GN=GF19382
+tr|B3MZC8|B3MZC8_DROAN	2791	14	28	260	5	45.3	0.017	GF19856 OS=Drosophila ananassae GN=GF19856
+tr|B3N148|B3N148_DROAN	401	21	28	142	12	51.1	3e-04	GF15943 OS=Drosophila ananassae GN=GF15943
+tr|B3NCW1|B3NCW1_DROER	1395	16	29	131	6	67.3	4e-09	GG15605 OS=Drosophila erecta GN=GG15605 PE=4
+tr|B3NH03|B3NH03_DROER	1010	16	32	501	22	77.3	4e-12	GG13891 OS=Drosophila erecta GN=GG13891 PE=4
+tr|B3NH41|B3NH41_DROER	811	14	25	429	19	47.6	0.004	GG13865 OS=Drosophila erecta GN=GG13865 PE=4
+tr|B3NLN3|B3NLN3_DROER	517	14	22	282	12	41.8	0.20	GG20998 OS=Drosophila erecta GN=GG20998 PE=4
+tr|B3NMK6|B3NMK6_DROER	1817	14	26	362	36	45.3	0.016	GG21036 OS=Drosophila erecta GN=GG21036 PE=4
+tr|B3NRF8|B3NRF8_DROER	8870	13	26	265	47	47.2	0.004	GG22462 OS=Drosophila erecta GN=GG22462 PE=4
+tr|B3NVU1|B3NVU1_DROER	3122	12	24	453	14	41.4	0.21	GG17842 OS=Drosophila erecta GN=GG17842 PE=4
+tr|B3NW72|B3NW72_DROER	4550	13	24	185	22	41.8	0.19	GG18337 OS=Drosophila erecta GN=GG18337 PE=4
+tr|B3P3G0|B3P3G0_DROER	2153	12	28	174	16	42.6	0.093	GG16785 OS=Drosophila erecta GN=GG16785 PE=4
+tr|B3P6U5|B3P6U5_DROER	2777	12	25	429	40	54.2	4e-05	GG11343 OS=Drosophila erecta GN=GG11343 PE=4
+tr|B3P878|B3P878_DROER	728	15	29	347	20	61.1	3e-07	GG12156 OS=Drosophila erecta GN=GG12156 PE=4
+tr|B3QUC9|B3QUC9_CHLT3	2169	14	26	295	65	76.1	8e-12	Tetratricopeptide TPR_2 repeat protein
+tr|B3RV56|B3RV56_TRIAD	740	15	26	394	58	75.0	2e-11	Putative uncharacterized protein
+tr|B3XMU8|B3XMU8_LACRE	1877	19	31	201	10	62.6	1e-07	LPXTG-motif cell wall anchor domain protein
+tr|B3ZCF5|B3ZCF5_BACCE	910	14	25	470	5	41.1	0.35	Collagen triple helix repeat domain protein
+tr|B4DEQ9|B4DEQ9_HUMAN	1239	17	26	137	19	44.1	0.040	cDNA FLJ56056 OS=Homo sapiens PE=2 SV=1
+tr|B4DN59|B4DN59_HUMAN	329	63	65	235	74	237	2e-60	cDNA FLJ52702, highly similar to Homo
+tr|B4DYH4|B4DYH4_HUMAN	1655	14	24	473	61	72.7	9e-11	cDNA FLJ51571, moderately similar to Mediator
+tr|B4G3H6|B4G3H6_DROPE	2914	9	25	175	15	58.8	1e-06	GL23094 OS=Drosophila persimilis GN=GL23094
+tr|B4GQX6|B4GQX6_DROPE	665	13	29	430	8	61.1	3e-07	GL25064 OS=Drosophila persimilis GN=GL25064
+tr|B4H9T5|B4H9T5_DROPE	847	13	27	461	50	44.1	0.037	GL22979 OS=Drosophila persimilis GN=GL22979
+tr|B4HFG7|B4HFG7_DROSE	689	13	22	257	13	41.8	0.18	GM24687 OS=Drosophila sechellia GN=GM24687
+tr|B4HNB1|B4HNB1_DROSE	377	14	23	166	3	43.0	0.084	GM19932 OS=Drosophila sechellia GN=GM19932
+tr|B4I3A6|B4I3A6_DROSE	14551	16	24	195	32	41.1	0.30	GM18084 OS=Drosophila sechellia GN=GM18084 PE=4
+tr|B4IC19|B4IC19_DROSE	769	13	25	463	26	41.1	0.27	GM10150 OS=Drosophila sechellia GN=GM10150
+tr|B4IDL3|B4IDL3_DROSE	3825	11	23	415	39	44.1	0.041	GM11401 OS=Drosophila sechellia GN=GM11401
+tr|B4IJD2|B4IJD2_DROSE	2278	14	25	433	30	43.0	0.085	GM17783 (Fragment) OS=Drosophila sechellia
+tr|B4J021|B4J021_DROGR	1418	17	28	193	28	80.0	7e-13	GH14485 OS=Drosophila grimshawi GN=GH14485
+tr|B4J3F7|B4J3F7_DROGR	2192	12	22	498	41	50.3	5e-04	GH14786 OS=Drosophila grimshawi GN=GH14786
+tr|B4JEG8|B4JEG8_DROGR	3957	13	24	449	45	41.1	0.31	GH10368 OS=Drosophila grimshawi GN=GH10368
+tr|B4JJC0|B4JJC0_DROGR	430	14	23	281	19	50.7	3e-04	GH12284 OS=Drosophila grimshawi GN=GH12284
+tr|B4JRV0|B4JRV0_DROGR	3173	13	27	479	26	61.9	2e-07	GH19461 OS=Drosophila grimshawi GN=GH19461
+tr|B4K643|B4K643_DROMO	352	11	23	274	14	41.8	0.18	GI23529 OS=Drosophila mojavensis GN=GI23529
+tr|B4K7U4|B4K7U4_DROMO	2820	11	25	454	44	44.5	0.026	GI22221 OS=Drosophila mojavensis GN=GI22221
+tr|B4KN04|B4KN04_DROMO	1632	16	30	271	19	49.5	9e-04	GI20784 OS=Drosophila mojavensis GN=GI20784
+tr|B4KYU8|B4KYU8_DROMO	1859	16	27	259	25	58.0	3e-06	GI13450 OS=Drosophila mojavensis GN=GI13450
+tr|B4L2U0|B4L2U0_DROMO	2834	14	26	501	31	63.4	6e-08	GI15442 OS=Drosophila mojavensis GN=GI15442
+tr|B4L608|B4L608_DROMO	1174	13	30	362	24	46.1	0.010	GI16285 OS=Drosophila mojavensis GN=GI16285
+tr|B4L6F4|B4L6F4_DROMO	2234	14	28	272	3	55.3	2e-05	GI16360 OS=Drosophila mojavensis GN=GI16360
+tr|B4L856|B4L856_DROMO	340	18	24	162	3	45.7	0.011	GI10982 OS=Drosophila mojavensis GN=GI10982
+tr|B4L857|B4L857_DROMO	523	16	30	201	1	48.8	0.002	GI10981 OS=Drosophila mojavensis GN=GI10981
+tr|B4L9C4|B4L9C4_DROMO	766	13	25	282	32	41.8	0.19	GI16822 OS=Drosophila mojavensis GN=GI16822
+tr|B4LHU3|B4LHU3_DROVI	1579	14	28	120	15	45.7	0.012	GJ11411 OS=Drosophila virilis GN=GJ11411
+tr|B4LX19|B4LX19_DROVI	2780	13	26	441	31	49.5	8e-04	GJ24342 (Fragment) OS=Drosophila virilis
+tr|B4M296|B4M296_DROVI	330	15	22	181	7	49.9	7e-04	GJ19447 OS=Drosophila virilis GN=GJ19447
+tr|B4M2W2|B4M2W2_DROVI	919	12	26	459	8	41.8	0.20	GJ17128 OS=Drosophila virilis GN=GJ17128
+tr|B4M2Z4|B4M2Z4_DROVI	931	14	28	359	37	48.0	0.002	GJ19111 OS=Drosophila virilis GN=GJ19111
+tr|B4M497|B4M497_DROVI	464	11	21	194	5	44.5	0.027	GJ10280 OS=Drosophila virilis GN=GJ10280
+tr|B4MJK9|B4MJK9_DROWI	1416	15	28	323	14	49.5	0.001	GK20794 OS=Drosophila willistoni GN=GK20794
+tr|B4MJZ5|B4MJZ5_DROWI	2186	11	24	388	20	41.4	0.21	GK20714 OS=Drosophila willistoni GN=GK20714
+tr|B4MKX6|B4MKX6_DROWI	2562	14	26	486	23	77.7	3e-12	GK17254 OS=Drosophila willistoni GN=GK17254
+tr|B4ML29|B4ML29_DROWI	1403	24	33	99	1	48.0	0.003	GK16832 OS=Drosophila willistoni GN=GK16832
+tr|B4MLI8|B4MLI8_DROWI	2396	12	22	460	37	42.2	0.15	GK16962 OS=Drosophila willistoni GN=GK16962
+tr|B4MTX0|B4MTX0_DROWI	2310	14	23	389	12	40.3	0.56	GK23921 OS=Drosophila willistoni GN=GK23921
+tr|B4MVW4|B4MVW4_DROWI	2119	13	24	386	94	51.5	2e-04	GK15151 OS=Drosophila willistoni GN=GK15151
+tr|B4MYK9|B4MYK9_DROWI	670	13	23	412	13	57.2	4e-06	GK22061 OS=Drosophila willistoni GN=GK22061
+tr|B4N0D6|B4N0D6_DROWI	7105	12	25	377	41	39.5	0.96	GK24498 OS=Drosophila willistoni GN=GK24498
+tr|B4N1K5|B4N1K5_DROWI	5640	15	29	360	30	41.4	0.26	GK16278 OS=Drosophila willistoni GN=GK16278
+tr|B4N2D5|B4N2D5_DROWI	1504	13	24	461	39	65.3	2e-08	GK16139 OS=Drosophila willistoni GN=GK16139
+tr|B4N2Y8|B4N2Y8_DROWI	2597	12	27	224	9	52.2	1e-04	GK12588 (Fragment) OS=Drosophila willistoni
+tr|B4N5W8|B4N5W8_DROWI	8833	15	25	196	23	48.4	0.002	GK17953 OS=Drosophila willistoni GN=GK17953
+tr|B4N845|B4N845_DROWI	370	12	27	242	9	39.9	0.70	GK11989 OS=Drosophila willistoni GN=GK11989
+tr|B4N8G1|B4N8G1_DROWI	862	15	25	454	17	80.4	5e-13	GK12051 OS=Drosophila willistoni GN=GK12051
+tr|B4N9S3|B4N9S3_DROWI	2033	12	23	198	25	43.4	0.062	GK11459 OS=Drosophila willistoni GN=GK11459
+tr|B4NCB6|B4NCB6_DROWI	4336	15	25	420	19	43.0	0.071	GK25829 (Fragment) OS=Drosophila willistoni
+tr|B4NDK9|B4NDK9_DROWI	1890	14	30	293	25	40.3	0.46	GK25468 OS=Drosophila willistoni GN=GK25468
+tr|B4NI35|B4NI35_DROWI	2758	12	24	457	23	51.9	2e-04	GK12979 OS=Drosophila willistoni GN=GK12979
+tr|B4P0N2|B4P0N2_DROYA	876	13	24	499	9	41.4	0.23	GE13692 OS=Drosophila yakuba GN=GE13692 PE=4
+tr|B4PFP0|B4PFP0_DROYA	1247	12	26	361	7	47.6	0.003	GE20182 OS=Drosophila yakuba GN=GE20182 PE=4
+tr|B4PG71|B4PG71_DROYA	1297	9	25	481	6	56.1	9e-06	GE20156 OS=Drosophila yakuba GN=GE20156 PE=4
+tr|B4PS92|B4PS92_DROYA	642	14	24	249	47	39.9	0.65	GE24271 OS=Drosophila yakuba GN=GE24271 PE=4
+tr|B4PSA3|B4PSA3_DROYA	715	17	27	254	22	57.6	3e-06	GE10601 OS=Drosophila yakuba GN=GE10601 PE=4
+tr|B4PU63|B4PU63_DROYA	2171	14	25	299	34	41.1	0.27	GE24176 OS=Drosophila yakuba GN=GE24176 PE=4
+tr|B4PV00|B4PV00_DROYA	2641	14	25	451	60	53.8	5e-05	GE23539 OS=Drosophila yakuba GN=GE23539 PE=4
+tr|B4Q5L2|B4Q5L2_DROSI	2117	13	25	313	40	44.5	0.029	GD22994 OS=Drosophila simulans GN=GD22994 PE=4
+tr|B4QEV5|B4QEV5_DROSI	4046	14	30	106	18	41.4	0.26	GD25733 OS=Drosophila simulans GN=GD25733 PE=4
+tr|B4R3M0|B4R3M0_DROSI	1047	16	27	205	8	50.3	5e-04	GD17064 OS=Drosophila simulans GN=GD17064
+tr|B4UN33|B4UN33_CANGA	1423	12	28	422	18	64.9	2e-08	Similarity OS=Candida glabrata
+tr|B4VIY5|B4VIY5_9CYAN	667	19	29	151	20	39.5	0.87	Tetratricopeptide repeat domain protein
+tr|B4VM02|B4VM02_9CYAN	1889	15	27	390	43	76.1	9e-12	Putative uncharacterized protein
+tr|B4VXN8|B4VXN8_9CYAN	1665	13	27	290	15	60.3	5e-07	Haemagglutination activity domain protein
+tr|B4W483|B4W483_9CYAN	633	15	28	266	24	53.4	7e-05	Putative uncharacterized protein
+tr|B5DED6|B5DED6_XENTR	2282	13	28	253	17	59.6	8e-07	Putative uncharacterized protein OS=Xenopus
+tr|B5DKV3|B5DKV3_DROPS	3407	13	23	465	17	43.4	0.060	GA22941 OS=Drosophila pseudoobscura
+tr|B5DMR6|B5DMR6_DROPS	1424	12	24	498	13	50.3	6e-04	GA26606 OS=Drosophila pseudoobscura
+tr|B5DN75|B5DN75_DROPS	700	13	27	374	11	46.5	0.007	GA22865 OS=Drosophila pseudoobscura
+tr|B5DNV0|B5DNV0_DROPS	963	13	28	433	40	42.6	0.12	GA22288 OS=Drosophila pseudoobscura
+tr|B5DQQ2|B5DQQ2_DROPS	681	10	26	383	21	41.8	0.20	GA23580 OS=Drosophila pseudoobscura
+tr|B5DSJ5|B5DSJ5_DROPS	855	16	27	241	42	50.7	4e-04	GA26123 OS=Drosophila pseudoobscura
+tr|B5DU57|B5DU57_DROPS	2855	16	34	179	4	39.9	0.61	GA22193 OS=Drosophila pseudoobscura
+tr|B5DVG8|B5DVG8_DROPS	2855	11	23	460	53	47.2	0.004	GA26604 OS=Drosophila pseudoobscura
+tr|B5E0F9|B5E0F9_DROPS	372	13	28	117	2	47.2	0.004	GA24403 OS=Drosophila pseudoobscura
+tr|B5E0Y2|B5E0Y2_DROPS	8812	18	27	201	34	50.3	5e-04	GA24356 OS=Drosophila pseudoobscura
+tr|B5EW35|B5EW35_VIBFM	1782	13	27	414	26	73.4	5e-11	Putative uncharacterized protein OS=Vibrio
+tr|B5GVR3|B5GVR3_STRCL	2329	13	21	334	19	58.0	2e-06	PE-PGRS family protein OS=Streptomyces
+tr|B5RTP6|B5RTP6_DEBHA	949	16	31	249	10	54.5	3e-05	DEHA2D00132p OS=Debaryomyces hansenii
+tr|B5X4A6|B5X4A6_SALSA	390	19	34	174	20	178	1e-42	Hyaluronan and proteoglycan link protein 4
+tr|B5XAB0|B5XAB0_SALSA	265	29	42	119	15	150	5e-34	Tumor necrosis factor-inducible protein
+tr|B5XCN1|B5XCN1_SALSA	301	35	53	106	8	108	1e-21	Lymphatic vessel endothelial hyaluronic acid
+tr|B5Y551|B5Y551_PHATC	863	9	24	472	22	40.3	0.56	Glycoprotein (Fragment) OS=Phaeodactylum
+tr|B5YP27|B5YP27_THAPS	3283	15	29	232	20	47.6	0.003	Predicted protein OS=Thalassiosira pseudonana
+tr|B6ADV9|B6ADV9_CRYMR	681	15	25	226	20	47.6	0.003	Putative uncharacterized protein
+tr|B6AG69|B6AG69_CRYMR	1927	14	25	333	51	77.3	4e-12	DNA-directed RNA polymerase II subunit RPB1,
+tr|B6AH89|B6AH89_CRYMR	838	11	26	405	37	54.2	3e-05	Putative uncharacterized protein
+tr|B6DTK5|B6DTK5_9EUGL	1420	13	29	219	11	39.9	0.72	Putative uncharacterized protein OS=Bodo
+tr|B6EAT9|B6EAT9_HUMAN	340	90	91	244	4	300	3e-79	CD44 OS=Homo sapiens PE=2 SV=1
+tr|B6H243|B6H243_PENCW	907	14	27	275	43	49.9	6e-04	Pc13g04720 protein OS=Penicillium
+tr|B6H571|B6H571_PENCW	842	14	25	381	42	45.3	0.016	Pc13g14050 protein OS=Penicillium
+tr|B6HGV0|B6HGV0_PENCW	804	14	25	313	30	59.2	1e-06	Pc20g06530 protein OS=Penicillium
+tr|B6HHJ2|B6HHJ2_PENCW	1294	14	24	345	35	47.2	0.004	Pc21g05460 protein OS=Penicillium
+tr|B6HHQ2|B6HHQ2_PENCW	1967	11	24	416	69	43.4	0.066	Pc21g14300 protein OS=Penicillium chrysogenum
+tr|B6HTM2|B6HTM2_PENCW	851	13	25	301	18	46.1	0.011	Pc22g13690 protein OS=Penicillium
+tr|B6JVG3|B6JVG3_SCHJY	337	11	24	220	3	40.3	0.48	Predicted protein OS=Schizosaccharomyces
+tr|B6JW51|B6JW51_SCHJY	1961	12	23	379	21	55.3	1e-05	Endochitinase OS=Schizosaccharomyces japonicus
+tr|B6K9X3|B6K9X3_TOXGO	705	11	23	383	15	39.9	0.74	Putative uncharacterized protein
+tr|B6KEH6|B6KEH6_TOXGO	969	12	26	283	21	42.2	0.14	Putative uncharacterized protein
+tr|B6KG33|B6KG33_TOXGO	616	13	26	260	9	44.9	0.019	Putative uncharacterized protein
+tr|B6KQD3|B6KQD3_TOXGO	854	16	25	252	22	45.3	0.018	SRS domain-containing protein OS=Toxoplasma
+tr|B6Q8Z6|B6Q8Z6_PENMQ	6009	16	27	391	40	41.1	0.35	Involucrin repeat protein OS=Penicillium
+tr|B6QDU0|B6QDU0_PENMQ	836	13	26	447	26	41.4	0.22	Putative uncharacterized protein
+tr|B6QET6|B6QET6_PENMQ	1434	13	25	377	24	43.4	0.066	Putative uncharacterized protein
+tr|B6QFJ5|B6QFJ5_PENMQ	1220	14	25	409	49	39.9	0.71	Putative uncharacterized protein
+tr|B6QFQ7|B6QFQ7_PENMQ	854	15	27	285	27	53.4	6e-05	Class III chitinase ChiA1 OS=Penicillium
+tr|B7CHR2|B7CHR2_BURPS	1869	14	25	260	7	50.7	4e-04	DNA translocase FtsK OS=Burkholderia
+tr|B7FR83|B7FR83_PHATC	848	10	20	240	0	73.0	7e-11	Predicted protein OS=Phaeodactylum
+tr|B7G1P2|B7G1P2_PHATC	818	14	24	220	16	44.1	0.036	Predicted protein OS=Phaeodactylum
+tr|B7G453|B7G453_PHATC	744	11	21	179	10	39.5	0.91	Predicted protein OS=Phaeodactylum
+tr|B7G595|B7G595_PHATC	854	12	24	359	36	39.5	0.83	Predicted protein OS=Phaeodactylum
+tr|B7G9R0|B7G9R0_PHATC	869	13	26	419	22	46.8	0.006	Predicted protein OS=Phaeodactylum
+tr|B7GB28|B7GB28_PHATC	1000	15	23	257	41	59.9	6e-07	Predicted protein OS=Phaeodactylum
+tr|B7GDY9|B7GDY9_PHATC	623	12	19	118	0	44.1	0.035	Probable cell surface glycoprotein
+tr|B7GE54|B7GE54_PHATC	1506	13	25	309	21	48.8	0.001	Predicted protein OS=Phaeodactylum
+tr|B7JSZ0|B7JSZ0_BACC0	1219	12	23	469	8	41.1	0.31	Collagen triple helix repeat domain protein
+tr|B7P3G1|B7P3G1_IXOSC	485	13	24	326	19	40.7	0.37	Putative uncharacterized protein OS=Ixodes
+tr|B7P4B9|B7P4B9_IXOSC	3497	16	25	524	8	54.2	3e-05	Secreted mucin MUC17, putative OS=Ixodes
+tr|B7PDT9|B7PDT9_IXOSC	1047	14	26	378	31	45.7	0.012	Putative uncharacterized protein (Fragment)
+tr|B7PES8|B7PES8_IXOSC	2021	15	30	324	11	44.9	0.021	Secreted mucin MUC17, putative (Fragment)
+tr|B7PPX4|B7PPX4_IXOSC	374	14	30	361	2	73.8	4e-11	Putative uncharacterized protein (Fragment)
+tr|B7S8I3|B7S8I3_9HYME	3193	14	28	271	62	42.6	0.092	Putative uncharacterized protein
+tr|B7ZS04|B7ZS04_XENLA	1152	15	26	639	155	220	2e-55	Brevican soluble core protein OS=Xenopus
+tr|B8AID9|B8AID9_ORYSI	2033	18	29	247	57	131	1e-28	Putative uncharacterized protein OS=Oryza
+tr|B8C2P7|B8C2P7_THAPS	593	14	26	295	39	40.7	0.41	Predicted protein OS=Thalassiosira
+tr|B8C4R8|B8C4R8_THAPS	2352	15	29	280	20	72.7	9e-11	Predicted protein OS=Thalassiosira pseudonana
+tr|B8C9Y3|B8C9Y3_THAPS	2657	11	25	176	34	39.9	0.65	Predicted protein OS=Thalassiosira
+tr|B8CCU4|B8CCU4_THAPS	1024	12	27	352	33	44.1	0.041	Predicted protein OS=Thalassiosira
+tr|B8CEW5|B8CEW5_THAPS	1638	11	25	365	20	68.8	1e-09	Predicted protein OS=Thalassiosira pseudonana
+tr|B8CGJ6|B8CGJ6_THAPS	1892	12	21	177	8	48.8	0.001	Predicted protein OS=Thalassiosira pseudonana
+tr|B8F4Z5|B8F4Z5_HAEPS	858	18	28	140	14	60.3	5e-07	Putative pertactin family virulence factor,
+tr|B8GK34|B8GK34_METPE	653	14	25	199	10	39.9	0.73	Putative uncharacterized protein
+tr|B8HLB3|B8HLB3_CYAP4	796	14	25	309	9	46.5	0.007	Putative uncharacterized protein
+tr|B8IWV8|B8IWV8_METNO	1587	14	27	480	37	40.3	0.55	Putative uncharacterized protein
+tr|B8JMI3|B8JMI3_DANRE	1308	12	24	406	35	46.5	0.008	Novel protein similar to vertebrate
+tr|B8LZF4|B8LZF4_TALSN	1219	14	25	406	42	44.1	0.038	Putative uncharacterized protein
+tr|B8M1D7|B8M1D7_TALSN	6002	13	22	326	43	39.9	0.61	Involucrin repeat protein OS=Talaromyces
+tr|B8M3T5|B8M3T5_TALSN	1162	11	23	351	38	44.1	0.041	Putative uncharacterized protein
+tr|B8M7G6|B8M7G6_TALSN	925	10	23	446	54	43.4	0.056	Conserved serine proline-rich protein
+tr|B8M9X1|B8M9X1_TALSN	1241	12	22	271	32	39.9	0.67	Leucine permease transcriptional regulator
+tr|B8MBI5|B8MBI5_TALSN	1262	13	24	410	62	44.5	0.028	Putative uncharacterized protein
+tr|B8MUF4|B8MUF4_TALSN	2557	15	27	432	69	51.1	3e-04	Serine-rich adhesin for platelets, putative
+tr|B8MUS3|B8MUS3_TALSN	647	11	22	318	18	54.5	3e-05	Putative uncharacterized protein
+tr|B8N059|B8N059_ASPFN	815	13	26	345	25	59.9	7e-07	Cell wall protein, putative OS=Aspergillus
+tr|B8N327|B8N327_ASPFN	930	14	26	393	22	61.9	2e-07	GPI anchored protein, putative
+tr|B8N9H0|B8N9H0_ASPFN	752	13	25	317	14	44.9	0.021	mRNA capping nucleoside-triphosphatase,
+tr|B8PHX4|B8PHX4_POSPM	1233	12	21	414	53	41.1	0.29	Predicted protein OS=Postia placenta (strain
+tr|B8PID0|B8PID0_POSPM	845	12	24	476	39	39.5	0.78	Predicted protein OS=Postia placenta (strain
+tr|B9B4W9|B9B4W9_9BURK	1782	10	27	406	24	42.6	0.10	DNA translocase FtsK OS=Burkholderia
+tr|B9CSH3|B9CSH3_STACP	772	15	27	322	18	61.1	3e-07	Lipase 2 (Glycerol ester hydrolase 2)
+tr|B9CTD9|B9CTD9_STACP	733	12	22	400	18	45.7	0.012	Lipoprotein VsaC OS=Staphylococcus capitis
+tr|B9CTW0|B9CTW0_STACP	1467	12	26	281	43	52.2	1e-04	Mannosyl-glycoprotein
+tr|B9DJ62|B9DJ62_STACT	884	14	28	289	29	44.1	0.032	Putative uncharacterized protein
+tr|B9DLE5|B9DLE5_STACT	448	14	28	337	19	43.8	0.050	Truncated lipase (Fragment 1)
+tr|B9EK55|B9EK55_HUMAN	2473	14	27	358	35	197	2e-48	ACAN protein OS=Homo sapiens GN=ACAN PE=2
+tr|B9GRM6|B9GRM6_POPTR	552	11	24	172	6	39.5	0.91	Predicted protein OS=Populus trichocarpa
+tr|B9K0L6|B9K0L6_AGRVS	1879	13	25	398	17	42.2	0.13	Putative uncharacterized protein
+tr|B9PVA8|B9PVA8_TOXGO	1239	12	23	436	37	39.9	0.67	Putative uncharacterized protein
+tr|B9Q856|B9Q856_TOXGO	2600	14	25	382	54	76.5	6e-12	Putative uncharacterized protein OS=Toxoplasma
+tr|B9SQI2|B9SQI2_RICCO	379	12	25	229	4	43.4	0.069	Copper ion binding protein, putative
+tr|B9WAM3|B9WAM3_CANDC	1356	14	29	436	5	49.2	0.001	Cell surface flocculin, putative (Integral
+tr|B9WD35|B9WD35_CANDC	1268	13	31	330	4	49.5	0.001	Hyphally regulated cell wall protein, putative
+tr|B9WDR6|B9WDR6_CANDC	1373	16	27	464	4	52.2	1e-04	Repetitive cell surface protein, putative
+tr|B9WEL4|B9WEL4_CANDC	1680	12	24	421	21	44.1	0.039	Agglutinin-like protein, putative (Cell
+tr|B9WG44|B9WG44_CANDC	717	13	25	420	24	52.6	1e-04	GPI-anchored cell surface glycoprotein
+tr|B9WG45|B9WG45_CANDC	1514	13	25	330	10	41.1	0.30	Cell surface flocculin, putative
+tr|B9WJ14|B9WJ14_CANDC	1165	13	27	457	32	40.3	0.50	Component of the nuclear pore complex,
+tr|B9WJ71|B9WJ71_CANDC	1295	14	28	337	18	44.1	0.035	Agglutinin-like protein, putative OS=Candida
+tr|B9WJ72|B9WJ72_CANDC	1913	12	26	460	21	52.6	1e-04	Agglutinin-like protein, putative OS=Candida
+tr|B9WKJ0|B9WKJ0_CANDC	2113	16	29	439	22	53.0	8e-05	Cell wall protein, putative OS=Candida
+tr|C0L9E0|C0L9E0_9NEOP	651	16	27	212	10	49.5	8e-04	Insect intestinal mucin 4 OS=Mamestra
+tr|C0NKU7|C0NKU7_AJECG	809	14	25	315	37	44.1	0.036	Putative uncharacterized protein
+tr|C0NLU4|C0NLU4_AJECG	859	14	24	418	40	58.8	1e-06	Endochitinase OS=Ajellomyces capsulata
+tr|C0NUT6|C0NUT6_AJECG	666	11	22	406	6	42.6	0.099	Proteoglycan OS=Ajellomyces capsulata
+tr|C0NXW5|C0NXW5_AJECG	872	12	23	288	22	41.1	0.27	Putative uncharacterized protein
+tr|C0PU70|C0PU70_SALSA	717	24	38	120	10	147	3e-33	Stabilin-2 (Fragment) OS=Salmo salar
+tr|C0S3V1|C0S3V1_PARBP	385	15	23	259	4	46.5	0.008	Extensin OS=Paracoccidioides brasiliensis
+tr|C0SE75|C0SE75_PARBP	2106	11	24	203	31	58.0	3e-06	DNA-directed RNA polymerase II subunit RPB1
+tr|C0WRB9|C0WRB9_LACBU	593	17	29	180	10	39.9	0.71	Possible cell surface hydrolase
+tr|C1BK35|C1BK35_OSMMO	370	21	35	173	19	208	1e-51	Hyaluronan and proteoglycan link protein 3
+tr|C1EVZ4|C1EVZ4_BACC3	883	14	25	472	9	40.3	0.54	Collagen triple helix repeat domain protein
+tr|C1G1R4|C1G1R4_PARBD	897	15	26	270	14	42.2	0.13	Putative uncharacterized protein
+tr|C1H3V6|C1H3V6_PARBA	1089	13	27	383	49	49.2	0.001	RAC-alpha serine/threonine-protein kinase
+tr|C1H4G0|C1H4G0_PARBA	766	14	25	325	43	41.4	0.27	Putative uncharacterized protein
+tr|C1HB37|C1HB37_PARBA	914	13	23	276	16	41.1	0.28	Putative uncharacterized protein
+tr|C1M034|C1M034_SCHMA	2167	12	26	454	71	74.6	2e-11	Expressed protein OS=Schistosoma mansoni
+tr|C1M0L7|C1M0L7_SCHMA	1181	13	23	396	27	49.5	0.001	Alstrom syndrome protein, putative
+tr|C1MH36|C1MH36_MICPC	1093	14	26	345	29	42.6	0.11	Predicted protein OS=Micromonas pusilla
+tr|C1MPK6|C1MPK6_MICPC	1020	15	25	318	35	51.9	2e-04	Predicted protein (Fragment) OS=Micromonas
+tr|C1P660|C1P660_CAEEL	2603	15	25	284	29	39.5	0.94	Protein W01F3.3e, partially confirmed by
+tr|C2FAD9|C2FAD9_LACPA	2232	14	27	408	28	56.1	9e-06	Cell envelope-associated proteinase
+tr|C2HLK2|C2HLK2_LACAC	1676	14	23	300	20	47.6	0.003	Surface protein OS=Lactobacillus acidophilus
+tr|C2KUQ6|C2KUQ6_9FIRM	726	20	26	127	3	54.2	3e-05	Putative uncharacterized protein
+tr|C3XPI3|C3XPI3_BRAFL	717	13	23	225	23	67.3	4e-09	Putative uncharacterized protein
+tr|C3XPT4|C3XPT4_BRAFL	4101	12	25	466	21	43.4	0.063	Putative uncharacterized protein
+tr|C3XT87|C3XT87_BRAFL	410	21	36	85	5	121	2e-25	Putative uncharacterized protein
+tr|C3XV84|C3XV84_BRAFL	1722	15	25	124	15	50.7	3e-04	Putative uncharacterized protein
+tr|C3XXL8|C3XXL8_BRAFL	2419	14	27	322	55	61.9	2e-07	Putative uncharacterized protein
+tr|C3XYA4|C3XYA4_BRAFL	1732	15	29	220	19	61.1	3e-07	Putative uncharacterized protein
+tr|C3XZ70|C3XZ70_BRAFL	2206	17	31	191	21	41.1	0.33	Putative uncharacterized protein
+tr|C3Y0N1|C3Y0N1_BRAFL	5098	14	24	302	56	59.9	6e-07	Putative uncharacterized protein
+tr|C3Y1K4|C3Y1K4_BRAFL	2173	23	39	123	16	113	5e-23	Putative uncharacterized protein
+tr|C3Y4K5|C3Y4K5_BRAFL	165	15	29	145	23	124	3e-26	Putative uncharacterized protein (Fragment)
+tr|C3Y5D6|C3Y5D6_BRAFL	1126	16	26	278	28	52.2	1e-04	Putative uncharacterized protein
+tr|C3Y848|C3Y848_BRAFL	509	18	31	214	8	49.5	9e-04	Putative uncharacterized protein
+tr|C3Y885|C3Y885_BRAFL	657	13	24	241	13	61.1	3e-07	Putative uncharacterized protein
+tr|C3Y9M2|C3Y9M2_BRAFL	2643	16	29	325	25	88.1	2e-15	Putative uncharacterized protein (Fragment)
+tr|C3YC67|C3YC67_BRAFL	1134	15	30	270	19	86.9	5e-15	Putative uncharacterized protein
+tr|C3YC68|C3YC68_BRAFL	512	11	28	191	5	46.5	0.008	Putative uncharacterized protein
+tr|C3YE23|C3YE23_BRAFL	1081	15	25	210	5	41.1	0.31	Putative uncharacterized protein
+tr|C3YGB1|C3YGB1_BRAFL	2137	14	25	364	70	44.9	0.022	Putative uncharacterized protein
+tr|C3YRM0|C3YRM0_BRAFL	69	27	41	66	2	94.2	3e-17	Putative uncharacterized protein
+tr|C3YRP6|C3YRP6_BRAFL	643	13	27	183	34	129	9e-28	Putative uncharacterized protein
+tr|C3YS03|C3YS03_BRAFL	2671	13	24	335	47	63.4	5e-08	Putative uncharacterized protein
+tr|C3Z013|C3Z013_BRAFL	1398	14	23	151	4	46.8	0.006	Putative uncharacterized protein
+tr|C3Z142|C3Z142_BRAFL	57	21	40	52	3	88.8	1e-15	Putative uncharacterized protein
+tr|C3Z4D8|C3Z4D8_BRAFL	2582	14	24	304	45	40.7	0.44	Putative uncharacterized protein
+tr|C3Z7T9|C3Z7T9_BRAFL	642	15	25	316	21	52.2	1e-04	Putative uncharacterized protein
+tr|C3Z7V9|C3Z7V9_BRAFL	2880	13	29	421	38	54.5	3e-05	Putative uncharacterized protein
+tr|C3Z9V8|C3Z9V8_BRAFL	1301	12	26	336	25	54.5	3e-05	Putative uncharacterized protein
+tr|C3ZD03|C3ZD03_BRAFL	988	16	31	213	7	50.7	4e-04	Putative uncharacterized protein
+tr|C3ZD26|C3ZD26_BRAFL	643	18	32	107	20	105	2e-20	Putative uncharacterized protein
+tr|C3ZE57|C3ZE57_BRAFL	1602	12	19	378	40	49.9	7e-04	Putative uncharacterized protein
+tr|C3ZFN3|C3ZFN3_BRAFL	358	13	25	213	7	45.7	0.013	Putative uncharacterized protein
+tr|C3ZRR6|C3ZRR6_BRAFL	247	13	25	245	7	47.6	0.003	Putative uncharacterized protein
+tr|C3ZTJ2|C3ZTJ2_BRAFL	468	11	26	299	23	49.2	0.001	Putative uncharacterized protein
+tr|C3ZUC3|C3ZUC3_BRAFL	179	16	31	152	13	152	8e-35	Putative uncharacterized protein (Fragment)
+tr|C3ZUH4|C3ZUH4_BRAFL	1485	18	28	185	3	52.2	1e-04	Putative uncharacterized protein
+tr|C3ZUI3|C3ZUI3_BRAFL	783	15	27	160	17	163	4e-38	Putative uncharacterized protein
+tr|C3ZW78|C3ZW78_BRAFL	615	18	30	265	34	50.7	4e-04	Putative uncharacterized protein
+tr|C3ZWE5|C3ZWE5_BRAFL	66	23	40	62	2	90.8	3e-16	Putative uncharacterized protein
+tr|C3ZWM3|C3ZWM3_BRAFL	561	17	33	167	12	40.7	0.37	Putative uncharacterized protein
+tr|C3ZYF8|C3ZYF8_BRAFL	176	15	27	147	19	122	9e-26	Putative uncharacterized protein (Fragment)
+tr|C4F2E4|C4F2E4_HAEIN	1774	13	25	424	44	54.2	4e-05	Recombination protein F OS=Haemophilus
+tr|C4J5W9|C4J5W9_MAIZE	561	13	22	334	18	41.8	0.18	Putative uncharacterized protein OS=Zea mays
+tr|C4JDZ0|C4JDZ0_UNCRE	1032	12	25	392	17	84.2	3e-14	Predicted protein OS=Uncinocarpus reesii
+tr|C4JE66|C4JE66_UNCRE	716	13	27	338	3	41.1	0.34	Predicted protein OS=Uncinocarpus reesii
+tr|C4JQF5|C4JQF5_UNCRE	1077	14	28	413	25	40.7	0.37	Predicted protein OS=Uncinocarpus reesii
+tr|C4JSD7|C4JSD7_UNCRE	1206	13	23	172	12	43.0	0.091	Predicted protein OS=Uncinocarpus reesii
+tr|C4LZJ6|C4LZJ6_ENTHI	1575	16	28	334	27	49.9	7e-04	Putative uncharacterized protein
+tr|C4M0W3|C4M0W3_ENTHI	722	14	22	108	28	52.2	1e-04	Lysozyme, putative OS=Entamoeba histolytica
+tr|C4M3E4|C4M3E4_ENTHI	954	14	28	413	59	42.6	0.11	Serine-threonine rich protein OS=Entamoeba
+tr|C4M7E4|C4M7E4_ENTHI	501	12	25	323	19	51.5	2e-04	Putative uncharacterized protein
+tr|C4Q4V9|C4Q4V9_SCHMA	1424	13	27	481	43	62.6	1e-07	Putative uncharacterized protein
+tr|C4QB23|C4QB23_SCHMA	1009	15	31	330	20	56.5	8e-06	Putative uncharacterized protein
+tr|C4QKJ2|C4QKJ2_SCHMA	1726	15	25	271	55	55.3	2e-05	Tho2 protein, putative OS=Schistosoma mansoni
+tr|C4QVR8|C4QVR8_PICPG	857	13	25	372	6	41.8	0.20	Mucin family member OS=Pichia pastoris
+tr|C4R3A8|C4R3A8_PICPG	724	11	23	329	24	43.8	0.053	Putative uncharacterized protein OS=Pichia
+tr|C4R4Y0|C4R4Y0_PICPG	1743	16	30	104	6	43.8	0.044	RNA polymerase II largest subunit B220
+tr|C4V951|C4V951_NOSCE	693	12	28	359	7	47.2	0.005	Putative uncharacterized protein OS=Nosema
+tr|C4WB48|C4WB48_STAWA	959	13	34	218	4	45.3	0.015	Putative Ig domain protein (Fragment)
+tr|C4XVQ8|C4XVQ8_CLAL4	816	16	30	302	24	66.9	5e-09	Putative uncharacterized protein
+tr|C4XXK1|C4XXK1_CLAL4	1321	13	26	269	28	41.4	0.24	Putative uncharacterized protein
+tr|C4XZ24|C4XZ24_CLAL4	2164	13	31	370	11	51.9	2e-04	Putative uncharacterized protein OS=Clavispora
+tr|C4Y0G0|C4Y0G0_CLAL4	1343	14	26	463	39	40.7	0.44	Putative uncharacterized protein OS=Clavispora
+tr|C4Y6X9|C4Y6X9_CLAL4	993	12	26	459	33	39.5	0.99	Putative uncharacterized protein
+tr|C4Y8G3|C4Y8G3_CLAL4	653	13	27	309	6	66.5	6e-09	Putative uncharacterized protein
+tr|C4Y9G0|C4Y9G0_CLAL4	1008	13	25	342	25	44.1	0.032	Putative uncharacterized protein
+tr|C4YAK3|C4YAK3_CLAL4	977	11	23	198	5	40.7	0.43	Putative uncharacterized protein
+tr|C4YHB1|C4YHB1_CANAW	778	13	26	435	29	49.5	8e-04	Predicted protein OS=Candida albicans
+tr|C4YKM2|C4YKM2_CANAW	2013	12	26	498	3	79.6	8e-13	Predicted protein OS=Candida albicans
+tr|C4YNG0|C4YNG0_CANAW	1526	12	28	458	47	42.2	0.15	Putative uncharacterized protein OS=Candida
+tr|C4YSW7|C4YSW7_CANAW	1315	14	27	427	29	44.1	0.036	Putative uncharacterized protein OS=Candida
+tr|C5DB87|C5DB87_LACTC	1288	12	23	483	16	54.2	3e-05	KLTH0A00550p OS=Lachancea thermotolerans
+tr|C5DBZ4|C5DBZ4_LACTC	1071	12	29	417	44	41.1	0.28	KLTH0A06578p OS=Lachancea thermotolerans
+tr|C5DFV2|C5DFV2_LACTC	1222	13	24	401	8	52.2	1e-04	KLTH0D18194p OS=Lachancea thermotolerans
+tr|C5DLU8|C5DLU8_LACTC	2085	13	30	468	8	68.4	2e-09	KLTH0G03696p OS=Lachancea thermotolerans
+tr|C5DW73|C5DW73_ZYGRC	2385	11	27	467	28	44.9	0.019	ZYRO0D12496p OS=Zygosaccharomyces rouxii
+tr|C5ENQ1|C5ENQ1_9FIRM	2232	12	24	276	29	47.2	0.005	Putative uncharacterized protein
+tr|C5ENQ2|C5ENQ2_9FIRM	2168	12	25	336	19	53.8	4e-05	Predicted protein OS=Clostridiales bacterium
+tr|C5F9T0|C5F9T0_LACPA	2178	12	28	437	62	47.6	0.003	Cell envelope-proteinase PrtR OS=Lactobacillus
+tr|C5FG53|C5FG53_NANOT	935	15	26	427	27	47.2	0.004	Basic proline-rich protein OS=Nannizzia otae
+tr|C5FUZ4|C5FUZ4_NANOT	553	13	24	305	6	42.2	0.15	Viral protein TPX OS=Nannizzia otae (strain
+tr|C5FXF2|C5FXF2_NANOT	784	10	24	417	40	43.0	0.086	Rho-GTPase-activating protein 5 OS=Nannizzia
+tr|C5G0C7|C5G0C7_NANOT	663	15	26	415	34	41.8	0.16	Putative uncharacterized protein
+tr|C5GA91|C5GA91_AJEDR	1943	12	25	431	43	42.2	0.14	PT repeat family protein OS=Ajellomyces
+tr|C5GD26|C5GD26_AJEDR	764	13	23	408	49	42.6	0.12	Cell cycle inhibitor Nif1 OS=Ajellomyces
+tr|C5GMM7|C5GMM7_AJEDR	726	12	23	346	23	46.8	0.005	Putative uncharacterized protein
+tr|C5GUN9|C5GUN9_AJEDR	1317	14	27	301	29	42.2	0.14	Putative uncharacterized protein
+tr|C5GUT9|C5GUT9_AJEDR	1268	15	27	410	33	56.9	6e-06	GRAM domain-containing protein
+tr|C5JAC2|C5JAC2_MYCAA	488	14	25	297	15	43.4	0.070	Variable surface lipoprotein D1 (VpmaD1)
+tr|C5JCN1|C5JCN1_AJEDS	822	16	27	277	26	57.6	3e-06	Chitinase OS=Ajellomyces dermatitidis
+tr|C5JKR9|C5JKR9_AJEDS	806	13	21	330	30	42.6	0.11	Putative uncharacterized protein
+tr|C5K7M6|C5K7M6_9ALVE	1081	14	20	279	32	40.3	0.50	Tyrosine-protein phosphatase non-receptor
+tr|C5K7T3|C5K7T3_9ALVE	300	13	27	293	2	44.9	0.021	Putative uncharacterized protein
+tr|C5K922|C5K922_9ALVE	321	14	26	294	4	45.7	0.012	Putative uncharacterized protein (Fragment)
+tr|C5KMJ4|C5KMJ4_9ALVE	494	13	23	438	16	46.8	0.006	A-kinase anchor protein, putative
+tr|C5KMJ5|C5KMJ5_9ALVE	722	13	25	480	7	49.2	0.001	Putative uncharacterized protein
+tr|C5KMJ7|C5KMJ7_9ALVE	367	16	28	347	1	51.1	3e-04	Transmembrane protein, putative OS=Perkinsus
+tr|C5KMJ8|C5KMJ8_9ALVE	736	14	25	458	16	53.8	5e-05	Cytadherence high molecular weight protein,
+tr|C5KMK0|C5KMK0_9ALVE	1322	16	26	452	9	63.0	7e-08	Mucin-2, putative OS=Perkinsus marinus ATCC
+tr|C5KNL4|C5KNL4_9ALVE	391	13	23	203	18	41.1	0.34	Microneme protein 12, putative OS=Perkinsus
+tr|C5KU63|C5KU63_9ALVE	1851	15	25	486	33	103	7e-20	Putative uncharacterized protein OS=Perkinsus
+tr|C5L0G5|C5L0G5_9ALVE	913	13	24	416	21	46.8	0.005	Putative uncharacterized protein
+tr|C5L3S4|C5L3S4_9ALVE	1378	15	24	296	19	43.0	0.071	Putative uncharacterized protein OS=Perkinsus
+tr|C5LAM6|C5LAM6_9ALVE	730	11	23	400	4	40.7	0.35	Putative uncharacterized protein
+tr|C5LBW0|C5LBW0_9ALVE	366	15	22	200	4	44.5	0.029	GRA11, putative OS=Perkinsus marinus ATCC
+tr|C5LEN6|C5LEN6_9ALVE	452	15	24	275	3	43.8	0.041	Protein PARM-1, putative OS=Perkinsus
+tr|C5LHP1|C5LHP1_9ALVE	728	12	24	462	12	41.4	0.26	Putative uncharacterized protein
+tr|C5LWG9|C5LWG9_9ALVE	1396	13	25	455	49	64.2	3e-08	Putative uncharacterized protein OS=Perkinsus
+tr|C5LXE3|C5LXE3_9ALVE	538	16	26	434	30	53.4	7e-05	Dentin matrix acidic phosphoprotein 1,
+tr|C5LZE9|C5LZE9_9ALVE	854	16	27	172	9	41.4	0.23	Putative uncharacterized protein
+tr|C5M338|C5M338_CANTT	929	13	24	340	2	64.2	3e-08	Predicted protein OS=Candida tropicalis
+tr|C5M4F1|C5M4F1_CANTT	2954	15	23	386	54	43.0	0.086	Putative uncharacterized protein OS=Candida
+tr|C5M4Q2|C5M4Q2_CANTT	724	12	28	433	17	44.5	0.029	Predicted protein OS=Candida tropicalis
+tr|C5M598|C5M598_CANTT	1088	15	25	341	21	46.8	0.005	Putative uncharacterized protein (Fragment)
+tr|C5M5Z1|C5M5Z1_CANTT	1628	14	27	456	13	42.2	0.12	Predicted protein OS=Candida tropicalis
+tr|C5M6N8|C5M6N8_CANTT	932	12	26	359	39	45.7	0.011	Predicted protein OS=Candida tropicalis
+tr|C5M862|C5M862_CANTT	652	12	25	299	11	44.5	0.026	Predicted protein (Fragment) OS=Candida
+tr|C5M9N9|C5M9N9_CANTT	1038	15	29	291	25	41.8	0.19	Predicted protein OS=Candida tropicalis
+tr|C5M9R7|C5M9R7_CANTT	1801	13	27	434	54	51.5	2e-04	Predicted protein OS=Candida tropicalis
+tr|C5M9Y1|C5M9Y1_CANTT	1024	11	21	417	14	54.9	2e-05	Putative uncharacterized protein OS=Candida
+tr|C5MDC3|C5MDC3_CANTT	925	12	28	339	11	41.1	0.31	Predicted protein OS=Candida tropicalis
+tr|C5MDN5|C5MDN5_CANTT	1403	13	22	447	12	42.2	0.15	Putative uncharacterized protein OS=Candida
+tr|C5MFU6|C5MFU6_CANTT	939	14	32	344	12	44.1	0.040	Putative uncharacterized protein OS=Candida
+tr|C5MFV5|C5MFV5_CANTT	1797	14	27	437	5	77.7	3e-12	Putative uncharacterized protein OS=Candida
+tr|C5MFV8|C5MFV8_CANTT	586	13	27	429	4	71.5	2e-10	Putative uncharacterized protein OS=Candida
+tr|C5MH23|C5MH23_CANTT	1032	19	31	186	8	60.7	3e-07	Predicted protein OS=Candida tropicalis
+tr|C5P3X3|C5P3X3_COCP7	751	13	24	352	20	39.9	0.72	Putative uncharacterized protein
+tr|C5P748|C5P748_COCP7	2054	13	24	364	63	63.8	4e-08	SNF2 family N-terminal domain containing
+tr|C5P806|C5P806_COCP7	2058	13	22	324	32	40.3	0.48	Myb family transcription factor
+tr|C5PA27|C5PA27_COCP7	682	11	25	451	30	51.1	3e-04	Extracellular serine-threonine rich protein,
+tr|C5PC78|C5PC78_COCP7	1569	11	23	276	33	57.6	3e-06	SMC family, C-terminal domain containing
+tr|C5PZ54|C5PZ54_STAAU	2099	13	26	383	23	51.5	2e-04	FmtB protiein OS=Staphylococcus aureus subsp.
+tr|C5Q8E0|C5Q8E0_STAEP	803	10	25	363	17	40.7	0.42	Collagen family triple helix repeat protein
+tr|C5QRU2|C5QRU2_STAEP	752	12	26	441	21	39.5	0.88	Triblock protein copolymer TR8T
+tr|C5XLW4|C5XLW4_SORBI	1113	10	21	362	32	41.8	0.18	Putative uncharacterized protein Sb03g002950
+tr|C5XTU7|C5XTU7_SORBI	3261	12	25	432	16	50.7	4e-04	Putative uncharacterized protein Sb04g002640
+tr|C5ZGM0|C5ZGM0_BURPS	1186	15	28	463	10	66.9	6e-09	Hemagglutinin family protein OS=Burkholderia
+tr|C6AA19|C6AA19_BARGA	1212	13	23	241	28	63.0	7e-08	Autotransporter OS=Bartonella grahamii
+tr|C6GHV6|C6GHV6_DANRE	2508	26	43	120	10	155	1e-35	Stabilin 2 OS=Danio rerio GN=stab2 PE=2 SV=1
+tr|C6HGE5|C6HGE5_AJECH	1279	13	24	407	52	40.7	0.36	EF hand protein OS=Ajellomyces capsulata
+tr|C6LIE0|C6LIE0_9FIRM	551	12	25	129	2	41.1	0.35	Putative uncharacterized protein
+tr|C6R375|C6R375_9MICC	938	12	23	205	10	44.9	0.021	Putative secreted protein OS=Rothia
+tr|C6U5X9|C6U5X9_BURPS	642	11	25	329	9	43.4	0.064	Hemagglutinin family protein OS=Burkholderia
+tr|C6VP25|C6VP25_LACPJ	817	16	26	204	16	49.2	0.001	Serine-type D-Ala-D-Ala carboxypeptidase
+tr|C6WMI8|C6WMI8_ACTMD	1291	12	22	400	56	63.8	5e-08	Putative uncharacterized protein
+tr|C7G031|C7G031_DICDI	616	11	24	456	31	48.0	0.002	Putative uncharacterized protein
+tr|C7HGK2|C7HGK2_CLOTM	678	14	22	244	36	52.6	9e-05	Type 3a cellulose-binding domain protein
+tr|C7NGP9|C7NGP9_KYTSD	1388	12	22	336	45	41.8	0.20	Fe-S oxidoreductase OS=Kytococcus sedentarius
+tr|C7NIE5|C7NIE5_KYTSD	951	12	22	227	4	41.4	0.22	Protein kinase family protein with PASTA
+tr|C7NIV3|C7NIV3_KYTSD	454	17	27	129	3	42.2	0.13	Esterase/lipase OS=Kytococcus sedentarius
+tr|C7NNK6|C7NNK6_HALUD	847	16	29	248	20	48.4	0.002	Putative uncharacterized protein
+tr|C7NWS6|C7NWS6_HALMD	848	11	24	328	23	48.0	0.002	Putative uncharacterized protein
+tr|C7PCW1|C7PCW1_CHIPD	3471	12	29	441	41	45.7	0.013	Conserved repeat domain protein
+tr|C7QBJ0|C7QBJ0_CATAD	834	15	23	165	19	49.5	8e-04	DNA-directed DNA polymerase OS=Catenulispora
+tr|C7QE74|C7QE74_CATAD	946	13	24	465	52	43.8	0.048	Peptidase C60 sortase A and B
+tr|C7VPG0|C7VPG0_ENTFA	734	15	28	303	8	45.3	0.016	Putative uncharacterized protein
+tr|C7YJJ9|C7YJJ9_NECH7	662	12	22	341	9	43.4	0.063	Putative uncharacterized protein OS=Nectria
+tr|C7YKS5|C7YKS5_NECH7	2012	12	24	385	32	43.0	0.083	Putative uncharacterized protein OS=Nectria
+tr|C7YNY0|C7YNY0_NECH7	1578	15	27	403	56	47.2	0.004	Putative uncharacterized protein OS=Nectria
+tr|C7YQ66|C7YQ66_NECH7	1188	18	32	224	29	39.9	0.62	Putative uncharacterized protein OS=Nectria
+tr|C7YUE3|C7YUE3_NECH7	507	13	25	282	8	47.2	0.005	Predicted protein OS=Nectria haematococca
+tr|C7YW39|C7YW39_NECH7	971	14	27	435	9	48.0	0.002	Putative uncharacterized protein OS=Nectria
+tr|C7Z000|C7Z000_NECH7	1715	14	26	447	31	41.1	0.32	Putative uncharacterized protein OS=Nectria
+tr|C7Z2E7|C7Z2E7_NECH7	1118	16	31	183	19	42.2	0.12	Predicted protein OS=Nectria haematococca
+tr|C7Z2G1|C7Z2G1_NECH7	1213	15	28	323	23	45.7	0.011	Predicted protein OS=Nectria haematococca
+tr|C7ZDC2|C7ZDC2_NECH7	882	13	22	209	26	42.2	0.13	Putative uncharacterized protein OS=Nectria
+tr|C7ZI32|C7ZI32_NECH7	379	14	24	234	14	40.3	0.57	Putative uncharacterized protein OS=Nectria
+tr|C7ZNI1|C7ZNI1_NECH7	1228	14	29	374	35	41.4	0.22	Putative uncharacterized protein OS=Nectria
+tr|C8V433|C8V433_EMENI	668	13	28	428	12	42.6	0.11	Putative uncharacterized protein
+tr|C8VDJ0|C8VDJ0_EMENI	1237	13	26	350	9	47.2	0.004	Nuclear pore complex protein An-Sac3
+tr|C8VEJ7|C8VEJ7_EMENI	483	13	24	206	10	45.3	0.015	Cell wall serine-threonine-rich
+tr|C8VJ54|C8VJ54_EMENI	730	15	26	280	19	61.5	2e-07	Cell wall protein, putative (AFU_orthologue;
+tr|C8VM58|C8VM58_EMENI	1309	12	24	323	42	44.1	0.032	Putative uncharacterized protein
+tr|C8VPN8|C8VPN8_EMENI	881	14	25	344	40	44.1	0.034	GPI anchored protein, putative
+tr|C8VQN4|C8VQN4_EMENI	798	18	29	301	62	151	2e-34	Putative uncharacterized protein
+tr|C9JNC2|C9JNC2_HUMAN	2227	14	24	364	63	42.6	0.098	Uncharacterized protein OS=Homo sapiens PE=4
+tr|C9MB71|C9MB71_HAEIN	1780	13	25	354	19	56.5	6e-06	Isopropylmalate isomerase large subunit
+tr|C9S961|C9S961_VERA1	513	11	22	290	4	43.8	0.048	Putative uncharacterized protein
+tr|C9SFP0|C9SFP0_VERA1	1521	12	22	391	44	43.8	0.042	Putative uncharacterized protein
+tr|C9ZXB7|C9ZXB7_TRYBG	994	14	32	429	30	54.5	3e-05	T. brucei spp.-specific protein
+tr|D0A0Q2|D0A0Q2_TRYBG	2849	12	26	473	9	54.2	4e-05	Putative uncharacterized protein (Fragment)
+tr|D0A0Q7|D0A0Q7_TRYBG	2166	12	26	498	9	58.8	2e-06	Putative uncharacterized protein (Fragment)
+tr|D0MUH2|D0MUH2_PHYIN	2641	15	27	234	17	41.1	0.27	COPII coat assembly protein SEC16, putative
+tr|D0N2H6|D0N2H6_PHYIN	1046	14	26	465	2	48.0	0.003	Putative uncharacterized protein
+tr|D0N6W8|D0N6W8_PHYIN	405	18	25	114	4	48.8	0.001	Endoglucanase, putative OS=Phytophthora
+tr|D0N8F2|D0N8F2_PHYIN	1445	15	27	379	36	55.3	2e-05	Mucin-like protein OS=Phytophthora infestans
+tr|D0NCR4|D0NCR4_PHYIN	1489	16	24	217	16	54.2	4e-05	Mucin-like protein OS=Phytophthora infestans
+tr|D0NR39|D0NR39_PHYIN	782	11	24	418	30	42.6	0.10	Cyst germination specific acidic repeat
+tr|D0NS53|D0NS53_PHYIN	1155	14	27	431	34	46.8	0.006	Mucin-like protein OS=Phytophthora infestans
+tr|D0NUG8|D0NUG8_PHYIN	887	16	31	166	17	39.5	0.82	Transglutaminase elicitor, putative
+tr|D0NZV7|D0NZV7_PHYIN	1185	14	22	217	30	55.7	1e-05	Putative uncharacterized protein
+tr|D0P371|D0P371_PHYIN	1858	11	22	271	15	65.7	1e-08	DNA-directed RNA polymerase II largest subunit
+tr|D0PPD9|D0PPD9_MHV68	451	12	23	360	9	39.5	0.78	Type 1 envelope glycoprotein gp350 OS=Wood
+tr|D0UGE6|D0UGE6_DROME	2819	14	25	428	38	53.8	5e-05	Tenectin isoform 1 OS=Drosophila melanogaster
+tr|D1A9F5|D1A9F5_THECD	1306	11	20	311	44	43.4	0.060	Glycosyl transferase family 51
+tr|D1ABD7|D1ABD7_THECD	763	13	20	369	21	49.5	0.001	Putative uncharacterized protein
+tr|D1AE63|D1AE63_THECD	1003	13	24	375	44	44.5	0.030	Peptidase S11 D-alanyl-D-alanine
+tr|D1NHZ1|D1NHZ1_CLOTM	1790	14	25	441	31	123	7e-26	Cellulosome anchoring protein cohesin region
+tr|D1RBP4|D1RBP4_9CHLA	806	13	26	350	39	57.2	4e-06	Putative uncharacterized protein
+tr|D1XH75|D1XH75_9ACTO	13652	12	19	307	39	51.5	2e-04	Putative uncharacterized protein
+tr|D1XLJ3|D1XLJ3_9ACTO	3841	16	29	278	52	53.4	5e-05	Putative uncharacterized protein
+tr|D1YLL3|D1YLL3_9LACO	1929	14	26	260	40	56.5	7e-06	LPXTG-motif cell wall anchor domain protein
+tr|D1Z549|D1Z549_SORMK	1275	17	31	177	11	47.2	0.004	Whole genome shotgun sequence assembly,
+tr|D1Z6Q3|D1Z6Q3_SORMK	881	15	28	427	89	53.8	4e-05	Whole genome shotgun sequence assembly,
+tr|D1ZCM6|D1ZCM6_SORMK	775	12	23	399	41	43.0	0.075	Whole genome shotgun sequence assembly,
+tr|D1ZJ87|D1ZJ87_SORMK	11106	14	27	422	60	39.9	0.77	Whole genome shotgun sequence assembly,
+tr|D1ZL23|D1ZL23_SORMK	1041	14	27	311	32	44.1	0.034	Whole genome shotgun sequence assembly,
+tr|D1ZRE8|D1ZRE8_SORMK	1655	14	27	458	45	49.2	0.001	Whole genome shotgun sequence assembly,
+tr|D2B846|D2B846_STRRD	632	10	21	360	14	48.0	0.003	Putative uncharacterized protein
+tr|D2BAK4|D2BAK4_STRRD	819	10	21	286	38	40.3	0.51	Putative uncharacterized protein
+tr|D2EGR0|D2EGR0_9EURY	1394	11	24	368	35	54.5	3e-05	Putative uncharacterized protein
+tr|D2EGX5|D2EGX5_PEDAC	3479	10	29	470	8	46.8	0.005	Predicted protein OS=Pediococcus acidilactici
+tr|D2H4Z1|D2H4Z1_AILME	2496	15	28	443	52	86.5	6e-15	Putative uncharacterized protein
+tr|D2H503|D2H503_AILME	1264	15	25	246	26	42.2	0.15	Putative uncharacterized protein (Fragment)
+tr|D2HAT3|D2HAT3_AILME	2569	22	36	143	19	150	3e-34	Putative uncharacterized protein (Fragment)
+tr|D2HCD6|D2HCD6_AILME	2292	14	25	564	70	209	5e-52	Putative uncharacterized protein (Fragment)
+tr|D2HD96|D2HD96_AILME	2992	13	27	471	45	51.5	2e-04	Putative uncharacterized protein (Fragment)
+tr|D2HEZ9|D2HEZ9_AILME	730	74	81	727	4	734	0.0	Putative uncharacterized protein (Fragment)
+tr|D2HIN8|D2HIN8_AILME	596	12	21	345	28	43.0	0.090	Putative uncharacterized protein (Fragment)
+tr|D2HWZ9|D2HWZ9_AILME	2054	14	26	415	22	66.1	8e-09	Putative uncharacterized protein
+tr|D2HY16|D2HY16_AILME	3371	15	27	458	52	184	2e-44	Putative uncharacterized protein (Fragment)
+tr|D2HYW8|D2HYW8_AILME	413	11	20	181	26	42.6	0.11	Putative uncharacterized protein (Fragment)
+tr|D2I4K7|D2I4K7_AILME	424	13	22	258	20	43.8	0.048	Putative uncharacterized protein
+tr|D2I716|D2I716_AILME	2401	14	21	407	0	43.8	0.042	Putative uncharacterized protein (Fragment)
+tr|D2JD13|D2JD13_STAEP	1211	11	24	256	20	56.5	6e-06	Putative uncharacterized protein
+tr|D2KNE1|D2KNE1_ANAPH	1523	16	28	264	29	62.6	1e-07	AnkA OS=Anaplasma phagocytophilum GN=ankA PE=4
+tr|D2PNZ5|D2PNZ5_KRIFD	1905	11	24	386	32	44.9	0.020	Putative uncharacterized protein
+tr|D2PXK6|D2PXK6_KRIFD	1219	13	25	413	63	39.9	0.75	AMP-dependent synthetase and ligase
+tr|D2PYV8|D2PYV8_KRIFD	805	12	23	339	28	40.7	0.35	Serine/threonine protein kinase OS=Kribbella
+tr|D2Q4J2|D2Q4J2_KRIFD	1807	16	25	446	41	60.3	5e-07	Putative uncharacterized protein
+tr|D2R2N7|D2R2N7_PIRSD	1356	11	23	424	27	58.0	2e-06	Putative uncharacterized protein OS=Pirellula
+tr|D2RPI1|D2RPI1_HALTV	762	13	26	415	23	44.1	0.033	AAA ATPase containing von Willebrand factor
+tr|D2SDL3|D2SDL3_GEOOG	614	14	22	257	30	41.4	0.26	Serine/threonine protein kinase with PASTA
+tr|D2V414|D2V414_NAEGR	422	14	26	268	3	55.3	2e-05	Predicted protein OS=Naegleria gruberi
+tr|D2VAM9|D2VAM9_NAEGR	701	15	26	213	32	53.8	4e-05	Predicted protein OS=Naegleria gruberi
+tr|D2VD89|D2VD89_NAEGR	1765	13	32	397	23	55.7	1e-05	Predicted protein OS=Naegleria gruberi
+tr|D2VED3|D2VED3_NAEGR	1618	14	28	439	35	41.8	0.17	Predicted protein OS=Naegleria gruberi
+tr|D2VNK8|D2VNK8_NAEGR	1757	11	25	147	13	49.5	0.001	RNA polymerase II OS=Naegleria gruberi
+tr|D2VUD4|D2VUD4_NAEGR	5213	12	27	444	49	43.4	0.062	Predicted protein OS=Naegleria gruberi
+tr|D2VZ06|D2VZ06_NAEGR	1253	13	24	386	55	50.7	4e-04	Kinesin-7 OS=Naegleria gruberi
+tr|D2ZK48|D2ZK48_9ENTR	2916	15	28	338	35	67.3	4e-09	Putative hemagglutination activity domain
+tr|D3AXV4|D3AXV4_POLPA	850	14	27	308	30	43.0	0.090	Pleckstrin domain-containing protein
+tr|D3AXY6|D3AXY6_POLPA	2047	15	27	323	32	48.0	0.003	WD40-like domain-containing protein
+tr|D3AZL1|D3AZL1_POLPA	1419	12	21	171	23	41.1	0.29	RING zinc finger-containing protein
+tr|D3B1E4|D3B1E4_POLPA	2872	11	22	411	42	58.0	3e-06	Putative uncharacterized protein
+tr|D3B9J6|D3B9J6_POLPA	3069	14	21	330	25	53.4	6e-05	Putative uncharacterized protein
+tr|D3BJZ9|D3BJZ9_POLPA	1805	14	27	457	46	41.1	0.28	Putative uncharacterized protein
+tr|D3BK00|D3BK00_POLPA	2944	10	25	466	9	43.4	0.059	Putative uncharacterized protein
+tr|D3BKG0|D3BKG0_POLPA	896	10	21	362	9	48.4	0.002	Putative uncharacterized protein
+tr|D3BN84|D3BN84_POLPA	431	18	27	206	9	41.1	0.28	Spore coat protein OS=Polysphondylium
+tr|D3BQP8|D3BQP8_POLPA	817	13	27	342	22	43.0	0.084	cAMP phosphodiesterase OS=Polysphondylium
+tr|D3BTC6|D3BTC6_POLPA	699	16	27	371	9	49.5	8e-04	Putative uncharacterized protein
+tr|D3QG04|D3QG04_STALH	2886	13	24	471	44	41.4	0.21	Putative uncharacterized protein
+tr|D3YU90|D3YU90_MOUSE	1168	13	23	259	19	51.9	2e-04	Uncharacterized protein OS=Mus musculus
+tr|D3Z9C5|D3Z9C5_RAT	618	61	70	438	11	485	e-135	Uncharacterized protein OS=Rattus norvegicus
+tr|D3Z9N6|D3Z9N6_RAT	1621	16	27	535	78	210	2e-52	Uncharacterized protein OS=Rattus norvegicus
+tr|D3ZAU0|D3ZAU0_RAT	3799	17	28	260	15	66.9	5e-09	Uncharacterized protein OS=Rattus norvegicus
+tr|D3ZD19|D3ZD19_RAT	343	31	46	133	5	141	1e-31	Extracellular link domain-containing 1
+tr|D3ZFC3|D3ZFC3_RAT	656	20	30	203	20	236	5e-60	Uncharacterized protein OS=Rattus norvegicus
+tr|D3ZHT2|D3ZHT2_RAT	1957	14	29	428	31	62.6	1e-07	Uncharacterized protein OS=Rattus norvegicus
+tr|D3ZPK4|D3ZPK4_RAT	1436	14	25	347	43	63.8	4e-08	Putative uncharacterized protein
+tr|D3ZQU7|D3ZQU7_RAT	717	11	24	225	16	52.2	1e-04	RCG34279 OS=Rattus norvegicus GN=Gp1ba PE=4
+tr|D3ZWH1|D3ZWH1_RAT	2572	23	40	143	19	150	4e-34	Uncharacterized protein OS=Rattus norvegicus
+tr|D4A0Z2|D4A0Z2_RAT	2841	17	28	433	38	80.0	5e-13	Uncharacterized protein OS=Rattus norvegicus
+tr|D4A3N8|D4A3N8_RAT	2132	15	28	408	40	102	1e-19	Uncharacterized protein OS=Rattus norvegicus
+tr|D4A7Y1|D4A7Y1_RAT	2157	13	25	539	68	181	1e-43	Uncharacterized protein OS=Rattus norvegicus
+tr|D4ADG1|D4ADG1_RAT	2862	13	26	392	18	42.6	0.11	Uncharacterized protein OS=Rattus norvegicus
+tr|D4AKD7|D4AKD7_ARTBC	1315	13	27	304	24	60.3	5e-07	Leucine permease transcriptional regulator
+tr|D4AKR3|D4AKR3_ARTBC	1480	18	32	291	64	113	6e-23	Putative uncharacterized protein
+tr|D4AM13|D4AM13_ARTBC	895	16	31	131	1	52.6	1e-04	Putative uncharacterized protein
+tr|D4AQ61|D4AQ61_ARTBC	800	12	25	343	28	39.9	0.73	Rho GTPase activator (Sac7), putative
+tr|D4B074|D4B074_ARTBC	1224	11	19	438	18	42.2	0.12	Putative uncharacterized protein
+tr|D4D124|D4D124_TRIVH	1041	16	24	269	29	60.3	5e-07	Putative uncharacterized protein
+tr|D4D4K1|D4D4K1_TRIVH	679	11	21	264	31	44.9	0.020	Putative uncharacterized protein
+tr|D4D7A6|D4D7A6_TRIVH	698	10	25	257	5	43.4	0.054	Putative uncharacterized protein
+tr|D4D8I0|D4D8I0_TRIVH	1400	12	25	314	12	46.8	0.005	Putative uncharacterized protein
+tr|D4DAA3|D4DAA3_TRIVH	1353	14	24	271	31	47.6	0.003	Putative uncharacterized protein
+tr|D4FLJ7|D4FLJ7_STAEP	2491	13	24	477	36	44.1	0.032	Cell wall associated biofilm protein
+tr|D4MI88|D4MI88_9FIRM	1072	12	23	329	32	51.5	2e-04	Putative uncharacterized protein
+tr|D4YJM7|D4YJM7_9MICO	1591	13	24	333	16	50.7	4e-04	Probable cell surface protein
+tr|D5A5I0|D5A5I0_SPIPL	2218	11	21	433	22	45.3	0.015	Putative uncharacterized protein
+tr|D5AFN2|D5AFN2_STRGZ	767	14	25	323	33	45.3	0.017	Surface protein from Gram-positive cocci,
+tr|D5AFU8|D5AFU8_STRGZ	779	11	22	224	29	47.2	0.004	Translation initiation factor 2 (IF-2;
+tr|D5GIH6|D5GIH6_9PEZI	1241	13	23	436	57	53.8	4e-05	Whole genome shotgun sequence assembly,
+tr|D5SNM6|D5SNM6_PLAL2	1536	10	24	479	41	46.5	0.008	Putative uncharacterized protein
+tr|D5T4W6|D5T4W6_LEUKI	878	12	27	250	13	63.4	6e-08	Cell surface protein OS=Leuconostoc kimchii
+tr|D5TAQ2|D5TAQ2_LEGP2	399	15	27	180	4	40.7	0.37	Putative uncharacterized protein
+tr|D6RGZ6|D6RGZ6_HUMAN	1240	13	25	612	100	194	2e-47	Uncharacterized protein OS=Homo sapiens
+tr|D6RLH7|D6RLH7_COPC7	1454	12	24	126	3	41.4	0.26	Putative uncharacterized protein
+tr|D6RN16|D6RN16_COPC7	2855	12	25	316	22	39.9	0.71	Putative uncharacterized protein
+tr|D6RQ27|D6RQ27_COPC7	1846	12	25	479	21	41.1	0.28	Putative uncharacterized protein
+tr|D6RQS4|D6RQS4_COPC7	2156	13	23	387	28	50.3	4e-04	Putative uncharacterized protein
+tr|D6S364|D6S364_9LACO	2091	15	26	354	25	49.2	0.001	Possible adhesion exoprotein OS=Lactobacillus
+tr|D6SYJ8|D6SYJ8_GARVA	3149	15	29	312	25	51.1	3e-04	Putative uncharacterized protein
+tr|D6T003|D6T003_GARVA	2932	13	26	256	45	56.1	1e-05	Putative uncharacterized protein
+tr|D6UGF5|D6UGF5_STAAU	2501	9	26	334	8	43.4	0.060	Immunodominant surface protein
+tr|D6W6A8|D6W6A8_TRICA	841	13	24	349	30	53.0	8e-05	Putative uncharacterized protein
+tr|D6WFB0|D6WFB0_TRICA	730	11	25	331	21	41.1	0.28	Putative uncharacterized protein
+tr|D6WI48|D6WI48_TRICA	4813	12	23	454	45	48.0	0.002	Putative uncharacterized protein OS=Tribolium
+tr|D6WL05|D6WL05_TRICA	4075	12	20	301	30	47.2	0.005	Putative uncharacterized protein
+tr|D6WLF2|D6WLF2_TRICA	1742	15	27	409	48	53.0	7e-05	Putative uncharacterized protein OS=Tribolium
+tr|D6WMQ5|D6WMQ5_TRICA	2132	13	24	420	41	58.4	2e-06	Serine protease P146 OS=Tribolium castaneum
+tr|D6WPT3|D6WPT3_TRICA	1509	12	25	483	34	56.1	9e-06	Putative uncharacterized protein OS=Tribolium
+tr|D6WTK0|D6WTK0_TRICA	2771	16	27	405	62	85.0	2e-14	Putative uncharacterized protein OS=Tribolium
+tr|D6WZS9|D6WZS9_TRICA	2645	11	19	408	36	41.8	0.19	Putative uncharacterized protein OS=Tribolium
+tr|D6X1U1|D6X1U1_TRICA	2236	14	25	446	66	80.7	3e-13	Putative uncharacterized protein OS=Tribolium
+tr|D6X2Q3|D6X2Q3_TRICA	21117	13	25	423	61	81.5	2e-13	Putative uncharacterized protein OS=Tribolium
+tr|D7AXP0|D7AXP0_NOCDD	2247	12	23	444	34	47.6	0.003	Putative uncharacterized protein
+tr|D7B231|D7B231_NOCDD	1847	12	25	388	18	41.8	0.19	Putative uncharacterized protein
+tr|D7B232|D7B232_NOCDD	2922	14	24	315	52	51.5	3e-04	Putative uncharacterized protein
+tr|D7B233|D7B233_NOCDD	1275	12	22	377	54	44.1	0.033	Putative uncharacterized protein
+tr|D7FKG6|D7FKG6_ECTSI	2535	12	22	365	20	41.1	0.34	Zinc finger, CW-type with coiled-coil domain 3
+tr|D7FZM1|D7FZM1_ECTSI	567	13	24	224	37	51.1	3e-04	Putative uncharacterized protein
+tr|D7G0B7|D7G0B7_ECTSI	734	15	23	173	15	46.8	0.006	Putative uncharacterized protein
+tr|D7G3P1|D7G3P1_ECTSI	1131	13	25	268	16	46.5	0.007	Similar to Mucin-1 (MUC-1) (Polymorphic
+tr|D7G8U8|D7G8U8_ECTSI	2122	17	27	446	50	60.3	5e-07	Putative uncharacterized protein
+tr|D7GHU5|D7GHU5_PROFC	862	16	22	180	35	40.3	0.47	Cell envelope-related transcriptional
+tr|D7KSS3|D7KSS3_ARALY	642	13	28	225	10	59.9	6e-07	Predicted protein OS=Arabidopsis lyrata
+tr|D7LKH0|D7LKH0_ARALY	682	16	25	166	12	40.3	0.53	Putative uncharacterized protein
+tr|D7MJD1|D7MJD1_ARALY	413	14	25	183	22	39.9	0.65	Putative uncharacterized protein
+tr|D7NI46|D7NI46_CANAL	1079	15	31	286	12	53.0	8e-05	Agglutinin-like protein OS=Candida albicans
+tr|D7TBB2|D7TBB2_VITVI	1179	14	25	262	23	43.4	0.068	Whole genome shotgun sequence of line PN40024,
+tr|D7UBN7|D7UBN7_VITVI	1890	16	27	368	91	214	3e-53	Whole genome shotgun sequence of line PN40024,
+tr|D7W9S9|D7W9S9_9CORY	944	14	22	279	15	46.8	0.006	Putative uncharacterized protein
+tr|D7W9T1|D7W9T1_9CORY	426	15	25	194	24	49.9	6e-04	Putative uncharacterized protein
+tr|D8HM02|D8HM02_AMYMU	1182	18	29	232	12	53.8	5e-05	Putative uncharacterized protein
+tr|D8LE70|D8LE70_ECTSI	1718	13	29	378	33	52.6	1e-04	SRS domain-containing protein OS=Ectocarpus
+tr|D8LG78|D8LG78_ECTSI	3474	12	21	430	46	40.3	0.48	Beta strand repeat-containing protein
+tr|D8LIK9|D8LIK9_ECTSI	1525	16	24	337	23	47.2	0.004	Beta strand repeat-containing protein
+tr|D8LLG6|D8LLG6_ECTSI	3036	14	22	425	14	45.7	0.012	RecName: Full=Mucin-1; Short=MUC-1; AltName:
+tr|D8LM92|D8LM92_ECTSI	734	11	22	322	45	51.5	2e-04	EsV-1-166 OS=Ectocarpus siliculosus
+tr|D8LN89|D8LN89_ECTSI	2788	12	24	462	30	47.2	0.004	Liver stage antigen 3 OS=Ectocarpus
+tr|D8LRY3|D8LRY3_ECTSI	1904	11	27	223	16	58.8	1e-06	Putative uncharacterized protein OS=Ectocarpus
+tr|D8M0B1|D8M0B1_BLAHO	1130	15	23	207	8	54.9	2e-05	Singapore isolate B (sub-type 7) whole
+tr|D8M646|D8M646_BLAHO	925	14	20	373	27	51.5	3e-04	Singapore isolate B (sub-type 7) whole
+tr|D8M8U2|D8M8U2_BLAHO	1964	13	24	317	27	91.1	2e-16	Singapore isolate B (sub-type 7) whole
+tr|D8MAJ5|D8MAJ5_BLAHO	751	15	24	266	13	53.8	4e-05	Singapore isolate B (sub-type 7) whole
+tr|D8PQJ3|D8PQJ3_SCHCM	1353	12	24	371	42	39.9	0.67	Putative uncharacterized protein (Fragment)
+tr|D8PTZ7|D8PTZ7_SCHCM	756	13	23	258	26	41.1	0.34	Putative uncharacterized protein (Fragment)
+tr|D8Q7I2|D8Q7I2_SCHCM	1118	12	25	452	43	48.8	0.001	Putative uncharacterized protein (Fragment)
+tr|D8Q9F7|D8Q9F7_SCHCM	1175	14	25	298	35	51.9	2e-04	Putative uncharacterized protein
+tr|D8Q9Q8|D8Q9Q8_SCHCM	1663	13	22	453	33	46.5	0.008	Putative uncharacterized protein (Fragment)
+tr|D8QF05|D8QF05_SCHCM	1853	16	30	85	5	40.7	0.43	Putative uncharacterized protein
+tr|D8QFY4|D8QFY4_SCHCM	1976	13	23	367	59	45.7	0.011	Putative uncharacterized protein (Fragment)
+tr|D8QJB9|D8QJB9_SCHCM	630	16	29	183	16	43.0	0.084	Glycoside hydrolase family 61 protein
+tr|D8RBM1|D8RBM1_SELML	1450	14	28	267	15	48.0	0.003	Putative uncharacterized protein
+tr|D8TT23|D8TT23_VOLCA	1879	14	26	298	15	74.2	3e-11	Putative uncharacterized protein OS=Volvox
+tr|D8U0Z1|D8U0Z1_VOLCA	1073	21	31	124	4	42.2	0.15	Putative uncharacterized protein OS=Volvox
+tr|D9UXM9|D9UXM9_9ACTO	1418	15	25	332	43	41.4	0.23	Predicted protein OS=Streptomyces sp. AA4
+tr|D9V4N0|D9V4N0_9ACTO	5049	14	23	459	66	83.4	5e-14	Predicted protein OS=Streptomyces sp. AA4
+tr|E0CZ58|E0CZ58_MOUSE	1221	13	23	436	15	75.0	2e-11	Uncharacterized protein OS=Mus musculus
+tr|E0CZJ3|E0CZJ3_DANRE	2553	29	50	106	5	153	4e-35	FEEL-1 OS=Danio rerio GN=FEEL-1 PE=2 SV=1
+tr|E0NH42|E0NH42_PEDAC	3030	12	32	475	17	53.8	5e-05	Possible SD repeat-containing cell surface
+tr|E0S494|E0S494_BUTPB	1828	16	25	141	26	40.7	0.38	Putative uncharacterized protein
+tr|E0V9K0|E0V9K0_PEDHC	5704	15	25	445	33	54.2	4e-05	Putative uncharacterized protein OS=Pediculus
+tr|E0VJM4|E0VJM4_PEDHC	2034	14	25	347	41	61.5	2e-07	Putative uncharacterized protein OS=Pediculus
+tr|E0VJQ7|E0VJQ7_PEDHC	4944	13	25	353	40	54.9	2e-05	Putative uncharacterized protein
+tr|E0VMA0|E0VMA0_PEDHC	1823	11	26	426	40	45.3	0.015	Carbonic anhydrase, putative OS=Pediculus
+tr|E0VS98|E0VS98_PEDHC	3419	11	26	422	30	43.0	0.071	Putative uncharacterized protein OS=Pediculus
+tr|E0VW60|E0VW60_PEDHC	4029	13	23	352	24	75.0	2e-11	Hemolectin, putative OS=Pediculus humanus
+tr|E0VY14|E0VY14_PEDHC	4555	12	24	444	81	52.6	9e-05	Putative uncharacterized protein OS=Pediculus
+tr|E0VZI8|E0VZI8_PEDHC	2887	13	23	326	54	42.6	0.094	Low-density lipoprotein receptor, putative
+tr|E0YU17|E0YU17_CANAL	1440	14	29	436	35	48.8	0.002	Agglutinin-like sequence protein 51 OS=Candida
+tr|E1B882|E1B882_BOVIN	2842	15	24	417	64	54.5	3e-05	Uncharacterized protein OS=Bos taurus GN=MXRA5
+tr|E1BA88|E1BA88_BOVIN	686	17	30	333	38	41.4	0.23	Uncharacterized protein OS=Bos taurus PE=4
+tr|E1BI26|E1BI26_BOVIN	1934	12	22	415	60	48.8	0.001	Uncharacterized protein OS=Bos taurus GN=MDC1
+tr|E1BIR8|E1BIR8_BOVIN	2888	14	27	465	16	48.0	0.003	Uncharacterized protein OS=Bos taurus GN=FLG2
+tr|E1BNL3|E1BNL3_BOVIN	2670	12	22	368	51	63.8	5e-08	Uncharacterized protein OS=Bos taurus PE=4
+tr|E1C9I1|E1C9I1_CHICK	289	30	47	122	8	123	6e-26	Uncharacterized protein OS=Gallus gallus
+tr|E1D5P9|E1D5P9_VIBPA	1976	11	23	441	38	42.2	0.15	Putative uncharacterized protein OS=Vibrio
+tr|E1L3I8|E1L3I8_9ACTN	1440	12	25	322	17	51.9	2e-04	LPXTG-motif cell wall anchor domain protein
+tr|E1TNU1|E1TNU1_LACPS	846	16	26	220	21	46.1	0.010	Serine-type D-Ala-D-Ala carboxypeptidase
+tr|E1W0L9|E1W0L9_ARTAR	830	13	25	199	12	49.9	7e-04	Possible RNA polymerase sigma factor
+tr|E1W0M6|E1W0M6_ARTAR	1576	15	24	322	8	83.8	4e-14	Hypothetical membrane protein OS=Arthrobacter
+tr|E1ZW65|E1ZW65_9HYME	1576	14	28	366	24	51.9	2e-04	Leukocyte common antigen OS=Camponotus
+tr|E2A0Y8|E2A0Y8_9HYME	3229	13	27	463	25	53.0	8e-05	Putative uncharacterized protein OS=Camponotus
+tr|E2A4D2|E2A4D2_9HYME	2944	18	34	172	10	51.9	2e-04	Papilin (Fragment) OS=Camponotus floridanus
+tr|E2AFU7|E2AFU7_9HYME	3060	11	24	350	24	39.5	0.81	Helicase ARIP4 OS=Camponotus floridanus
+tr|E2AKF9|E2AKF9_9HYME	2192	11	25	461	36	48.0	0.003	Cat eye syndrome critical region protein 2
+tr|E2AM48|E2AM48_9HYME	2552	12	27	256	26	40.3	0.56	BCL-6 corepressor OS=Camponotus floridanus
+tr|E2AQL0|E2AQL0_9HYME	5744	12	25	452	56	48.0	0.003	Microtubule-associated protein futsch
+tr|E2AVY3|E2AVY3_9HYME	2116	12	27	211	22	39.9	0.70	Trithorax group protein osa OS=Camponotus
+tr|E2B5F0|E2B5F0_9HYME	3154	11	25	436	83	40.3	0.46	Helicase ARIP4 OS=Harpegnathos saltator
+tr|E2B8P6|E2B8P6_9HYME	3484	15	28	404	46	47.6	0.004	Putative uncharacterized protein
+tr|E2BE40|E2BE40_9HYME	794	13	28	391	21	48.8	0.002	Leukocyte elastase inhibitor OS=Harpegnathos
+tr|E2BE79|E2BE79_9HYME	5973	13	27	297	15	48.4	0.002	63 kDa sperm flagellar membrane protein
+tr|E2BEX8|E2BEX8_9HYME	1076	14	22	349	30	46.1	0.010	Microtubule-associated protein 2
+tr|E2BHR1|E2BHR1_9HYME	2983	18	27	274	19	70.3	4e-10	Papilin OS=Harpegnathos saltator
+tr|E2BJI8|E2BJI8_9HYME	5147	10	21	418	93	47.6	0.003	Nesprin-1 OS=Harpegnathos saltator
+tr|E2BLS6|E2BLS6_9HYME	3230	13	27	426	47	52.6	1e-04	Putative uncharacterized protein
+tr|E2BMV4|E2BMV4_9HYME	12783	18	32	443	78	246	4e-63	Neurogenic locus notch-like protein protein 1
+tr|E2BVQ9|E2BVQ9_9HYME	1555	15	28	420	58	43.8	0.043	Tyrosine-protein phosphatase non-receptor type
+tr|E2C2C0|E2C2C0_9HYME	1420	11	28	425	48	44.9	0.024	Putative uncharacterized protein
+tr|E2C3N5|E2C3N5_9HYME	2067	11	28	331	50	43.4	0.065	Methyl-CpG-binding domain protein 5
+tr|E2C6P3|E2C6P3_9HYME	3194	13	25	441	24	48.8	0.002	Putative uncharacterized protein
+tr|E2C7M0|E2C7M0_9HYME	2585	12	25	291	26	45.3	0.017	Atrial natriuretic peptide-converting enzyme
+tr|E2CPF6|E2CPF6_9RHOB	801	13	22	315	35	47.2	0.004	Putative uncharacterized protein
+tr|E2GKX4|E2GKX4_EBVG	865	13	26	322	30	48.4	0.002	Glycoprotein 350/220 (Fragment)
+tr|E2Q9U8|E2Q9U8_STRCL	2176	16	25	94	3	40.7	0.43	Herpes_BLLF1 multi-domain protein
+tr|E2QSF6|E2QSF6_CANFA	1923	13	25	402	43	50.3	5e-04	Uncharacterized protein OS=Canis familiaris
+tr|E2R0D2|E2R0D2_CANFA	1419	16	28	326	52	43.8	0.045	Uncharacterized protein OS=Canis familiaris
+tr|E2R6A0|E2R6A0_CANFA	324	26	41	173	9	157	3e-36	Uncharacterized protein OS=Canis familiaris
+tr|E2RBU8|E2RBU8_CANFA	1339	13	24	608	82	204	3e-50	Uncharacterized protein OS=Canis familiaris
+tr|E2RGL6|E2RGL6_CANFA	2573	25	41	119	10	130	3e-28	Uncharacterized protein OS=Canis familiaris
+tr|E2RJM1|E2RJM1_CANFA	2207	14	27	498	45	46.1	0.008	Uncharacterized protein OS=Canis familiaris
+tr|E2RYF6|E2RYF6_HUMAN	1773	10	23	441	0	48.4	0.002	Panbronchiolitis related mucin-like 1
+tr|E3A2D2|E3A2D2_PSEAE	2050	12	25	449	62	39.5	0.88	Putative uncharacterized protein
+tr|E3AIL7|E3AIL7_9PLAN	1255	15	24	434	45	63.4	5e-08	AAA ATPase containing von Willebrand factor
+tr|E3BRP0|E3BRP0_9LACO	2361	13	25	438	50	96.9	5e-18	F5/8 type C domain protein OS=Lactobacillus
+tr|E3CGM4|E3CGM4_STRDO	1153	12	25	425	29	70.0	6e-10	LPXTG-motif cell wall anchor domain protein
+tr|E3FDR6|E3FDR6_STIAD	2429	15	25	456	35	42.6	0.12	Cable pili-associated 22 kDa adhesin protein
+tr|E3GVW8|E3GVW8_HAEI2	1815	11	23	421	54	50.7	4e-04	Immunoglobulin A1 protease OS=Haemophilus
+tr|E3ITH8|E3ITH8_DESVR	1131	12	23	482	44	45.3	0.017	Putative uncharacterized protein
+tr|E3JPX5|E3JPX5_PUCGR	1063	12	23	379	21	48.8	0.002	Putative uncharacterized protein OS=Puccinia
+tr|E3JT20|E3JT20_PUCGR	1101	11	21	255	37	43.4	0.057	Putative uncharacterized protein OS=Puccinia
+tr|E3JT36|E3JT36_PUCGR	1413	12	25	417	47	42.6	0.11	Putative uncharacterized protein OS=Puccinia
+tr|E3JYA2|E3JYA2_PUCGR	2239	14	29	503	36	59.6	8e-07	Putative uncharacterized protein OS=Puccinia
+tr|E3K2X9|E3K2X9_PUCGR	3279	9	20	473	28	54.5	3e-05	Putative uncharacterized protein OS=Puccinia
+tr|E3K3T6|E3K3T6_PUCGR	2424	13	24	306	23	48.8	0.001	Putative uncharacterized protein OS=Puccinia
+tr|E3K668|E3K668_PUCGR	1548	13	26	357	46	45.7	0.011	Putative uncharacterized protein OS=Puccinia
+tr|E3K694|E3K694_PUCGR	1116	16	29	218	16	39.9	0.75	Putative uncharacterized protein OS=Puccinia
+tr|E3KAA2|E3KAA2_PUCGR	883	16	27	444	36	48.4	0.002	Putative uncharacterized protein OS=Puccinia
+tr|E3KB28|E3KB28_PUCGR	592	14	23	335	9	47.6	0.004	Putative uncharacterized protein OS=Puccinia
+tr|E3KBX0|E3KBX0_PUCGR	1710	17	31	304	61	142	9e-32	Putative uncharacterized protein OS=Puccinia
+tr|E3KKD0|E3KKD0_PUCGR	792	13	28	250	25	41.8	0.16	Putative uncharacterized protein OS=Puccinia
+tr|E3KR19|E3KR19_PUCGR	1340	14	26	300	27	52.2	1e-04	Putative uncharacterized protein OS=Puccinia
+tr|E3KWI1|E3KWI1_PUCGR	1491	12	24	278	22	40.7	0.37	Putative uncharacterized protein OS=Puccinia
+tr|E3KX69|E3KX69_PUCGR	746	12	23	391	30	43.4	0.065	Putative uncharacterized protein OS=Puccinia
+tr|E3KZC3|E3KZC3_PUCGR	1895	14	25	192	22	39.5	0.92	Putative uncharacterized protein OS=Puccinia
+tr|E3L0H2|E3L0H2_PUCGR	546	15	24	294	47	39.5	0.94	Pro-resilin OS=Puccinia graminis f. sp.
+tr|E3L273|E3L273_PUCGR	1387	17	26	202	13	39.5	0.83	Putative uncharacterized protein OS=Puccinia
+tr|E3L438|E3L438_PUCGR	1392	12	26	360	40	57.2	4e-06	Flap structure-specific endonuclease
+tr|E3L4Y5|E3L4Y5_PUCGR	1981	14	24	375	39	39.5	0.96	Putative uncharacterized protein OS=Puccinia
+tr|E3L6Y6|E3L6Y6_PUCGR	1233	11	24	321	33	59.2	1e-06	Putative uncharacterized protein OS=Puccinia
+tr|E3L9L1|E3L9L1_PUCGR	1416	12	24	315	29	44.5	0.030	Putative uncharacterized protein OS=Puccinia
+tr|E3LBI9|E3LBI9_PUCGR	1829	12	24	325	33	48.0	0.002	Putative uncharacterized protein OS=Puccinia
+tr|E3LBP7|E3LBP7_PUCGR	1492	14	29	277	7	53.4	5e-05	Putative uncharacterized protein OS=Puccinia
+tr|E3LBX5|E3LBX5_PUCGR	1371	14	26	380	43	43.8	0.042	Putative uncharacterized protein OS=Puccinia
+tr|E3LC07|E3LC07_PUCGR	1289	14	25	302	43	52.6	1e-04	Putative uncharacterized protein OS=Puccinia
+tr|E3LFD4|E3LFD4_CAERE	2992	12	25	483	36	55.3	2e-05	Putative uncharacterized protein
+tr|E3LJY4|E3LJY4_CAERE	619	17	26	350	16	46.8	0.006	Putative uncharacterized protein
+tr|E3LPH5|E3LPH5_CAERE	510	13	26	335	6	43.8	0.049	Putative uncharacterized protein
+tr|E3LUM9|E3LUM9_CAERE	13106	10	23	321	9	51.9	2e-04	Putative uncharacterized protein
+tr|E3LVI6|E3LVI6_CAERE	1740	17	28	114	4	52.2	1e-04	CRE-LET-526 protein OS=Caenorhabditis
+tr|E3LX54|E3LX54_CAERE	1943	13	28	428	53	39.5	0.85	Putative uncharacterized protein
+tr|E3M0C2|E3M0C2_CAERE	3120	14	25	263	53	46.1	0.010	Putative uncharacterized protein
+tr|E3M1N1|E3M1N1_CAERE	3451	12	22	423	72	61.1	3e-07	Putative uncharacterized protein
+tr|E3MAM6|E3MAM6_CAERE	544	14	25	333	6	49.5	0.001	Putative uncharacterized protein
+tr|E3MC34|E3MC34_CAERE	1224	12	24	335	14	52.6	1e-04	Putative uncharacterized protein
+tr|E3MML6|E3MML6_CAERE	865	14	26	299	14	63.4	5e-08	Putative uncharacterized protein (Fragment)
+tr|E3MUL8|E3MUL8_CAERE	731	13	24	422	38	46.8	0.006	Putative uncharacterized protein
+tr|E3MVI5|E3MVI5_CAERE	1244	12	27	307	58	46.1	0.011	Putative uncharacterized protein
+tr|E3MXH5|E3MXH5_CAERE	827	11	24	281	10	47.2	0.004	Putative uncharacterized protein
+tr|E3MYA6|E3MYA6_CAERE	993	14	27	288	14	45.3	0.016	Putative uncharacterized protein
+tr|E3N131|E3N131_CAERE	1283	16	26	239	20	40.3	0.56	Putative uncharacterized protein
+tr|E3N6S2|E3N6S2_CAERE	3760	14	29	391	22	61.1	3e-07	CRE-FBN-1 protein OS=Caenorhabditis remanei
+tr|E3NAG2|E3NAG2_CAERE	1487	13	26	198	10	57.6	3e-06	Putative uncharacterized protein
+tr|E3NE41|E3NE41_CAERE	1094	14	25	196	5	44.9	0.020	Putative uncharacterized protein
+tr|E3NE56|E3NE56_CAERE	1816	15	25	328	31	57.6	4e-06	Putative uncharacterized protein
+tr|E3NGK9|E3NGK9_CAERE	2486	15	26	386	27	53.0	9e-05	Putative uncharacterized protein
+tr|E3NI20|E3NI20_CAERE	1136	14	24	452	11	57.2	4e-06	Putative uncharacterized protein
+tr|E3NIT1|E3NIT1_CAERE	1161	16	23	273	19	39.9	0.63	CRE-MEL-11 protein OS=Caenorhabditis remanei
+tr|E3Q6J4|E3Q6J4_COLGR	826	15	26	271	28	41.8	0.16	Putative uncharacterized protein
+tr|E3QAQ2|E3QAQ2_COLGR	1389	12	25	370	25	58.0	2e-06	GANP/Nin1/mts3/eIF-3 p25 family protein
+tr|E3QFU6|E3QFU6_COLGR	439	11	23	283	24	39.5	0.88	Putative uncharacterized protein
+tr|E3QL34|E3QL34_COLGR	1134	13	26	336	33	41.8	0.16	Putative uncharacterized protein
+tr|E3QQP1|E3QQP1_COLGR	963	13	28	423	22	40.3	0.56	Basic proline-rich protein OS=Glomerella
+tr|E3QYC1|E3QYC1_COLGR	809	11	23	432	32	40.7	0.41	Translation initiation factor IF-2
+tr|E3RL36|E3RL36_9PLEO	1530	14	26	447	36	41.1	0.32	Putative uncharacterized protein
+tr|E3RQI2|E3RQI2_9PLEO	9819	13	26	409	36	42.2	0.15	Putative uncharacterized protein
+tr|E3RRM8|E3RRM8_9PLEO	738	14	27	346	27	48.0	0.002	Putative uncharacterized protein
+tr|E3S7R1|E3S7R1_9PLEO	1259	13	28	372	40	48.8	0.002	Putative uncharacterized protein
+tr|E3S8W3|E3S8W3_9PLEO	1250	14	26	264	19	50.7	4e-04	Putative uncharacterized protein
+tr|E3TC85|E3TC85_9TELE	266	25	40	143	26	159	6e-37	Tumor necrosis factor-inducible gene 6
+tr|E3UME3|E3UME3_9ACTO	1060	15	24	384	60	49.5	0.001	Putative uncharacterized protein tpa7
+tr|E3WSV3|E3WSV3_ANODA	2111	15	28	250	3	39.9	0.67	Putative uncharacterized protein OS=Anopheles
+tr|E3WTI4|E3WTI4_ANODA	829	13	22	320	16	40.7	0.44	Putative uncharacterized protein
+tr|E3X1X0|E3X1X0_ANODA	2330	14	26	272	66	54.2	4e-05	Putative uncharacterized protein
+tr|E3X3Z7|E3X3Z7_ANODA	537	15	26	240	31	49.5	8e-04	Putative uncharacterized protein
+tr|E4MXC7|E4MXC7_THEHA	971	12	25	391	50	45.3	0.016	mRNA, clone: RTFL01-22-F22 OS=Thellungiella
+tr|E4NS95|E4NS95_9EURY	631	13	29	231	18	48.4	0.002	Putative uncharacterized protein
+tr|E4NVV7|E4NVV7_9EURY	2192	13	26	448	22	42.6	0.094	Predicted membrane-bound metal-dependent
+tr|E4RAV8|E4RAV8_PSEPU	8682	14	28	404	55	46.5	0.007	Surface adhesion protein, putative
+tr|E4UQ90|E4UQ90_ARTGY	2668	18	28	230	57	70.7	3e-10	Ubiquitin carboxyl-terminal hydrolase 47
+tr|E4UWL6|E4UWL6_ARTGY	675	14	24	266	23	43.4	0.059	Putative uncharacterized protein
+tr|E4V2J6|E4V2J6_ARTGY	1011	14	26	263	10	45.3	0.017	Putative uncharacterized protein
+tr|E4V404|E4V404_ARTGY	1610	11	22	351	27	39.5	0.84	PT repeat family protein OS=Arthroderma
+tr|E4V4V8|E4V4V8_ARTGY	982	13	21	256	17	41.8	0.16	Extracellular serine-threonine rich protein
+tr|E4V663|E4V663_ARTGY	976	12	21	276	10	44.9	0.019	Putative uncharacterized protein
+tr|E4X039|E4X039_OIKDI	718	16	25	287	40	42.6	0.11	Whole genome shotgun assembly, reference
+tr|E4X4K2|E4X4K2_OIKDI	2577	12	26	148	33	41.8	0.20	Whole genome shotgun assembly, reference
+tr|E4X7K8|E4X7K8_OIKDI	4671	17	32	152	4	40.3	0.51	Whole genome shotgun assembly, reference
+tr|E4XKL6|E4XKL6_OIKDI	677	12	27	444	22	40.7	0.40	Whole genome shotgun assembly, reference
+tr|E4XXG8|E4XXG8_OIKDI	1595	15	26	257	20	43.8	0.047	Whole genome shotgun assembly, reference
+tr|E4Z2D2|E4Z2D2_OIKDI	787	12	28	395	18	45.7	0.014	Whole genome shotgun assembly, allelic
+tr|E4ZBJ9|E4ZBJ9_NEILA	406	14	25	195	2	42.6	0.10	Putative opacity protein OS=Neisseria
+tr|E4ZU43|E4ZU43_LEPMC	933	14	30	365	60	46.5	0.008	Putative uncharacterized protein
+tr|E4ZVG7|E4ZVG7_LEPMC	875	13	23	316	32	51.5	2e-04	Putative uncharacterized protein
+tr|E4ZY90|E4ZY90_LEPMC	1850	12	23	458	40	48.4	0.002	Predicted protein OS=Leptosphaeria maculans
+tr|E5A029|E5A029_LEPMC	1821	12	21	451	43	48.8	0.001	Putative uncharacterized protein
+tr|E5A4H5|E5A4H5_LEPMC	1154	14	28	301	19	40.7	0.42	Predicted protein OS=Leptosphaeria maculans
+tr|E5ADY0|E5ADY0_LEPMC	3137	13	25	434	23	44.9	0.022	Putative uncharacterized protein
+tr|E5AEV0|E5AEV0_LEPMC	854	10	19	306	48	42.6	0.093	Predicted protein OS=Leptosphaeria maculans
+tr|E5CH69|E5CH69_9BACE	460	17	30	98	11	39.9	0.71	Putative uncharacterized protein
+tr|E5CIJ2|E5CIJ2_STAHO	755	12	25	294	4	51.5	2e-04	Triacylglycerol lipase OS=Staphylococcus
+tr|E5CUR1|E5CUR1_9STAP	787	12	29	302	15	49.2	0.001	Triacylglycerol lipase OS=Staphylococcus
+tr|E5QYQ6|E5QYQ6_ARTGY	1783	13	22	390	47	49.5	8e-04	COPII coat assembly protein SEC16
+tr|O17084|O17084_CAEEL	1459	11	27	407	6	43.8	0.045	Putative uncharacterized protein
+tr|O17448|O17448_STRDR	108	91	91	79	0	75.0	2e-11	CD44 homolog (Fragment)
+tr|O18117|O18117_CAEEL	1262	12	23	293	25	44.9	0.022	Protein T23F1.5, partially confirmed by
+tr|O19115|O19115_RABIT	602	12	26	343	12	54.9	2e-05	Muc1 (Fragment) OS=Oryctolagus cuniculus
+tr|O45438|O45438_CAEEL	394	11	28	329	13	39.9	0.75	Protein F35C5.3, confirmed by transcript
+tr|O45861|O45861_CAEEL	640	13	24	250	47	41.4	0.21	Protein Y57G11A.2, partially confirmed by
+tr|O57576|O57576_CYNPY	1100	12	24	297	31	42.2	0.14	NCAM-180 OS=Cynops pyrrhogaster GN=NCAM PE=2
+tr|O61802|O61802_CAEEL	1464	11	24	430	35	52.2	1e-04	Putative uncharacterized protein
+tr|O62672|O62672_BOVIN	1589	13	23	445	18	40.3	0.47	Submaxillary mucin 1 (Fragment) OS=Bos taurus
+tr|O91331|O91331_9GAMA	783	12	23	299	23	55.3	1e-05	Gp350 OS=Macacine herpesvirus 4 PE=4 SV=1
+tr|O94002|O94002_CANAL	841	12	22	350	70	45.3	0.016	SEC12 homologue OS=Candida albicans
+tr|O95370|O95370_HUMAN	139	98	98	78	0	142	8e-32	CD44 antigen (Indian blood group), isoform
+tr|O96449|O96449_PHYIN	1489	12	24	398	5	46.8	0.006	Cyst germination specific acidic repeat
+tr|Q008X6|Q008X6_9NIDO	6872	14	24	203	12	57.6	3e-06	Replicase polyprotein 1ab OS=White bream virus
+tr|Q06DE7|Q06DE7_PIG	603	15	23	271	40	41.4	0.21	Squamous epithelial induced stress protein 53
+tr|Q098J9|Q098J9_STIAD	1435	14	26	462	38	46.8	0.006	Cable pili-associated 22 kDa adhesin protein
+tr|Q0C9I8|Q0C9I8_ASPTN	3451	11	25	443	20	48.0	0.002	Predicted protein OS=Aspergillus terreus
+tr|Q0CD35|Q0CD35_ASPTN	928	15	29	351	18	40.3	0.49	Predicted protein OS=Aspergillus terreus
+tr|Q0CD84|Q0CD84_ASPTN	998	12	24	417	37	49.9	7e-04	Putative uncharacterized protein
+tr|Q0CPQ6|Q0CPQ6_ASPTN	1207	11	22	377	25	40.3	0.48	Putative uncharacterized protein
+tr|Q0CW68|Q0CW68_ASPTN	864	14	26	305	53	58.4	2e-06	Putative uncharacterized protein
+tr|Q0IET7|Q0IET7_AEDAE	1005	13	25	454	28	46.5	0.008	Putative uncharacterized protein OS=Aedes
+tr|Q0IIJ7|Q0IIJ7_BOVIN	388	15	25	295	5	43.0	0.078	Hypothetical LOC509055 OS=Bos taurus
+tr|Q0P0J7|Q0P0J7_9VIRU	1695	17	29	211	46	51.1	3e-04	Glycoprotein OS=Crimean-Congo hemorrhagic
+tr|Q0P0K0|Q0P0K0_9VIRU	1695	17	23	199	52	46.8	0.005	Glycoprotein OS=Crimean-Congo hemorrhagic
+tr|Q0PVD4|Q0PVD4_HAEIN	1852	11	25	496	76	61.9	2e-07	Immunoglobulin A1 protease OS=Haemophilus
+tr|Q0PVD5|Q0PVD5_HAEIN	1750	13	25	310	35	54.2	3e-05	Immunoglobulin A1 protease OS=Haemophilus
+tr|Q0U776|Q0U776_PHANO	1272	13	28	441	24	46.8	0.006	Putative uncharacterized protein
+tr|Q0U9C5|Q0U9C5_PHANO	1327	17	28	304	29	48.4	0.002	Putative uncharacterized protein
+tr|Q0V9L8|Q0V9L8_XENTR	666	14	27	341	56	210	4e-52	LOC779471 protein (Fragment) OS=Xenopus
+tr|Q0VD03|Q0VD03_BOVIN	368	69	77	262	9	276	6e-72	CD44 molecule (Indian blood group) OS=Bos
+tr|Q0WQM3|Q0WQM3_ARATH	797	13	22	336	30	40.7	0.38	Putative uncharacterized protein At1g62970
+tr|Q10ZA6|Q10ZA6_TRIEI	1240	13	26	455	31	47.6	0.003	Tetratricopeptide TPR_2 OS=Trichodesmium
+tr|Q13FK3|Q13FK3_BURXL	1049	17	23	127	12	51.9	2e-04	Outer membrane autotransporter barrel
+tr|Q14VS4|Q14VS4_9VIRU	842	13	25	327	53	51.9	2e-04	ORF34 OS=Ranid herpesvirus 1 PE=4 SV=1
+tr|Q155F6|Q155F6_CHICK	275	31	49	113	9	151	2e-34	Tumor necrosis factor-inducible protein 6
+tr|Q15SG7|Q15SG7_PSEA6	4689	14	29	372	17	46.8	0.006	Putative uncharacterized protein
+tr|Q16KI8|Q16KI8_AEDAE	484	19	28	232	24	48.8	0.001	Putative uncharacterized protein OS=Aedes
+tr|Q16KQ9|Q16KQ9_AEDAE	5644	15	30	431	25	84.6	2e-14	Putative uncharacterized protein OS=Aedes
+tr|Q16KR0|Q16KR0_AEDAE	965	13	27	392	49	51.1	3e-04	Putative uncharacterized protein OS=Aedes
+tr|Q16TD7|Q16TD7_AEDAE	1309	12	26	346	27	39.5	0.82	Serine protease (Fragment) OS=Aedes aegypti
+tr|Q16WH6|Q16WH6_AEDAE	1345	15	27	485	44	140	4e-31	Predicted protein OS=Aedes aegypti
+tr|Q17343|Q17343_CAEEL	6994	13	25	398	14	43.8	0.041	AO13 ankyrin OS=Caenorhabditis elegans
+tr|Q179R7|Q179R7_AEDAE	3217	13	25	316	32	41.8	0.17	Putative uncharacterized protein OS=Aedes
+tr|Q17IK9|Q17IK9_AEDAE	2350	13	24	288	28	44.9	0.020	Putative uncharacterized protein OS=Aedes
+tr|Q17KV0|Q17KV0_AEDAE	1188	14	29	219	15	48.0	0.002	Putative uncharacterized protein OS=Aedes
+tr|Q17NB2|Q17NB2_AEDAE	704	13	25	218	22	41.4	0.22	Putative uncharacterized protein OS=Aedes
+tr|Q1D082|Q1D082_MYXXD	1293	13	21	413	40	54.5	3e-05	DnaK family protein OS=Myxococcus xanthus
+tr|Q1LXE1|Q1LXE1_DANRE	336	17	31	175	24	193	4e-47	Novel protein similar to vertebrate
+tr|Q1PWF7|Q1PWF7_9BACT	1030	12	23	424	76	63.0	7e-08	Similar to sodium/calcium/potassium
+tr|Q1QX63|Q1QX63_CHRSD	1175	9	23	284	7	39.9	0.77	RNAse E OS=Chromohalobacter salexigens (strain
+tr|Q20253|Q20253_CAEEL	1099	15	28	403	25	55.3	2e-05	Putative uncharacterized protein
+tr|Q20684|Q20684_CAEEL	1245	11	23	448	50	45.7	0.011	Protein F52H3.7a, confirmed by transcript
+tr|Q21344|Q21344_CAEEL	1221	11	23	444	67	44.1	0.038	Protein K08E7.5a, partially confirmed by
+tr|Q22248|Q22248_CAEEL	3676	11	24	469	7	40.7	0.41	Protein T06D8.1a, partially confirmed by
+tr|Q23587|Q23587_CAEEL	2661	12	25	454	39	58.8	1e-06	Fibrillin homolog protein 1, partially
+tr|Q25388|Q25388_LOLPE	1200	13	26	455	58	56.1	9e-06	Neurofilament protein OS=Loligo pealeii
+tr|Q25B56|Q25B56_9MONO	585	15	27	425	34	45.7	0.012	Attachment glycoprotein OS=Avian
+tr|Q26471|Q26471_SCHAM	1547	13	24	281	24	39.5	0.79	Blackjack OS=Schistocerca americana PE=2 SV=1
+tr|Q26632|Q26632_STRPU	1264	13	29	240	24	57.2	4e-06	SFE1 OS=Strongylocentrotus purpuratus PE=2
+tr|Q28285|Q28285_CANFA	372	72	78	290	1	283	4e-74	CD44 variant OS=Canis familiaris PE=2 SV=1
+tr|Q28DA4|Q28DA4_XENTR	778	13	25	275	18	53.0	7e-05	Novel trypsin family protein OS=Xenopus
+tr|Q29AE1|Q29AE1_DROPS	794	14	25	375	19	75.0	2e-11	GA19496 OS=Drosophila pseudoobscura
+tr|Q29GP9|Q29GP9_DROPS	473	17	27	183	2	46.5	0.007	GA20650 OS=Drosophila pseudoobscura
+tr|Q29MK4|Q29MK4_DROPS	1062	17	26	146	6	41.4	0.21	GA13694 OS=Drosophila pseudoobscura
+tr|Q2FKR0|Q2FKR0_METHJ	2353	13	20	454	21	63.8	5e-08	Mucin 2, intestinal/tracheal
+tr|Q2GGX0|Q2GGX0_EHRCR	1468	12	27	409	46	69.2	1e-09	Type IV secretion system protein,VirB6 family
+tr|Q2GZF5|Q2GZF5_CHAGB	1339	13	25	299	10	41.1	0.30	Predicted protein OS=Chaetomium globosum
+tr|Q2GZZ9|Q2GZZ9_CHAGB	764	15	30	233	5	41.8	0.17	Putative uncharacterized protein
+tr|Q2H279|Q2H279_CHAGB	406	15	28	176	6	39.9	0.68	Predicted protein OS=Chaetomium globosum
+tr|Q2HBD7|Q2HBD7_CHAGB	1906	15	24	372	40	44.9	0.024	Putative uncharacterized protein OS=Chaetomium
+tr|Q2HE55|Q2HE55_CHAGB	1977	12	24	459	52	39.9	0.60	Putative uncharacterized protein
+tr|Q2KG58|Q2KG58_MAGO7	1578	12	19	174	2	41.4	0.26	Putative uncharacterized protein
+tr|Q2LC49|Q2LC49_METAN	717	15	29	214	13	40.7	0.42	Adhesin protein Mad1 OS=Metarhizium
+tr|Q2NKX3|Q2NKX3_XENLA	278	40	55	143	4	217	2e-54	LOC443701 protein OS=Xenopus laevis GN=cd44
+tr|Q2SC34|Q2SC34_HAHCH	1147	11	22	402	39	48.4	0.002	Putative uncharacterized protein OS=Hahella
+tr|Q2T935|Q2T935_BURTA	827	14	25	403	15	46.1	0.010	Hep_Hag family OS=Burkholderia thailandensis
+tr|Q2TXL8|Q2TXL8_ASPOR	856	16	26	328	26	40.7	0.39	Predicted protein OS=Aspergillus oryzae
+tr|Q2TYZ1|Q2TYZ1_ASPOR	1374	13	24	343	31	43.0	0.085	Predicted protein OS=Aspergillus oryzae
+tr|Q2UA11|Q2UA11_ASPOR	842	11	25	294	16	39.5	0.95	Chitinase OS=Aspergillus oryzae
+tr|Q2UJB9|Q2UJB9_ASPOR	950	16	28	399	47	64.9	2e-08	Predicted protein OS=Aspergillus oryzae
+tr|Q2UQ79|Q2UQ79_ASPOR	1014	12	20	287	3	41.8	0.19	von Willebrand factor and related
+tr|Q2YYE7|Q2YYE7_STAAB	1977	12	27	306	18	39.9	0.60	Truncated methicillin resistance-related
+tr|Q30BZ0|Q30BZ0_9STRA	426	17	29	155	7	46.1	0.010	Cell 12A endoglucanase OS=Phytophthora sojae
+tr|Q381S5|Q381S5_9TRYP	1172	10	24	424	14	48.8	0.002	Putative uncharacterized protein
+tr|Q387U4|Q387U4_9TRYP	3452	12	27	407	21	43.0	0.082	Putative uncharacterized protein
+tr|Q39UJ4|Q39UJ4_GEOMG	551	13	28	237	16	53.0	8e-05	Pentapeptide repeat protein OS=Geobacter
+tr|Q3ISN2|Q3ISN2_NATPD	751	14	27	227	7	41.1	0.33	Putative uncharacterized protein
+tr|Q3TA56|Q3TA56_MOUSE	417	14	26	255	17	42.6	0.11	Putative uncharacterized protein OS=Mus
+tr|Q3U468|Q3U468_MOUSE	365	65	75	258	13	289	4e-76	Putative uncharacterized protein OS=Mus
+tr|Q47LI7|Q47LI7_THEFY	924	14	27	410	49	45.7	0.012	Putative uncharacterized protein
+tr|Q499A1|Q499A1_DANRE	1196	17	27	293	45	45.7	0.011	Zgc:110391 OS=Danio rerio GN=arid4a PE=1 SV=1
+tr|Q4CKY7|Q4CKY7_TRYCR	373	17	30	322	22	78.8	1e-12	Trans-sialidase, putative (Fragment)
+tr|Q4CL29|Q4CL29_TRYCR	390	20	33	256	17	66.1	9e-09	Trans-sialidase, putative (Fragment)
+tr|Q4CM23|Q4CM23_TRYCR	341	20	30	160	10	62.6	9e-08	Trans-sialidase, putative (Fragment)
+tr|Q4CVS5|Q4CVS5_TRYCR	1204	18	32	396	54	170	4e-40	Trans-sialidase, putative OS=Trypanosoma cruzi
+tr|Q4D3K3|Q4D3K3_TRYCR	1446	13	23	303	23	51.1	3e-04	Trans-sialidase, putative OS=Trypanosoma cruzi
+tr|Q4DBT3|Q4DBT3_TRYCR	503	10	19	339	3	49.9	6e-04	Putative uncharacterized protein (Fragment)
+tr|Q4DTD4|Q4DTD4_TRYCR	1051	13	25	368	37	50.7	4e-04	Putative uncharacterized protein
+tr|Q4FKU0|Q4FKU0_9TRYP	811	14	28	347	24	55.7	1e-05	Putative uncharacterized protein
+tr|Q4G5T9|Q4G5T9_DANRE	522	19	30	257	11	42.6	0.12	Reticulon 6-a2 OS=Danio rerio GN=rtn4b PE=2
+tr|Q4G5U1|Q4G5U1_DANRE	815	13	24	217	21	40.7	0.38	Reticulon 6-a1(1777/1956) OS=Danio rerio
+tr|Q4G5U8|Q4G5U8_DANRE	780	13	24	217	21	41.4	0.24	Reticulon 6-a1(1576/1860) OS=Danio rerio
+tr|Q4G5V0|Q4G5V0_DANRE	875	13	24	217	21	41.4	0.26	Reticulon 6-a1 OS=Danio rerio GN=rtn4b PE=2
+tr|Q4L3L6|Q4L3L6_STAHJ	967	16	29	233	35	51.9	2e-04	Similar to 5'-nucleotidase OS=Staphylococcus
+tr|Q4L3P2|Q4L3P2_STAHJ	1855	14	32	267	15	61.1	3e-07	Similar toputative cell-surface adhesin SdrF
+tr|Q4L9X1|Q4L9X1_STAHJ	1067	12	27	269	34	49.9	7e-04	Similar to alkaline phosphatase
+tr|Q4LA48|Q4LA48_STAHJ	748	12	26	300	19	46.1	0.010	Lip protein OS=Staphylococcus haemolyticus
+tr|Q4LAH6|Q4LAH6_STAHJ	1563	16	29	364	19	75.0	2e-11	Similar to surface protein SdrI from
+tr|Q4LE67|Q4LE67_HUMAN	1335	13	23	603	132	195	1e-47	CSPG3 variant protein (Fragment) OS=Homo
+tr|Q4N127|Q4N127_THEPA	3300	15	26	274	32	77.7	3e-12	Hypothetical telomeric SfiI 20 protein 3
+tr|Q4N3H1|Q4N3H1_THEPA	439	15	31	161	11	42.2	0.15	Putative uncharacterized protein
+tr|Q4N9U4|Q4N9U4_THEPA	3529	14	28	192	15	53.0	8e-05	Hypothetical telomeric SfiI 20 protein 3
+tr|Q4QLS0|Q4QLS0_HAEI8	1794	12	27	368	31	57.6	3e-06	IgA-specific serine endopeptidase
+tr|Q4REQ7|Q4REQ7_TETNG	551	15	26	237	1	45.3	0.018	Chromosome 13 SCAF15122, whole genome
+tr|Q4RGJ4|Q4RGJ4_TETNG	1258	14	24	332	33	44.9	0.022	Chromosome undetermined SCAF15099, whole
+tr|Q4RLD6|Q4RLD6_TETNG	744	15	25	372	30	212	6e-53	Chromosome 21 SCAF15022, whole genome
+tr|Q4RUP0|Q4RUP0_TETNG	889	17	33	175	20	192	8e-47	Chromosome 12 SCAF14993, whole genome
+tr|Q4RUP1|Q4RUP1_TETNG	2586	17	29	457	40	157	2e-36	Chromosome 12 SCAF14993, whole genome
+tr|Q4RV64|Q4RV64_TETNG	845	17	31	396	48	237	2e-60	Chromosome 15 SCAF14992, whole genome
+tr|Q4RY27|Q4RY27_TETNG	1307	13	23	344	32	44.1	0.032	Chromosome 3 SCAF14978, whole genome shotgun
+tr|Q4S1V7|Q4S1V7_TETNG	319	18	32	175	16	201	2e-49	Chromosome undetermined SCAF14764, whole
+tr|Q4S1V9|Q4S1V9_TETNG	1046	14	23	595	104	113	5e-23	Chromosome undetermined SCAF14764, whole
+tr|Q4S3C4|Q4S3C4_TETNG	1441	17	29	499	95	238	1e-60	Chromosome 1 SCAF14751, whole genome shotgun
+tr|Q4S472|Q4S472_TETNG	386	21	33	189	39	198	1e-48	Chromosome undetermined SCAF14743, whole
+tr|Q4S473|Q4S473_TETNG	1039	14	27	231	22	171	2e-40	Chromosome undetermined SCAF14743, whole
+tr|Q4S7J2|Q4S7J2_TETNG	1354	14	22	354	27	43.4	0.060	Chromosome 13 SCAF14715, whole genome shotgun
+tr|Q4SAN8|Q4SAN8_TETNG	1323	11	22	279	56	42.2	0.14	Chromosome undetermined SCAF14681, whole
+tr|Q4SE77|Q4SE77_TETNG	1091	23	36	182	19	203	4e-50	Chromosome undetermined SCAF14625, whole
+tr|Q4SE78|Q4SE78_TETNG	314	18	34	180	18	212	7e-53	Chromosome undetermined SCAF14625, whole
+tr|Q4SFE5|Q4SFE5_TETNG	4522	12	26	463	28	45.7	0.012	Chromosome 2 SCAF14604, whole genome shotgun
+tr|Q4SHL9|Q4SHL9_TETNG	313	20	33	178	24	195	7e-48	Chromosome 5 SCAF14581, whole genome shotgun
+tr|Q4SI95|Q4SI95_TETNG	153	30	46	139	11	141	1e-31	Chromosome 5 SCAF14581, whole genome shotgun
+tr|Q4SQH1|Q4SQH1_TETNG	2111	13	24	469	33	43.4	0.064	Chromosome 4 SCAF14533, whole genome shotgun
+tr|Q4SV81|Q4SV81_TETNG	1578	15	26	417	67	50.3	5e-04	Chromosome 1 SCAF13775, whole genome shotgun
+tr|Q4T3U5|Q4T3U5_TETNG	930	12	24	457	42	43.8	0.042	Chromosome undetermined SCAF9919, whole
+tr|Q4T6A4|Q4T6A4_TETNG	1515	17	30	262	35	202	6e-50	Chromosome undetermined SCAF8850, whole
+tr|Q4T6Q2|Q4T6Q2_TETNG	276	31	55	53	1	76.1	8e-12	Chromosome undetermined SCAF8673, whole
+tr|Q4T8G9|Q4T8G9_TETNG	2760	25	43	108	6	143	6e-32	Chromosome undetermined SCAF7793, whole genome
+tr|Q4U8D2|Q4U8D2_THEAN	686	12	23	181	16	40.7	0.43	Theileria-specific sub-telomeric protein,
+tr|Q4UAQ4|Q4UAQ4_THEAN	675	16	26	165	13	51.9	2e-04	Putative uncharacterized protein
+tr|Q4UDB8|Q4UDB8_THEAN	1599	13	27	397	40	80.4	5e-13	Putative uncharacterized protein
+tr|Q4W2V7|Q4W2V7_PLARE	1739	17	26	174	29	75.0	2e-11	Merzoite surface protein 1 OS=Plasmodium
+tr|Q4YH19|Q4YH19_PLABA	926	11	24	400	22	46.1	0.009	BIR protein, putative OS=Plasmodium berghei
+tr|Q50279|Q50279_MYCPU	813	12	26	472	9	62.6	9e-08	VsaA OS=Mycoplasma pulmonis GN=vsaA PE=4
+tr|Q54H52|Q54H52_DICDI	1704	13	25	369	23	55.7	1e-05	WD40-like domain-containing protein
+tr|Q54VJ6|Q54VJ6_DICDI	462	17	29	122	1	48.4	0.002	Putative uncharacterized protein
+tr|Q559R3|Q559R3_DICDI	1078	15	27	260	30	54.5	2e-05	Putative uncharacterized protein
+tr|Q55F46|Q55F46_DICDI	784	12	30	337	12	39.5	0.92	Putative uncharacterized protein
+tr|Q55JB7|Q55JB7_CRYNE	1697	12	28	407	23	42.6	0.11	Putative uncharacterized protein
+tr|Q55R39|Q55R39_CRYNE	1644	18	30	329	31	53.4	5e-05	Putative uncharacterized protein
+tr|Q560W0|Q560W0_CRYNE	1994	15	27	251	14	51.1	3e-04	Putative uncharacterized protein
+tr|Q57U04|Q57U04_9TRYP	1571	12	26	424	37	69.2	1e-09	Putative uncharacterized protein
+tr|Q580E4|Q580E4_9TRYP	908	13	24	399	17	46.8	0.005	Putative uncharacterized protein
+tr|Q59FG9|Q59FG9_HUMAN	3410	14	27	465	41	199	6e-49	Chondroitin sulfate proteoglycan 2
+tr|Q59JN2|Q59JN2_CANAL	408	15	28	367	7	44.9	0.023	Possible repetitive cell surface protein
+tr|Q5AEG7|Q5AEG7_CANAL	753	15	26	319	4	40.7	0.41	Possible repetitive cell surface protein
+tr|Q5ALT5|Q5ALT5_CANAL	1409	12	28	414	27	54.5	3e-05	Potential cell surface flocculin OS=Candida
+tr|Q5B0S9|Q5B0S9_EMENI	5639	10	24	400	46	40.7	0.36	Putative uncharacterized protein OS=Emericella
+tr|Q5CII2|Q5CII2_CRYHO	999	14	23	398	41	66.9	5e-09	Cell surface protein that may regulate cell
+tr|Q5CXN5|Q5CXN5_CRYPV	951	15	26	347	16	71.9	2e-10	Serine/threonine rich low complexity protein
+tr|Q5HC65|Q5HC65_EHRRW	661	14	25	438	14	46.8	0.006	Putative uncharacterized protein Erum1110
+tr|Q5I051|Q5I051_XENLA	266	31	48	113	9	147	3e-33	LOC496285 protein OS=Xenopus laevis
+tr|Q5IS86|Q5IS86_9PRIM	1197	15	26	556	69	173	4e-41	Chondroitin sulfate proteoglycan 3
+tr|Q5K868|Q5K868_CRYNE	1424	11	23	381	43	42.2	0.12	Putative uncharacterized protein
+tr|Q5KB63|Q5KB63_CRYNE	613	14	24	389	15	48.0	0.003	Protein phosphatase, putative
+tr|Q5KN45|Q5KN45_CRYNE	847	13	26	256	11	43.8	0.053	Putative uncharacterized protein
+tr|Q5R9V4|Q5R9V4_PONAB	493	92	93	286	12	363	4e-98	Putative uncharacterized protein
+tr|Q5RA39|Q5RA39_PONAB	379	15	29	257	22	48.0	0.003	Putative uncharacterized protein
+tr|Q5RG03|Q5RG03_DANRE	2444	26	43	120	10	155	1e-35	Novel protein similar to vertebrate stabilin 2
+tr|Q5RHU2|Q5RHU2_DANRE	445	15	29	185	24	40.3	0.50	Novel protein similar to H.sapiens PODXL,
+tr|Q5S4N3|Q5S4N3_ICTPU	1645	18	31	364	76	201	2e-49	CD45 OS=Ictalurus punctatus GN=PTPRC PE=4
+tr|Q5SS95|Q5SS95_HUMAN	507	12	23	349	19	39.5	0.99	Diffuse panbronchiolitis critical region 1
+tr|Q5TX12|Q5TX12_ANOGA	1508	12	24	190	3	44.5	0.030	AGAP007568-PA OS=Anopheles gambiae
+tr|Q5UYY3|Q5UYY3_HALMA	729	11	27	387	32	42.6	0.11	Putative uncharacterized protein
+tr|Q5V2N3|Q5V2N3_HALMA	863	15	25	317	21	56.5	6e-06	Putative uncharacterized protein
+tr|Q5W1C4|Q5W1C4_BOVIN	280	31	47	113	9	153	6e-35	Tumor necrosis factor, alpha-induced protein
+tr|Q5WDC9|Q5WDC9_BACSK	1398	13	23	295	43	63.4	6e-08	Beta-N-acetylglucosaminidase OS=Bacillus
+tr|Q5Z055|Q5Z055_NOCFA	906	13	22	369	10	39.9	0.67	Putative uncharacterized protein OS=Nocardia
+tr|Q5Z1N5|Q5Z1N5_NOCFA	7192	9	19	396	45	42.6	0.094	Putative uncharacterized protein OS=Nocardia
+tr|Q5Z1P8|Q5Z1P8_NOCFA	2348	11	21	311	57	43.4	0.068	Putative uncharacterized protein OS=Nocardia
+tr|Q62913|Q62913_RAT	514	94	95	380	0	437	e-120	CD44i (Fragment) OS=Rattus norvegicus PE=2
+tr|Q632W4|Q632W4_BACCZ	815	13	22	472	7	45.3	0.018	Collagen-like protein OS=Bacillus cereus
+tr|Q63UH1|Q63UH1_BURPS	1124	15	29	428	18	66.1	8e-09	Putative outer membrane protein
+tr|Q6BGP1|Q6BGP1_DEBHA	775	15	25	221	8	53.4	5e-05	DEHA2G24970p OS=Debaryomyces hansenii
+tr|Q6C159|Q6C159_YARLI	823	16	31	231	21	40.3	0.50	YALI0F19030p OS=Yarrowia lipolytica
+tr|Q6C1J9|Q6C1J9_YARLI	1051	16	29	469	36	62.6	1e-07	YALI0F15653p OS=Yarrowia lipolytica
+tr|Q6C247|Q6C247_YARLI	814	9	24	178	4	44.1	0.040	YALI0F10901p OS=Yarrowia lipolytica
+tr|Q6C5E4|Q6C5E4_YARLI	831	11	23	269	0	48.8	0.002	YALI0E18766p OS=Yarrowia lipolytica
+tr|Q6C5M7|Q6C5M7_YARLI	1214	14	30	297	36	45.7	0.014	YALI0E16731p OS=Yarrowia lipolytica
+tr|Q6CAJ2|Q6CAJ2_YARLI	901	13	26	437	10	58.4	2e-06	YALI0D02299p OS=Yarrowia lipolytica
+tr|Q6CAY0|Q6CAY0_YARLI	830	13	27	427	11	42.2	0.13	YALI0C23452p OS=Yarrowia lipolytica
+tr|Q6CBR5|Q6CBR5_YARLI	1136	12	27	435	23	60.7	3e-07	YALI0C16247p OS=Yarrowia lipolytica
+tr|Q6CCA1|Q6CCA1_YARLI	1114	13	22	428	20	44.1	0.032	YALI0C11165p OS=Yarrowia lipolytica
+tr|Q6CCI6|Q6CCI6_YARLI	1347	10	26	389	2	59.6	9e-07	YALI0C09031p OS=Yarrowia lipolytica
+tr|Q6CD35|Q6CD35_YARLI	2174	10	26	435	24	60.3	5e-07	YALI0C04136p OS=Yarrowia lipolytica
+tr|Q6CE66|Q6CE66_YARLI	675	17	29	270	11	49.9	7e-04	YALI0B18194p OS=Yarrowia lipolytica
+tr|Q6CF33|Q6CF33_YARLI	644	12	23	409	14	40.7	0.40	YALI0B10626p OS=Yarrowia lipolytica
+tr|Q6CF66|Q6CF66_YARLI	1815	19	31	325	71	134	2e-29	YALI0B09867p OS=Yarrowia lipolytica
+tr|Q6CGV5|Q6CGV5_YARLI	982	16	25	413	11	47.2	0.004	YALI0A15796p OS=Yarrowia lipolytica
+tr|Q6CH88|Q6CH88_YARLI	741	11	22	374	32	41.1	0.30	YALI0A11198p OS=Yarrowia lipolytica
+tr|Q6CPZ4|Q6CPZ4_KLULA	1878	13	29	444	4	42.6	0.093	KLLA0E01035p OS=Kluyveromyces lactis
+tr|Q6CSM7|Q6CSM7_KLULA	699	16	29	429	26	39.5	0.82	KLLA0C19316p OS=Kluyveromyces lactis
+tr|Q6CST7|Q6CST7_KLULA	908	14	27	383	11	50.3	6e-04	KLLA0C17985p OS=Kluyveromyces lactis
+tr|Q6DCI6|Q6DCI6_XENLA	394	18	33	186	21	205	1e-50	LOC446245 protein (Fragment) OS=Xenopus
+tr|Q6DFX1|Q6DFX1_MOUSE	754	13	25	346	20	43.4	0.059	HEG homolog 1 (Zebrafish) OS=Mus musculus
+tr|Q6FNG1|Q6FNG1_CANGA	832	14	26	413	61	48.4	0.002	Similarities with uniprot|Q08294
+tr|Q6FUJ4|Q6FUJ4_CANGA	1185	12	27	362	31	47.2	0.004	Strain CBS138 chromosome F complete sequence
+tr|Q6FUW3|Q6FUW3_CANGA	975	15	29	312	22	53.0	8e-05	Strain CBS138 chromosome E complete sequence
+tr|Q6FUW4|Q6FUW4_CANGA	1420	12	26	424	9	68.8	1e-09	Similarities with uniprot|P08640
+tr|Q6FWC0|Q6FWC0_CANGA	1148	11	24	370	33	48.0	0.002	Strain CBS138 chromosome D complete sequence
+tr|Q6G217|Q6G217_BARHE	919	18	33	267	26	71.5	2e-10	Phage related protein OS=Bartonella henselae
+tr|Q6G218|Q6G218_BARHE	381	14	26	260	7	44.1	0.040	Putative uncharacterized protein
+tr|Q6GM56|Q6GM56_XENLA	441	26	37	279	36	265	8e-69	LOC443701 protein (Fragment) OS=Xenopus
+tr|Q6HCF4|Q6HCF4_BACHK	1055	11	21	475	6	43.8	0.049	Collagen-like protein OS=Bacillus
+tr|Q6NV41|Q6NV41_DANRE	363	20	32	180	20	204	2e-50	Hyaluronan and proteoglycan link protein 3
+tr|Q6P8A2|Q6P8A2_XENTR	437	27	42	295	31	262	8e-68	CD44 molecule (Indian blood group)
+tr|Q6UDF7|Q6UDF7_9ALPH	991	14	24	316	19	47.2	0.004	Gp60 OS=Psittacid herpesvirus 1 PE=4 SV=1
+tr|Q6UNG2|Q6UNG2_ICTPU	287	16	27	172	11	62.3	1e-07	CD45 (Fragment) OS=Ictalurus punctatus PE=2
+tr|Q6UNG5|Q6UNG5_ICTPU	260	12	23	148	1	40.3	0.53	CD45 (Fragment) OS=Ictalurus punctatus PE=2
+tr|Q6UNG7|Q6UNG7_ICTPU	318	13	27	211	3	54.5	2e-05	CD45 (Fragment) OS=Ictalurus punctatus PE=2
+tr|Q6UNG8|Q6UNG8_ICTPU	313	14	24	254	22	48.0	0.003	CD45 (Fragment) OS=Ictalurus punctatus PE=2
+tr|Q6UNH0|Q6UNH0_ICTPU	267	15	26	170	12	45.7	0.013	CD45 (Fragment) OS=Ictalurus punctatus PE=2
+tr|Q6UNH5|Q6UNH5_ICTPU	292	13	24	240	29	43.4	0.058	CD45 (Fragment) OS=Ictalurus punctatus PE=2
+tr|Q6VBI8|Q6VBI8_CANGA	1133	10	26	270	17	58.4	2e-06	Epa3p OS=Candida glabrata GN=EPA3 PE=4 SV=1
+tr|Q6VBI9|Q6VBI9_CANGA	1297	10	26	287	8	55.3	2e-05	Epa2p OS=Candida glabrata GN=EPA2 PE=4 SV=1
+tr|Q6XL67|Q6XL67_BOVIN	2365	14	26	525	46	192	7e-47	Aggrecan OS=Bos taurus PE=4 SV=1
+tr|Q6Y8G1|Q6Y8G1_CANAL	2031	14	28	432	34	43.4	0.055	ALS7 protein OS=Candida albicans GN=ALS7
+tr|Q6Y8G2|Q6Y8G2_CANAL	1975	13	25	443	20	46.1	0.008	ALS7 protein OS=Candida albicans GN=ALS7
+tr|Q74HA8|Q74HA8_LACJO	1814	13	24	422	22	47.6	0.003	Putative uncharacterized protein
+tr|Q74Z79|Q74Z79_ASHGS	1012	14	26	393	28	45.3	0.016	AGR327Cp OS=Ashbya gossypii GN=AGOS_AGR327C
+tr|Q751W4|Q751W4_ASHGS	561	14	22	293	34	41.4	0.25	AFR711Cp OS=Ashbya gossypii GN=AFR711C PE=4
+tr|Q757N5|Q757N5_ASHGS	1458	11	25	438	13	57.2	4e-06	AEL023Cp OS=Ashbya gossypii GN=AGOS_AEL023C
+tr|Q759S3|Q759S3_ASHGS	2338	14	29	500	4	53.0	7e-05	ADR200Cp OS=Ashbya gossypii GN=AGOS_ADR200C
+tr|Q75DJ5|Q75DJ5_ASHGS	1131	14	22	452	27	61.5	2e-07	ABR027Cp OS=Ashbya gossypii GN=AGOS_ABR027C
+tr|Q75E06|Q75E06_ASHGS	1766	14	23	479	50	40.3	0.48	ABL133Cp OS=Ashbya gossypii GN=AGOS_ABL133C
+tr|Q75ZI3|Q75ZI3_DANRE	1570	15	26	546	63	182	7e-44	Dermacan OS=Danio rerio GN=vcanb PE=2 SV=1
+tr|Q7JXX2|Q7JXX2_DROME	958	14	26	412	50	41.8	0.16	RE32881p OS=Drosophila melanogaster
+tr|Q7KUI0|Q7KUI0_DROME	1799	13	27	454	8	53.0	8e-05	Mucin 68E OS=Drosophila melanogaster GN=Muc68E
+tr|Q7Q4S4|Q7Q4S4_ANOGA	2727	13	23	411	37	51.9	2e-04	AGAP000893-PA OS=Anopheles gambiae
+tr|Q7QFG1|Q7QFG1_ANOGA	697	14	25	162	4	47.2	0.005	AGAP000468-PA (Fragment) OS=Anopheles
+tr|Q7QGM7|Q7QGM7_ANOGA	414	17	31	148	9	41.4	0.21	AGAP010825-PA (Fragment) OS=Anopheles
+tr|Q7R9K7|Q7R9K7_PLAYO	708	12	27	347	25	41.8	0.18	Drosophila melanogaster CG5228 gene product
+tr|Q7S374|Q7S374_NEUCR	2012	18	29	175	22	44.9	0.021	Predicted protein OS=Neurospora crassa
+tr|Q7S7F3|Q7S7F3_NEUCR	1018	13	26	382	16	39.5	0.84	Predicted protein OS=Neurospora crassa
+tr|Q7SB70|Q7SB70_NEUCR	896	13	26	376	58	46.1	0.009	Putative uncharacterized protein
+tr|Q7WYN2|Q7WYN2_9FIRM	1237	12	22	468	22	82.3	1e-13	Cellulosomal scaffoldin anchoring protein C
+tr|Q7YS22|Q7YS22_PIG	201	34	50	68	2	72.3	1e-10	Lymphatic endothelial hyaluronan receptor
+tr|Q7Z884|Q7Z884_CANAL	1121	14	28	459	9	81.9	2e-13	Putative cell wall adhesin OS=Candida
+tr|Q7ZA78|Q7ZA78_CANAL	1854	11	25	496	9	41.4	0.23	Agglutinin-like sequence 9 OS=Candida albicans
+tr|Q80A62|Q80A62_9VIRU	414	12	25	324	3	44.5	0.027	Thr-Ser protein OS=Hyposoter didymator virus
+tr|Q80P19|Q80P19_EBVG	1186	13	19	278	33	39.5	0.81	Nuclear antigen-3B OS=Human herpesvirus 4
+tr|Q80X37|Q80X37_MOUSE	580	56	63	399	50	440	e-121	CD44 antigen OS=Mus musculus GN=Cd44 PE=2
+tr|Q80Z18|Q80Z18_MOUSE	1674	12	24	432	23	50.3	5e-04	Secreted gel-forming mucin (Fragment) OS=Mus
+tr|Q86SD5|Q86SD5_CIOIN	969	15	25	390	26	44.5	0.030	Tensin homologue OS=Ciona intestinalis
+tr|Q871Y4|Q871Y4_NEUCR	1642	15	27	279	38	56.1	1e-05	Putative uncharacterized protein OS=Neurospora
+tr|Q89J13|Q89J13_BRAJA	4210	13	26	437	59	52.6	1e-04	Bll5471 protein OS=Bradyrhizobium japonicum
+tr|Q8BWE0|Q8BWE0_MOUSE	1157	11	24	257	36	60.3	5e-07	Putative uncharacterized protein (Fragment)
+tr|Q8CPL9|Q8CPL9_STAES	827	11	24	500	28	44.9	0.019	Lipoprotein VsaC OS=Staphylococcus
+tr|Q8H6Q5|Q8H6Q5_PHYIN	1607	12	24	428	5	55.7	1e-05	Elicitor-like mating protein M81
+tr|Q8IIK5|Q8IIK5_PLAF7	1201	14	25	370	42	77.3	4e-12	Moving junction protein OS=Plasmodium
+tr|Q8IQ18|Q8IQ18_DROME	22971	18	28	464	132	228	1e-57	Dumpy OS=Drosophila melanogaster GN=dp PE=1
+tr|Q8IR22|Q8IR22_DROME	16223	10	26	414	24	39.9	0.64	Mucin 14A OS=Drosophila melanogaster GN=Muc14A
+tr|Q8IR52|Q8IR52_DROME	3269	13	22	388	9	39.9	0.72	Mucin 12Ea OS=Drosophila melanogaster
+tr|Q8IR84|Q8IR84_DROME	1040	13	23	449	38	46.8	0.005	Mucin 11A OS=Drosophila melanogaster
+tr|Q8ISS2|Q8ISS2_PLUXY	1192	9	24	423	14	48.0	0.003	Peritrophic matrix insect intestinal mucin
+tr|Q8IWX2|Q8IWX2_HUMAN	516	23	37	162	16	131	2e-28	Hyaluronan binding protein (Fragment)
+tr|Q8JIR5|Q8JIR5_DANRE	874	14	25	397	26	49.5	0.001	Tbx24 protein OS=Danio rerio GN=tbx24 PE=2
+tr|Q8JKF9|Q8JKF9_9VIRU	1505	17	27	181	10	47.6	0.003	Orf154 OS=Heliothis zea virus 1 GN=orf154
+tr|Q8K1G6|Q8K1G6_MOUSE	4782	14	27	445	42	74.2	3e-11	Muc5b protein OS=Mus musculus GN=Muc5b PE=2
+tr|Q8NK55|Q8NK55_CANAL	653	14	26	463	25	43.0	0.075	Putative cell wall adhesin OS=Candida
+tr|Q8RJR4|Q8RJR4_9STAP	1401	14	31	349	30	61.5	2e-07	Putative autolysin OS=Staphylococcus cohnii
+tr|Q8UZI9|Q8UZI9_9GAMA	3105	16	25	178	28	53.0	9e-05	BPLF1 OS=Macacine herpesvirus 4 PE=4 SV=1
+tr|Q90ZL8|Q90ZL8_ANAPL	398	40	52	223	32	201	1e-49	T cell antigen CD44 isoform a OS=Anas
+tr|Q91198|Q91198_ONCMA	619	13	27	451	8	48.4	0.002	Apopolysialoglycoprotein OS=Oncorhynchus
+tr|Q93T34|Q93T34_HAEIN	1764	12	24	415	48	72.7	1e-10	Iga1 protease type 2 OS=Haemophilus influenzae
+tr|Q96N83|Q96N83_HUMAN	518	13	28	221	6	47.2	0.004	cDNA FLJ31254 fis, clone KIDNE2005526,
+tr|Q98Q44|Q98Q44_MYCPU	833	14	28	455	21	70.0	6e-10	LIPOPROTEIN VSAC (Fragment) OS=Mycoplasma
+tr|Q9BMP3|Q9BMP3_MONBE	1743	14	26	250	25	58.8	1e-06	DNA-dependent RNA polymerase II largest
+tr|Q9ERN3|Q9ERN3_RAT	94	53	61	62	1	67.6	3e-09	CD44 isoform v3 (Fragment) OS=Rattus
+tr|Q9H5A7|Q9H5A7_HUMAN	676	93	94	676	43	729	0.0	CD44 molecule (Indian blood group)
+tr|Q9HFZ4|Q9HFZ4_CANAL	750	10	22	403	15	46.5	0.008	Repressed by TUP1 protein 1 OS=Candida
+tr|Q9K4C4|Q9K4C4_STRCO	874	13	25	252	6	43.4	0.054	Putative uncharacterized protein SCO5387
+tr|Q9LQ50|Q9LQ50_ARATH	1076	16	27	336	19	48.4	0.002	T30E16.23 OS=Arabidopsis thaliana PE=4 SV=1
+tr|Q9MZL1|Q9MZL1_MACMU	553	15	24	349	14	43.0	0.072	Mucin 1 (Fragment) OS=Macaca mulatta PE=4
+tr|Q9N5K0|Q9N5K0_CAEEL	1203	14	27	377	27	54.5	3e-05	Putative uncharacterized protein
+tr|Q9TYU0|Q9TYU0_CAEEL	1424	13	21	380	52	40.7	0.42	Putative uncharacterized protein
+tr|Q9U3P1|Q9U3P1_CAEEL	1148	12	26	324	12	42.2	0.14	Protein C26G2.2, partially confirmed by
+tr|Q9U8G8|Q9U8G8_MANSE	3198	14	29	350	32	67.6	3e-09	Lacunin OS=Manduca sexta PE=2 SV=1
+tr|Q9VB94|Q9VB94_DROME	676	16	27	239	20	54.2	4e-05	CG6296 OS=Drosophila melanogaster GN=CG6296
+tr|Q9VC00|Q9VC00_DROME	2788	14	25	428	38	54.2	3e-05	Tenectin OS=Drosophila melanogaster GN=tnc
+tr|Q9VEL9|Q9VEL9_DROME	2112	12	26	212	10	43.0	0.077	Mucin related 89F OS=Drosophila melanogaster
+tr|Q9VGW4|Q9VGW4_DROME	2743	14	29	374	29	67.3	4e-09	CG14692 OS=Drosophila melanogaster GN=CG14692
+tr|Q9VTN2|Q9VTN2_DROME	1514	14	27	264	3	39.9	0.65	GH09355p OS=Drosophila melanogaster GN=Muc68D
+tr|Q9W6E1|Q9W6E1_CHICK	1290	12	22	626	151	194	2e-47	Neurocan core protein OS=Gallus gallus PE=2
+tr|Q9YMX0|Q9YMX0_NPVLD	1029	13	30	302	33	41.4	0.23	Mucin-like protein OS=Lymantria dispar
+tr|Q9ZB39|Q9ZB39_UREUR	487	15	25	340	4	55.3	2e-05	Multiple banded antigen OS=Ureaplasma

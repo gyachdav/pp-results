@@ -1,0 +1,4 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Xlink                PF00193.11    92 query                -            742   4.1e-27   93.8   0.1   1   1   9.4e-31   1.2e-26   92.3   0.1     2    92    32   119    31   119 0.98 Extracellular link domain

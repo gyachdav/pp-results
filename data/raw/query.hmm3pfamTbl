@@ -1,0 +1,4 @@
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+Xlink                PF00193.11 query                -            4.1e-27   93.8   0.1   1.2e-26   92.3   0.1   1.8   1   0   0   1   1   1   1 Extracellular link domain

@@ -1,0 +1,52 @@
+# hmmscan :: search sequence(s) against a profile database
+# HMMER 3.0 (March 2010); http://hmmer.org/
+# Copyright (C) 2010 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query sequence file:             /tmp/2616966.1.generic/BUSt2xGJ34/query.fasta
+# target HMM database:             /var/tmp/rost_db/data/pfam/Pfam-A.hmm
+# output directed to file:         /tmp/2616966.1.generic/BUSt2xGJ34/query.hmm3pfam
+# per-seq hits tabular output:     /tmp/2616966.1.generic/BUSt2xGJ34/query.hmm3pfamTbl
+# per-dom hits tabular output:     /tmp/2616966.1.generic/BUSt2xGJ34/query.hmm3pfamDomTbl
+# prefer accessions over names:    yes
+# max ASCII text line length:      unlimited
+# model-specific thresholding:     GA cutoffs
+# number of worker threads:        1
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       query  [L=742]
+Scores for complete sequence (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Model      Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------   -----------
+    4.1e-27   93.8   0.1    1.2e-26   92.3   0.1    1.8  1  PF00193.11 Extracellular link domain
+
+
+Domain annotation for each model (and alignments):
+>> PF00193.11  Extracellular link domain
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   92.3   0.1   9.4e-31   1.2e-26       2      92 .]      32     119 ..      31     119 .. 0.98
+
+  Alignments for each domain:
+  == domain 1    score: 92.3 bits;  conditional E-value: 9.4e-31
+  PF00193.11   2 evfhlekksrykltfeeAakaCkeegarlatveqleaAykaGldqCdaGwladgsvryPivkpreaCggdkagvrtlGlrdkssrydvyCf 92 
+                  vfh+ek+ ry+++++eAa++Ck+ +++l+t++q+e+A+++G+++C++G++ +g+v +P+++p++ C+++++gv++l  ++++s+yd+yCf
+       query  32 GVFHVEKNGRYSISRTEAADLCKAFNSTLPTMAQMEKALSIGFETCRYGFI-EGHVVIPRIHPNSICAANNTGVYIL--TSNTSQYDTYCF 119
+                 69*************************************************.9**********************99..9**********9 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query sequence(s):                         1  (742 residues)
+Target model(s):                       12273  (2211338 nodes)
+Passed MSV filter:                       493  (0.0401695); expected 245.5 (0.02)
+Passed bias filter:                      264  (0.0215106); expected 245.5 (0.02)
+Passed Vit filter:                        23  (0.00187403); expected 12.3 (0.001)
+Passed Fwd filter:                         1  (8.14797e-05); expected 0.1 (1e-05)
+Initial search space (Z):              12273  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.54u 0.13s 00:00:00.67 Elapsed: 00:00:00.61
+# Mc/sec: 2689.86
+//

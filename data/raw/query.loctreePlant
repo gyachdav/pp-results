@@ -1,0 +1,4 @@
+#out gen by /usr/share/loctree/perl/svm_testHeirarchyTr_plant.pl
+#Localization predicted using heirarchical system
+#Protein Id	predicted Localization	SVM prediction Score	Hierarchical Localization	Hierarchical prediction score
+query	Organellar	1	Secretory pathway,Organellar	1,1
