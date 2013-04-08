@@ -1,0 +1,252 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Demo: Axes</title>
+		<style type="text/css">
+			
+			.axis path,
+			.axis line {
+				fill: none;
+				stroke: black;
+				shape-rendering: crispEdges;
+			}
+			
+			.axis text {
+				font-family: sans-serif;
+				font-size: 11px;
+			}
+
+		</style>
+		<script type="text/javascript" src="../d3/d3.v3.min.js"></script>
+		</head>
+<body>
+<div id='pH'></div>
+<p>Probablity of this residue being an Alpha-Helix</p>
+<div id='pE'></div>
+<p>Probablity of this residue being a Beta-Sheet(Strand)</p>
+<div id='pL'></div>
+<p>Probablity of this residue being a Loop</p>
+<script>
+
+var margin = {top: 20, right: 10, bottom: 20, left: 50};
+
+var w = 1000 - margin.left - margin.right;
+var h = 300 - margin.top - margin.bottom;
+
+var padding = 0;
+var barPadding = 1;  
+
+//Create SVG element
+var svg1 = d3.select('#pH')
+			.append("svg")
+			.attr("width", w)
+			.attr("height", h);
+
+
+
+d3.text("data/prof_ci.tsv", function(datasetText) {
+
+var parsedRows = d3.tsv.parseRows(datasetText);
+var dataset = [];
+ for (var indx = 1 ; indx< parsedRows.length; indx++){
+ 	item = [indx,parsedRows[indx][2]];
+ 	dataset.push(item);
+ }	
+
+//Create scale functions
+var xScale = d3.scale.linear()
+					 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+					 .range([padding, w - padding * 2]);
+
+var yScale = d3.scale.linear()
+ 					 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+ 					 .range([h - padding, padding]);
+
+//Define X axis
+var xAxis = d3.svg.axis()
+				  .scale(xScale)
+				  .orient("bottom")
+				  .ticks(5);
+
+//Define Y axis
+var yAxis = d3.svg.axis()
+				  .scale(yScale)
+				  .orient("left")
+				  .ticks(5);
+
+			
+svg1.selectAll("rect")
+   .data(dataset)
+   .enter()
+   .append("rect")
+   .attr("x", function(d, i) {
+   	 return i * (w / dataset.length);
+	})
+   .attr("y", function(d) {
+   	 return h - d[1]*20;  //Height minus data value
+	})
+   .attr("width", w / dataset.length - barPadding)
+   .attr("height", function(d) {
+    return d[1]*20;  //Just the data value
+	})
+    .attr("fill", function(d) { return "red";})
+    ;
+//Create X axis
+	svg1.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(0," + (h - padding) + ")")
+		.call(xAxis);
+	
+	//Create Y axis
+	svg1.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(" + padding + ",0)")
+		.call(yAxis);
+
+});
+
+</script>
+
+<script>
+//Create SVG element
+var svg2 = d3.select("#pE")
+			.append("svg")
+			.attr("width", w)
+			.attr("height", h);
+
+d3.text("data/prof_ci.tsv", function(datasetText) {
+
+var parsedRows = d3.tsv.parseRows(datasetText);
+var dataset = [];
+ for (var indx = 1 ; indx< parsedRows.length; indx++){
+ 	item = [indx,parsedRows[indx][3]];
+ 	dataset.push(item);
+ }	
+
+//Create scale functions
+var xScale = d3.scale.linear()
+					 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+					 .range([padding, w - padding * 2]);
+
+var yScale = d3.scale.linear()
+ 					 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+ 					 .range([h - padding, padding]);
+
+//Define X axis
+var xAxis = d3.svg.axis()
+				  .scale(xScale)
+				  .orient("bottom")
+				  .ticks(5);
+
+//Define Y axis
+var yAxis = d3.svg.axis()
+				  .scale(yScale)
+				  .orient("left")
+				  .ticks(5);
+
+			
+svg2.selectAll("rect")
+   .data(dataset)
+   .enter()
+   .append("rect")
+   .attr("x", function(d, i) {
+   	 return i * (w / dataset.length);
+	})
+   .attr("y", function(d) {
+   	 return h - d[1]*20;  //Height minus data value
+	})
+   .attr("width", w / dataset.length - barPadding)
+   .attr("height", function(d) {
+    return d[1]*20;  //Just the data value
+	})
+    .attr("fill", function(d) { return "blue";})
+    ;
+//Create X axis
+	svg2.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(0," + (h - padding) + ")")
+		.call(xAxis);
+	
+	//Create Y axis
+	svg2.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(" + padding + ",0)")
+		.call(yAxis);
+
+});
+
+
+//Create SVG element
+var svg3 = d3.select("#pL")
+			.append("svg")
+			.attr("width", w)
+			.attr("height", h);
+
+d3.text("data/prof_ci.tsv", function(datasetText) {
+
+var parsedRows = d3.tsv.parseRows(datasetText);
+var dataset = [];
+ for (var indx = 1 ; indx< parsedRows.length; indx++){
+ 	item = [indx,parsedRows[indx][4]];
+ 	dataset.push(item);
+ }	
+
+//Create scale functions
+var xScale = d3.scale.linear()
+					 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+					 .range([padding, w - padding * 2]);
+
+var yScale = d3.scale.linear()
+ 					 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+ 					 .range([h - padding, padding]);
+
+//Define X axis
+var xAxis = d3.svg.axis()
+				  .scale(xScale)
+				  .orient("bottom")
+				  .ticks(5);
+
+//Define Y axis
+var yAxis = d3.svg.axis()
+				  .scale(yScale)
+				  .orient("left")
+				  .ticks(5);
+
+			
+svg3.selectAll("rect")
+   .data(dataset)
+   .enter()
+   .append("rect")
+   .attr("x", function(d, i) {
+   	 return i * (w / dataset.length);
+	})
+   .attr("y", function(d) {
+   	 return h - d[1]*20;  //Height minus data value
+	})
+   .attr("width", w / dataset.length - barPadding)
+   .attr("height", function(d) {
+    return d[1]*20;  //Just the data value
+	})
+    .attr("fill", function(d) { return "green";})
+    ;
+//Create X axis
+	svg3.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(0," + (h - padding) + ")")
+		.call(xAxis);
+	
+	//Create Y axis
+	svg3.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(" + padding + ",0)")
+		.call(yAxis);
+
+});
+
+
+	</script>
+	
+
+
+</body>
+</html>
