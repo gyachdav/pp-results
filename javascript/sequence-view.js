@@ -19,13 +19,9 @@ function buildSequence(xml){
 	xml_source = xml;
 	theSequence = $(xml).find("sequence").text();
   	theSequence = $.trim(theSequence).replace(/(\r\n|\n|\r)/gm,"");
-
+  	
   	$("#SequenceView").siblings().html('');
-
 	var num_columns = Math.floor(($("#SequenceView").width()/10) / 20) * 10;
-	;  	
-
-
 	 mySequence = new Biojs.Sequence({
 	        sequence : theSequence,
 	        target : "SequenceView",
@@ -36,7 +32,7 @@ function buildSequence(xml){
 	    		footer:false
 			},
 			columns:{
-				size: num_columns,
+				size: num_columns,	
 				spacedEach:15
 			},
 	});
@@ -52,7 +48,7 @@ function buildSequence(xml){
 */
 	addSecondaryStructure(xml);
 	//addSolvAcc(xml);
-	 addTMH(xml);
+	addTMH(xml);
 	addDisorder(xml);
 	// addDisulphide(xml);
 
