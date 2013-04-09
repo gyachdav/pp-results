@@ -46,92 +46,13 @@ function buildSequence(xml){
 /**
 * Secondary structure
 */
-
- var position_array = [];
- $(xml).find('featureTypeGroup[type=secondary structures] feature').each(function(){
-		var ss_type = $(this).attr("type");
-		switch(ss_type){
-			case 'helix':
-			  color = 'red'
-			  break;
-			case 'strand':
-			  color = 'blue'
-			  break;
-			default:
-			  color = 'green'
-		}
-		var pos_begin  = $(this).find('begin').attr('position');
-		var pos_end  = $(this).find('end').attr('position');
-		var range = {	
-						start: pos_begin,
-						end: pos_end, 
-						color: color,
-						html: ss_type
-					};
-		position_array.push(range);
-		 if (window.console) console.log( ss_type +"\t"+pos_begin+"\t"+ pos_end);
-	});
-
-	mySequence.setAnnotation({
-						name: "Secondary Structure",
-						html: "<font color=red>Helix</font><br/><font color=blue>Strand</font><br/><font color=green>Loop</font><br/>",
-						regions: position_array
-
-					});
+	addSecondaryStructure(xml);
+	//addSolvAcc(xml);
+	 addTMH(xml);
+	addDisorder(xml);
+	// addDisulphide(xml);
 
 
-	addSolvAcc(xml);
-
-/**
-* Transmembrane
-*/
-
- var position_array = [];
- $(xml).find('featureTypeGroup[type=helical transmembrane region] feature').each(function(){
-		var pos_begin  = $(this).find('begin').attr('position');
-		var pos_end  = $(this).find('end').attr('position');
-		var range = {	
-						start: pos_begin,
-						end: pos_end, 
-						color: 'purple'
-					};
-		position_array.push(range);
-		 if (window.console) console.log( pos_begin+"\t"+ pos_end);
-	});
-
-	mySequence.setAnnotation({
-						name: "Transmembrane Region",
-						regions: position_array
-					});
-
-
-
-// /**
-// * Meta Disorder
-// */
-
- position_array = [];
- $(xml).find('featureProviderGroup[provider=MD] feature').each(function(){
-		var pos_begin  = $(this).find('begin').attr('position');
-		var pos_end  = $(this).find('end').attr('position');
-		var range = {	
-						start: pos_begin,
-						end: pos_end, 
-						color: 'grey',
-					};
-		position_array.push(range);
-		 if (window.console) console.log( pos_begin+"\t"+ pos_end);
-	});
-
-	mySequence.setAnnotation({
-						name: "Disorder",
-						regions: position_array
-					});
-
-
-/**
-* Binding Regions
-*/
 
  position_array = [];
  $(xml).find('featureTypeGroup[type=protein binding region] feature').each(function(){
@@ -153,40 +74,32 @@ function buildSequence(xml){
 					});
 
 
-/**
-* Disulphide Bond
-*/
-/* TODO : need to draw a line for nrgdges but without filling the brackets
-*/
- color = 'rgb(128,128,0)';
- $(xml).find('featureTypeGroup[type=disulfide bond] feature').each(function(){
-		var pos_begin  = $(this).find('begin').attr('position');
-		var pos_end  = $(this).find('end').attr('position');
-		
-	
-		 if (window.console) console.log( pos_begin+"\t"+ pos_end);
-		mySequence.setAnnotation({
-							name: "Disulphide",
-							regions: [{	
-								start: pos_begin,
-								end: pos_end, 
-								color: color
-							}]
 
-						});
-	});
+
 
 
  	$('#chk-disulfind').click(function(){
 		if (! $(this).is(":checked"))
 			mySequence.removeAnnotation ('Disulphide');
 	});
+
+
+	$('#chk-disorder').click(function(){
+		if (! $(this).is(":checked"))
+			mySequence.removeAnnotation ('Disorder');
+		else
+			addDisorder(xml_source);
+	});
+
 	$('#chk-solvacc').click(function(){
 		if (! $(this).is(":checked"))
 			mySequence.removeAllHighlights();
 		if ($(this).is(":checked"))
 			addSolvAcc(xml_source);
 	});
+
+
+
 
 	$('#chk-formatSel').click(function(){
 		if (! $(this).is(":checked"))
@@ -227,6 +140,112 @@ if (window.console) console.log(  solv_acc+ "\n"+theSequence+"\n" );
 
 }
 
+
+function addDisorder(xml){
+
+ 	var position_array = [];
+	$(xml).find('featureProviderGroup[provider=MD] feature').each(function(){
+	var pos_begin  = $(this).find('begin').attr('position');
+	var pos_end  = $(this).find('end').attr('position');
+	var range = {	
+					start: pos_begin,
+					end: pos_end, 
+					color: 'grey',
+				};
+	position_array.push(range);
+	 if (window.console) console.log( pos_begin+"\t"+ pos_end);
+	});
+
+	mySequence.setAnnotation({
+				name: "Disorder",
+				regions: position_array
+	});
+
+}
+
+
+function addSecondaryStructure(xml){
+	 var position_array = [];
+ $(xml).find('featureTypeGroup[type=secondary structures] feature').each(function(){
+		var ss_type = $(this).attr("type");
+		switch(ss_type){
+			case 'helix':
+			  color = 'red'
+			  break;
+			case 'strand':
+			  color = 'blue'
+			  break;
+			default:
+			  color = 'green'
+		}
+		var pos_begin  = $(this).find('begin').attr('position');
+		var pos_end  = $(this).find('end').attr('position');
+		var range = {	
+						start: pos_begin,
+						end: pos_end, 
+						color: color,
+						html: ss_type
+					};
+		position_array.push(range);
+		 if (window.console) console.log( ss_type +"\t"+pos_begin+"\t"+ pos_end);
+	});
+
+	mySequence.setAnnotation({
+						name: "Secondary Structure",
+						html: "<font color=red>Helix</font><br/><font color=blue>Strand</font><br/><font color=green>Loop</font><br/>",
+						regions: position_array
+
+					});
+
+
+
+}
+
+
+function addTMH(xml){
+	 var position_array = [];
+ $(xml).find('featureTypeGroup[type=helical transmembrane region] feature').each(function(){
+		var pos_begin  = $(this).find('begin').attr('position');
+		var pos_end  = $(this).find('end').attr('position');
+		var range = {	
+						start: pos_begin,
+						end: pos_end, 
+						color: 'purple'
+					};
+		position_array.push(range);
+		 if (window.console) console.log( pos_begin+"\t"+ pos_end);
+	});
+
+	mySequence.setAnnotation({
+						name: "Transmembrane Region",
+						regions: position_array
+					});
+
+
+}
+
+function addDisulphide(xml){
+	/* TODO : need to draw a line for nrgdges but without filling the brackets
+*/
+	 color = 'rgb(128,128,0)';
+ $(xml).find('featureTypeGroup[type=disulfide bond] feature').each(function(){
+		var pos_begin  = $(this).find('begin').attr('position');
+		var pos_end  = $(this).find('end').attr('position');
+		
+	
+		 if (window.console) console.log( pos_begin+"\t"+ pos_end);
+		mySequence.setAnnotation({
+							name: "Disulphide",
+							regions: [{	
+								start: pos_begin,
+								end: pos_end, 
+								color: color
+							}]
+
+						});
+	});
+
+}
 
 
 // Helper Functions

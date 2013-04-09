@@ -31,7 +31,7 @@ $('#menu-feature-view').click(function(){
 });
 
 $('#menu-summary').click(function(){
-	$('#DetailView').load('html_source/summary.html',  function(response, status, xhr) {
+	$('#DetailView').load('summary.html',  function(response, status, xhr) {
   	if (status == "error") {
   		alert (xhr.status)
     	var msg = "Sorry but there was an error: ";
@@ -45,7 +45,8 @@ $('#menu-summary').click(function(){
 
 $('#SS-detail').click(function(){
 	
-	$('#DetailView').load('html_source/source4.html #prof-content',  function(response, status, xhr) {
+	$('#DetailView').load('secondary_structure.html',  function(response, status, xhr) {
+	// $('#DetailView').load('html_source/source4.html #prof-content',  function(response, status, xhr) {
 	  	$(this).siblings().html('');
 	  	if (status == "error") {
 	  		alert (xhr.status)
@@ -58,7 +59,7 @@ $('#SS-detail').click(function(){
 });
 
 $('#HTM-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #phd-content',  function(response, status, xhr) {
+	$('#DetailView').load('transmembrane.html',  function(response, status, xhr) {
   	if (status == "error") {
   		alert (xhr.status)
     	var msg = "Sorry but there was an error: ";

@@ -10,16 +10,9 @@ function drawFeatureMap( target_div_name ) {
       dataType: "xml",
       success: buildFeatureMap
     });
-  
 }
 
-function buildFeatureMap (xml){
- if (window.console) console.log(  $(xml));
- if (window.console) console.log(  $(xml).find("sequence").text());
- var seq = ($(xml).find("sequence").text());
- seq = $.trim(seq).replace(/(\r\n|\n|\r)/gm,"");
-
-
+function drawSecondaryStructures ( xml ) {
 	var features_array = [];
 	 $(xml).find('featureTypeGroup[type=secondary structures] feature').each(function(){
 	    var ss_type = $(this).attr("type");
@@ -39,11 +32,9 @@ function buildFeatureMap (xml){
 	        default:
 	          SO_ac = '';
 	           color = '#006600';
-	        }
-	        
+	        }  
 
 	    var feature = {
-
 	           "nonOverlappingStyle":{"heightOrRadius":10,"y":56},
 	           "type":"rect",
 	           "featureEnd":pos_end,
@@ -76,45 +67,51 @@ function buildFeatureMap (xml){
 	  });
 
 
+	$(xml).find('featureTypeGroup[type=helical transmembrane region] feature').each(function(){
+		    var ss_type = $(this).attr("type");
+		    var pos_begin  = $(this).find('begin').attr('position');
+		    var pos_end  = $(this).find('end').attr('position');
 
-	 $(xml).find('featureTypeGroup[type=helical transmembrane region] feature').each(function(){
-	    var ss_type = $(this).attr("type");
-	    var pos_begin  = $(this).find('begin').attr('position');
-	    var pos_end  = $(this).find('end').attr('position');
+		    var feature = {
 
-	    var feature = {
+		           "nonOverlappingStyle":{"heightOrRadius":10,"y":56},
+		           "type":"rect",
+		           "featureEnd":pos_end,
+		           "fillOpacity":0.5
+		            ,"evidenceText":"Predicted by PROFphd",
+		            "stroke":"#9B7057",
+		            "height":10,
+		            "path":"",
+		            "typeLabel":"Propeptide"
+		            ,"featureLabel":"Propeptide",
+		            "featureStart":pos_begin
+		            ,"strokeWidth":1,
+		            "text":""
+		            ,"centeredStyle":{"heightOrRadius":44,"y":73},
+		            "fill":"#990099"
+		            ,"width":495
+		            ,"typeCategory":"Molecule processing",
+		            "typeCode":SO_ac,
+		            "cy":56,"cx":27,
+		            "evidenceCode":""
+		            ,"r":10,
+		            "featureId":"",
+		            "rowsStyle":{"heightOrRadius":10,"y":169}
+		            ,"featureTypeLabel":"propeptide",
+		            "y":90,"x":27
 
-	           "nonOverlappingStyle":{"heightOrRadius":10,"y":56},
-	           "type":"rect",
-	           "featureEnd":pos_end,
-	           "fillOpacity":0.5
-	            ,"evidenceText":"Predicted by PROFphd",
-	            "stroke":"#9B7057",
-	            "height":10,
-	            "path":"",
-	            "typeLabel":"Propeptide"
-	            ,"featureLabel":"Propeptide",
-	            "featureStart":pos_begin
-	            ,"strokeWidth":1,
-	            "text":""
-	            ,"centeredStyle":{"heightOrRadius":44,"y":73},
-	            "fill":"#990099"
-	            ,"width":495
-	            ,"typeCategory":"Molecule processing",
-	            "typeCode":SO_ac,
-	            "cy":56,"cx":27,
-	            "evidenceCode":""
-	            ,"r":10,
-	            "featureId":"",
-	            "rowsStyle":{"heightOrRadius":10,"y":169}
-	            ,"featureTypeLabel":"propeptide",
-	            "y":90,"x":27
+		    }
+		  features_array.push(feature);
+		  	if (window.console) console.log( feature);
+		  });
 
-	    }
-	  features_array.push(feature);
-	  if (window.console) console.log( feature);
-	  });
+	return features_array;
+}
 
+
+function  drawDisorder (xml){
+
+	var features_array = [];
 	 $(xml).find('featureProviderGroup[provider=MD] feature').each(function(){
 	    var ss_type = $(this).attr("type");
 	    var pos_begin  = $(this).find('begin').attr('position');
@@ -139,7 +136,7 @@ function buildFeatureMap (xml){
 	            "fill":"#999966"
 	            ,"width":495
 	            ,"typeCategory":"Molecule processing",
-	            "typeCode":SO_ac,
+	            "typeCode":'',
 	            "cy":56,"cx":27,
 	            "evidenceCode":""
 	            ,"r":10,
@@ -150,76 +147,68 @@ function buildFeatureMap (xml){
 
 	    }
 	  features_array.push(feature);
-	  if (window.console) console.log( feature);
+	  	if (window.console) console.log( feature);
 	  });
 
+	return features_array;
+
+}
 
 
+function drawBindingSites (xml){
+	var features_array = [];
 	$(xml).find('featureTypeGroup[type=protein binding region] feature').each(function(){
-	    var ss_type = $(this).attr("type");
-	    var pos_begin  = $(this).find('begin').attr('position');
-	    var pos_end  = $(this).find('end').attr('position');
+		    var ss_type = $(this).attr("type");
+		    var pos_begin  = $(this).find('begin').attr('position');
+		    var pos_end  = $(this).find('end').attr('position');
 
-	    var feature = {
+		    var feature = {
 
-	           "nonOverlappingStyle":{"heightOrRadius":10,"y":56},
-	           "type":"rect",
-	           "featureEnd":pos_end,
-	           "fillOpacity":0.5
-	            ,"evidenceText":"Predicted by PROFphd",
-	            "stroke":"#9B7057",
-	            "height":10,
-	            "path":"",
-	            "typeLabel":"Propeptide"
-	            ,"featureLabel":"Propeptide",
-	            "featureStart":pos_begin
-	            ,"strokeWidth":1,
-	            "text":""
-	            ,"centeredStyle":{"heightOrRadius":44,"y":73},
-	            "fill":"#996600"
-	            ,"width":495
-	            ,"typeCategory":"Molecule processing",
-	            "typeCode":SO_ac,
-	            "cy":56,"cx":27,
-	            "evidenceCode":""
-	            ,"r":10,
-	            "featureId":"",
-	            "rowsStyle":{"heightOrRadius":10,"y":169}
-	            ,"featureTypeLabel":"propeptide",
-	            "y":130,"x":27
+		           "nonOverlappingStyle":{"heightOrRadius":10,"y":56},
+		           "type":"rect",
+		           "featureEnd":pos_end,
+		           "fillOpacity":0.5
+		            ,"evidenceText":"Predicted by PROFphd",
+		            "stroke":"#9B7057",
+		            "height":10,
+		            "path":"",
+		            "typeLabel":"Propeptide"
+		            ,"featureLabel":"Propeptide",
+		            "featureStart":pos_begin
+		            ,"strokeWidth":1,
+		            "text":""
+		            ,"centeredStyle":{"heightOrRadius":44,"y":73},
+		            "fill":"#996600"
+		            ,"width":495
+		            ,"typeCategory":"Molecule processing",
+		            "typeCode":'',
+		            "cy":56,"cx":27,
+		            "evidenceCode":""
+		            ,"r":10,
+		            "featureId":"",
+		            "rowsStyle":{"heightOrRadius":10,"y":169}
+		            ,"featureTypeLabel":"propeptide",
+		            "y":130,"x":27
 
-	    }
-	  features_array.push(feature);
-	  if (window.console) console.log( feature);
-	  });
+		    }
+		  	features_array.push(feature);
+		  	if (window.console) console.log( feature);
+		  });
+	return features_array;
+}
 
 
+function buildFeatureMap (xml){
+	if (window.console) console.log(  $(xml));
+	if (window.console) console.log(  $(xml).find("sequence").text());
+	var seq = ($(xml).find("sequence").text());
+	seq = $.trim(seq).replace(/(\r\n|\n|\r)/gm,"");
 
-
-
-	// features_array.push(
-	// {
-	//             "nonOverlappingStyle":{"heightOrRadius":10,"y":56},"type":"rect","featureEnd":73,"fillOpacity":0.5
-	//             ,"evidenceText":"UniProt","stroke":"#9B7057","height":10,"path":"","typeLabel":"Propeptide"
-	//             ,"featureLabel":"Propeptide","featureStart":1,"strokeWidth":1,"text":""
-	//             ,"centeredStyle":{"heightOrRadius":44,"y":73},"fill":"#9B7057","width":495
-	//             ,"typeCategory":"Molecule processing","typeCode":"SO:0001062","cy":56,"cx":27,"evidenceCode":""
-	//             ,"r":10,"featureId":"UNIPROTKB_Q8LAX3_PROPEP_1_73","rowsStyle":{"heightOrRadius":10,"y":169}
-	//             ,"featureTypeLabel":"propeptide","y":56,"x":27
-	//          }
-	//   );
-	// features_array.push(
-	// {
-	//             "nonOverlappingStyle":{"heightOrRadius":10,"y":56},"type":"rect","featureEnd":96,"fillOpacity":0.5
-	//             ,"evidenceText":"UniProt","stroke":"#7DBAA4","height":10,"path":"","typeLabel":"Peptide"
-	//             ,"featureLabel":"Elicitor peptide 3","featureStart":74,"strokeWidth":1,"text":""
-	//             ,"centeredStyle":{"heightOrRadius":40,"y":75},"fill":"#7DBAA4","width":151
-	//             ,"typeCategory":"Molecule processing","typeCode":"SO:0001064","cy":56,"cx":529,"evidenceCode":""
-	//             ,"r":10,"featureId":"UNIPROTKB_Q8LAX3_PEPTIDE_74_96","rowsStyle":{"heightOrRadius":10,"y":157}
-	//             ,"featureTypeLabel":"active_peptide","y":56,"x":529
-	//         }
-	//   );
-
+	var features_array = [];
+	features_array.push( drawSecondaryStructures ( xml) );
+	features_array.push( drawHTM( xml ));
+	features_array.push( drawDisorder ( xml ));
+	features_array.push( drawBindingSites ( xml ));
 
 	json = {
 	  "featuresArray": features_array
@@ -270,7 +259,7 @@ function buildFeatureMap (xml){
 	    }
 	  }
 
-	  $('#'+divName).siblings().html('');
+	   $('#'+divName).siblings().html('');
 	   var myPainter = new Biojs.FeatureViewer({
 	     target: divName,
 	     json: json,
