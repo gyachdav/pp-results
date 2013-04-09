@@ -22,6 +22,10 @@ function buildSequence(xml){
 
   	$("#SequenceView").siblings().html('');
 
+	var num_columns = Math.floor(($("#SequenceView").width()/10) / 20) * 10;
+	;  	
+
+
 	 mySequence = new Biojs.Sequence({
 	        sequence : theSequence,
 	        target : "SequenceView",
@@ -32,7 +36,7 @@ function buildSequence(xml){
 	    		footer:false
 			},
 			columns:{
-				size: 60,
+				size: num_columns,
 				spacedEach:15
 			},
 	});

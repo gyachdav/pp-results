@@ -73,13 +73,14 @@ $('#HTM-detail').click(function(){
 
 
 $('#TMB-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #proftmb-content',  function(response, status, xhr) {
+	$('#DetailView').load('proftmb.html',  function(response, status, xhr) {
 	  	$(this).siblings().html('');
 	  	if (status == "error") {
 	  		alert (xhr.status)
 	    	var msg = "Sorry but there was an error: ";
 	    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
 	  	}
+	  	$(this).siblings().html('');
 	});
 	
 	$(".active").removeClass('active');
@@ -87,65 +88,68 @@ $('#TMB-detail').click(function(){
 });
 
 $('#NORS-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #nors-content',  function(response, status, xhr) {
+	$('#DetailView').load('nors.html',  function(response, status, xhr) {
   	if (status == "error") {
   		alert (xhr.status)
     	var msg = "Sorry but there was an error: ";
     	$("#error").html(msg + xhr.status + " " + xhr.statusText);
   	}
+		$(this).siblings().html('');	
 	});
-	$(this).siblings().html('');
 	$(".active").removeClass('active');
 	$(this).parent().addClass('active');
 });
 
 $('#DISUL-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #disulfind-content',  function(response, status, xhr) {
-  	if (status == "error") {
-  		alert (xhr.status)
-    	var msg = "Sorry but there was an error: ";
-    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
-  	}
+	$('#DetailView').load('disulphide.html',  function(response, status, xhr) {
+	  	if (status == "error") {
+	  		alert (xhr.status)
+	    	var msg = "Sorry but there was an error: ";
+	    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
+	  	}
+  		$(this).siblings().html('');
 	});
-	$(this).siblings().html('');
+	
 	$(".active").removeClass('active');
 	$(this).parent().addClass('active');
 });
 
 $('#MD-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #md-content',  function(response, status, xhr) {
+	$('#DetailView').load('disorder.html',  function(response, status, xhr) {
   	if (status == "error") {
   		alert (xhr.status)
     	var msg = "Sorry but there was an error: ";
     	$("#error").html(msg + xhr.status + " " + xhr.statusText);
   	}
+		$(this).siblings().html('');
 	});
-	$(this).siblings().html('');
+	
 	$(".active").removeClass('active');
 	$(this).parent().addClass('active');
 });
 
 $('#ISIS-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #isis-content',  function(response, status, xhr) {
-  	if (status == "error") {
-  		alert (xhr.status)
-    	var msg = "Sorry but there was an error: ";
-    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
-  	}
-	});
-	$(this).siblings().html('');
-	$(".active").removeClass('active');
-	$(this).parent().addClass('active');
-});
-
-$('#LOC-detail').click(function(){
-	$('#DetailView').load('html_source/source4.html #localization-content',  function(response, status, xhr) {
+	$('#DetailView').load('binding-sites.html',  function(response, status, xhr) {
   	if (status == "error") {
   		alert (xhr.status)
     	var msg = "Sorry but there was an error: ";
     	$("#error").html(msg + xhr.status + " " + xhr.statusText);
   	}
   	$(this).siblings().html('');
+	});
+	
+	$(".active").removeClass('active');
+	$(this).parent().addClass('active');
+});
+
+$('#LOC-detail').click(function(){
+	$('#DetailView').load('localization.html',  function(response, status, xhr) {
+	  	if (status == "error") {
+	  		alert (xhr.status)
+	    	var msg = "Sorry but there was an error: ";
+	    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
+	  	}
+  		$(this).siblings().html('');
 	});
 	$(".active").removeClass('active');
 	$(this).parent().addClass('active');
