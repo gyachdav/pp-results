@@ -1,0 +1,34 @@
+<script>
+
+	$('#proftmb-visual').click(function(){
+		$(".active").removeClass('active');
+		$(this).parent().addClass('active');
+		$('#proftmb-html-div').hide();
+		$('#proftmb-visual-div').show();
+	});
+
+
+	$('#proftmb-html').click(function(){
+		$(".active").removeClass('active');
+		$(this).parent().addClass('active');
+		$('.active-content').removeClass('active-content').addClass('inactive-content');
+		$('#proftmb-html-div').load('html_source/source4.html #proftmb-content',  function(response, status, xhr) {
+		  	if (status == "error") {
+		  		alert (xhr.status)
+		    	var msg = "Sorry but there was an error: ";
+		    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
+		  	}
+			$('#proftmb-visual-div').hide();
+			$(this).show();
+		});
+	});
+</script>	
+
+
+<ul class="nav nav-tabs">
+<li class="active"> <a id='proftmb-visual' href="#">Visual</a>  </li>
+<li>   <a id='proftmb-html' href="#">Old Format</a> </li> 
+</ul>
+
+<div id='proftmb-visual-div'>Under Construction</div>
+<div id='proftmb-html-div'></div>
