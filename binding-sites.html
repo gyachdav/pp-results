@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../javascript/d3/d3.v3.min.js"></script>
+<script type="text/javascript" src="javascript/isis.js"></script>
 <script>
 
 	$('#isis-visual').click(function(){
@@ -10,6 +10,7 @@
 
 
 	$('#isis-html').click(function(){
+		
 		$(".active").removeClass('active');
 		$(this).parent().addClass('active');
 		$('.active-content').removeClass('active-content').addClass('inactive-content');
@@ -23,6 +24,12 @@
 			$(this).show();
 		});
 	});
+
+	jQuery(document).ready(function($) {
+		drawBindingMap('isis-visual');
+
+	});
+
 </script>	
 
 

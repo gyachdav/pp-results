@@ -26,6 +26,7 @@ $('#menu-feature-Map').click(function(){
 
 $('#menu-feature-view').click(function(){
 	sequenceViewer();
+	$(".slide-out-div").show();
 	$(".active").removeClass('active');
 	$(this).parent().addClass('active');
 });

@@ -23,6 +23,12 @@
 		<ul class="nav nav-list bs-docs-sidenav">
 			<li class="nav-header">Views</li>
 			<li class="active">
+				<a id='menu-summary' href="#">Dashboard
+					<i class="icon-chevron-right"></i>
+				</a>
+			</li>
+			
+			<li >
 				<a id='menu-feature-view' href="#">Feature View
 					<i class="icon-chevron-right"></i>
 				</a>
@@ -33,11 +39,6 @@
 				</a>
 			</li>
 
-			<li>
-				<a id='menu-summary' href="#">PredictProtein Summary
-					<i class="icon-chevron-right"></i>
-				</a>
-			</li>
 			
 			<li class="nav-header">Detailed Predictions</li>
 				
@@ -123,7 +124,7 @@
       <!--Body content-->
       	<div id="output" /><br>
 			<div id="SequenceView">
-				<div class="slide-out-div">
+				<div class="slide-out-div hidden">
 				 	<a class="handle" href="http://link-for-non-js-users.html">Content</a>
 					<label for 'chk-disulfind'>Disulphide Regions</label><input id='chk-disulfind' type=checkbox  /><br/>
 					<label for 'chk-solvacc'>Solvent Accessibility</label><input id='chk-solvacc' type=checkbox  /><br/>
@@ -134,6 +135,7 @@
 			</div><br>
 			<div id='DetailView'></div>
 			<div id="FeatureMap" ></div><br>
+			<div id="error"></div>
 		</div>
 		 <div id="disqus_thread"></div>
 		 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -162,7 +164,15 @@
 <script type="text/javascript" language="JavaScript" src="javascript/disqus.js" ></script>
 
 <script type="text/javascript">
-	window.onload = function() {	sequenceViewer();	}
+	window.onload = function() {	
+	$('#DetailView').load('summary.html',  function(response, status, xhr) {
+	  	if (status == "error") {
+	  		alert (xhr.status)
+	    	var msg = "Sorry but there was an error: ";
+	    	$("#error").html(msg + xhr.status + " " + xhr.statusText);
+	  	}
+  	});	
+  }
 </script>
 
 <script language="JavaScript" type="text/javascript" src="../biojs//Biojs.js" ></script>

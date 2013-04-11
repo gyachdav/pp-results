@@ -177,7 +177,6 @@ dataArr = [
 
 
 function drawPieChart(dataArr, targetDiv){
-
 	
    var w = 500,
     h = 400,
@@ -212,21 +211,23 @@ function drawPieChart(dataArr, targetDiv){
         arcs.append("svg:path")
         .attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
         .attr("d", arc)
-                                      //this creates the actual SVG path using the associated data (pie) with the arc drawing function
- 		.on('mouseover', function(d) {
-                    $("#tooltip")
-                      .html(d.data.AA+" : "+d.data.per+"%")
-                      .show();
-                })
-                .on('mousemove', function(d) {
-                    $("#tooltip")
-                      .css('left', d3.mouse(this)[0]+500)
-                      .css('top', d3.mouse(this)[1]+250)
+        .append("svg:title")
+   		.text(function(d) { return d.data.AA+" : "+d.data.per+"%"; });
+   //                                    //this creates the actual SVG path using the associated data (pie) with the arc drawing function
+ 		// .on('mouseover', function(d) {
+   //                  $("#tooltip")
+   //                    .html(d.data.AA+" : "+d.data.per+"%")
+   //                    .show();
+   //              })
+   //              .on('mousemove', function(d) {
+   //                  $("#tooltip")
+   //                    .css('left', d3.mouse(this)[0]+500)
+   //                    .css('top', d3.mouse(this)[1]+250)
 
-                })
-                .on('mouseout', function(d) {
-                    $("#tooltip").html('').hide();
-                });
+   //              })
+   //              .on('mouseout', function(d) {
+   //                  $("#tooltip").html('').hide();
+   //              });
         arcs.append("svg:text")                                     //add a label to each slice
                 .attr("transform", function(d) {                    //set the label's origin to the center of the arc
                 //we have to make sure to set these before calling arc.centroid
