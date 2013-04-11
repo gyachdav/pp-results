@@ -173,7 +173,7 @@ $('#LOC-detail').click(function(){
 });
 
 $('#menu-snap').click(function(){
-	$('#DetailView').load('html_source/snap.html',  function(response, status, xhr) {
+	$('#DetailView').load('snap.html',  function(response, status, xhr) {
   	if (status == "error") {
   		alert (xhr.status)
     	var msg = "Sorry but there was an error: ";
