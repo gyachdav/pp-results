@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../biojs/dependencies/jquery/jquery.tooltip.css"/>
 	<link rel="stylesheet" href="../biojs/dependencies/jquery/jquery-ui-1.8.2.css">
 	<link href="../biojs/css/Biojs.HpaSummaryFeature.css" rel="stylesheet" type="text/css" />
-
+	<title>PredictProtein Results</title>
 </head>
 <body>
 
@@ -120,10 +120,31 @@
 	  </div>
 
 
-    <div class="span9">
+    <div class="span9"> 
+
       <!--Body content-->
-      	<div id="output" /><br>
+      	<div id="output" />
+      	<br/><br/><br/>
+
 			<div id="SequenceView">
+
+		  	<!-- navbar -->
+		        <div class="navbar">
+		        <div class="navbar-inner">
+		            <ul class="nav">
+		            	<li><a href="#">Display Options</a></li>
+		              <li><a href="#">Email</a></li>
+		                <li><a href="#">Export <i class="icon-download"></i> </a></li>
+		            </ul>
+		          </div>
+		      </div>
+			<!-- navbar -->
+				<h3>Sequence Annotaion View</h3>
+				<div class="alert alert-info"> 
+						<strong>What am I seeing Here?</strong> 
+						This viewer lays out predicted features that correspond to regions within the queried sequence. 	
+						Mouse over the different colored boxes to learn more about the annotations
+				</div>
 				<div class="slide-out-div hidden">
 				 	<a class="handle" href="http://link-for-non-js-users.html">Content</a>
 					<label for 'chk-disulfind'>Disulphide Regions</label><input id='chk-disulfind' type=checkbox  /><br/>
