@@ -1,5 +1,4 @@
-       
-jQuery(document).ready(function($) {
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'predictprotein'; // required: replace example with your forum shortname
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -9,4 +8,3 @@ jQuery(document).ready(function($) {
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     
-}
