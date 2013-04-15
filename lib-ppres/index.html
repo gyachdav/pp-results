@@ -1,0 +1,25 @@
+<div id='msg'></div>
+<div id='err'></div>
+<head>
+<script src="/~guyyachdav/javascript/jquery/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="jquery.xml2json.js" type="text/javascript" language="javascript"></script>
+<script src="ppres.js" type="text/javascript" language="javascript"></script>
+
+<script type="text/javascript">
+ppres = new PPRes();
+ppres.run();
+
+jQuery('#msg').text(ppres.mainObj.getSequence());
+jQuery('#msg').append("seq length:"+ppres.mainObj.getSequence().length+"<br/>");
+jQuery('#msg').append("number of alignments :"+ppres.mainObj.getAlignmentsCount()+"<br/>");
+
+jQuery('#msg').append("number of matched PDBs :"+ppres.mainObj.getAlignmentsByDatabase('PDB')+"<br/>");
+jQuery('#msg').append("top matched SP :"+ppres.mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')+"<br/>");
+</script>
+</head>
+<body>
+Hello
+
+
+
+</body>
