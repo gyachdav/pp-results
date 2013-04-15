@@ -24,12 +24,13 @@ jQuery(document).ready(function($){
 	   			target: "FeatureMap",
 	   			json: json,
 			});
+			jQuery('input[type="button"]').addClass('btn btn-primary');
+		jQuery('#uniprotFeaturePainter-slider-values').addClass("text-info");
 
 		},
 		"xml");
 		
-		jQuery('input[type="button"]').addClass('btn btn-primary');
-		jQuery('#uniprotFeaturePainter-slider-values').addClass("text-info");
+		
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
