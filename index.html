@@ -2,6 +2,7 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
  	<!-- Styles -->
+ 	<link rel="stylesheet" type="text/css" href="css/predictprotein-gui.css">
     <!-- Bootstrap -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="../bootstrap/css/docs.css" rel="stylesheet" media="screen">
@@ -14,10 +15,17 @@
 	<title>PredictProtein Results</title>
 </head>
 <body>
-
+<table id="header">
+	<tbody>
+		<tr>
+			<td id="logo"><a href="https://www.predictprotein.org/" accesskey="1"><img src="https://www.predictprotein.org/img/Logo_horizontal_20years_trans_50px.png"></a></td>
+			<td id="menu">Welcome Guest (<a class="ares" href="#" id="signin">Sign in</a>) | <a class="ares" href="https://www.predictprotein.org/submit">Submit</a> | <a class="ares" href="https://www.predictprotein.org/register">Register</a> | <a class="ares" href="https://www.predictprotein.org/download">Download</a> | <a class="ares" href="https://rostlab.org/owiki/index.php/PredictProtein" target="blank">Help</a> 		</td>	
+		</tr>
+	</tbody>
+</table>
 <div class="container-fluid">
   <div class="row-fluid">
-	  <div class="span3 bs-docs-sidebar">
+	  <div class="span2 bs-docs-sidebar">
 
 	  	<!-- Sidebar NAV -->
 		<ul class="nav nav-list bs-docs-sidenav">
@@ -120,16 +128,16 @@
 	  </div>
 
 
-    <div class="span9"> 
+    <div class="span10"> 
 
       <!--Body content-->
       	<div id="output" />
-      	<br/><br/><br/>
+      	<br/>
 
 			<div id="SequenceView">
 
 		  	<!-- navbar -->
-		        <div class="navbar">
+		   <!--      <div class="navbar">
 		        <div class="navbar-inner">
 		            <ul class="nav">
 		            	<li><a href="#">Display Options</a></li>
@@ -137,14 +145,14 @@
 		                <li><a href="#">Export <i class="icon-download"></i> </a></li>
 		            </ul>
 		          </div>
-		      </div>
+		      </div> -->
 			<!-- navbar -->
-				<h3>Sequence Annotaion View</h3>
+				<!-- <h3>Sequence Annotaion View</h3>
 				<div class="alert alert-info"> 
 						<strong>What am I seeing Here?</strong> 
 						This viewer lays out predicted features that correspond to regions within the queried sequence. 	
 						Mouse over the different colored boxes to learn more about the annotations
-				</div>
+				</div> -->
 				<div class="slide-out-div hidden">
 				 	<a class="handle" href="http://link-for-non-js-users.html">Content</a>
 					<label for 'chk-disulfind'>Disulphide Regions</label><input id='chk-disulfind' type=checkbox  /><br/>
@@ -154,8 +162,9 @@
 					<label for 'chk-formatSel'>Format Switcher</label><input id='chk-formatSel' type=checkbox /><br/>
 				 </div>
 			</div><br>
-			<div id='DetailView'></div>
-			<div id="FeatureMap" ></div><br>
+			<div id='DetailView'>
+			</div>
+			
 			<div id="error"></div>
 		</div>
 		 <div id="disqus_thread"></div>
@@ -166,7 +175,15 @@
   </div>
 </div>
 
+<div id="footer">
+<p>
+<a href="http://www.twitter.com/rostlab"><img border="0" src="images/t_mini-b.png" alt="Follow rostlab on Twitter"></a> | 
+<a href="http://rostlab.org/" target="_blank">rostlab.org</a> | <a href="http://portal.mytum.de/" target="_blank">tum</a> | <a href="http://www.bio-sof.com/" target="_blank">biosof</a> | <a href="http://us.expasy.org/" target="_blank">expasy</a> <br>
+ppweb V1.0.24 © 1992-2013  <a href="http://www.rostlab.org">ROSTLAB</a> all rights reserved. <a href="https://www.predictprotein.org//terms">Terms of Use</a> |
+ <a href="https://www.predictprotein.org//contact">Contact
+Information</a>
 
+</p></div>
 </body>
 
 
@@ -178,15 +195,18 @@
 <script src="library/jquery.tabSlideOut.v1.3.js"></script>
 
  <!-- PP-Results specific scripts  -->
-<script type="text/javascript" language="JavaScript" src="javascript/modal.js" ></script>
+<!-- <script type="text/javascript" language="JavaScript" src="javascript/modal.js" ></script> -->
 <script type="text/javascript" language="JavaScript" src="javascript/pp-results.js" ></script>
 <script type="text/javascript" language="JavaScript" src="javascript/sequence-view.js" ></script>
 <script type="text/javascript" language="JavaScript" src="javascript/featuremap-view.js" ></script>
 <script type="text/javascript" language="JavaScript" src="javascript/disqus.js" ></script>
 
 <script type="text/javascript">
+jQuery.noConflict();
+jQuery(document).ready(function($){
+
 	window.onload = function() {	
-	$('#DetailView').load('summary.html',  function(response, status, xhr) {
+	$('#DetailView').load('test-feature-viewer.html',  function(response, status, xhr) {
 	  	if (status == "error") {
 	  		alert (xhr.status)
 	    	var msg = "Sorry but there was an error: ";
@@ -194,6 +214,7 @@
 	  	}
   	});	
   }
+});
 </script>
 
 <script language="JavaScript" type="text/javascript" src="../biojs//Biojs.js" ></script>

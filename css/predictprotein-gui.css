@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+#header {
+#	background: url("../img/headerbg.png") repeat-x scroll 0 0 #EEEEEE;
+	background: url("../images/header1.png");
+#        background-color: #436AAA;
+	border-collapse: collapse;
+#	border-bottom: 1px solid black;
+	color: white;
+	width: 100%;
+}
+
+#header a:link,#header a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+
+
+#menu {
+	color: #FFFFFF;
+	font-family: sans-serif;
+	font-size: 9pt;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	text-align: right;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: 100%;
+
+}
+
+#menu a {
+	color: #FFFFFF;
+}
+
+#logo {
+padding-bottom: 0.25em;
+padding-left: 1.5em;
+padding-top: 0.25em;
+white-space: nowrap;
+font-size: 16pt;
+color: #FFFFFF;
+
+#footer {
+background-image: url("../images/footer.png");
+clear: both;
+float: left;
+width: 100%;
+border-top: 1px solid #000;
+color: white;
+}
+
+#footer p {
+padding: 5px;
+margin: 0;
+text-align: right;
+color: white;
+font-size: 75%;
+vertical-align: bottom;
+}
+
+#footer a:link,#footer	a:visited {
+	text-decoration: underline;
+	color: white;
+	font-weight: normal;
+}
+
+.format,#jobstat a {
+	background-color: #FFA500;
+	color: white;
+	font-weight: bold;
+#	padding: 0 0.25em;
+	text-decoration: none;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+a.format{
+    color: white;
+    -webkit-box-shadow: rgba(50, 50, 50, 0.5) 2px 2px 2px;
+    box-shadow: rgba(50, 50, 50, 0.5) 2px 2px 2px;
+}
+
+a.format:hover {
+    text-decoration: underline;
+    color: white;
+    padding: 5px;
+}

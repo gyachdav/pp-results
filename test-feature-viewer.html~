@@ -1,11 +1,7 @@
 <head>
 
 <link rel="stylesheet" href="../biojs/dependencies/jquery/jquery.tooltip.css"/>
- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-<!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
-  
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-<!-- <link rel="stylesheet" href="../biojs/dependencies/jquery/jquery-ui-1.8.2.css"> -->
+<link rel="stylesheet" href="../biojs/dependencies/jquery/jquery-ui-1.8.2.css">
 <script language="JavaScript" type="text/javascript" src="../biojs/dependencies/jquery/jquery-1.4.2.min.js"></script>
 <script type="text/javascript">
 jQuery.noConflict();
@@ -23,13 +19,15 @@ jQuery(document).ready(function($){
 			var myPainter = new Biojs.FeatureViewer({
 	   			target: "FeatureMap",
 	   			json: json,
+	   // featureImageWebService: "http://wwwdev.ebi.ac.uk/uniprot/featureViewer/image"
 			});
-
 		},
 		"xml");
 		
-		jQuery('input[type="button"]').addClass('btn btn-primary');
-		jQuery('#uniprotFeaturePainter-slider-values').addClass("text-info");
+		// .fail(function() {
+		//  alert("error"); 
+		// });
+
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -113,7 +111,7 @@ String.prototype.capitalize = function() {
 		});
 
 		console.log(element_count);
-		element_count = element_count*8;
+		element_count = element_count*10;
 		$(xml_doc).find('alignment').each(function(){
 			value = 'alignment';
 			pos_start = Math.max ($(this).find('queryStart').attr('value'),$(this).find('subjectStart').attr('value') );
@@ -138,7 +136,7 @@ String.prototype.capitalize = function() {
 
 		    if ( height ) track_height = height;
 		    track_margin=15;
-		     if (name == 'alignment') track_margin=2;
+		     if (name == 'alignment') track_margin=4;
 		
 		 	var element_type = $(data).attr("type");
 		 	var pos_begin, pos_end;
@@ -228,7 +226,7 @@ String.prototype.capitalize = function() {
 		        "requestedStart":1
 		        ,"gridLineHeight":12,
 		        "rightMargin":5,
-		        "leftMargin":5,
+		        "leftMargin":25,
 		        "belowRuler":30,
 		        "sequenceLength":sequenceLength
 		        ,"horizontalGridNumLinesNonOverlapping":2,
@@ -245,20 +243,19 @@ String.prototype.capitalize = function() {
 		        "horizontalGrid":false
 		        ,"pixelsDivision":50,
 		        "sizeY":250,
-		        "sizeX":w-25
+		        "sizeX":w-100
 		        ,"dasReference":"http://www.ebi.ac.uk/das-srv/uniprot/das/uniprot",
 		        "sizeYRows":260,
 		        "aboveRuler":10
-		        ,"rulerLength": w-50,
+		        ,"rulerLength": w-200,
 		        "verticalGridLineLengthNonOverlapping":66,
-		        "sizeYKey":300,
+		        "sizeYKey":210,
 		        "sizeYCentered":160
 		        ,"sequenceLineYNonOverlapping":54,
 		        "verticalGridLineLength":66,
 		        "horizontalGridNumLinesRows":8,
 		        "nonOverlapping":true,
-		        "verticalGridLineLengthCentered":172,
-		        // "dragSites":true
+		        "verticalGridLineLengthCentered":172
 		    }
 		}
 
@@ -278,11 +275,6 @@ jQuery('#test').click(function(){
 
 
 <body>
-
-
-
-
-
 <!-- <a id='test' href='#'>test</a> -->
 <div id='container'>
 		<!-- navbar -->
