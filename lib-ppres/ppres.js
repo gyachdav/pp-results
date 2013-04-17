@@ -2,7 +2,7 @@ function PPRes(){
 	this.pp_features=[
 	"secondary structure switch",
 	// "DNA-binding region",
-	"disulfide bond",
+	 "disulfide bond",
 	"protein binding region",
 	 // "nuclear localisation signal",
 	 // "helical transmembrane region",
@@ -21,7 +21,6 @@ PPRes.prototype.run= function(){
 	// 	console.log(mainObj.getFeatureLocations(v));
 	// });
 	this.mainObj = mainObj;
-
 }
 
 
@@ -105,14 +104,10 @@ PPResData.prototype.getAlignmentsByDatabaseTopMatch = function(db_name) {
     return (topmatch_id);
 }
 
-
 PPResData.prototype.getAlignments = function() {
 	return (this.json_data.entry.aliProviderGroup);
 };
 PPResData.prototype.getAlignmentsCount = function() {
 	return (this.getAlignments().alignment.length);
 };
-
-
-
 
