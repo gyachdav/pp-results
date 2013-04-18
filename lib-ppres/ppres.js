@@ -29,20 +29,19 @@ function PPRes(target_div) {
 			"solvent accessibility",
 	**/
 	var providers = [
-	"PROFsec",
-	"PROFacc",
-	"NORSnet",
-	"ISIS",
+		"PROFsec",
+		"PROFacc",
+		"NORSnet",
+		"ISIS",
 		"DISIS",
-	"ASP",
-	"DISULFIND",
-	"PredictNLS",
-	"PHDhtm",
-	"PROFbval",
-	"Ucon",
-	"MD",
-	"PROFtmb"
-	];
+		"ASP",
+		"DISULFIND",
+		"PredictNLS",
+		"PHDhtm",
+		"PROFbval",
+		"Ucon",
+		"MD",
+		"PROFtmb"];
 
 
 	// This block test data loading and parsing all features
@@ -55,13 +54,26 @@ function PPRes(target_div) {
 		console.log(ds.getData());
 		mainObj = new PPResData();
 		mainObj.setJsonData(ds.getData());
-		var feature_types_list = mainObj.json_data.entry.featureTypeGroup;
+		// mainObj.getAlignmentLocations();
+		console.log(mainObj.getReferenceByProvider("PROFtmb"));
+		console.log(mainObj.getSSComposition());
+		console.log(mainObj.getAAComposition());
+		target_div.append('<p>' + mainObj.getSequence() + '</p>');
+		target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
+		target_div.append('<p>Protein Name: ' + mainObj.getProteinName() + '</p>');
+		target_div.append('<p>Organism Name: ' + mainObj.getOrganismName() + '</p>');
+		target_div.append('<p>Number of aligments: ' + mainObj.getAlignmentsCount() + '</p>');
+		jQuery.each(['PDB', 'Swiss-Prot', 'trembl'], function(index, val) {
+			target_div.append('<p>Number of hits from ' + val + ": " + mainObj.getAlignmentsByDatabase(val) + '</p>');
+		});
+
 		jQuery.each(providers, function(i, v) {
-			feature = mainObj.getFeatureByProvider(feature_types_list, v);
+			feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
 			target_div.append('<h1>' + v + '</h1>');
 			target_div.append(JSON.stringify(mainObj.getFeatureLocations(feature)));
 		});
 	});
+	// END TEST BLOCK
 
 	this.getPPFeatures = function() {
 		return (this.pp_features);
@@ -80,6 +92,12 @@ function PPResData() {
 	this.prof_data_source = '';
 	this.json_data = '';
 	this.sequence = '';
+	this.alignments =
+
+
+	this.getFeatureTypeGroup = function() {
+		return (this.getJsonData().entry.featureTypeGroup);
+	}
 
 	this.getJsonData = function() {
 		return (this.json_data);
@@ -87,8 +105,19 @@ function PPResData() {
 
 	this.setJsonData = function(json) {
 		this.json_data = json;
+		this.sequence = jQuery.trim(this.json_data.entry.sequence).replace(/(\r\n|\n|\r)/gm, "");
+		this.alignments = this.json_data.entry.aliProviderGroup.alignment;
+		this.protein = this.json_data.entry.protein;
+		this.organism = this.json_data.entry.organism;
 	}
 
+	this.getProteinName = function (){
+		return (this.protein.recommendedName.fullName);
+	}
+
+	this.getOrganismName = function (){
+		return (this.organism.name);
+	}
 	this.getSequence = function() {
 		return (this.sequence);
 	}
@@ -131,7 +160,7 @@ function PPResData() {
 		var locations = [];
 		var location_obj_ref;
 
-		if (feature_ref.featureProviderGroup && feature_ref.featureProviderGroup.feature ) {
+		if (feature_ref.featureProviderGroup && feature_ref.featureProviderGroup.feature) {
 			location_obj_ref = feature_ref.featureProviderGroup.feature;
 		} else if (feature_ref.feature) {
 			location_obj_ref = feature_ref.feature;
@@ -148,8 +177,7 @@ function PPResData() {
 					type: val.type
 				});
 			});
-		}
-		else if (location_obj_ref.location) {
+		} else if (location_obj_ref.location) {
 			var ref = location_obj_ref.location;
 			locations.push({
 				begin: ref.begin.position,
@@ -157,17 +185,31 @@ function PPResData() {
 				type: ref.type
 			});
 		}
-
-
 		return (locations);
 	}
 
-	
+	this.getAlignmentLocations = function() {
+		var alis = this.getAlignments();
+		var locations_array = [];
+		jQuery.each(alis, function(index, alignment) {
+			pos_start = Math.max(alignment.queryStart.value, alignment.subjectStart.value);
+			pos_stop = Math.min(alignment.queryEnd.value, alignment.subjectEnd.value);
+			if (pos_stop > pos_start) {
+				console.log(pos_start + "  " + pos_stop);
+				locations_array.push({
+					beign: pos_start,
+					end: pos_stop
+				});
+			}
+		});
+		return (locations_array);
+	}
+
 
 	this.getAlignmentsByDatabase = function(db_name) {
 		var alis = this.getAlignments();
 		var count = 0;
-		jQuery.each(alis.alignment, function(i, v) {
+		jQuery.each(alis, function(i, v) {
 			if (v.dbReference.type.match(new RegExp(db_name, 'i'))) {
 				console.log(v.dbReference.id + "\t" + v.identity.value);
 				count++;
@@ -179,7 +221,7 @@ function PPResData() {
 	this.getAlignmentsByDatabaseTopMatch = function(db_name) {
 		var alis = this.getAlignments();
 		var topmatch_id = '';
-		jQuery.each(alis.alignment, function(i, v) {
+		jQuery.each(alis, function(i, v) {
 			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
 				topmatch_id = v.dbReference.id;
 				return (false);
@@ -188,12 +230,50 @@ function PPResData() {
 		return (topmatch_id);
 	}
 	this.getAlignments = function() {
-		return (this.json_data.entry.aliProviderGroup);
+		return (this.alignments);
 	};
 	this.getAlignmentsCount = function() {
-		return (this.getAlignments().alignment.length);
+		return (this.getAlignments().length);
 	};
 
+	this.getReferenceByProvider = function ( feature_provider ){
+		var feature =  this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
+		return (this.getReference( feature.featureProviderGroup.ref ));
+	}
+	this.getReference = function ( ref_id ){
+		var _ref;
+		refs = this.json_data.entry.reference;
+		jQuery.each(refs, function(index, ref) {
+			if (ref.entryKey.entryKeyValue == ref_id){
+				_ref = ref;
+				return (false);
+			}
+		});
+		return _ref;
+	}
+
+
+	this.getSSComposition = function  (argument) {
+		var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
+		var ss_feature_array = this.getFeatureLocations( ss_feature );
+		var ss_composition = {helix:0, strand:0, loop:0};
+		jQuery.each( ss_feature_array, function(index, obj) {
+			_type = obj.type;
+			ss_composition[_type] += parseInt(obj.end) - parseInt(obj.begin);
+		});
+		ss_composition.loop = this.getSequence().length - parseInt(ss_composition.helix) - parseInt(ss_composition.strand);
+		return (ss_composition);
+	}
+
+	this.getAAComposition = function  (argument) {
+		var aa_composition = {};
+		jQuery.map(this.getSequence(), function(aa, index) {
+			if (! (aa in aa_composition) )
+					aa_composition[aa] = 0;
+		  aa_composition[aa] = parseInt(aa_composition[aa])+1;
+		});
+		return (aa_composition);
+	}
 }
 
 // External data loader
