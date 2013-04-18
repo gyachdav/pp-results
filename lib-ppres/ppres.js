@@ -54,7 +54,7 @@ function PPRes(target_div) {
 		console.log(ds.getData());
 		mainObj = new PPResData();
 		mainObj.setJsonData(ds.getData());
-		// mainObj.getAlignmentLocations();
+		console.log(mainObj.getAlignmentLocations());
 		console.log(mainObj.getReferenceByProvider("PROFtmb"));
 		console.log(mainObj.getSSComposition());
 		console.log(mainObj.getAAComposition());
@@ -111,11 +111,11 @@ function PPResData() {
 		this.organism = this.json_data.entry.organism;
 	}
 
-	this.getProteinName = function (){
+	this.getProteinName = function() {
 		return (this.protein.recommendedName.fullName);
 	}
 
-	this.getOrganismName = function (){
+	this.getOrganismName = function() {
 		return (this.organism.name);
 	}
 	this.getSequence = function() {
@@ -172,16 +172,16 @@ function PPResData() {
 		if (jQuery.isArray(location_obj_ref)) {
 			jQuery.each(location_obj_ref, function(index, val) {
 				locations.push({
-					begin: val.location.begin.position,
-					end: val.location.end.position,
+					begin: parseInt(val.location.begin.position),
+					end: parseInt(val.location.end.position),
 					type: val.type
 				});
 			});
 		} else if (location_obj_ref.location) {
 			var ref = location_obj_ref.location;
 			locations.push({
-				begin: ref.begin.position,
-				end: ref.end.position,
+				begin: parseInt(ref.begin.position),
+				end: parseInt(ref.end.position),
 				type: ref.type
 			});
 		}
@@ -192,15 +192,10 @@ function PPResData() {
 		var alis = this.getAlignments();
 		var locations_array = [];
 		jQuery.each(alis, function(index, alignment) {
-			pos_start = Math.max(alignment.queryStart.value, alignment.subjectStart.value);
-			pos_stop = Math.min(alignment.queryEnd.value, alignment.subjectEnd.value);
-			if (pos_stop > pos_start) {
-				console.log(pos_start + "  " + pos_stop);
-				locations_array.push({
-					beign: pos_start,
-					end: pos_stop
-				});
-			}
+			locations_array.push({
+				begin: parseInt(alignment.queryStart.value),
+				end: parseInt(alignment.queryEnd.value)
+			});
 		});
 		return (locations_array);
 	}
@@ -236,15 +231,15 @@ function PPResData() {
 		return (this.getAlignments().length);
 	};
 
-	this.getReferenceByProvider = function ( feature_provider ){
-		var feature =  this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
-		return (this.getReference( feature.featureProviderGroup.ref ));
+	this.getReferenceByProvider = function(feature_provider) {
+		var feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
+		return (this.getReference(feature.featureProviderGroup.ref));
 	}
-	this.getReference = function ( ref_id ){
+	this.getReference = function(ref_id) {
 		var _ref;
 		refs = this.json_data.entry.reference;
 		jQuery.each(refs, function(index, ref) {
-			if (ref.entryKey.entryKeyValue == ref_id){
+			if (ref.entryKey.entryKeyValue == ref_id) {
 				_ref = ref;
 				return (false);
 			}
@@ -253,11 +248,15 @@ function PPResData() {
 	}
 
 
-	this.getSSComposition = function  (argument) {
+	this.getSSComposition = function(argument) {
 		var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
-		var ss_feature_array = this.getFeatureLocations( ss_feature );
-		var ss_composition = {helix:0, strand:0, loop:0};
-		jQuery.each( ss_feature_array, function(index, obj) {
+		var ss_feature_array = this.getFeatureLocations(ss_feature);
+		var ss_composition = {
+			helix: 0,
+			strand: 0,
+			loop: 0
+		};
+		jQuery.each(ss_feature_array, function(index, obj) {
 			_type = obj.type;
 			ss_composition[_type] += parseInt(obj.end) - parseInt(obj.begin);
 		});
@@ -265,12 +264,11 @@ function PPResData() {
 		return (ss_composition);
 	}
 
-	this.getAAComposition = function  (argument) {
+	this.getAAComposition = function(argument) {
 		var aa_composition = {};
 		jQuery.map(this.getSequence(), function(aa, index) {
-			if (! (aa in aa_composition) )
-					aa_composition[aa] = 0;
-		  aa_composition[aa] = parseInt(aa_composition[aa])+1;
+			if (!(aa in aa_composition)) aa_composition[aa] = 0;
+			aa_composition[aa] = parseInt(aa_composition[aa]) + 1;
 		});
 		return (aa_composition);
 	}
