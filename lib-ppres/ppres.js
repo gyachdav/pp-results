@@ -162,16 +162,7 @@ function PPResData() {
 		return (locations);
 	}
 
-	// this.getFeatureLocations= function( featureName ){
-	// 	var locations = [];
-	// 	var loc_feature = this.getFeature(featureName);
-	// 	jQuery.each(loc_feature.featureProviderGroup.feature, function(i, v) {
-	// 		var range = {begin:v.location.begin.position, end: v.location.end.position };
-	// 		locations.push (range);
-	// 		// console.log(v.location.begin+" - "+v.location.end);
-	// 	});
-	// 	return (locations);
-	// }
+	
 
 	this.getAlignmentsByDatabase = function(db_name) {
 		var alis = this.getAlignments();
