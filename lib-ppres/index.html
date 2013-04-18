@@ -1,6 +1,6 @@
 <head>
 <link rel="stylesheet" href="/~guyyachdav/biojs/dependencies/jquery/jquery.tooltip.css"/>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" /
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 
 <script src="/~guyyachdav/javascript/jquery/jquery.min.js" type="text/javascript" language="javascript"></script>
 
@@ -34,7 +34,7 @@
 <script type="text/javascript">
 ppres = new PPRes();
 ppres.run();
-
+console.log(ppres.mainObj);
 jQuery('#msg').text(ppres.mainObj.getSequence());
 jQuery('#msg').append("seq length:"+ppres.mainObj.getSequence().length+"<br/>");
 jQuery('#msg').append("number of alignments :"+ppres.mainObj.getAlignmentsCount()+"<br/>");
