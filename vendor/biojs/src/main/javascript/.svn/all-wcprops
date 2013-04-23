@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/479/trunk/src/main/javascript
+END
+Biojs.ChEMBLCompound.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.ChEMBLCompound.js
+END
+Biojs.DetailsFrame.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.DetailsFrame.js
+END
+Biojs.js
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/175/trunk/src/main/javascript/Biojs.js
+END
+Biojs.HpaSummaryFeature.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.HpaSummaryFeature.js
+END
+Biojs.PDBprints.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/439/trunk/src/main/javascript/Biojs.PDBprints.js
+END
+Biojs.PDBchainTopology.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/479/trunk/src/main/javascript/Biojs.PDBchainTopology.js
+END
+Biojs.EbiGlobalSearch.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/438/trunk/src/main/javascript/Biojs.EbiGlobalSearch.js
+END
+Biojs.DasProteinFeatureViewer.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/388/trunk/src/main/javascript/Biojs.DasProteinFeatureViewer.js
+END
+Biojs.Protein3D.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/458/trunk/src/main/javascript/Biojs.Protein3D.js
+END
+Biojs.InteractionsTable.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/408/trunk/src/main/javascript/Biojs.InteractionsTable.js
+END
+Biojs.HelloWorld.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.HelloWorld.js
+END
+Biojs.UniProtDiseaseSummary.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.UniProtDiseaseSummary.js
+END
+Biojs.Kegg.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/357/trunk/src/main/javascript/Biojs.Kegg.js
+END
+Biojs.FeatureViewer.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.FeatureViewer.js
+END
+Biojs.ChEBICompound.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/473/trunk/src/main/javascript/Biojs.ChEBICompound.js
+END
+Biojs.Protein3DWS.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Protein3DWS.js
+END
+Biojs.InteractiveInteractionTable.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/420/trunk/src/main/javascript/Biojs.InteractiveInteractionTable.js
+END
+Biojs.HpaSummaryFeatures.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/421/trunk/src/main/javascript/Biojs.HpaSummaryFeatures.js
+END
+Biojs.Protein3DUniprot.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/463/trunk/src/main/javascript/Biojs.Protein3DUniprot.js
+END
+Biojs.InteractionsD3.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.InteractionsD3.js
+END
+Biojs.Cytoscape.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Cytoscape.js
+END
+Biojs.PsicquicViewSearch.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/271/trunk/src/main/javascript/Biojs.PsicquicViewSearch.js
+END
+Biojs.HelloWorldYUI.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.HelloWorldYUI.js
+END
+Biojs.Sequence.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/467/trunk/src/main/javascript/Biojs.Sequence.js
+END
+Biojs.AreaSelector.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.AreaSelector.js
+END
+Biojs.PDBLogos.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.PDBLogos.js
+END
+Biojs.Chromosome.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Chromosome.js
+END
+Biojs.Rheaction.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/472/trunk/src/main/javascript/Biojs.Rheaction.js
+END
+Biojs.GeneExpressionSummary.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/471/trunk/src/main/javascript/Biojs.GeneExpressionSummary.js
+END
+Biojs.ProteinPortafolio.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.ProteinPortafolio.js
+END
+Biojs.InteractionsGraph.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.InteractionsGraph.js
+END
+Biojs.ExpressionLoader.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.ExpressionLoader.js
+END
+Biojs.Table.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/408/trunk/src/main/javascript/Biojs.Table.js
+END
+Biojs.Ruler.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Ruler.js
+END
+Biojs.Tooltip.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Tooltip.js
+END
+Biojs.InteractionsFilterGraph.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.InteractionsFilterGraph.js
+END

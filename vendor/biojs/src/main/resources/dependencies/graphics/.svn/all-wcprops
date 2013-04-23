@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/375/trunk/src/main/resources/dependencies/graphics
+END
+raphael-2.1.0.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/375/trunk/src/main/resources/dependencies/graphics/raphael-2.1.0.js
+END
+rgbcolor.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/145/trunk/src/main/resources/dependencies/graphics/rgbcolor.js
+END
+raphael.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/145/trunk/src/main/resources/dependencies/graphics/raphael.js
+END
+canvg.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/145/trunk/src/main/resources/dependencies/graphics/canvg.js
+END

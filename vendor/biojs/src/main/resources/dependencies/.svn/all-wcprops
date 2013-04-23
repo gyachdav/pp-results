@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/470/trunk/src/main/resources/dependencies
+END
+jquery.dataTables.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/173/trunk/src/main/resources/dependencies/jquery.dataTables.min.js
+END
+jsdas.0.1.6.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/214/trunk/src/main/resources/dependencies/jsdas.0.1.6.js
+END
+jsdas.0.1.6.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/214/trunk/src/main/resources/dependencies/jsdas.0.1.6.min.js
+END
+jquery.multiselect.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/173/trunk/src/main/resources/dependencies/jquery.multiselect.min.js
+END
+jquery.watcher.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/225/trunk/src/main/resources/dependencies/jquery.watcher.js
+END
+jquery.qtip.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/418/trunk/src/main/resources/dependencies/jquery.qtip.min.js
+END
+d3.v2.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/368/trunk/src/main/resources/dependencies/d3.v2.min.js
+END
+jquery.miniColors.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/352/trunk/src/main/resources/dependencies/jquery.miniColors.min.js
+END
+jquery.dataTables.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/185/trunk/src/main/resources/dependencies/jquery.dataTables.js
+END

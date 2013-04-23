@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/437/trunk/src/doc/biojsTemplate
+END
+class.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/class.tmpl
+END
+symbol.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/symbol.tmpl
+END
+allclasses.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/allclasses.tmpl
+END
+publish.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/publish.js
+END
+index.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/index.tmpl
+END
+allfiles.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/allfiles.tmpl
+END
+biojsIndex.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/biojsIndex.tmpl
+END
+registryComponents.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/436/trunk/src/doc/biojsTemplate/registryComponents.tmpl
+END
+registryOverview.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/426/trunk/src/doc/biojsTemplate/registryOverview.tmpl
+END
+registryIndex.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/437/trunk/src/doc/biojsTemplate/registryIndex.tmpl
+END

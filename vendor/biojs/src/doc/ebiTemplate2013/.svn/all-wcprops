@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/437/trunk/src/doc/ebiTemplate2013
+END
+class.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/class.tmpl
+END
+symbol.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/symbol.tmpl
+END
+allclasses.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/allclasses.tmpl
+END
+publish.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/publish.js
+END
+index.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/index.tmpl
+END
+allfiles.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/allfiles.tmpl
+END
+biojsIndex.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/biojsIndex.tmpl
+END
+registryComponents.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/436/trunk/src/doc/ebiTemplate2013/registryComponents.tmpl
+END
+registryOverview.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/422/trunk/src/doc/ebiTemplate2013/registryOverview.tmpl
+END
+registryIndex.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/428/trunk/src/doc/ebiTemplate2013/registryIndex.tmpl
+END

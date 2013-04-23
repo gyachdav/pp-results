@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/326/trunk/src/main/resources/dependencies/cytoscape
+END
+arbor.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/326/trunk/src/main/resources/dependencies/cytoscape/arbor.js
+END
+jquery.cytoscapeweb.layout.arbor.js
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/326/trunk/src/main/resources/dependencies/cytoscape/jquery.cytoscapeweb.layout.arbor.js
+END
+jquery.cytoscapeweb.layout.arbor.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/326/trunk/src/main/resources/dependencies/cytoscape/jquery.cytoscapeweb.layout.arbor.min.js
+END
+jquery.cytoscapeweb.layout.springy.js
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/326/trunk/src/main/resources/dependencies/cytoscape/jquery.cytoscapeweb.layout.springy.js
+END
+jquery.cytoscapeweb.all.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/246/trunk/src/main/resources/dependencies/cytoscape/jquery.cytoscapeweb.all.js
+END
+jquery.cytoscapeweb.all.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/246/trunk/src/main/resources/dependencies/cytoscape/jquery.cytoscapeweb.all.min.js
+END

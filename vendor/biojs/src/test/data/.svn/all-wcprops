@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/260/trunk/src/test/data
+END
+greyLight.png
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/260/trunk/src/test/data/greyLight.png
+END
+unknownsegment.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/249/trunk/src/test/data/unknownsegment.xml
+END
+redLight.png
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/260/trunk/src/test/data/redLight.png
+END
+orangeLight.png
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/260/trunk/src/test/data/orangeLight.png
+END
+psicquicRegistry.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/252/trunk/src/test/data/psicquicRegistry.xml
+END
+greenLight.png
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/260/trunk/src/test/data/greenLight.png
+END
+Q9NTI5_hpa_summary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/249/trunk/src/test/data/Q9NTI5_hpa_summary.xml
+END
+P98171_hpa_summary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/249/trunk/src/test/data/P98171_hpa_summary.xml
+END
