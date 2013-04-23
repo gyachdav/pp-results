@@ -1,8 +1,0 @@
-Additional information regarding subcellular localization
-== Summary of subcellular localization prediction using LOCkey ==
-Protein Identifier	Predicted Localization	Confidence	Alternative prediction	Confidence of alternative localization predictions	SWISS-PROT keywords used to assign localization
-query	Cytoplasmic	77	-	-	Sulfation,Pyrrolidone carboxylic acid,Cell adhesion,Receptor
-== Summary of subcellular localization prediction using LOCtree ==
-Protein Identifier	Predicted Localization	Reliability Index	Intermediate localization prediction	Reliability index of intermediate localization predictions
-query	Organellar	1	Secretory pathway,Organellar	1,1
-
