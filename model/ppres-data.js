@@ -7,7 +7,7 @@ function PPResException(message, error, status) {
 }
 
 // App Class
-
+// OBsolete
 function PPRes(target_div) {
 	this.dataSource = {
 		path: ".",
@@ -15,19 +15,19 @@ function PPRes(target_div) {
 		type: 'xml'
 	};
 
-	this.feature_types = [
-		"secondary structures"];
-	/** 
-		NOTE available Features:
-			"secondary structure switch",
-			"DNA-binding region",
-			"disulfide bond",
-			"protein binding region",
-			"nuclear localisation signal",
-			"helical transmembrane region"
-			"disordered region", 
-			"solvent accessibility",
-	**/
+	// this.feature_types = [
+	// 	"secondary structures"];
+	// /** 
+	// 	NOTE available Features:
+	// 		"secondary structure switch",
+	// 		"DNA-binding region",
+	// 		"disulfide bond",
+	// 		"protein binding region",
+	// 		"nuclear localisation signal",
+	// 		"helical transmembrane region"
+	// 		"disordered region", 
+	// 		"solvent accessibility",
+	// **/
 	var providers = [
 		"PROFsec",
 		"PROFacc",
@@ -45,7 +45,7 @@ function PPRes(target_div) {
 		];
 
 
-	// This block test data loading and parsing all features
+	// // This block test data loading and parsing all features
 	ds = new dataSource(this.dataSource);
 	result = ds.loadData();
 	result.done(function(data) {
@@ -107,7 +107,6 @@ function PPResData() {
 	this.setJsonData = function(json) {
 		this.json_data = json;
 		this.sequence = jQuery.trim(this.json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
-		console.log(this.sequence);
 		this.alignments = this.json_data.entry.aliProviderGroup.alignment;
 		this.protein = this.json_data.entry.protein;
 		this.organism = this.json_data.entry.organism;
@@ -295,9 +294,11 @@ function dataSource(file_obj) {
 		return (jQuery.ajax({
 			url: this.file_path,
 			success: function(data) {
+				console.log(this.file_path+" load success");
 				// populateData(data)
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
+					console.log(this.file_path +" load fail");
 				// throw new PPResException ( 
 				// 	textStatus,
 				// 	errorThrown 

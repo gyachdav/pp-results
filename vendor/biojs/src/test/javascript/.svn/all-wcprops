@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 43
-/svn/!svn/ver/476/trunk/src/test/javascript
+/svn/!svn/ver/494/trunk/src/test/javascript
 END
 TestKegg.html
 K 25
@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 67
 /svn/!svn/ver/381/trunk/src/test/javascript/TestUniProtSummary.html
 END
-TestRhea.html
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/svn/!svn/ver/470/trunk/src/test/javascript/TestRhea.html
-END
 TestChebiCompound.html
 K 25
 svn:wc:ra_dav:version-url
 V 66
 /svn/!svn/ver/473/trunk/src/test/javascript/TestChebiCompound.html
+END
+TestRhea.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/470/trunk/src/test/javascript/TestRhea.html
 END
 TestSelector.html
 K 25
@@ -33,17 +33,17 @@ svn:wc:ra_dav:version-url
 V 61
 /svn/!svn/ver/225/trunk/src/test/javascript/TestSelector.html
 END
+TestPDBsequenceViewer.html
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/494/trunk/src/test/javascript/TestPDBsequenceViewer.html
+END
 TestInteractionsGraph.html
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/!svn/ver/353/trunk/src/test/javascript/TestInteractionsGraph.html
-END
-TestHpaSummaryFeatures.html
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/!svn/ver/419/trunk/src/test/javascript/TestHpaSummaryFeatures.html
 END
 TestInteractiveInteractionTable.html
 K 25
@@ -51,17 +51,17 @@ svn:wc:ra_dav:version-url
 V 80
 /svn/!svn/ver/418/trunk/src/test/javascript/TestInteractiveInteractionTable.html
 END
+TestHpaSummaryFeatures.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/419/trunk/src/test/javascript/TestHpaSummaryFeatures.html
+END
 TestExpressionLoader.html
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/!svn/ver/379/trunk/src/test/javascript/TestExpressionLoader.html
-END
-TestInteractionsD3.html
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/!svn/ver/369/trunk/src/test/javascript/TestInteractionsD3.html
 END
 TestRuler.html
 K 25
@@ -69,17 +69,23 @@ svn:wc:ra_dav:version-url
 V 58
 /svn/!svn/ver/379/trunk/src/test/javascript/TestRuler.html
 END
-TestCytoscape.html
+TestInteractionsD3.html
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/!svn/ver/364/trunk/src/test/javascript/TestCytoscape.html
+V 67
+/svn/!svn/ver/369/trunk/src/test/javascript/TestInteractionsD3.html
 END
 TestInteractionsFilterGraph.html
 K 25
 svn:wc:ra_dav:version-url
 V 76
 /svn/!svn/ver/376/trunk/src/test/javascript/TestInteractionsFilterGraph.html
+END
+TestCytoscape.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/364/trunk/src/test/javascript/TestCytoscape.html
 END
 TestInteractionsTimeSeries.html
 K 25

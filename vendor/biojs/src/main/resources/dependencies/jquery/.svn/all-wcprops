@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/!svn/ver/379/trunk/src/main/resources/dependencies/jquery
+/svn/!svn/ver/490/trunk/src/main/resources/dependencies/jquery
 END
 jquery.tooltip.css
 K 25
@@ -68,6 +68,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 81
 /svn/!svn/ver/91/trunk/src/main/resources/dependencies/jquery/jquery-1.4.2.min.js
+END
+swanand.jquery.tooltip.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/490/trunk/src/main/resources/dependencies/jquery/swanand.jquery.tooltip.js
 END
 jquery-1.6.4.js
 K 25

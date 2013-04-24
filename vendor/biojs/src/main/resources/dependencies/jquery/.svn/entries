@@ -1,15 +1,15 @@
 10
 
 dir
-479
+496
 http://biojs.googlecode.com/svn/trunk/src/main/resources/dependencies/jquery
 http://biojs.googlecode.com/svn
 
 
 
-2012-10-05T15:50:47.094028Z
-379
-gustavoadolfo.salazar@gmail.com
+2013-04-17T11:04:07.892374Z
+490
+swanand
 
 
 
@@ -25,40 +25,6 @@ gustavoadolfo.salazar@gmail.com
 
 
 b5adcd34-4a94-29fe-5e41-8471ec342730
-
-jquery.tooltip.css
-file
-
-
-
-
-2013-04-01T20:04:07.121137Z
-2a0c858d8364194746778649dfcb8b1c
-2012-01-12T16:32:09.161376Z
-145
-leylajael
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-242
 
 jquery-1.7.2.min.js
 file
@@ -94,17 +60,17 @@ gustavoadolfo.salazar@gmail.com
 
 94840
 
-jquery.delegate.js
+jquery.dimensions.min.js
 file
 
 
 
 
 2013-04-01T20:04:07.121137Z
-1e9be41f2f35a798923b18a24128819a
-2012-01-12T16:32:09.161376Z
-145
-leylajael
+82d186f188ae4d81eec68b132fb4191a
+2011-10-13T10:27:09.725642Z
+91
+johncar
 
 
 
@@ -126,7 +92,7 @@ leylajael
 
 
 
-1716
+8933
 
 jquery.tooltip.js
 file
@@ -162,77 +128,6 @@ leylajael
 
 8390
 
-jquery.dimensions.min.js
-file
-
-
-
-
-2013-04-01T20:04:07.121137Z
-82d186f188ae4d81eec68b132fb4191a
-2011-10-13T10:27:09.725642Z
-91
-johncar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8933
-
-jquery-ui-1.8.2.custom.min.js
-file
-
-
-
-
-2013-04-01T20:04:07.125138Z
-b8ba22c2d061ccb1230276b05f83f07e
-2011-10-13T10:27:09.725642Z
-91
-johncar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-206991
-
-images
-dir
-
 jquery-ui-1.8.2.css
 file
 
@@ -266,40 +161,6 @@ leylajael
 
 
 33011
-
-jquery.bgiframe.js
-file
-
-
-
-
-2013-04-01T20:04:07.125138Z
-d2c3e98fcae0289f23aa3726fd7f7ff2
-2012-01-12T16:32:09.161376Z
-145
-leylajael
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5044
 
 jquery-1.4.2.js
 file
@@ -335,6 +196,9 @@ johncar
 
 163855
 
+jQRangeSlider-5.1
+dir
+
 jquery.url.js
 file
 
@@ -368,6 +232,179 @@ leylajael
 
 
 5015
+
+jquery-1.6.4.js
+file
+
+
+
+
+2013-04-01T20:04:07.125138Z
+c677462551f4cc0f2af192497b50f3f5
+2011-12-22T16:39:33.019252Z
+141
+johncar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+238159
+
+jquery.tooltip.css
+file
+
+
+
+
+2013-04-01T20:04:07.121137Z
+2a0c858d8364194746778649dfcb8b1c
+2012-01-12T16:32:09.161376Z
+145
+leylajael
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+242
+
+jquery.delegate.js
+file
+
+
+
+
+2013-04-01T20:04:07.121137Z
+1e9be41f2f35a798923b18a24128819a
+2012-01-12T16:32:09.161376Z
+145
+leylajael
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1716
+
+jquery-ui-1.8.2.custom.min.js
+file
+
+
+
+
+2013-04-01T20:04:07.125138Z
+b8ba22c2d061ccb1230276b05f83f07e
+2011-10-13T10:27:09.725642Z
+91
+johncar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+206991
+
+jquery.bgiframe.js
+file
+
+
+
+
+2013-04-01T20:04:07.125138Z
+d2c3e98fcae0289f23aa3726fd7f7ff2
+2012-01-12T16:32:09.161376Z
+145
+leylajael
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5044
+
+images
+dir
 
 jquery-1.4.2.min.js
 file
@@ -403,17 +440,17 @@ johncar
 
 72174
 
-jquery-1.6.4.js
+swanand.jquery.tooltip.js
 file
 
 
 
 
-2013-04-01T20:04:07.125138Z
-c677462551f4cc0f2af192497b50f3f5
-2011-12-22T16:39:33.019252Z
-141
-johncar
+2013-04-24T20:10:18.000000Z
+1d8cffea136de15a57fda754504a787e
+2013-04-17T11:04:07.892374Z
+490
+swanand
 
 
 
@@ -435,5 +472,5 @@ johncar
 
 
 
-238159
+8719
 

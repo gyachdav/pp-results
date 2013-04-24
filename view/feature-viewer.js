@@ -1,265 +1,242 @@
-function FeatureViewer( seq, target_div, prot_name ){
-	this.sequenceLength  = seq.length;
-	this.displayDiv = target_div;
-	this.json = '';
-	this.prot_name = 'query';
-	if ( prot_name) this.prot_name = prot_name;
+var FEATURE_VIEWER = (
 
-	this.pane_width =  target_div.width();
-	this.current_bottom = 54;
-	this.current_track_count = 0;
+function() {
 
-	var outer_margin = 25;
-	var inner_margin = outer_margin *2;
+	var displayDiv,
+	prot_name = 'query',
+		displayDivWidth = 0,
+		current_bottom = 54;
+	current_track_count = 0,
+	outer_margin = 25.
+	inner_margin = outer_margin * 2,
+
+	json_config_obj = {
+		"featuresArray": [],
+		"segment": prot_name,
+		"legend": {
+			"segment": {
+				"yPosCentered": 190,
+				"text": "",
+				"yPos": 300,
+				"xPos": 15,
+				"yPosNonOverlapping": 106,
+				"yPosRows": 290
+			},
+			"key": []
+		},
+		"configuration": {
+			"requestedStart": 1,
 
 
-	this.json = {
-		    "segment": this.prot_name
-		    ,"legend":{
-		        "segment":{"yPosCentered":190,"text":"","yPos":300,"xPos":15,"yPosNonOverlapping":106,"yPosRows":290}
-		        ,"key":[
-		        ]
-		    }
-		    ,"configuration":{
-		    	"requestedStart":1,
-		        "requestedStop":this.sequenceLength,
-		        "sequenceLength":this.sequenceLength,
-		        "sizeX": this.pane_width - outer_margin,
-		        "rulerLength": this.pane_width - inner_margin,
-		    //     "horizontalGridNumLines":1,
-  				// "sequenceLineYCentered":95,
-     		// 	    "gridLineHeight":12,
-     		    "rightMargin":5,
-				"leftMargin":5,
-				 "belowRuler":30,
-				// "horizontalGridNumLinesNonOverlapping":2,
-				// "horizontalGridNumLinesCentered":6,
-				// "verticalGridLineLengthRows":284,
-				// "sizeYNonOverlapping":76,
-				// "style":"nonOverlapping",
-				// "sequenceLineYRows":155,
-				"sequenceLineY":54,
-				// "verticalGrid":false,
-				 "rulerY":20,
-				 // "horizontalGrid":false,
-				 "pixelsDivision":50,
-				// "sizeY":250,
-				// "sizeYRows":260,
-				 "aboveRuler":10,
-				// "verticalGridLineLengthNonOverlapping":66,
-				// "sizeYKey":300,
-				// "sizeYCentered":160,
-				// "sequenceLineYNonOverlapping":54,
-				// "verticalGridLineLength":66,
-				// "horizontalGridNumLinesRows":8,
-				// "nonOverlapping":true,
-				// "verticalGridLineLengthCentered":172
+			"rightMargin": 5,
+			"leftMargin": 5,
+			"belowRuler": 30,
+			"sequenceLineY": 54,
+			"rulerY": 20,
+			"pixelsDivision": 50,
+			"aboveRuler": 10,
 
-		    }
-		};
-}
+		}
+	};
 
-FeatureViewer.prototype.addFeatureArray = function(feature_array) {
-	this.json.featuresArray = features_array;
-};
-FeatureViewer.prototype.getCurrentBottom = function  () {
-	return (this.current_bottom);	
-}
 
-FeatureViewer.prototype.setCurrentBottom = function  ( y ) {
-	this.current_bottom = y;
-	
-}
 
-FeatureViewer.prototype.draw = function() {
-	var myPainter = new Biojs.FeatureViewer({
-			target: 'FeatureViewer',
-			json: this.json,
-	});
-};
-FeatureViewer.prototype.setFeauresArray  = function ( features_array ){
-	this.json.featuresArray  = features_array;
-};
+	var Feature = function() {
+		// // Physical representation of annotation
+		var default_stroke = 0,
+			default_shape = "rect",
+			default_opacity = 0.5,
+			color = 'grey',
+			feature = {
+				"type": default_shape,
+				"fillOpacity": default_opacity,
+				"strokeWidth": default_stroke,
+				"name": feature_provider,
+			};
 
-FeatureViewer.prototype.setProteinName = function(prot_name) {
- 	this.json.segment  = prot_name;
- }; 
+		return {
+			setColor: function(color) {
+				feature.fill = color;
+				feature.stroke = color;
+			},
+			getFeature: function() {
+				return (feature);
+			},
+			setFeatureID: function(name, pos) {
+				feature.featureId = name + pos;
+			},
+			addLocation: function(start, stop) {
+				addStart(start);
+				addStop(stop);
+			},
+			addStart: function(pos) {
+				feature.featureStart = pos;
+			},
+			addStop: function(pos) {
+				feature.featureEnd = pos;
+			},
+			getLabel: function() {
+				return (label);
+			},
+			addLabel: function(label) {
+				label = label.capitalize();
+				jQuery.extend(this.feature, {
+					"typeLabel": label,
+					"typeLabel": label,
+					"featureLabel": label,
+					"typeCategory": this.feature_type,
+					"typeCode": label,
+					"evidenceCode": "",
+					"evidenceText": "Prediction",
+					"featureTypeLabel": label + "-" + label
+				});
+			}
+		}
+	}
 
-// FeatureViewer.prototype.addTrack = function( track ) {
-// 	this.current_bottom = track.getBottom();
-//  	track.setPosition( this.current_bottom );
+
+	var Track = function(__height) {
+
+		var default_height = 10,
+			margin = default_height * 1.5,
+			config = {};
+
+		(__height) ? config.height = __height : config.height = height;
+
+		return {
+			setPosition: function(starting_y) {
+				config.y = starting_y;
+			},
+			getTrackHeight: function() {
+				return config.height;
+			},
+			getBottom: function() {
+				return (config.y + config.height + margin)
+			},
+			getConfig: function() {
+				return (config);
+			},
+			addFeature: function(feature) {
+				jQuery.extend(config, feature)
+			}
+		}
+	};
+
+	return {
+		init: function(argument) {
+			var dataObj = argument.dataObj;
+			displayDivWidth = argument.targetDiv.width();
+			json_config_obj.sizeX = (displayDivWidth - outer_margin);
+			json_config_obj.rulerLength = (displayDivWidth - inner_margin);
+			json_config_obj.sequenceLength = dataObj.getSequence().length;
+			json_config_obj.requestedStop = dataObj.getSequence().length;
+			json_config_obj.requestedStop = json_config_obj.sequenceLength = 742;
+
+		},
+		getCurrentBottom: function() {
+			return (current_bottom);
+		},
+		setCurrentBottom: function(y) {
+			current_bottom = y;
+		},
+
+		draw: function() {
+			var myPainter = new Biojs.FeatureViewer({
+				target: 'FeatureViewer',
+				json: json_config_obj
+			});
+		},
+		setFeauresArray: function(features_array) {
+			json_config_obj.featuresArray = features_array;
+		},
+		setProteinName: function(prot_name) {
+			json_config_obj.segment = prot_name;
+		},
+		getProteinName: function() {
+			return prot_name;
+		},
+		getDisplayWidth: function() {
+			return displayDivWidth;
+		},
+		addTrack: function(track) {
+			current_bottom = track.getBottom();
+			track.setPosition(this.current_bottom);
+		}
+	};
+})();
+
+
+
+// 
+
+
+
+// function feature_SS( feature_provider, feature_type, data ){
+// 	Feature.call(this);
+// 	this.addLocation ( data.location.begin.position, data.location.end.position );
+// 	this.setFeatureID( feature_provider, data.location.begin.position);
+
+// 	switch (data.type){
+// 		case 'helix':
+// 			color = '#990000';
+// 			break;
+// 		case 'strand':
+// 	        color = '#0000CC';
+//   		  	break;
+//         default:
+//         	color = '#006600';
+//         	break;
+// 	}
+// 	this.setColor( color );
+// 	this.addLabel( feature_provider );
+// 	this.setFeatureID ( feature_provider,data.location.begin.position );
 // };
 
-function Track( height ){
-
-	this.height = 10;
-	this.margin = this.height  * 1.5;
-	if (height) this.height = height;
-	this.config  = {
-		"height": this.height
-	}
-}
-
-Track.prototype.getTrackHeight = function() {
-	return (this.track);
-};
-
-Track.prototype.setPosition = function( starting_y ) {
-	this.config.y = starting_y;
-};
-
-Track.prototype.getBottom = function (){
-	return (this.config.y+this.height+this.margin);
-}
-
-Track.prototype.getConfig = function (){
-	return (this.config);
-}
-
-Track.prototype.addFeature = function( feature ) {
-	jQuery.extend(this.config, feature);
-};
+// feature_SS.prototype = new Feature();
+// feature_SS.prototype.constructor = feature_SS;
 
 
-// Physical representation of annotation
-function Feature( feature_provider, feature_type, data ){
-	var default_stroke = 0;
-	var default_shape = "rect";
-	var default_opacity = 0.5;
-	this.color = 'grey';
+// function feature_ASP( feature_provider, feature_type, data ){
+// 	Feature.call(this);
+// 	this.addLocation ( data.location.begin.position, data.location.end.position );
+// 	this.setColor('green');
+// 	this.addLabel( feature_provider );
+// 	this.setFeatureID ( feature_provider,data.location.begin.position );
+// };
 
-	this.feature =  {
-		    "type": default_shape,
-			"fillOpacity": default_opacity,
-            "strokeWidth": default_stroke,
-            "name": feature_provider,
-            //"type": feature_type,			
-	    };
+// feature_ASP.prototype = new Feature();
+// feature_ASP.prototype.constructor = feature_ASP;
 
-};
+// // Utility Funciton
+// String.prototype.capitalize = function() {
+//     return this.charAt(0).toUpperCase() + this.slice(1);
+// }
 
-Feature.prototype.setColor = function( color ) {
-	this.feature.fill = color;
-	this.feature.stroke = color;
-};
+// function feature_DS( feature_provider, feature_type, data ){
+// 	Feature.call(this);
+// 	this.addLocation ( data.location.begin.position, data.location.end.position );
+// 	this.setColor('brown');
+// 	this.addLabel( feature_provider );
+// 	this.setFeatureID ( feature_provider,data.location.begin.position );
+// };
 
-Feature.prototype.getFeature = function(first_argument) {
-	return (this.feature);
-};
+// feature_DS.prototype = new Feature();
+// feature_DS.prototype.constructor = feature_DS;
 
+// // Bidning sites
+// function feature_BS( feature_provider, feature_type, data ){
+// 	Feature.call(this);
+// 	this.addLocation ( data.location.begin.position, data.location.end.position );
+// 	this.setColor('pink');
+// 	this.addLabel( feature_provider );
+// 	this.setFeatureID ( feature_provider,data.location.begin.position );
+// };
 
-Feature.prototype.setFeatureID = function (name, pos) {
-	this.feature.featureId = name + pos;
-};
-
-Feature.prototype.addLocation = function(start, stop) {
-	this.addStart( start );
-	this.addStop( stop );
-};
-Feature.prototype.addStart = function( pos ) {
-	this.feature.featureStart = pos;
-};
-Feature.prototype.addStop = function( pos ) {
-	this.feature.featureEnd = pos;
-};
-
-Feature.prototype.addLabel = function( label ) {
-	label = label.capitalize();
-	jQuery.extend(this.feature, {
-			"typeLabel": label,
-			"typeLabel": label,
-			"featureLabel":label, 
-			"typeCategory": this.feature_type,
-			"typeCode":label,
-			"evidenceCode":"",
-			"evidenceText": "Prediction",
-			"featureTypeLabel": label + "-" + label
-	});
-};
-
-Feature.prototype.getLabel = function() {
-	return (this.label);
-};
+// feature_BS.prototype = new Feature();
+// feature_BS.prototype.constructor = feature_BS;
 
 
-function feature_SS( feature_provider, feature_type, data ){
-	Feature.call(this);
-	this.addLocation ( data.location.begin.position, data.location.end.position );
-	this.setFeatureID( feature_provider, data.location.begin.position);
-
-	switch (data.type){
-		case 'helix':
-			color = '#990000';
-			break;
-		case 'strand':
-	        color = '#0000CC';
-  		  	break;
-        default:
-        	color = '#006600';
-        	break;
-	}
-	this.setColor( color );
-	this.addLabel( feature_provider );
-	this.setFeatureID ( feature_provider,data.location.begin.position );
-};
-
-feature_SS.prototype = new Feature();
-feature_SS.prototype.constructor = feature_SS;
-
-
-function feature_ASP( feature_provider, feature_type, data ){
-	Feature.call(this);
-	this.addLocation ( data.location.begin.position, data.location.end.position );
-	this.setColor('green');
-	this.addLabel( feature_provider );
-	this.setFeatureID ( feature_provider,data.location.begin.position );
-};
-
-feature_ASP.prototype = new Feature();
-feature_ASP.prototype.constructor = feature_ASP;
-
-// Utility Funciton
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
-function feature_DS( feature_provider, feature_type, data ){
-	Feature.call(this);
-	this.addLocation ( data.location.begin.position, data.location.end.position );
-	this.setColor('brown');
-	this.addLabel( feature_provider );
-	this.setFeatureID ( feature_provider,data.location.begin.position );
-};
-
-feature_DS.prototype = new Feature();
-feature_DS.prototype.constructor = feature_DS;
-
-// Bidning sites
-function feature_BS( feature_provider, feature_type, data ){
-	Feature.call(this);
-	this.addLocation ( data.location.begin.position, data.location.end.position );
-	this.setColor('pink');
-	this.addLabel( feature_provider );
-	this.setFeatureID ( feature_provider,data.location.begin.position );
-};
-
-feature_BS.prototype = new Feature();
-feature_BS.prototype.constructor = feature_BS;
-
-
-// Utility Funciton
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
-
-
-
-
-
-
-
-
-
-
-
+// // Utility Funciton
+// String.prototype.capitalize = function() {
+//     return this.charAt(0).toUpperCase() + this.slice(1);
+// }

@@ -3,22 +3,25 @@
 <link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
 
 <script src="vendor/jquery/jquery.min.js" type="text/javascript" language="javascript"></script>
+<!-- <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-1.4.2.min.js"></script> -->
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.FeatureViewer.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-1.4.2.min.js"></script>
+ 
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
+ 
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.delegate.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.url.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/raphael.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/canvg.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/rgbcolor.js"></script>
-<script src="vendor/biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
 
-<script src="library/jquery.xml2json.js" type="text/javascript" language="javascript"></script>
-<script src="model/ppres-data.js" type="text/javascript" language="javascript"></script>
-<script src="view/feature-viewer.js" type="text/javascript" language="javascript"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js" ></script>
+<script language="JavaScript" type="text/javascript" src="library/jquery.xml2json.js"></script>
+<script language="JavaScript" type="text/javascript" src="model/ppres-data.js"></script>
+<script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
+<script language="JavaScript" type="text/javascript" src="view/feature-viewer.js"></script>
 
 
 
@@ -26,62 +29,54 @@
 <body>
 <div id='msg'></div>
 <div id='err'></div>
+<a href ="" id='test'>click</a>
 <div id='FeatureViewer'></div>
 
 
-
 <script type="text/javascript">
-ppres = new PPRes();
-ppres.run();
-console.log(ppres.mainObj);
-jQuery('#msg').text(ppres.mainObj.getSequence());
-jQuery('#msg').append("seq length:"+ppres.mainObj.getSequence().length+"<br/>");
-jQuery('#msg').append("number of alignments :"+ppres.mainObj.getAlignmentsCount()+"<br/>");
 
-jQuery('#msg').append("number of matched PDBs :"+ppres.mainObj.getAlignmentsByDatabase('PDB')+"<br/>");
-jQuery('#msg').append("top matched SP :"+ppres.mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')+"<br/>");
+var data = APP.getDataObj();
+FEATURE_VIEWER.init( 	{	targetDiv: jQuery("#FeatureViewer"), dataObj: data }	);
+FEATURE_VIEWER.draw();
 
 
 
-var fv = new FeatureViewer (ppres.mainObj.getSequence(), jQuery('#FeatureViewer'));
-// 
-
-var features_array = [];
-jQuery.each( ppres.pp_features, function(i, v) {
-	var featureGroup = ppres.mainObj.getFeature ( v );
-	var feature_provider = featureGroup.featureProviderGroup.provider;
-	var feature_type = featureGroup.type;
-	var track = new Track( );
-	track.setPosition ( fv.getCurrentBottom()  );
-	jQuery.each( featureGroup.featureProviderGroup.feature, function(i, v) {
-		var feature;
-		switch(feature_type){
-			case 'secondary structures':
-				feature = new feature_SS( feature_provider, feature_type, v );
-				break;
-			case 'secondary structure switch':
-				feature = new feature_ASP( feature_provider, feature_type, v );
-				break;
-			case 'disulfide bond':
-				feature = new feature_DS( feature_provider, feature_type, v );
-				break;
-			case 'protein binding region':
-				feature = new feature_DS( feature_provider, feature_type, v );
-				break;
+// var features_array = [];
+// jQuery.each( ppres.pp_features, function(i, v) {
+// 	var featureGroup = ppres.mainObj.getFeature ( v );
+// 	var feature_provider = featureGroup.featureProviderGroup.provider;
+// 	var feature_type = featureGroup.type;
+// 	var track = new Track( );
+// 	track.setPosition ( fv.getCurrentBottom()  );
+// 	jQuery.each( featureGroup.featureProviderGroup.feature, function(i, v) {
+// 		var feature;
+// 		switch(feature_type){
+// 			case 'secondary structures':
+// 				feature = new feature_SS( feature_provider, feature_type, v );
+// 				break;
+// 			case 'secondary structure switch':
+// 				feature = new feature_ASP( feature_provider, feature_type, v );
+// 				break;
+// 			case 'disulfide bond':
+// 				feature = new feature_DS( feature_provider, feature_type, v );
+// 				break;
+// 			case 'protein binding region':
+// 				feature = new feature_DS( feature_provider, feature_type, v );
+// 				break;
 				
 
 				
-		}
-	    var obj = jQuery.extend( {}, feature.getFeature(),  track.config );
-		features_array.push(obj);
-	});
-	fv.setCurrentBottom (track.getBottom());
-});
+// 		}
+// 	    var obj = jQuery.extend( {}, feature.getFeature(),  track.config );
+// 		features_array.push(obj);
+// 	});
+// 	fv.setCurrentBottom (track.getBottom());
+// });
 
-fv.addFeatureArray(features_array);
-fv.draw();
-console.log(features_array);
+// fv.addFeatureArray(features_array);
+// fv.draw();
+// console.log(features_array);
 
-jQuery("#test").click(function(){alert("passed");});
+// jQuery("#test").click(function(){alert("passed");});
 </script>
 </body>
