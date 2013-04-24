@@ -39,9 +39,10 @@ function PPRes(target_div) {
 		"PredictNLS",
 		"PHDhtm",
 		"PROFbval",
-		"Ucon",
+		 "Ucon",
 		"MD",
-		"PROFtmb"];
+		"PROFtmb"
+		];
 
 
 	// This block test data loading and parsing all features
@@ -128,7 +129,6 @@ function PPResData() {
 		jQuery.each(this.json_data.entry.featureTypeGroup, function(i, v) {
 			if (v.type.match(new RegExp(featureName, 'i'))) {
 				feature = v;
-				// alert (v.type);	
 				return false;
 			}
 		});
@@ -144,7 +144,7 @@ function PPResData() {
 		jQuery.each(feature_list, function(index, feature_type) {
 			if (jQuery.isArray(feature_type.featureProviderGroup)) {
 				feature = getFeatureByProvider(feature_type.featureProviderGroup, feature_provider);
-				if (!feature === undefined) return false;
+				if ( feature ) return false;
 			} else {
 				var selector = feature_type.featureProviderGroup;
 				if (feature_type.featureProviderGroup === undefined) selector = feature_type;
