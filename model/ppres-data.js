@@ -267,9 +267,9 @@ function PPResData() {
 
 	this.getAAComposition = function(argument) {
 		var aa_composition = {};
-		jQuery.map(this.getSequence().split(), function(aa, index) {
-			if (!(aa in aa_composition)) aa_composition.aa = 0;
-			aa_composition.aa = parseInt(aa_composition.aa) + 1;
+		jQuery.map(this.getSequence().split(''), function(aa, index) {
+			if (!(aa in aa_composition)) aa_composition[aa] = 0;
+			aa_composition[aa] = parseInt(aa_composition[aa]) + 1;
 		});
 		return (aa_composition);
 	}
