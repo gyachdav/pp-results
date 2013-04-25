@@ -6,111 +6,24 @@ function PPResException(message, error, status) {
 	this.status = status;
 }
 
-// App Class
-// OBsolete
-function PPRes(target_div) {
-	this.dataSource = {
-		path: ".",
-		name: "examples/source.xml",
-		type: 'xml'
-	};
 
-	// this.feature_types = [
-	// 	"secondary structures"];
-	// /** 
-	// 	NOTE available Features:
-	// 		"secondary structure switch",
-	// 		"DNA-binding region",
-	// 		"disulfide bond",
-	// 		"protein binding region",
-	// 		"nuclear localisation signal",
-	// 		"helical transmembrane region"
-	// 		"disordered region", 
-	// 		"solvent accessibility",
-	// **/
-	var providers = [
-		"PROFsec",
-		"PROFacc",
-		"NORSnet",
-		"ISIS",
-		"DISIS",
-		"ASP",
-		"DISULFIND",
-		"PredictNLS",
-		"PHDhtm",
-		"PROFbval",
-		 "Ucon",
-		"MD",
-		"PROFtmb"
-		];
-
-
-	// // This block test data loading and parsing all features
-	ds = new dataSource(this.dataSource);
-	result = ds.loadData();
-	result.done(function(data) {
-		json = jQuery.xml2json(data);
-		ds.file_type = 'json'; //switch to json
-		ds.populateData(json);
-		console.log(ds.getData());
-		mainObj = new PPResData();
-		mainObj.setJsonData(ds.getData());
-		console.log(mainObj.getAlignmentLocations());
-		console.log(mainObj.getReferenceByProvider("PROFtmb"));
-		console.log(mainObj.getSSComposition());
-		console.log(mainObj.getAAComposition());
-		target_div.append('<p>' + mainObj.getSequence() + '</p>');
-		target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
-		target_div.append('<p>Protein Name: ' + mainObj.getProteinName() + '</p>');
-		target_div.append('<p>Organism Name: ' + mainObj.getOrganismName() + '</p>');
-		target_div.append('<p>Number of aligments: ' + mainObj.getAlignmentsCount() + '</p>');
-		jQuery.each(['PDB', 'Swiss-Prot', 'trembl'], function(index, val) {
-			target_div.append('<p>Number of hits from ' + val + ": " + mainObj.getAlignmentsByDatabase(val) + '</p>');
-		});
-
-		jQuery.each(providers, function(i, v) {
-			feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
-			target_div.append('<h1>' + v + '</h1>');
-			target_div.append(JSON.stringify(mainObj.getFeatureLocations(feature)));
-		});
-	});
-	// END TEST BLOCK
-
-	this.getPPFeatures = function() {
-		return (this.pp_features);
-	}
-	this.addPPFeatures = function(feature) {
-		this.pp_features.push(feature);
-	}
-	this.getMainObj = function() {
-		return this.mainObj;
-	}
-}
 
 
 function PPResData() {
-	this.xml_data_source = '';
-	this.prof_data_source = '';
-	this.json_data = '';
-	this.sequence = '';
-	this.alignments =
+	var xml_data_source = '',
+	prof_data_source = '',
+	json_data = '',
+	sequence = '',
+	alignments ='';
 
 
 	this.getFeatureTypeGroup = function() {
 		return (this.getJsonData().entry.featureTypeGroup);
 	}
 
-	this.getJsonData = function() {
-		return (this.json_data);
-	}
 
-	this.setJsonData = function(json) {
-		this.json_data = json;
-		this.sequence = jQuery.trim(this.json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
-		this.alignments = this.json_data.entry.aliProviderGroup.alignment;
-		this.protein = this.json_data.entry.protein;
-		this.organism = this.json_data.entry.organism;
-	}
+
+	
 
 	this.getProteinName = function() {
 		return (this.protein.recommendedName.fullName);
@@ -119,9 +32,7 @@ function PPResData() {
 	this.getOrganismName = function() {
 		return (this.organism.name);
 	}
-	this.getSequence = function() {
-		return (this.sequence);
-	}
+	
 	// Look up feature by feature types
 	this.getFeatureByType = function(featureName) {
 		var feature;
@@ -272,6 +183,22 @@ function PPResData() {
 		});
 		return (aa_composition);
 	}
+
+	return {
+			getJsonData: function() {
+				return (json_data);
+			},
+			setJsonData : function(json) {
+				this.json_data = json;
+				this.sequence = jQuery.trim(this.json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
+				this.alignments = this.json_data.entry.aliProviderGroup.alignment;
+				this.protein = this.json_data.entry.protein;
+				this.organism = this.json_data.entry.organism;
+			},
+			getSequence : function() {
+				return (sequence);
+			}
+	};
 }
 
 // External data loader
