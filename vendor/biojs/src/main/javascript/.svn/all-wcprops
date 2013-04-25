@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 43
-/svn/!svn/ver/496/trunk/src/main/javascript
+/svn/!svn/ver/498/trunk/src/main/javascript
 END
 Biojs.ChEMBLCompound.js
 K 25
@@ -85,7 +85,7 @@ Biojs.FeatureViewer.js
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.FeatureViewer.js
+/svn/!svn/ver/498/trunk/src/main/javascript/Biojs.FeatureViewer.js
 END
 Biojs.ChEBICompound.js
 K 25
@@ -99,17 +99,17 @@ svn:wc:ra_dav:version-url
 V 64
 /svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Protein3DWS.js
 END
-Biojs.HpaSummaryFeatures.js
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/!svn/ver/421/trunk/src/main/javascript/Biojs.HpaSummaryFeatures.js
-END
 Biojs.InteractiveInteractionTable.js
 K 25
 svn:wc:ra_dav:version-url
 V 80
 /svn/!svn/ver/420/trunk/src/main/javascript/Biojs.InteractiveInteractionTable.js
+END
+Biojs.HpaSummaryFeatures.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/421/trunk/src/main/javascript/Biojs.HpaSummaryFeatures.js
 END
 Biojs.Protein3DUniprot.js
 K 25
@@ -147,17 +147,17 @@ svn:wc:ra_dav:version-url
 V 61
 /svn/!svn/ver/467/trunk/src/main/javascript/Biojs.Sequence.js
 END
-Biojs.PDBLogos.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.PDBLogos.js
-END
 Biojs.AreaSelector.js
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/!svn/ver/383/trunk/src/main/javascript/Biojs.AreaSelector.js
+END
+Biojs.PDBLogos.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/383/trunk/src/main/javascript/Biojs.PDBLogos.js
 END
 Biojs.Chromosome.js
 K 25
@@ -165,17 +165,17 @@ svn:wc:ra_dav:version-url
 V 63
 /svn/!svn/ver/383/trunk/src/main/javascript/Biojs.Chromosome.js
 END
-Biojs.GeneExpressionSummary.js
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/svn/!svn/ver/471/trunk/src/main/javascript/Biojs.GeneExpressionSummary.js
-END
 Biojs.Rheaction.js
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /svn/!svn/ver/472/trunk/src/main/javascript/Biojs.Rheaction.js
+END
+Biojs.GeneExpressionSummary.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/471/trunk/src/main/javascript/Biojs.GeneExpressionSummary.js
 END
 Biojs.ProteinPortafolio.js
 K 25

@@ -8,108 +8,15 @@ function PPResException(message, error, status) {
 
 
 
-
 function PPResData() {
 	var xml_data_source = '',
-	prof_data_source = '',
-	json_data = '',
-	sequence = '',
-	alignments ='';
+		prof_data_source = '',
+		organism = '',
+		json_data = {},
+		protein = {},
+		sequence = '',
+		alignments = {};
 
-
-	this.getFeatureTypeGroup = function() {
-		return (this.getJsonData().entry.featureTypeGroup);
-	}
-
-
-
-	
-
-	this.getProteinName = function() {
-		return (this.protein.recommendedName.fullName);
-	}
-
-	this.getOrganismName = function() {
-		return (this.organism.name);
-	}
-	
-	// Look up feature by feature types
-	this.getFeatureByType = function(featureName) {
-		var feature;
-		jQuery.each(this.json_data.entry.featureTypeGroup, function(i, v) {
-			if (v.type.match(new RegExp(featureName, 'i'))) {
-				feature = v;
-				return false;
-			}
-		});
-		return (feature);
-	}
-
-
-	this.getFeatureByProvider = function(feature_list, feature_provider) {
-		var getFeatureByProvider = this.getFeatureByProvider;
-		var feature;
-
-
-		jQuery.each(feature_list, function(index, feature_type) {
-			if (jQuery.isArray(feature_type.featureProviderGroup)) {
-				feature = getFeatureByProvider(feature_type.featureProviderGroup, feature_provider);
-				if ( feature ) return false;
-			} else {
-				var selector = feature_type.featureProviderGroup;
-				if (feature_type.featureProviderGroup === undefined) selector = feature_type;
-				if (selector.provider.match(new RegExp("^" + feature_provider + "$", 'i'))) {
-					feature = feature_type;
-					return false;
-				}
-			}
-		});
-		return (feature);
-	}
-
-	this.getFeatureLocations = function(feature_ref) {
-		var locations = [];
-		var location_obj_ref;
-
-		if (feature_ref.featureProviderGroup && feature_ref.featureProviderGroup.feature) {
-			location_obj_ref = feature_ref.featureProviderGroup.feature;
-		} else if (feature_ref.feature) {
-			location_obj_ref = feature_ref.feature;
-		} else {
-			return null;
-		};
-
-
-		if (jQuery.isArray(location_obj_ref)) {
-			jQuery.each(location_obj_ref, function(index, val) {
-				locations.push({
-					begin: parseInt(val.location.begin.position),
-					end: parseInt(val.location.end.position),
-					type: val.type
-				});
-			});
-		} else if (location_obj_ref.location) {
-			var ref = location_obj_ref.location;
-			locations.push({
-				begin: parseInt(ref.begin.position),
-				end: parseInt(ref.end.position),
-				type: ref.type
-			});
-		}
-		return (locations);
-	}
-
-	this.getAlignmentLocations = function() {
-		var alis = this.getAlignments();
-		var locations_array = [];
-		jQuery.each(alis, function(index, alignment) {
-			locations_array.push({
-				begin: parseInt(alignment.queryStart.value),
-				end: parseInt(alignment.queryEnd.value)
-			});
-		});
-		return (locations_array);
-	}
 
 
 	this.getAlignmentsByDatabase = function(db_name) {
@@ -185,19 +92,110 @@ function PPResData() {
 	}
 
 	return {
-			getJsonData: function() {
-				return (json_data);
-			},
-			setJsonData : function(json) {
-				this.json_data = json;
-				this.sequence = jQuery.trim(this.json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
-				this.alignments = this.json_data.entry.aliProviderGroup.alignment;
-				this.protein = this.json_data.entry.protein;
-				this.organism = this.json_data.entry.organism;
-			},
-			getSequence : function() {
-				return (sequence);
+		getJsonData: function() {
+			return (json_data);
+		},
+		setJsonData: function(json) {
+			json_data = json;
+			sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
+			alignments = json_data.entry.aliProviderGroup.alignment;
+			protein = json_data.entry.protein;
+			organism = json_data.entry.organism;
+		},
+		getSequence: function() {
+			return (sequence);
+		},
+		getAlignmentLocations: function() {
+			var alis = this.getAlignments();
+			var locations_array = [];
+			jQuery.each(alis, function(index, alignment) {
+				locations_array.push({
+					begin: parseInt(alignment.queryStart.value),
+					end: parseInt(alignment.queryEnd.value)
+				});
+			});
+			return (locations_array);
+		},
+		getAlignments: function() {
+			return (alignments);
+		},
+
+		getFeatureTypeGroup: function() {
+			return (json_data.entry.featureTypeGroup);
+		},
+
+		getProteinName: function() {
+			return (this.protein.recommendedName.fullName);
+		},
+
+		getOrganismName: function() {
+			return (this.organism.name);
+		},
+
+		// Look up feature by feature types
+		getFeatureByType: function(featureName) {
+			var feature;
+			jQuery.each(this.json_data.entry.featureTypeGroup, function(i, v) {
+				if (v.type.match(new RegExp(featureName, 'i'))) {
+					feature = v;
+					return false;
+				}
+			});
+			return (feature);
+		},
+
+
+		getFeatureByProvider: function(feature_list, feature_provider) {
+			var getFeatureByProvider = this.getFeatureByProvider;
+			var feature;
+
+			jQuery.each(feature_list, function(index, feature_type) {
+				if (jQuery.isArray(feature_type.featureProviderGroup)) {
+					feature = getFeatureByProvider(feature_type.featureProviderGroup, feature_provider);
+					if (feature) return false;
+				} else {
+					var selector = feature_type.featureProviderGroup;
+					if (feature_type.featureProviderGroup === undefined) selector = feature_type;
+					if (selector.provider.match(new RegExp("^" + feature_provider + "$", 'i'))) {
+						feature = feature_type;
+						return false;
+					}
+				}
+			});
+			return (feature);
+		},
+
+		getFeatureLocations: function(feature_ref) {
+			var locations = [];
+			var location_obj_ref;
+
+			if (feature_ref.featureProviderGroup && feature_ref.featureProviderGroup.feature) {
+				location_obj_ref = feature_ref.featureProviderGroup.feature;
+			} else if (feature_ref.feature) {
+				location_obj_ref = feature_ref.feature;
+			} else {
+				return null;
+			};
+
+
+			if (jQuery.isArray(location_obj_ref)) {
+				jQuery.each(location_obj_ref, function(index, val) {
+					locations.push({
+						begin: parseInt(val.location.begin.position),
+						end: parseInt(val.location.end.position),
+						type: val.type
+					});
+				});
+			} else if (location_obj_ref.location) {
+				var ref = location_obj_ref.location;
+				locations.push({
+					begin: parseInt(ref.begin.position),
+					end: parseInt(ref.end.position),
+					type: ref.type
+				});
 			}
+			return (locations);
+		}
 	};
 }
 
@@ -221,11 +219,11 @@ function dataSource(file_obj) {
 		return (jQuery.ajax({
 			url: this.file_path,
 			success: function(data) {
-				console.log(this.file_path+" load success");
+				console.log(this.file_path + " load success");
 				// populateData(data)
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
-					console.log(this.file_path +" load fail");
+				console.log(this.file_path + " load fail");
 				// throw new PPResException ( 
 				// 	textStatus,
 				// 	errorThrown 

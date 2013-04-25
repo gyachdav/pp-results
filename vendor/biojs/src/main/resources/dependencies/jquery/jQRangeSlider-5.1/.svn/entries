@@ -1,7 +1,7 @@
 10
 
 dir
-496
+498
 http://biojs.googlecode.com/svn/trunk/src/main/resources/dependencies/jquery/jQRangeSlider-5.1
 http://biojs.googlecode.com/svn
 
@@ -94,6 +94,9 @@ swanand
 
 35821
 
+demo
+dir
+
 jQDateRangeSlider-min.js
 file
 
@@ -127,9 +130,6 @@ swanand
 
 
 41238
-
-demo
-dir
 
 jQAllRangeSliders-withRuler-min.js
 file
@@ -236,40 +236,6 @@ swanand
 css
 dir
 
-Readme.md
-file
-
-
-
-
-2013-04-24T20:10:18.000000Z
-ea9e409c2f703dd5734d5dc65b1a27aa
-2013-04-15T11:54:11.323172Z
-487
-swanand
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1180
-
 jQEditRangeSlider-min.js
 file
 
@@ -303,6 +269,40 @@ swanand
 
 
 39462
+
+Readme.md
+file
+
+
+
+
+2013-04-24T20:10:18.000000Z
+ea9e409c2f703dd5734d5dc65b1a27aa
+2013-04-15T11:54:11.323172Z
+487
+swanand
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1180
 
 History.md
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-496
+498
 http://biojs.googlecode.com/svn/trunk/src/main/resources/dependencies/jmol-12.0.48
 http://biojs.googlecode.com/svn
 
@@ -162,40 +162,6 @@ has-props
 
 91159
 
-JmolApplet0_i18n_ar.jar
-file
-
-
-
-
-2013-04-01T20:04:09.369076Z
-3c795e6cdbb833c7fd5f7cc3c53ed98f
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10148
-
 JmolApplet0_ShapeSpecial.jar
 file
 
@@ -229,6 +195,40 @@ has-props
 
 
 53980
+
+JmolApplet0_i18n_ar.jar
+file
+
+
+
+
+2013-04-01T20:04:09.369076Z
+3c795e6cdbb833c7fd5f7cc3c53ed98f
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10148
 
 JmolAppletSigned0_i18n_ko.jar
 file
@@ -332,40 +332,6 @@ has-props
 
 25220
 
-JmolApplet0_i18n_et.jar
-file
-
-
-
-
-2013-04-01T20:04:09.373139Z
-f38a5a631bf3aac350b3e328b985f4ec
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11701
-
 JmolAppletSigned0_i18n_sl.jar
 file
 
@@ -399,6 +365,40 @@ has-props
 
 
 4843
+
+JmolApplet0_i18n_et.jar
+file
+
+
+
+
+2013-04-01T20:04:09.373139Z
+f38a5a631bf3aac350b3e328b985f4ec
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11701
 
 JmolApplet0_ShapeSurface.jar
 file
@@ -1046,40 +1046,6 @@ has-props
 
 34044
 
-CHANGES.txt
-file
-
-
-
-
-2013-04-01T20:04:09.385138Z
-48f1fd5fec79b6fd449740c9a1ae1346
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-378234
-
 JmolAppletSigned0_i18n_pl.jar
 file
 
@@ -1114,14 +1080,14 @@ has-props
 
 14977
 
-JmolApplet0_i18n_pt_BR.jar
+CHANGES.txt
 file
 
 
 
 
-2013-04-01T20:04:09.389138Z
-2c5a7690998a860acb4141cf91f64879
+2013-04-01T20:04:09.385138Z
+48f1fd5fec79b6fd449740c9a1ae1346
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1146,7 +1112,7 @@ has-props
 
 
 
-23029
+378234
 
 JmolAppletSigned0_i18n_hu.jar
 file
@@ -1182,14 +1148,14 @@ has-props
 
 21784
 
-JmolApplet0_i18n_fr.jar
+JmolApplet0_i18n_pt_BR.jar
 file
 
 
 
 
 2013-04-01T20:04:09.389138Z
-c7e37f08ae9aa5e53dadd243e45d2c4c
+2c5a7690998a860acb4141cf91f64879
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1214,7 +1180,7 @@ has-props
 
 
 
-24946
+23029
 
 JmolApplet0_ReadersXml.jar
 file
@@ -1249,6 +1215,40 @@ has-props
 
 
 29111
+
+JmolApplet0_i18n_fr.jar
+file
+
+
+
+
+2013-04-01T20:04:09.389138Z
+c7e37f08ae9aa5e53dadd243e45d2c4c
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24946
 
 JmolApplet0_i18n_nl.jar
 file
@@ -1318,14 +1318,14 @@ has-props
 
 15509
 
-JmolAppletSigned0_i18n_tr.jar
+JmolApplet0_ReadersXtal.jar
 file
 
 
 
 
 2013-04-01T20:04:09.393139Z
-77385667940baf1837a303450cb7d9f6
+b92ceadf7248d4afebf04cfb2235e786
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1350,7 +1350,7 @@ has-props
 
 
 
-22903
+17769
 
 LICENSE.txt
 file
@@ -1386,14 +1386,14 @@ has-props
 
 26936
 
-JmolApplet0_ReadersXtal.jar
+JmolAppletSigned0_i18n_tr.jar
 file
 
 
 
 
 2013-04-01T20:04:09.393139Z
-b92ceadf7248d4afebf04cfb2235e786
+77385667940baf1837a303450cb7d9f6
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1418,7 +1418,7 @@ has-props
 
 
 
-17769
+22903
 
 JmolApplet0_i18n_ca.jar
 file
@@ -1488,40 +1488,6 @@ has-props
 
 72138
 
-JmolAppletSigned0_i18n_id.jar
-file
-
-
-
-
-2013-04-01T20:04:09.393139Z
-0ae031f63c6a2b72cd3b65c34b35cad5
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25519
-
 JmolApplet0_i18n_ru.jar
 file
 
@@ -1556,14 +1522,14 @@ has-props
 
 10148
 
-JmolAppletSigned0_MultiTouch.jar
+JmolAppletSigned0_i18n_id.jar
 file
 
 
 
 
 2013-04-01T20:04:09.393139Z
-1cc96c73d9198e4fdc4bec4f5c2e6910
+0ae031f63c6a2b72cd3b65c34b35cad5
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1588,7 +1554,7 @@ has-props
 
 
 
-47685
+25519
 
 JmolAppletSigned0_ReadersCifPdb.jar
 file
@@ -1624,6 +1590,40 @@ has-props
 
 19861
 
+JmolAppletSigned0_MultiTouch.jar
+file
+
+
+
+
+2013-04-01T20:04:09.393139Z
+1cc96c73d9198e4fdc4bec4f5c2e6910
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+47685
+
 jmol.sh
 file
 
@@ -1657,40 +1657,6 @@ has-props
 
 
 849
-
-JmolAppletSigned0_i18n_el.jar
-file
-
-
-
-
-2013-04-01T20:04:09.397137Z
-b2f723aa32fba390ed68df567f39ca46
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5264
 
 README.txt
 file
@@ -1726,14 +1692,14 @@ has-props
 
 8550
 
-JmolApplet0_ShapeBio.jar
+JmolAppletSigned0_i18n_el.jar
 file
 
 
 
 
 2013-04-01T20:04:09.397137Z
-f2aac22694cbbc914337156afc868f6d
+b2f723aa32fba390ed68df567f39ca46
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1758,41 +1724,7 @@ has-props
 
 
 
-68243
-
-Jmol.jar
-file
-
-
-
-
-2013-04-01T20:04:09.405137Z
-fdaf1095725c4e606c01b6fdba4a8880
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5510304
+5264
 
 JmolAppletSigned0_i18n_zh_CN.jar
 file
@@ -1828,6 +1760,74 @@ has-props
 
 24881
 
+Jmol.jar
+file
+
+
+
+
+2013-04-01T20:04:09.405137Z
+fdaf1095725c4e606c01b6fdba4a8880
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5510304
+
+JmolApplet0_ShapeBio.jar
+file
+
+
+
+
+2013-04-01T20:04:09.397137Z
+f2aac22694cbbc914337156afc868f6d
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+68243
+
 JmolAppletSigned0_i18n_ar.jar
 file
 
@@ -1862,14 +1862,14 @@ has-props
 
 11582
 
-JmolApplet0_i18n_zh_CN.jar
+JmolApplet0_i18n_oc.jar
 file
 
 
 
 
-2013-04-01T20:04:09.405137Z
-99f6479295e590e255586fefc92492ad
+2013-04-01T20:04:09.409108Z
+7fbaf0a1b54d09307479a58f3d92cc5d
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1894,7 +1894,7 @@ has-props
 
 
 
-23435
+9336
 
 JmolAppletSigned0_i18n_es.jar
 file
@@ -1930,14 +1930,14 @@ has-props
 
 26654
 
-JmolApplet0_i18n_oc.jar
+JmolApplet0_i18n_zh_CN.jar
 file
 
 
 
 
-2013-04-01T20:04:09.409108Z
-7fbaf0a1b54d09307479a58f3d92cc5d
+2013-04-01T20:04:09.405137Z
+99f6479295e590e255586fefc92492ad
 2011-10-31T16:51:36.828697Z
 103
 johncar
@@ -1962,7 +1962,7 @@ has-props
 
 
 
-9336
+23435
 
 JmolAppletSigned0_i18n_et.jar
 file
@@ -2066,40 +2066,6 @@ has-props
 
 26215
 
-JmolAppletSigned0_i18n_uk.jar
-file
-
-
-
-
-2013-04-01T20:04:09.409108Z
-a8c54f0a52bf7590bf78d22e50a60c10
-2011-10-31T16:51:36.828697Z
-103
-johncar
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28976
-
 JmolApplet0_i18n_ko.jar
 file
 
@@ -2133,6 +2099,40 @@ has-props
 
 
 19908
+
+JmolAppletSigned0_i18n_uk.jar
+file
+
+
+
+
+2013-04-01T20:04:09.409108Z
+a8c54f0a52bf7590bf78d22e50a60c10
+2011-10-31T16:51:36.828697Z
+103
+johncar
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28976
 
 JmolAppletSigned0.jar
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-496
+498
 http://biojs.googlecode.com/svn/trunk/src/main/resources/dependencies/jquery
 http://biojs.googlecode.com/svn
 
@@ -60,40 +60,6 @@ gustavoadolfo.salazar@gmail.com
 
 94840
 
-jquery.dimensions.min.js
-file
-
-
-
-
-2013-04-01T20:04:07.121137Z
-82d186f188ae4d81eec68b132fb4191a
-2011-10-13T10:27:09.725642Z
-91
-johncar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8933
-
 jquery.tooltip.js
 file
 
@@ -127,6 +93,40 @@ leylajael
 
 
 8390
+
+jquery.dimensions.min.js
+file
+
+
+
+
+2013-04-01T20:04:07.121137Z
+82d186f188ae4d81eec68b132fb4191a
+2011-10-13T10:27:09.725642Z
+91
+johncar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8933
 
 jquery-ui-1.8.2.css
 file
@@ -196,9 +196,6 @@ johncar
 
 163855
 
-jQRangeSlider-5.1
-dir
-
 jquery.url.js
 file
 
@@ -232,6 +229,9 @@ leylajael
 
 
 5015
+
+jQRangeSlider-5.1
+dir
 
 jquery-1.6.4.js
 file
@@ -369,6 +369,9 @@ johncar
 
 206991
 
+images
+dir
+
 jquery.bgiframe.js
 file
 
@@ -402,9 +405,6 @@ leylajael
 
 
 5044
-
-images
-dir
 
 jquery-1.4.2.min.js
 file

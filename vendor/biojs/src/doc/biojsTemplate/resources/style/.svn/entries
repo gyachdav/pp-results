@@ -1,7 +1,7 @@
 10
 
 dir
-496
+498
 http://biojs.googlecode.com/svn/trunk/src/doc/biojsTemplate/resources/style
 http://biojs.googlecode.com/svn
 
@@ -128,40 +128,6 @@ rajido
 
 6142
 
-biojs.Tooltip.css
-file
-
-
-
-
-2013-04-01T20:04:16.989075Z
-a4fb1619dc7ac930abde3712fc8ba8a9
-2012-10-29T15:52:55.315236Z
-403
-rajido
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1106
-
 ebi-positioning.css
 file
 
@@ -196,14 +162,14 @@ rajido
 
 7244
 
-style.css
+biojs.Tooltip.css
 file
 
 
 
 
-2013-04-01T20:04:17.029062Z
-8615a57ce93b1032cc432ca3d83b7ef6
+2013-04-01T20:04:16.989075Z
+a4fb1619dc7ac930abde3712fc8ba8a9
 2012-10-29T15:52:55.315236Z
 403
 rajido
@@ -228,7 +194,41 @@ rajido
 
 
 
-9417
+1106
+
+normalize.css
+file
+
+
+
+
+2013-04-01T20:04:17.029062Z
+b797409c3c0dc50184323bc6a3d4bece
+2012-10-29T15:52:55.315236Z
+403
+rajido
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8270
 
 boilerplate-style.css
 file
@@ -264,14 +264,14 @@ rajido
 
 10192
 
-normalize.css
+style.css
 file
 
 
 
 
 2013-04-01T20:04:17.029062Z
-b797409c3c0dc50184323bc6a3d4bece
+8615a57ce93b1032cc432ca3d83b7ef6
 2012-10-29T15:52:55.315236Z
 403
 rajido
@@ -296,7 +296,7 @@ rajido
 
 
 
-8270
+9417
 
 biojs-colours_blue.css
 file

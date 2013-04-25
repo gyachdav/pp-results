@@ -7,30 +7,121 @@ var APP = (function() {
 		name: "examples/source.xml",
 		type: 'xml'
 	}, debug = 0,
-		mainObj = new PPResData();
+		mainObj = new PPResData(),
+		providers = [
+		"PROFsec",
+		"PROFacc",
+		"NORSnet",
+			"ISIS",
+		"DISIS",
+		"ASP",
+			"DISULFIND",
+		"PredictNLS",
+		"PHDhtm",
+			"PROFbval",
+			"Ucon",
+			"MD",
+		"PROFtmb"
+		],
+		providers_specs = {
+			"PROFsec": {
+				color: "blue"
+			},
+			// "PROFacc",
+			"NORSnet": {
+				color: "gray"
+			},
+			"ISIS": {
+				color: "red"
+			},
+			// "DISIS",
+			"ASP": {
+				color: "green"
+			},
+			"DISULFIND": {
+				color: "brwon"
+			},
+			// "PredictNLS",
+			"PHDhtm": {
+				color: "purple"
+			},
+			"PROFbval": {
+				color: "yellow"
+			},
+			"Ucon": {
+				color: "orange"
+			},
+			"MD": {
+				color: "#225533"
+			}
+
+
+		};
+
 
 
 	return {
 
-		
+		drawFeatureViewer: function() {
+			FEATURE_VIEWER.init({
+				targetDiv: jQuery("#FeatureViewer"),
+				dataObj: mainObj
+			});
+			var features_array = [];
+			FEATURE_VIEWER.setFeauresArray(jQuery.map(providers, function(provider, index) {
+				var track = new Track();
+				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 
-		drawFeatureViewer: function (){
-			FEATURE_VIEWER.init( 	{	targetDiv: jQuery("#FeatureViewer"), dataObj: mainObj }	);
+				var feature_group = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), provider);
+				var feature_type = feature_group.type;
+				locations = mainObj.getFeatureLocations(feature_group);
+				if (!locations) return null;
+				if (locations) i = locations.length;
+				while (i--) {
+					feature = new Feature(provider);
+					feature.setFeatureID(provider, locations[i].begin);
+					feature.setColor(providers_specs[provider].color);
+					feature.setLocation(locations[i].begin, locations[i].end);
+					feature.addLabel(feature_type);
+					track.addFeature( feature.getFeature());
+				}
+				FEATURE_VIEWER.setCurrentBottom(track.getBottom());
+				
+				return track.getTrack();
+			}));
+
+			FEATURE_VIEWER.setFeauresArray(jQuery.map(mainObj.getAlignmentLocations(), function(target, index) {
+				var track = new Track(1,2);
+				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
+				feature = new Feature("Alignment");
+				feature.setFeatureID('alignment', (target.begin+index));
+				feature.setColor("blue");
+				feature.setLocation(target.begin, target.end);
+				feature.addLabel("alignment"+index);
+				track.addFeature( feature.getFeature());
+				FEATURE_VIEWER.setCurrentBottom(track.getBottom());
+				
+				return track.getTrack();
+			  //iterate through array or object
+			}));
+
+
+
 			FEATURE_VIEWER.draw();
 		},
 
-		populateData: function ( data ){
+		populateData: function(data) {
 			json = jQuery.xml2json(data);
 			ds.file_type = 'json'; //switch to json
 			ds.populateData(json);
-			
 			mainObj.setJsonData(ds.getData());
 		},
 
-		init: function () {
+		init: function() {
+			jQuery.noConflict(); // recommended to avoid conflict wiht other libs
 			ds = new dataSource(file_specs);
 			result = ds.loadData();
-			result.done( [ this.populateData, this.drawFeatureViewer] ) ;
+			result.done([this.populateData, this.drawFeatureViewer]);
 		},
 		toggleDebug: function() {
 			debug = !debug;
@@ -39,7 +130,7 @@ var APP = (function() {
 			return mainObj;
 		},
 
-		dump : function(){
+		dump: function() {
 			console.log(ds.getData());
 			console.log(mainObj.getAlignmentLocations());
 			console.log(mainObj.getReferenceByProvider("PROFtmb"));
@@ -68,6 +159,7 @@ var APP = (function() {
 
 // App Class
 // OBsolete
+
 function Demo(target_div) {
 	this.dataSource = {
 		path: ".",
@@ -86,10 +178,9 @@ function Demo(target_div) {
 		"PredictNLS",
 		"PHDhtm",
 		"PROFbval",
-		 "Ucon",
+		"Ucon",
 		"MD",
-		"PROFtmb"
-		];
+		"PROFtmb"];
 
 
 	// // This block test data loading and parsing all features
@@ -103,17 +194,17 @@ function Demo(target_div) {
 		mainObj = new PPResData();
 		mainObj.setJsonData(ds.getData());
 		console.log(mainObj.getAlignmentLocations());
-		console.log(mainObj.getReferenceByProvider("PROFtmb"));
-		console.log(mainObj.getSSComposition());
-		console.log(mainObj.getAAComposition());
+		// console.log(mainObj.getReferenceByProvider("PROFtmb"));
+		// console.log(mainObj.getSSComposition());
+		// console.log(mainObj.getAAComposition());
 		target_div.append('<p>' + mainObj.getSequence() + '</p>');
 		target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
-		target_div.append('<p>Protein Name: ' + mainObj.getProteinName() + '</p>');
-		target_div.append('<p>Organism Name: ' + mainObj.getOrganismName() + '</p>');
-		target_div.append('<p>Number of aligments: ' + mainObj.getAlignmentsCount() + '</p>');
-		jQuery.each(['PDB', 'Swiss-Prot', 'trembl'], function(index, val) {
-			target_div.append('<p>Number of hits from ' + val + ": " + mainObj.getAlignmentsByDatabase(val) + '</p>');
-		});
+		// target_div.append('<p>Protein Name: ' + mainObj.getProteinName() + '</p>');
+		// target_div.append('<p>Organism Name: ' + mainObj.getOrganismName() + '</p>');
+		// target_div.append('<p>Number of aligments: ' + mainObj.getAlignmentsCount() + '</p>');
+		// jQuery.each(['PDB', 'Swiss-Prot', 'trembl'], function(index, val) {
+		// 	target_div.append('<p>Number of hits from ' + val + ": " + mainObj.getAlignmentsByDatabase(val) + '</p>');
+		// });
 
 		jQuery.each(providers, function(i, v) {
 			feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
@@ -133,4 +224,3 @@ function Demo(target_div) {
 		return this.mainObj;
 	}
 }
-

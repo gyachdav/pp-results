@@ -1,12 +1,10 @@
 <head>
-<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
-<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
 
-<script src="vendor/jquery/jquery.min.js" type="text/javascript" language="javascript"></script>
-<!-- <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-1.4.2.min.js"></script> -->
+
+<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.FeatureViewer.js"></script>
- 
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
  
@@ -22,60 +20,16 @@
 <script language="JavaScript" type="text/javascript" src="model/ppres-data.js"></script>
 <script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/feature-viewer.js"></script>
-
-
-
+<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
+<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
 </head>
 <body>
 <div id='msg'></div>
 <div id='err'></div>
 <a href ="" id='test'>click</a>
 <div id='FeatureViewer'></div>
-
-
 <script type="text/javascript">
-
-
+jQuery("#test").click(function(){alert("passed");});
 APP.init();
-
-
-
-// var features_array = [];
-// jQuery.each( ppres.pp_features, function(i, v) {
-// 	var featureGroup = ppres.mainObj.getFeature ( v );
-// 	var feature_provider = featureGroup.featureProviderGroup.provider;
-// 	var feature_type = featureGroup.type;
-// 	var track = new Track( );
-// 	track.setPosition ( fv.getCurrentBottom()  );
-// 	jQuery.each( featureGroup.featureProviderGroup.feature, function(i, v) {
-// 		var feature;
-// 		switch(feature_type){
-// 			case 'secondary structures':
-// 				feature = new feature_SS( feature_provider, feature_type, v );
-// 				break;
-// 			case 'secondary structure switch':
-// 				feature = new feature_ASP( feature_provider, feature_type, v );
-// 				break;
-// 			case 'disulfide bond':
-// 				feature = new feature_DS( feature_provider, feature_type, v );
-// 				break;
-// 			case 'protein binding region':
-// 				feature = new feature_DS( feature_provider, feature_type, v );
-// 				break;
-				
-
-				
-// 		}
-// 	    var obj = jQuery.extend( {}, feature.getFeature(),  track.config );
-// 		features_array.push(obj);
-// 	});
-// 	fv.setCurrentBottom (track.getBottom());
-// });
-
-// fv.addFeatureArray(features_array);
-// fv.draw();
-// console.log(features_array);
-
-// jQuery("#test").click(function(){alert("passed");});
 </script>
 </body>
