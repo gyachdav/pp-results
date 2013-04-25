@@ -111,7 +111,11 @@ function PPResData() {
 			jQuery.each(alis, function(index, alignment) {
 				locations_array.push({
 					begin: parseInt(alignment.queryStart.value),
-					end: parseInt(alignment.queryEnd.value)
+					end: parseInt(alignment.queryEnd.value),
+					id: alignment.dbReference.id,
+					eval: alignment.expect.value,
+					matchlen: alignment.matchLen.value,
+					identity: alignment.identity.value
 				});
 			});
 			return (locations_array);
@@ -148,16 +152,19 @@ function PPResData() {
 		getFeatureByProvider: function(feature_list, feature_provider) {
 			var getFeatureByProvider = this.getFeatureByProvider;
 			var feature;
+			var pred_type;
 
 			jQuery.each(feature_list, function(index, feature_type) {
 				if (jQuery.isArray(feature_type.featureProviderGroup)) {
+					type = feature_type.type;
 					feature = getFeatureByProvider(feature_type.featureProviderGroup, feature_provider);
-					if (feature) return false;
+					if (feature) {  jQuery.merge(feature, type );  return false;	};
 				} else {
 					var selector = feature_type.featureProviderGroup;
+					
 					if (feature_type.featureProviderGroup === undefined) selector = feature_type;
 					if (selector.provider.match(new RegExp("^" + feature_provider + "$", 'i'))) {
-						feature = feature_type;
+						feature = feature_type ;
 						return false;
 					}
 				}
@@ -183,7 +190,8 @@ function PPResData() {
 					locations.push({
 						begin: parseInt(val.location.begin.position),
 						end: parseInt(val.location.end.position),
-						type: val.type
+						type: val.type,
+						code: val.soTermId
 					});
 				});
 			} else if (location_obj_ref.location) {

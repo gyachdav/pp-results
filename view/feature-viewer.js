@@ -5,35 +5,35 @@ function() {
 	prot_name = 'query',
 		displayDivWidth = 0,
 		current_bottom = 54;
-		current_track_count = 0,
-		outer_margin = 25.
-		inner_margin = outer_margin * 2,
-		json_config_obj = {
-			"featuresArray": [],
-			"segment": prot_name,
-			"legend": {
-				"segment": {
-					"yPosCentered": 190,
-					"text": "",
-					"yPos": 300,
-					"xPos": 15,
-					"yPosNonOverlapping": 106,
-					"yPosRows": 290
-				},
-				"key": []
+	current_track_count = 0,
+	outer_margin = 25.
+	inner_margin = outer_margin * 2,
+	json_config_obj = {
+		"featuresArray": [],
+		"segment": prot_name,
+		"legend": {
+			"segment": {
+				"yPosCentered": 190,
+				"text": "",
+				"yPos": 300,
+				"xPos": 15,
+				"yPosNonOverlapping": 106,
+				"yPosRows": 290
 			},
-			"configuration": {
-				"requestedStart": 1,
-				"rightMargin": 5,
-				"leftMargin": 5,
-				"belowRuler": 30,
-				"sequenceLineY": 54,
-				"rulerY": 20,
-				"pixelsDivision": 50,
-				"aboveRuler": 10,
-				"sizeY": 10000,
-				"sizeYRows":1000
-			}
+			"key": []
+		},
+		"configuration": {
+			"requestedStart": 1,
+			"rightMargin": 5,
+			"leftMargin": 5,
+			"belowRuler": 30,
+			"sequenceLineY": 54,
+			"rulerY": 20,
+			"pixelsDivision": 50,
+			"aboveRuler": 10,
+			"sizeY": 10000,
+			"sizeYRows": 1000
+		}
 	};
 
 	return {
@@ -63,8 +63,8 @@ function() {
 			});
 		},
 		setFeauresArray: function(features_array) {
-			jQuery.merge(json_config_obj.featuresArray,features_array);
-			console.log (json_config_obj.featuresArray);
+			jQuery.merge(json_config_obj.featuresArray, features_array);
+			console.log(json_config_obj.featuresArray);
 		},
 		setProteinName: function(prot_name) {
 			json_config_obj.segment = prot_name;
@@ -83,7 +83,7 @@ function() {
 })();
 
 
-var Feature = function( feature_provider ) {
+var Feature = function(feature_provider) {
 	// // Physical representation of annotation
 	var default_stroke = 0,
 		default_shape = "rect",
@@ -121,56 +121,42 @@ var Feature = function( feature_provider ) {
 			return (label);
 		},
 		addLabel: function(label) {
-		//	label = label.capitalize();
-			jQuery.extend(feature, {
-				"typeLabel": label,
-				"typeLabel": label,
-				"featureLabel": label,
-				"typeCategory": this.feature_type,
-				"typeCode": label,
-				"evidenceCode": "",
-				"evidenceText": "Prediction",
-				"featureTypeLabel": label + "-" + label
-			});
+			jQuery.extend(feature, label);
 		}
 	}
 }
 
-
 var Track = function(__height, __margin) {
 
-		var default_height = 10,
-			config = {},
-			features = [];
+	var default_height = 10,
+		config = {},
+		features = [];
 
-		(__height) ? config.height = __height : config.height = default_height;
-		(__margin) ? config.margin = __margin : config.margin = default_height*1.5;
+	(__height) ? config.height = __height : config.height = default_height;
+	(__margin) ? config.margin = __margin : config.margin = default_height * 1.5;
 
-		return {
-			setPosition: function(starting_y) {
-				config.y = starting_y;
-			},
-			getTrackHeight: function() {
-				return config;
-			},
-			getBottom: function() {
-				return (config.y + config.height + config.margin)
-			},
-			getConfig: function() {
-				return (config);
-			},
-			addFeature: function(feature) {
-				features.push( jQuery.extend( feature, config) );
-			},
-			getTrack: function(){
-				return features;
-			}
-
+	return {
+		setPosition: function(starting_y) {
+			config.y = starting_y;
+		},
+		getTrackHeight: function() {
+			return config;
+		},
+		getBottom: function() {
+			return (config.y + config.height + config.margin)
+		},
+		getConfig: function() {
+			return (config);
+		},
+		addFeature: function(feature) {
+			features.push(jQuery.extend(feature, config));
+		},
+		getTrack: function() {
+			return features;
 		}
-	};
 
-
-
+	}
+};
 
 
 

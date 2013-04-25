@@ -27,14 +27,14 @@ var APP = (function() {
 			"PROFsec": {
 				color: "blue"
 			},
-			// "PROFacc",
+			"PROFacc": {color: "magenta"},
 			"NORSnet": {
 				color: "gray"
 			},
 			"ISIS": {
 				color: "red"
 			},
-			// "DISIS",
+			"DISIS": {color:"pink"},
 			"ASP": {
 				color: "green"
 			},
@@ -73,16 +73,26 @@ var APP = (function() {
 				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 
 				var feature_group = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), provider);
-				var feature_type = feature_group.type;
+				var feature_type = (feature_group.type) ? feature_group.type : "";
 				locations = mainObj.getFeatureLocations(feature_group);
 				if (!locations) return null;
 				if (locations) i = locations.length;
 				while (i--) {
+
+
 					feature = new Feature(provider);
 					feature.setFeatureID(provider, locations[i].begin);
 					feature.setColor(providers_specs[provider].color);
 					feature.setLocation(locations[i].begin, locations[i].end);
-					feature.addLabel(feature_type);
+					(locations[i].type && typeof locations[i].type !== undefined) ? featureTypeLabel = locations[i].type : featureTypeLabel= "";
+					feature.addLabel( {
+						"typeCategory": feature_type,
+						"typeCode": locations[i].code,
+						"evidenceText": provider,
+						"featureTypeLabel": featureTypeLabel,
+						"featureLabel": feature_type ? feature_type : featureTypeLabel ,
+						"evidenceCode":""
+					});
 					track.addFeature( feature.getFeature());
 				}
 				FEATURE_VIEWER.setCurrentBottom(track.getBottom());
@@ -97,7 +107,14 @@ var APP = (function() {
 				feature.setFeatureID('alignment', (target.begin+index));
 				feature.setColor("blue");
 				feature.setLocation(target.begin, target.end);
-				feature.addLabel("alignment"+index);
+				feature.addLabel( {
+						"typeCategory": "Alignment",
+						"typeCode": "Eval: "+target.eval,
+						"evidenceText":  '',
+						"featureTypeLabel": " Matched Length: " +target.matchlen,
+						"featureLabel": "Identity: "+ target.identity ,
+						"evidenceCode": "http://edamontology.org/data_1387"
+					});
 				track.addFeature( feature.getFeature());
 				FEATURE_VIEWER.setCurrentBottom(track.getBottom());
 				
