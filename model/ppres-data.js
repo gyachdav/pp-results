@@ -8,6 +8,7 @@ function PPResException(message, error, status) {
 
 // App Class
 // OBsolete
+
 function PPRes(target_div) {
 	this.dataSource = {
 		path: ".",
@@ -39,10 +40,9 @@ function PPRes(target_div) {
 		"PredictNLS",
 		"PHDhtm",
 		"PROFbval",
-		 "Ucon",
+		"Ucon",
 		"MD",
-		"PROFtmb"
-		];
+		"PROFtmb"];
 
 
 	// // This block test data loading and parsing all features
@@ -143,7 +143,7 @@ function PPResData() {
 		jQuery.each(feature_list, function(index, feature_type) {
 			if (jQuery.isArray(feature_type.featureProviderGroup)) {
 				feature = getFeatureByProvider(feature_type.featureProviderGroup, feature_provider);
-				if ( feature ) return false;
+				if (feature) return false;
 			} else {
 				var selector = feature_type.featureProviderGroup;
 				if (feature_type.featureProviderGroup === undefined) selector = feature_type;
@@ -294,11 +294,11 @@ function dataSource(file_obj) {
 		return (jQuery.ajax({
 			url: this.file_path,
 			success: function(data) {
-				console.log(this.file_path+" load success");
+				console.log(this.file_path + " load success");
 				// populateData(data)
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
-					console.log(this.file_path +" load fail");
+				console.log(this.file_path + " load fail");
 				// throw new PPResException ( 
 				// 	textStatus,
 				// 	errorThrown 
