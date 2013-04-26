@@ -7,7 +7,6 @@ function PPResException(message, error, status) {
 }
 
 
-
 function PPResData() {
 	var xml_data_source = '',
 		prof_data_source = '',
@@ -18,35 +17,8 @@ function PPResData() {
 		alignments = {};
 
 
-
-	this.getAlignmentsByDatabase = function(db_name) {
-		var alis = this.getAlignments();
-		var count = 0;
-		jQuery.each(alis, function(i, v) {
-			if (v.dbReference.type.match(new RegExp(db_name, 'i'))) {
-				console.log(v.dbReference.id + "\t" + v.identity.value);
-				count++;
-			}
-		});
-		return (count);
-	}
-
-	this.getAlignmentsByDatabaseTopMatch = function(db_name) {
-		var alis = this.getAlignments();
-		var topmatch_id = '';
-		jQuery.each(alis, function(i, v) {
-			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
-				topmatch_id = v.dbReference.id;
-				return (false);
-			}
-		});
-		return (topmatch_id);
-	}
 	this.getAlignments = function() {
 		return (this.alignments);
-	};
-	this.getAlignmentsCount = function() {
-		return (this.getAlignments().length);
 	};
 
 	this.getReferenceByProvider = function(feature_provider) {
@@ -92,6 +64,38 @@ function PPResData() {
 	}
 
 	return {
+
+		getAlignmentsByDatabaseTopMatch: function(db_name) {
+			var alis = this.getAlignments();
+			var topmatch_id = '';
+			jQuery.each(alis, function(i, v) {
+				if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
+					topmatch_id = v.dbReference.id;
+					return (false);
+				}
+			});
+			return (topmatch_id);
+		},
+
+
+		getAlignmentsByDatabase: function(db_name) {
+			var alis = this.getAlignments();
+			var count = 0;
+			jQuery.each(alis, function(i, v) {
+				if (v.dbReference.type.match(new RegExp(db_name, 'i'))) {
+					console.log(v.dbReference.id + "\t" + v.identity.value);
+					count++;
+				}
+			});
+			return (count);
+		},
+
+
+		getAlignmentsCount: function() {
+			return (this.getAlignments().length);
+		},
+
+
 		getJsonData: function() {
 			return (json_data);
 		},
@@ -158,13 +162,16 @@ function PPResData() {
 				if (jQuery.isArray(feature_type.featureProviderGroup)) {
 					type = feature_type.type;
 					feature = getFeatureByProvider(feature_type.featureProviderGroup, feature_provider);
-					if (feature) {  jQuery.merge(feature, type );  return false;	};
+					if (feature) {
+						jQuery.merge(feature, type);
+						return false;
+					};
 				} else {
 					var selector = feature_type.featureProviderGroup;
-					
+
 					if (feature_type.featureProviderGroup === undefined) selector = feature_type;
 					if (selector.provider.match(new RegExp("^" + feature_provider + "$", 'i'))) {
-						feature = feature_type ;
+						feature = feature_type;
 						return false;
 					}
 				}

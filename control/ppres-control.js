@@ -61,6 +61,13 @@ var APP = (function() {
 
 
 	return {
+		drawSummaryTable: function(){
+			jQuery(".summary").append("<tr><td>Recommended Name</td><td>"+mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')+"</td></tr>");
+			jQuery(".summary").append("<tr><td>Sequence Length</td><td>"+mainObj.getSequence().length+"</td></tr>");
+			jQuery(".summary").append("<tr><td>Number of Aligned Proteins</td><td>"+mainObj.getAlignmentsCount()+"</td></tr>");
+			jQuery(".summary").append("<tr><td>Number of Matched PDB Modles</td><td>"+mainObj.getAlignmentsByDatabase('pdb')+"</td></tr>");
+
+		},
 
 		drawFeatureViewer: function() {
 			FEATURE_VIEWER.init({
@@ -119,9 +126,6 @@ var APP = (function() {
 				return track.getTrack();
 			  //iterate through array or object
 			}));
-
-
-
 			FEATURE_VIEWER.draw();
 		},
 
@@ -136,7 +140,7 @@ var APP = (function() {
 			jQuery.noConflict(); // recommended to avoid conflict wiht other libs
 			ds = new dataSource(file_specs);
 			result = ds.loadData();
-			result.done([this.populateData, this.drawFeatureViewer]);
+			result.done([this.populateData, this.drawFeatureViewer, this.drawSummaryTable]);
 		},
 		toggleDebug: function() {
 			debug = !debug;
