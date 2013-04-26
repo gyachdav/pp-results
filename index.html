@@ -1,8 +1,33 @@
 <head>
-
-
 <script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
+<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
+<link rel="stylesheet" href="css/ppres.css" />
+<!-- <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" /> -->
+<title>PredictProtein Results</title>
+</head>
+<body>
+<div id='msg'></div>
+<div id='err'></div>
+
+<h1>Dashboard Overview for <span class=".name">CD44_Human</span></h1>
+<div id='FeatureViewer'>Loading </div>
+<hr>
+<div id='summary_container' class=""  />
+
+<script type="text/javascript">
+jQuery(document).ready( function(){
+	APP.init();
+	}
+);
+</script>
+
+
+
 <script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor//d3/d3.v3.min.js"></script>
+
+
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.FeatureViewer.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
@@ -18,29 +43,11 @@
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js" ></script>
 <script language="JavaScript" type="text/javascript" src="library/jquery.xml2json.js"></script>
 <script language="JavaScript" type="text/javascript" src="model/ppres-data.js"></script>
+<script language="JavaScript" type="text/javascript" src="view/ppres-piechart.js"></script>
 <script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/feature-viewer.js"></script>
-<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
-<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
-</head>
-<body>
-<div id='msg'></div>
-<div id='err'></div>
-<h1>Summary</h1>
-<div id='SummaryTable'>
-<table class='summary'></table>
-</div>
-<p></p>
-<div id='FeatureViewer'>Loading </div>
 
 
 
 
-
-
-
-<script type="text/javascript">
-jQuery("#test").click(function(){alert("passed");});
-APP.init();
-</script>
 </body>

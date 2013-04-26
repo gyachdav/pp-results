@@ -65,11 +65,27 @@ var APP = (function() {
 
 	return {
 		drawSummaryTable: function() {
+			jQuery("#summary_container").append("<div class='summary pie container-left' />");
+			jQuery(".summary").append("<h3>Summary</h3>");
 			jQuery(".summary").append("<tr><td>Recommended Name</td><td>" + mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot') + "</td></tr>");
 			jQuery(".summary").append("<tr><td>Sequence Length</td><td>" + mainObj.getSequence().length + "</td></tr>");
 			jQuery(".summary").append("<tr><td>Number of Aligned Proteins</td><td>" + mainObj.getAlignmentsCount() + "</td></tr>");
-			jQuery(".summary").append("<tr><td>Number of Matched PDB Modles</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
+			jQuery(".summary").append("<tr><td>Number of Matched PDB Structures</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
 
+		},
+
+		drawAAConsistency: function() {
+
+			jQuery("#summary_container").append("<div id='aa-consistency' class='pie container-left' />");
+			jQuery("#aa-consistency").append("<h3>Amino Acid composition</h3>");
+			PIE_CHART.toPieData(mainObj.getAAComposition()).drawPieChart('aa-consistency');
+		},
+
+		drawSSConsistency: function() {
+
+			jQuery("#summary_container").append("<div id='ss-consistency' class='pie container-left' />");
+			jQuery("#ss-consistency").append("<h3>Secondary Structure composition</h3>");
+			PIE_CHART.toPieData(mainObj.getSSComposition()).drawPieChart('ss-consistency');
 		},
 
 		drawFeatureViewer: function() {
@@ -89,7 +105,7 @@ var APP = (function() {
 				if (locations) i = locations.length;
 				while (i--) {
 					feature = new Feature(provider);
-					feature.setFeatureID(provider+"__"+locations[i].begin);
+					feature.setFeatureID(provider + "__" + locations[i].begin);
 					feature.setColor(providers_specs[provider].color);
 					feature.setLocation(locations[i].begin, locations[i].end);
 					(locations[i].type && typeof locations[i].type !== undefined) ? featureTypeLabel = locations[i].type : featureTypeLabel = "";
@@ -116,8 +132,8 @@ var APP = (function() {
 
 				if (target.db.match(/pdb/i)) {
 					(__pdb) = target.id.split('_');
-					target.id  =__pdb[0];
-					if (__pdb[1]) target.id += " Chain: "+__pdb[1];
+					target.id = __pdb[0];
+					if (__pdb[1]) target.id += " Chain: " + __pdb[1];
 				}
 				feature.setColor("blue");
 				feature.setLocation(target.begin, target.end);
@@ -150,7 +166,12 @@ var APP = (function() {
 			jQuery.noConflict(); // recommended to avoid conflict wiht other libs
 			ds = new dataSource(file_specs);
 			result = ds.loadData();
-			result.done([this.populateData, this.drawFeatureViewer, this.drawSummaryTable]);
+			result.done([this.populateData, 
+				this.drawFeatureViewer, 
+				this.drawSummaryTable, 
+				this.drawAAConsistency,
+				 this.drawSSConsistency
+				]);
 		},
 		toggleDebug: function() {
 			debug = !debug;

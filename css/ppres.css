@@ -1,0 +1,28 @@
+.arc path {
+  stroke: #fff;
+  
+}
+ .pie{
+ 	margin: 15px;
+ 	align: center;	
+ } 
+
+ .slice text {
+            font-size: 16pt;
+            font-family: Arial;
+        }  
+
+
+.container-left {  
+    float:left;  
+    margin: 40px;
+}
+
+ /* .topright{
+  		position: relative;
+		right: -20px;
+		float: right;
+  } 
+  .topright:hover { 
+  		cursor: pointer;
+    }

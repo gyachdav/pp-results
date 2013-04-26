@@ -38,32 +38,32 @@ function PPResData() {
 	}
 
 
-	this.getSSComposition = function(argument) {
-		var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
-		var ss_feature_array = this.getFeatureLocations(ss_feature);
-		var ss_composition = {
-			helix: 0,
-			strand: 0,
-			loop: 0
-		};
-		jQuery.each(ss_feature_array, function(index, obj) {
-			_type = obj.type;
-			ss_composition[_type] += parseInt(obj.end) - parseInt(obj.begin);
-		});
-		ss_composition.loop = this.getSequence().length - parseInt(ss_composition.helix) - parseInt(ss_composition.strand);
-		return (ss_composition);
-	}
-
-	this.getAAComposition = function(argument) {
-		var aa_composition = {};
-		jQuery.map(this.getSequence().split(''), function(aa, index) {
-			if (!(aa in aa_composition)) aa_composition[aa] = 0;
-			aa_composition[aa] = parseInt(aa_composition[aa]) + 1;
-		});
-		return (aa_composition);
-	}
 
 	return {
+		getSSComposition: function(argument) {
+			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
+			var ss_feature_array = this.getFeatureLocations(ss_feature);
+			var ss_composition = {
+				helix: 0,
+				strand: 0,
+				loop: 0
+			};
+			jQuery.each(ss_feature_array, function(index, obj) {
+				_type = obj.type;
+				ss_composition[_type] += parseInt(obj.end) - parseInt(obj.begin);
+			});
+			ss_composition.loop = this.getSequence().length - parseInt(ss_composition.helix) - parseInt(ss_composition.strand);
+			return (ss_composition);
+		},
+
+		getAAComposition: function(argument) {
+			var aa_composition = {};
+			jQuery.map(this.getSequence().split(''), function(aa, index) {
+				if (!(aa in aa_composition)) aa_composition[aa] = 0;
+				aa_composition[aa] = parseInt(aa_composition[aa]) + 1;
+			});
+			return (aa_composition);
+		},
 
 		getAlignmentsByDatabaseTopMatch: function(db_name) {
 			var alis = this.getAlignments();
