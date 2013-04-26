@@ -78,8 +78,6 @@ var APP = (function() {
 				if (!locations) return null;
 				if (locations) i = locations.length;
 				while (i--) {
-
-
 					feature = new Feature(provider);
 					feature.setFeatureID(provider, locations[i].begin);
 					feature.setColor(providers_specs[provider].color);
@@ -104,7 +102,7 @@ var APP = (function() {
 				var track = new Track(1,2);
 				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 				feature = new Feature("Alignment");
-				feature.setFeatureID('alignment', (target.begin+index));
+				feature.setFeatureID('alignment', (target.id));
 				feature.setColor("blue");
 				feature.setLocation(target.begin, target.end);
 				feature.addLabel( {
@@ -112,7 +110,7 @@ var APP = (function() {
 						"typeCode": "Eval: "+target.eval,
 						"evidenceText":  '',
 						"featureTypeLabel": " Matched Length: " +target.matchlen,
-						"featureLabel": "Identity: "+ target.identity ,
+						"featureLabel": "Identity: "+ parseFloat(target.identity).toFixed(2) ,
 						"evidenceCode": "http://edamontology.org/data_1387"
 					});
 				track.addFeature( feature.getFeature());

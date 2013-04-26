@@ -37,9 +37,6 @@ function() {
 	};
 
 	return {
-
-
-
 		init: function(argument) {
 			var dataObj = argument.dataObj;
 			displayDivWidth = argument.targetDiv.width();
@@ -61,10 +58,23 @@ function() {
 				target: 'FeatureViewer',
 				json: json_config_obj
 			});
+
+			myPainter.onFeatureSelected(
+
+			function(obj) {
+				if (obj.featureId.match(/^alignment/)) {
+					id = /^alignment(\w+)/.exec(obj.featureId);
+					if (id[1]) {
+						url = 'http://www.uniprot.org/uniprot/' + id[1];
+						var win = window.open(url, '_blank');
+						win.focus();
+					}
+				}
+			});
 		},
 		setFeauresArray: function(features_array) {
 			jQuery.merge(json_config_obj.featuresArray, features_array);
-			console.log(json_config_obj.featuresArray);
+			// console.log(json_config_obj.featuresArray);
 		},
 		setProteinName: function(prot_name) {
 			json_config_obj.segment = prot_name;
@@ -159,9 +169,7 @@ var Track = function(__height, __margin) {
 };
 
 
-
 // 
-
 
 
 // function feature_SS( feature_provider, feature_type, data ){
