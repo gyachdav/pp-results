@@ -89,7 +89,7 @@ var APP = (function() {
 				if (locations) i = locations.length;
 				while (i--) {
 					feature = new Feature(provider);
-					feature.setFeatureID(provider, locations[i].begin);
+					feature.setFeatureID(provider+"__"+locations[i].begin);
 					feature.setColor(providers_specs[provider].color);
 					feature.setLocation(locations[i].begin, locations[i].end);
 					(locations[i].type && typeof locations[i].type !== undefined) ? featureTypeLabel = locations[i].type : featureTypeLabel = "";
