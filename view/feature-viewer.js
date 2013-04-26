@@ -6,7 +6,7 @@ function() {
 		displayDivWidth = 0,
 		current_bottom = 54;
 	current_track_count = 0,
-	outer_margin = 25.
+	outer_margin = 30.
 	inner_margin = outer_margin * 2,
 	json_config_obj = {
 		"featuresArray": [],
@@ -22,17 +22,33 @@ function() {
 			},
 			"key": []
 		},
+
 		"configuration": {
+			// "horizontalGridNumLines": 2,
+			// "sequenceLineYCentered": 95,
 			"requestedStart": 1,
+			// "gridLineHeight": 12,
 			"rightMargin": 5,
-			"leftMargin": 5,
 			"belowRuler": 30,
+			"horizontalGridNumLinesNonOverlapping": 2,
+			"horizontalGridNumLinesCentered": 6,
+			"verticalGridLineLengthRows": 284,
+			"unitSize": 6.875,
+			"sizeYNonOverlapping": 76,
+			"style": "rows",
+			"sequenceLineYRows": 155,
 			"sequenceLineY": 54,
+			"verticalGrid": false,
 			"rulerY": 20,
+			"horizontalGrid": false,
 			"pixelsDivision": 50,
 			"aboveRuler": 10,
-			"sizeY": 10000,
-			"sizeYRows": 1000
+			"sizeYKey": 20,
+			"sizeYCentered": 160,
+			"sequenceLineYNonOverlapping": 54,
+			// "horizontalGridNumLinesRows": 8,
+			"leftMargin": 20,
+			"nonOverlapping": true
 		}
 	};
 
@@ -44,6 +60,7 @@ function() {
 			json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
 			json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
 			json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
+
 
 		},
 		getCurrentBottom: function() {
@@ -59,14 +76,23 @@ function() {
 				json: json_config_obj
 			});
 
+
+			console.log(json_config_obj);
+
 			myPainter.onFeatureSelected(
 
 			function(obj) {
 				if (obj.featureId.match(/^alignment/)) {
-					id = /^alignment(\w+)/.exec(obj.featureId);
-					if (id[1]) {
-						url = 'http://www.uniprot.org/uniprot/' + id[1];
-						var win = window.open(url, '_blank');
+
+					// 'alignment', (target.db"-"+target.id+"-"+index)
+					__id = /^alignment__(\w+[\-\w+]+)__(\w+)__(\w+)/.exec(obj.featureId);
+					if (__id[1] && __id[2]) {
+						if (__id[1].match(/pdb/i)){
+							(__pdb) = __id[2].split('_');
+							__url='http://www.rcsb.org/pdb/explore.do?structureId='+__pdb[0];
+						}else
+							__url = 'http://www.uniprot.org/uniprot/' + __id[2];
+						var win = window.open(__url, '_blank');
 						win.focus();
 					}
 				}
@@ -87,7 +113,10 @@ function() {
 		},
 		addTrack: function(track) {
 			current_bottom = track.getBottom();
-			track.setPosition(this.current_bottom);
+			track.setPosition(this.getCurrentBottom());
+			json_config_obj.configuration.sizeY = track.getBottom();
+			json_config_obj.configuration.sizeYRows = track.getBottom();
+			this.setCurrentBottom(track.getBottom());
 		}
 	};
 })();
@@ -114,8 +143,8 @@ var Feature = function(feature_provider) {
 		getFeature: function() {
 			return (feature);
 		},
-		setFeatureID: function(name, pos) {
-			feature.featureId = name + pos;
+		setFeatureID: function( feature_id) {
+			feature.featureId = feature_id;
 		},
 		setLocation: function(start, stop) {
 			this.addStart(start);
@@ -143,7 +172,7 @@ var Track = function(__height, __margin) {
 		features = [];
 
 	(__height) ? config.height = __height : config.height = default_height;
-	(__margin) ? config.margin = __margin : config.margin = default_height * 1.5;
+	(__margin) ? config.margin = __margin : config.margin = default_height * .2;
 
 	return {
 		setPosition: function(starting_y) {
@@ -164,7 +193,6 @@ var Track = function(__height, __margin) {
 		getTrack: function() {
 			return features;
 		}
-
 	}
 };
 

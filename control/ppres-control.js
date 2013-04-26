@@ -9,32 +9,35 @@ var APP = (function() {
 	}, debug = 0,
 		mainObj = new PPResData(),
 		providers = [
-		"PROFsec",
-		"PROFacc",
-		"NORSnet",
+			"PROFsec",
+			"PROFacc",
+			"NORSnet",
 			"ISIS",
-		"DISIS",
-		"ASP",
+			"DISIS",
+			"ASP",
 			"DISULFIND",
-		"PredictNLS",
-		"PHDhtm",
+			"PredictNLS",
+			"PHDhtm",
 			"PROFbval",
 			"Ucon",
 			"MD",
-		"PROFtmb"
-		],
+			"PROFtmb"],
 		providers_specs = {
 			"PROFsec": {
 				color: "blue"
 			},
-			"PROFacc": {color: "magenta"},
+			"PROFacc": {
+				color: "magenta"
+			},
 			"NORSnet": {
 				color: "gray"
 			},
 			"ISIS": {
 				color: "red"
 			},
-			"DISIS": {color:"pink"},
+			"DISIS": {
+				color: "pink"
+			},
 			"ASP": {
 				color: "green"
 			},
@@ -61,11 +64,11 @@ var APP = (function() {
 
 
 	return {
-		drawSummaryTable: function(){
-			jQuery(".summary").append("<tr><td>Recommended Name</td><td>"+mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')+"</td></tr>");
-			jQuery(".summary").append("<tr><td>Sequence Length</td><td>"+mainObj.getSequence().length+"</td></tr>");
-			jQuery(".summary").append("<tr><td>Number of Aligned Proteins</td><td>"+mainObj.getAlignmentsCount()+"</td></tr>");
-			jQuery(".summary").append("<tr><td>Number of Matched PDB Modles</td><td>"+mainObj.getAlignmentsByDatabase('pdb')+"</td></tr>");
+		drawSummaryTable: function() {
+			jQuery(".summary").append("<tr><td>Recommended Name</td><td>" + mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot') + "</td></tr>");
+			jQuery(".summary").append("<tr><td>Sequence Length</td><td>" + mainObj.getSequence().length + "</td></tr>");
+			jQuery(".summary").append("<tr><td>Number of Aligned Proteins</td><td>" + mainObj.getAlignmentsCount() + "</td></tr>");
+			jQuery(".summary").append("<tr><td>Number of Matched PDB Modles</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
 
 		},
 
@@ -89,42 +92,49 @@ var APP = (function() {
 					feature.setFeatureID(provider, locations[i].begin);
 					feature.setColor(providers_specs[provider].color);
 					feature.setLocation(locations[i].begin, locations[i].end);
-					(locations[i].type && typeof locations[i].type !== undefined) ? featureTypeLabel = locations[i].type : featureTypeLabel= "";
-					feature.addLabel( {
+					(locations[i].type && typeof locations[i].type !== undefined) ? featureTypeLabel = locations[i].type : featureTypeLabel = "";
+					feature.addLabel({
 						"typeCategory": feature_type,
 						"typeCode": locations[i].code,
 						"evidenceText": provider,
 						"featureTypeLabel": featureTypeLabel,
-						"featureLabel": feature_type ? feature_type : featureTypeLabel ,
-						"evidenceCode":""
+						"featureLabel": feature_type ? feature_type : featureTypeLabel,
+						"evidenceCode": ""
 					});
-					track.addFeature( feature.getFeature());
+					track.addFeature(feature.getFeature());
 				}
-				FEATURE_VIEWER.setCurrentBottom(track.getBottom());
-				
+				// FEATURE_VIEWER.setCurrentBottom(track.getBottom());
+				FEATURE_VIEWER.addTrack(track);
 				return track.getTrack();
 			}));
 
 			FEATURE_VIEWER.setFeauresArray(jQuery.map(mainObj.getAlignmentLocations(), function(target, index) {
-				var track = new Track(1,2);
+				var track = new Track(1, 1);
 				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 				feature = new Feature("Alignment");
-				feature.setFeatureID('alignment', (target.id));
+				feature.setFeatureID('alignment__' + target.db + '__' + target.id + '__' + index);
+
+				if (target.db.match(/pdb/i)) {
+					(__pdb) = target.id.split('_');
+					target.id  =__pdb[0];
+					if (__pdb[1]) target.id += " Chain: "+__pdb[1];
+				}
 				feature.setColor("blue");
 				feature.setLocation(target.begin, target.end);
-				feature.addLabel( {
-						"typeCategory": "Alignment",
-						"typeCode": "Eval: "+target.eval,
-						"evidenceText":  '',
-						"featureTypeLabel": " Matched Length: " +target.matchlen,
-						"featureLabel": "Identity: "+ parseFloat(target.identity).toFixed(2) ,
-						"evidenceCode": "http://edamontology.org/data_1387"
-					});
-				track.addFeature( feature.getFeature());
-				FEATURE_VIEWER.setCurrentBottom(track.getBottom());
-				
+				feature.addLabel({
+					"featureLabel": "Aligned Target " + target.db + ":" + target.id,
+					"typeCode": "Eval: " + target.eval,
+					"evidenceText": '',
+					"featureTypeLabel": " Matched Length: " + target.matchlen,
+					"typeCategory": "Identity: " + parseFloat(target.identity).toFixed(2),
+					"evidenceCode": "http://edamontology.org/data_1387"
+					// todo: add dbreference to label
+				});
+				track.addFeature(feature.getFeature());
+				FEATURE_VIEWER.addTrack(track);
+
 				return track.getTrack();
-			  //iterate through array or object
+				//iterate through array or object
 			}));
 			FEATURE_VIEWER.draw();
 		},

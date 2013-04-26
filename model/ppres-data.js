@@ -117,6 +117,7 @@ function PPResData() {
 					begin: parseInt(alignment.queryStart.value),
 					end: parseInt(alignment.queryEnd.value),
 					id: alignment.dbReference.id,
+					db: alignment.dbReference.type,
 					eval: alignment.expect.value,
 					matchlen: alignment.matchLen.value,
 					identity: alignment.identity.value
