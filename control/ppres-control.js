@@ -64,6 +64,13 @@ var APP = (function() {
 
 
 	return {
+
+		drawAlignmentTable: function(){
+			ALI_VIEW.draw( mainObj.getAlignmentLocations(), jQuery("#alignments" ));
+
+		},
+
+
 		drawSummaryTable: function() {
 			jQuery("#summary_container").append("<div class='summary pie container-left' />");
 			jQuery(".summary").append("<h3>Summary</h3>");
@@ -170,7 +177,8 @@ var APP = (function() {
 				this.drawFeatureViewer, 
 				this.drawSummaryTable, 
 				this.drawAAConsistency,
-				 this.drawSSConsistency
+				 this.drawSSConsistency,
+				 this.drawAlignmentTable
 				]);
 		},
 		toggleDebug: function() {
