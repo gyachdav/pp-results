@@ -62,8 +62,19 @@ var APP = (function() {
 		};
 
 
-
 	return {
+
+		drawCell: function() {
+			 function preload(arrImg) {
+				jQuery(arrImg).each(function() {
+					jQuery('<img />').attr('src', this).appendTo('#cell').css('display', 'none');
+				});
+			};
+
+			preload(['assets/EukaryoticCell/chloroplast.PNG', 'assets/EukaryoticCell/chloroplast_membrane.PNG', 'assets/EukaryoticCell/peroxisome.PNG']);
+			jQuery('img').first().show();
+		},
+
 		drawSummaryTable: function() {
 			jQuery("#summary_container").append("<div class='summary pie container-left' />");
 			jQuery(".summary").append("<h3>Summary</h3>");
@@ -166,12 +177,13 @@ var APP = (function() {
 			jQuery.noConflict(); // recommended to avoid conflict wiht other libs
 			ds = new dataSource(file_specs);
 			result = ds.loadData();
-			result.done([this.populateData, 
-				this.drawFeatureViewer, 
-				this.drawSummaryTable, 
-				this.drawAAConsistency,
-				 this.drawSSConsistency
-				]);
+			result.done([
+			this.populateData,
+			this.drawFeatureViewer,
+			this.drawSummaryTable,
+			this.drawAAConsistency,
+			this.drawSSConsistency,
+			this.drawCell]);
 		},
 		toggleDebug: function() {
 			debug = !debug;
@@ -204,7 +216,6 @@ var APP = (function() {
 	};
 
 })();
-
 
 
 // App Class
