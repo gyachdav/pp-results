@@ -87,11 +87,10 @@ function() {
 					// 'alignment', (target.db"-"+target.id+"-"+index)
 					__id = /^alignment__(\w+[\-\w+]+)__(\w+)__(\w+)/.exec(obj.featureId);
 					if (__id[1] && __id[2]) {
-						if (__id[1].match(/pdb/i)){
+						if (__id[1].match(/pdb/i)) {
 							(__pdb) = __id[2].split('_');
-							__url='http://www.rcsb.org/pdb/explore.do?structureId='+__pdb[0];
-						}else
-							__url = 'http://www.uniprot.org/uniprot/' + __id[2];
+							__url = 'http://www.rcsb.org/pdb/explore.do?structureId=' + __pdb[0];
+						} else __url = 'http://www.uniprot.org/uniprot/' + __id[2];
 						var win = window.open(__url, '_blank');
 						win.focus();
 					}
@@ -122,48 +121,253 @@ function() {
 })();
 
 
-var Feature = function(feature_provider) {
-	// // Physical representation of annotation
+
+/**
+ @params 
+	_feature = {
+		begin: int,
+		end: int,
+		code : string,
+		type: string
+	},
+	_feature_provider = string,
+	_feature_type  = string
+@returns Feature
+*/
+var Feature = Feature || {};
+
+var Feature = function( ) {
 	var default_stroke = 0,
 		default_shape = "rect",
 		default_opacity = 0.5,
 		color = 'grey',
-		feature = {
-			"type": default_shape,
-			"fillOpacity": default_opacity,
-			"strokeWidth": default_stroke,
-			"name": feature_provider,
+		feature = {},
+		being,
+		end,
+		featureTypeLabel;
+
+
+	var setFeatureID = function(feature_id) {
+		feature.featureId = feature_id;
+	};
+	var setLocation = function(start, stop) {
+		addStart(start);
+		addStop(stop);
+	};
+	var addStart = function(pos) {
+		feature.featureStart = pos;
+	};
+	var addStop = function(pos) {
+		feature.featureEnd = pos;
+	};
+	var getLabel = function() {
+		return (label);
+	};
+	var addLabel = function(_feature, _feature_provider, _feature_type) {
+		var featureTypeLabel;
+
+		(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
+		var label = {
+			"typeCode": _feature.code,
+			"evidenceText": _feature_provider,
+			"featureTypeLabel": featureTypeLabel,
+			"featureLabel": _feature_type ? _feature_type : featureTypeLabel,
+			"evidenceCode": ""
+
 		};
+		jQuery.extend(feature, label);
+	};
+
+
 
 	return {
-		setColor: function(color) {
-			feature.fill = color;
-			feature.stroke = color;
-		},
 		getFeature: function() {
 			return (feature);
 		},
-		setFeatureID: function( feature_id) {
-			feature.featureId = feature_id;
+		setColor: function() {
+			feature.fill = this.color;
+			feature.stroke = this.color;
 		},
-		setLocation: function(start, stop) {
-			this.addStart(start);
-			this.addStop(stop);
-		},
-		addStart: function(pos) {
-			feature.featureStart = pos;
-		},
-		addStop: function(pos) {
-			feature.featureEnd = pos;
-		},
-		getLabel: function() {
-			return (label);
-		},
-		addLabel: function(label) {
-			jQuery.extend(feature, label);
+		init: function(_feature, _feature_provider, _feature_type) {
+			feature = {
+				"type": default_shape,
+				"fillOpacity": default_opacity,
+				"strokeWidth": default_stroke,
+				"name": _feature_provider,
+				"fill": 'grey',
+				'stroke': 'grey'
+			}, begin = _feature.begin,
+			end = _feature.end;
+
+			addLabel(_feature, _feature_provider, _feature_type);
+			setLocation(begin, end);
+			setFeatureID(_feature_provider + "__" + begin);
+
+			return this.getFeature();
 		}
 	}
-}
+
+};
+
+
+
+
+Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+
+	
+	// var feature = {
+	// 	"type": "rect",
+	// 	"fillOpacity": '0.5',
+	// 	"strokeWidth": 0,
+	// 	"name": _feature_provider
+	// }, begin = _feature.begin,
+	// 	end = _feature.end,
+	// 	featureTypeLabel;
+
+
+
+	// setLocation(begin, end);
+	// setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + begin + end);
+
+
+
+	// (_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
+	// if (_feature.db.match(/pdb/i)) {
+	// 	(__pdb) = _feature.id.split('_');
+	// 	_feature.id = __pdb[0];
+	// 	if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
+	// }
+
+	// var _label = {
+	// 	"featureLabel": "Aligned Target " + target.db + ":" + target.id,
+	// 	"typeCode": "Eval: " + target.eval,
+	// 	"evidenceText": '',
+	// 	"featureTypeLabel": " Matched Length: " + target.matchlen,
+	// 	"typeCategory": "Identity: " + parseFloat(target.identity).toFixed(2),
+	// 	"evidenceCode": "http://edamontology.org/data_1387"
+	// 	// todo: add dbreference to label
+	// };
+
+
+
+
+	// addLabel(label);
+	this.color = "blue";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+
+Feature.PROFsec = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+
+	switch (_feature.type) {
+		case 'helix':
+			this.color = '#990000';
+			break;
+		case 'strand':
+			this.color = '#0000CC';
+			break;
+		default:
+			this.color = '#006600';
+			break;
+	}
+
+	this.setColor();
+	return this.getFeature();
+};
+
+
+
+
+Feature.NORSnet = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+
+	this.color = "gray";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.ISIS = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "red";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.DISIS = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "orange";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.ASP = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "green";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.ASP = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "orange";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.DISULFIND = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "brown";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.PredictNLS = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "brown";
+	this.setColor();
+	return this.getFeature();
+
+};
+
+Feature.PHDhtm = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "purple";
+	this.setColor();
+	return this.getFeature();
+};
+
+Feature.PROFbval = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "yellow";
+	this.setColor();
+	return this.getFeature();
+};
+
+Feature.Ucon = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "orange";
+	this.setColor();
+	return this.getFeature();
+};
+
+Feature.MD = function(_feature, _feature_provider, _feature_type) {
+	this.init.call(this, _feature, _feature_provider, _feature_type);
+	this.color = "#225533";
+	this.setColor();
+	return this.getFeature();
+};
+
+
 
 var Track = function(__height, __margin) {
 
@@ -200,26 +404,6 @@ var Track = function(__height, __margin) {
 // 
 
 
-// function feature_SS( feature_provider, feature_type, data ){
-// 	Feature.call(this);
-// 	this.addLocation ( data.location.begin.position, data.location.end.position );
-// 	this.setFeatureID( feature_provider, data.location.begin.position);
-
-// 	switch (data.type){
-// 		case 'helix':
-// 			color = '#990000';
-// 			break;
-// 		case 'strand':
-// 	        color = '#0000CC';
-//   		  	break;
-//         default:
-//         	color = '#006600';
-//         	break;
-// 	}
-// 	this.setColor( color );
-// 	this.addLabel( feature_provider );
-// 	this.setFeatureID ( feature_provider,data.location.begin.position );
-// };
 
 // feature_SS.prototype = new Feature();
 // feature_SS.prototype.constructor = feature_SS;
