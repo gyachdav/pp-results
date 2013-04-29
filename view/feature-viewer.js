@@ -136,7 +136,7 @@ function() {
 */
 var Feature = Feature || {};
 
-var Feature = function( ) {
+var Feature = function() {
 	var default_stroke = 0,
 		default_shape = "rect",
 		default_opacity = 0.5,
@@ -147,9 +147,7 @@ var Feature = function( ) {
 		featureTypeLabel;
 
 
-	var setFeatureID = function(feature_id) {
-		feature.featureId = feature_id;
-	};
+
 	var setLocation = function(start, stop) {
 		addStart(start);
 		addStop(stop);
@@ -163,16 +161,19 @@ var Feature = function( ) {
 	var getLabel = function() {
 		return (label);
 	};
-	var addLabel = function(_feature, _feature_provider, _feature_type) {
+	var createLabel = function(_feature, _feature_provider, _feature_type) {
 		var featureTypeLabel;
 
 		(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
+		if( ! _feature.code )  _feature.code = ""  ;
+ 
 		var label = {
 			"typeCode": _feature.code,
 			"evidenceText": _feature_provider,
 			"featureTypeLabel": featureTypeLabel,
 			"featureLabel": _feature_type ? _feature_type : featureTypeLabel,
-			"evidenceCode": ""
+			"evidenceCode": "",
+			"typeCategory": ""
 
 		};
 		jQuery.extend(feature, label);
@@ -181,6 +182,16 @@ var Feature = function( ) {
 
 
 	return {
+		setFeatureID: function(feature_id) {
+			feature.featureId = feature_id;
+		},
+		setLabel: function(_label) {
+			jQuery.extend(feature, _label);
+		},
+
+		setFeature: function(_feature) {
+			feature = _feature;
+		},
 		getFeature: function() {
 			return (feature);
 		},
@@ -199,9 +210,10 @@ var Feature = function( ) {
 			}, begin = _feature.begin,
 			end = _feature.end;
 
-			addLabel(_feature, _feature_provider, _feature_type);
+			var _label = createLabel(_feature, _feature_provider, _feature_type);
+			this.setLabel(_label);
 			setLocation(begin, end);
-			setFeatureID(_feature_provider + "__" + begin);
+			this.setFeatureID(_feature_provider + "__" + begin);
 
 			return this.getFeature();
 		}
@@ -211,45 +223,30 @@ var Feature = function( ) {
 
 
 
-
 Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 
-	
-	// var feature = {
-	// 	"type": "rect",
-	// 	"fillOpacity": '0.5',
-	// 	"strokeWidth": 0,
-	// 	"name": _feature_provider
-	// }, begin = _feature.begin,
-	// 	end = _feature.end,
-	// 	featureTypeLabel;
 
+	this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin+_feature.end);
 
+	(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
+	if (_feature.db.match(/pdb/i)) {
+		(__pdb) = _feature.id.split('_');
+		_feature.id = __pdb[0];
+		if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
+	}
 
-	// setLocation(begin, end);
-	// setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + begin + end);
+	var _label = {
+		"featureLabel": "Aligned Target " + _feature.db + ":" + _feature.id,
+		"typeCode": "Eval: " + _feature.eval,
+		"evidenceText": '',
+		"featureTypeLabel": " Matched Length: " + _feature.matchlen,
+		"typeCategory": "Identity: " + parseFloat(_feature.identity).toFixed(2),
+		"evidenceCode": "http://edamontology.org/data_1387"
+		// todo: add dbreference to label
+	};
 
-
-
-	// (_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
-	// if (_feature.db.match(/pdb/i)) {
-	// 	(__pdb) = _feature.id.split('_');
-	// 	_feature.id = __pdb[0];
-	// 	if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
-	// }
-
-	// var _label = {
-	// 	"featureLabel": "Aligned Target " + target.db + ":" + target.id,
-	// 	"typeCode": "Eval: " + target.eval,
-	// 	"evidenceText": '',
-	// 	"featureTypeLabel": " Matched Length: " + target.matchlen,
-	// 	"typeCategory": "Identity: " + parseFloat(target.identity).toFixed(2),
-	// 	"evidenceCode": "http://edamontology.org/data_1387"
-	// 	// todo: add dbreference to label
-	// };
-
-
+	this.setLabel(_label);
 
 
 	// addLabel(label);
@@ -278,7 +275,6 @@ Feature.PROFsec = function(_feature, _feature_provider, _feature_type) {
 	this.setColor();
 	return this.getFeature();
 };
-
 
 
 

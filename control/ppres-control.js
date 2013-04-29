@@ -21,47 +21,8 @@ var APP = (function() {
 			"PROFbval",
 			"Ucon",
 			"MD",
-			"PROFtmb",
-			 // "Alignment"
-			],
-		providers_specs = {
-			"PROFsec": {
-				color: "blue"
-			},
-			"PROFacc": {
-				color: "magenta"
-			},
-			"NORSnet": {
-				color: "gray"
-			},
-			"ISIS": {
-				color: "red"
-			},
-			"DISIS": {
-				color: "pink"
-			},
-			"ASP": {
-				color: "green"
-			},
-			"DISULFIND": {
-				color: "brwon"
-			},
-			// "PredictNLS",
-			"PHDhtm": {
-				color: "purple"
-			},
-			"PROFbval": {
-				color: "yellow"
-			},
-			"Ucon": {
-				color: "orange"
-			},
-			"MD": {
-				color: "#225533"
-			}
+			"PROFtmb"];
 
-
-		};
 
 
 	return {
@@ -114,19 +75,13 @@ var APP = (function() {
 
 			var features_array = [];
 			FEATURE_VIEWER.setFeauresArray(jQuery.map(providers, function(provider, index) {
-
 				var track, feature_properties;
-				if (provider == 'Alignment') {
-					track = new Track(1, 1);
-					feature = new Feature("Alignment");
-					feature_properties = mainObj.getAlignmentLocations();
-				} else {
-					track = new Track();
-					var feature_group = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), provider);
-					var feature_type = (feature_group.type) ? feature_group.type : "";
-					feature_properties = mainObj.getFeatureLocations(feature_group);
-					
-				}
+				track = new Track();
+				var feature_group = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), provider);
+				var feature_type = (feature_group.type) ? feature_group.type : "";
+				feature_properties = mainObj.getFeatureLocations(feature_group);
+
+
 				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 
 				if (!feature_properties) return null;
@@ -141,9 +96,25 @@ var APP = (function() {
 					}
 					track.addFeature(feature);
 				}
+
 				FEATURE_VIEWER.addTrack(track);
 				return track.getTrack();
 			}));
+
+
+			// Add alignment
+			FEATURE_VIEWER.setFeauresArray(jQuery.map(mainObj.getAlignmentLocations(), function(target, index) {
+				var track = new Track(1, 1);
+				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
+				Feature.Alignment.prototype = new Feature();
+				feature = new Feature.Alignment(target, 'blast', 'alignmnet');
+				track.addFeature(feature);
+				FEATURE_VIEWER.addTrack(track);
+
+				return track.getTrack();
+				//iterate through array or object
+			}));
+
 
 
 			FEATURE_VIEWER.draw();
@@ -240,17 +211,8 @@ function Demo(target_div) {
 		mainObj = new PPResData();
 		mainObj.setJsonData(ds.getData());
 		console.log(mainObj.getAlignmentLocations());
-		// console.log(mainObj.getReferenceByProvider("PROFtmb"));
-		// console.log(mainObj.getSSComposition());
-		// console.log(mainObj.getAAComposition());
 		target_div.append('<p>' + mainObj.getSequence() + '</p>');
 		target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
-		// target_div.append('<p>Protein Name: ' + mainObj.getProteinName() + '</p>');
-		// target_div.append('<p>Organism Name: ' + mainObj.getOrganismName() + '</p>');
-		// target_div.append('<p>Number of aligments: ' + mainObj.getAlignmentsCount() + '</p>');
-		// jQuery.each(['PDB', 'Swiss-Prot', 'trembl'], function(index, val) {
-		// 	target_div.append('<p>Number of hits from ' + val + ": " + mainObj.getAlignmentsByDatabase(val) + '</p>');
-		// });
 
 		jQuery.each(providers, function(i, v) {
 			feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
