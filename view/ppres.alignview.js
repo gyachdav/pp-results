@@ -10,7 +10,7 @@ return{
 
 		
 		var table = '<table>';
-		//.append('<tr><th>id</th><th>identity</th><th>Eval</th><th>Matched Length</th></tr>');
+		table += '<tr><th>id</th><th>identity</th><th>Eval</th><th>Matched Length</th></tr>';
 		jQuery.map( this.aliObj, function(target, index) {
 			var row = '<tr>';
 			row+= "<td>"+target.id+"</td>";

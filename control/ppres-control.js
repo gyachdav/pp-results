@@ -68,17 +68,15 @@ var APP = (function() {
 		drawCell: function() {
 			 function preload(arrImg) {
 				jQuery(arrImg).each(function() {
-					jQuery('<img />').attr('src', this).appendTo('#cell').css('display', 'none');
+					jQuery('<img />').attr('src', this).appendTo('#cell').css('display', 'block');
 				});
 			};
-
 			preload(['assets/EukaryoticCell/chloroplast.PNG', 'assets/EukaryoticCell/chloroplast_membrane.PNG', 'assets/EukaryoticCell/peroxisome.PNG']);
 			jQuery('img').first().show();
 		},
 
 		drawAlignmentTable: function(){
 			ALI_VIEW.draw( mainObj.getAlignmentLocations(), jQuery("#alignments" ));
-
 		},
 
 		drawSummaryTable: function() {
