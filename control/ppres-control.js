@@ -64,6 +64,7 @@ var APP = (function() {
 
 	return {
 
+
 		drawCell: function() {
 			 function preload(arrImg) {
 				jQuery(arrImg).each(function() {
@@ -73,6 +74,11 @@ var APP = (function() {
 
 			preload(['assets/EukaryoticCell/chloroplast.PNG', 'assets/EukaryoticCell/chloroplast_membrane.PNG', 'assets/EukaryoticCell/peroxisome.PNG']);
 			jQuery('img').first().show();
+		},
+
+		drawAlignmentTable: function(){
+			ALI_VIEW.draw( mainObj.getAlignmentLocations(), jQuery("#alignments" ));
+
 		},
 
 		drawSummaryTable: function() {
@@ -177,13 +183,16 @@ var APP = (function() {
 			jQuery.noConflict(); // recommended to avoid conflict wiht other libs
 			ds = new dataSource(file_specs);
 			result = ds.loadData();
+
 			result.done([
 			this.populateData,
 			this.drawFeatureViewer,
 			this.drawSummaryTable,
 			this.drawAAConsistency,
 			this.drawSSConsistency,
-			this.drawCell]);
+			this.drawCell,
+			this.drawAlignmentTable
+			]);
 		},
 		toggleDebug: function() {
 			debug = !debug;
