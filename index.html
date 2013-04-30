@@ -13,23 +13,26 @@
 
 <h1>Dashboard Overview for <span class=".name">CD44_Human</span></h1>
 <div id='FeatureViewer'>Loading </div>
-<hr>
-<h1> Prediction Summary</h1>
-<div id='summary_container' class=""></div>
-<div style="clear:both;"/>
-<hr>
-<h1> Sub-cellular Localization Prediction</h1>
-<div id='cell' ></div>
-<hr>
-<h1> Aligned Proteins</h1>
-<div id='alignments' class=""  style= "display:block;"></div>
-<hr>
-
+<div id="main_container" style="display:none;">
+	<hr>
+	<h1> Prediction Summary</h1>
+	<div id='summary_container' class=""></div>
+	<div style="clear:both;"/>
+	<hr>
+	<h1> Sub-cellular Localization Prediction</h1>
+	<div id='cell' ></div>
+	<hr>
+	<h1> Aligned Proteins</h1>
+	<div id='alignments' class=""  style= "display:block;"></div>
+	<hr>
+</div>
 
 
 <script type="text/javascript">
-jQuery(document).ready( function(){
+jQuery(window).load(function (){
+// jQuery(document).ready( function(){
 	APP.init();
+	jQuery("#main_container").show();
 	
 });
 </script>

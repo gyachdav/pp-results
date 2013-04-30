@@ -51,6 +51,9 @@ var SUBCELL_VIEW = (function() {
 		}
 
 	return {
+		getDomainFullName: function (domain){
+			return (Domains[domain]);
+		},
 		localisationDiv: function(domain_to_show) {
 			tmpDomain = Object.keys(domain_to_show)[0];
 			_tmp_pred_str = 'Predicted localisation for the ' + Domains[tmpDomain] +

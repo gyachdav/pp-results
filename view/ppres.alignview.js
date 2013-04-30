@@ -10,7 +10,7 @@ return{
 
 		
 		var table = '<table  class="table table-hover">';
-		table += '<tr><th>Protein Name</th><th>identity</th><th>Expected Value</th><th>Matched Length</th></tr>';
+		table += '<tr><th>Protein Name</th><th>Identity</th><th>Expected Value</th><th>Matched Length</th></tr>';
 		jQuery.map( this.aliObj, function(target, index) {
 			var row = '<tr>';
 			row+= "<td>"+target.id+"</td>";

@@ -35,9 +35,12 @@ var APP = (function() {
 			var list = jQuery('<ul/>');
 			list.addClass("nav nav-pills");
 
+
+			list.append('<li class="disabled"><a href="#">Domains:</a> </li>')
+
 			var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
 			for (var i in domains) {
-				var _curr_li = jQuery('<li><a href=#>' + domains[i] + '</a></li>');
+				var _curr_li = jQuery('<li><a href=#>' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
 
 				var _curr_div = SUBCELL_VIEW.localisationDiv(mainObj.getSubCellLocations(domains[i]));
 				if (domains[i] == 'euka') {
