@@ -41,21 +41,41 @@ function PPResData() {
 
 	return {
 
-		getSubCellLocations: function() {
+		getSubCellLocations: function(domain) {
 			var _ret_obj = {};
 
 			var providers = ["LOCtree", "LOCtree2"];
-			// for (var provider in ["LOCtree2", "LOCtree"]) {
+			if (domain) {
+				if (jQuery.inArray(domain, ["arch", "bact", "euka"]) != -1) provider = providers[1];
+				else if (jQuery.inArray(domain, ["plant", "animal", "proka"])!= -1) provider = providers[0];
+				else return null;
+				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), provider);
+				_tmp_ref = subcell_group.subcellularLocalisation.localisation[domain];
+				if (_tmp_ref) {
+					_tmp_loc = Object.keys(_tmp_ref)[0];
+					_ret_obj[domain] = {
+						score: _tmp_ref[_tmp_loc].score,
+						goTermId:  _tmp_ref[_tmp_loc].goTermId,
+						localisation: _tmp_loc,
+						provider: provider
+					};
+					return (_ret_obj);
+				}else
+					return null;
+			}
+
+
+
 			for (var provider in providers) {
-				var subcell_group = this.getFeatureByProvider(mainObj.getFeatureTypeGroup(), providers[provider]);
-				var organisms = ["arch", "bact", "euka", "plant", "animal", "proka"];
-				for (var i in organisms) {
-					_tmp_ref = subcell_group.subcellularLocalisation.localisation[organisms[i]];
+				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), providers[provider]);
+				var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
+				for (var i in domains) {
+					_tmp_ref = subcell_group.subcellularLocalisation.localisation[domains[i]];
 					if (_tmp_ref) {
 						_tmp_loc = Object.keys(_tmp_ref)[0];
 						_tmp_score = _tmp_ref[_tmp_loc].score;
 						_tmp_go = _tmp_ref[_tmp_loc].goTermId;
-						_ret_obj[organisms[i]] = {
+						_ret_obj[domains[i]] = {
 							score: _tmp_score,
 							goTermId: _tmp_go,
 							localisation: _tmp_loc,
@@ -68,6 +88,8 @@ function PPResData() {
 
 			return (_ret_obj);
 		},
+
+
 
 		getSSComposition: function(argument) {
 			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");

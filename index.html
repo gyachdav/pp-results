@@ -7,16 +7,25 @@
 <title>PredictProtein Results</title>
 </head>
 <body>
+
 <div id='msg'></div>
 <div id='err'></div>
 
 <h1>Dashboard Overview for <span class=".name">CD44_Human</span></h1>
 <div id='FeatureViewer'>Loading </div>
 <hr>
+<h1> Prediction Summary</h1>
 <div id='summary_container' class=""></div>
-
-<div id='cell' class="container-left"></div>
+<div style="clear:both;"/>
+<hr>
+<h1> Sub-cellular Localization Prediction</h1>
+<div id='cell' ></div>
+<hr>
+<h1> Aligned Proteins</h1>
 <div id='alignments' class=""  style= "display:block;"></div>
+<hr>
+
+
 
 <script type="text/javascript">
 jQuery(document).ready( function(){
@@ -46,7 +55,7 @@ jQuery(document).ready( function(){
 <script language="JavaScript" type="text/javascript" src="model/ppres-data.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/ppres-piechart.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/ppres.alignview.js"></script>
-
+<script src="view/ppres.subcellview.js" type="text/javascript" language="javascript"></script>
 <script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/feature-viewer.js"></script>
 

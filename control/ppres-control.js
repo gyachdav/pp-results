@@ -28,14 +28,26 @@ var APP = (function() {
 	return {
 
 
-		drawCell: function() {
-			function preload(arrImg) {
-				jQuery(arrImg).each(function() {
-					jQuery('<img />').attr('src', this).appendTo('#cell').css('display', 'block');
-				});
-			};
-			preload(['assets/EukaryoticCell/chloroplast.PNG', 'assets/EukaryoticCell/chloroplast_membrane.PNG', 'assets/EukaryoticCell/peroxisome.PNG']);
-			jQuery('img').first().show();
+		drawSubcellLoc: function() {
+			var nav_div = jQuery("<div id='_subcell_nav' />").appendTo(jQuery("#cell"));
+
+			var content_div = jQuery("<div id='_subcell_cntnt'/>").appendTo(jQuery("#cell"));
+			var list = jQuery('<ul/>');
+			list.addClass("nav nav-pills");
+
+			var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
+			for (var i in domains) {
+				var _curr_li = jQuery('<li><a href=#>' + domains[i] + '</a></li>');
+
+				var _curr_div = SUBCELL_VIEW.localisationDiv(mainObj.getSubCellLocations(domains[i]));
+				if (domains[i] == 'euka') {
+					_curr_div.show();
+					_curr_li.addClass('active');
+				} else _curr_div.hide();
+				list.append(_curr_li);
+				content_div.append(_curr_div);
+			}
+			nav_div.append(list);
 		},
 
 		drawAlignmentTable: function() {
@@ -43,25 +55,29 @@ var APP = (function() {
 		},
 
 		drawSummaryTable: function() {
-			jQuery("#summary_container").append("<div class='summary pie container-left' />");
+			jQuery("#summary_container").append("<div class='summary container left' />");
 			jQuery(".summary").append("<h3>Summary</h3>");
-			jQuery(".summary").append("<tr><td>Recommended Name</td><td>" + mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot') + "</td></tr>");
-			jQuery(".summary").append("<tr><td>Sequence Length</td><td>" + mainObj.getSequence().length + "</td></tr>");
-			jQuery(".summary").append("<tr><td>Number of Aligned Proteins</td><td>" + mainObj.getAlignmentsCount() + "</td></tr>");
-			jQuery(".summary").append("<tr><td>Number of Matched PDB Structures</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
-
+			var table = jQuery("<table/>");
+			table.addClass("table table-striped");
+			
+			table.append("<tr><td>Recommended Name</td><td>" + mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot') + "</td></tr>");
+			table.append("<tr><td>Sequence Length</td><td>" + mainObj.getSequence().length + "</td></tr>");
+			table.append("<tr><td>Number of Aligned Proteins</td><td>" + mainObj.getAlignmentsCount() + "</td></tr>");
+			table.append("<tr><td>Number of Matched PDB Structures</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
+			
+			jQuery(".summary").append(table);
 		},
 
 		drawAAConsistency: function() {
 
-			jQuery("#summary_container").append("<div id='aa-consistency' class='pie container-left' />");
+			jQuery("#summary_container").append("<div id='aa-consistency' class='pie container left' />");
 			jQuery("#aa-consistency").append("<h3>Amino Acid composition</h3>");
 			PIE_CHART.toPieData(mainObj.getAAComposition()).drawPieChart('aa-consistency');
 		},
 
 		drawSSConsistency: function() {
 
-			jQuery("#summary_container").append("<div id='ss-consistency' class='pie container-left' />");
+			jQuery("#summary_container").append("<div id='ss-consistency' class='pie container right' />");
 			jQuery("#ss-consistency").append("<h3>Secondary Structure composition</h3>");
 			PIE_CHART.toPieData(mainObj.getSSComposition()).drawPieChart('ss-consistency');
 		},
@@ -138,7 +154,7 @@ var APP = (function() {
 			this.drawSummaryTable,
 			this.drawAAConsistency,
 			this.drawSSConsistency,
-			this.drawCell,
+			this.drawSubcellLoc,
 			this.drawAlignmentTable]);
 		},
 		toggleDebug: function() {
@@ -198,8 +214,7 @@ function Demo(target_div) {
 		"Ucon",
 		"MD",
 		"PROFtmb",
-		"LOCtree"
-		];
+		"LOCtree"];
 
 
 	// // This block test data loading and parsing all features
@@ -214,7 +229,9 @@ function Demo(target_div) {
 		mainObj.setJsonData(ds.getData());
 		console.log(mainObj.getAlignmentLocations());
 		//console.log ( SUBCELL_VIEW.init(   mainObj.getSubCellLocations()) );
-		SUBCELL_VIEW.init(   mainObj.getSubCellLocations(), target_div)
+		SUBCELL_VIEW.init(mainObj.getSubCellLocations(), target_div);
+		SUBCELL_VIEW.localisationDiv(mainObj.getSubCellLocations("euka"), target_div)
+		console.log(mainObj.getSubCellLocations("animal"));
 
 		// target_div.append('<p>' + mainObj.getSequence() + '</p>');
 		// target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
