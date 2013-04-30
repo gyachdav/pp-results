@@ -17,7 +17,7 @@ var SUBCELL_VIEW = (function() {
 		}
 
 		function getPathToImage(domain, loc) {
-			return (assets_path + domain + "/" + loc + ".png");
+			return (assets_path + domain + "/" + loc + ".PNG");
 		}
 
 
