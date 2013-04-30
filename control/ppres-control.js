@@ -163,7 +163,7 @@ var APP = (function() {
 			this.drawSSConsistency,
 			this.drawSubcellLoc,
 			this.drawAlignmentTable]);
-		},
+					},
 		toggleDebug: function() {
 			debug = !debug;
 		},

@@ -9,7 +9,7 @@ return{
 		var table = document.createElement('table');
 
 		
-		var table = '<table  class="table table-hover">';
+		var table = '<table id="aliTable" class="table  tablesorter">';
 		table += '<tr><th>Protein Name</th><th>Identity</th><th>Expected Value</th><th>Matched Length</th></tr>';
 		jQuery.map( this.aliObj, function(target, index) {
 			var row = '<tr>';
@@ -19,10 +19,9 @@ return{
 			row+= "<td>"+target.matchlen+"</td>";
 			table += row;
 		});
-table += '</table>';
-
+		table += '</table>';
 		targetDiv.append(table);
-		// targetDiv.append (table);
+		jQuery("#aliTable").tablesorter(); 
 	}
 };
 })();
