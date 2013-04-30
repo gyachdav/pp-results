@@ -197,7 +197,9 @@ function Demo(target_div) {
 		"PROFbval",
 		"Ucon",
 		"MD",
-		"PROFtmb"];
+		"PROFtmb",
+		"LOCtree"
+		];
 
 
 	// // This block test data loading and parsing all features
@@ -211,14 +213,18 @@ function Demo(target_div) {
 		mainObj = new PPResData();
 		mainObj.setJsonData(ds.getData());
 		console.log(mainObj.getAlignmentLocations());
-		target_div.append('<p>' + mainObj.getSequence() + '</p>');
-		target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
+		//console.log ( SUBCELL_VIEW.init(   mainObj.getSubCellLocations()) );
+		SUBCELL_VIEW.init(   mainObj.getSubCellLocations(), target_div)
 
-		jQuery.each(providers, function(i, v) {
-			feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
-			target_div.append('<h1>' + v + '</h1>');
-			target_div.append(JSON.stringify(mainObj.getFeatureLocations(feature)));
-		});
+		// target_div.append('<p>' + mainObj.getSequence() + '</p>');
+		// target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');
+
+		// jQuery.each(providers, function(i, v) {
+		// 	feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
+		// 	target_div.append('<h1>' + v + '</h1>');
+		// 	target_div.append(JSON.stringify(mainObj.getFeatureLocations(feature)));
+
+		// });
 	});
 	// END TEST BLOCK
 

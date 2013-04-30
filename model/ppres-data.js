@@ -40,6 +40,35 @@ function PPResData() {
 
 
 	return {
+
+		getSubCellLocations: function() {
+			var _ret_obj = {};
+
+			var providers = ["LOCtree", "LOCtree2"];
+			// for (var provider in ["LOCtree2", "LOCtree"]) {
+			for (var provider in providers) {
+				var subcell_group = this.getFeatureByProvider(mainObj.getFeatureTypeGroup(), providers[provider]);
+				var organisms = ["arch", "bact", "euka", "plant", "animal", "proka"];
+				for (var i in organisms) {
+					_tmp_ref = subcell_group.subcellularLocalisation.localisation[organisms[i]];
+					if (_tmp_ref) {
+						_tmp_loc = Object.keys(_tmp_ref)[0];
+						_tmp_score = _tmp_ref[_tmp_loc].score;
+						_tmp_go = _tmp_ref[_tmp_loc].goTermId;
+						_ret_obj[organisms[i]] = {
+							score: _tmp_score,
+							goTermId: _tmp_go,
+							localisation: _tmp_loc,
+							provider: providers[provider]
+						};
+					}
+				}
+			}
+
+
+			return (_ret_obj);
+		},
+
 		getSSComposition: function(argument) {
 			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
 			var ss_feature_array = this.getFeatureLocations(ss_feature);
