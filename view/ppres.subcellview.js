@@ -62,7 +62,7 @@ var SUBCELL_VIEW = (function() {
 
 			_tmp_pred_html = 'Predicted localisation for the ' + Domains[tmpDomain] +
 				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +
-				' (GO term ID: '+linkToGO(domain_to_show[tmpDomain].goTermId)+' Prediction confidence ' + domain_to_show[tmpDomain].score;
+				' (GO term ID: '+linkToGO(domain_to_show[tmpDomain].goTermId)+') Prediction confidence ' + domain_to_show[tmpDomain].score;
 			container = jQuery("<div>").attr('id', "localisation_container");
 			tmpImg = getPathToImage([tmpDomain], domain_to_show[tmpDomain].localisation);
 			html = '<span><img src=' + tmpImg + ' title="' + _tmp_pred_str + '"/></span>';
