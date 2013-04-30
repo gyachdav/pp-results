@@ -58,29 +58,33 @@ var APP = (function() {
 		},
 
 		drawSummaryTable: function() {
-			jQuery("#summary_container").append("<div class='summary container left' />");
+			// TODO move modal activation code from this control
+			jQuery("#summary_container").append("<div class='summary  left' />");
 			jQuery(".summary").append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
 			
 			table.append("<tr><td>Recommended Name</td><td>" + mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot') + "</td></tr>");
 			table.append("<tr><td>Sequence Length</td><td>" + mainObj.getSequence().length + "</td></tr>");
-			table.append("<tr><td>Number of Aligned Proteins</td><td>" + mainObj.getAlignmentsCount() + "</td></tr>");
+			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#myModal' role='button' data-toggle='modal'>" + mainObj.getAlignmentsCount() + "</a></td></tr>");
 			table.append("<tr><td>Number of Matched PDB Structures</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
+
+
+			//<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
 			
 			jQuery(".summary").append(table);
 		},
 
 		drawAAConsistency: function() {
 
-			jQuery("#summary_container").append("<div id='aa-consistency' class='pie container left' />");
+			jQuery("#summary_container").append("<div id='aa-consistency' class='summary  left' />");
 			jQuery("#aa-consistency").append("<h3>Amino Acid composition</h3>");
 			PIE_CHART.toPieData(mainObj.getAAComposition()).drawPieChart('aa-consistency');
 		},
 
 		drawSSConsistency: function() {
 
-			jQuery("#summary_container").append("<div id='ss-consistency' class='pie container right' />");
+			jQuery("#summary_container").append("<div id='ss-consistency' class='summary  right' />");
 			jQuery("#ss-consistency").append("<h3>Secondary Structure composition</h3>");
 			PIE_CHART.toPieData(mainObj.getSSComposition()).drawPieChart('ss-consistency');
 		},

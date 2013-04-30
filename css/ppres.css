@@ -3,24 +3,22 @@
   stroke: #fff;
   
 }
- .pie{
- 	margin: 15px;
- 	align: center;	
+
+.summary{
+  /*padding-left: 5%;*/
+  padding-right: 4%;
  } 
 
- .slice text {
-            font-size: 16pt;
-            font-family: Arial;
-        }  
+.slice text {
+  font-size: 16pt;
+  font-family: Arial;
+}  
 
-
-.container-left {  
- /*   float:left;  
-    margin: 40px;*/
-  border: 1px solid #000000;
-  overflow: auto;
-  width: 100%
-
+.inner {
+  padding-top:25px;
+  padding-bottom:25px;
+  padding-right:50px;
+  padding-left:50px;
 }
 
 
@@ -36,8 +34,8 @@ div.left {
 }
 
 div.right {
-  width: 30%;
-  float: right;
+ /* width: 30%;
+  float: right;*/
 }
 
 
