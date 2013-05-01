@@ -14,91 +14,7 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-	  <div class="span2 bs-docs-sidebar">
-
-	  	<!-- Sidebar NAV -->
-		<ul class="nav nav-list bs-docs-sidenav">
-			<li class="nav-header">Views</li>
-			<li class="active">
-				<a id='menu-summary' href="#">Dashboard
-					<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			
-			<li class="nav-header">Detailed Predictions</li>
-				
-			<li> 
-				<a id='SS-detail' href="#">Secondary Structure
-				<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li> 
-				<a id='HTM-detail' href="#">Transmembrane Regions
-				<i class="icon-chevron-right"></i>
-			</a>
-				
-			</li>
-			<li> 
-				<a id='NORS-detail' href="#">Non-Regular Secondary Structure
-					<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li> 
-				<a id='MD-detail' href="#">Protein Disorder and Flexibility
-						<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li> 
-				<a id='DISUL-detail' href="#">Disulphide and Metal Binding
-						<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li> 
-				<a id='ISIS-detail' href="#">Binding Sites
-						<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li> 
-				<a id='LOC-detail' href="#">Subcellular Localization
-						<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li> 
-				<a id='TMB-detail' href="#">Transmembrane Betta-barrels
-						<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			
-			<li class="nav-header">Further Analysis
-			</li>
-			<li>
-			<a  id='menu-snap' href="#">
-				Functional Changes
-					<i class="icon-chevron-right"></i>
-			</a>
-			</li>
-			<li>
-				<a href="#">
-				Literature Search
-					<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-			<li class="nav-header">Additional Formats
-			</li>
-			<li>
-			<a href="#">
-				XML/RDF
-					<i class="icon-chevron-right"></i>
-			</a>
-			</li>
-			<li>
-				<a href="#">
-				Text
-					<i class="icon-chevron-right"></i>
-				</a>
-			</li>
-		</ul>
-		<!-- Sidebar NAV -->
+	  <div id="nav" class="span2 bs-docs-sidebar">
 	  </div>
 
 
@@ -147,7 +63,6 @@
 //jQuery(window).load(function (){
  jQuery(document).ready( function(){
 	APP.init();
-
 	jQuery("#main_container").show();
 	
 });
@@ -177,6 +92,7 @@
 <script language="JavaScript" type="text/javascript" src="view/ppres.piechart.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/ppres.alignview.js"></script>
 <script language="javascript" type="text/javascript" src="view/ppres.subcellview.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.navigation.js"></script>
 <script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/ppres.featureviewer.js"></script>
 

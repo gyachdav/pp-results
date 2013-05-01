@@ -153,6 +153,8 @@ var APP = (function() {
 
 		init: function() {
 			jQuery.noConflict(); // recommended to avoid conflict wiht other libs
+			NAVIGATION.setActiveItem(2);
+			NAVIGATION.show(jQuery("#nav"));
 			ds = new dataSource(file_specs);
 			result = ds.loadData();
 
