@@ -11,13 +11,13 @@ var APP = (function() {
 		providers = [
 			"PROFsec",
 			"PROFacc",
-			"NORSnet",
+			"PHDhtm",
 			"ISIS",
 			"DISIS",
 			"ASP",
 			"DISULFIND",
 			"PredictNLS",
-			"PHDhtm",
+			"NORSnet",
 			"PROFbval",
 			"Ucon",
 			"MD",
@@ -26,8 +26,6 @@ var APP = (function() {
 
 
 	return {
-
-
 		drawSubcellLoc: function() {
 			var nav_div = jQuery("<div id='_subcell_nav' />").appendTo(jQuery("#cell"));
 
@@ -40,9 +38,12 @@ var APP = (function() {
 
 			var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
 			for (var i in domains) {
+				var _curr_div;
 				var _curr_li = jQuery('<li><a href=#>' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
+				var prediction = mainObj.getSubCellLocations(domains[i]);
+				if (!prediction) _curr_div = jQuery("<div />").text("Data unavailable");
+				else  _curr_div = SUBCELL_VIEW.localisationDiv(prediction);
 
-				var _curr_div = SUBCELL_VIEW.localisationDiv(mainObj.getSubCellLocations(domains[i]));
 				if (domains[i] == 'euka') {
 					_curr_div.show();
 					_curr_li.addClass('active');
@@ -63,15 +64,15 @@ var APP = (function() {
 			jQuery(".summary").append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
-			
-			table.append("<tr><td>Recommended Name</td><td>" + mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot') + "</td></tr>");
+			if (_rec_name = mainObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot'))
+				table.append("<tr><td>Recommended Name</td><td>" + _rec_name + "</td></tr>");
 			table.append("<tr><td>Sequence Length</td><td>" + mainObj.getSequence().length + "</td></tr>");
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#myModal' role='button' data-toggle='modal'>" + mainObj.getAlignmentsCount() + "</a></td></tr>");
 			table.append("<tr><td>Number of Matched PDB Structures</td><td>" + mainObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
 
 
 			//<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-			
+
 			jQuery(".summary").append(table);
 		},
 
@@ -95,17 +96,18 @@ var APP = (function() {
 				dataObj: mainObj
 			});
 
-
 			var features_array = [];
-			FEATURE_VIEWER.setFeauresArray(jQuery.map(providers, function(provider, index) {
+			FEATURE_VIEWER.setFeaturesArray(jQuery.map(providers, function(provider, index) {
 				var track, feature_properties;
 				track = new Track();
+				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
+				else track.setPosition(FEATURE_VIEWER.getCurrentBottom());
+
 				var feature_group = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), provider);
+				if (!feature_group) return null;
 				var feature_type = (feature_group.type) ? feature_group.type : "";
 				feature_properties = mainObj.getFeatureLocations(feature_group);
 
-
-				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 
 				if (!feature_properties) return null;
 				if (feature_properties) i = feature_properties.length;
@@ -119,14 +121,13 @@ var APP = (function() {
 					}
 					track.addFeature(feature);
 				}
-
 				FEATURE_VIEWER.addTrack(track);
 				return track.getTrack();
 			}));
 
 
 			// Add alignment
-			FEATURE_VIEWER.setFeauresArray(jQuery.map(mainObj.getAlignmentLocations(), function(target, index) {
+			FEATURE_VIEWER.setFeaturesArray(jQuery.map(mainObj.getAlignmentLocations(), function(target, index) {
 				var track = new Track(1, 1);
 				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
 				Feature.Alignment.prototype = new Feature();
@@ -163,7 +164,7 @@ var APP = (function() {
 			this.drawSSConsistency,
 			this.drawSubcellLoc,
 			this.drawAlignmentTable]);
-					},
+		},
 		toggleDebug: function() {
 			debug = !debug;
 		},

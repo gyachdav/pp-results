@@ -1,0 +1,1146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<predictprotein xmlns="http://rostlab.org/predictprotein" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rostlab.org/predictprotein http://rostlab.org/predictprotein-xsd/predictprotein.xsd">
+<entry dataset="PPJobDB" created="2013-05-01" modified="2013-05-01" version="1">
+<accession>1</accession>
+<name>query</name>
+<protein>
+    <recommendedName><fullName>unknown protein name</fullName></recommendedName>
+</protein>
+<organism>
+    <entryKey entryKeyValue="1" />
+    <name type="common">unknown</name>
+    <dbReference type="NCBI Taxonomy" id="?"><entryKey entryKeyValue="2" /></dbReference>
+</organism>
+<reference>
+  <entryKey entryKeyValue="3" />
+  <citation type="journal article" date="2004" name="Nucleic Acid Res." volume="32" first="321" last="326">
+    <title>The PredictProtein server.</title>
+    <authorList>
+      <person name="Rost B."/>
+      <person name="Yachdav G."/>
+      <person name="Liu J."/>
+    </authorList>
+    <dbReference type="PubMed" id="15215403"><entryKey entryKeyValue="4" /></dbReference>
+  </citation>
+  <scope>protein feature prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="5" />
+  <citation type="journal article" date="1999" name="Protein Sci." volume="8" first="1752" last="1764">
+    <title>Predicting conformational switches in proteins.</title>
+    <authorList>
+      <person name="Young M."/>
+      <person name="Kirshenbaum K."/>
+      <person name="Dill KA."/>
+      <person name="Highsmith S."/>
+    </authorList>
+    <dbReference type="PubMed" id="10493576"><entryKey entryKeyValue="6" /></dbReference>
+  </citation>
+  <scope>secondary structure switch prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="7" />
+  <citation type="journal article" date="1999" name="Protein Sci." volume="8" first="1806" last="1815">
+    <title>Predicting allosteric switches in myosins.</title>
+    <authorList>
+      <person name="Kirshenbaum K."/>
+      <person name="Young M."/>
+      <person name="Highsmith S."/>
+    </authorList>
+    <dbReference type="PubMed" id="10493582"><entryKey entryKeyValue="8" /></dbReference>
+  </citation>
+  <scope>secondary structure switch prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="9" />
+  <citation type="journal article" date="2007" name="Bioinformatics." volume="23" first="i347" last="i353">
+    <title>Prediction of DNA-binding residues from sequence.</title>
+    <authorList>
+      <person name="Ofran Y."/>
+      <person name="Mysore V."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17646316"><entryKey entryKeyValue="10" /></dbReference>
+  </citation>
+  <scope>DNA-binding region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="11" />
+  <citation type="unpublished results" date="1999">
+    <title>Short yeast ORFs: expressed protein or not?</title>
+    <authorList>
+      <person name="Rost B."/>
+    </authorList>
+    <locator>http://rostlab.org/papers/1999_globe/paper.html</locator>  </citation>
+  <scope>globularity prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="12" />
+  <citation type="journal article" date="2007" name="Bioinformatics." volume="23" first="e13" last="e16">
+    <title>ISIS: interaction sites identified from sequence.</title>
+    <authorList>
+      <person name="Ofran Y."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17237081"><entryKey entryKeyValue="13" /></dbReference>
+  </citation>
+  <scope>protein binding region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="14" />
+  <citation type="journal article" date="2005" name="J Mol Biol." volume="348" first="85" last="100">
+    <title>Mimicking cellular sorting improves prediction of subcellular localization.</title>
+    <authorList>
+      <person name="Nair R."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="15808855"><entryKey entryKeyValue="15" /></dbReference>
+  </citation>
+  <scope>subcellular location prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="16" />
+  <citation type="journal article" date="2012" name="Bioinformatics" volume="28" first="i458" last="i465">
+    <title>LocTree2 predicts localization for all domains of life</title>
+    <authorList>
+      <person name="Goldberg T, Hamp T, Rost B"/>
+    </authorList>
+    <dbReference type="PubMed" id="22962467"><entryKey entryKeyValue="17" /></dbReference>
+  </citation>
+  <scope>subcellular location prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="18" />
+  <citation type="journal article" date="2007" name="PLoS Comput Biol." volume="3" first="e140" last="e140">
+    <title>Natively unstructured loops differ from other loops.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Liu J."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17658943"><entryKey entryKeyValue="19" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="20" />
+  <citation type="journal article" date="2000" name="EMBO Rep." volume="1" first="411" last="415">
+    <title>Finding nuclear localization signals.</title>
+    <authorList>
+      <person name="Cokol M."/>
+      <person name="Nair R."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="11258480"><entryKey entryKeyValue="21" /></dbReference>
+  </citation>
+  <scope>nuclear localisation signal prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="22" />
+  <citation type="journal article" date="1996" name="Protein Sci." volume="5" first="1704" last="1718">
+    <title>Topology prediction for helical transmembrane proteins at 86% accuracy.</title>
+    <authorList>
+      <person name="Rost B."/>
+      <person name="Fariselli P."/>
+      <person name="Casadio R."/>
+    </authorList>
+    <dbReference type="PubMed" id="8844859"><entryKey entryKeyValue="23" /></dbReference>
+  </citation>
+  <scope>transmembrane protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="24" />
+  <citation type="journal article" date="2006" name="Bioinformatics." volume="22" first="891" last="893">
+    <title>PROFbval: predict flexible and rigid residues in proteins.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Yachdav G."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="16455751"><entryKey entryKeyValue="25" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="26" />
+  <citation type="journal article" date="2007" name="Bioinformatics." volume="23" first="2376" last="2384">
+    <title>Natively unstructured regions in proteins identified from contact predictions.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Punta M."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17709338"><entryKey entryKeyValue="27" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="28" />
+  <citation type="journal article" date="2009" name="PLoS ONE" volume="4" first="e4433" last="e4433">
+    <title>Improved Disorder Prediction by Combination of Orthogonal Approaches.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Punta M."/>
+      <person name="Yachdav G."/>
+      <person name="Kajan L."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="19209228"><entryKey entryKeyValue="29" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="30" />
+  <citation type="journal article" date="2004" name="Nucleic Acids Res." volume="32" first="2566" last="2577">
+    <title>Predicting transmembrane beta-barrels in proteomes.</title>
+    <authorList>
+      <person name="Bigelow HR."/>
+      <person name="Petrey DS."/>
+      <person name="Liu J."/>
+      <person name="Przybylski D."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="15141026"><entryKey entryKeyValue="31" /></dbReference>
+  </citation>
+  <scope>transmembrane beta-barrel prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="32" />
+  <citation type="journal article" date="1997" name="Nucleic Acids Res." volume="25" first="3389" last="3402">
+    <title>Gapped BLAST and PSI-BLAST: a new generation of protein database search programs.</title>
+    <authorList>
+      <person name="Altschul SF."/>
+      <person name="Madden TL."/>
+      <person name="Schäffer AA."/>
+      <person name="Zhang J."/>
+      <person name="Zhang Z."/>
+      <person name="Miller W."/>
+      <person name="Lipman DJ."/>
+    </authorList>
+    <dbReference type="PubMed" id="9254694"><entryKey entryKeyValue="33" /></dbReference>
+  </citation>
+  <scope>sequence alignment tool</scope>
+</reference>
+<predictionRuns>
+<predRunASP ref="5">
+  <entryKey entryKeyValue="34" />
+  <predComment>ASP was designed to identify the location of conformational switches in amino acid sequences.  It was not designed to predict whether a given sequence does or does not contain a switch.  For best results ASP should be used on sequences longer than 150 amino acids with more than 10 sequence homologues in the SWISS-PROT database.</predComment>
+  <parameters>
+    <window value="5" displayName="window"/>
+    <minMuDpr value="9" displayName="min mu dPr"/>
+    <zScoreCutoff value="-1.75" displayName="Z-score cutoff"/>
+  </parameters>
+  <meanDprScore value="14.234" displayName="mean dPr score"/>
+  <dprStdDev value="3.61" displayName="standard deviation"/>
+</predRunASP>
+<predRunGLOBE ref="11">
+  <entryKey entryKeyValue="35" />
+  <predText>your protein appears not to be globular</predText>
+  <link uri="http://rostlab.org/papers/1999_globe/paper.html">Explanation of GLOBE results.</link>
+</predRunGLOBE>
+<predRunProfTMB ref="30">
+  <entryKey entryKeyValue="36" />
+  <predText>Below-threshold protein. No prediction provided.</predText>
+  <zScore value="-1.14555" displayName="Z-value"/>
+</predRunProfTMB>
+</predictionRuns>
+<aliProviderGroup provider="PSI-BLAST" ref="32">
+<alignment>
+  <dbReference type="TrEMBL" id="B2IID1"><entryKey entryKeyValue="37" /></dbReference>
+  <bitscore value="151"/>
+  <expect value="5e-35"/>
+  <identity value="0.2"/>
+  <matchLen value="205"/>
+  <queryStart value="7"/>
+  <queryEnd value="206"/>
+  <subjectStart value="8"/>
+  <subjectEnd value="212"/>
+  <querySeq>
+TIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIIT
+AIVGIIAYLVIYN---VIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPM
+EIEEL
+  </querySeq>
+  <subjectSeq>
+IAHLFAGGLVLVSFMLLYQDRLYALLNVFALQAFVLVLSVAWQAFVQQAPHLYITAAIALILKAIVIPGALHRIVARLGIHREVETVGGIGSTMLAGIGL
+VALSMVVMLRATPGADPLAREDLAFALSVVLLGLLMMVTRRNAVSQVVGFMSIENGLILAGTGAKGMPLVVEISIAFSVLVAFIIIGIFLFRIRERFDTV
+DSRAL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="D1P2F7"><entryKey entryKeyValue="38" /></dbReference>
+  <bitscore value="150"/>
+  <expect value="7e-35"/>
+  <identity value="0.2018779342723"/>
+  <matchLen value="213"/>
+  <queryStart value="2"/>
+  <queryEnd value="208"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+IAYEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLI
+AGIITAIVGIIAYLVIYNVIGTW---KGMIPFILLLFGLLIIVMRRNALAQISGYIVEENA-LLYLGIVFYPIGFLLEVGILLDVIGAVLLAVILS--AE
+KEYGPMEIEELAG
+  </querySeq>
+  <subjectSeq>
+MTGSMIVNNLAGLMMITSLLVIGAKKPVASCWFYALQSLVLVAIFGTLSYTLNAPELAMWAVSAFATKVVLVPLIMGYAFRKLSDPTANGGVISPAWLML
+AAAVIVVLCWFVVEPIKLPMATDLKPALAVSLGHFMLGLLCIVTQRNILKQAFGYCLMENGSHLTLALLAYKAPELVEIGIATDAIFAVIIMAVLARKIY
+RTLNTLNVDQLTA
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B6XDR8"><entryKey entryKeyValue="39" /></dbReference>
+  <bitscore value="150"/>
+  <expect value="1e-34"/>
+  <identity value="0.197183098591549"/>
+  <matchLen value="213"/>
+  <queryStart value="2"/>
+  <queryEnd value="208"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+IAYEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLI
+AGIITAIVGIIAYLVIYNVIG---TWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENA-LLYLGIVFYPIGFLLEVGILLDVIGAVLLAVILS--AE
+KEYGPMEIEELAG
+  </querySeq>
+  <subjectSeq>
+MTGSMIVNNLAGLMMITSLLVIGAKKPVVSCWFYALQSLVLVAIFGTLSYTLNAPELAMWAGTAFATKVVLVPLIMGYAFRKLSDPTANGGVISPAWLML
+AAAVIVVLCWFVVEPIKLPLAADLKPALAVSLGHFMLGLLCIVTQRNILKQAFGYCLMENGSHLTLALLAYKAPELVEIGIATDAIFAVIIMAVLARKIY
+RTLNTLNVDQLTA
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="A4MH82"><entryKey entryKeyValue="40" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="A8ELU5"><entryKey entryKeyValue="41" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.230769230769231"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLTHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="A8KSE8"><entryKey entryKeyValue="42" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.230769230769231"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLTHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B7CEL6"><entryKey entryKeyValue="43" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="C4I3D8"><entryKey entryKeyValue="44" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="C6U3A4"><entryKey entryKeyValue="45" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.230769230769231"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLTHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q3JMD5"><entryKey entryKeyValue="46" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.230769230769231"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLTHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q63L63"><entryKey entryKeyValue="47" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="4e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILHRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="A8HVU3"><entryKey entryKeyValue="48" /></dbReference>
+  <bitscore value="148"/>
+  <expect value="6e-34"/>
+  <identity value="0.207920792079208"/>
+  <matchLen value="202"/>
+  <queryStart value="10"/>
+  <queryEnd value="206"/>
+  <subjectStart value="11"/>
+  <subjectEnd value="212"/>
+  <querySeq>
+FLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIITAIV
+GIIAYLVIYN---VIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPMEIE
+EL
+  </querySeq>
+  <subjectSeq>
+LLAGGLVFTSLVMLYQARLPNLIRVYGLQALLLTLSVAWQAYAQDAPHLYVTAAITLAFKALIIPVALLRMIERLGIHRQVESALSTGLTMMAGIGLIAL
+SMVVMLRVTSGADPLAREDLAFALSVVLLGLLMMVTRRNAVSQVVGFMSLENGLILAATGAKGMPLVVEISVAFSVLVAFIVIGIFLFRIRERFDTVDST
+AL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B1H6E7"><entryKey entryKeyValue="49" /></dbReference>
+  <bitscore value="147"/>
+  <expect value="7e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILYRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="C0YGA9"><entryKey entryKeyValue="50" /></dbReference>
+  <bitscore value="147"/>
+  <expect value="7e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILYRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="C5ZLE6"><entryKey entryKeyValue="51" /></dbReference>
+  <bitscore value="147"/>
+  <expect value="7e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILYRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="A3NJU0"><entryKey entryKeyValue="52" /></dbReference>
+  <bitscore value="147"/>
+  <expect value="7e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILYRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="A3P5F4"><entryKey entryKeyValue="53" /></dbReference>
+  <bitscore value="147"/>
+  <expect value="7e-34"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILYRLVQRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="C8SMP0"><entryKey entryKeyValue="54" /></dbReference>
+  <bitscore value="147"/>
+  <expect value="7e-34"/>
+  <identity value="0.190243902439024"/>
+  <matchLen value="205"/>
+  <queryStart value="7"/>
+  <queryEnd value="206"/>
+  <subjectStart value="8"/>
+  <subjectEnd value="212"/>
+  <querySeq>
+TIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIIT
+AIVGIIAYLVIYN---VIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPM
+EIEEL
+  </querySeq>
+  <subjectSeq>
+IAHLLAGSLVLVSFMMLYQDRLFALINVFALHAIVLAMSVAWQAYIQDAHHLYVTAAIALIFKAIVIPIGLHRIIQRLGIHRDIETAVGIGPTMLAGIGL
+VALSMVLMLRVTPEADPLAREDLAFALSIILLGLLVMVTRRNAVSQVVGFMSLENGLVLAATGAKGMPLVVEISVAFSILIAFIVIGVFLFRIRERFDSV
+DIGAL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q21TA4"><entryKey entryKeyValue="55" /></dbReference>
+  <bitscore value="146"/>
+  <expect value="1e-33"/>
+  <identity value="0.222222222222222"/>
+  <matchLen value="207"/>
+  <queryStart value="6"/>
+  <queryEnd value="206"/>
+  <subjectStart value="7"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+ATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGII
+TAIVGIIAYLVIYNVIGTWK---GMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEYG
+PMEIEEL
+  </querySeq>
+  <subjectSeq>
+QLINLFATLILMLSFAMISQRRIVSLINLFTIQGVALVAASMLLGYVTHQPDLYVSGALTLLLKVIFIPWMLHRVIRKLNVRWDVDTLINIPTTMLVGIA
+LVIFSFSLALPISRLSSSMAGGSLGIALACVLLSFLMMITRSKAVPQVIGFLSMENGLIFAATAVTNGMPMIVEFGIALDVLVGVLILGVFMFQIREKFD
+SLDIHNL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B9BNX8"><entryKey entryKeyValue="56" /></dbReference>
+  <bitscore value="145"/>
+  <expect value="4e-33"/>
+  <identity value="0.221153846153846"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLINFLAAVLLMLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTNDVHLYVSAGLTLVLKVGVIPWFLYRLVRRLDVKTDVEPLINIPTTLLIGI
+VLVIVAFNVAAPISQLATSVARGTLGIALACVLLSFMAMITRAKAIPQVIGFLAMENGLFFAAAAATNGMPMIVELGIGLDVLIGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B9C967"><entryKey entryKeyValue="57" /></dbReference>
+  <bitscore value="145"/>
+  <expect value="4e-33"/>
+  <identity value="0.221153846153846"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLINFLAAVLLMLSFAMLSQRRILSLIHLYTLQGVALVSANLILGFVTNDVHLYVSAGLTLVLKVGVIPWFLYRLVRRLDVKTDVEPLINIPTTLLIGI
+VLVIVAFNVAAPISQLATSVARGTLGIALACVLLSFMAMITRAKAIPQVIGFLAMENGLFFAAAAATNGMPMIVELGIGLDVLIGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q13II7"><entryKey entryKeyValue="58" /></dbReference>
+  <bitscore value="145"/>
+  <expect value="4e-33"/>
+  <identity value="0.230769230769231"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQIINFLAAILLLLSFAMLSQRRILSLIHLYTLQGLTLVSANVTLGYVTADVHLYISAALTLVLKVGLIPWILYRLVQRLNVKADVEPLLNIPATLLIGI
+VLVIVAFNVASPISQLASSVARGTLGIALACVLLSFMMMITRANAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B5WAR8"><entryKey entryKeyValue="59" /></dbReference>
+  <bitscore value="145"/>
+  <expect value="4e-33"/>
+  <identity value="0.230769230769231"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVF-YPIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLINFLAAVLLLLSFAMLSQRRIMSLIHLYTLQGVALVLANLILGFVASDPHLYVSAGLTLVLKVGVIPWILYRLVRRLDIQTDVEPLINIPTTLLIGI
+VLVIIAFNVASPISQLATSAARGTLGIALACVLLSFMAMITRAKAIPQVIGFLSMENGLFFAATAATYGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q12F18"><entryKey entryKeyValue="60" /></dbReference>
+  <bitscore value="145"/>
+  <expect value="5e-33"/>
+  <identity value="0.229665071770335"/>
+  <matchLen value="209"/>
+  <queryStart value="4"/>
+  <queryEnd value="206"/>
+  <subjectStart value="5"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+YEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAG
+IITAIVGIIAYLV---IYNVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVF-YPIGFLLEVGILLDVIGAVLLAVI--LSAEKE
+YGPMEIEEL
+  </querySeq>
+  <subjectSeq>
+LTQFVNLLGAVLLMLAFAMIAQRRILSLIHLFTMQGATLVLATGVVGYVTNQPHLYISAGVTFVLKVLLIPYLLHRVIDRLNIRWDVETLINIPTTMLIG
+IVVVIFAFDLAMPIARLSSALASGTLGIALACVLLSFLMMITRAKAVPQVIGFLAMENGLFFAATSATYGMPMVVELGIALDVLIGVLILGVFMFQIREQ
+FDSLDISHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="D5WFQ0"><entryKey entryKeyValue="61" /></dbReference>
+  <bitscore value="144"/>
+  <expect value="6e-33"/>
+  <identity value="0.225961538461538"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLINFLAAVLLMLSFAMLSQRRILSLIHLYTLQGVALVLAILILGFVTGDAHLYVSAGLTLVLKVGVIPWILYRLVRRLDIQADVEPLINIPTTLLIGI
+VLVIIAFNVASPISQLATSAARGTLGIALACVLLSFMAMITRAKAVPQVIGFLSMENGLFFAATAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q2T5U0"><entryKey entryKeyValue="62" /></dbReference>
+  <bitscore value="144"/>
+  <expect value="7e-33"/>
+  <identity value="0.235576923076923"/>
+  <matchLen value="208"/>
+  <queryStart value="5"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+EATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGI
+ITAIVGIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVI--LSAEKEY
+GPMEIEEL
+  </querySeq>
+  <subjectSeq>
+TQLVNFLAAILLLLSFAMLSQRRILSLIHLYTLQGVVLVSANLILGFVTADTHLYVSAALTLLLKVGLIPWILYRLVLRLNVKADVEPLLNIPTTLVAGI
+ALVIVAFNVAAPISRLAESAARGTLGIALACVLLSFMMMITRAKAIPQVIGFLSMENGLFFAAAAATNGMPMIVELGIGLDVLVGILILGVFMFQIREQF
+DSLDIHHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q1M692"><entryKey entryKeyValue="63" /></dbReference>
+  <bitscore value="143"/>
+  <expect value="9e-33"/>
+  <identity value="0.185365853658537"/>
+  <matchLen value="205"/>
+  <queryStart value="7"/>
+  <queryEnd value="206"/>
+  <subjectStart value="9"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+TIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIIT
+AIVGIIAYLVIYN---VIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPM
+EIEEL
+  </querySeq>
+  <subjectSeq>
+IAHMFAGGLVLVSMMMLYQDRLYALLNVFALHSLILTLSVAWQAFIQDAPHLYVTAAIALVFKAIVIPVVLHRMIRQLGIHREIETVVGIGPTMLAGIGL
+VALATAVMLRVTPEADPLAREDLAFALSVLLLGLLIMVTRRNAVSQVVGFMSLENGLVLAATGAKGMPLVVEISVAFSILIAFIVIGVFLFRIRERFDTV
+DVRAL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q132B5"><entryKey entryKeyValue="64" /></dbReference>
+  <bitscore value="143"/>
+  <expect value="2e-32"/>
+  <identity value="0.199004975124378"/>
+  <matchLen value="201"/>
+  <queryStart value="11"/>
+  <queryEnd value="206"/>
+  <subjectStart value="12"/>
+  <subjectEnd value="212"/>
+  <querySeq>
+LGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIITAIVG
+IIAYLVIYN---VIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPMEIEE
+L
+  </querySeq>
+  <subjectSeq>
+LAGGLVLVSFMMLYQDRLTSLLNVFALHAVMLSLAVGWQALIQDAPHLYVTALIALLFKAIIIPVALRRIVYKLGIHRDIETVVGIGPTMLAGMGLVALS
+LALMLRVTADADALAREDLAFALSVVLLGLLFMVTRRNAVSQVIGFMSLENGLILAAAGAKGMPLVVEISVAFSVLIAFIVIGIVLFRIRERFDSVDVSQ
+L
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q89GK4"><entryKey entryKeyValue="65" /></dbReference>
+  <bitscore value="142"/>
+  <expect value="2e-32"/>
+  <identity value="0.189054726368159"/>
+  <matchLen value="201"/>
+  <queryStart value="11"/>
+  <queryEnd value="206"/>
+  <subjectStart value="14"/>
+  <subjectEnd value="214"/>
+  <querySeq>
+LGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIITAIVG
+IIAYLVIYN---VIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPMEIEE
+L
+  </querySeq>
+  <subjectSeq>
+LAGGLVLISFMMLYQDRLYSLLNVFALHALVLALSVAWQAFVQDAPHLYITAAIALVFKAIVIPVALHRIVKQLGIHRDIESAVGIGPTMLAGMALVALS
+MVLMLRVTAEADPLAREDLAFALSVVLLGLLVMVTRRNAVSQVVGFMSLENGLVLAATGAKGMPLVVEISVAFSILIAFIVIGIFLFRIRERFDSVDVSA
+L
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="D5QS23"><entryKey entryKeyValue="66" /></dbReference>
+  <bitscore value="142"/>
+  <expect value="3e-32"/>
+  <identity value="0.193069306930693"/>
+  <matchLen value="202"/>
+  <queryStart value="10"/>
+  <queryEnd value="206"/>
+  <subjectStart value="11"/>
+  <subjectEnd value="212"/>
+  <querySeq>
+FLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAGIITAIV
+GIIAYLVIY---NVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVI--LSAEKEYGPMEIE
+EL
+  </querySeq>
+  <subjectSeq>
+LLAGSLVLLSFMLLYQDRLTGLINVFAIQAVVLSLAVGWQAYVEHEPHLYVTVAIAVIFKALVIPLSLKRIVVRLRIHRDIEIVGGVGVTMLIGIGLVAL
+SLVVILPATTSAAPLAREDVAFALSVVLLGLLMMVTRRNAVSQVIGFMSLENGLMLAATGAKGMPLVVEISVAFSILVAFIVIGVFLFRIRERFDTVDVT
+EL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q0K9M6"><entryKey entryKeyValue="67" /></dbReference>
+  <bitscore value="141"/>
+  <expect value="3e-32"/>
+  <identity value="0.244019138755981"/>
+  <matchLen value="209"/>
+  <queryStart value="4"/>
+  <queryEnd value="206"/>
+  <subjectStart value="5"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+YEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSLIAG
+IITAIVGIIAYLVIYNV---IGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVF-YPIGFLLEVGILLDVIGAVLLAVI--LSAEKE
+YGPMEIEEL
+  </querySeq>
+  <subjectSeq>
+LTQFVNLLGAVLLILAFAMISQRRILSLINLFTLQGATLALATAIVGYVTGQPHLYLSAGLTAILKALLIPYLLHRVIDRLRIRRDVETLINIPTTMLIG
+ILVVIFAFNLTMPISRLSLKLASGTLGIALACVLLSFLMMITRSKAVPQVIGFLAMENGLFFAATAATYGMPMVVELGIALDVLIGVLILGVFMFQIREQ
+FDSLDIRHL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P0AEW2"><entryKey entryKeyValue="68" /></dbReference>
+  <bitscore value="128"/>
+  <expect value="4e-28"/>
+  <identity value="0.220657276995305"/>
+  <matchLen value="213"/>
+  <queryStart value="2"/>
+  <queryEnd value="208"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+IAYEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKE--RVWEHREFGAKAKSS
+LIAGIITAIVGIIAYLVIYNVIG-TWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENA-LLYLGIVFYPIGFLLEVGILLDVIGAVLLAVILSAE--
+KEYGPMEIEELAG
+  </querySeq>
+  <subjectSeq>
+MTGSMIVNNLAGLMMLTSLFVISVKSYRLSCGFYACQSLVLVSIFATLSCLFAAEQLLIWSASAFITKVLLVPLIMTYAARNIPQNIPEKALFGPAMMAL
+LAALIVLLCAFVVQPVKLPMATGLKPALAVALGHFLLGLLCIVSQRNILRQIFGYCLMENGSHLVLALLAWRAPELVEIGIATDAIFAVIVMVLLARKIW
+RTHGTLDVNNLTA
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P0AEW1"><entryKey entryKeyValue="69" /></dbReference>
+  <bitscore value="128"/>
+  <expect value="4e-28"/>
+  <identity value="0.220657276995305"/>
+  <matchLen value="213"/>
+  <queryStart value="2"/>
+  <queryEnd value="208"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+IAYEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKE--RVWEHREFGAKAKSS
+LIAGIITAIVGIIAYLVIYNVIG-TWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENA-LLYLGIVFYPIGFLLEVGILLDVIGAVLLAVILSAE--
+KEYGPMEIEELAG
+  </querySeq>
+  <subjectSeq>
+MTGSMIVNNLAGLMMLTSLFVISVKSYRLSCGFYACQSLVLVSIFATLSCLFAAEQLLIWSASAFITKVLLVPLIMTYAARNIPQNIPEKALFGPAMMAL
+LAALIVLLCAFVVQPVKLPMATGLKPALAVALGHFLLGLLCIVSQRNILRQIFGYCLMENGSHLVLALLAWRAPELVEIGIATDAIFAVIVMVLLARKIW
+RTHGTLDVNNLTA
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P0AEW3"><entryKey entryKeyValue="70" /></dbReference>
+  <bitscore value="128"/>
+  <expect value="4e-28"/>
+  <identity value="0.220657276995305"/>
+  <matchLen value="213"/>
+  <queryStart value="2"/>
+  <queryEnd value="208"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="213"/>
+  <querySeq>
+IAYEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKE--RVWEHREFGAKAKSS
+LIAGIITAIVGIIAYLVIYNVIG-TWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENA-LLYLGIVFYPIGFLLEVGILLDVIGAVLLAVILSAE--
+KEYGPMEIEELAG
+  </querySeq>
+  <subjectSeq>
+MTGSMIVNNLAGLMMLTSLFVISVKSYRLSCGFYACQSLVLVSIFATLSCLFAAEQLLIWSASAFITKVLLVPLIMTYAARNIPQNIPEKALFGPAMMAL
+LAALIVLLCAFVVQPVKLPMATGLKPALAVALGHFLLGLLCIVSQRNILRQIFGYCLMENGSHLVLALLAWRAPELVEIGIATDAIFAVIVMVLLARKIW
+RTHGTLDVNNLTA
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P64681"><entryKey entryKeyValue="71" /></dbReference>
+  <bitscore value="110"/>
+  <expect value="1e-22"/>
+  <identity value="0.214285714285714"/>
+  <matchLen value="210"/>
+  <queryStart value="4"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="215"/>
+  <querySeq>
+YEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERV--WEHREFGAKAKSSLI
+AGIITAIVGIIAYLV--IYNVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVIL--SAEK
+EYGPMEIEEL
+  </querySeq>
+  <subjectSeq>
+FSILVDFAAGGLVLASVLIVWRRDLRAIVRLLAWQGAALAAIPLLRGIRDNDRALIAVGIAVLALRALVLPWLLARAVGAEAAAQREATPLVNTASSLLI
+TAGLTLTAFAITQPVVNLEPGVTINAVPAAFAVVLIALFVMTTRLHAVSQAAGFLMLDNGIAATAFLLTAGVPLIVELGASLDVLFAVIVIGVLTGRLRR
+IFGDADLDKL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P64682"><entryKey entryKeyValue="72" /></dbReference>
+  <bitscore value="110"/>
+  <expect value="1e-22"/>
+  <identity value="0.214285714285714"/>
+  <matchLen value="210"/>
+  <queryStart value="4"/>
+  <queryEnd value="206"/>
+  <subjectStart value="6"/>
+  <subjectEnd value="215"/>
+  <querySeq>
+YEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERV--WEHREFGAKAKSSLI
+AGIITAIVGIIAYLV--IYNVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFY-PIGFLLEVGILLDVIGAVLLAVIL--SAEK
+EYGPMEIEEL
+  </querySeq>
+  <subjectSeq>
+FSILVDFAAGGLVLASVLIVWRRDLRAIVRLLAWQGAALAAIPLLRGIRDNDRALIAVGIAVLALRALVLPWLLARAVGAEAAAQREATPLVNTASSLLI
+TAGLTLTAFAITQPVVNLEPGVTINAVPAAFAVVLIALFVMTTRLHAVSQAAGFLMLDNGIAATAFLLTAGVPLIVELGASLDVLFAVIVIGVLTGRLRR
+IFGDADLDKL
+  </subjectSeq>
+</alignment>
+</aliProviderGroup>
+<proteinExistence type="Uncertain"/>
+<featureTypeGroup type="secondary structure switch">
+  <featureProviderGroup provider="ASP" ref="5" predRunRef="34">
+<feature type="secondary structure switch"><location><begin position="87"/><end position="95"/></location></feature>
+<feature type="secondary structure switch"><location><begin position="175"/><end position="177"/></location></feature>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="DNA-binding region">
+  <featureProviderGroup provider="DISIS" ref="9">
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="protein binding region">
+  <featureProviderGroup provider="ISIS" ref="12">
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="1"/><end position="1"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="4"/><end position="5"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="29"/><end position="30"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="33"/><end position="33"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="54"/><end position="54"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="79"/><end position="80"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="82"/><end position="85"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="88"/><end position="91"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="95"/><end position="95"/></location></feature>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="nuclear localisation signal">
+  <featureProviderGroup provider="PredictNLS" ref="20">
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="helical transmembrane region">
+  <featureProviderGroup provider="PHDhtm" ref="22">
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="11"/><end position="77"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="100"/><end position="150"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="154"/><end position="193"/></location></feature>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="disordered region">
+  <featureProviderGroup provider="NORSnet" ref="18">
+  </featureProviderGroup>
+  <featureProviderGroup provider="PROFbval" ref="24">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1"/><end position="4"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="26"/><end position="27"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="53"/><end position="55"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="82"/><end position="92"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="118"/><end position="123"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="144"/><end position="145"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="169"/><end position="169"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="195"/><end position="208"/></location></feature>
+  </featureProviderGroup>
+  <featureProviderGroup provider="Ucon" ref="26">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="11"/><end position="19"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="62"/><end position="62"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="112"/><end position="112"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="131"/><end position="137"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="164"/><end position="164"/></location></feature>
+  </featureProviderGroup>
+  <featureProviderGroup provider="MD" ref="28">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="205"/><end position="205"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="208"/><end position="208"/></location></feature>
+<disorderedRegion>
+  <location><begin position="1"/><end position="208"/></location>
+  <featureString>
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----D--D
+  </featureString>
+  <reliability>
+0124455543112115467788889999999999998988888888888889889999888888788899999999988888788887765566666777
+7888877776656777767787888887766556678888889889999999998888877666666677899999888888888888888766646534
+33200000
+  </reliability>
+</disorderedRegion>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="secondary structures">
+  <featureProviderGroup provider="PROFsec" ref="3">
+<feature type="helix" soTermId="SO:0001114"><location><begin position="4"/><end position="52"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="56"/><end position="84"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="97"/><end position="167"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="172"/><end position="176"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="177"/><end position="197"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="203"/><end position="205"/></location></feature>
+<secondaryStructures>
+  <location><begin position="1"/><end position="208"/></location>
+  <featureString>
+LLLHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLHHHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLLLLLLLLLHHHH
+HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLEEEEEHHHHHHHHHHHHHHHHHHHHHLLL
+LLHHHLLL
+  </featureString>
+  <reliability>
+9551688889999899998888766446888888888888899999887641021357788899888764212788888887621200123112212788
+9999999988876543210000012478899889988888765666887765665332688888863057625552024667888888866542322133
+23001158
+  </reliability>
+</secondaryStructures>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="solvent accessibility">
+  <featureProviderGroup provider="PROFacc" ref="3">
+<solventAccessibility>
+  <location><begin position="1"/><end position="208"/></location>
+  <featureString>
+9465750050000000000000005740660050000000000000000000560350000000000050000000046406958458968455715000
+0000000000000045057008605000000000000000000560065000000000000000000572000000000040000000000050596268
+56487089
+  </featureString>
+  <reliability>
+5011226233656777877743341324234831364366796786445201100024552978346623466515913342422003102001201126
+8569957963433211213003211355799679799864342233422955243313633669323223015816343317969998557222331201
+11143028
+  </reliability>
+</solventAccessibility>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="sub-cellular localisation">
+  <featureProviderGroup provider="LOCtree" ref="14">
+<subcellularLocalisation>
+  <location><begin position="1"/><end position="208"/></location>
+<localisation><animal><extraCellular ><score>1</score></extraCellular></animal>
+<plant><chloroplast ><score>6</score></chloroplast></plant>
+<proka><cytoplasmic ><score>1</score></cytoplasmic></proka>
+</localisation></subcellularLocalisation>
+  </featureProviderGroup>
+  <featureProviderGroup provider="LocTree2" ref="16">
+<subcellularLocalisation>
+  <location><begin position="1"/><end position="208"/></location>
+<localisation></localisation></subcellularLocalisation>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="transmembrane beta-barrel">
+  <featureProviderGroup provider="PROFtmb" ref="30" predRunRef="36">
+  </featureProviderGroup>
+</featureTypeGroup>
+<sequence length="208" modified="2013-05-01" version="1">
+MIAYEATIDFLGVLILLYGFVIIAENYIHSVIRHLQAQTIILSLLIGIVGFYLRMWELIALAIFTLIFRAWLIPNILLKDIKKERVWEHREFGAKAKSSL
+IAGIITAIVGIIAYLVIYNVIGTWKGMIPFILLLFGLLIIVMRRNALAQISGYIVEENALLYLGIVFYPIGFLLEVGILLDVIGAVLLAVILSAEKEYGP
+MEIEELAG
+</sequence>
+</entry>
+<copyright>
+Copyright László Kaján
+</copyright>
+</predictprotein>

@@ -4,7 +4,7 @@ function() {
 	var displayDiv,
 	prot_name = 'query',
 		displayDivWidth = 0,
-		current_bottom = 54;
+		sequence_line_y = current_bottom = 70;
 	current_track_count = 0,
 	outer_margin = 30.
 	inner_margin = outer_margin * 2,
@@ -24,10 +24,7 @@ function() {
 		},
 
 		"configuration": {
-			// "horizontalGridNumLines": 2,
-			// "sequenceLineYCentered": 95,
 			"requestedStart": 1,
-			// "gridLineHeight": 12,
 			"rightMargin": 5,
 			"belowRuler": 30,
 			"horizontalGridNumLinesNonOverlapping": 2,
@@ -37,7 +34,7 @@ function() {
 			"sizeYNonOverlapping": 76,
 			"style": "rows",
 			"sequenceLineYRows": 155,
-			"sequenceLineY": 54,
+			"sequenceLineY": sequence_line_y,
 			"verticalGrid": false,
 			"rulerY": 20,
 			"horizontalGrid": false,
@@ -45,14 +42,16 @@ function() {
 			"aboveRuler": 10,
 			"sizeYKey": 20,
 			"sizeYCentered": 160,
-			"sequenceLineYNonOverlapping": 54,
-			// "horizontalGridNumLinesRows": 8,
+			"sequenceLineYNonOverlapping": sequence_line_y,
 			"leftMargin": 20,
 			"nonOverlapping": true
 		}
 	};
 
 	return {
+		getSequenceLineY: function(){
+			return sequence_line_y;
+		},
 		init: function(argument) {
 			var dataObj = argument.dataObj;
 			displayDivWidth = argument.targetDiv.width();
@@ -97,7 +96,7 @@ function() {
 				}
 			});
 		},
-		setFeauresArray: function(features_array) {
+		setFeaturesArray: function(features_array) {
 			jQuery.merge(json_config_obj.featuresArray, features_array);
 			// console.log(json_config_obj.featuresArray);
 		},
@@ -111,11 +110,13 @@ function() {
 			return displayDivWidth;
 		},
 		addTrack: function(track) {
-			current_bottom = track.getBottom();
-			track.setPosition(this.getCurrentBottom());
-			json_config_obj.configuration.sizeY = track.getBottom();
-			json_config_obj.configuration.sizeYRows = track.getBottom();
-			this.setCurrentBottom(track.getBottom());
+			if (track.getShiftBottomLine()){
+				current_bottom = track.getBottom();
+				track.setPosition(this.getCurrentBottom());
+				json_config_obj.configuration.sizeY = track.getBottom();
+				json_config_obj.configuration.sizeYRows = track.getBottom();
+				this.setCurrentBottom(track.getBottom());
+			}
 		}
 	};
 })();
@@ -165,8 +166,8 @@ var Feature = function() {
 		var featureTypeLabel;
 
 		(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
-		if( ! _feature.code )  _feature.code = ""  ;
- 
+		if (!_feature.code) _feature.code = "";
+
 		var label = {
 			"typeCode": _feature.code,
 			"evidenceText": _feature_provider,
@@ -190,7 +191,7 @@ var Feature = function() {
 		},
 
 		setFeature: function(_feature) {
-			feature = _feature;
+			jQuery.extend(feature, _feature);
 		},
 		getFeature: function() {
 			return (feature);
@@ -227,7 +228,7 @@ Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 
 
-	this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin+_feature.end);
+	this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin + _feature.end);
 
 	(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
 	if (_feature.db.match(/pdb/i)) {
@@ -291,6 +292,13 @@ Feature.ISIS = function(_feature, _feature_provider, _feature_type) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 	this.color = "red";
 	this.setColor();
+
+	var feature = {
+		"type": "diamond",
+		"r": 5,
+		"cy": FEATURE_VIEWER.getSequenceLineY()-30,
+	}
+	this.setFeature(feature);
 	return this.getFeature();
 
 };
@@ -369,12 +377,19 @@ var Track = function(__height, __margin) {
 
 	var default_height = 10,
 		config = {},
+		shift_bottom_line = true,
 		features = [];
 
 	(__height) ? config.height = __height : config.height = default_height;
 	(__margin) ? config.margin = __margin : config.margin = default_height * .2;
 
 	return {
+		setShiftBottomLine: function ( _shift_flag ){
+			shift_bottom_line = _shift_flag;
+		},
+		getShiftBottomLine: function(){
+			return shift_bottom_line;
+		},
 		setPosition: function(starting_y) {
 			config.y = starting_y;
 		},
@@ -395,7 +410,7 @@ var Track = function(__height, __margin) {
 		}
 	}
 };
-
+Track.NO_BOTTOMLINE_SHIFT = false;
 
 // 
 
