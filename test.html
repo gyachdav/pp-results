@@ -10,8 +10,15 @@
 <script src="control/ppres-control.js" type="text/javascript" language="javascript"></script>
 
 <script type="text/javascript">
-jQuery(window).load ( function(){
-	ppres = new Demo($("#msg"));
-});
+
+var jq = $("#msg").append("123").wrapInner("<td/>").append("<td/>").text("123").wrapInner('<tr/>').wrapInner('<tbody/>').wrapInner('<table/>');
+console.log(jq);
+// $("#msg").append('<table />').wrapInner('<tr />');
+// $("<table/>").wrap("<tbody/>").wrap("<tr/>").wrap("<td/>").appendTo($("#msg"));
+
+
+// jQuery(window).load ( function(){
+// 	ppres = new Demo($("#msg"));
+// });
 </script>
 </body>
