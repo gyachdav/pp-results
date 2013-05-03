@@ -9,7 +9,7 @@ var ALI_VIEW = (function() {
 			var table = document.createElement('table');
 
 
-			var table = '<table id="aliTable" class="table  tablesorter">';
+			var table = '<table id="aliTable" class="table table-hover tablesorter">';
 			table += '<thead><tr><th>Protein Name</th><th>Identity</th><th>Expected Value</th><th>Matched Length</th></tr></thead>';
 			table += "<tbody>";
 			jQuery.map(this.aliObj, function(target, index) {

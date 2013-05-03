@@ -12,20 +12,30 @@ function PPResData() {
 		prof_data_source = '',
 		organism = '',
 		json_data = {},
+		xml_data = {},
 		protein = {},
 		sequence = '',
-		alignments = {};
+		alignments = {},
+		data_ready = false,
+		data = {
+			data_size: 0,
+			data_format: this.file_type,
+			xml: '',
+			json: ''
+		};
 
-
-	this.getAlignments = function() {
+	var setDataReady = function() {
+		data_ready = !data_ready;
+	};
+	var getAlignments = function() {
 		return (this.alignments);
 	};
 
-	this.getReferenceByProvider = function(feature_provider) {
+	var getReferenceByProvider = function(feature_provider) {
 		var feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
 		return (this.getReference(feature.featureProviderGroup.ref));
 	}
-	this.getReference = function(ref_id) {
+	var getReference = function(ref_id) {
 		var _ref;
 		refs = this.json_data.entry.reference;
 		jQuery.each(refs, function(index, ref) {
@@ -39,7 +49,47 @@ function PPResData() {
 
 
 
+	var setJsonData = function(json) {
+		json_data = json;
+		sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
+		alignments = json_data.entry.aliProviderGroup.alignment;
+		protein = json_data.entry.protein;
+		organism = json_data.entry.organism;
+	};
+
+
 	return {
+		dataReady: function(){
+			return data_ready;
+		},
+		loadData: function(_file_specs) {
+			var file_path = _file_specs.path,
+				file_name = _file_specs.name,
+				file_type = _file_specs.type;
+			var data;
+			file_path += "/" + file_name;
+			return (jQuery.ajax({
+				url: file_path,
+				success: function(data) {
+					console.log(file_path + " load success");
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					console.log(file_path + " load fail");
+					// throw new PPResException ( 
+					// 	textStatus,
+					// 	errorThrown 
+					// 	jqXHR.status
+					// );
+				},
+				dataType: file_type
+			}));
+		},
+
+		populateData: function(data) {
+			xml_data = data;
+			setJsonData(jQuery.xml2json(data));
+			setDataReady();
+		},
 
 		getSubCellLocations: function(domain) {
 			var _ret_obj = {};
@@ -47,7 +97,7 @@ function PPResData() {
 			var providers = ["LOCtree", "LOCtree2"];
 			if (domain) {
 				if (jQuery.inArray(domain, ["arch", "bact", "euka"]) != -1) provider = providers[1];
-				else if (jQuery.inArray(domain, ["plant", "animal", "proka"])!= -1) provider = providers[0];
+				else if (jQuery.inArray(domain, ["plant", "animal", "proka"]) != -1) provider = providers[0];
 				else return null;
 				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), provider);
 				_tmp_ref = subcell_group.subcellularLocalisation.localisation[domain];
@@ -55,13 +105,12 @@ function PPResData() {
 					_tmp_loc = Object.keys(_tmp_ref)[0];
 					_ret_obj[domain] = {
 						score: _tmp_ref[_tmp_loc].score,
-						goTermId:  _tmp_ref[_tmp_loc].goTermId,
+						goTermId: _tmp_ref[_tmp_loc].goTermId,
 						localisation: _tmp_loc,
 						provider: provider
 					};
 					return (_ret_obj);
-				}else
-					return null;
+				} else return null;
 			}
 
 
@@ -84,12 +133,8 @@ function PPResData() {
 					}
 				}
 			}
-
-
 			return (_ret_obj);
 		},
-
-
 
 		getSSComposition: function(argument) {
 			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
@@ -150,13 +195,7 @@ function PPResData() {
 		getJsonData: function() {
 			return (json_data);
 		},
-		setJsonData: function(json) {
-			json_data = json;
-			sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
-			alignments = json_data.entry.aliProviderGroup.alignment;
-			protein = json_data.entry.protein;
-			organism = json_data.entry.organism;
-		},
+
 		getSequence: function() {
 			return (sequence);
 		},
@@ -265,52 +304,3 @@ function PPResData() {
 		}
 	};
 }
-
-// External data loader
-
-function dataSource(file_obj) {
-	this.file_path = file_obj.path;
-	this.file_name = file_obj.name
-	this.file_type = file_obj.type;
-
-	this.data = {
-		data_size: 0,
-		data_format: this.file_type,
-		xml: '',
-		json: ''
-	}
-
-	this.loadData = function() {
-		var data;
-		this.file_path += "/" + this.file_name;
-		return (jQuery.ajax({
-			url: this.file_path,
-			success: function(data) {
-				console.log(this.file_path + " load success");
-				// populateData(data)
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				console.log(this.file_path + " load fail");
-				// throw new PPResException ( 
-				// 	textStatus,
-				// 	errorThrown 
-				// 	jqXHR.status
-				// );
-			},
-			dataType: this.file_type
-		}));
-	};
-
-	this.xml2Json = function(xml) {
-		this.data.json = jQuery.xml2json(xml);
-	};
-	this.populateData = function(data) {
-		if (this.file_type == "xml") this.data.xml = data;
-		else if (this.file_type == "json") this.data.json = data;
-	};
-	this.getData = function() {
-		if (this.file_type == "xml") this.data.xml = data;
-		else if (this.file_type == "json") return (this.data.json);
-		else return null;
-	};
-};

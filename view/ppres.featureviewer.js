@@ -8,7 +8,7 @@ function() {
 	current_track_count = 0,
 	outer_margin = 30.
 	inner_margin = outer_margin * 2,
-	json_config_obj = {
+	json_config_obj=json_config_obj_init = {
 		"featuresArray": [],
 		"segment": prot_name,
 		"legend": {
@@ -49,16 +49,19 @@ function() {
 	};
 
 	return {
-		getSequenceLineY: function(){
+		getSequenceLineY: function() {
 			return sequence_line_y;
 		},
 		init: function(argument) {
+			
 			var dataObj = argument.dataObj;
-			displayDivWidth = argument.targetDiv.width();
+			displayDiv = argument.targetDiv;
+			displayDivWidth = jQuery("#"+displayDiv).width();
 			json_config_obj.configuration.sizeX = (displayDivWidth - outer_margin);
 			json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
 			json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
 			json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
+
 
 
 		},
@@ -71,15 +74,12 @@ function() {
 
 		draw: function() {
 			var myPainter = new Biojs.FeatureViewer({
-				target: 'FeatureViewer',
+				target: displayDiv,
 				json: json_config_obj
 			});
-
-
-			console.log(json_config_obj);
-
+			//console.log(json_config_obj);
+			
 			myPainter.onFeatureSelected(
-
 			function(obj) {
 				if (obj.featureId.match(/^alignment/)) {
 
@@ -110,7 +110,7 @@ function() {
 			return displayDivWidth;
 		},
 		addTrack: function(track) {
-			if (track.getShiftBottomLine()){
+			if (track.getShiftBottomLine()) {
 				current_bottom = track.getBottom();
 				track.setPosition(this.getCurrentBottom());
 				json_config_obj.configuration.sizeY = track.getBottom();
@@ -296,7 +296,7 @@ Feature.ISIS = function(_feature, _feature_provider, _feature_type) {
 	var feature = {
 		"type": "diamond",
 		"r": 5,
-		"cy": FEATURE_VIEWER.getSequenceLineY()-30,
+		"cy": FEATURE_VIEWER.getSequenceLineY() - 30,
 	}
 	this.setFeature(feature);
 	return this.getFeature();
@@ -384,10 +384,10 @@ var Track = function(__height, __margin) {
 	(__margin) ? config.margin = __margin : config.margin = default_height * .2;
 
 	return {
-		setShiftBottomLine: function ( _shift_flag ){
+		setShiftBottomLine: function(_shift_flag) {
 			shift_bottom_line = _shift_flag;
 		},
-		getShiftBottomLine: function(){
+		getShiftBottomLine: function() {
 			return shift_bottom_line;
 		},
 		setPosition: function(starting_y) {
@@ -411,56 +411,3 @@ var Track = function(__height, __margin) {
 	}
 };
 Track.NO_BOTTOMLINE_SHIFT = false;
-
-// 
-
-
-
-// feature_SS.prototype = new Feature();
-// feature_SS.prototype.constructor = feature_SS;
-
-
-// function feature_ASP( feature_provider, feature_type, data ){
-// 	Feature.call(this);
-// 	this.addLocation ( data.location.begin.position, data.location.end.position );
-// 	this.setColor('green');
-// 	this.addLabel( feature_provider );
-// 	this.setFeatureID ( feature_provider,data.location.begin.position );
-// };
-
-// feature_ASP.prototype = new Feature();
-// feature_ASP.prototype.constructor = feature_ASP;
-
-// // Utility Funciton
-// String.prototype.capitalize = function() {
-//     return this.charAt(0).toUpperCase() + this.slice(1);
-// }
-
-// function feature_DS( feature_provider, feature_type, data ){
-// 	Feature.call(this);
-// 	this.addLocation ( data.location.begin.position, data.location.end.position );
-// 	this.setColor('brown');
-// 	this.addLabel( feature_provider );
-// 	this.setFeatureID ( feature_provider,data.location.begin.position );
-// };
-
-// feature_DS.prototype = new Feature();
-// feature_DS.prototype.constructor = feature_DS;
-
-// // Bidning sites
-// function feature_BS( feature_provider, feature_type, data ){
-// 	Feature.call(this);
-// 	this.addLocation ( data.location.begin.position, data.location.end.position );
-// 	this.setColor('pink');
-// 	this.addLabel( feature_provider );
-// 	this.setFeatureID ( feature_provider,data.location.begin.position );
-// };
-
-// feature_BS.prototype = new Feature();
-// feature_BS.prototype.constructor = feature_BS;
-
-
-// // Utility Funciton
-// String.prototype.capitalize = function() {
-//     return this.charAt(0).toUpperCase() + this.slice(1);
-// }
