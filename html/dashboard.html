@@ -1,26 +1,28 @@
-<div id="dashboard">
-<h2>Dashboard Overview for <span class=".name">CD44_Human</span></h2>
-<div class="navbar">
-        <div class="navbar-inner">
-            <ul class="nav">
-              <li><a href="#">Email</a></li>
-                <li><a href="#">Export</a></li>
-            </ul>
-          </div>
-      </div>
-<div class="alert alert-info"> 
-		<strong>What am I seeing Here?</strong> 
-		This viewer lays out predicted features that correspond to regions within the queried sequence. 	
-		Mouse over the different colored boxes to learn more about the annotations
-</div>
-<div id='FeatureViewer'>Loading </div>
-<div id="main_container"	>
+<div id="dashboard" >
+	<h2>Dashboard Overview for <span class=".name">CD44_Human</span></h2>
+	<div class="navbar">
+	        <div class="navbar-inner">
+	            <ul class="nav">
+	              <li><a href="#">Email</a></li>
+	                <li><a href="#">Export</a></li>
+	            </ul>
+	          </div>
+	      </div>
+	<div class="alert alert-info"> 
+			<strong>What am I seeing Here?</strong> 
+			This viewer lays out predicted features that correspond to regions within the queried sequence. 	
+			Mouse over the different colored boxes to learn more about the annotations
+	</div>
+	<div id='FeatureViewerContainer' >Loading </div>
 	<hr>
-	<div id='summary_container' class=""></div>
+	<div id='SummaryContainer' class="">
+		<div id='SummaryTableContainer' class='summary  left'> </div>
+		<div id='AAConsistencyContainer' class='summary  left' > </div>
+		<div id='SSConsistencyContainer' class='summary  left' > </div>
+	</div>
 	<div style="clear:both;"/>
 	<hr>
 	<h2> Sub-cellular Localization Prediction</h2>
-	<div id='SubcellLoc' ></div>
+	<div id='SubcellLocContainer' ></div>
 	<hr>
-</div>
 </div>

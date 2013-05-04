@@ -3,16 +3,15 @@ var PAGE = (function() {
 
 	var active_divs = [],
 		inactive_divs = [],
-		cached = {},
+		cached = [],
 		page_components = {
 			dashboard: [
 				'FeatureViewer',
-				'SubcellLoc'
-			// 'AlignmentTable',
-			// 'AlignmentTable',
-			// 'AAConsistency',
-			// 'SSConsistency'
-			]
+				'SubcellLoc',
+				'SummaryTable',
+				'AlignmentTable',
+				'AAConsistency',
+				'SSConsistency']
 		},
 		default_page = "dashboard",
 		dataObj;
@@ -32,18 +31,16 @@ var PAGE = (function() {
 		});
 	};
 
-	var isCached = function(element_name) {
-		if (cached[element_name]) return true;
-		return false;
+	var isCached = function(elementName) {
+		return (cached.indexOf(elementName) != -1);
 	};
 
 	var cacheFetch = function(_element_id) {
 		return (cached[_element_id]);
 	};
 
-	var cacheStore = function(_element) {
-		if (!_element.attr('id')) throw new Error('element has no id cannot store in cache');
-		cached[_element.attr('id')] = _element;
+	var cacheStore = function(_element_name) {
+		cached.push(_element_name);
 	};
 
 	var cacheRemove = function(_element) {
@@ -53,39 +50,36 @@ var PAGE = (function() {
 
 
 
-	var drawAlignmentTable = function() {
-		ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#alignments"));
-	};
-
-	var drawSummaryTable = function() {
-		// TODO move modal activation code from this control
-		jQuery("#summary_container").append("<div class='summary  left' />");
-		jQuery(".summary").append("<h3>Summary</h3>");
-		var table = jQuery("<table/>");
-		table.addClass("table table-striped");
-		if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) table.append("<tr><td>Recommended Name</td><td>" + _rec_name + "</td></tr>");
-		table.append("<tr><td>Sequence Length</td><td>" + dataObj.getSequence().length + "</td></tr>");
-		table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#myModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
-		table.append("<tr><td>Number of Matched PDB Structures</td><td>" + dataObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
-		jQuery(".summary").append(table);
-	};
-
-	var drawAAConsistency = function() {
-		jQuery("#summary_container").append("<div id='aa-consistency' class='summary  left' />");
-		jQuery("#aa-consistency").append("<h3>Amino Acid composition</h3>");
-		PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart('aa-consistency');
-	};
-
-	var drawSSConsistency = function() {
-		jQuery("#summary_container").append("<div id='ss-consistency' class='summary  right' />");
-		jQuery("#ss-consistency").append("<h3>Secondary Structure composition</h3>");
-		PIE_CHART.toPieData(dataObj.getSSComposition()).drawPieChart('ss-consistency');
-	};
-
 	return {
+		drawAlignmentTable : function( targetDiv ) {
+			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#"+targetDiv));
+		},
 
-		drawSubcellLoc: function() {
-			target_div = "SubcellLoc";
+		drawAAConsistency: function(targetDiv) {
+			jQuery("#" + targetDiv).append("<h3>Amino Acid composition</h3>");
+			PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
+		},
+
+		drawSSConsistency: function(targetDiv) {
+			jQuery("#" + targetDiv).append("<h3>Secondary Structure composition</h3>");
+			PIE_CHART.toPieData(dataObj.getSSComposition()).drawPieChart(targetDiv);
+		},
+
+		drawSummaryTable: function(targetDiv) {
+			// TODO move modal activation code from this control
+
+			jQuery("#" + targetDiv).append("<h3>Summary</h3>");
+			var table = jQuery("<table/>");
+			table.addClass("table table-striped");
+			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) table.append("<tr><td>Recommended Name</td><td>" + _rec_name + "</td></tr>");
+			table.append("<tr><td>Sequence Length</td><td>" + dataObj.getSequence().length + "</td></tr>");
+			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#myModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
+			table.append("<tr><td>Number of Matched PDB Structures</td><td>" + dataObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
+			jQuery("#" + targetDiv).append(table);
+			return (jQuery("#" + targetDiv));
+		},
+
+		drawSubcellLoc: function(targetDiv) {
 			var nav_div = jQuery("<div id='_subcell_nav' />");
 
 			var content_div = jQuery("<div id='_subcell_cntnt'/>");
@@ -111,18 +105,17 @@ var PAGE = (function() {
 				content_div.append(_curr_div);
 			}
 			nav_div.append(list);
-			jQuery("#" + target_div).append(nav_div);
-			jQuery("#" + target_div).append(content_div);
-			return (jQuery("#" + target_div));
+			jQuery("#" + targetDiv).append(nav_div);
+			jQuery("#" + targetDiv).append(content_div);
+			return (jQuery("#" + targetDiv));
 
 
 		},
 
 
-		drawFeatureViewer: function() {
-			var target_div = "FeatureViewer";
+		drawFeatureViewer: function(targetDiv) {
 			FEATURE_VIEWER.init({
-				targetDiv: target_div,
+				targetDiv: targetDiv,
 				dataObj: dataObj
 			});
 
@@ -155,7 +148,6 @@ var PAGE = (function() {
 				return track.getTrack();
 			}));
 
-
 			// Add alignment
 			FEATURE_VIEWER.setFeaturesArray(jQuery.map(dataObj.getAlignmentLocations(), function(target, index) {
 				var track = new Track(1, 1);
@@ -168,28 +160,24 @@ var PAGE = (function() {
 			}));
 
 			FEATURE_VIEWER.draw();
-			return (jQuery("#" + target_div));
+
+			return jQuery("#" + targetDiv);
 		},
 
+		draw: function(__dataObj) {
+			var tmp_element;
+			var page = default_page;
+			dataObj = __dataObj;
 
-
-		draw: function(_dataObj) {
-			var _page = default_page;
-			dataObj = _dataObj;
-			target_div = jQuery("#msg");
 			jQuery.get('html/dashboard.html', function(data, textStatus, xhr) {
-				jQuery.each(page_components[_page], function(index, component) {
+				jQuery("#content").append(data);
+				jQuery.each(page_components[page], function(index, component) {
 					if (!isCached(component)) {
-						var _fn_name = "draw" + component;
-						cacheStore(PAGE[_fn_name].call());
-					}
-					activate(cacheFetch(component));
-				});
-				jQuery.each(cached, function(index, element) {
-					if (cached[element.attr('id')].active) element.show();
+						tmp_element = PAGE["draw" + component].call(this, component + "Container");
+						cacheStore(component);
+					} else tmp_element = jQuery("#" + component + "Container");
 				});
 			});
 		}
 	}
-
 })();

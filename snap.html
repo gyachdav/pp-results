@@ -1,0 +1,69 @@
+<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor//d3/d3.v3.min.js"></script>
+
+<div id="container"></div>
+
+<script>
+$.getJSON('examples/CD44_HUMAN.map.json', function(arr) {
+
+
+
+
+min=10;
+max=Math.floor((arr.length/20)*.1)+min;
+console.log(max);
+data = [];
+for (i=(min)*20; i<arr.length;i++){
+  if ((arr[i].col>=min) &&  (arr[i].col<=max))
+    data.push(arr[i]);
+}
+// data = arr.slice(1,10);
+//height of each row in the heatmap
+//width of each column in the heatmap
+
+
+
+var gridSize = $("#container").width()/((max-min)*1.5) ,
+    h = gridSize,
+    w = gridSize,
+    rectPadding = 50;
+    console.log(gridSize);
+
+var colorLow = 'green', colorMed = 'black', colorHigh = 'red';
+
+var margin = {top: 140, right: 20, bottom: 30, left: 20},
+    width = (max-min)*gridSize - margin.left - margin.right+rectPadding,
+    height = (max-min)*gridSize - margin.top - margin.bottom+rectPadding;
+
+var colorScale = d3.scale.linear()
+     .domain([-100, 0, 100])
+     .range([colorLow, colorMed, colorHigh]);
+
+var svg = d3.select("#heatmap").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var heatMap = svg.selectAll(".heatmap")
+    .data(data, function(d) { return d.col + ':' + d.row; })
+    .enter().append("svg:rect")
+    .attr("x", function(d) { return d.col * w; })
+    .attr("y", function(d) { return d.row * h; })
+    .attr("width", function(d) { return w; })
+    .attr("height", function(d) { return h; })
+    .style("fill", function(d) { 
+      if (d.label==d.mut)
+        return ('black');
+      else
+        return colorScale(d.score); })
+    .append("svg:title")
+   .text(function(d) { return d.label+d.col+d.mut+" Score: " + d.score; });
+
+$("#heatmap").appendTo($("#container"));
+
+});
+
+</script>
+<div id='heatmap'></div>
+</html>
