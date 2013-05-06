@@ -43,8 +43,7 @@ var PAGE = (function() {
 		});
 	};
 	var isCached = function(elementName) {
-		if (cached[elementName])
-			return true;
+		if (cached[elementName]) return true;
 		return false;
 	};
 
@@ -141,8 +140,6 @@ var PAGE = (function() {
 
 		drawFeatureViewer: function(targetDiv) {
 
-
-
 			FEATURE_VIEWER.init({
 				targetDiv: targetDiv,
 				dataObj: dataObj
@@ -189,8 +186,7 @@ var PAGE = (function() {
 			}));
 
 			FEATURE_VIEWER.draw();
-
-			return jQuery("#" + targetDiv).html();
+			 return jQuery("#"+targetDiv).html();
 		},
 
 		draw: function(currentPage) {
@@ -203,7 +199,8 @@ var PAGE = (function() {
 				var element;
 				if (!isCached(component)) {
 					element = PAGE["draw" + component].call(this, component + "Container");
-					cacheStore(component, element);
+					if (element) cacheStore(component, element);
+
 				} else {
 					element = cacheFetch(component);
 				}
@@ -216,14 +213,16 @@ var PAGE = (function() {
 					mainContainerDiv.append(pageHTML);
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
-						jQuery("#" + component + "Container", mainContainerDiv).html(getComponent(component));
+						var element = getComponent(component);
+						if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 					});
 				});
 			} else {
 				var pageHTML = cacheFetch(currentPage)
 				mainContainerDiv.append(pageHTML);
 				jQuery.each(pageComponents[currentPage], function(i, component) {
-					jQuery("#" + component + "Container", mainContainerDiv).html(getComponent(component));
+					var element = getComponent(component);
+					if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 				});
 			}
 			loadingDiv.hide();

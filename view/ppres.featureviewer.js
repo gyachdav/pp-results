@@ -61,9 +61,6 @@ function() {
 			json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
 			json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
 			json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
-
-
-
 		},
 		getCurrentBottom: function() {
 			return (current_bottom);
@@ -77,7 +74,7 @@ function() {
 				target: displayDiv,
 				json: json_config_obj
 			});
-			//console.log(json_config_obj);
+			console.log(myPainter);
 			
 			myPainter.onFeatureSelected(
 			function(obj) {
@@ -98,7 +95,6 @@ function() {
 		},
 		setFeaturesArray: function(features_array) {
 			jQuery.merge(json_config_obj.featuresArray, features_array);
-			// console.log(json_config_obj.featuresArray);
 		},
 		setProteinName: function(prot_name) {
 			json_config_obj.segment = prot_name;
