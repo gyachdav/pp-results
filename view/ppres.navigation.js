@@ -11,7 +11,7 @@ var NAVIGATION = (function() {
 			text: "Secondary Structure",
 			id: "secstruct"
 		}, {
-			id: "thm",
+			id: "tmh",
 			text: "Transmembrane Regions"
 		}, {
 			id: "nors",

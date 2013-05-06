@@ -17,9 +17,13 @@ var APP = (function() {
 	listener = new Listeners();
 	listener.setUp();
 
-	mainObj.loadData(file_specs).done(function( data ) {
-		mainObj.populateData (data);
-		PAGE.init( { data:mainObj }).draw(PAGE.getDefaultPage());
+	mainObj.loadData(file_specs).done(function(data) {
+		mainObj.populateData(data);
+		PAGE.init({
+			data: mainObj,
+			providers: APP.providers,
+			showAlignment: true
+		}).draw(PAGE.getDefaultPage());
 	});
 
 
@@ -62,16 +66,66 @@ var APP = (function() {
 			if (!target_div) target_div = jQuery("#content");
 			switch (action) {
 				case 'dash':
-					PAGE.draw("Dashboard");
+					PAGE.init({
+						providers: APP.providers,
+						showAlignment: true
+					}).draw("Dashboard");
 					break;
 				case 'secstruct':
-					PAGE.draw("SecondaryStructure");
+					PAGE.init({
+						showAlignment: false,
+						providers: ["PROFsec"]
+					}).draw("SecondaryStructure");
+					jQuery(".ssnav").click(function() {
+						var divToShut = jQuery(".active", ".nav-tabs").attr("id") + "Div";
+						jQuery("#" + divToShut).hide();
+						var divToShow = jQuery(this).attr("id") + "Div";
+						jQuery("#" + divToShow).show();
+						jQuery('.active').removeClass("active");
+						jQuery(this).addClass("active");
+						return false;
+					});
+
 					break;
 				case 'tmh':
+					PAGE.init({
+						providers: ["PHDhtm"]
+					}).draw("Transmembrane");
+					break;
+				case 'disorder':
+					PAGE.init({
+						showAlignment: false,
+						providers: ["NORSnet", "PROFbval", "MD", "Ucon"]
+					}).draw("Disorder");
+					break;
+				case 'binding':
+					PAGE.init({
+						showAlignment: false,
+						providers: ["ISIS"]
+					}).draw("Binding");
+					break;
+				case 'tmb':
+					PAGE.init({
+						showAlignment: false,
+						providers: ["PROFtmb"]
+					}).draw("TMB");
+					break;
+				case 'tmb':
+					PAGE.init({
+						showAlignment: false,
+						providers: ["PROFtmb"]
+					}).draw("TMB");
+					break;
+				case 'disulphide':
+					PAGE.init({
+						showAlignment: false,
+						providers: ["DISULFIND"]
+					}).draw("Disulphide");
 					break;
 				case 'subcell':
 					PAGE.draw("SubcellLoc");
 					break;
+
 				default:
 					target_div.children().hide();
 					target_div.html(action);
@@ -104,7 +158,7 @@ function Listeners() {
 				APP.showPage(jQuery(this).parent().attr('id'));
 				jQuery(".nav-list").children(".active").removeClass("active");
 				jQuery(this).parent().addClass("active");
-				console.log(jQuery(this).parent().attr('id'));
+				// console.log(jQuery(this).parent().attr('id'));
 				return false;
 			});
 		}

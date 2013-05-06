@@ -1,0 +1,35 @@
+<div id='TMB' style="width:100%;">
+	<h2>Transmembrane Betta-barrels Prediction for <span class=".name">CD44_Human</span></h2>
+	<div class="navbar">
+	        <div class="navbar-inner">
+	            <ul class="nav">
+	              <li><a href="#">Email</a></li>
+	                <li><a href="#">Export</a></li>
+	            </ul>
+	          </div>
+	      </div>
+	<div class="alert alert-info"> 
+			<strong>What am I seeing Here?</strong> 
+			This viewer lays out predicted features that correspond to regions within the queried sequence. 	
+			Mouse over the different colored boxes to learn more about the annotations
+	</div>
+	<div id='TMBViewerContainer' style="width:100%;" > </div>
+	<div class="info">
+
+<h3>How Do We Predict Bacterial Transmembrane Beta-Barrels</h3>
+<div>
+This service predicts whole-protein class (TMB/non-TMB) by providing a length-based z-score for a given protein. When tested on a representative set of known TMB and non-TMB proteins, the method detected 50% of TMBs at 80% accuracy (z-score>=10) and 70% of TMBs at 35% accuracy (z-score >= 6)
+</div>
+<h3>Four-state Residue prediction.</h3>
+<div>
+Secondly, it provides a four state (up-strand, down-strand, periplasmic loop, and outer loop) per-residue prediction for the protein. On a jackknifed test set of 8 families of TMBs of known structure, our method predicted 87.2% of residues correctly.
+</div>
+<h3>Note</h3>
+<div>
+PROFtmb provides both whole-protein (TMB/non-TMB) and per-residue (up-strand,downstrand,periplasmic loop,extracellular loop) predictions. However, if the whole-protein score is below 0 (a value corresponding to 55% coverage and 55% accuracy, PROFtmb does not provide a per-residue 4-state prediction, since it is expected to be inaccurate. There is in general no use for a per-residue prediction if the protein turns out not to be a TMB. About half of TMBs receive low scores and are thus undetectable by statistical means.
+</div>	
+
+
+
+	</div>
+</div>

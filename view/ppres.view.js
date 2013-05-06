@@ -13,8 +13,13 @@ var PAGE = (function() {
 				'AAConsistency',
 				'SSConsistency'],
 			SecondaryStructure: [
-				'FeatureViewer',
+				'SSViewer',
 				'SSConsistency'],
+			Transmembrane: ["TransmembraneViewer"],
+			Disorder: ["DisorderViewer"],
+			Binding: ["BindingViewer"],
+			TMB: ["TMBViewer"],
+			Disulphide: ["DisulphideViewer"],
 			SubcellLoc: [
 				"SubcellLoc"]
 		},
@@ -22,7 +27,11 @@ var PAGE = (function() {
 		currentPage = defautlPage,
 		mainContainerDiv = jQuery("#content"),
 		loadingDiv = jQuery(".loading"),
-		dataObj;
+		dataObj,
+		providers,
+		showAlignment = false;
+		;
+
 
 
 	var activate = function(elementName) {
@@ -67,6 +76,8 @@ var PAGE = (function() {
 		init: function(argument) {
 			if (!dataObj) this.setDataObj(argument.data);
 			if (argument.page) page = argument.page;
+			if (argument.providers) providers = argument.providers;
+			if (typeof argument.showAlignment !== 'undefined'   ) showAlignment = argument.showAlignment;
 			return this;
 		},
 		getDefaultPage: function() {
@@ -74,6 +85,12 @@ var PAGE = (function() {
 		},
 		setDataObj: function(__dataObj) {
 			dataObj = __dataObj;
+		},
+		setShowAlignment: function ( flag ){
+			showAlignmnet  = flag;
+		},
+		getShowAlignment : function (){
+			return showAlignment;
 		},
 
 		drawAlignmentTable: function(targetDiv) {
@@ -137,6 +154,24 @@ var PAGE = (function() {
 
 		},
 
+		drawSSViewer: function(targetDiv) {
+			return PAGE.drawFeatureViewer(targetDiv);
+		},
+		drawTransmembraneViewer: function(targetDiv) {
+			return PAGE.drawFeatureViewer(targetDiv);
+		},
+		drawDisorderViewer: function(targetDiv) {
+			return PAGE.drawFeatureViewer(targetDiv);
+		},
+		drawBindingViewer: function(targetDiv) {
+			return PAGE.drawFeatureViewer(targetDiv);
+		},
+		drawTMBViewer: function(targetDiv) {
+			return PAGE.drawFeatureViewer(targetDiv);
+		},
+		drawDisulphideViewer: function(targetDiv) {
+			return PAGE.drawFeatureViewer(targetDiv);
+		},
 
 		drawFeatureViewer: function(targetDiv) {
 
@@ -146,7 +181,7 @@ var PAGE = (function() {
 			});
 
 			var features_array = [];
-			FEATURE_VIEWER.setFeaturesArray(jQuery.map(APP.providers, function(provider, index) {
+			FEATURE_VIEWER.setFeaturesArray(jQuery.map(providers, function(provider, index) {
 				var track, feature_properties;
 				track = new Track();
 				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
@@ -174,19 +209,21 @@ var PAGE = (function() {
 				return track.getTrack();
 			}));
 
-			// Add alignment
-			FEATURE_VIEWER.setFeaturesArray(jQuery.map(dataObj.getAlignmentLocations(), function(target, index) {
-				var track = new Track(1, 1);
-				track.setPosition(FEATURE_VIEWER.getCurrentBottom());
-				Feature.Alignment.prototype = new Feature();
-				feature = new Feature.Alignment(target, 'blast', 'alignmnet');
-				track.addFeature(feature);
-				FEATURE_VIEWER.addTrack(track);
-				return track.getTrack();
-			}));
+			if (showAlignment) {
+				// Add alignment
+				FEATURE_VIEWER.setFeaturesArray(jQuery.map(dataObj.getAlignmentLocations(), function(target, index) {
+					var track = new Track(1, 1);
+					track.setPosition(FEATURE_VIEWER.getCurrentBottom());
+					Feature.Alignment.prototype = new Feature();
+					feature = new Feature.Alignment(target, 'blast', 'alignmnet');
+					track.addFeature(feature);
+					FEATURE_VIEWER.addTrack(track);
+					return track.getTrack();
+				}));
+			}
 
 			FEATURE_VIEWER.draw();
-			 return jQuery("#"+targetDiv).html();
+			return jQuery("#" + targetDiv).html();
 		},
 
 		draw: function(currentPage) {
@@ -229,3 +266,6 @@ var PAGE = (function() {
 		}
 	}
 })();
+
+
+

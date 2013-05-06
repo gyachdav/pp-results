@@ -1,11 +1,8 @@
-
 .arc path {
-  stroke: #fff;
-  
+  stroke: #fff;  
 }
 
 .summary{
-  /*padding-left: 5%;*/
   padding-right: 4%;
  } 
 
@@ -21,7 +18,9 @@
   padding-left:50px;
 }
 
-
+.info {
+  text-align: justify;
+}
 div.container {
  /*border: 1px solid #000000;*/
   overflow: auto;
@@ -34,8 +33,6 @@ div.left {
 }
 
 div.right {
- /* width: 30%;
-  float: right;*/
 }
 
 
