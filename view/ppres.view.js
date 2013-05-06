@@ -1,46 +1,60 @@
 var PAGE = (function() {
 
 
-	var active_divs = [],
-		inactive_divs = [],
-		cached = [],
-		page_components = {
-			dashboard: [
+	var activeDivs = [],
+		inactiveDivs = [],
+		cached = {},
+		pageComponents = {
+			Dashboard: [
 				'FeatureViewer',
 				'SubcellLoc',
 				'SummaryTable',
 				'AlignmentTable',
 				'AAConsistency',
-				'SSConsistency']
+				'SSConsistency'],
+			SecondaryStructure: [
+				'FeatureViewer',
+				'SSConsistency'],
+			SubcellLoc: [
+				"SubcellLoc"]
 		},
-		default_page = "dashboard",
+		defautlPage = "Dashboard",
+		currentPage = defautlPage,
+		mainContainerDiv = jQuery("#content"),
+		loadingDiv = jQuery(".loading"),
 		dataObj;
 
 
-	var activate = function(_element) {
-		if (!_element.attr('id')) throw new Error('element has no id cannot activate');
-		cached[_element.attr('id')].active = true;
+	var activate = function(elementName) {
+		if (!elementName) throw new Error('element has no id cannot activate');
+		activeDivs.push(elementName);
+		jQuery("#" + elementName).show();
 	};
-	var inactivate = function(_element) {
-		if (!_element.attr('id')) throw new Error('element has no id cannot inactivate');
-		cached[_element.attr('id')].active = false;
-	};
-	var empty = function() {
-		jQuery.each(active_divs, function(index, element) {
-			this.inactivate(element);
-		});
+	var pageEmpty = function() {
+		var item;
+		while (item = activeDivs.pop()) {
+			jQuery("#" + item).hide();
+		}
 	};
 
+	var pageFill = function() {
+		jQuery.each(activeDivs, function(index, elementName) {
+			jQuery("#" + elementName).show();
+		});
+	};
 	var isCached = function(elementName) {
-		return (cached.indexOf(elementName) != -1);
+		if (cached[elementName])
+			return true;
+		return false;
 	};
 
 	var cacheFetch = function(_element_id) {
 		return (cached[_element_id]);
 	};
 
-	var cacheStore = function(_element_name) {
-		cached.push(_element_name);
+	var cacheStore = function(elementName, element) {
+		cached[elementName] = element;
+		// jQuery.extend (cached, {elementName: element});
 	};
 
 	var cacheRemove = function(_element) {
@@ -51,8 +65,20 @@ var PAGE = (function() {
 
 
 	return {
-		drawAlignmentTable : function( targetDiv ) {
-			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#"+targetDiv));
+		init: function(argument) {
+			if (!dataObj) this.setDataObj(argument.data);
+			if (argument.page) page = argument.page;
+			return this;
+		},
+		getDefaultPage: function() {
+			return defautlPage;
+		},
+		setDataObj: function(__dataObj) {
+			dataObj = __dataObj;
+		},
+
+		drawAlignmentTable: function(targetDiv) {
+			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#" + targetDiv));
 		},
 
 		drawAAConsistency: function(targetDiv) {
@@ -76,7 +102,7 @@ var PAGE = (function() {
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#myModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			table.append("<tr><td>Number of Matched PDB Structures</td><td>" + dataObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
 			jQuery("#" + targetDiv).append(table);
-			return (jQuery("#" + targetDiv));
+			return (jQuery("#" + targetDiv)).html();
 		},
 
 		drawSubcellLoc: function(targetDiv) {
@@ -107,13 +133,16 @@ var PAGE = (function() {
 			nav_div.append(list);
 			jQuery("#" + targetDiv).append(nav_div);
 			jQuery("#" + targetDiv).append(content_div);
-			return (jQuery("#" + targetDiv));
+			return (jQuery("#" + targetDiv)).html();
 
 
 		},
 
 
 		drawFeatureViewer: function(targetDiv) {
+
+
+
 			FEATURE_VIEWER.init({
 				targetDiv: targetDiv,
 				dataObj: dataObj
@@ -161,23 +190,43 @@ var PAGE = (function() {
 
 			FEATURE_VIEWER.draw();
 
-			return jQuery("#" + targetDiv);
+			return jQuery("#" + targetDiv).html();
 		},
 
-		draw: function(__dataObj) {
-			var tmp_element;
-			var page = default_page;
-			dataObj = __dataObj;
+		draw: function(currentPage) {
+			loadingDiv.show();
+			mainContainerDiv.empty();
+			var pagePath = 'html/' + currentPage + ".html";
 
-			jQuery.get('html/dashboard.html', function(data, textStatus, xhr) {
-				jQuery("#content").append(data);
-				jQuery.each(page_components[page], function(index, component) {
-					if (!isCached(component)) {
-						tmp_element = PAGE["draw" + component].call(this, component + "Container");
-						cacheStore(component);
-					} else tmp_element = jQuery("#" + component + "Container");
+
+			var getComponent = function(component) {
+				var element;
+				if (!isCached(component)) {
+					element = PAGE["draw" + component].call(this, component + "Container");
+					cacheStore(component, element);
+				} else {
+					element = cacheFetch(component);
+				}
+				return element;
+			};
+
+			if (!isCached(currentPage)) {
+				jQuery.get(pagePath)
+					.done(function(pageHTML) {
+					mainContainerDiv.append(pageHTML);
+					cacheStore(currentPage, pageHTML);
+					jQuery.each(pageComponents[currentPage], function(i, component) {
+						jQuery("#" + component + "Container", mainContainerDiv).html(getComponent(component));
+					});
 				});
-			});
+			} else {
+				var pageHTML = cacheFetch(currentPage)
+				mainContainerDiv.append(pageHTML);
+				jQuery.each(pageComponents[currentPage], function(i, component) {
+					jQuery("#" + component + "Container", mainContainerDiv).html(getComponent(component));
+				});
+			}
+			loadingDiv.hide();
 		}
 	}
 })();

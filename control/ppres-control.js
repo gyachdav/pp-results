@@ -17,10 +17,9 @@ var APP = (function() {
 	listener = new Listeners();
 	listener.setUp();
 
-	var jqxhr = mainObj.loadData(file_specs);
-	jqxhr.done(function( data ) {
+	mainObj.loadData(file_specs).done(function( data ) {
 		mainObj.populateData (data);
-		PAGE.draw(mainObj)
+		PAGE.init( { data:mainObj }).draw(PAGE.getDefaultPage());
 	});
 
 
@@ -60,18 +59,22 @@ var APP = (function() {
 			});
 		},
 		showPage: function(action, target_div) {
-			if (!target_div) target_div = jQuery("#msg");
+			if (!target_div) target_div = jQuery("#content");
 			switch (action) {
+				case 'dash':
+					PAGE.draw("Dashboard");
+					break;
+				case 'secstruct':
+					PAGE.draw("SecondaryStructure");
+					break;
 				case 'tmh':
 					break;
-				case 'dash':
-					target_div.text('Loading');
-					jQuery("#dashboard").show();
-					// showDashBoard();
+				case 'subcell':
+					PAGE.draw("SubcellLoc");
 					break;
 				default:
 					target_div.children().hide();
-					target_div.append(action);
+					target_div.html(action);
 			}
 		}
 	};
@@ -99,6 +102,8 @@ function Listeners() {
 		setUp: function() {
 			jQuery(".nav-link").click(function() {
 				APP.showPage(jQuery(this).parent().attr('id'));
+				jQuery(".nav-list").children(".active").removeClass("active");
+				jQuery(this).parent().addClass("active");
 				console.log(jQuery(this).parent().attr('id'));
 				return false;
 			});

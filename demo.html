@@ -1,89 +1,42 @@
+<html>
 <head>
-<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
-<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
-<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
-<link rel="stylesheet" href="css/ppres.css" />
-<link rel="stylesheet" href="css/bootstrap/css/docs.css">
-<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" href="css/tablesorter/style.css" />
+	<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+	<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
+	<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
+	<link rel="stylesheet" href="css/ppres.css" />
+	<link rel="stylesheet" href="css/bootstrap/css/docs.css">
+	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="css/tablesorter/style.css" />
 
-<title>PredictProtein Results</title>
+	<title>PredictProtein Results</title>
 </head>
 <body>
-
-
 <div class="container-fluid">
-  <div class="row-fluid">
-	<div id="nav" class="span2 bs-docs-sidebar" ></div>
-	<div class="span10 inner"> 
-	<div  class='err'></div>
-	<div  class='warn'></div>
-	<div  class='info'></div>	
-
-	<div id='content'>
-<!-- 		<h2>Dashboard Overview for <span class=".name">CD44_Human</span></h2>
-		<div class="alert alert-info"> 
-								<strong>What am I seeing Here?</strong> 
-								This viewer lays out predicted features that correspond to regions within the queried sequence. 	
-								Mouse over the different colored boxes to learn more about the annotations
-						</div>
-		<div id='FeatureViewer'>Loading </div>
-		<div id="main_container" style="display:none;">
-			<hr>
-			<div id='summary_container' class=""></div>
-			<div style="clear:both;"/>
-			<hr>
-			<h2> Sub-cellular Localization Prediction</h2>
-			<div id='cell' ></div>
-			<hr>
+	<div class="row-fluid">
+		<div id="nav" class="span2 bs-docs-sidebar" ></div>
+		<div class="span10 inner"> 
+			<div  class='err'></div>
+			<div  class='warn'></div>
+			<div  class='info'></div>
+			<div class='loading'>Loading</div>	
+			<div id='content'></div>
 		</div>
- -->
-</div>
- <!-- TEST MODAL -->
-<!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Aligned Proteins</h3>
-  </div>
-  <div class="modal-body">
-	<div id='alignments' class=""  style= "display:block;"></div>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
 </div>
- <!-- TEST MODAL -->
-
-</div>
-  </div>
-</div>
-<script type="text/javascript">
-//jQuery(window).load(function (){
- jQuery(document).ready( function(){
-	// APP.init();
-	jQuery("#main_container").show();
-	
-});
-</script>
 
 <script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/d3/d3.v3.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
-
-
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.FeatureViewer.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
- 
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.delegate.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.url.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/raphael.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/canvg.js"></script>
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/rgbcolor.js"></script>
-
 <script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js" ></script>
 <script language="JavaScript" type="text/javascript" src="library/jquery.xml2json.js"></script>
 <script language="JavaScript" type="text/javascript" src="library/jquery.tablesorter.min.js"></script>
@@ -96,7 +49,5 @@
 <script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
 <script language="JavaScript" type="text/javascript" src="view/ppres.featureviewer.js"></script>
 
-
-
-
 </body>
+</html>
