@@ -9,27 +9,34 @@ var APP = (function() {
 	}, debug = 0,
 		mainObj = new PPResData();
 
+	NAVIGATION_DIV = "#nav";	
+
 
 	jQuery.noConflict(); // recommended to avoid conflict wiht other libs
 	NAVIGATION.setActiveItem(2);
-	NAVIGATION.show(jQuery("#nav"));
+	NAVIGATION.show(jQuery(NAVIGATION_DIV));
 
 	listener = new Listeners();
 
-
 	mainObj.loadData(file_specs).done(function(data) {
 		mainObj.populateData(data);
-		PAGE.init({
+		page = new PAGE({
 			data: mainObj,
 			providers: APP.providers,
 			showAlignment: true
-		}).draw(PAGE.getDefaultPage());
+		});
+
+		page.draw();
+
+		// PAGE.init({
+		// 	data: mainObj,
+		// 	providers: APP.providers,
+		// 	showAlignment: true
+		// }).draw(PAGE.getDefaultPage());
 		listener.setUp();
 	});
 
-
 	return {
-
 		populateData: function(data) {
 			json = jQuery.xml2json(data);
 			ds.file_type = 'json'; //switch to json
@@ -124,6 +131,8 @@ var APP = (function() {
 		}
 	};
 })();
+
+
 
 APP.providers = [
 	"PROFsec",

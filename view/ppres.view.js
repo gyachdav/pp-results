@@ -1,5 +1,4 @@
-var PAGE = (function() {
-
+var PAGE = function(argument) {
 
 	var activeDivs = [],
 		inactiveDivs = [],
@@ -23,64 +22,57 @@ var PAGE = (function() {
 			SubcellLoc: [
 				"SubcellLoc"]
 		},
-		defautlPage = "Dashboard",
-		currentPage = defautlPage,
+		defaultPage = "Dashboard",
+		currentPage,
+
 		mainContainerDiv = jQuery("#content"),
 		loadingDiv = jQuery(".loading"),
 		dataObj,
-		providers,
-		showAlignment = false;;
+		providers;
+	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
+	(argument.providers) ? providers = argument.providers : providers = [];
 
+	if (!dataObj) dataObj = argument.data;
 
-
-	var activate = function(elementName) {
-		if (!elementName) throw new Error('element has no id cannot activate');
-		activeDivs.push(elementName);
-		jQuery("#" + elementName).show();
-	};
-	var pageEmpty = function() {
-		var item;
-		while (item = activeDivs.pop()) {
-			jQuery("#" + item).hide();
-		}
+	
+	var somefunc = function  (argument) {
+		;
 	};
 
-	var pageFill = function() {
-		jQuery.each(activeDivs, function(index, elementName) {
-			jQuery("#" + elementName).show();
-		});
-	};
 	var isCached = function(elementName) {
 		if (cached[elementName]) return true;
 		return false;
 	};
 
-	var cacheFetch = function(_element_id) {
-		return (cached[_element_id]);
+
+	var drawFeatureViewer = function(argumnet) {
+		var fv = new FEATURE_VIEWER({
+			targetDiv: argumnet.targetDiv,
+			dataObj: dataObj,
+			providers: argument.providers,
+			showAlignment: true
+		});
+		fv.setup();
+		fv.draw();
+	};
+
+	var cacheFetch = function(elementName) {
+		return (cached[elementName]);
 	};
 
 	var cacheStore = function(elementName, element) {
 		cached[elementName] = element;
-		// jQuery.extend (cached, {elementName: element});
 	};
 
-	var cacheRemove = function(_element) {
-		if (!_element.attr('id')) throw new Error('element has no id cannot remove from cache');
-		delete cached[_element.attr('id')];
-	};
+	// var cacheRemove = function(elementName) {
+	// 	delete(cached[elementName]);
+	// };
 
 
 
 	return {
-		init: function(argument) {
-			if (!dataObj) this.setDataObj(argument.data);
-			if (argument.page) page = argument.page;
-			if (argument.providers) providers = argument.providers;
-			if (typeof argument.showAlignment !== 'undefined') showAlignment = argument.showAlignment;
-			return this;
-		},
 		getDefaultPage: function() {
-			return defautlPage;
+			return defaultPage;
 		},
 		setDataObj: function(__dataObj) {
 			dataObj = __dataObj;
@@ -144,95 +136,44 @@ var PAGE = (function() {
 			nav_div.append(list);
 			jQuery("#" + targetDiv).append("<h3> Sub-cellular Localization Prediction</h3>");
 			jQuery("#" + targetDiv).append(nav_div);
-			
+
 			jQuery("#" + targetDiv).append(content_div);
 			jQuery('#_subcell_nav a:last').tab('show');
 
 			return (jQuery("#" + targetDiv)).html();
 		},
 
-		drawSSViewer: function(targetDiv) {
-			return PAGE.drawFeatureViewer(targetDiv);
-		},
-		drawTransmembraneViewer: function(targetDiv) {
-			return PAGE.drawFeatureViewer(targetDiv);
-		},
-		drawDisorderViewer: function(targetDiv) {
-			return PAGE.drawFeatureViewer(targetDiv);
-		},
-		drawBindingViewer: function(targetDiv) {
-			return PAGE.drawFeatureViewer(targetDiv);
-		},
-		drawTMBViewer: function(targetDiv) {
-			return PAGE.drawFeatureViewer(targetDiv);
-		},
-		drawDisulphideViewer: function(targetDiv) {
-			return PAGE.drawFeatureViewer(targetDiv);
-		},
-
-		drawFeatureViewer: function(targetDiv) {
-
-			FEATURE_VIEWER.init({
-				targetDiv: targetDiv,
-				dataObj: dataObj
-			});
-
-			var features_array = [];
-			FEATURE_VIEWER.setFeaturesArray(jQuery.map(providers, function(provider, index) {
-				var track, feature_properties;
-				track = new Track();
-				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
-				else track.setPosition(FEATURE_VIEWER.getCurrentBottom());
-
-				var feature_group = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider);
-				if (!feature_group) return null;
-				var feature_type = (feature_group.type) ? feature_group.type : "";
-				feature_properties = dataObj.getFeatureLocations(feature_group);
-
-
-				if (!feature_properties) return null;
-				if (feature_properties) i = feature_properties.length;
-				while (i--) {
-					var feature;
-					if (typeof Feature[provider] !== 'undefined') {
-						Feature[provider].prototype = new Feature();
-						feature = new Feature[provider](feature_properties[i], provider, feature_type);
-					} else {
-						feature = new Feature().init(feature_properties[i], provider, feature_type);
-					}
-					track.addFeature(feature);
-				}
-				FEATURE_VIEWER.addTrack(track);
-				return track.getTrack();
-			}));
-
-			if (showAlignment) {
-				// Add alignment
-				FEATURE_VIEWER.setFeaturesArray(jQuery.map(dataObj.getAlignmentLocations(), function(target, index) {
-					var track = new Track(1, 1);
-					track.setPosition(FEATURE_VIEWER.getCurrentBottom());
-					Feature.Alignment.prototype = new Feature();
-					feature = new Feature.Alignment(target, 'blast', 'alignmnet');
-					track.addFeature(feature);
-					FEATURE_VIEWER.addTrack(track);
-					return track.getTrack();
-				}));
-			}
-
-			FEATURE_VIEWER.draw();
-			return jQuery("#" + targetDiv).html();
-		},
-
-		draw: function(currentPage) {
+		// drawSSViewer: function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer({
+		// 		targetDiv: targetDiv,
+		// 		providers: ["PROFsec"]
+		// 	});
+		// },
+		// drawTransmembraneViewer: function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// },
+		// drawDisorderViewer: function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// },
+		// drawBindingViewer: function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// },
+		// drawTMBViewer: function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// },
+		// drawDisulphideViewer: function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// },
+		draw: function() {
 			loadingDiv.show();
 			mainContainerDiv.empty();
 			var pagePath = 'html/' + currentPage + ".html";
 
-
 			var getComponent = function(component) {
 				var element;
 				if (!isCached(component)) {
-					element = PAGE["draw" + component].call(this, component + "Container");
+					var fnName = "draw" + component;
+					element = fnName.call(this, component + "Container");
 					if (element) cacheStore(component, element);
 
 				} else {
@@ -262,4 +203,4 @@ var PAGE = (function() {
 			loadingDiv.hide();
 		}
 	}
-})();
+};

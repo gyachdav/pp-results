@@ -1,14 +1,13 @@
-var FEATURE_VIEWER = (
-
-function() {
+var FEATURE_VIEWER = function(argument) {
 	var displayDiv,
+	dataObj,
 	prot_name = 'query',
-		displayDivWidth = 0,
-		sequence_line_y = current_bottom = 70;
+	displayDivWidth = 0,
+	sequence_line_y = current_bottom = 70,	
 	current_track_count = 0,
 	outer_margin = 30.
 	inner_margin = outer_margin * 2,
-	json_config_obj=json_config_obj_init = {
+	json_config_obj = json_config_obj_init = {
 		"featuresArray": [],
 		"segment": prot_name,
 		"legend": {
@@ -22,7 +21,6 @@ function() {
 			},
 			"key": []
 		},
-
 		"configuration": {
 			"requestedStart": 1,
 			"rightMargin": 5,
@@ -46,27 +44,86 @@ function() {
 			"leftMargin": 20,
 			"nonOverlapping": true
 		}
-	};
+	},
+	showAlignment;
+
+	(argument.providers) ? providers = argument.providers : providers  = APP.providers;
+	(typeof argument.showAlignment !== 'undefined') ? showAlignment = argument.showAlignment : showAlignment = false;
+	if (argument.dataObj) 
+		dataObj = argument.dataObj; 
+	else throw new Error("Data missing cannot draw component");
+	displayDiv = argument.targetDiv;
+	displayDivWidth = jQuery("#" + displayDiv).width();
+	json_config_obj.configuration.sizeX = (displayDivWidth - outer_margin);
+	json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
+	json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
+	json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
+
 
 	return {
 		getSequenceLineY: function() {
 			return sequence_line_y;
 		},
-		init: function(argument) {
-			
-			var dataObj = argument.dataObj;
-			displayDiv = argument.targetDiv;
-			displayDivWidth = jQuery("#"+displayDiv).width();
-			json_config_obj.configuration.sizeX = (displayDivWidth - outer_margin);
-			json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
-			json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
-			json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
-		},
+		// init: function(argument) {
+
+		// 	var dataObj = argument.dataObj;
+		// 	displayDiv = argument.targetDiv;
+		// 	displayDivWidth = jQuery("#" + displayDiv).width();
+		// 	json_config_obj.configuration.sizeX = (displayDivWidth - outer_margin);
+		// 	json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
+		// 	json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
+		// 	json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
+		// },
 		getCurrentBottom: function() {
 			return (current_bottom);
 		},
 		setCurrentBottom: function(y) {
 			current_bottom = y;
+		},
+
+		setup: function() {
+			var features_array = [];
+			this.setFeaturesArray(jQuery.map(providers, function(provider, index) {
+				var track, feature_properties;
+				track = new Track();
+				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
+				else track.setPosition(this.getCurrentBottom());
+
+				var feature_group = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider);
+				if (!feature_group) return null;
+				var feature_type = (feature_group.type) ? feature_group.type : "";
+				feature_properties = dataObj.getFeatureLocations(feature_group);
+
+
+				if (!feature_properties) return null;
+				if (feature_properties) i = feature_properties.length;
+				while (i--) {
+					var feature;
+					if (typeof Feature[provider] !== 'undefined') {
+						Feature[provider].prototype = new Feature();
+						feature = new Feature[provider](feature_properties[i], provider, feature_type);
+					} else {
+						feature = new Feature().init(feature_properties[i], provider, feature_type);
+					}
+					track.addFeature(feature);
+				}
+				this.addTrack(track);
+				return track.getTrack();
+			}));
+
+			if (showAlignment) {
+				// Add alignment
+				this.setFeaturesArray(jQuery.map(dataObj.getAlignmentLocations(), function(target, index) {
+					var track = new Track(1, 1);
+					track.setPosition(this.getCurrentBottom());
+					Feature.Alignment.prototype = new Feature();
+					feature = new Feature.Alignment(target, 'blast', 'alignmnet');
+					track.addFeature(feature);
+					this.addTrack(track);
+					return track.getTrack();
+				}));
+			}
+
 		},
 
 		draw: function() {
@@ -75,8 +132,9 @@ function() {
 				json: json_config_obj
 			});
 			console.log(myPainter);
-			
+
 			myPainter.onFeatureSelected(
+
 			function(obj) {
 				if (obj.featureId.match(/^alignment/)) {
 
@@ -115,7 +173,7 @@ function() {
 			}
 		}
 	};
-})();
+};
 
 
 
