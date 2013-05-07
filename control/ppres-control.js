@@ -15,7 +15,7 @@ var APP = (function() {
 	NAVIGATION.show(jQuery("#nav"));
 
 	listener = new Listeners();
-	listener.setUp();
+
 
 	mainObj.loadData(file_specs).done(function(data) {
 		mainObj.populateData(data);
@@ -24,6 +24,7 @@ var APP = (function() {
 			providers: APP.providers,
 			showAlignment: true
 		}).draw(PAGE.getDefaultPage());
+		listener.setUp();
 	});
 
 
@@ -76,16 +77,6 @@ var APP = (function() {
 						showAlignment: false,
 						providers: ["PROFsec"]
 					}).draw("SecondaryStructure");
-					jQuery(".ssnav").click(function() {
-						var divToShut = jQuery(".active", ".nav-tabs").attr("id") + "Div";
-						jQuery("#" + divToShut).hide();
-						var divToShow = jQuery(this).attr("id") + "Div";
-						jQuery("#" + divToShow).show();
-						jQuery('.active').removeClass("active");
-						jQuery(this).addClass("active");
-						return false;
-					});
-
 					break;
 				case 'tmh':
 					PAGE.init({
@@ -161,6 +152,25 @@ function Listeners() {
 				// console.log(jQuery(this).parent().attr('id'));
 				return false;
 			});
+
+			$('a[data-toggle="tab"]').on('shown', function(e) {
+				e.target.fadeIn("slow"); // activated tab
+				// e.relatedTarget // previous tab
+			})
+
+			// jQuery('#_subcell_nav a').click(function(e) {
+			// 	e.preventDefault();
+			// 	var target = $(this).attr('href');
+
+			// 	// the .not() makes it so if we are on that page, it doesn't fade in and out the same content
+			// 	$('.tab-pane:visible').not(target).fadeOut('slow', function() {
+			// 		// after we fade out old content, fade in new
+			// 		$(target).fadeIn('slow');
+			// 	});
+
+
+			// 	// jQuery(this).tab('show');
+			// });
 		}
 	}
 }

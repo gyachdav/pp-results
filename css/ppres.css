@@ -2,6 +2,9 @@
   stroke: #fff;  
 }
 
+.round-corners{
+  border-radius: 15px;
+}
 .summary{
   padding-right: 4%;
  } 
@@ -28,11 +31,13 @@ div.container {
 }
 
 div.left {
-  width: 30%;
+  width: 45%;
   float: left;
 }
 
 div.right {
+  width: 40%;
+  float: right;
 }
 
 

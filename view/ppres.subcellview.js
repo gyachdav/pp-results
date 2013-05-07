@@ -63,14 +63,13 @@ var SUBCELL_VIEW = (function() {
 			_tmp_pred_html = 'Predicted localisation for the ' + this.getDomainFullName(tmpDomain) +
 				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: '+linkToGO(domain_to_show[tmpDomain].goTermId)+') Prediction confidence ' + domain_to_show[tmpDomain].score;
-			container = jQuery("<div>").attr('id', "localisation_container");
+			container = jQuery("<div>").attr('id', tmpDomain+"_localisation_container");
 			tmpImg = getPathToImage([tmpDomain], domain_to_show[tmpDomain].localisation);
-			html = '<span><img src=' + tmpImg + ' title="' + _tmp_pred_str + '"/></span>';
+			html = '<span><img class="round-corners" src=' + tmpImg + ' title="' + _tmp_pred_str + '"/></span>';
 			html += '<div>' + _tmp_pred_html + '</div>';
 
 			container.append(html);
 			return (container);
-			// target_div.append(container);
 
 		},
 		init: function(subcell_features, target_div) {

@@ -29,8 +29,7 @@ var PAGE = (function() {
 		loadingDiv = jQuery(".loading"),
 		dataObj,
 		providers,
-		showAlignment = false;
-		;
+		showAlignment = false;;
 
 
 
@@ -77,7 +76,7 @@ var PAGE = (function() {
 			if (!dataObj) this.setDataObj(argument.data);
 			if (argument.page) page = argument.page;
 			if (argument.providers) providers = argument.providers;
-			if (typeof argument.showAlignment !== 'undefined'   ) showAlignment = argument.showAlignment;
+			if (typeof argument.showAlignment !== 'undefined') showAlignment = argument.showAlignment;
 			return this;
 		},
 		getDefaultPage: function() {
@@ -86,10 +85,10 @@ var PAGE = (function() {
 		setDataObj: function(__dataObj) {
 			dataObj = __dataObj;
 		},
-		setShowAlignment: function ( flag ){
-			showAlignmnet  = flag;
+		setShowAlignment: function(flag) {
+			showAlignmnet = flag;
 		},
-		getShowAlignment : function (){
+		getShowAlignment: function() {
 			return showAlignment;
 		},
 
@@ -125,33 +124,31 @@ var PAGE = (function() {
 			var nav_div = jQuery("<div id='_subcell_nav' />");
 
 			var content_div = jQuery("<div id='_subcell_cntnt'/>");
+			content_div.addClass("tab-content");
 			var list = jQuery('<ul/>');
-			list.addClass("nav nav-pills");
-
-
+			list.addClass("nav nav-pills nav-tabs");
 			list.append('<li class="disabled"><a href="#">Domains:</a> </li>')
 
-			var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
+			// var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
+			var domains = ["arch", "bact", "euka"];
 			for (var i in domains) {
 				var _curr_div;
-				var _curr_li = jQuery('<li><a href=#>' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
+				var _curr_li = jQuery('<li><a data-toggle="tab" href="#' + domains[i] + '_localisation_container">' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
 				var prediction = dataObj.getSubCellLocations(domains[i]);
 				if (!prediction) _curr_div = jQuery("<div />").text("Data unavailable");
 				else _curr_div = SUBCELL_VIEW.localisationDiv(prediction);
-
-				if (domains[i] == 'euka') {
-					_curr_div.show();
-					_curr_li.addClass('active');
-				} else _curr_div.hide();
+				_curr_div.addClass("tab-pane");
 				list.append(_curr_li);
 				content_div.append(_curr_div);
 			}
 			nav_div.append(list);
+			jQuery("#" + targetDiv).append("<h3> Sub-cellular Localization Prediction</h3>");
 			jQuery("#" + targetDiv).append(nav_div);
+			
 			jQuery("#" + targetDiv).append(content_div);
+			jQuery('#_subcell_nav a:last').tab('show');
+
 			return (jQuery("#" + targetDiv)).html();
-
-
 		},
 
 		drawSSViewer: function(targetDiv) {
@@ -266,6 +263,3 @@ var PAGE = (function() {
 		}
 	}
 })();
-
-
-
