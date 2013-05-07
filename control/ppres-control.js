@@ -152,25 +152,6 @@ function Listeners() {
 				// console.log(jQuery(this).parent().attr('id'));
 				return false;
 			});
-
-			$('a[data-toggle="tab"]').on('shown', function(e) {
-				e.target.fadeIn("slow"); // activated tab
-				// e.relatedTarget // previous tab
-			})
-
-			// jQuery('#_subcell_nav a').click(function(e) {
-			// 	e.preventDefault();
-			// 	var target = $(this).attr('href');
-
-			// 	// the .not() makes it so if we are on that page, it doesn't fade in and out the same content
-			// 	$('.tab-pane:visible').not(target).fadeOut('slow', function() {
-			// 		// after we fade out old content, fade in new
-			// 		$(target).fadeIn('slow');
-			// 	});
-
-
-			// 	// jQuery(this).tab('show');
-			// });
 		}
 	}
 }
