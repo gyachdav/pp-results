@@ -2,55 +2,54 @@ var FEATURE_VIEWER = function(argument) {
 	var displayDiv,
 	dataObj,
 	prot_name = 'query',
-	displayDivWidth = 0,
-	sequence_line_y = current_bottom = 70,	
-	current_track_count = 0,
-	outer_margin = 30.
-	inner_margin = outer_margin * 2,
-	json_config_obj = json_config_obj_init = {
-		"featuresArray": [],
-		"segment": prot_name,
-		"legend": {
-			"segment": {
-				"yPosCentered": 190,
-				"text": "",
-				"yPos": 300,
-				"xPos": 15,
-				"yPosNonOverlapping": 106,
-				"yPosRows": 290
+		displayDivWidth = 0,
+		sequence_line_y = current_bottom = 70,
+		current_track_count = 0,
+		outer_margin = 30.
+		inner_margin = outer_margin * 2,
+		json_config_obj = json_config_obj_init = {
+			"featuresArray": [],
+			"segment": prot_name,
+			"legend": {
+				"segment": {
+					"yPosCentered": 190,
+					"text": "",
+					"yPos": 300,
+					"xPos": 15,
+					"yPosNonOverlapping": 106,
+					"yPosRows": 290
+				},
+				"key": []
 			},
-			"key": []
+			"configuration": {
+				"requestedStart": 1,
+				"rightMargin": 5,
+				"belowRuler": 30,
+				"horizontalGridNumLinesNonOverlapping": 2,
+				"horizontalGridNumLinesCentered": 6,
+				"verticalGridLineLengthRows": 284,
+				"unitSize": 6.875,
+				"sizeYNonOverlapping": 76,
+				"style": "rows",
+				"sequenceLineYRows": 155,
+				"sequenceLineY": sequence_line_y,
+				"verticalGrid": false,
+				"rulerY": 20,
+				"horizontalGrid": false,
+				"pixelsDivision": 50,
+				"aboveRuler": 10,
+				"sizeYKey": 20,
+				"sizeYCentered": 160,
+				"sequenceLineYNonOverlapping": sequence_line_y,
+				"leftMargin": 20,
+				"nonOverlapping": true
+			}
 		},
-		"configuration": {
-			"requestedStart": 1,
-			"rightMargin": 5,
-			"belowRuler": 30,
-			"horizontalGridNumLinesNonOverlapping": 2,
-			"horizontalGridNumLinesCentered": 6,
-			"verticalGridLineLengthRows": 284,
-			"unitSize": 6.875,
-			"sizeYNonOverlapping": 76,
-			"style": "rows",
-			"sequenceLineYRows": 155,
-			"sequenceLineY": sequence_line_y,
-			"verticalGrid": false,
-			"rulerY": 20,
-			"horizontalGrid": false,
-			"pixelsDivision": 50,
-			"aboveRuler": 10,
-			"sizeYKey": 20,
-			"sizeYCentered": 160,
-			"sequenceLineYNonOverlapping": sequence_line_y,
-			"leftMargin": 20,
-			"nonOverlapping": true
-		}
-	},
-	showAlignment;
+		showAlignment;
 
-	(argument.providers) ? providers = argument.providers : providers  = APP.providers;
+	(argument.providers) ? providers = argument.providers : providers = APP.providers;
 	(typeof argument.showAlignment !== 'undefined') ? showAlignment = argument.showAlignment : showAlignment = false;
-	if (argument.dataObj) 
-		dataObj = argument.dataObj; 
+	if (argument.dataObj) dataObj = argument.dataObj;
 	else throw new Error("Data missing cannot draw component");
 	displayDiv = argument.targetDiv;
 	displayDivWidth = jQuery("#" + displayDiv).width();
@@ -174,6 +173,7 @@ var FEATURE_VIEWER = function(argument) {
 		}
 	};
 };
+
 
 
 

@@ -34,26 +34,11 @@ var PAGE = function(argument) {
 
 	if (!dataObj) dataObj = argument.data;
 
-	
-	var somefunc = function  (argument) {
-		;
-	};
+
 
 	var isCached = function(elementName) {
 		if (cached[elementName]) return true;
 		return false;
-	};
-
-
-	var drawFeatureViewer = function(argumnet) {
-		var fv = new FEATURE_VIEWER({
-			targetDiv: argumnet.targetDiv,
-			dataObj: dataObj,
-			providers: argument.providers,
-			showAlignment: true
-		});
-		fv.setup();
-		fv.draw();
 	};
 
 	var cacheFetch = function(elementName) {
@@ -64,9 +49,10 @@ var PAGE = function(argument) {
 		cached[elementName] = element;
 	};
 
-	// var cacheRemove = function(elementName) {
-	// 	delete(cached[elementName]);
-	// };
+
+	var cacheRemove = function(elementName) {
+		delete(cached[elementName]);
+	};
 
 
 
@@ -83,6 +69,46 @@ var PAGE = function(argument) {
 		getShowAlignment: function() {
 			return showAlignment;
 		},
+
+
+
+		drawFeatureViewer: function(argumnet) {
+			if (!argumnet.providers) argumnet.providers = APP.providers;
+
+			var fv = new FEATURE_VIEWER({
+				targetDiv: argumnet.targetDiv,
+				dataObj: dataObj,
+				providers: argument.providers,
+				showAlignment: true
+			});
+			fv.setup();
+			fv.draw();
+		},
+
+
+		// FEATURE_VIEWER.PROFsec = function(targetDiv) {
+		// 	fv = new FEATURE_VIEWER({
+		// 		targetDiv: targetDiv,
+		// 		providers: ["PROFsec"]
+		// 	});
+		// 	fv.setup();
+		// 	fv.draw();
+		// };
+		// FEATURE_VIEWER.Transmembrane = function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// };
+		// FEATURE_VIEWER.Disorder = function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// };
+		// FEATURE_VIEWER.Binding = function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// };
+		// FEATURE_VIEWER.TMB = function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// };
+		// FEATURE_VIEWER.Disulphide = function(targetDiv) {
+		// 	return PAGE.drawFeatureViewer(targetDiv);
+		// };
 
 		drawAlignmentTable: function(targetDiv) {
 			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#" + targetDiv));
@@ -143,44 +169,27 @@ var PAGE = function(argument) {
 			return (jQuery("#" + targetDiv)).html();
 		},
 
-		// drawSSViewer: function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer({
-		// 		targetDiv: targetDiv,
-		// 		providers: ["PROFsec"]
-		// 	});
-		// },
-		// drawTransmembraneViewer: function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// },
-		// drawDisorderViewer: function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// },
-		// drawBindingViewer: function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// },
-		// drawTMBViewer: function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// },
-		// drawDisulphideViewer: function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// },
+
+		getComponent : function(component) {
+			var element;
+			if (!isCached(component)) {
+				var fnName = "draw" + component;
+				element = this.fnName.call(this, component + "Container");
+				if (element) cacheStore(component, element);
+
+			} else {
+				element = cacheFetch(component);
+			}
+			return element;
+		},
+
+
+
 		draw: function() {
 			loadingDiv.show();
 			mainContainerDiv.empty();
 			var pagePath = 'html/' + currentPage + ".html";
-
-			var getComponent = function(component) {
-				var element;
-				if (!isCached(component)) {
-					var fnName = "draw" + component;
-					element = fnName.call(this, component + "Container");
-					if (element) cacheStore(component, element);
-
-				} else {
-					element = cacheFetch(component);
-				}
-				return element;
-			};
+			var _getComponent  = this.getComponent;
 
 			if (!isCached(currentPage)) {
 				jQuery.get(pagePath)
@@ -188,15 +197,16 @@ var PAGE = function(argument) {
 					mainContainerDiv.append(pageHTML);
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
-						var element = getComponent(component);
+						var element = _getComponent(component);
 						if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 					});
 				});
 			} else {
 				var pageHTML = cacheFetch(currentPage)
 				mainContainerDiv.append(pageHTML);
+
 				jQuery.each(pageComponents[currentPage], function(i, component) {
-					var element = getComponent(component);
+					var element = _getComponent(component);
 					if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 				});
 			}
