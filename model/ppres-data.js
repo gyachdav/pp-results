@@ -222,10 +222,12 @@ function PPResData() {
 		getSequence: function() {
 			return (sequence);
 		},
-		getAlignmentLocations: function() {
+		getAlignmentLocations: function(database) {
 			var alis = this.getAlignments();
 			var locations_array = [];
 			jQuery.each(alis, function(index, alignment) {
+				if (database && alignment.dbReference.type.toUpperCase() != database.toUpperCase())
+					return true;
 				locations_array.push({
 					begin: parseInt(alignment.queryStart.value),
 					end: parseInt(alignment.queryEnd.value),

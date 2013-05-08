@@ -12,6 +12,7 @@ var PAGE = function(argument) {
 				'SubcellLocViewer',
 				'SummaryTable',
 				'AlignmentTable',
+				'AlignmentPDBTable',
 				'AAConsistency',
 				'SSConsistency',
 				],
@@ -106,6 +107,11 @@ var PAGE = function(argument) {
 			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#" + targetDiv));
 		},
 
+		drawAlignmentPDBTable: function(argument) {
+			targetDiv = argument.targetDiv;
+			ALI_VIEW.draw(dataObj.getAlignmentLocations("pdb"), jQuery("#" + targetDiv));
+		},
+
 		drawAAConsistency: function(argument) {
 			targetDiv = argument.targetDiv;
 			jQuery("#" + targetDiv).append("<h3>Amino Acid composition</h3>");
@@ -133,8 +139,8 @@ var PAGE = function(argument) {
 			table.addClass("table table-striped");
 			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) table.append("<tr><td>Recommended Name</td><td>" + _rec_name + "</td></tr>");
 			table.append("<tr><td>Sequence Length</td><td>" + dataObj.getSequence().length + "</td></tr>");
-			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#myModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
-			table.append("<tr><td>Number of Matched PDB Structures</td><td>" + dataObj.getAlignmentsByDatabase('pdb') + "</td></tr>");
+			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#aliModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
+			table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#pdbModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsByDatabase('pdb') + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
 			return (jQuery("#" + targetDiv)).html();
 		},
