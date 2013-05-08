@@ -59,7 +59,7 @@ function PPResData() {
 
 
 	return {
-		dataReady: function(){
+		dataReady: function() {
 			return data_ready;
 		},
 		loadData: function(_file_specs) {
@@ -150,6 +150,29 @@ function PPResData() {
 			});
 			ss_composition.loop = this.getSequence().length - parseInt(ss_composition.helix) - parseInt(ss_composition.strand);
 			return (ss_composition);
+		},
+
+		getSolvAccComposition: function(argument) {
+			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
+			var ss_feature_array = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.split('');
+			var solvAccComposition ={
+				burried: 0,
+				intermediate: 0,
+				exposed: 0
+			};
+
+			var burried = intermediate = exposed =0;
+
+			jQuery.each(ss_feature_array, function(index, obj) {
+				var n = parseInt(obj);
+				if (n == 5)
+					solvAccComposition.intermediate++;
+				else if ( n<5)
+					solvAccComposition.burried++;
+				else if (n>5)
+					solvAccComposition.exposed++;
+			});
+			return (solvAccComposition);
 		},
 
 		getAAComposition: function(argument) {

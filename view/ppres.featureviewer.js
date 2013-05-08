@@ -1,9 +1,11 @@
 var FEATURE_VIEWER = function(argument) {
 	var displayDiv,
 	dataObj,
+	showAlignment,
 	prot_name = 'query',
 		displayDivWidth = 0,
-		sequence_line_y = current_bottom = 70,
+		sequence_line_y = 70,
+		currentBottom = sequence_line_y+5,
 		current_track_count = 0,
 		outer_margin = 30.
 		inner_margin = outer_margin * 2,
@@ -44,14 +46,15 @@ var FEATURE_VIEWER = function(argument) {
 				"leftMargin": 20,
 				"nonOverlapping": true
 			}
-		},
-		showAlignment;
+		};
 
 	(argument.providers) ? providers = argument.providers : providers = APP.providers;
 	(typeof argument.showAlignment !== 'undefined') ? showAlignment = argument.showAlignment : showAlignment = false;
 	if (argument.dataObj) dataObj = argument.dataObj;
 	else throw new Error("Data missing cannot draw component");
 	displayDiv = argument.targetDiv;
+
+
 	displayDivWidth = jQuery("#" + displayDiv).width();
 	json_config_obj.configuration.sizeX = (displayDivWidth - outer_margin);
 	json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
@@ -59,25 +62,27 @@ var FEATURE_VIEWER = function(argument) {
 	json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
 
 
+	var addTrack = function(track) {
+		if (track.getShiftBottomLine()) {
+			track.setPosition(currentBottom);
+			json_config_obj.configuration.sizeY = track.getBottom();
+			json_config_obj.configuration.sizeYRows = track.getBottom();
+			currentBottom = track.getBottom();
+		}
+	};
+	var getSequenceLineY = function() {
+		return sequence_line_y;
+	};
+
 	return {
 		getSequenceLineY: function() {
 			return sequence_line_y;
 		},
-		// init: function(argument) {
-
-		// 	var dataObj = argument.dataObj;
-		// 	displayDiv = argument.targetDiv;
-		// 	displayDivWidth = jQuery("#" + displayDiv).width();
-		// 	json_config_obj.configuration.sizeX = (displayDivWidth - outer_margin);
-		// 	json_config_obj.configuration.rulerLength = (displayDivWidth - inner_margin);
-		// 	json_config_obj.configuration.sequenceLength = dataObj.getSequence().length;
-		// 	json_config_obj.configuration.requestedStop = dataObj.getSequence().length;
-		// },
 		getCurrentBottom: function() {
-			return (current_bottom);
+			return (currentBottom);
 		},
 		setCurrentBottom: function(y) {
-			current_bottom = y;
+			currentBottom = y;
 		},
 
 		setup: function() {
@@ -86,13 +91,12 @@ var FEATURE_VIEWER = function(argument) {
 				var track, feature_properties;
 				track = new Track();
 				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
-				else track.setPosition(this.getCurrentBottom());
+				else track.setPosition(currentBottom);
 
 				var feature_group = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider);
 				if (!feature_group) return null;
 				var feature_type = (feature_group.type) ? feature_group.type : "";
 				feature_properties = dataObj.getFeatureLocations(feature_group);
-
 
 				if (!feature_properties) return null;
 				if (feature_properties) i = feature_properties.length;
@@ -100,29 +104,28 @@ var FEATURE_VIEWER = function(argument) {
 					var feature;
 					if (typeof Feature[provider] !== 'undefined') {
 						Feature[provider].prototype = new Feature();
-						feature = new Feature[provider](feature_properties[i], provider, feature_type);
+						feature = new Feature[provider](feature_properties[i], provider, feature_type, sequence_line_y);
 					} else {
 						feature = new Feature().init(feature_properties[i], provider, feature_type);
 					}
 					track.addFeature(feature);
 				}
-				this.addTrack(track);
+				addTrack(track);
 				return track.getTrack();
 			}));
 
 			if (showAlignment) {
 				// Add alignment
 				this.setFeaturesArray(jQuery.map(dataObj.getAlignmentLocations(), function(target, index) {
-					var track = new Track(1, 1);
-					track.setPosition(this.getCurrentBottom());
+					var track = new Track(1, 3);
+					track.setPosition(currentBottom);
 					Feature.Alignment.prototype = new Feature();
 					feature = new Feature.Alignment(target, 'blast', 'alignmnet');
 					track.addFeature(feature);
-					this.addTrack(track);
+					addTrack(track);
 					return track.getTrack();
 				}));
 			}
-
 		},
 
 		draw: function() {
@@ -162,18 +165,8 @@ var FEATURE_VIEWER = function(argument) {
 		getDisplayWidth: function() {
 			return displayDivWidth;
 		},
-		addTrack: function(track) {
-			if (track.getShiftBottomLine()) {
-				current_bottom = track.getBottom();
-				track.setPosition(this.getCurrentBottom());
-				json_config_obj.configuration.sizeY = track.getBottom();
-				json_config_obj.configuration.sizeYRows = track.getBottom();
-				this.setCurrentBottom(track.getBottom());
-			}
-		}
 	};
 };
-
 
 
 
@@ -342,7 +335,9 @@ Feature.NORSnet = function(_feature, _feature_provider, _feature_type) {
 
 };
 
-Feature.ISIS = function(_feature, _feature_provider, _feature_type) {
+Feature.ISIS = function(_feature, _feature_provider, _feature_type, featurePos) {
+	// featurePos  = this is an optional param that indicates where to place the feature 
+	// todo this should probably be established on the track level 
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 	this.color = "red";
 	this.setColor();
@@ -350,7 +345,7 @@ Feature.ISIS = function(_feature, _feature_provider, _feature_type) {
 	var feature = {
 		"type": "diamond",
 		"r": 5,
-		"cy": FEATURE_VIEWER.getSequenceLineY() - 30,
+		"cy": featurePos - 30,
 	}
 	this.setFeature(feature);
 	return this.getFeature();
@@ -368,14 +363,6 @@ Feature.DISIS = function(_feature, _feature_provider, _feature_type) {
 Feature.ASP = function(_feature, _feature_provider, _feature_type) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 	this.color = "green";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-Feature.ASP = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "orange";
 	this.setColor();
 	return this.getFeature();
 
@@ -435,7 +422,7 @@ var Track = function(__height, __margin) {
 		features = [];
 
 	(__height) ? config.height = __height : config.height = default_height;
-	(__margin) ? config.margin = __margin : config.margin = default_height * .2;
+	(__margin) ? config.margin = __margin : config.margin = default_height;
 
 	return {
 		setShiftBottomLine: function(_shift_flag) {

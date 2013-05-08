@@ -4,37 +4,71 @@ var PAGE = function(argument) {
 		inactiveDivs = [],
 		cached = {},
 		pageComponents = {
-			Dashboard: [
-				'FeatureViewer',
-				'SubcellLoc',
+			Dashboard: [{
+				FeatureViewer: {
+					showAlignment: true
+				}
+			},
+				'SubcellLocViewer',
 				'SummaryTable',
 				'AlignmentTable',
 				'AAConsistency',
-				'SSConsistency'],
-			SecondaryStructure: [
-				'SSViewer',
-				'SSConsistency'],
-			Transmembrane: ["TransmembraneViewer"],
-			Disorder: ["DisorderViewer"],
-			Binding: ["BindingViewer"],
-			TMB: ["TMBViewer"],
-			Disulphide: ["DisulphideViewer"],
+				'SSConsistency',
+				],
+			SecondaryStructure: [{
+				FeatureViewer: {
+					providers: ["PROFsec"],
+					showAlignment: false
+				}
+			}, {
+				'SSConsistency': '',
+				
+			},'SolvAcc'],
+			Transmembrane: [{
+				'FeatureViewer': {
+					providers: ["PHDhtm"],
+					showAlignment: false
+				}
+			}],
+			Disorder: [{
+				'FeatureViewer': {
+					providers: ["PROFbval", "MD", "Ucon", "NORSnet"],
+					showAlignment: false
+				}
+			}],
+			Binding: [{
+				'FeatureViewer': {
+					providers: ["ISIS"],
+					showAlignment: false
+				}
+			}],
+			TMB: [{
+				'FeatureViewer': {
+					providers: ["PROFtmb"],
+					showAlignment: false
+				}
+			}],
+			Disulphide: [{
+				'FeatureViewer': {
+					providers: ["DISULFIND"],
+					showAlignment: false
+				}
+			}],
 			SubcellLoc: [
-				"SubcellLoc"]
+				"SubcellLocViewer"]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
-
 		mainContainerDiv = jQuery("#content"),
 		loadingDiv = jQuery(".loading"),
 		dataObj,
-		providers;
+		providers,
+		showAlignment;
 	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
 	(argument.providers) ? providers = argument.providers : providers = [];
+	(argument.showAlignment) ? showAlignment = argument.showAlignment : showAlignment = false;
 
 	if (!dataObj) dataObj = argument.data;
-
-
 
 	var isCached = function(elementName) {
 		if (cached[elementName]) return true;
@@ -54,78 +88,45 @@ var PAGE = function(argument) {
 		delete(cached[elementName]);
 	};
 
-
-
-	return {
-		getDefaultPage: function() {
-			return defaultPage;
-		},
-		setDataObj: function(__dataObj) {
-			dataObj = __dataObj;
-		},
-		setShowAlignment: function(flag) {
-			showAlignmnet = flag;
-		},
-		getShowAlignment: function() {
-			return showAlignment;
-		},
-
-
-
-		drawFeatureViewer: function(argumnet) {
-			if (!argumnet.providers) argumnet.providers = APP.providers;
+	var visualComponents = {
+		drawFeatureViewer: function(argument) {
+			if (!argument.providers) argument.providers = APP.providers;
 
 			var fv = new FEATURE_VIEWER({
-				targetDiv: argumnet.targetDiv,
+				targetDiv: argument.targetDiv,
 				dataObj: dataObj,
 				providers: argument.providers,
-				showAlignment: true
+				showAlignment: argument.showAlignment
 			});
 			fv.setup();
 			fv.draw();
 		},
-
-
-		// FEATURE_VIEWER.PROFsec = function(targetDiv) {
-		// 	fv = new FEATURE_VIEWER({
-		// 		targetDiv: targetDiv,
-		// 		providers: ["PROFsec"]
-		// 	});
-		// 	fv.setup();
-		// 	fv.draw();
-		// };
-		// FEATURE_VIEWER.Transmembrane = function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// };
-		// FEATURE_VIEWER.Disorder = function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// };
-		// FEATURE_VIEWER.Binding = function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// };
-		// FEATURE_VIEWER.TMB = function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// };
-		// FEATURE_VIEWER.Disulphide = function(targetDiv) {
-		// 	return PAGE.drawFeatureViewer(targetDiv);
-		// };
-
-		drawAlignmentTable: function(targetDiv) {
+		drawAlignmentTable: function(argument) {
+			targetDiv = argument.targetDiv;
 			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#" + targetDiv));
 		},
 
-		drawAAConsistency: function(targetDiv) {
+		drawAAConsistency: function(argument) {
+			targetDiv = argument.targetDiv;
 			jQuery("#" + targetDiv).append("<h3>Amino Acid composition</h3>");
 			PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
 		},
 
-		drawSSConsistency: function(targetDiv) {
+		drawSSConsistency: function(argument) {
+			targetDiv = argument.targetDiv;
 			jQuery("#" + targetDiv).append("<h3>Secondary Structure composition</h3>");
 			PIE_CHART.toPieData(dataObj.getSSComposition()).drawPieChart(targetDiv);
 		},
 
-		drawSummaryTable: function(targetDiv) {
-			// TODO move modal activation code from this control
+		drawSolvAcc: function(argument) {
+			targetDiv = argument.targetDiv;
+			jQuery("#" + targetDiv).append("<h3>Solvent Accessibility</h3>");
+			PIE_CHART.toPieData(dataObj.getSolvAccComposition()).drawPieChart(targetDiv);
+		},
+
+
+		drawSummaryTable: function(argument) {
+			targetDiv = argument.targetDiv;
 
 			jQuery("#" + targetDiv).append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
@@ -138,7 +139,8 @@ var PAGE = function(argument) {
 			return (jQuery("#" + targetDiv)).html();
 		},
 
-		drawSubcellLoc: function(targetDiv) {
+		drawSubcellLocViewer: function(argument) {
+			targetDiv = argument.targetDiv;
 			var nav_div = jQuery("<div id='_subcell_nav' />");
 
 			var content_div = jQuery("<div id='_subcell_cntnt'/>");
@@ -160,36 +162,56 @@ var PAGE = function(argument) {
 				content_div.append(_curr_div);
 			}
 			nav_div.append(list);
-			jQuery("#" + targetDiv).append("<h3> Sub-cellular Localization Prediction</h3>");
+
+			// jQuery("#" + targetDiv).append("<h3> Sub-cellular Localization Prediction</h3>");
 			jQuery("#" + targetDiv).append(nav_div);
 
 			jQuery("#" + targetDiv).append(content_div);
 			jQuery('#_subcell_nav a:last').tab('show');
 
 			return (jQuery("#" + targetDiv)).html();
+		}
+	};
+
+
+	var getComponent = function(component, config) {
+		var element;
+
+		if (!config) var config = {};
+		jQuery.extend(config, {
+			targetDiv: component + "Container"
+		});
+
+		if (!isCached(component)) {
+			var fnName = "draw" + component;
+			element = visualComponents[fnName].call(this, config);
+			if (element) cacheStore(component, element);
+
+		} else {
+			element = cacheFetch(component);
+		}
+		return element;
+	};
+
+	return {
+		getDefaultPage: function() {
+			return defaultPage;
 		},
-
-
-		getComponent : function(component) {
-			var element;
-			if (!isCached(component)) {
-				var fnName = "draw" + component;
-				element = this.fnName.call(this, component + "Container");
-				if (element) cacheStore(component, element);
-
-			} else {
-				element = cacheFetch(component);
-			}
-			return element;
+		setDataObj: function(__dataObj) {
+			dataObj = __dataObj;
 		},
-
-
+		setShowAlignment: function(flag) {
+			showAlignmnet = flag;
+		},
+		getShowAlignment: function() {
+			return showAlignment;
+		},
 
 		draw: function() {
 			loadingDiv.show();
 			mainContainerDiv.empty();
 			var pagePath = 'html/' + currentPage + ".html";
-			var _getComponent  = this.getComponent;
+			var config = undefined;
 
 			if (!isCached(currentPage)) {
 				jQuery.get(pagePath)
@@ -197,7 +219,11 @@ var PAGE = function(argument) {
 					mainContainerDiv.append(pageHTML);
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
-						var element = _getComponent(component);
+						if (typeof component === 'object') {
+							config = component[Object.keys(component)];
+							component = Object.keys(component)[0];
+						}
+						var element = getComponent( component, config);
 						if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 					});
 				});

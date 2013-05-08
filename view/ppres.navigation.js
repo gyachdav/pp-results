@@ -11,10 +11,12 @@ var NAVIGATION = (function() {
 		}, {
 			id: "tmh",
 			text: "Transmembrane Regions"
-		}, {
-			id: "nors",
-			text: "Non-Regular Secondary Structure"
-		}, {
+		},
+		//  {
+		// 	id: "nors",
+		// 	text: "Non-Regular Secondary Structure"
+		// }, 
+		{
 			id: "disorder",
 			text: "Protein Disorder and Flexibility"
 		}, {

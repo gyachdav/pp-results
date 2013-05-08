@@ -24,15 +24,7 @@ var APP = (function() {
 			data: mainObj,
 			providers: APP.providers,
 			showAlignment: true
-		});
-
-		page.draw();
-
-		// PAGE.init({
-		// 	data: mainObj,
-		// 	providers: APP.providers,
-		// 	showAlignment: true
-		// }).draw(PAGE.getDefaultPage());
+		}).draw();
 		listener.setUp();
 	});
 
@@ -74,54 +66,51 @@ var APP = (function() {
 			if (!target_div) target_div = jQuery("#content");
 			switch (action) {
 				case 'dash':
-					PAGE.init({
-						providers: APP.providers,
-						showAlignment: true
-					}).draw("Dashboard");
+					page = new PAGE({
+						data: mainObj
+					}).draw();
 					break;
 				case 'secstruct':
-					PAGE.init({
-						showAlignment: false,
-						providers: ["PROFsec"]
-					}).draw("SecondaryStructure");
+					page = new PAGE({
+						page: "SecondaryStructure",
+						data: mainObj
+					}).draw();
 					break;
 				case 'tmh':
-					PAGE.init({
-						providers: ["PHDhtm"]
-					}).draw("Transmembrane");
+					page = new PAGE({
+						page: "Transmembrane",
+						data: mainObj
+					}).draw();
 					break;
 				case 'disorder':
-					PAGE.init({
-						showAlignment: false,
-						providers: ["NORSnet", "PROFbval", "MD", "Ucon"]
-					}).draw("Disorder");
+					page = new PAGE({
+						page: "Disorder",
+						data: mainObj
+					}).draw();
 					break;
 				case 'binding':
-					PAGE.init({
-						showAlignment: false,
-						providers: ["ISIS"]
-					}).draw("Binding");
+					page = new PAGE({
+						page: "Binding",
+						data: mainObj
+					}).draw();
 					break;
 				case 'tmb':
-					PAGE.init({
-						showAlignment: false,
-						providers: ["PROFtmb"]
-					}).draw("TMB");
-					break;
-				case 'tmb':
-					PAGE.init({
-						showAlignment: false,
-						providers: ["PROFtmb"]
-					}).draw("TMB");
+					page = new PAGE({
+						page: "TMB",
+						data: mainObj
+					}).draw();
 					break;
 				case 'disulphide':
-					PAGE.init({
-						showAlignment: false,
-						providers: ["DISULFIND"]
-					}).draw("Disulphide");
+					page = new PAGE({
+						page: "Disulphide",
+						data: mainObj
+					}).draw();
 					break;
 				case 'subcell':
-					PAGE.draw("SubcellLoc");
+					page = new PAGE({
+						page: "SubcellLoc",
+						data: mainObj
+					}).draw();
 					break;
 				case 'tutorial':
 					target_div.html('<iframe src="http://prezi.com/embed/vg4s_lhh2gal/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0"></iframe>');
