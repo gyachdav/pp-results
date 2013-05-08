@@ -9,7 +9,7 @@ var APP = (function() {
 	}, debug = 0,
 		mainObj = new PPResData();
 
-	NAVIGATION_DIV = "#nav";	
+	NAVIGATION_DIV = "#nav";
 
 
 	jQuery.noConflict(); // recommended to avoid conflict wiht other libs
@@ -122,6 +122,9 @@ var APP = (function() {
 					break;
 				case 'subcell':
 					PAGE.draw("SubcellLoc");
+					break;
+				case 'tutorial':
+					target_div.html('<iframe src="http://prezi.com/embed/vg4s_lhh2gal/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0"></iframe>');
 					break;
 
 				default:
