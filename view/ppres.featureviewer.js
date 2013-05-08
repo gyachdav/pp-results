@@ -5,7 +5,7 @@ var FEATURE_VIEWER = function(argument) {
 	prot_name = 'query',
 		displayDivWidth = 0,
 		sequence_line_y = 70,
-		currentBottom = sequence_line_y+5,
+		currentBottom = sequence_line_y + 5,
 		current_track_count = 0,
 		outer_margin = 30.
 		inner_margin = outer_margin * 2,
@@ -133,7 +133,9 @@ var FEATURE_VIEWER = function(argument) {
 				target: displayDiv,
 				json: json_config_obj
 			});
-			console.log(myPainter);
+
+			jQuery("input:button", "#uniprotFeaturePainter-printButton").addClass("btn btn-primary");
+			jQuery("#uniprotFeaturePainter-slider-values").addClass("text-info");
 
 			myPainter.onFeatureSelected(
 
@@ -152,25 +154,25 @@ var FEATURE_VIEWER = function(argument) {
 					}
 				}
 			});
-		},
-		setFeaturesArray: function(features_array) {
-			jQuery.merge(json_config_obj.featuresArray, features_array);
-		},
-		setProteinName: function(prot_name) {
-			json_config_obj.segment = prot_name;
-		},
-		getProteinName: function() {
-			return prot_name;
-		},
-		getDisplayWidth: function() {
-			return displayDivWidth;
-		},
+			},
+			setFeaturesArray: function(features_array) {
+				jQuery.merge(json_config_obj.featuresArray, features_array);
+			},
+			setProteinName: function(prot_name) {
+				json_config_obj.segment = prot_name;
+			},
+			getProteinName: function() {
+				return prot_name;
+			},
+			getDisplayWidth: function() {
+				return displayDivWidth;
+			},
+		};
 	};
-};
 
 
 
-/**
+	/**
  @params 
 	_feature = {
 		begin: int,
@@ -182,273 +184,273 @@ var FEATURE_VIEWER = function(argument) {
 	_feature_type  = string
 @returns Feature
 */
-var Feature = Feature || {};
+	var Feature = Feature || {};
 
-var Feature = function() {
-	var default_stroke = 0,
-		default_shape = "rect",
-		default_opacity = 0.5,
-		color = 'grey',
-		feature = {},
-		being,
-		end,
-		featureTypeLabel;
+	var Feature = function() {
+		var default_stroke = 0,
+			default_shape = "rect",
+			default_opacity = 0.5,
+			color = 'grey',
+			feature = {},
+			being,
+			end,
+			featureTypeLabel;
 
 
 
-	var setLocation = function(start, stop) {
-		addStart(start);
-		addStop(stop);
+		var setLocation = function(start, stop) {
+			addStart(start);
+			addStop(stop);
+		};
+		var addStart = function(pos) {
+			feature.featureStart = pos;
+		};
+		var addStop = function(pos) {
+			feature.featureEnd = pos;
+		};
+		var getLabel = function() {
+			return (label);
+		};
+		var createLabel = function(_feature, _feature_provider, _feature_type) {
+			var featureTypeLabel;
+
+			(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
+			if (!_feature.code) _feature.code = "";
+
+			var label = {
+				"typeCode": _feature.code,
+				"evidenceText": _feature_provider,
+				"featureTypeLabel": featureTypeLabel,
+				"featureLabel": _feature_type ? _feature_type : featureTypeLabel,
+				"evidenceCode": "",
+				"typeCategory": ""
+
+			};
+			jQuery.extend(feature, label);
+		};
+
+
+
+		return {
+			setFeatureID: function(feature_id) {
+				feature.featureId = feature_id;
+			},
+			setLabel: function(_label) {
+				jQuery.extend(feature, _label);
+			},
+
+			setFeature: function(_feature) {
+				jQuery.extend(feature, _feature);
+			},
+			getFeature: function() {
+				return (feature);
+			},
+			setColor: function() {
+				feature.fill = this.color;
+				feature.stroke = this.color;
+			},
+			init: function(_feature, _feature_provider, _feature_type) {
+				feature = {
+					"type": default_shape,
+					"fillOpacity": default_opacity,
+					"strokeWidth": default_stroke,
+					"name": _feature_provider,
+					"fill": 'grey',
+					'stroke': 'grey'
+				}, begin = _feature.begin,
+				end = _feature.end;
+
+				var _label = createLabel(_feature, _feature_provider, _feature_type);
+				this.setLabel(_label);
+				setLocation(begin, end);
+				this.setFeatureID(_feature_provider + "__" + begin);
+
+				return this.getFeature();
+			}
+		}
+
 	};
-	var addStart = function(pos) {
-		feature.featureStart = pos;
-	};
-	var addStop = function(pos) {
-		feature.featureEnd = pos;
-	};
-	var getLabel = function() {
-		return (label);
-	};
-	var createLabel = function(_feature, _feature_provider, _feature_type) {
-		var featureTypeLabel;
+
+
+
+	Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+
+
+		this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin + _feature.end);
 
 		(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
-		if (!_feature.code) _feature.code = "";
+		if (_feature.db.match(/pdb/i)) {
+			(__pdb) = _feature.id.split('_');
+			_feature.id = __pdb[0];
+			if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
+		}
 
-		var label = {
-			"typeCode": _feature.code,
-			"evidenceText": _feature_provider,
-			"featureTypeLabel": featureTypeLabel,
-			"featureLabel": _feature_type ? _feature_type : featureTypeLabel,
-			"evidenceCode": "",
-			"typeCategory": ""
-
+		var _label = {
+			"featureLabel": "Aligned Target " + _feature.db + ":" + _feature.id,
+			"typeCode": "Eval: " + _feature.eval,
+			"evidenceText": '',
+			"featureTypeLabel": " Matched Length: " + _feature.matchlen,
+			"typeCategory": "Identity: " + parseFloat(_feature.identity).toFixed(2),
+			"evidenceCode": "http://edamontology.org/data_1387"
+			// todo: add dbreference to label
 		};
-		jQuery.extend(feature, label);
+
+		this.setLabel(_label);
+
+
+		// addLabel(label);
+		this.color = "blue";
+		this.setColor();
+		return this.getFeature();
+
+	};
+
+
+	Feature.PROFsec = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+
+		switch (_feature.type) {
+			case 'helix':
+				this.color = '#990000';
+				break;
+			case 'strand':
+				this.color = '#0000CC';
+				break;
+			default:
+				this.color = '#006600';
+				break;
+		}
+
+		this.setColor();
+		return this.getFeature();
 	};
 
 
 
-	return {
-		setFeatureID: function(feature_id) {
-			feature.featureId = feature_id;
-		},
-		setLabel: function(_label) {
-			jQuery.extend(feature, _label);
-		},
+	Feature.NORSnet = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
 
-		setFeature: function(_feature) {
-			jQuery.extend(feature, _feature);
-		},
-		getFeature: function() {
-			return (feature);
-		},
-		setColor: function() {
-			feature.fill = this.color;
-			feature.stroke = this.color;
-		},
-		init: function(_feature, _feature_provider, _feature_type) {
-			feature = {
-				"type": default_shape,
-				"fillOpacity": default_opacity,
-				"strokeWidth": default_stroke,
-				"name": _feature_provider,
-				"fill": 'grey',
-				'stroke': 'grey'
-			}, begin = _feature.begin,
-			end = _feature.end;
+		this.color = "gray";
+		this.setColor();
+		return this.getFeature();
 
-			var _label = createLabel(_feature, _feature_provider, _feature_type);
-			this.setLabel(_label);
-			setLocation(begin, end);
-			this.setFeatureID(_feature_provider + "__" + begin);
-
-			return this.getFeature();
-		}
-	}
-
-};
-
-
-
-Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-
-
-	this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin + _feature.end);
-
-	(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
-	if (_feature.db.match(/pdb/i)) {
-		(__pdb) = _feature.id.split('_');
-		_feature.id = __pdb[0];
-		if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
-	}
-
-	var _label = {
-		"featureLabel": "Aligned Target " + _feature.db + ":" + _feature.id,
-		"typeCode": "Eval: " + _feature.eval,
-		"evidenceText": '',
-		"featureTypeLabel": " Matched Length: " + _feature.matchlen,
-		"typeCategory": "Identity: " + parseFloat(_feature.identity).toFixed(2),
-		"evidenceCode": "http://edamontology.org/data_1387"
-		// todo: add dbreference to label
 	};
 
-	this.setLabel(_label);
+	Feature.ISIS = function(_feature, _feature_provider, _feature_type, featurePos) {
+		// featurePos  = this is an optional param that indicates where to place the feature 
+		// todo this should probably be established on the track level 
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "red";
+		this.setColor();
 
-
-	// addLabel(label);
-	this.color = "blue";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-
-Feature.PROFsec = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-
-	switch (_feature.type) {
-		case 'helix':
-			this.color = '#990000';
-			break;
-		case 'strand':
-			this.color = '#0000CC';
-			break;
-		default:
-			this.color = '#006600';
-			break;
-	}
-
-	this.setColor();
-	return this.getFeature();
-};
-
-
-
-Feature.NORSnet = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-
-	this.color = "gray";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-Feature.ISIS = function(_feature, _feature_provider, _feature_type, featurePos) {
-	// featurePos  = this is an optional param that indicates where to place the feature 
-	// todo this should probably be established on the track level 
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "red";
-	this.setColor();
-
-	var feature = {
-		"type": "diamond",
-		"r": 5,
-		"cy": featurePos - 30,
-	}
-	this.setFeature(feature);
-	return this.getFeature();
-
-};
-
-Feature.DISIS = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "orange";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-Feature.ASP = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "green";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-Feature.DISULFIND = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "brown";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-Feature.PredictNLS = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "brown";
-	this.setColor();
-	return this.getFeature();
-
-};
-
-Feature.PHDhtm = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "purple";
-	this.setColor();
-	return this.getFeature();
-};
-
-Feature.PROFbval = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "yellow";
-	this.setColor();
-	return this.getFeature();
-};
-
-Feature.Ucon = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "orange";
-	this.setColor();
-	return this.getFeature();
-};
-
-Feature.MD = function(_feature, _feature_provider, _feature_type) {
-	this.init.call(this, _feature, _feature_provider, _feature_type);
-	this.color = "#225533";
-	this.setColor();
-	return this.getFeature();
-};
-
-
-
-var Track = function(__height, __margin) {
-
-	var default_height = 10,
-		config = {},
-		shift_bottom_line = true,
-		features = [];
-
-	(__height) ? config.height = __height : config.height = default_height;
-	(__margin) ? config.margin = __margin : config.margin = default_height;
-
-	return {
-		setShiftBottomLine: function(_shift_flag) {
-			shift_bottom_line = _shift_flag;
-		},
-		getShiftBottomLine: function() {
-			return shift_bottom_line;
-		},
-		setPosition: function(starting_y) {
-			config.y = starting_y;
-		},
-		getTrackHeight: function() {
-			return config;
-		},
-		getBottom: function() {
-			return (config.y + config.height + config.margin)
-		},
-		getConfig: function() {
-			return (config);
-		},
-		addFeature: function(feature) {
-			features.push(jQuery.extend(feature, config));
-		},
-		getTrack: function() {
-			return features;
+		var feature = {
+			"type": "diamond",
+			"r": 5,
+			"cy": featurePos - 30,
 		}
-	}
-};
-Track.NO_BOTTOMLINE_SHIFT = false;
+		this.setFeature(feature);
+		return this.getFeature();
+
+	};
+
+	Feature.DISIS = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "orange";
+		this.setColor();
+		return this.getFeature();
+
+	};
+
+	Feature.ASP = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "green";
+		this.setColor();
+		return this.getFeature();
+
+	};
+
+	Feature.DISULFIND = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "brown";
+		this.setColor();
+		return this.getFeature();
+
+	};
+
+	Feature.PredictNLS = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "brown";
+		this.setColor();
+		return this.getFeature();
+
+	};
+
+	Feature.PHDhtm = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "purple";
+		this.setColor();
+		return this.getFeature();
+	};
+
+	Feature.PROFbval = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "yellow";
+		this.setColor();
+		return this.getFeature();
+	};
+
+	Feature.Ucon = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "orange";
+		this.setColor();
+		return this.getFeature();
+	};
+
+	Feature.MD = function(_feature, _feature_provider, _feature_type) {
+		this.init.call(this, _feature, _feature_provider, _feature_type);
+		this.color = "#225533";
+		this.setColor();
+		return this.getFeature();
+	};
+
+
+
+	var Track = function(__height, __margin) {
+
+		var default_height = 10,
+			config = {},
+			shift_bottom_line = true,
+			features = [];
+
+		(__height) ? config.height = __height : config.height = default_height;
+		(__margin) ? config.margin = __margin : config.margin = default_height;
+
+		return {
+			setShiftBottomLine: function(_shift_flag) {
+				shift_bottom_line = _shift_flag;
+			},
+			getShiftBottomLine: function() {
+				return shift_bottom_line;
+			},
+			setPosition: function(starting_y) {
+				config.y = starting_y;
+			},
+			getTrackHeight: function() {
+				return config;
+			},
+			getBottom: function() {
+				return (config.y + config.height + config.margin)
+			},
+			getConfig: function() {
+				return (config);
+			},
+			addFeature: function(feature) {
+				features.push(jQuery.extend(feature, config));
+			},
+			getTrack: function() {
+				return features;
+			}
+		}
+	};
+	Track.NO_BOTTOMLINE_SHIFT = false;
