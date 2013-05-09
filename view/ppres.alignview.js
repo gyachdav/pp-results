@@ -17,9 +17,6 @@ var ALI_VIEW = (function() {
 				.append(jQuery('<th/>').text('Matched Length'))
 			));
 
-			// var table = '<table id="aliTable" class="table table-hover tablesorter">';
-			// table += '<thead><tr><th>Protein Name</th><th>Identity</th><th>Expected Value</th><th>Matched Length</th></tr></thead>';
-			// table += "<tbody>";
 			jQuery.map(this.aliObj, function(target, index) {
 				var proteinId = chain = url='';
 				proteinId = target.id;
@@ -48,14 +45,7 @@ var ALI_VIEW = (function() {
 				row.append(jQuery('<td/>').text( target.eval ));
 				row.append(jQuery('<td/>').text( target.matchlen ));
 				table.append(row);
-				// row += "<td>" + link + "</td>";
-				// row += "<td>" + parseFloat(target.identity).toFixed(2) + "</td>";
-				// row += "<td>" + target.eval + "</td>";
-				// row += "<td>" + target.matchlen + "</td>";
-				// jQuery(table).append(row);
 			});
-			// table += "</tbody>";
-			// table += '</table>';
 			targetDiv.append(table);
 			jQuery('table', targetDiv).tablesorter({
 				sortList: [
