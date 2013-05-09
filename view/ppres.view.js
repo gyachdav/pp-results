@@ -9,7 +9,7 @@ var PAGE = function(argument) {
 					showAlignment: true
 				}
 			},
-				'SubcellLocViewer',
+				// 'SubcellLocViewer',
 				'SummaryTable',
 				'AlignmentTable',
 				'AlignmentPDBTable',

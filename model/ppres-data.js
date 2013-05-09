@@ -59,6 +59,7 @@ function PPResData() {
 
 
 	return {
+		getReferenceByProvider: getReferenceByProvider,
 		dataReady: function() {
 			return data_ready;
 		},
