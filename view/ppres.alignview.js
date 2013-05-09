@@ -30,11 +30,12 @@ var ALI_VIEW = (function() {
 
 
 				var link = jQuery('<a>', {
+					id:  url+proteinId,
 					text: proteinId+ " " + chain,
 					title: proteinId+ " " + chain,
 					href: "#",
 					click: function() {
-						window.open(url+proteinId, '_blank');
+						window.open( this.id, '_blank');
 						window.focus;
 					}
 				});
