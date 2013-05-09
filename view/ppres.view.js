@@ -54,6 +54,8 @@ var PAGE = function(argument) {
 					showAlignment: false
 				}
 			}],
+			Heatmap: [
+				'HeatmapViewer'],
 			SubcellLoc: [
 				"SubcellLocViewer"]
 		},
@@ -89,18 +91,6 @@ var PAGE = function(argument) {
 	};
 
 	var visualComponents = {
-		drawFeatureViewer: function(argument) {
-			if (!argument.providers) argument.providers = APP.providers;
-
-			var fv = new FEATURE_VIEWER({
-				targetDiv: argument.targetDiv,
-				dataObj: dataObj,
-				providers: argument.providers,
-				showAlignment: argument.showAlignment
-			});
-			fv.setup();
-			fv.draw();
-		},
 		drawAlignmentTable: function(argument) {
 			targetDiv = argument.targetDiv;
 			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#" + targetDiv));
@@ -116,7 +106,65 @@ var PAGE = function(argument) {
 			jQuery("#" + targetDiv).append("<h3>Amino Acid composition</h3>");
 			PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
 		},
+		drawHeatmapViewer: function(argument) {
+			jQuery.getJSON('examples/CD44_HUMAN.map.json', function(arr) {
+				jQuery("#heatmap").empty();
+				jQuery("#zoom").empty();
+				var hm = new HEAT_MAP({
+					targetDiv: "heatmap",
+					dataObj: arr
+				});
+				var increments = Math.floor((arr.length / 20) * .1);
+				var start, end, zoom;
 
+				jQuery(function() {
+					jQuery("#slider").slider({
+						animate: "fast",
+						value: 0,
+						min: 0,
+						max: ((arr.length) / 20) - increments,
+						step: increments,
+						slide: function(event, ui) {
+							start = ui.value;
+							jQuery("#start").text(start);
+							((start + increments) > (arr.length / 20)) ? end = arr.length / 20 : end = start + increments;
+							jQuery("#end").text(end);
+							jQuery("#zoom").empty();
+							zoom = new HEAT_MAP({
+								targetDiv: "zoom",
+								dataObj: arr,
+								startPoint: start,
+								increments: increments
+							});
+						}
+					});
+					start = jQuery("#slider").slider("value");
+					jQuery("#start").text(start);
+					((start + increments) > (arr.length / 20)) ? end = arr.length / 20 : end = start + increments;
+					jQuery("#end").text(end);
+					zoom = new HEAT_MAP({
+						targetDiv: "zoom",
+						dataObj: arr,
+						startPoint: start,
+						increments: increments
+					});
+				});
+
+
+			});
+		},
+		drawFeatureViewer: function(argument) {
+			if (!argument.providers) argument.providers = APP.providers;
+
+			var fv = new FEATURE_VIEWER({
+				targetDiv: argument.targetDiv,
+				dataObj: dataObj,
+				providers: argument.providers,
+				showAlignment: argument.showAlignment
+			});
+			fv.setup();
+			fv.draw();
+		},
 		drawSSConsistency: function(argument) {
 			targetDiv = argument.targetDiv;
 			jQuery("#" + targetDiv).append("<h3>Secondary Structure composition</h3>");
@@ -137,14 +185,14 @@ var PAGE = function(argument) {
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
 			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) {
-				var url = 'http://www.uniprot.org/uniprot/'+_rec_name;
+				var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
 				var link = jQuery('<a>', {
 					text: _rec_name,
 					title: _rec_name,
 					href: "#",
 					click: function() {
 						console.log(this);
-						window.open( url, '_blank');
+						window.open(url, '_blank');
 						window.focus;
 					}
 				});
@@ -156,7 +204,7 @@ var PAGE = function(argument) {
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#aliModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#pdbModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsByDatabase('pdb') + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
-			
+
 			return (jQuery("#" + targetDiv)).html();
 		},
 

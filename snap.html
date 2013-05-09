@@ -1,69 +1,135 @@
-<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor//d3/d3.v3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"> </script>
+<script language="JavaScript" type="text/javascript" src="vendor/d3/d3.v3.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
-<div id="container"></div>
+
+<div id = "container">
+  <h3>Heatmap Panel</h3>
+  <div id='heatmap'></div>
+  <div id="slider" style="width:50%;margin:25px;"></div>
+  <label for="start">Starting Position</label>
+  <input type="text" id="start"  style="border: 0;  font-weight: bold;"/>
+  <label for="end">End Position</label>
+  <input type="text" id="end"  style="border: 0;  font-weight: bold;"/>
+  <h3>Zoom Panel</h3>
+  <div id='zoom'></div>
+</div>
 
 <script>
-$.getJSON('examples/CD44_HUMAN.map.json', function(arr) {
+
+var HEAT_MAP=function( params ) {
+    var targetDiv = params.targetDiv;
+    var dataObj = params.dataObj;
+   
+    var data = [];
+    var startPoint = 0, stopPoint=(dataObj.length)/20;
+
+    if (typeof params.startPoint!=="undefined" ){
+      startPoint = params.startPoint;
+      var increments = params.increments;
+      console.log(increments);
+      stopPoint = startPoint + increments;
+      for (i=0; i<dataObj.length;i++){
+        if ((dataObj[i].col>=startPoint) &&  (dataObj[i].col<=stopPoint))
+          data.push(dataObj[i]);
+        }
+    }else
+      data = dataObj;
+
+    var gridSize = jQuery("#"+targetDiv).width()/((stopPoint-startPoint)*1.5),
+        h = gridSize,
+        w = gridSize,
+        rectPadding = 50;
+        console.log(gridSize);
+
+    var colorLow = 'green', colorMed = 'black', colorHigh = 'red';
+
+    var margin = {top: 0, right: 0, bottom: 0, left: 0},
+        width = (stopPoint-startPoint)*gridSize - margin.left - margin.right+rectPadding,
+        height = 20*gridSize - margin.top - margin.bottom+rectPadding;
+
+    var colorScale = d3.scale.linear()
+         .domain([-100, 0, 100])
+         .range([colorLow, colorMed, colorHigh]);
+
+    var svg = d3.select("#"+targetDiv).append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var heatMap = svg.selectAll("."+targetDiv)
+        .data(data, function(d) { return d.col + ': ' + d.row; })
+        .enter().append("svg:rect")
+        .attr("x", function(d) { return (d.col-startPoint) * w; })
+        .attr("y", function(d) { return d.row * h; })
+        .attr("width", function(d) { return w; })
+        .attr("height", function(d) { return h; })
+        .style("fill", function(d) { 
+          if (d.label==d.mut)
+            return ('black ');
+          else
+            return colorScale(d.score); })
+        .append("svg:title")
+       .text(function(d) { return d.label+d.col+d.mut+" Score: " + d.score; });
+  };
 
 
+  
+jQuery.getJSON('examples/CD44_HUMAN.map.json', function(arr) {
 
+  var hm = new HEAT_MAP( {  targetDiv: "heatmap", dataObj:arr  } );
+  var increments = Math.floor((arr.length/20)*.1);
+  var start,end,zoom;
 
-min=10;
-max=Math.floor((arr.length/20)*.1)+min;
-console.log(max);
-data = [];
-for (i=(min)*20; i<arr.length;i++){
-  if ((arr[i].col>=min) &&  (arr[i].col<=max))
-    data.push(arr[i]);
-}
-// data = arr.slice(1,10);
-//height of each row in the heatmap
-//width of each column in the heatmap
+    jQuery(function() {
+      jQuery( "#slider" ).slider({
+        animate: "fast",
+        value:0,
+        min: 0,
+        max: ((arr.length)/20)-increments,
+        step: increments,
+        slide: function( event, ui ) {
+          start =  ui.value;
+          jQuery("#start").val(  ui.value );
+          ((start+increments)>(arr.length/20)) ? end = arr.length/20 : end = start+increments ;
+          jQuery("#end").val( end );
+          jQuery("#zoom").empty();
+          zoom = new HEAT_MAP( {  targetDiv: "zoom", dataObj:arr, startPoint:start, increments: increments  } );
+        }
+      });
+      start = jQuery( "#slider" ).slider( "value" );
+      jQuery("#start").val( start );
+      ((start+increments)>(arr.length/20)) ? end = arr.length/20 : end = start+increments ;
+      jQuery("#end").val( end );
+      zoom = new HEAT_MAP( {  targetDiv: "zoom", dataObj:arr, startPoint:start, increments: increments  } );
+  });
 
-
-
-var gridSize = $("#container").width()/((max-min)*1.5) ,
-    h = gridSize,
-    w = gridSize,
-    rectPadding = 50;
-    console.log(gridSize);
-
-var colorLow = 'green', colorMed = 'black', colorHigh = 'red';
-
-var margin = {top: 140, right: 20, bottom: 30, left: 20},
-    width = (max-min)*gridSize - margin.left - margin.right+rectPadding,
-    height = (max-min)*gridSize - margin.top - margin.bottom+rectPadding;
-
-var colorScale = d3.scale.linear()
-     .domain([-100, 0, 100])
-     .range([colorLow, colorMed, colorHigh]);
-
-var svg = d3.select("#heatmap").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-var heatMap = svg.selectAll(".heatmap")
-    .data(data, function(d) { return d.col + ':' + d.row; })
-    .enter().append("svg:rect")
-    .attr("x", function(d) { return d.col * w; })
-    .attr("y", function(d) { return d.row * h; })
-    .attr("width", function(d) { return w; })
-    .attr("height", function(d) { return h; })
-    .style("fill", function(d) { 
-      if (d.label==d.mut)
-        return ('black');
-      else
-        return colorScale(d.score); })
-    .append("svg:title")
-   .text(function(d) { return d.label+d.col+d.mut+" Score: " + d.score; });
-
-$("#heatmap").appendTo($("#container"));
-
+    
 });
 
 </script>
-<div id='heatmap'></div>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

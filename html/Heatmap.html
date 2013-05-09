@@ -1,0 +1,46 @@
+<div  style="width:100%;">
+  <h2>Functional Changes for <span class=".name">CD44_Human</span></h2>
+  <div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Export</a></li>
+        </ul>
+    </div>
+  </div>
+
+<div class="alert alert-info"> 
+        <strong>What is Presented Here?</strong> 
+        This heatmap in this page shows the predicted affect on  protein function if changed by one residue. The columns in the grid represent the query sequence residues and the rows represent the substituting residues. The colors for each square on the grid range from dark green to dark red whereas red represents <strong>predicted functional change</strong> and green represents <strong>no functional change</strong>. Color intensity represents the prediction's confidence where dark is high confidence and bright is low confidence. Black colored square mean a substitution of a resiude by itself and therefore the prediction should be ignored
+    </div>
+  <div id='heatmap'  class="text-warning">Loading...</div>
+  
+  <h3>Zoom Panel</h3>
+  <div class="alert alert-info"> 
+    This panel is a blow out of a specific region in the heatmap presented above. Use the slider to scroll through the heatmap. 
+  </div>
+ 
+<div id="slider" style="width:50%;margin:25px;"></div>
+<table class="table">
+  <tr>
+    <td>
+    <label for="start">Starting Position
+      <strong>
+    <span  id="start" class="text-warning"/>
+    </strong>
+    </label>
+   </td>
+   <td>
+    <label for="end">End Position
+      <strong>
+    <span id="end" class="text-warning"/>
+    </strong>
+    </label>
+  </td>
+  </tr>
+</table>
+ 
+<div id='zoom'  class="text-warning">Loading...</div>
+</div>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
