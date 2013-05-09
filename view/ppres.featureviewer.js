@@ -271,12 +271,8 @@ var FEATURE_VIEWER = function(argument) {
 
 	};
 
-
-
 	Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
 		this.init.call(this, _feature, _feature_provider, _feature_type);
-
-
 		this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin + _feature.end);
 
 		(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
@@ -297,13 +293,9 @@ var FEATURE_VIEWER = function(argument) {
 		};
 
 		this.setLabel(_label);
-
-
-		// addLabel(label);
 		this.color = "blue";
 		this.setColor();
 		return this.getFeature();
-
 	};
 
 

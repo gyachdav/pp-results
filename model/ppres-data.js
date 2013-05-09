@@ -240,6 +240,14 @@ function PPResData() {
 			});
 			return (locations_array);
 		},
+		convertIDtoURL: function( aliObj ){
+			if (aliObj.db.match(/pdb/i)) {
+			(__pdb) = aliObj.id.split('_');
+			_feature.id = __pdb[0];
+			if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
+		}
+
+		},
 		getAlignments: function() {
 			return (alignments);
 		},

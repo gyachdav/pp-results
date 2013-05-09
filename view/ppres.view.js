@@ -14,8 +14,7 @@ var PAGE = function(argument) {
 				'AlignmentTable',
 				'AlignmentPDBTable',
 				'AAConsistency',
-				'SSConsistency',
-				],
+				'SSConsistency', ],
 			SecondaryStructure: [{
 				FeatureViewer: {
 					providers: ["PROFsec"],
@@ -23,8 +22,8 @@ var PAGE = function(argument) {
 				}
 			}, {
 				'SSConsistency': '',
-				
-			},'SolvAcc'],
+
+			}, 'SolvAcc'],
 			Transmembrane: [{
 				'FeatureViewer': {
 					providers: ["PHDhtm"],
@@ -137,11 +136,27 @@ var PAGE = function(argument) {
 			jQuery("#" + targetDiv).append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
-			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) table.append("<tr><td>Recommended Name</td><td>" + _rec_name + "</td></tr>");
+			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) {
+				var url = 'http://www.uniprot.org/uniprot/'+_rec_name;
+				var link = jQuery('<a>', {
+					text: _rec_name,
+					title: _rec_name,
+					href: "#",
+					click: function() {
+						console.log(this);
+						window.open( url, '_blank');
+						window.focus;
+					}
+				});
+				table.append(jQuery('<tr/>')
+					.append(jQuery('<td/>').text('Recommended Name'))
+					.append(jQuery('<td/>').append(link)));
+			}
 			table.append("<tr><td>Sequence Length</td><td>" + dataObj.getSequence().length + "</td></tr>");
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#aliModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#pdbModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsByDatabase('pdb') + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
+			
 			return (jQuery("#" + targetDiv)).html();
 		},
 
@@ -229,7 +244,7 @@ var PAGE = function(argument) {
 							config = component[Object.keys(component)];
 							component = Object.keys(component)[0];
 						}
-						var element = getComponent( component, config);
+						var element = getComponent(component, config);
 						if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 					});
 				});
