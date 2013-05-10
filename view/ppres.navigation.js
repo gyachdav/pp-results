@@ -30,7 +30,7 @@ var NAVIGATION = (function() {
 			text: "Subcellular Localization"
 		}, {
 			id: "tmb",
-			text: "Transmembrane Betta-barrels"
+			text: "Transmembrane Beta-barrels"
 		}],
 		"Further Analysis": [{
 			id: "func",

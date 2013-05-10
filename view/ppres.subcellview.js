@@ -8,7 +8,7 @@ var SUBCELL_VIEW = (function() {
 		"animal": "Animal",
 		"bact": "Bacteria",
 		"proka": "Prokaryotic",
-		"arch": "Archea"
+		"arch": "Archaea"
 	}
 
 		function linkToGO(go_term) {

@@ -11,6 +11,7 @@ var PAGE = function(argument) {
 			},
 				// 'SubcellLocViewer',
 				'SummaryTable',
+				'SequenceViewer',
 				'AlignmentTable',
 				'AlignmentPDBTable',
 				'AAConsistency',
@@ -91,6 +92,9 @@ var PAGE = function(argument) {
 	};
 
 	var visualComponents = {
+		drawSequenceViewer: function  (argument) {
+			sv = new SEQUENCE_VIEWER({targetDiv:  argument.targetDiv, sequence: dataObj.getSequence()});
+		},
 		drawAlignmentTable: function(argument) {
 			targetDiv = argument.targetDiv;
 			ALI_VIEW.draw(dataObj.getAlignmentLocations(), jQuery("#" + targetDiv));
@@ -200,9 +204,13 @@ var PAGE = function(argument) {
 					.append(jQuery('<td/>').text('Recommended Name'))
 					.append(jQuery('<td/>').append(link)));
 			}
-			table.append("<tr><td>Sequence Length</td><td>" + dataObj.getSequence().length + "</td></tr>");
-			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#aliModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
-			table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#pdbModal' role='button' data-toggle='modal'>" + dataObj.getAlignmentsByDatabase('pdb') + "<a/></td></tr>");
+
+			seqModal = new MODAL ({modalName:'SequenceViewer', modalTitle:"Query Sequence"});	
+        	pdbModal = new MODAL ({modalName:'AlignmentPDBTable', modalTitle:"Aligned Structures"});	
+        	aliModal = new MODAL ({modalName:'AlignmentTable', modalTitle:"Aligned Proteins"});	
+			table.append("<tr><td>Sequence Length</td><td><a href='#SequenceViewer' role='button' data-toggle='modal'>" + dataObj.getSequence().length + "</a></td></tr>");
+			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
+			table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsByDatabase('pdb') + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
 
 			return (jQuery("#" + targetDiv)).html();
@@ -279,6 +287,7 @@ var PAGE = function(argument) {
 		draw: function() {
 			loadingDiv.show();
 			mainContainerDiv.empty();
+			jQuery(".modal").remove();
 			var pagePath = 'html/' + currentPage + ".html";
 			var config = undefined;
 
