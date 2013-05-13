@@ -24,11 +24,11 @@
 .info {
   text-align: justify;
 }
-div.container {
- /*border: 1px solid #000000;*/
+/*div.container {
+ border: 1px solid #000000;
   overflow: auto;
   width: 100%
-}
+}*/
 
 div.left {
   width: 45%;

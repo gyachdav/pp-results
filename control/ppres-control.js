@@ -3,7 +3,7 @@ var APP = (function() {
 	var json,
 	ds,
 	file_specs = {
-		path: ".",
+		path: "/javascript/pp-results/",
 		name: "examples/source.xml",
 		type: 'xml'
 	}, debug = 0,
@@ -130,7 +130,7 @@ var APP = (function() {
 	};
 })();
 
-
+APP.path = '/javascript/pp-results/';
 
 APP.providers = [
 	"PROFsec",

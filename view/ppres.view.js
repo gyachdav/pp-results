@@ -111,7 +111,7 @@ var PAGE = function(argument) {
 			PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
 		},
 		drawHeatmapViewer: function(argument) {
-			jQuery.getJSON('examples/CD44_HUMAN.map.json', function(arr) {
+			jQuery.getJSON(APP.path+'examples/CD44_HUMAN.map.json', function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
 				var hm = new HEAT_MAP({
@@ -288,7 +288,7 @@ var PAGE = function(argument) {
 			loadingDiv.show();
 			mainContainerDiv.empty();
 			jQuery(".modal").remove();
-			var pagePath = 'html/' + currentPage + ".html";
+			var pagePath = APP.path+'html/' + currentPage + ".html";
 			var config = undefined;
 
 			if (!isCached(currentPage)) {

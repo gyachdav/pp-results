@@ -1,5 +1,5 @@
 var SUBCELL_VIEW = (function() {
-	var assets_path = 'assets/';
+	var assets_path =  '/javascript/pp-results/'+'assets/';
 	var arrImg = [];
 
 	var Domains = {
@@ -17,6 +17,7 @@ var SUBCELL_VIEW = (function() {
 		}
 
 		function getPathToImage(domain, loc) {
+			// TODO need to pass the path from app settings
 			return (assets_path + domain + "/" + loc + ".PNG");
 		}
 
