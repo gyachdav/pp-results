@@ -9,13 +9,14 @@ var PIE_CHART = (function() {
 					pieSize += n;
 				});
 			}
+						
 			dataArr = jQuery.map(_arr, function(n, i) {
-
-				return {
-					slice_name: i,
-					slice_size: n,
-					slice_portion: (n / pieSize * 100).toFixed(2)
-				};
+				if (n>0)
+					return {
+						slice_name: i,
+						slice_size: n,
+						slice_portion: (n / pieSize * 100).toFixed(2)
+					};
 			});
 
 			console.log(dataArr);
@@ -30,9 +31,6 @@ var PIE_CHART = (function() {
 			var w = 400,
 				h = 300,
 				r = Math.min(w, h) / 2;
-
-
-
 
 			color = d3.scale.category20c(); //builtin range of colors
 			var vis = d3.select("#" + targetDiv)

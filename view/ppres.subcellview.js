@@ -1,5 +1,5 @@
 var SUBCELL_VIEW = (function() {
-	var assets_path =  '/javascript/pp-results/'+'assets/';
+	var assets_path =  '/ppres/'+'assets/';
 	var arrImg = [];
 
 	var Domains = {

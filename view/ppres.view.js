@@ -102,7 +102,9 @@ var PAGE = function(argument) {
 
 		drawAlignmentPDBTable: function(argument) {
 			targetDiv = argument.targetDiv;
-			ALI_VIEW.draw(dataObj.getAlignmentLocations("pdb"), jQuery("#" + targetDiv));
+			arrAlignments = dataObj.getAlignmentLocations("pdb");
+			if (arrAlignments.length>0) 
+				ALI_VIEW.draw(arrAlignments, jQuery("#" + targetDiv));
 		},
 
 		drawAAConsistency: function(argument) {
@@ -111,12 +113,17 @@ var PAGE = function(argument) {
 			PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
 		},
 		drawHeatmapViewer: function(argument) {
-			jQuery.getJSON(APP.path+'examples/CD44_HUMAN.map.json', function(arr) {
+
+			var dataToFetch = 'http://rostlab.org/~roos//get/snap/json/?md5='+dataObj.getMD5Seq();
+
+			jQuery.getJSON('proxy.php', {url:dataToFetch},
+				function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
+				console.log(arr.contents);
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
-					dataObj: arr
+					dataObj: arr.contents
 				});
 				var increments = Math.floor((arr.length / 20) * .1);
 				var start, end, zoom;
@@ -210,7 +217,9 @@ var PAGE = function(argument) {
         	aliModal = new MODAL ({modalName:'AlignmentTable', modalTitle:"Aligned Proteins"});	
 			table.append("<tr><td>Sequence Length</td><td><a href='#SequenceViewer' role='button' data-toggle='modal'>" + dataObj.getSequence().length + "</a></td></tr>");
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
-			table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsByDatabase('pdb') + "<a/></td></tr>");
+			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
+			if (arrAlignments.length>0)					
+				table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
 
 			return (jQuery("#" + targetDiv)).html();

@@ -15,6 +15,7 @@ function PPResData() {
 		xml_data = {},
 		protein = {},
 		sequence = '',
+		md5Seq = '',
 		alignments = {},
 		data_ready = false,
 		data = {
@@ -52,6 +53,8 @@ function PPResData() {
 	var setJsonData = function(json) {
 		json_data = json;
 		sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
+		md5Seq = md5(sequence);
+		console.log (md5Seq);
 		alignments = json_data.entry.aliProviderGroup.alignment;
 		protein = json_data.entry.protein;
 		organism = json_data.entry.organism;
@@ -222,6 +225,9 @@ function PPResData() {
 
 		getSequence: function() {
 			return (sequence);
+		},
+		getMD5Seq: function() {
+			return (md5Seq);
 		},
 		getAlignmentLocations: function(database) {
 			var alis = this.getAlignments();
