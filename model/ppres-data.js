@@ -218,7 +218,9 @@ function PPResData() {
 			return (this.getAlignments().length);
 		},
 
-
+		getXMLData: function() {
+			return (xml_data);
+		},
 		getJsonData: function() {
 			return (json_data);
 		},

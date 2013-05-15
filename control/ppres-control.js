@@ -6,9 +6,17 @@ var APP = (function() {
 
 	var json,
 	ds,
+	// file_specs = {
+	// 	path: "http://pp-dev.informatik.tu-muenchen.de",
+	// 	name: 'xml_results?req_id='+req_id,
+	// 	type: 'xml'
+	// }, debug = 0,
+	// 	mainObj = new PPResData();
+
+
 	file_specs = {
-		path: "http://pp-dev.informatik.tu-muenchen.de",
-		name: 'xml_results?req_id='+req_id,
+		path: "examples",
+		name: 'source.xml',
 		type: 'xml'
 	}, debug = 0,
 		mainObj = new PPResData();
@@ -33,6 +41,14 @@ var APP = (function() {
 	});
 
 	return {
+		exportXML: function(){
+			var string = (new XMLSerializer()).serializeToString(mainObj.getXMLData() );
+			var w = window.open('data:text/xml,' + string);
+		},
+		exportJSON: function(){
+			var w = window.open('');
+			jQuery(w.document.body).html( JSON.stringify( mainObj.getJsonData()) );
+		},
 		populateData: function(data) {
 			json = jQuery.xml2json(data);
 			ds.file_type = 'json'; //switch to json
@@ -134,7 +150,9 @@ var APP = (function() {
 	};
 })();
 
-APP.path = '/ppres/';
+//APP.path = '/ppres/';
+APP.path = '/~guyyachdav/pp-results/';
+
 
 APP.providers = [
 	"PROFsec",
