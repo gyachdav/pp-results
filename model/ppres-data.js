@@ -217,6 +217,7 @@ function PPResData() {
 		getAlignmentsCount: function() {
 			return (this.getAlignments().length);
 		},
+
 		getXMLData: function() {
 			return (xml_data);
 		},

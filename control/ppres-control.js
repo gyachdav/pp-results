@@ -13,6 +13,14 @@ var APP = (function() {
 	}, debug = 0,
 		mainObj = new PPResData();
 
+
+	// file_specs = {
+	// 	path: "examples",
+	// 	name: 'source.xml',
+	// 	type: 'xml'
+	// }, debug = 0,
+	// 	mainObj = new PPResData();
+
 	NAVIGATION_DIV = "#nav";
 
 
@@ -143,6 +151,8 @@ var APP = (function() {
 })();
 
 APP.path = '/ppres/';
+// APP.path = '/~guyyachdav/pp-results/';
+
 
 APP.providers = [
 	"PROFsec",
