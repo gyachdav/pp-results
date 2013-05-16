@@ -33,6 +33,14 @@ var APP = (function() {
 	});
 
 	return {
+		exportXML: function(){
+			var string = (new XMLSerializer()).serializeToString(mainObj.getXMLData() );
+			var w = window.open('data:text/xml,' + string);
+		},
+		exportJSON: function(){
+			var w = window.open('');
+			jQuery(w.document.body).html( JSON.stringify( mainObj.getJsonData()) );
+		},
 		populateData: function(data) {
 			json = jQuery.xml2json(data);
 			ds.file_type = 'json'; //switch to json
