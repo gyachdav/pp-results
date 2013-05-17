@@ -361,15 +361,10 @@ var PAGE = function(argument) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
 					mainContainerDiv.append(pageHTML);
-<<<<<<< HEAD
+
 					if (navBar[currentPage])
 					    var nb = new NAVBAR (navBar[currentPage]);
-=======
 
-					if (navBar[currentPage])
-						var nb = new new NAVBAR (navBar[currentPage]);
-
->>>>>>> d369e53851cf42cf72b11e0201acbfd6e9d2f346
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
 						if (typeof component === 'object') {

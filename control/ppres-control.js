@@ -6,7 +6,7 @@ var APP = (function() {
 
 	var json,
 	ds,
-<<<<<<< HEAD
+
 	file_specs = {
 		path: "http://pp-dev.informatik.tu-muenchen.de",
 		name: 'xml_results?req_id='+req_id,
@@ -22,16 +22,6 @@ var APP = (function() {
 	// }, debug = 0,
 	// 	mainObj = new PPResData();
 
-=======
-	 file_specs = {
-	 	path: "http://pp-dev.informatik.tu-muenchen.de",
-	 	name: 'xml_results?req_id='+req_id,
-	 	type: 'xml'
-	 }, debug = 0,
-	 	mainObj = new PPResData();
-
-
->>>>>>> d369e53851cf42cf72b11e0201acbfd6e9d2f346
 	NAVIGATION_DIV = "#nav";
 
 
@@ -168,11 +158,7 @@ var APP = (function() {
 })();
 
 APP.path = '/ppres/';
-<<<<<<< HEAD
 // APP.path = '/~guyyachdav/pp-results/';
-=======
-
->>>>>>> d369e53851cf42cf72b11e0201acbfd6e9d2f346
 
 
 APP.providers = [
