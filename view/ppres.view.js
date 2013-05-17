@@ -9,8 +9,8 @@ var PAGE = function(argument) {
 					showAlignment: true
 				}
 			},
-				// 'SubcellLocViewer',
-				'SummaryTable',
+			// 'SubcellLocViewer',
+			'SummaryTable',
 				'SequenceViewer',
 				'AlignmentTable',
 				'AlignmentPDBTable',
@@ -67,6 +67,29 @@ var PAGE = function(argument) {
 		dataObj,
 		providers,
 		showAlignment;
+
+	var navBar = {
+		Dashboard: {
+			targetDiv: ".navbar",
+			items: [{
+				'Export': [{
+					name: 'allExport',
+					text: "Download All Data Files",
+					func: "APP.export();"
+				}, {
+					name: 'xmlExport',
+					text: "Download in XML format",
+					func: "APP.exportXML();"
+				}, {
+					name: 'jsonExport',
+					text: "Download in JSON format",
+					func: "APP.exportJson();"
+				}]
+			}, {
+				'Email': ['nothing']
+			}]
+		}
+	};
 	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
 	(argument.providers) ? providers = argument.providers : providers = [];
 	(argument.showAlignment) ? showAlignment = argument.showAlignment : showAlignment = false;
@@ -92,8 +115,11 @@ var PAGE = function(argument) {
 	};
 
 	var visualComponents = {
-		drawSequenceViewer: function  (argument) {
-			sv = new SEQUENCE_VIEWER({targetDiv:  argument.targetDiv, sequence: dataObj.getSequence()});
+		drawSequenceViewer: function(argument) {
+			sv = new SEQUENCE_VIEWER({
+				targetDiv: argument.targetDiv,
+				sequence: dataObj.getSequence()
+			});
 		},
 		drawAlignmentTable: function(argument) {
 			targetDiv = argument.targetDiv;
@@ -103,8 +129,7 @@ var PAGE = function(argument) {
 		drawAlignmentPDBTable: function(argument) {
 			targetDiv = argument.targetDiv;
 			arrAlignments = dataObj.getAlignmentLocations("pdb");
-			if (arrAlignments.length>0) 
-				ALI_VIEW.draw(arrAlignments, jQuery("#" + targetDiv));
+			if (arrAlignments.length > 0) ALI_VIEW.draw(arrAlignments, jQuery("#" + targetDiv));
 		},
 
 		drawAAConsistency: function(argument) {
@@ -114,10 +139,13 @@ var PAGE = function(argument) {
 		},
 		drawHeatmapViewer: function(argument) {
 
-			var dataToFetch = 'http://rostlab.org/~roos//get/snap/json/?md5='+dataObj.getMD5Seq();
+			var dataToFetch = 'http://rostlab.org/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
 
-			jQuery.getJSON('proxy.php', {url:dataToFetch},
-				function(arr) {
+			jQuery.getJSON('proxy.php', {
+				url: dataToFetch
+			},
+
+			function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
 				console.log(arr.contents);
@@ -212,14 +240,22 @@ var PAGE = function(argument) {
 					.append(jQuery('<td/>').append(link)));
 			}
 
-			seqModal = new MODAL ({modalName:'SequenceViewer', modalTitle:"Query Sequence"});	
-        	pdbModal = new MODAL ({modalName:'AlignmentPDBTable', modalTitle:"Aligned Structures"});	
-        	aliModal = new MODAL ({modalName:'AlignmentTable', modalTitle:"Aligned Proteins"});	
+			seqModal = new MODAL({
+				modalName: 'SequenceViewer',
+				modalTitle: "Query Sequence"
+			});
+			pdbModal = new MODAL({
+				modalName: 'AlignmentPDBTable',
+				modalTitle: "Aligned Structures"
+			});
+			aliModal = new MODAL({
+				modalName: 'AlignmentTable',
+				modalTitle: "Aligned Proteins"
+			});
 			table.append("<tr><td>Sequence Length</td><td><a href='#SequenceViewer' role='button' data-toggle='modal'>" + dataObj.getSequence().length + "</a></td></tr>");
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
-			if (arrAlignments.length>0)					
-				table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
+			if (arrAlignments.length > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
 
 			return (jQuery("#" + targetDiv)).html();
@@ -297,13 +333,17 @@ var PAGE = function(argument) {
 			loadingDiv.show();
 			mainContainerDiv.empty();
 			jQuery(".modal").remove();
-			var pagePath = APP.path+'html/' + currentPage + ".html";
+			var pagePath = APP.path + 'html/' + currentPage + ".html";
 			var config = undefined;
 
 			if (!isCached(currentPage)) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
 					mainContainerDiv.append(pageHTML);
+
+					if (navBar[currentPage])
+						var nb = new new NAVBAR (navBar[currentPage]);
+
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
 						if (typeof component === 'object') {
