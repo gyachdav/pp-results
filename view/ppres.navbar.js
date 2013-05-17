@@ -1,5 +1,4 @@
 var NAVBAR = function(config) {
-
     var ul = jQuery('<ul/>').addClass('nav');
     jQuery.each(config.items, function(key, value) {
 	console.log(value[Object.keys(value)]);
@@ -19,9 +18,7 @@ var NAVBAR = function(config) {
 		    .text(Object.keys(value)));
 
 	ul.append(menu);
-    })
-
-	;
+    });
 
     jQuery(config.targetDiv)
 	.append(jQuery('<div/>').addClass('navbar-inner')
