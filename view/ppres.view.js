@@ -67,6 +67,50 @@ var PAGE = function(argument) {
 		dataObj,
 		providers,
 		showAlignment;
+
+    var navBar = {
+	Dashboard: {
+	    targetDiv: ".navbar",
+	    items: [{
+		'Export': [{
+		    name: 'allExport',
+		    text: "Download All Data Files",
+		    func: "APP.export();"
+		}, {
+		    name: 'xmlExport',
+		    text: "Download in XML format",
+		    func: "APP.exportXML();"
+		}, {
+		    name: 'jsonExport',
+		    text: "Download in JSON format",
+		    func: "APP.exportJson();"
+		}]
+	    }, {
+		'Email': 'nothing'
+	    }]
+	},
+	SecondaryStructure: {
+	    targetDiv: ".navbar",
+	    items: [{
+		'Export': [{
+		    name: 'allExport',
+		    text: "Download Raw Data File",
+		    func: "APP.export('PROFsec');"
+		}, {
+		    name: 'xmlExport',
+		    text: "Download in XML format",
+		    func: "APP.exportXML();"
+		}, {
+		    name: 'jsonExport',
+		    text: "Download in JSON format",
+		    func: "APP.exportJson();"
+		}]
+	    }, {
+		'Email': 'nothing'
+	    }]
+	}
+    };
+
 	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
 	(argument.providers) ? providers = argument.providers : providers = [];
 	(argument.showAlignment) ? showAlignment = argument.showAlignment : showAlignment = false;
@@ -304,6 +348,8 @@ var PAGE = function(argument) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
 					mainContainerDiv.append(pageHTML);
+					if (navBar[currentPage])
+					    var nb = new NAVBAR (navBar[currentPage]);
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
 						if (typeof component === 'object') {

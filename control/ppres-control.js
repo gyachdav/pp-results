@@ -41,6 +41,12 @@ var APP = (function() {
 	});
 
 	return {
+	    export: function(){
+		var urlBase = 'http://rostlab.org/~roos/get/ppc/tar.gz/';
+		var urlParam = 'md5';
+		var urlREST = urlBase + "?" + urlParam + "=" +mainObj.getMD5();
+		window.open(urlREST);
+	    },
 		exportXML: function(){
 			var string = (new XMLSerializer()).serializeToString(mainObj.getXMLData() );
 			var w = window.open('data:text/xml,' + string);
