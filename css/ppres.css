@@ -1,3 +1,17 @@
+.load-div {
+    background-image:url('/ppres/assets/loader-inf.gif');
+    width: 128px;
+    height: 78px;
+    background-color: fff;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .arc path {
   stroke: #fff;  
 }
@@ -23,7 +37,7 @@
 
 .info {
   text-align: justify;
-
+}
 div.left {
   width: 45%;
   float: left;
@@ -34,17 +48,3 @@ div.right {
   float: right;
 }
 
-div.loading {
-  background-image:url('assets/loader-inf.gif');
-    width: 128px;
-    height: 78px;
-    background-color: fff;
-
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    margin: auto;
-}

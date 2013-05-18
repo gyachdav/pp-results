@@ -63,7 +63,7 @@ var PAGE = function(argument) {
 		defaultPage = "Dashboard",
 		currentPage,
 		mainContainerDiv = jQuery("#content"),
-		loadingDiv = jQuery(".loading"),
+		loadingDiv = jQuery(".load-div"),
 		dataObj,
 		providers,
 		showAlignment;
