@@ -277,7 +277,11 @@ var FEATURE_VIEWER = function(argument) {
 		this.setFeatureID('alignment__' + _feature.db + '__' + _feature.id + '__' + _feature.begin + _feature.end);
 
 		(_feature.type && typeof _feature.type !== undefined) ? featureTypeLabel = _feature.type : featureTypeLabel = "";
+
+		this.color = "blue";
+
 		if (_feature.db.match(/pdb/i)) {
+			this.color = "purple";
 			(__pdb) = _feature.id.split('_');
 			_feature.id = __pdb[0];
 			if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
@@ -295,7 +299,7 @@ var FEATURE_VIEWER = function(argument) {
 		};
 
 		this.setLabel(_label);
-		this.color = "blue";
+		
 		this.setColor();
 		return this.getFeature();
 	};
