@@ -169,12 +169,13 @@ var PAGE = function(argument) {
 			function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
-				console.log(arr.contents);
+				console.log(arr);
+			    dataObj  = arr.contents;
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
-					dataObj: arr.contents
+					dataObj: dataObj
 				});
-				var increments = Math.floor((arr.length / 20) * .1);
+				var increments = Math.floor((dataObj.length / 20) * .1);
 				var start, end, zoom;
 
 				jQuery(function() {
@@ -182,17 +183,17 @@ var PAGE = function(argument) {
 						animate: "fast",
 						value: 0,
 						min: 0,
-						max: ((arr.length) / 20) - increments,
+						max: ((dataObj.length) / 20) - increments,
 						step: increments,
 						slide: function(event, ui) {
 							start = ui.value;
 							jQuery("#start").text(start);
-							((start + increments) > (arr.length / 20)) ? end = arr.length / 20 : end = start + increments;
+							((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
 							jQuery("#end").text(end);
 							jQuery("#zoom").empty();
 							zoom = new HEAT_MAP({
 								targetDiv: "zoom",
-								dataObj: arr,
+								dataObj: dataObj,
 								startPoint: start,
 								increments: increments
 							});
@@ -200,11 +201,11 @@ var PAGE = function(argument) {
 					});
 					start = jQuery("#slider").slider("value");
 					jQuery("#start").text(start);
-					((start + increments) > (arr.length / 20)) ? end = arr.length / 20 : end = start + increments;
+					((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
 					jQuery("#end").text(end);
 					zoom = new HEAT_MAP({
 						targetDiv: "zoom",
-						dataObj: arr,
+						dataObj: dataObj,
 						startPoint: start,
 						increments: increments
 					});
