@@ -152,8 +152,6 @@ var APP = (function() {
 //APP.path = '/ppres/';
 APP.path = '/~guyyachdav/ppres/';
 
-
-
 APP.providers = [
 	"PROFsec",
 	"PROFacc",
