@@ -28,10 +28,12 @@ var NAVIGATION = (function() {
 		}, {
 			id: "subcell",
 			text: "Subcellular Localization"
-		}, {
-			id: "tmb",
-			text: "Transmembrane Beta-barrels"
-		}],
+		},
+		//  {
+		// 	id: "tmb",
+		// 	text: "Transmembrane Beta-barrels"
+		// }
+		],
 		"Further Analysis": [{
 			id: "func",
 			text: "Functional Changes",

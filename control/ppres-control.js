@@ -6,18 +6,40 @@ var EXPORT = function(argument) {
 		window.open(urlREST);
 	};
 
+	var exportMethod = function(methodName) {
+		//http://rostlab.org/~roos/get/reprof/?md5=0ffaf7ed79c69f9db1c6fe1440558d57
+		var urlBase = 'http://rostlab.org/~roos/get/';
+		urlBase += methodName + '/';
+		var urlParam = 'md5';
+		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
+		window.open(urlREST);
+	};
 
-	exportXML =  function() {
-		var string = (new XMLSerializer()).serializeToString( APP.getDataObj().getXMLData());
+
+
+	exportXML = function(predType) {
+		var string;
+		if (predType) {
+			string = jQuery(APP.getDataObj().getXMLData()).find(predType);
+			string = (new XMLSerializer()).serializeToString(string);
+		} else
+			string = (new XMLSerializer()).serializeToString(APP.getDataObj().getXMLData());
+
+		console.log(string);
 		var w = window.open('data:text/xml,' + string);
 	};
-	exportJSON= function() {
+	exportJSON = function(methodName) {
 		var w = window.open('');
-		jQuery(w.document.body).html(JSON.stringify( APP.getDataObj().getJsonData()));
+		if (methodName)
+			jQuery(w.document.body).html(JSON.stringify(
+				APP.getDataObj().getFeatureByProvider(APP.getDataObj().getFeatureTypeGroup(), methodName)));
+		else
+			jQuery(w.document.body).html(JSON.stringify(APP.getDataObj().getJsonData()));
 	};
 
 	return {
 		exportALL: exportALL,
+		exportMethod: exportMethod,
 		exportJSON: exportJSON,
 		exportXML: exportXML
 	};
@@ -31,20 +53,20 @@ var APP = (function() {
 	if (!req_id) req_id = 70;
 
 	var json,
-	ds,
+		ds,
 
 
-	// file_specs = {
-	// 	path: "http://pp-dev.informatik.tu-muenchen.de",
-	// 	name: 'xml_results?req_id='+req_id,
-	// 	type: 'xml'
-	// },
+		// file_specs = {
+		// 	path: "http://pp-dev.informatik.tu-muenchen.de",
+		// 	name: 'xml_results?req_id='+req_id,
+		// 	type: 'xml'
+		// },
 
-	file_specs = {
-		path: "examples",
-		name: 'source.xml',
-		type: 'xml'
-	}, debug = 0,
+		file_specs = {
+			path: "examples",
+			name: 'source.xml',
+			type: 'xml'
+		}, debug = 0,
 
 
 		debug = 0,
@@ -179,19 +201,20 @@ APP.path = '/~guyyachdav/pp-results/';
 
 
 APP.providers = [
-	"PROFsec",
-	"PROFacc",
-	"PHDhtm",
-	"ISIS",
-	"DISIS",
-	"ASP",
-	"DISULFIND",
-	"PredictNLS",
-	"NORSnet",
-	"PROFbval",
-	"Ucon",
-	"MD",
-	"PROFtmb"];
+		"PROFsec",
+		"PROFacc",
+		"PHDhtm",
+		"ISIS",
+		"DISIS",
+		"ASP",
+		"DISULFIND",
+		"PredictNLS",
+		"NORSnet",
+		"PROFbval",
+		"Ucon",
+		"MD",
+		"PROFtmb"
+];
 
 
 
@@ -254,20 +277,21 @@ function Demo(target_div) {
 	};
 
 	var providers = [
-		"PROFsec",
-		"PROFacc",
-		"NORSnet",
-		"ISIS",
-		"DISIS",
-		"ASP",
-		"DISULFIND",
-		"PredictNLS",
-		"PHDhtm",
-		"PROFbval",
-		"Ucon",
-		"MD",
-		"PROFtmb",
-		"LOCtree"];
+			"PROFsec",
+			"PROFacc",
+			"NORSnet",
+			"ISIS",
+			"DISIS",
+			"ASP",
+			"DISULFIND",
+			"PredictNLS",
+			"PHDhtm",
+			"PROFbval",
+			"Ucon",
+			"MD",
+			"PROFtmb",
+			"LOCtree"
+	];
 
 
 	// // This block test data loading and parsing all features

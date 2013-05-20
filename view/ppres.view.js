@@ -5,60 +5,62 @@ var PAGE = function(argument) {
 		cached = {},
 		pageComponents = {
 			Dashboard: [{
-				FeatureViewer: {
-					showAlignment: true
-				}
-			},
-			// 'SubcellLocViewer',
-			'SummaryTable',
-				'SequenceViewer',
-				'AlignmentTable',
-				'AlignmentPDBTable',
-				'AAConsistency',
-				'SSConsistency', ],
+					FeatureViewer: {
+						showAlignment: true
+					}
+				},
+				// 'SubcellLocViewer',
+				'SummaryTable',
+					'SequenceViewer',
+					'AlignmentTable',
+					'AlignmentPDBTable',
+					'AAConsistency',
+					'SSConsistency',
+			],
 			SecondaryStructure: [{
-				FeatureViewer: {
-					providers: ["PROFsec"],
-					showAlignment: false
-				}
-			}, {
-				'SSConsistency': '',
+					FeatureViewer: {
+						providers: ["PROFsec", "PROFtmb"],
+						showAlignment: false
+					}
+				}, {
+					'SSConsistency': '',
 
-			}, 'SolvAcc'],
+				}, 'SolvAcc'
+			],
 			Transmembrane: [{
-				'FeatureViewer': {
-					providers: ["PHDhtm"],
-					showAlignment: false
+					'FeatureViewer': {
+						providers: ["PHDhtm"],
+						showAlignment: false
+					}
 				}
-			}],
+			],
 			Disorder: [{
-				'FeatureViewer': {
-					providers: ["PROFbval", "MD", "Ucon", "NORSnet"],
-					showAlignment: false
+					'FeatureViewer': {
+						providers: ["PROFbval", "MD", "Ucon", "NORSnet"],
+						showAlignment: false
+					}
 				}
-			}],
+			],
 			Binding: [{
-				'FeatureViewer': {
-					providers: ["ISIS"],
-					showAlignment: false
+					'FeatureViewer': {
+						providers: ["ISIS"],
+						showAlignment: false
+					}
 				}
-			}],
-			TMB: [{
-				'FeatureViewer': {
-					providers: ["PROFtmb"],
-					showAlignment: false
-				}
-			}],
+			],
 			Disulphide: [{
-				'FeatureViewer': {
-					providers: ["DISULFIND"],
-					showAlignment: false
+					'FeatureViewer': {
+						providers: ["DISULFIND"],
+						showAlignment: false
+					}
 				}
-			}],
+			],
 			Heatmap: [
-				'HeatmapViewer'],
+					'HeatmapViewer'
+			],
 			SubcellLoc: [
-				"SubcellLocViewer"]
+					"SubcellLocViewer"
+			]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -68,48 +70,184 @@ var PAGE = function(argument) {
 		providers,
 		showAlignment;
 
-    var navBar = {
-	Dashboard: {
-	    targetDiv: ".navbar",
-	    items: [{
-		'Export': [{
-		    name: 'allExport',
-		    text: "Download All Data Files",
-		    func: "exportALL"
-		}, {
-		    name: 'xmlExport',
-		    text: "Download in XML format",
-		    func: "exportXML"
-		}, {
-		    name: 'jsonExport',
-		    text: "Download in JSON format",
-		    func: "exportJSON"
-		}]
-	    }, {
-		'Email': 'nothing'
-	    }]
-	},
-	SecondaryStructure: {
-	    targetDiv: ".navbar",
-	    items: [{
-		'Export': [{
-		    name: 'allExport',
-		    text: "Download Raw Data File",
-		    func: "APP.export('PROFsec');"
-		}, {
-		    name: 'xmlExport',
-		    text: "Download in XML format",
-		    func: "APP.exportXML();"
-		}, {
-		    name: 'jsonExport',
-		    text: "Download in JSON format",
-		    func: "APP.exportJson();"
-		}]
-	    }, {
-		'Email': 'nothing'
-	    }]
-	}
-    };
+	var navBar = {
+		Dashboard: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'allExport',
+							text: "Download All Data Files",
+							func: "exportALL"
+						}, {
+							name: 'xmlExport',
+							text: "Download in XML format",
+							func: "exportXML"
+						}, {
+							name: 'jsonExport',
+							text: "Download in JSON format",
+							func: "exportJSON"
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+		SecondaryStructure: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'secstructExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["reprof"]
+						}, {
+							name: 'jsonExport',
+							text: "Download in JSON format",
+							func: "exportJSON",
+							params: ['PROFsec']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+		Transmembrane: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'htmExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["reprof"]
+						}, {
+							name: 'jsonExport',
+							text: "Download in JSON format",
+							func: "exportJSON",
+							params: ['PHDhtm']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+
+		Disorder: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'disorderExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["mdisorder"]
+						}, {
+							name: 'jsonExport',
+							text: "Download PROFbval prediction in JSON format",
+							func: "exportJSON",
+							params: ['PROFbval']
+						}, {
+							name: 'jsonExport',
+							text: "Download UCON prediction in JSON format",
+							func: "exportJSON",
+							params: ['UCON']
+						}, {
+							name: 'jsonExport',
+							text: "Download NORSnet prediction in JSON format",
+							func: "exportJSON",
+							params: ['NORSnet']
+						}, {
+							name: 'jsonExport',
+							text: "Download MetaDisorder prediction in JSON format",
+							func: "exportJSON",
+							params: ['MD']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+		Disulphide: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'htmExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["disulfinder"]
+						}, {
+							name: 'jsonExport',
+							text: "Download DISULFIND prediction in JSON format",
+							func: "exportJSON",
+							params: ['DISULFIND']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+		Binding: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'isisExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["isis"]
+						}, {
+							name: 'jsonExport',
+							text: "Download ISIS prediction in JSON format",
+							func: "exportJSON",
+							params: ['ISIS']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+		SubcellLoc: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'subcellExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["lc2"]
+						}, {
+							name: 'jsonExport',
+							text: "Download LocTree2 prediction in JSON format",
+							func: "exportJSON",
+							params: ['LocTree2']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
+		Heatmap: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'heatmapExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: [""]
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		}
+
+
+
+	};
 
 	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
 	(argument.providers) ? providers = argument.providers : providers = [];
@@ -170,7 +308,7 @@ var PAGE = function(argument) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
 				console.log(arr);
-			    dataObj  = arr.contents;
+				dataObj = arr.contents;
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
 					dataObj: dataObj
@@ -364,7 +502,7 @@ var PAGE = function(argument) {
 					mainContainerDiv.append(pageHTML);
 
 					if (navBar[currentPage])
-					    var nb = new NAVBAR (navBar[currentPage]);
+						var nb = new NAVBAR(navBar[currentPage]);
 
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
