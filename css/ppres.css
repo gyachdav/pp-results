@@ -1,3 +1,17 @@
+.load-div {
+    background-image:url('/ppres/assets/loader-inf.gif');
+    width: 128px;
+    height: 78px;
+    background-color: fff;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 .arc path {
   stroke: #fff;  
 }
@@ -24,12 +38,6 @@
 .info {
   text-align: justify;
 }
-/*div.container {
- border: 1px solid #000000;
-  overflow: auto;
-  width: 100%
-}*/
-
 div.left {
   width: 45%;
   float: left;
@@ -40,13 +48,3 @@ div.right {
   float: right;
 }
 
-
-
- /* .topright{
-  		position: relative;
-		right: -20px;
-		float: right;
-  } 
-  .topright:hover { 
-  		cursor: pointer;
-    }

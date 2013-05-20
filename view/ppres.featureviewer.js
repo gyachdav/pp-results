@@ -219,7 +219,8 @@ var FEATURE_VIEWER = function(argument) {
 
 			var label = {
 				"typeCode": _feature.code,
-				"evidenceText": "Prediction ("+_feature_provider+") EDAM Full ID: http://edamontology.org/operation_0253",
+			        "evidenceText": "Prediction ("+_feature_provider+") ",
+//				"evidenceText": "Prediction ("+_feature_provider+") EDAM Full ID: http://edamontology.org/operation_0253",
 				"featureTypeLabel": featureTypeLabel,
 				"featureLabel": _feature_type ? _feature_type : featureTypeLabel,
 				"evidenceCode": "See Citing Info Below",
@@ -288,7 +289,8 @@ var FEATURE_VIEWER = function(argument) {
 			"evidenceText": 'Alignment (NCBI-BLAST)',
 			"featureTypeLabel": " Matched Length: " + _feature.matchlen,
 			"typeCategory": "Identity: " + parseFloat(_feature.identity).toFixed(2),
-			"evidenceCode": "http://edamontology.org/data_1387"
+			"evidenceCode": ""
+//			"evidenceCode": "http://edamontology.org/data_1387"
 			// todo: add dbreference to label
 		};
 

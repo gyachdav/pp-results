@@ -63,33 +63,54 @@ var PAGE = function(argument) {
 		defaultPage = "Dashboard",
 		currentPage,
 		mainContainerDiv = jQuery("#content"),
-		loadingDiv = jQuery(".loading"),
+		loadingDiv = jQuery(".load-div"),
 		dataObj,
 		providers,
 		showAlignment;
 
-	var navBar = {
-		Dashboard: {
-			targetDiv: ".navbar",
-			items: [{
-				'Export': [{
-					name: 'allExport',
-					text: "Download All Data Files",
-					func: "APP.export();"
-				}, {
-					name: 'xmlExport',
-					text: "Download in XML format",
-					func: "APP.exportXML();"
-				}, {
-					name: 'jsonExport',
-					text: "Download in JSON format",
-					func: "APP.exportJson();"
-				}]
-			}, {
-				'Email': ['nothing']
-			}]
-		}
-	};
+    var navBar = {
+	Dashboard: {
+	    targetDiv: ".navbar",
+	    items: [{
+		'Export': [{
+		    name: 'allExport',
+		    text: "Download All Data Files",
+		    func: "APP.exportALL();"
+		}, {
+		    name: 'xmlExport',
+		    text: "Download in XML format",
+		    func: "APP.exportXML();"
+		}, {
+		    name: 'jsonExport',
+		    text: "Download in JSON format",
+		    func: "APP.exportJson();"
+		}]
+	    }, {
+		'Email': 'nothing'
+	    }]
+	},
+	SecondaryStructure: {
+	    targetDiv: ".navbar",
+	    items: [{
+		'Export': [{
+		    name: 'allExport',
+		    text: "Download Raw Data File",
+		    func: "APP.export('PROFsec');"
+		}, {
+		    name: 'xmlExport',
+		    text: "Download in XML format",
+		    func: "APP.exportXML();"
+		}, {
+		    name: 'jsonExport',
+		    text: "Download in JSON format",
+		    func: "APP.exportJson();"
+		}]
+	    }, {
+		'Email': 'nothing'
+	    }]
+	}
+    };
+
 	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
 	(argument.providers) ? providers = argument.providers : providers = [];
 	(argument.showAlignment) ? showAlignment = argument.showAlignment : showAlignment = false;
@@ -148,12 +169,13 @@ var PAGE = function(argument) {
 			function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
-				console.log(arr.contents);
+				console.log(arr);
+			    dataObj  = arr.contents;
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
-					dataObj: arr.contents
+					dataObj: dataObj
 				});
-				var increments = Math.floor((arr.length / 20) * .1);
+				var increments = Math.floor((dataObj.length / 20) * .1);
 				var start, end, zoom;
 
 				jQuery(function() {
@@ -161,17 +183,17 @@ var PAGE = function(argument) {
 						animate: "fast",
 						value: 0,
 						min: 0,
-						max: ((arr.length) / 20) - increments,
+						max: ((dataObj.length) / 20) - increments,
 						step: increments,
 						slide: function(event, ui) {
 							start = ui.value;
 							jQuery("#start").text(start);
-							((start + increments) > (arr.length / 20)) ? end = arr.length / 20 : end = start + increments;
+							((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
 							jQuery("#end").text(end);
 							jQuery("#zoom").empty();
 							zoom = new HEAT_MAP({
 								targetDiv: "zoom",
-								dataObj: arr,
+								dataObj: dataObj,
 								startPoint: start,
 								increments: increments
 							});
@@ -179,11 +201,11 @@ var PAGE = function(argument) {
 					});
 					start = jQuery("#slider").slider("value");
 					jQuery("#start").text(start);
-					((start + increments) > (arr.length / 20)) ? end = arr.length / 20 : end = start + increments;
+					((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
 					jQuery("#end").text(end);
 					zoom = new HEAT_MAP({
 						targetDiv: "zoom",
-						dataObj: arr,
+						dataObj: dataObj,
 						startPoint: start,
 						increments: increments
 					});
@@ -342,7 +364,7 @@ var PAGE = function(argument) {
 					mainContainerDiv.append(pageHTML);
 
 					if (navBar[currentPage])
-						var nb = new new NAVBAR (navBar[currentPage]);
+					    var nb = new NAVBAR (navBar[currentPage]);
 
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {

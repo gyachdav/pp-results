@@ -221,6 +221,7 @@ function PPResData() {
 		getXMLData: function() {
 			return (xml_data);
 		},
+
 		getJsonData: function() {
 			return (json_data);
 		},
