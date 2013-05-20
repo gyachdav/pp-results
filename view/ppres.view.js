@@ -75,7 +75,7 @@ var PAGE = function(argument) {
 		'Export': [{
 		    name: 'allExport',
 		    text: "Download All Data Files",
-		    func: "APP.export();"
+		    func: "APP.exportALL();"
 		}, {
 		    name: 'xmlExport',
 		    text: "Download in XML format",
