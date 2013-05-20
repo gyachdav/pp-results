@@ -12,7 +12,7 @@ var NAVBAR = function(config) {
 		menuList.append(jQuery('<li/>')
 				.append(jQuery('<a/>').click(function(){
 					ex= new EXPORT();
-					ex[v.func];
+				    ex[v.func].apply();
 				}).text(this.text)));
 	    });
 	    menu.append(menuList);
