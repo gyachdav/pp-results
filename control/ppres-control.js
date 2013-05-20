@@ -13,6 +13,12 @@ var APP = (function() {
 	 }, debug = 0,
 	 	mainObj = new PPResData();
 
+	 	file_specs = {
+	 	path: "examples",
+	 	name: 'source.xml',
+	 	type: 'xml'
+	 };
+
 
 	NAVIGATION_DIV = "#nav";
 
@@ -143,7 +149,8 @@ var APP = (function() {
 	};
 })();
 
-APP.path = '/ppres/';
+//APP.path = '/ppres/';
+APP.path = '/~guyyachdav/ppres/';
 
 
 
