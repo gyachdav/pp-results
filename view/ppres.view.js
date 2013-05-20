@@ -415,7 +415,7 @@ var PAGE = function(argument) {
 			table.append("<tr><td>Sequence Length</td><td><a href='#SequenceViewer' role='button' data-toggle='modal'>" + dataObj.getSequence().length + "</a></td></tr>");
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
-			if (arrAlignments.length > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
+			if (arrAlignments > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
 			jQuery("#" + targetDiv).append(table);
 
 			return (jQuery("#" + targetDiv)).html();
