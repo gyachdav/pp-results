@@ -6,6 +6,7 @@ var APP = (function() {
 
 	var json,
 	ds,
+<<<<<<< HEAD
 
 	// file_specs = {
 	// 	path: "http://pp-dev.informatik.tu-muenchen.de",
@@ -14,6 +15,8 @@ var APP = (function() {
 	// },
 
 
+=======
+>>>>>>> 65757ac4577833916b35148503493fe456306b0f
 	file_specs = {
 		path: "examples",
 		name: 'source.xml',
@@ -44,13 +47,15 @@ var APP = (function() {
 		listener.setUp();
 	});
 
-	return {
-	    export: function(){
+    	var exportALL = function(){
 		var urlBase = 'http://rostlab.org/~roos/get/ppc/tar.gz/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" +mainObj.getMD5();
 		window.open(urlREST);
-	    },
+	};
+
+	return {
+	        exportALL: exportALL,
 		exportXML: function(){
 			var string = (new XMLSerializer()).serializeToString(mainObj.getXMLData() );
 			var w = window.open('data:text/xml,' + string);
