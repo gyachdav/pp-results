@@ -1,12 +1,38 @@
+var EXPORT = function(argument) {
+	var exportALL = function() {
+		var urlBase = 'http://rostlab.org/~roos/get/ppc/tar.gz/';
+		var urlParam = 'md5';
+		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
+		window.open(urlREST);
+	};
+
+
+	exportXML =  function() {
+		var string = (new XMLSerializer()).serializeToString( APP.getDataObj().getXMLData());
+		var w = window.open('data:text/xml,' + string);
+	};
+	exportJSON= function() {
+		var w = window.open('');
+		jQuery(w.document.body).html(JSON.stringify( APP.getDataObj().getJsonData()));
+	};
+
+	return {
+		exportALL: exportALL,
+		exportJSON: exportJSON,
+		exportXML: exportXML
+	};
+}
+
+
+
 var APP = (function() {
 
 	var req_id = jQuery("#req_id").val();
-	if (!req_id)
-		req_id = 70; 
+	if (!req_id) req_id = 70;
 
 	var json,
 	ds,
-<<<<<<< HEAD
+
 
 	// file_specs = {
 	// 	path: "http://pp-dev.informatik.tu-muenchen.de",
@@ -14,9 +40,6 @@ var APP = (function() {
 	// 	type: 'xml'
 	// },
 
-
-=======
->>>>>>> 65757ac4577833916b35148503493fe456306b0f
 	file_specs = {
 		path: "examples",
 		name: 'source.xml',
@@ -24,7 +47,7 @@ var APP = (function() {
 	}, debug = 0,
 
 
-	 debug = 0,
+		debug = 0,
 		mainObj = new PPResData();
 
 
@@ -47,23 +70,9 @@ var APP = (function() {
 		listener.setUp();
 	});
 
-    	var exportALL = function(){
-		var urlBase = 'http://rostlab.org/~roos/get/ppc/tar.gz/';
-		var urlParam = 'md5';
-		var urlREST = urlBase + "?" + urlParam + "=" +mainObj.getMD5();
-		window.open(urlREST);
-	};
 
 	return {
-	        exportALL: exportALL,
-		exportXML: function(){
-			var string = (new XMLSerializer()).serializeToString(mainObj.getXMLData() );
-			var w = window.open('data:text/xml,' + string);
-		},
-		exportJSON: function(){
-			var w = window.open('');
-			jQuery(w.document.body).html( JSON.stringify( mainObj.getJsonData()) );
-		},
+
 		populateData: function(data) {
 			json = jQuery.xml2json(data);
 			ds.file_type = 'json'; //switch to json

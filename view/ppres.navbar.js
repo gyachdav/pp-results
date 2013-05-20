@@ -10,7 +10,10 @@ var NAVBAR = function(config) {
 	    var menuList = jQuery('<ul/>').addClass("dropdown-menu");
 	    jQuery.each(value[Object.keys(value)], function(k, v) {
 		menuList.append(jQuery('<li/>')
-				.append(jQuery('<a/>').click(this.func).text(this.text)));
+				.append(jQuery('<a/>').click(function(){
+					ex= new EXPORT();
+					ex[v.func];
+				}).text(this.text)));
 	    });
 	    menu.append(menuList);
 	} else var menu = jQuery('<li />')

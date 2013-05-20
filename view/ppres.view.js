@@ -75,15 +75,15 @@ var PAGE = function(argument) {
 		'Export': [{
 		    name: 'allExport',
 		    text: "Download All Data Files",
-		    func: "APP.exportALL();"
+		    func: "exportALL"
 		}, {
 		    name: 'xmlExport',
 		    text: "Download in XML format",
-		    func: "APP.exportXML();"
+		    func: "exportXML"
 		}, {
 		    name: 'jsonExport',
 		    text: "Download in JSON format",
-		    func: "APP.exportJson();"
+		    func: "exportJSON"
 		}]
 	    }, {
 		'Email': 'nothing'
