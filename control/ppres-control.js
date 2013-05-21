@@ -56,19 +56,11 @@ var APP = (function() {
 		ds,
 
 
-		// file_specs = {
-		// 	path: "http://pp-dev.informatik.tu-muenchen.de",
-		// 	name: 'xml_results?req_id='+req_id,
-		// 	type: 'xml'
-		// },
-
 		file_specs = {
-			path: "examples",
-			name: 'source.xml',
-			type: 'xml'
-		}, debug = 0,
-
-
+		 	path: "http://pp-dev.informatik.tu-muenchen.de",
+		 	name: 'xml_results?req_id='+req_id,
+		 	type: 'xml'
+		},
 		debug = 0,
 		mainObj = new PPResData();
 
@@ -196,8 +188,8 @@ var APP = (function() {
 	};
 })();
 
-//APP.path = '/ppres/';
-APP.path = '/~guyyachdav/pp-results/';
+APP.path = '/ppres/';
+//APP.path = '/~guyyachdav/pp-results/';
 
 
 APP.providers = [

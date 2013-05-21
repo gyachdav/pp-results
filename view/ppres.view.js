@@ -440,8 +440,13 @@ var PAGE = function(argument) {
 				if (!prediction) _curr_div = jQuery("<div />").text("Data unavailable");
 				else _curr_div = SUBCELL_VIEW.localisationDiv(prediction);
 				_curr_div.addClass("tab-pane");
-				list.append(_curr_li);
 				content_div.append(_curr_div);
+			    if( domains[i]=='euka'){
+				_curr_li.addClass('active');
+				_curr_div.addClass('active');
+			    }
+				list.append(_curr_li);
+
 			}
 			nav_div.append(list);
 
@@ -449,7 +454,7 @@ var PAGE = function(argument) {
 			jQuery("#" + targetDiv).append(nav_div);
 
 			jQuery("#" + targetDiv).append(content_div);
-			jQuery('#_subcell_nav a:last').tab('show');
+			//jQuery('#_subcell_nav a:last').tab('show');
 
 			return (jQuery("#" + targetDiv)).html();
 		}
