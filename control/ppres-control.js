@@ -54,14 +54,19 @@ var APP = (function() {
 
 	var json,
 		ds,
-
+		debug = 0,
+		// file_specs = {
+		// 	path: "http://pp-dev.informatik.tu-muenchen.de",
+		// 	name: 'xml_results?req_id=' + req_id,
+		// 	type: 'xml'
+		// },
+		// mainObj = new PPResData();
 
 		file_specs = {
-			path: "http://pp-dev.informatik.tu-muenchen.de",
-			name: 'xml_results?req_id=' + req_id,
+			path: "examples",
+			name: 'source.xml',
 			type: 'xml'
 		},
-		debug = 0,
 		mainObj = new PPResData();
 
 
@@ -75,7 +80,7 @@ var APP = (function() {
 	listener = new Listeners();
 
 	mainObj.loadData(file_specs).done(function(data) {
-		mainObj.populateData(data);
+		mainObj.populateData(data, req_id);
 		page = new PAGE({
 			data: mainObj,
 			providers: APP.providers,
@@ -188,8 +193,8 @@ var APP = (function() {
 	};
 })();
 
-APP.path = '/ppres/';
-//APP.path = '/~guyyachdav/pp-results/';
+//APP.path = '/ppres/';
+APP.path = '/~guyyachdav/pp-results/';
 
 
 APP.providers = [
@@ -218,26 +223,6 @@ function Listeners() {
 				jQuery(".nav-list").children(".active").removeClass("active");
 				jQuery(this).parent().addClass("active");
 				return false;
-			});
-
-
-			jQuery('.name').mouseover(function() {
-				jQuery(this).append(jQuery('<i>').addClass("icon-pencil"));
-			}).mouseout(function() {
-				jQuery(this).find('i').remove();
-			}).click(function() {
-				var v = jQuery(this).text();
-				jQuery('.name-change').val(v).show();
-				jQuery(this).hide();
-			});
-
-			jQuery('.name-change').change(function() {
-				var v = jQuery(this).val().trim();
-				if (v != '') {
-					jQuery('.name').text(v);
-				}
-				jQuery(this).hide();
-				jQuery('.name').show();
 			});
 		}
 	}

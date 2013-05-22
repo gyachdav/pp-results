@@ -504,9 +504,11 @@ var PAGE = function(argument) {
 			if (!isCached(currentPage)) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
-						jQuery('.name', pageHTML).text("TODO GET NAME FROM DATA");
-
+					
 					mainContainerDiv.append(pageHTML);
+
+					var nc = new NAME_CHANGE({targetDiv: jQuery('.job-name'),
+												dataObj: dataObj});
 
 					if (navBar[currentPage])
 						var nb = new NAVBAR(navBar[currentPage]);
