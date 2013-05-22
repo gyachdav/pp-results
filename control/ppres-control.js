@@ -57,9 +57,9 @@ var APP = (function() {
 
 
 		file_specs = {
-		 	path: "http://pp-dev.informatik.tu-muenchen.de",
-		 	name: 'xml_results?req_id='+req_id,
-		 	type: 'xml'
+			path: "http://pp-dev.informatik.tu-muenchen.de",
+			name: 'xml_results?req_id=' + req_id,
+			type: 'xml'
 		},
 		debug = 0,
 		mainObj = new PPResData();
@@ -217,8 +217,27 @@ function Listeners() {
 				APP.showPage(jQuery(this).parent().attr('id'));
 				jQuery(".nav-list").children(".active").removeClass("active");
 				jQuery(this).parent().addClass("active");
-				// console.log(jQuery(this).parent().attr('id'));
 				return false;
+			});
+
+
+			jQuery('.name').mouseover(function() {
+				jQuery(this).append(jQuery('<i>').addClass("icon-pencil"));
+			}).mouseout(function() {
+				jQuery(this).find('i').remove();
+			}).click(function() {
+				var v = jQuery(this).text();
+				jQuery('.name-change').val(v).show();
+				jQuery(this).hide();
+			});
+
+			jQuery('.name-change').change(function() {
+				var v = jQuery(this).val().trim();
+				if (v != '') {
+					jQuery('.name').text(v);
+				}
+				jQuery(this).hide();
+				jQuery('.name').show();
 			});
 		}
 	}
