@@ -11,6 +11,10 @@ function PPResData() {
 	var xml_data_source = '',
 		prof_data_source = '',
 		organism = '',
+		jobName = '',
+		proteinName = '',
+		recommendedName = '',
+		ppJobId = -1,
 		json_data = {},
 		xml_data = {},
 		protein = {},
@@ -29,7 +33,7 @@ function PPResData() {
 		data_ready = !data_ready;
 	};
 	var getAlignments = function() {
-		return (this.alignments);
+		return (alignments);
 	};
 
 	var getReferenceByProvider = function(feature_provider) {
@@ -49,16 +53,38 @@ function PPResData() {
 	}
 
 
+	var getAlignmentsByDatabaseTopMatch=function(db_name) {
+			var alis = getAlignments();
+			var topmatch_id = '';
+			jQuery.each(alis, function(i, v) {
+				if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
+					topmatch_id = v.dbReference.id;
+					return (false);
+				}
+			});
+			return (topmatch_id);
+		};
 
 	var setJsonData = function(json) {
 		json_data = json;
 		sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
 		md5Seq = md5(sequence);
-		console.log (md5Seq);
 		alignments = json_data.entry.aliProviderGroup.alignment;
 		protein = json_data.entry.protein;
 		organism = json_data.entry.organism;
+		recommendedName = getAlignmentsByDatabaseTopMatch('Swiss-Prot');
+		jobName = resolveJobName();
+
 	};
+
+	var resolveJobName = function() {
+		if (proteinName)
+			return proteinName;
+		if (recommendedName)
+			return recommendedName;
+		return "Request ID: "+this.getJobID();
+	}
+
 
 
 	return {
@@ -89,8 +115,9 @@ function PPResData() {
 			}));
 		},
 
-		populateData: function(data) {
+		populateData: function(data, reqID) {
 			xml_data = data;
+			this.setJobID(reqID);
 			setJsonData(jQuery.xml2json(data));
 			setDataReady();
 		},
@@ -159,21 +186,21 @@ function PPResData() {
 		getSolvAccComposition: function(argument) {
 			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
 			var ss_feature_array = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.split('');
-			var solvAccComposition ={
+			var solvAccComposition = {
 				burried: 0,
 				intermediate: 0,
 				exposed: 0
 			};
 
-			var burried = intermediate = exposed =0;
+			var burried = intermediate = exposed = 0;
 
 			jQuery.each(ss_feature_array, function(index, obj) {
 				var n = parseInt(obj);
 				if (n == 5)
 					solvAccComposition.intermediate++;
-				else if ( n<5)
+				else if (n < 5)
 					solvAccComposition.burried++;
-				else if (n>5)
+				else if (n > 5)
 					solvAccComposition.exposed++;
 			});
 			return (solvAccComposition);
@@ -188,17 +215,7 @@ function PPResData() {
 			return (aa_composition);
 		},
 
-		getAlignmentsByDatabaseTopMatch: function(db_name) {
-			var alis = this.getAlignments();
-			var topmatch_id = '';
-			jQuery.each(alis, function(i, v) {
-				if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
-					topmatch_id = v.dbReference.id;
-					return (false);
-				}
-			});
-			return (topmatch_id);
-		},
+		getAlignmentsByDatabaseTopMatch: getAlignmentsByDatabaseTopMatch,
 
 
 		getAlignmentsByDatabase: function(db_name) {
@@ -229,6 +246,18 @@ function PPResData() {
 		getSequence: function() {
 			return (sequence);
 		},
+		getJobName: function() {
+			return (jobName);
+		},
+		setJobName: function(name) {
+			jobName = name;
+		},
+		getJobID: function() {
+			return (ppJobId);
+		},
+		setJobID: function(id) {
+			ppJobId = id;
+		},
 		getMD5Seq: function() {
 			return (md5Seq);
 		},
@@ -250,12 +279,12 @@ function PPResData() {
 			});
 			return (locations_array);
 		},
-		convertIDtoURL: function( aliObj ){
+		convertIDtoURL: function(aliObj) {
 			if (aliObj.db.match(/pdb/i)) {
-			(__pdb) = aliObj.id.split('_');
-			_feature.id = __pdb[0];
-			if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
-		}
+				(__pdb) = aliObj.id.split('_');
+				_feature.id = __pdb[0];
+				if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
+			}
 
 		},
 		getAlignments: function() {
@@ -265,9 +294,15 @@ function PPResData() {
 		getFeatureTypeGroup: function() {
 			return (json_data.entry.featureTypeGroup);
 		},
-
 		getProteinName: function() {
-			return (this.protein.recommendedName.fullName);
+			return proteinName;
+		},
+		setProteinName: function(name) {
+			proteinName = name;
+		},
+
+		getRecommendedName: function() {
+			return recommendedName;
 		},
 
 		getOrganismName: function() {
