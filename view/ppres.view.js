@@ -441,10 +441,10 @@ var PAGE = function(argument) {
 				else _curr_div = SUBCELL_VIEW.localisationDiv(prediction);
 				_curr_div.addClass("tab-pane");
 				content_div.append(_curr_div);
-			    if( domains[i]=='euka'){
-				_curr_li.addClass('active');
-				_curr_div.addClass('active');
-			    }
+				if (domains[i] == 'euka') {
+					_curr_li.addClass('active');
+					_curr_div.addClass('active');
+				}
 				list.append(_curr_li);
 
 			}
@@ -504,6 +504,8 @@ var PAGE = function(argument) {
 			if (!isCached(currentPage)) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
+						jQuery('.name', pageHTML).text("TODO GET NAME FROM DATA");
+
 					mainContainerDiv.append(pageHTML);
 
 					if (navBar[currentPage])
