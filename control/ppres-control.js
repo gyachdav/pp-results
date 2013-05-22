@@ -12,7 +12,10 @@ var EXPORT = function(argument) {
 		urlBase += methodName + '/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
-		window.open(urlREST);
+	    jQuery.get('proxy.php',{url:urlREST}, function( data ){
+		window.open('data:Application/octet-stream;filename=file.'+methodName+',' + encodeURIComponent(data));
+//		window.open('data:application/octet-stream;', data);
+	    }, 'text');
 	};
 
 
@@ -55,20 +58,12 @@ var APP = (function() {
 	var json,
 		ds,
 		debug = 0,
-		// file_specs = {
-		// 	path: "http://pp-dev.informatik.tu-muenchen.de",
-		// 	name: 'xml_results?req_id=' + req_id,
-		// 	type: 'xml'
-		// },
-		// mainObj = new PPResData();
-
 		file_specs = {
-			path: "examples",
-			name: 'source.xml',
-			type: 'xml'
-		},
+		 	path: "http://pp-dev.informatik.tu-muenchen.de",
+		 	name: 'xml_results?req_id=' + req_id,
+		 	type: 'xml'
+		 },
 		mainObj = new PPResData();
-
 
 	NAVIGATION_DIV = "#nav";
 
@@ -193,8 +188,8 @@ var APP = (function() {
 	};
 })();
 
-//APP.path = '/ppres/';
-APP.path = '/~guyyachdav/pp-results/';
+APP.path = '/ppres/';
+//APP.path = '/~guyyachdav/pp-results/';
 
 
 APP.providers = [

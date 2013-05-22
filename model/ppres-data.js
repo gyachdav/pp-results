@@ -82,7 +82,7 @@ function PPResData() {
 			return proteinName;
 		if (recommendedName)
 			return recommendedName;
-		return "Request ID: "+this.getJobID();
+		return "Request ID: "+ppJobId;
 	}
 
 
