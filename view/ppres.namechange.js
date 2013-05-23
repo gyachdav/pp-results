@@ -4,7 +4,7 @@ var NAME_CHANGE = function(arguments) {
 
 
 	var readOnlyDiv = targetDiv.find('.readonly').text(dataObj.getJobName());
-	var writableDiv = jQuery('<input>').addClass('writable').hide();
+    var writableDiv = jQuery('<input>').attr('type','text').addClass('input-large writable').hide();
 	jQuery(targetDiv).find('h2').append(writableDiv);
 
 	readOnlyDiv.mouseover(function() {

@@ -100,7 +100,7 @@ var PAGE = function(argument) {
 							name: 'secstructExport',
 							text: "Download Raw Data File",
 							func: "exportMethod",
-							params: ["reprof"]
+							params: ["profRdb"]
 						}, {
 							name: 'jsonExport',
 							text: "Download in JSON format",
@@ -236,7 +236,7 @@ var PAGE = function(argument) {
 							name: 'heatmapExport',
 							text: "Download Raw Data File",
 							func: "exportMethod",
-							params: [""]
+							params: ["snap"]
 						}
 					]
 				}, {
