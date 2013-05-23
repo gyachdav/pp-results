@@ -500,7 +500,15 @@ Biojs.FeatureViewer = Biojs.extend({
                 "stroke": obj.stroke,
                 "fill-opacity": obj.fillOpacity
             });
-        } else if (obj.type == "triangle") {
+        } else if (obj.type == "bridge") {
+            shape = this.raphael.uniprotFeaturePainter_bridge(obj.cx, obj.cy, obj.width, obj.height);
+            shape.attr({
+                "fill": obj.fill,
+                "stroke": obj.stroke,
+                "fill-opacity": obj.fillOpacity
+            });
+        } 
+        else if (obj.type == "triangle") {
             shape = this.raphael.uniprotFeaturePainter_triangle(obj.cx, obj.cy, obj.r);
             shape.attr({
                 "fill": obj.fill,

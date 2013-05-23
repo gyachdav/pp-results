@@ -370,8 +370,17 @@ var FEATURE_VIEWER = function(argument) {
 
 	Feature.DISULFIND = function(_feature, _feature_provider, _feature_type) {
 		this.init.call(this, _feature, _feature_provider, _feature_type);
-		this.color = "brown";
+		this.color = "black";
 		this.setColor();
+
+		var feature = {
+			"type": "bridge",
+			"height": 5,
+			"width": 50,
+			"cx": 10,
+			"cy": 40
+		}
+		this.setFeature(feature);
 		return this.getFeature();
 
 	};
