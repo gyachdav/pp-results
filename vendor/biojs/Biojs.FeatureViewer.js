@@ -501,11 +501,13 @@ Biojs.FeatureViewer = Biojs.extend({
                 "fill-opacity": obj.fillOpacity
             });
         } else if (obj.type == "bridge") {
+            //this.opt.highlightFeatureOnMouseOver = false;
+            this.opt.selectFeatureOnMouseClick = false;
             shape = this.raphael.uniprotFeaturePainter_bridge(obj.cx, obj.cy, obj.width, obj.height);
             shape.attr({
                 "fill": obj.fill,
                 "stroke": obj.stroke,
-                "fill-opacity": obj.fillOpacity
+                "fill-opacity": 0.0
             });
         } 
         else if (obj.type == "triangle") {
@@ -600,9 +602,10 @@ Biojs.FeatureViewer = Biojs.extend({
                     shape.hover(function () {
                         myself._raiseEvent(myself, this, obj, 'onFeatureOn');
                     }, function () {
-                        this.animate({
-                            "fill-opacity": .5
-                        }, 500);
+                        if (shape.attrs.fill != 'transparent')
+                            this.animate({
+                                "fill-opacity": .5
+                            }, 500);
                         myself._raiseEvent(myself, this, obj, 'onFeatureOff');
                     });
                 }
@@ -612,23 +615,27 @@ Biojs.FeatureViewer = Biojs.extend({
                         myself._raiseEvent(myself, this, obj, 'onFeatureClick');
                     });
                     shape.hover(function () {
-                        myself._originalColor = this.attrs.stroke;
+                        myself._originalStrokeColor = this.attrs.stroke;
+                        myself._originalFillColor = this.attrs.fill;
                         this.attr({
                             stroke: myself.opt.selectionColor,
                             fill: myself.opt.selectionColor
                         });
+
                         this.animate({
                             "fill-opacity": 1.0
                         }, 500);
                         myself._raiseEvent(myself, this, obj, 'onFeatureOn');
                     }, function () {
                         this.attr({
-                            stroke: myself._originalColor,
-                            fill: myself._originalColor
+                            stroke: myself._originalStrokeColor,
+                            fill: myself._originalFillColor
                         });
+
                         this.animate({
                             "fill-opacity": .5
                         }, 500);
+                    
                         myself._raiseEvent(myself, this, obj, 'onFeatureOff');
                     });
                 } else {
@@ -636,13 +643,13 @@ Biojs.FeatureViewer = Biojs.extend({
                         myself._raiseEvent(myself, this, obj, 'onFeatureClick');
                     });
                     shape.hover(function () {
-                        myself._raiseEvent(myself, this, obj, 'onFeatureOn');
+                       myself._raiseEvent(myself, this, obj, 'onFeatureOn');
                     }, function () {
                         myself._raiseEvent(myself, this, obj, 'onFeatureOff');
                     });
                 }
             }
-            if (obj.type != "rect") {
+            if (obj.type != "rect"  && obj.type != "bridge") {
                 if (this.opt.dragSites) {
                     shape.drag(function (dx, dy) {
                         if (!this.attr("cx") && !this.attr("x")) {
@@ -907,10 +914,11 @@ Biojs.FeatureViewer = Biojs.extend({
             return (this.path(path.concat(["Z"].join(" "))));
         }
         Raphael.fn.uniprotFeaturePainter_bridge = function (x, y,  width, height) {
+            console.log(x,y,width, height);
             var path = ["M", x, y];
             path = path.concat(["L", x , y - height]);
-            path = path.concat(["L", x + width , y ]);
-            path = path.concat(["L", x, y + height]);
+            path = path.concat(["L", x + width , y  - height ]);
+            path = path.concat(["L", x+ width, y ]);
             return (this.path(path));
         }
         Raphael.fn.uniprotFeaturePainter_NPath = function (x, y, width, height) {

@@ -91,6 +91,7 @@ var FEATURE_VIEWER = function(argument) {
 				var track, feature_properties;
 				track = new Track();
 				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
+				if (provider == "DISULFIND") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
 				else track.setPosition(currentBottom);
 
 				var feature_group = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider);
@@ -246,7 +247,7 @@ var FEATURE_VIEWER = function(argument) {
 			getFeature: function() {
 				return (feature);
 			},
-			setColor: function() {
+			setColor: function(  ) {
 				feature.fill = this.color;
 				feature.stroke = this.color;
 			},
@@ -368,17 +369,21 @@ var FEATURE_VIEWER = function(argument) {
 
 	};
 
-	Feature.DISULFIND = function(_feature, _feature_provider, _feature_type) {
+	Feature.DISULFIND = function(_feature, _feature_provider, _feature_type, featurePos) {
 		this.init.call(this, _feature, _feature_provider, _feature_type);
-		this.color = "black";
-		this.setColor();
+		// this.stroke = "black";
+		// this.fill = "transperant";
+		//this.setColor();
 
 		var feature = {
 			"type": "bridge",
-			"height": 5,
-			"width": 50,
-			"cx": 10,
-			"cy": 40
+			"cy": featurePos ,
+			 "height": 100,
+			 fill: 'white',
+			 stroke: 'black'
+			// "width": 50,
+			// "cx": 10,
+			// "cy": 40
 		}
 		this.setFeature(feature);
 		return this.getFeature();
@@ -453,6 +458,9 @@ var FEATURE_VIEWER = function(argument) {
 				return (config);
 			},
 			addFeature: function(feature) {
+				if (feature.name=='DISULFIND')
+					config.height += (features.length*5);
+				// config.height += ((features.length%2)*5);
 				features.push(jQuery.extend(feature, config));
 			},
 			getTrack: function() {
