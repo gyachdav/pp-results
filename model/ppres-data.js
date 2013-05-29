@@ -53,17 +53,17 @@ function PPResData() {
 	}
 
 
-	var getAlignmentsByDatabaseTopMatch=function(db_name) {
-			var alis = getAlignments();
-			var topmatch_id = '';
-			jQuery.each(alis, function(i, v) {
-				if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
-					topmatch_id = v.dbReference.id;
-					return (false);
-				}
-			});
-			return (topmatch_id);
-		};
+	var getAlignmentsByDatabaseTopMatch = function(db_name) {
+		var alis = getAlignments();
+		var topmatch_id = '';
+		jQuery.each(alis, function(i, v) {
+			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
+				topmatch_id = v.dbReference.id;
+				return (false);
+			}
+		});
+		return (topmatch_id);
+	};
 
 	var setJsonData = function(json) {
 		json_data = json;
@@ -82,7 +82,7 @@ function PPResData() {
 			return proteinName;
 		if (recommendedName)
 			return recommendedName;
-		return "Request ID: "+ppJobId;
+		return "Request ID: " + ppJobId;
 	}
 
 
@@ -187,23 +187,45 @@ function PPResData() {
 			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
 			var ss_feature_array = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.split('');
 			var solvAccComposition = {
-				burried: 0,
-				intermediate: 0,
-				exposed: 0
+				Hydrophobic: 0,
+				Intermediate: 0,
+				Hydrophilic: 0
 			};
 
-			var burried = intermediate = exposed = 0;
+			var Hydrophobic = Intermediate = Hydrophilic = 0;
 
 			jQuery.each(ss_feature_array, function(index, obj) {
 				var n = parseInt(obj);
 				if (n == 5)
-					solvAccComposition.intermediate++;
+					solvAccComposition.Intermediate++;
 				else if (n < 5)
-					solvAccComposition.burried++;
+					solvAccComposition.Hydrophobic++;
 				else if (n > 5)
-					solvAccComposition.exposed++;
+					solvAccComposition.Hydrophilic++;
 			});
 			return (solvAccComposition);
+		},
+
+		getSolvAcc: function(argument) {
+			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
+			var arrProps = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.replace(/(\r\n|\n|\r|\s)/gm, "").split('');
+			arrProps = jQuery.map(arrProps, function(n, i) {
+				var _type;
+				if (n == 5)
+					_type = 'Intermediate';
+				else if (n < 5)
+					_type = 'Hydrophobic';
+				else if (n > 5)
+					_type = 'Hydrophilic';
+
+				return ({
+					begin: i,
+					end: i,
+					value: n,
+					type: _type
+				});
+			});
+			return arrProps;
 		},
 
 		getAAComposition: function(argument) {
