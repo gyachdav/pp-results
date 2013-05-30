@@ -502,7 +502,7 @@ Biojs.FeatureViewer = Biojs.extend({
             });
         } else if (obj.type == "bridge") {
             //this.opt.highlightFeatureOnMouseOver = false;
-            this.opt.selectFeatureOnMouseClick = false;
+            //this.opt.selectFeatureOnMouseClick = false;
             shape = this.raphael.uniprotFeaturePainter_bridge(obj.cx, obj.cy, obj.width, obj.height);
             shape.attr({
                 "fill": obj.fill,
@@ -602,7 +602,6 @@ Biojs.FeatureViewer = Biojs.extend({
                     shape.hover(function () {
                         myself._raiseEvent(myself, this, obj, 'onFeatureOn');
                     }, function () {
-                        if (shape.attrs.fill != 'transparent')
                             this.animate({
                                 "fill-opacity": .5
                             }, 500);

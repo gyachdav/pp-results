@@ -385,17 +385,19 @@ var PAGE = function(argument) {
 			i = quotes.length;
 			var refList = jQuery('<div>').addClass('alert alert-info');
 			while (i--) {
+			    if (quotes[i]){
 				refList.append(
 					jQuery('<ul/>').append(
 					jQuery('<li/>')
 					.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
 					.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
 					return n.name;
-				}).join(', ')))
+					}).join(', ')))
 
 				.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
 					' ' + quotes[i].citation.volume + ': ' +
 					quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
+			    }
 			}
 
 
@@ -403,7 +405,7 @@ var PAGE = function(argument) {
 			var accordionGroup = jQuery('<div/>').addClass('accordion-group');
 			var accordionHeader = jQuery('<div/>').addClass('accordion-heading')
 				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
-				.append(jQuery('<h3/>').text('Reference Information')));
+				.append(jQuery('<span/>').text('Reference Information (Click to Exapnd)')));
 			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
 									.append(jQuery('<div>').addClass('accordion-inner').append(refList));
 			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
