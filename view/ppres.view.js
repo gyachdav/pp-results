@@ -404,7 +404,7 @@ var PAGE = function(argument) {
 			var accordionHeader = jQuery('<div/>').addClass('accordion-heading')
 				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
 				.append(jQuery('<h3/>').text('Reference Information')));
-			var accordionInner = jQuery('<div>').attr('id', 'referencesInfo').addClass('accordion-body collapse')
+			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
 									.append(jQuery('<div>').addClass('accordion-inner').append(refList));
 			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
 			jQuery("#" + targetDiv).append(accordionContainer);
