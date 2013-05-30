@@ -2,52 +2,65 @@ var NAVIGATION = (function() {
 
 	var navigation_items = {
 		"views": [{
-			id: "dash",
-			text: "Dashborad"
-		}],
-		"detailed predictions": [{
-			text: "Secondary Structure",
-			id: "secstruct"
-		}, {
-			id: "tmh",
-			text: "Transmembrane Regions"
-		},
-		//  {
-		// 	id: "nors",
-		// 	text: "Non-Regular Secondary Structure"
-		// }, 
-		{
-			id: "disorder",
-			text: "Protein Disorder and Flexibility"
-		}, {
-			id: "disulphide",
-			text: "Disulphide and Metal Binding"
-		}, {
-			id: "binding",
-			text: "Binding Sites"
-		}, {
-			id: "subcell",
-			text: "Subcellular Localization"
-		},
-		//  {
-		// 	id: "tmb",
-		// 	text: "Transmembrane Beta-barrels"
-		// }
+				id: "dash",
+				text: "Dashborad"
+			}
 		],
-		"Further Analysis": [{
-			id: "func",
-			text: "Functional Changes",
-		}, {
-			id: "lit",
-			text: "Literature Search"
-		}],
+		"structure annotation": [{
+				text: "Secondary Structure and Solvent Accessibility",
+				id: "secstruct"
+			}, {
+				id: "tmh",
+				text: "Transmembrane Regions"
+			},
+			//  {
+			// 	id: "nors",
+			// 	text: "Non-Regular Secondary Structure"
+			// }, 
+			{
+				id: "disorder",
+				text: "Protein Disorder and Flexibility"
+			}, {
+				id: "disulphide",
+				text: "Disulphide Bridges"
+			}, {
+				id: "binding",
+				text: "Binding Sites"
+			},
+			//  {
+			// 	id: "tmb",
+			// 	text: "Transmembrane Beta-barrels"
+			// }
+		],
+		
+		"Function Annotation": [{
+				id: "func",
+				text: "Functional Changes",
+			},
+
+			{
+				id: "subcell",
+				text: "Subcellular Localization"
+			}, {
+				id: "goannotation",
+				text: "GO Terms"
+			}
+		],
+
+		"Additional Services": [{
+				id: "litsearch",
+				text: "Literature Search"
+			}
+		],
+
 		"Help": [{
-			id: "tutorial",
-			text: "Site Tutorial"
-		}]
+				id: "tutorial",
+				text: "Site Tutorial"
+			}
+		]
 
 	},
-	active_item = 2;
+		active_item = 2;
 	var list_root = jQuery('<ul>');
 	for (var key in navigation_items) {
 		var item = jQuery('<li>');

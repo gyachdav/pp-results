@@ -62,7 +62,8 @@ var PAGE = function(argument) {
 					'HeatmapViewer'
 			],
 			SubcellLoc: [
-					"SubcellLocViewer"
+					"SubcellLocViewer",
+					'Quotes'
 			]
 		},
 		defaultPage = "Dashboard",
@@ -351,11 +352,16 @@ var PAGE = function(argument) {
 			});
 		},
 		drawFeatureViewer: function(argument) {
+			// TODO this wil have to be refactored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
+			if (  argument.showAlignment )
+				quotes.push( dataObj.getReference(dataObj.getJsonData().entry.aliProviderGroup.ref));
+
 			if (!argument.providers) argument.providers = APP.providers;
 
 			i = argument.providers.length;
 			while (i--)
 				quotes.push(dataObj.getReferenceByProvider(argument.providers[i]));
+			
 			console.log(quotes);
 
 			var fv = new FEATURE_VIEWER({
@@ -380,15 +386,19 @@ var PAGE = function(argument) {
 		},
 
 		drawQuotes: function(argument) {
+
+			var pleaseCite = 'If you find any of the above annotations useful in your research please cite the relevant method:';
+
 			targetDiv = argument.targetDiv;
 
 			i = quotes.length;
-			var refList = jQuery('<div>').addClass('alert alert-info');
+			var refList = jQuery('<div>').addClass('alert alert-info').append(jQuery('<p/>').text(pleaseCite).addClass('text-error'));
 			while (i--) {
 			    if (quotes[i]){
 				refList.append(
-					jQuery('<ul/>').append(
-					jQuery('<li/>')
+					jQuery('<ul/>')
+					
+					.append(jQuery('<li/>')
 					.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
 					.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
 					return n.name;
@@ -401,13 +411,15 @@ var PAGE = function(argument) {
 			}
 
 
+
 			var accordionContainer = jQuery('<div/>').addClass('accordion').attr('id', 'referencesInfo');
 			var accordionGroup = jQuery('<div/>').addClass('accordion-group');
 			var accordionHeader = jQuery('<div/>').addClass('accordion-heading')
 				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
-				.append(jQuery('<span/>').text('Reference Information (Click to Exapnd)')));
+				.append(jQuery('<span/>').text('References (Click to Exapnd)')));
 			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
-									.append(jQuery('<div>').addClass('accordion-inner').append(refList));
+									.append(jQuery('<div>').addClass('accordion-inner')
+										.append(refList));
 			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
 			jQuery("#" + targetDiv).append(accordionContainer);
 
@@ -462,6 +474,9 @@ var PAGE = function(argument) {
 
 		drawSubcellLocViewer: function(argument) {
 			targetDiv = argument.targetDiv;
+			quotes.push(dataObj.getReferenceByProvider('LocTree2'));
+
+
 			var nav_div = jQuery("<div id='_subcell_nav' />");
 
 			var content_div = jQuery("<div id='_subcell_cntnt'/>");

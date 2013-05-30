@@ -53,7 +53,7 @@ function PPResData() {
 		var feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
 		var refId;
 
-		if (!feature) return;
+		if (!feature) return null;
 
 		if (feature.featureProviderGroup) 
 			refId = feature.featureProviderGroup.ref;
@@ -103,6 +103,7 @@ function PPResData() {
 
 	return {
 		getReferenceByProvider: getReferenceByProvider,
+		getReference: getReference,
 		dataReady: function() {
 			return data_ready;
 		},
