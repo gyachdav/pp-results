@@ -3,6 +3,7 @@ var PAGE = function(argument) {
 	var activeDivs = [],
 		inactiveDivs = [],
 		cached = {},
+		quotes = [],
 		pageComponents = {
 			Dashboard: [{
 					FeatureViewer: {
@@ -16,6 +17,7 @@ var PAGE = function(argument) {
 					'AlignmentPDBTable',
 					'AAConsistency',
 					'SSConsistency',
+					'Quotes',
 			],
 			SecondaryStructure: [{
 					FeatureViewer: {
@@ -25,35 +27,36 @@ var PAGE = function(argument) {
 				}, {
 					'SSConsistency': '',
 
-				}, 'SolvAcc'
+				}, 'SolvAcc',
+					'Quotes',
 			],
 			Transmembrane: [{
 					'FeatureViewer': {
 						providers: ["PHDhtm"],
 						showAlignment: false
 					}
-				}
+				}, 'Quotes',
 			],
 			Disorder: [{
 					'FeatureViewer': {
 						providers: ["PROFbval", "MD", "Ucon", "NORSnet"],
 						showAlignment: false
 					}
-				}
+				}, 'Quotes'
 			],
 			Binding: [{
 					'FeatureViewer': {
 						providers: ["ISIS"],
 						showAlignment: false
 					}
-				}
+				}, 'Quotes',
 			],
 			Disulphide: [{
 					'FeatureViewer': {
 						providers: ["DISULFIND"],
 						showAlignment: false
 					}
-				}
+				}, 'Quotes',
 			],
 			Heatmap: [
 					'HeatmapViewer'
@@ -244,9 +247,6 @@ var PAGE = function(argument) {
 				}
 			]
 		}
-
-
-
 	};
 
 	(argument.page) ? currentPage = argument.page : currentPage = defaultPage;
@@ -348,12 +348,15 @@ var PAGE = function(argument) {
 						increments: increments
 					});
 				});
-
-
 			});
 		},
 		drawFeatureViewer: function(argument) {
 			if (!argument.providers) argument.providers = APP.providers;
+
+			i = argument.providers.length;
+			while (i--)
+				quotes.push(dataObj.getReferenceByProvider(argument.providers[i]));
+			console.log(quotes);
 
 			var fv = new FEATURE_VIEWER({
 				targetDiv: argument.targetDiv,
@@ -374,6 +377,40 @@ var PAGE = function(argument) {
 			targetDiv = argument.targetDiv;
 			jQuery("#" + targetDiv).append("<h3>Solvent Accessibility</h3>");
 			PIE_CHART.toPieData(dataObj.getSolvAccComposition()).drawPieChart(targetDiv);
+		},
+
+		drawQuotes: function(argument) {
+			targetDiv = argument.targetDiv;
+
+			i = quotes.length;
+			var refList = jQuery('<div>');
+			while (i--) {
+				refList.append(
+					jQuery('<ul/>').append(
+					jQuery('<li/>')
+					.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
+					.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
+					return n.name;
+				}).join(', ')))
+
+				.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
+					' ' + quotes[i].citation.volume + ': ' +
+					quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
+			}
+
+
+			var accordionContainer = jQuery('<div/>').addClass('accordion').attr('id', 'referencesInfo');
+			var accordionGroup = jQuery('<div/>').addClass('accordion-group');
+			var accordionHeader = jQuery('<div/>').addClass('accordion-heading')
+				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
+				.append(jQuery('<h3/>').text('Reference Information')));
+			var accordionInner = jQuery('<div>').attr('id', 'referencesInfo').addClass('accordion-body collapse')
+									.append(jQuery('<div>').addClass('accordion-inner').append(refList));
+			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
+			jQuery("#" + targetDiv).append(accordionContainer);
+
+			//jQuery("#" + targetDiv).addClass('alert alert-warning');
+
 		},
 
 
@@ -504,11 +541,13 @@ var PAGE = function(argument) {
 			if (!isCached(currentPage)) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
-					
+
 					mainContainerDiv.append(pageHTML);
 
-					var nc = new NAME_CHANGE({targetDiv: jQuery('.job-name'),
-												dataObj: dataObj});
+					var nc = new NAME_CHANGE({
+						targetDiv: jQuery('.job-name'),
+						dataObj: dataObj
+					});
 
 					if (navBar[currentPage])
 						var nb = new NAVBAR(navBar[currentPage]);

@@ -36,13 +36,9 @@ function PPResData() {
 		return (alignments);
 	};
 
-	var getReferenceByProvider = function(feature_provider) {
-		var feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
-		return (this.getReference(feature.featureProviderGroup.ref));
-	}
 	var getReference = function(ref_id) {
 		var _ref;
-		refs = this.json_data.entry.reference;
+		refs = json_data.entry.reference;
 		jQuery.each(refs, function(index, ref) {
 			if (ref.entryKey.entryKeyValue == ref_id) {
 				_ref = ref;
@@ -50,7 +46,22 @@ function PPResData() {
 			}
 		});
 		return _ref;
-	}
+	};
+
+
+	var getReferenceByProvider = function(feature_provider) {
+		var feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), feature_provider);
+		var refId;
+		if (feature.featureProviderGroup) 
+			refId = feature.featureProviderGroup.ref;
+		else if (feature.ref)
+			refId = feature.ref;
+		else
+			return null;
+		return (getReference(refId));
+
+	};
+
 
 
 	var getAlignmentsByDatabaseTopMatch = function(db_name) {

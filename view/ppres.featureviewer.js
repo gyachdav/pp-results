@@ -104,6 +104,7 @@ var FEATURE_VIEWER = function(argument) {
 					var feature_type = (feature_group.type) ? feature_group.type : "";
 					feature_properties = dataObj.getFeatureLocations(feature_group);
 				}
+				
 				if (!feature_properties) return null;
 				if (feature_properties) i = feature_properties.length;
 				while (i--) {
@@ -288,6 +289,8 @@ Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
 		(__pdb) = _feature.id.split('_');
 		_feature.id = __pdb[0];
 		if (__pdb[1]) _feature.id += " Chain: " + __pdb[1];
+	}else if(_feature.db.match(/Swiss-Prot/i)) { 
+		this.color = "green";
 	}
 
 	var _label = {
