@@ -383,7 +383,7 @@ var PAGE = function(argument) {
 			targetDiv = argument.targetDiv;
 
 			i = quotes.length;
-			var refList = jQuery('<div>');
+			var refList = jQuery('<div>').addClass('alert alert-info');
 			while (i--) {
 				refList.append(
 					jQuery('<ul/>').append(
