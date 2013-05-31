@@ -11,7 +11,7 @@ var NAVIGATION = (function() {
 				id: "secstruct"
 			}, {
 				id: "tmh",
-				text: "Transmembrane Regions"
+				text: "Transmembrane Helices"
 			},
 			//  {
 			// 	id: "nors",
@@ -23,10 +23,7 @@ var NAVIGATION = (function() {
 			}, {
 				id: "disulphide",
 				text: "Disulphide Bridges"
-			}, {
-				id: "binding",
-				text: "Binding Sites"
-			},
+			}
 			//  {
 			// 	id: "tmb",
 			// 	text: "Transmembrane Beta-barrels"
@@ -35,15 +32,19 @@ var NAVIGATION = (function() {
 		
 		"Function Annotation": [{
 				id: "func",
-				text: "Functional Changes",
+				text: "Effect of Point Mutations",
 			},
 
+			{
+				id: "goannotation",
+				text: "GO Terms"
+			},
 			{
 				id: "subcell",
 				text: "Subcellular Localization"
 			}, {
-				id: "goannotation",
-				text: "GO Terms"
+				id: "binding",
+				text: "Binding Sites"
 			}
 		],
 

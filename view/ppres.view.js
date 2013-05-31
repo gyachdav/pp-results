@@ -21,7 +21,7 @@ var PAGE = function(argument) {
 			],
 			SecondaryStructure: [{
 					FeatureViewer: {
-						providers: ["PROFsec", "PROFAcc", "PROFtmb"],
+						providers: ["PROFsec", "PROFAcc", "ASP", "PROFtmb"],
 						showAlignment: false
 					}
 				}, {
@@ -46,7 +46,7 @@ var PAGE = function(argument) {
 			],
 			Binding: [{
 					'FeatureViewer': {
-						providers: ["ISIS"],
+						providers: ["ISIS", "DISIS"],
 						showAlignment: false
 					}
 				}, 'Quotes',

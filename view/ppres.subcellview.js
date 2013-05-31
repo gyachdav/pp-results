@@ -61,7 +61,7 @@ var SUBCELL_VIEW = (function() {
 				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: ' + domain_to_show[tmpDomain].goTermId + ') Prediction confidence ' + domain_to_show[tmpDomain].score;
 
-			_tmp_pred_html = 'Predicted localisation for the ' + this.getDomainFullName(tmpDomain) +
+			_tmp_pred_html = 'Predicted localization for the ' + this.getDomainFullName(tmpDomain) +
 				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: '+linkToGO(domain_to_show[tmpDomain].goTermId)+') Prediction confidence ' + domain_to_show[tmpDomain].score;
 			container = jQuery("<div>").attr('id', tmpDomain+"_localisation_container");
