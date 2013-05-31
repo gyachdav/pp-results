@@ -373,7 +373,7 @@ Feature.ISIS = function(_feature, _feature_provider, _feature_type, featurePos) 
 
 };
 
-Feature.DISIS = function(_feature, _feature_provider, _feature_type) {
+Feature.DISIS = function(_feature, _feature_provider, _feature_type, featurePos) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 	this.color = "orange";
 	this.setColor();
