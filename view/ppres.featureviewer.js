@@ -334,9 +334,9 @@ Feature.PROFsec = function(_feature, _feature_provider, _feature_type) {
 Feature.PROFAcc = function(_feature, _feature_provider, _feature_type) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 
-	if (_feature.value < 5)
+	if (_feature.type == 'Hydrophobic' )
 		this.color = 'yellow';
-	else if (_feature.value > 5)
+	else if (_feature.type ==  'Hydrophilic')
 		this.color = 'blue';
 	else
 		this.color = 'white';

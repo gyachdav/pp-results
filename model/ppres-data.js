@@ -229,7 +229,7 @@ function PPResData() {
 			r = _.range(10, 11);
 			var obj = null;
 			var arrObjs = [];
-			jQuery.each(arr, function(i, n) {
+			jQuery.each(arrProps, function(i, n) {
 				n = parseInt(n);
 				if (jQuery.inArray(n, r) == -1) {
 
