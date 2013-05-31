@@ -91,6 +91,7 @@ var FEATURE_VIEWER = function(argument) {
 				var track, feature_properties;
 				track = new Track();
 				if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
+				if (provider == "DISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
 				if (provider == "DISULFIND") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
 				else track.setPosition(currentBottom);
 
@@ -376,6 +377,13 @@ Feature.DISIS = function(_feature, _feature_provider, _feature_type) {
 	this.init.call(this, _feature, _feature_provider, _feature_type);
 	this.color = "orange";
 	this.setColor();
+
+	var feature = {
+		"type": "circle",
+		"r": 5,
+		"cy": featurePos - 30,
+	}
+
 	return this.getFeature();
 
 };
