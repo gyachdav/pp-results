@@ -383,7 +383,7 @@ Feature.DISIS = function(_feature, _feature_provider, _feature_type, featurePos)
 		"r": 5,
 		"cy": featurePos - 30,
 	}
-
+this.setFeature(feature);
 	return this.getFeature();
 
 };
