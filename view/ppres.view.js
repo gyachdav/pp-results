@@ -64,7 +64,11 @@ var PAGE = function(argument) {
 			SubcellLoc: [
 					"SubcellLocViewer",
 					'Quotes'
-			]
+			],
+			GOAnnot: [
+							"GOAnnotViewer",
+							'Quotes'
+					]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -233,6 +237,26 @@ var PAGE = function(argument) {
 				}
 			]
 		},
+		GOAnnot: {
+			targetDiv: ".navbar",
+			items: [{
+					'Export': [{
+							name: 'goannotExport',
+							text: "Download Raw Data File",
+							func: "exportMethod",
+							params: ["metastudent"]
+						}, {
+							name: 'jsonExport',
+							text: "Download Metastudent prediction in JSON format",
+							func: "exportJSON",
+							params: ['Metastudent']
+						}
+					]
+				}, {
+					'Email': 'nothing'
+				}
+			]
+		},
 		Heatmap: {
 			targetDiv: ".navbar",
 			items: [{
@@ -308,7 +332,6 @@ var PAGE = function(argument) {
 			function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
-				console.log(arr);
 				dataObj = arr.contents;
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
@@ -362,8 +385,6 @@ var PAGE = function(argument) {
 			while (i--)
 				quotes.push(dataObj.getReferenceByProvider(argument.providers[i]));
 			
-			console.log(quotes);
-
 			var fv = new FEATURE_VIEWER({
 				targetDiv: argument.targetDiv,
 				dataObj: dataObj,
@@ -441,7 +462,7 @@ var PAGE = function(argument) {
 					title: _rec_name,
 					href: "#",
 					click: function() {
-						console.log(this);
+						//console.log(this);
 						window.open(url, '_blank');
 						window.focus;
 					}
@@ -504,14 +525,69 @@ var PAGE = function(argument) {
 			}
 			nav_div.append(list);
 
-			// jQuery("#" + targetDiv).append("<h3> Sub-cellular Localization Prediction</h3>");
 			jQuery("#" + targetDiv).append(nav_div);
-
 			jQuery("#" + targetDiv).append(content_div);
-			//jQuery('#_subcell_nav a:last').tab('show');
+
+			return (jQuery("#" + targetDiv)).html();
+		},
+		
+		
+		drawGOAnnotViewer: function(argument) {
+			targetDiv = argument.targetDiv;
+			
+			quotes.push(dataObj.getReferenceByProvider('Metastudent'));
+			
+			var nav_div = jQuery("<div id='_goannot_nav' />");
+
+			var content_div = jQuery("<div id='_goannot_cntnt'/>");
+			content_div.addClass("tab-content");
+			var list = jQuery('<ul/>');
+			list.addClass("nav nav-pills nav-tabs");
+			list.append('<li class="disabled"><a href="#">Ontologies:</a> </li>')
+			
+			var ontologyPredictionArray = dataObj.getGOAnnotations("");
+			for (var i = 0; i < ontologyPredictionArray.length; i++) 
+			{
+				var currOntologyPrediction = ontologyPredictionArray[i];
+				var currOntology = currOntologyPrediction.ontology;
+				var currOntologyShort = currOntology.split(" ").reduce(function(prev, curr, index, array){return index == 1 ? prev[0] + curr[0] : prev + curr[0];});
+				var _curr_div;
+				var _curr_li = jQuery('<li><a data-toggle="tab" href="#' + currOntologyShort + '_annot_container">' + currOntology + '</a></li>');
+				
+				if (!currOntologyPrediction) 
+				{
+					_curr_div = jQuery("<div />").text("Data unavailable");
+				}
+				else 
+				{
+					_curr_div = jQuery("<div />");
+					_curr_div.append(  GOANNOT_VIEW.goannotDiv(currOntologyPrediction.goTermWithScore).innerHTML  );
+				}
+				
+				_curr_div.addClass("tab-pane");
+				_curr_div.attr("id",currOntologyShort + "_annot_container");
+				
+				if(i == 0)
+				{
+					_curr_li.addClass('active');
+					_curr_div.addClass('active');
+				}
+				content_div.append(_curr_div);
+				
+				list.append(_curr_li);
+			}
+			
+			var scripti = jQuery("<script language=\"JavaScript\" type=\"text/javascript\" src=\"http://www.rostlab.org/~hampt/pp-results/vendor/bootstrap/bootstrap-magnify.js\"></script>");
+			
+			nav_div.append(list);
+			jQuery("#" + targetDiv).append(nav_div);
+			jQuery("#" + targetDiv).append(content_div);
+			jQuery("#" + targetDiv).append(scripti);
+			
 
 			return (jQuery("#" + targetDiv)).html();
 		}
+		
 	};
 
 
@@ -531,6 +607,7 @@ var PAGE = function(argument) {
 		} else {
 			element = cacheFetch(component);
 		}
+
 		return element;
 	};
 
@@ -589,6 +666,7 @@ var PAGE = function(argument) {
 				});
 			}
 			loadingDiv.hide();
+
 		}
 	}
 };

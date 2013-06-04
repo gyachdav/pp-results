@@ -108,11 +108,13 @@ function PPResData() {
 			return data_ready;
 		},
 		loadData: function(_file_specs) {
-			var file_path = _file_specs.path,
-				file_name = _file_specs.name,
-				file_type = _file_specs.type;
+			
+			var mydata;
+			
+
+			var file_path = _file_specs.path;
 			var data;
-			file_path += "/" + file_name;
+			file_path = "test.mine.2.xml";
 			return (jQuery.ajax({
 				url: file_path,
 				success: function(data) {
@@ -120,13 +122,12 @@ function PPResData() {
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					console.log(file_path + " load fail");
-					// throw new PPResException ( 
-					// 	textStatus,
-					// 	errorThrown 
-					// 	jqXHR.status
-					// );
-				},
-				dataType: file_type
+					 throw new PPResException ( 
+					 	textStatus,
+					 	errorThrown, 
+					 	jqXHR.responseText
+					 );
+				}
 			}));
 		},
 
@@ -163,6 +164,7 @@ function PPResData() {
 
 			for (var provider in providers) {
 				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), providers[provider]);
+				
 				var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
 				for (var i in domains) {
 					_tmp_ref = subcell_group.subcellularLocalisation.localisation[domains[i]];
@@ -182,6 +184,16 @@ function PPResData() {
 			return (_ret_obj);
 		},
 
+		getGOAnnotations: function(argument) {
+			var _ret_obj = {};
+
+			var provider = "Metastudent";
+			var goFeatureProviderGroup = this.getFeatureByProvider(this.getFeatureTypeGroup(), provider).featureProviderGroup;
+			var ontologyPredictionArray = goFeatureProviderGroup.goAnnotationRegion.goAnnotation.ontologyPrediction;
+			
+			return ontologyPredictionArray;
+		},
+		
 		getSSComposition: function(argument) {
 			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
 			var ss_feature_array = this.getFeatureLocations(ss_feature);
@@ -295,7 +307,7 @@ function PPResData() {
 			var count = 0;
 			jQuery.each(alis, function(i, v) {
 				if (v.dbReference.type.match(new RegExp(db_name, 'i'))) {
-					console.log(v.dbReference.id + "\t" + v.identity.value);
+					//console.log(v.dbReference.id + "\t" + v.identity.value);
 					count++;
 				}
 			});
