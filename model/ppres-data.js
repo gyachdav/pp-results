@@ -108,13 +108,11 @@ function PPResData() {
 			return data_ready;
 		},
 		loadData: function(_file_specs) {
-			
-			var mydata;
-			
-
-			var file_path = _file_specs.path;
+			var file_path = _file_specs.path,
+				file_name = _file_specs.name,
+				file_type = _file_specs.type;
 			var data;
-			file_path = "test.mine.2.xml";
+			file_path += "/" + file_name;
 			return (jQuery.ajax({
 				url: file_path,
 				success: function(data) {
@@ -122,12 +120,13 @@ function PPResData() {
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					console.log(file_path + " load fail");
-					 throw new PPResException ( 
-					 	textStatus,
-					 	errorThrown, 
-					 	jqXHR.responseText
-					 );
-				}
+					// throw new PPResException ( 
+					// 	textStatus,
+					// 	errorThrown 
+					// 	jqXHR.status
+					// );
+				},
+				dataType: file_type
 			}));
 		},
 
@@ -164,7 +163,6 @@ function PPResData() {
 
 			for (var provider in providers) {
 				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), providers[provider]);
-				
 				var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
 				for (var i in domains) {
 					_tmp_ref = subcell_group.subcellularLocalisation.localisation[domains[i]];
@@ -307,7 +305,7 @@ function PPResData() {
 			var count = 0;
 			jQuery.each(alis, function(i, v) {
 				if (v.dbReference.type.match(new RegExp(db_name, 'i'))) {
-					//console.log(v.dbReference.id + "\t" + v.identity.value);
+					console.log(v.dbReference.id + "\t" + v.identity.value);
 					count++;
 				}
 			});
