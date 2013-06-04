@@ -1,0 +1,28 @@
+<div id='GOAnnot' style="width:100%;">
+	<div class='job-name'>
+    <h2>
+       Gene Ontology annotations for <span class="readonly"></span>
+    </h2>
+  </div>
+
+	<div class="navbar"></div>
+<ul id="goannot-nav" class="nav nav-tabs">
+<li class="active"><a href="#GoannotVisualDiv" data-toggle="tab">Visual</a>  </li>
+<li><a  href="#moreInfoDiv" data-toggle="tab">Additional Info</a> </li> 
+</ul>
+
+<div class="tab-content" style="width:100%;" >
+	<div id="GoannotVisualDiv" class="tab-pane active" style="width:100%;" >
+		<div class="alert alert-info"> 
+				<strong>What am I seeing Here?</strong> 
+				Below, you see the results of Metastudent, a method to predict Gene Ontology (GO) terms from via homology to already annotated proteins. <br>Select one of the two functional categories (Molecular Function Ontology or Biological Process Ontology) to display both a tabular and a graphical view. In the table, the GO terms are ordered by reliability (0-100) - the higher the reliability, the higher the chance that the prediction is correct. The graph additionally shows where the predicted GO terms lie with respect to their parent terms. The predicted terms are shown in yellow and correspond to leaf terms, i.e. the most detailed description of a predicted function. Parent terms are more general, but also more reliable.
+		</div>
+		<div id='GOAnnotViewerContainer' style="width:100%;" > </div>
+	</div>
+	<div id='moreInfoDiv' class='info tab-pane'>
+		<h2>How do we Predict Gene Ontology term</h2>
+	</div>
+</div>
+<hr style="width:40%;">
+<div id='QuotesContainer' style="width:100%;"></div>
+

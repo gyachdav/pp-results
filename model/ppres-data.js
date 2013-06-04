@@ -182,6 +182,16 @@ function PPResData() {
 			return (_ret_obj);
 		},
 
+		getGOAnnotations: function(argument) {
+			var _ret_obj = {};
+
+			var provider = "Metastudent";
+			var goFeatureProviderGroup = this.getFeatureByProvider(this.getFeatureTypeGroup(), provider).featureProviderGroup;
+			var ontologyPredictionArray = goFeatureProviderGroup.goAnnotationRegion.goAnnotation.ontologyPrediction;
+			
+			return ontologyPredictionArray;
+		},
+		
 		getSSComposition: function(argument) {
 			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
 			var ss_feature_array = this.getFeatureLocations(ss_feature);

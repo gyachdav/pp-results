@@ -176,6 +176,13 @@ var APP = (function() {
 						data: mainObj
 					}).draw();
 					break;
+				case 'goannotation':
+					page = new PAGE({
+						page: "GOAnnot",
+						data: mainObj
+					}).draw();
+					
+					break;
 				case 'tutorial':
 					target_div.html('<iframe src="http://prezi.com/embed/vg4s_lhh2gal/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0"></iframe>');
 					break;
@@ -189,7 +196,7 @@ var APP = (function() {
 })();
 
 APP.path = '/ppres/';
-//APP.path = '/~guyyachdav/pp-results/';
+//APP.path = '/~hampt/pp-results/';
 
 
 APP.providers = [
@@ -205,7 +212,8 @@ APP.providers = [
 		"PROFbval",
 		"Ucon",
 		"MD",
-		"PROFtmb"
+		"PROFtmb",
+		"Metastudent"
 ];
 
 
@@ -281,7 +289,8 @@ function Demo(target_div) {
 			"Ucon",
 			"MD",
 			"PROFtmb",
-			"LOCtree"
+			"LOCtree",
+			"Metastudent"
 	];
 
 
