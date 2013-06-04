@@ -194,7 +194,7 @@ APP.path = '/ppres/';
 
 APP.providers = [
 		"PROFsec",
-		"PROFacc",
+		"PROFAcc",
 		"PHDhtm",
 		"ISIS",
 		"DISIS",
