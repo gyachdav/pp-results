@@ -28,7 +28,7 @@ var EXPORT = function(argument) {
 		} else
 			string = (new XMLSerializer()).serializeToString(APP.getDataObj().getXMLData());
 
-//		console.log(string);
+		console.log(string);
 		var w = window.open('data:text/xml,' + string);
 	};
 	exportJSON = function(methodName) {
@@ -100,24 +100,24 @@ var APP = (function() {
 			return mainObj;
 		},
 		dump: function() {
-//			console.log(ds.getData());
-//			console.log(mainObj.getAlignmentLocations());
-//			console.log(mainObj.getReferenceByProvider("PROFtmb"));
-//			console.log(mainObj.getSSComposition());
-//			console.log(mainObj.getAAComposition());
-//			console.log(mainObj.getSequence());
-//			console.log(mainObj.getSequence().length + '</p>');
-//			console.log(mainObj.getProteinName() + '</p>');
-//			console.log(mainObj.getOrganismName() + '</p>');
-//			console.log(mainObj.getAlignmentsCount() + '</p>');
+			console.log(ds.getData());
+			console.log(mainObj.getAlignmentLocations());
+			console.log(mainObj.getReferenceByProvider("PROFtmb"));
+			console.log(mainObj.getSSComposition());
+			console.log(mainObj.getAAComposition());
+			console.log(mainObj.getSequence());
+			console.log(mainObj.getSequence().length + '</p>');
+			console.log(mainObj.getProteinName() + '</p>');
+			console.log(mainObj.getOrganismName() + '</p>');
+			console.log(mainObj.getAlignmentsCount() + '</p>');
 			jQuery.each(['PDB', 'Swiss-Prot', 'trembl'], function(index, val) {
-				//console.log("Number of hits from " + val + ": " + mainObj.getAlignmentsByDatabase(val));
+				console.log("Number of hits from " + val + ": " + mainObj.getAlignmentsByDatabase(val));
 			});
 
 			jQuery.each(providers, function(i, v) {
 				feature = mainObj.getFeatureByProvider(mainObj.getFeatureTypeGroup(), v);
-				//console.log('<h1>' + v + '</h1>');
-				//console.log((JSON.stringify(mainObj.getFeatureLocations(feature))));
+				console.log('<h1>' + v + '</h1>');
+				console.log((JSON.stringify(mainObj.getFeatureLocations(feature))));
 			});
 		},
 		showPage: function(action, target_div) {
@@ -195,8 +195,8 @@ var APP = (function() {
 	};
 })();
 
-//APP.path = '/ppres/';
-APP.path = '/~hampt/pp-results/';
+APP.path = '/ppres/';
+//APP.path = '/~hampt/pp-results/';
 
 
 APP.providers = [
@@ -301,14 +301,14 @@ function Demo(target_div) {
 		json = jQuery.xml2json(data);
 		ds.file_type = 'json'; //switch to json
 		ds.populateData(json);
-		//console.log(ds.getData());
+		console.log(ds.getData());
 		mainObj = new PPResData();
 		mainObj.setJsonData(ds.getData());
-		//console.log(mainObj.getAlignmentLocations());
+		console.log(mainObj.getAlignmentLocations());
 		//console.log ( SUBCELL_VIEW.init(   mainObj.getSubCellLocations()) );
 		SUBCELL_VIEW.init(mainObj.getSubCellLocations(), target_div);
 		SUBCELL_VIEW.localisationDiv(mainObj.getSubCellLocations("euka"), target_div)
-		//console.log(mainObj.getSubCellLocations("animal"));
+		console.log(mainObj.getSubCellLocations("animal"));
 
 		// target_div.append('<p>' + mainObj.getSequence() + '</p>');
 		// target_div.append('<p>Seq len: ' + mainObj.getSequence().length + '</p>');

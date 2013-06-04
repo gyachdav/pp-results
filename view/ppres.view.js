@@ -577,7 +577,7 @@ var PAGE = function(argument) {
 				list.append(_curr_li);
 			}
 			
-			var scripti = jQuery("<script language=\"JavaScript\" type=\"text/javascript\" src=\"http://www.rostlab.org/~hampt/pp-results/vendor/bootstrap/bootstrap-magnify.js\"></script>");
+			var scripti = jQuery("<script language=\"JavaScript\" type=\"text/javascript\" src=\"/ppres/vendor/bootstrap/bootstrap-magnify.js\"></script>");
 			
 			nav_div.append(list);
 			jQuery("#" + targetDiv).append(nav_div);

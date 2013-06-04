@@ -1,5 +1,5 @@
 var GOANNOT_VIEW = (function() {
-	var assets_path =  '/~hampt/pp-results/'+'assets/';
+	var assets_path =  '/ppres/'+'assets/';
 	var arrImg = [];
 
 
