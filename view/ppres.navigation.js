@@ -37,7 +37,7 @@ var NAVIGATION = (function() {
 
 			{
 				id: "goannotation",
-				text: "GO Terms"
+				text: "Gene Ontology Terms"
 			},
 			{
 				id: "subcell",
