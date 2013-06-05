@@ -127,40 +127,57 @@ var GOANNOT_VIEW = (function() {
 //				}
 //			
 //			
-			amigoImage.innerHTML = "<span><img data-toggle=\"magnify\" id=\"imgMine\" style=\"border-radius: 4px 4px 4px 4px; border:1px solid #E5E5E5; width: 100%; \" alt=\"\" src=\""+ GETRequestString +"\" width=\"100%\"/></div><span>" +
-			"<div><table cellspacing=\"0\" border=\"0\">" +
+			amigoImage.innerHTML = "<div data-toggle=\"goImageLoading\">Image loading...</div><span style=\"display:none\" data-toggle=\"goImage\"><img onload=\"GOANNOT_VIEW.showGoImage();\" data-toggle=\"magnify\" id=\"imgMine\" style=\"border-radius: 4px 4px 4px 4px; border:1px solid #E5E5E5; width: 100%; \" alt=\"\" src=\""+ GETRequestString +"\" width=\"100%\"/></div><span>" +
+			"<div style=\"padding-left: 2%\"><table cellspacing=\"0\" border=\"0\">" +
 				"<thead>" +
 					"<tr>" +
-						"<th align=left colspan=3>Edge color legend </th>" +
+						"<th align=left colspan=9>Node color legend </th>" +
 					"</tr>" +
 				"</thead>" +
 				"<tbody>" +
 					"<tr>" +
-						"<td width=\"60%\"> is_a </td>" +
-						"<td width=\"10%\"> &nbsp </td>" + 
-						"<td width=\"30%\" bgcolor=\"blue\"></td>" +
-					"</tr>" + 
-					"<tr>" +
-						"<td> part_of </td>" +
-						"<td>  &nbsp </td>" +
-						"<td bgcolor=\"lightblue\"></td>" +
-					"</tr>" +
-					"<tr>" +
-						"<td> develops_from </td>" +
-						"<td>  &nbsp </td>" +
-						"<td bgcolor=\"brown\"> </td>" +
-					"</tr>" +
-					"<tr>" +
-						"<td> regulates </td><td>  &nbsp </td><td bgcolor=\"black\"></td>" +
-					"</tr>" +
-					"<tr>" +
-						"<td> negatively_regulates </td><td>  &nbsp </td><td bgcolor=\"red\"></td>" +
-					"</tr>" +
-					"<tr>" +
-						"<td> positively_regulates </td><td>  &nbsp </td><td bgcolor=\"green\"></td>" +
+						"<td style=\"padding-left: 10px;\" > inferred </td>" +
+						"<td style=\"padding-left: 10px;\"> &nbsp </td>" + 
+						"<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"white\"></td>" +
+						"<td style=\"padding-left: 20px;\"> predicted </td>" +
+						"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+						"<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#FFFF99\"></td>" +
+						"<td style=\"padding-left: 20px;\"> &nbsp </td>" +
+						"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+						"<td style=\"padding-left: 30px; border: 3px solid white\"> </td>" +
 					"</tr>" +
 				"</tbody>" +
-			"</table></div>";
+					"<thead>" +
+						"<tr>" +
+							"<th align=left colspan=9 style=\"padding-top: 15px;\">Edge color legend </th>" +
+						"</tr>" +
+					"</thead>" +
+					"<tbody>" +
+						"<tr>" +
+							"<td style=\"padding-left: 10px;\" > is_a </td>" +
+							"<td style=\"padding-left: 10px;\"> &nbsp </td>" + 
+							"<td style=\"padding-left: 30px; border: 3px solid white\" bgcolor=\"blue\"></td>" +
+							"<td style=\"padding-left: 20px;\"> part_of </td>" +
+							"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+							"<td style=\"padding-left: 30px; border: 3px solid white\" bgcolor=\"lightblue\"></td>" +
+							"<td style=\"padding-left: 20px;\"> develops_from </td>" +
+							"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+							"<td style=\"padding-left: 30px; border: 3px solid white\" bgcolor=\"brown\"> </td>" +
+						"</tr>" +
+						"<tr>" +
+							"<td style=\"padding-left: 10px;\"> regulates </td>" +
+							"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+							"<td style=\"padding-left: 30px; border: 3px solid white\" bgcolor=\"black\"></td>" +
+							"<td style=\"padding-left: 20px;\"> negatively_regulates </td>" +
+							"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+							"<td style=\"padding-left: 30px; border: 3px solid white\" bgcolor=\"red\"></td>" +
+							"<td style=\"padding-left: 20px;\"> positively_regulates </td>" +
+							"<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+							"<td style=\"padding-left: 30px; border: 3px solid white\" bgcolor=\"green\"></td>" +
+						"</tr>" +
+					"</tbody>" +
+				"</table>" +
+			"</div>";
 
 			_maindiv.appendChild(_mainMainDiv);
 			_maindiv.appendChild(amigoImage);
@@ -181,9 +198,17 @@ var GOANNOT_VIEW = (function() {
 			jQuery(arrImg).each(function() {
 				jQuery('<img />').attr('src', this).appendTo(target_div).css('display', 'none');
 			});
+		},
+		
+		showGoImage: function() {
+			$('[data-toggle="goImage"]').each(function () {
+				var $image = $(this);
+				$image.show();
+			})
+			$('[data-toggle="goImageLoading"]').each(function () {
+				var $div = $(this);
+				$div.hide();
+			})
 		}
-		
-		
 	}
-
 })();
