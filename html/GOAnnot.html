@@ -14,10 +14,18 @@
 <div class="tab-content" style="width:100%;" >
 	<div id="GoannotVisualDiv" class="tab-pane active" style="width:100%;" >
 		<div class="alert alert-info"> 
-				<strong>What am I seeing Here?</strong> 
-				GO terms
+				<strong>What am I seeing Here?</strong> Below, you see the results of Metastudent, a method to predict Gene Ontology (GO) terms via homology to already annotated proteins ("Additional Info" for a practical guide). 
+				GO terms are organized in two different ontologies, Molecular Function Ontology and Biological Process Ontology (<a href="http://www.geneontology.org/">details</a>). 
+				Each predicted term is associated with a reliability (0-100), indicating the chance that the protein actually has this function. 
+				The graph additionally shows where the predicted terms lie with respect to their inferred parent terms. Predicted terms are shown in yellow boxes, inferred terms in white boxes. <br>
+				If you want to highlight specific terms, deselect all others in the Tabular Result and press 'show'.
+				<!-- Inferred terms describe functions not as precisely as predicted terms, but should be considered more reliable. -->
 		</div>
-		<div id='GOAnnotViewerContainer' style="width:100%;" > </div>
+		<div id='GOAnnotViewerContainer' style="width:100%;" >
+		
+		
+		
+		</div>
 	</div>
 	<div id='moreInfoDiv' class='info tab-pane'>
 		<h2>How do we Predict Gene Ontology term</h2>
