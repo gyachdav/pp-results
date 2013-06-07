@@ -384,7 +384,7 @@ var PAGE = function(argument) {
 			i = argument.providers.length;
 			while (i--)
 				quotes.push(dataObj.getReferenceByProvider(argument.providers[i]));
-			
+
 			var fv = new FEATURE_VIEWER({
 				targetDiv: argument.targetDiv,
 				dataObj: dataObj,
@@ -415,10 +415,10 @@ var PAGE = function(argument) {
 			i = quotes.length;
 			var refList = jQuery('<div>').addClass('alert alert-info').append(jQuery('<p/>').text(pleaseCite).addClass('text-error'));
 			while (i--) {
-			    if (quotes[i]){
+				if (quotes[i]){
 				refList.append(
 					jQuery('<ul/>')
-					
+				   
 					.append(jQuery('<li/>')
 					.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
 					.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
@@ -428,7 +428,7 @@ var PAGE = function(argument) {
 				.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
 					' ' + quotes[i].citation.volume + ': ' +
 					quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
-			    }
+				}
 			}
 
 
@@ -441,7 +441,7 @@ var PAGE = function(argument) {
 			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
 									.append(jQuery('<div>').addClass('accordion-inner')
 										.append(refList));
-			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
+		 	accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
 			jQuery("#" + targetDiv).append(accordionContainer);
 
 			//jQuery("#" + targetDiv).addClass('alert alert-warning');
@@ -530,64 +530,58 @@ var PAGE = function(argument) {
 
 			return (jQuery("#" + targetDiv)).html();
 		},
-		
-		
+	   
+	   
 		drawGOAnnotViewer: function(argument) {
 			targetDiv = argument.targetDiv;
-			
+		   
 			quotes.push(dataObj.getReferenceByProvider('Metastudent'));
+		   
+			GOANNOT_VIEW.renderGoAnnotHTML(dataObj, targetDiv);
 			
-			var nav_div = jQuery("<div id='_goannot_nav' />");
+			targetDivCopy = targetDiv
 
-			var content_div = jQuery("<div id='_goannot_cntnt'/>");
-			content_div.addClass("tab-content");
-			var list = jQuery('<ul/>');
-			list.addClass("nav nav-pills nav-tabs");
-			list.append('<li class="disabled"><a href="#">Ontologies:</a> </li>')
-			
-			var ontologyPredictionArray = dataObj.getGOAnnotations("");
-			for (var i = 0; i < ontologyPredictionArray.length; i++) 
-			{
-				var currOntologyPrediction = ontologyPredictionArray[i];
-				var currOntology = currOntologyPrediction.ontology;
-				var currOntologyShort = currOntology.split(" ").reduce(function(prev, curr, index, array){return index == 1 ? prev[0] + curr[0] : prev + curr[0];});
-				var _curr_div;
-				var _curr_li = jQuery('<li><a data-toggle="tab" href="#' + currOntologyShort + '_annot_container">' + currOntology + '</a></li>');
-				
-				if (!currOntologyPrediction) 
-				{
-					_curr_div = jQuery("<div />").text("Data unavailable");
-				}
-				else 
-				{
-					_curr_div = jQuery("<div />");
-					_curr_div.append(  GOANNOT_VIEW.goannotDiv(currOntologyPrediction.goTermWithScore).innerHTML  );
-				}
-				
-				_curr_div.addClass("tab-pane");
-				_curr_div.attr("id",currOntologyShort + "_annot_container");
-				
-				if(i == 0)
-				{
-					_curr_li.addClass('active');
-					_curr_div.addClass('active');
-				}
-				content_div.append(_curr_div);
-				
-				list.append(_curr_li);
-			}
-			
-			var scripti = jQuery("<script language=\"JavaScript\" type=\"text/javascript\" src=\"/ppres/vendor/bootstrap/bootstrap-magnify.js\"></script>");
-			
-			nav_div.append(list);
-			jQuery("#" + targetDiv).append(nav_div);
-			jQuery("#" + targetDiv).append(content_div);
-			jQuery("#" + targetDiv).append(scripti);
-			
 
-			return (jQuery("#" + targetDiv)).html();
+			jQuery( "#_goannot_cntnt_img" ).hide();
+
+			jQuery((jQuery('.tableHolder').get().reverse())).each(function () {
+				var holder = jQuery(this);
+
+				holder.children("table").tablesorter({
+					sortList: [
+							   [3, 3]
+							   ],
+							   headers: {0: {sorter: false},1: {sorter: false}, 5: {sorter: false}}
+				});
+
+				jQuery(this).children("table").tablesorterPager({
+					container: holder.children(".pager"),
+					toggler: jQuery(".allToggler", holder)
+				});
+
+				var refreshorForm =  jQuery(".refreshorForm", jQuery(".refreshor", holder));
+				var onto = refreshorForm.attr("name");
+
+				refreshorForm.submit(function() {
+					GOANNOT_VIEW.renderImage(holder.children("table"), onto, targetDivCopy, jQuery('.tableHolder')[0] == holder[0]  );
+					return false;
+				});
+
+
+				jQuery( ("[name=goSel" + onto + "]") ).each(function(){
+					jQuery(this).change( function() {
+
+						jQuery( ( "#showButton" + onto ) ).show();
+
+					});
+				});
+
+				jQuery(".refreshorForm", jQuery(".refreshor", holder)).submit();
+			});
+
+			jQuery( "#_goannot_cntnt_img" ).show();
+
 		}
-		
 	};
 
 
