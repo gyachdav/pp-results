@@ -1,37 +1,5 @@
 var GOANNOT_VIEW = (function() {
-<<<<<<< HEAD
-	var assets_path =  '/ppres/'+'assets/';
-	var arrImg = [];
 
-
-	function linkToGO(go_term) {
-		var __url = 'http://amigo.geneontology.org/cgi-bin/amigo/term_details?term=' + go_term;
-		return ("<a href='"+__url+"' target='__blank' title='More Info at the Gene Ontology'>"+go_term+"</a>");
-	}
-
-	function capitalize(s) {
-		return s[0].toUpperCase() + s.slice(1);
-	}
-	
-	function customEncode(s)
-	{
-		s = s.replace(/"/g, '%22');
-		s = s.replace(/:/g, '%3A');
-		s = s.replace(/ /g, '+');
-		s = s.replace(/,/g, '%2C');
-		s = s.replace(/\?/g, '%3F');
-		s = s.replace(/#/g, '%23');
-		return s;
-	}
-
-	return {
-		
-		goannotDiv: function(goTermWithScoreArray, ontology) {
-			
-			var _table, header_row, row, cell;
-			
-			var GETRequestString = "{";
-=======
     var assets_path =  '/ppres/'+'assets/';
     var arrImg = [];
 
