@@ -32,11 +32,8 @@ var GOANNOT_VIEW = (function() {
     	for(var i=0; i < goTermsSelectedDict.length; i++)
     	{
     		currGoTermDict = goTermsSelectedDict[i];
-        	GETRequestString += "\"" + currGoTermDict["id"] + "\": {\"title\": \"" + "Score: " + currGoTermDict["score"] + "\", " +
-	  	      "\"body\": \"" + currGoTermDict["id"] + ": " + currGoTermDict["name"] + "\", " +
-	  	      "\"fill\": \"" + (currGoTermDict["checked"] ? "#FFFF99" : "#E5E4E2") + "\", " +
-	  	      "\"font\": \"" + "black" + "\", " +
-	  	      "\"border\": \"" + "black" + "\"}";     		
+        	GETRequestString += "\"" + currGoTermDict["id"] + "\": {\"title\":\"" + "Score: " + currGoTermDict["score"] + "<BR/>" + currGoTermDict["id"]  + "\"," +
+	  	      "\"fill\":\"" + (currGoTermDict["checked"] ? "#FFFF99" : "#E5E4E2") + "\"}";     		
 
         	if((goTermsSelectedDict.length-1) != i)
         	{
@@ -123,17 +120,25 @@ var GOANNOT_VIEW = (function() {
                    
                     goTermWithScoreArray = currOntologyPrediction.goTermWithScore;
                    
-                    for(var j = 0; j< goTermWithScoreArray.length; j++)
+                    if (!(typeof goTermWithScoreArray === "undefined")) 
                     {
-                        currGoTermWithScore = goTermWithScoreArray[j];
-                       
-                        _mainMainHTML += "<tr>";
-                        _mainMainHTML +=     "<td width=\"5%\">"+ j +"</td>";
-                        _mainMainHTML +=     "<td width=\"15%\">"+ linkToGO(currGoTermWithScore.gotermid) +"</td>";
-                        _mainMainHTML +=     "<td width=\"55%\">"+ currGoTermWithScore.gotermname +"</td>";
-                        _mainMainHTML +=     "<td width=\"20%\">"+ currGoTermWithScore.gotermscore +"</td>";
-                        _mainMainHTML +=     "<td width=\"5%\"><input type=\"checkbox\" name=\"goSel" + currOntologyShort + "\" value=\"" + currGoTermWithScore.gotermid + "\" checked/></td>";
-                        _mainMainHTML += "</tr>";
+	                    if(!jQuery.isArray(goTermWithScoreArray))
+	                    {
+	                    	goTermWithScoreArray = new Array(goTermWithScoreArray);
+	                    }
+	 
+	                    for(var j = 0; j< goTermWithScoreArray.length; j++)
+	                    {
+	                        currGoTermWithScore = goTermWithScoreArray[j];
+	                       
+	                        _mainMainHTML += "<tr>";
+	                        _mainMainHTML +=     "<td width=\"5%\">"+ (j+1) +"</td>";
+	                        _mainMainHTML +=     "<td width=\"15%\">"+ linkToGO(currGoTermWithScore.gotermid) +"</td>";
+	                        _mainMainHTML +=     "<td width=\"55%\">"+ currGoTermWithScore.gotermname +"</td>";
+	                        _mainMainHTML +=     "<td width=\"20%\">"+ currGoTermWithScore.gotermscore +"</td>";
+	                        _mainMainHTML +=     "<td width=\"5%\"><input type=\"checkbox\" name=\"goSel" + currOntologyShort + "\" value=\"" + currGoTermWithScore.gotermid + "\" checked/></td>";
+	                        _mainMainHTML += "</tr>";
+	                    }
                     }
                     
                     _mainMainHTML += "</tbody></table><div style=\"margin: 0px; margin-top: 2px;\" class=\"pager\" id=\"pager" + currOntologyShort + "\">" +
@@ -151,10 +156,10 @@ var GOANNOT_VIEW = (function() {
                         "</select>" +
                     "</form>" +
                     "<div style=\"margin: 0px; margin-top: 1px;\" class=\"refreshor\" id=\"refreshor" + currOntologyShort + "\">" +
-                        "<form name=\"" + currOntologyShort + "\" class=\"refreshorForm\" style=\"font-size: 10pt;margin-bottom: 20px;width: auto;\">" +
-                            "<input id=\"showButton" + currOntologyShort + "\" style=\"display:none; width:100px; height:20px; font-size: 12px;\" type=\"submit\" value=\"Show\" />" +
-                        "</form>" +
-                    "</div>" +
+                    "<form name=\"" + currOntologyShort + "\" class=\"refreshorForm\" style=\"font-size: 10pt;margin-bottom: 20px;width: auto;\">" +
+                        "<input id=\"showButton" + currOntologyShort + "\" style=\"display:none; width:100px; height:20px; font-size: 12px;\" type=\"submit\" value=\"Show\" />" +
+                    "</form>" +
+	                "</div>" +
 	                "</div>" +
 	                "</div>";
                 }
@@ -176,7 +181,7 @@ var GOANNOT_VIEW = (function() {
                 var currOntologyPrediction = ontologyPredictionArray[i];
                 var currOntology = currOntologyPrediction.ontology;
                 var currOntologyShort = currOntology.split(" ").reduce(function(prev, curr, index, array){return index == 1 ? prev[0] + curr[0] : prev + curr[0];});
-                var _curr_li = jQuery("<li><a data-toggle=\"tab\" id=\"" + currOntologyShort + "_img_link\" href=\"#" + currOntologyShort + "_img_container\">" + currOntology + "</a></li>");
+                var _curr_li = jQuery("<li><a data-toggle=\"tab\" id=\"" + currOntologyShort + "_img_link\" href=\"#" + currOntologyShort + "_img_container_container\">" + currOntology + "</a></li>");
 
                 if(i == 0)
                 {
@@ -200,6 +205,12 @@ var GOANNOT_VIEW = (function() {
                 var currOntology = currOntologyPrediction.ontology;
                 var currOntologyShort = currOntology.split(" ").reduce(function(prev, curr, index, array){return index == 1 ? prev[0] + curr[0] : prev + curr[0];});
                 
+    			var imageContainerContainer = jQuery("<div></div>");
+    			imageContainerContainer.attr("id", currOntologyShort + "_img_container_container");
+    			imageContainerContainer.css("margin", "0px");
+    			imageContainerContainer.css("padding", "0px");
+    			imageContainerContainer.addClass("tab-pane");
+                
                 var _curr_div;
                 if (!currOntologyPrediction)
                 {
@@ -211,72 +222,79 @@ var GOANNOT_VIEW = (function() {
                     _curr_div.append(  "Image loading..." );
                 }
                
-                _curr_div.addClass("tab-pane");
                 _curr_div.attr("id",currOntologyShort + "_img_container");
                
                 if(i == 0)
                 {
-                    _curr_div.addClass('active');
+                	imageContainerContainer.addClass('active');
                 }
                
-                content_div.append(_curr_div);
+                imageContainerContainer.append(_curr_div);
+                imageContainerContainer.append(this.createHTMLLegend(dataObj, currOntologyShort));
+                content_div.append(imageContainerContainer)
             }
 
             return content_div;
         },
         
-        createHTMLLegend: function(dataObj) {
+        createHTMLLegend: function(dataObj, onto) {
         	
-         var mainHTML = "<div id=\"imageLegend\" style=\"display:none; padding-left: 5px; margin-top: 10px;\">" +
-	          "<table cellspacing=\"0\" border=\"0\">" +
-	              "<thead>" +
-	                  "<tr>" +
-	                      "<th align=left colspan=9 style=\"padding-bottom:5px;\">Node color legend </th>" +
-	                  "</tr>" +
-	              "</thead>" +
-	              "<tbody>" +
-	                  "<tr>" +
-	                      "<td style=\"padding-left: 10px;\" > inferred </td>" +
-	                      "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
-	                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"white\"></td>" +
-	                      "<td style=\"padding-left: 20px;\"> predicted & selected </td>" +
-	                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#FFFF99\"></td>" +
-	                      "<td style=\"padding-left: 20px;\"> predicted & deselected </td>" +
-	                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#E5E4E2\"\"> </td>" +
-	                  "</tr>" +
-	              "</tbody>" +
-	                  "<thead>" +
-	                      "<tr>" +
-	                          "<th align=left colspan=9 style=\"padding-top: 15px;\">Edge color legend </th>" +
+         var mainHTML = "<div id=\"imageLegend" + onto + "\" style=\"display:none; padding-left: 5px; padding-right: 5px; margin-top: 10px;\">" +
+         	  "<div style=\"float: left;\">" +
+		          "<table cellspacing=\"0\" border=\"0\">" +
+		              "<thead>" +
+		                  "<tr>" +
+	                      		"<th align=left colspan=9 style=\"padding-bottom:5px;\">Node color legend </th>" +
 	                      "</tr>" +
-	                  "</thead>" +
-	                  "<tbody>" +
-	                      "<tr>" +
-	                          "<td style=\"padding-left: 10px;\" > is_a </td>" +
-	                          "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
-	                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: blue; width:100%; height: 5px;\">&nbsp;</div></td>" +
-	                          "<td style=\"padding-left: 20px;\"> part_of </td>" +
-	                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: lightblue; width:100%; height: 5px;\">&nbsp;</div></td>" +
-	                          "<td style=\"padding-left: 20px;\"> develops_from </td>" +
-	                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: brown; width:100%; height: 5px;\">&nbsp;</div></td>" +
-	                      "</tr>" +
-	                      "<tr>" +
-	                          "<td style=\"padding-left: 10px;\"> regulates </td>" +
-	                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: black; width:100%; height: 5px;\">&nbsp;</div></td>" +
-	                          "<td style=\"padding-left: 20px;\"> negatively_regulates </td>" +
-	                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: red; width:100%; height: 5px;\">&nbsp;</div></td>" +
-	                          "<td style=\"padding-left: 20px;\"> positively_regulates </td>" +
-	                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-	                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: green; width:100%; height: 5px;\">&nbsp;</div></td>" +
-	                      "</tr>" +
-	                  "</tbody>" +
-	          "</table>" +
+		              "</thead>" +
+		              "<tbody>" +
+		                  "<tr>" +
+		                      "<td style=\"padding-left: 10px;\" > inferred </td>" +
+		                      "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
+		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"white\"></td>" +
+		                      "<td style=\"padding-left: 20px;\"> predicted & selected </td>" +
+		                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#FFFF99\"></td>" +
+		                      "<td style=\"padding-left: 20px;\"> predicted & deselected </td>" +
+		                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#E5E4E2\"\"> </td>" +
+		                  "</tr>" +
+		              "</tbody>" +
+		                  "<thead>" +
+		                      "<tr>" +
+		                          "<th align=left colspan=9 style=\"padding-top: 15px;\">Edge color legend </th>" +
+		                      "</tr>" +
+		                  "</thead>" +
+		                  "<tbody>" +
+		                      "<tr>" +
+		                          "<td style=\"padding-left: 10px;\" > is_a </td>" +
+		                          "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: blue; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td style=\"padding-left: 20px;\"> part_of </td>" +
+		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: lightblue; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td style=\"padding-left: 20px;\"> develops_from </td>" +
+		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: brown; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                      "</tr>" +
+		                      "<tr>" +
+		                          "<td style=\"padding-left: 10px;\"> regulates </td>" +
+		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: black; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td style=\"padding-left: 20px;\"> negatively_regulates </td>" +
+		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: red; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td style=\"padding-left: 20px;\"> positively_regulates </td>" +
+		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: green; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                      "</tr>" +
+		                  "</tbody>" +
+		          "</table>" +
+	          "</div>" +
+	          "<div style=\"float: right\"> <a id=\"openExternal" + onto + "\" target=\"_blank\">Open image in new window</a> " +
+	          "</div>" +
+	          "<br style=\"clear: left;\" />" +
+	          "<br style=\"clear: right;\" />" +
           "</div>";
 
           return mainHTML;
@@ -288,7 +306,6 @@ var GOANNOT_VIEW = (function() {
 	        jQuery("#" + targetDiv).append(jQuery("<h3>Graphical Result</h3>"));
 	        jQuery("#" + targetDiv).append(this.createHTMLImageNavigation(dataObj));
 	        jQuery("#" + targetDiv).append(this.createHTMLImageContent(dataObj));
-	        jQuery("#" + targetDiv).append(this.createHTMLLegend(dataObj));
 	        return;
 	    },
 	    
@@ -296,21 +313,25 @@ var GOANNOT_VIEW = (function() {
 	    	
 	    	
 	    	jQuery( ( "#showButton" + onto ) ).hide();
-	    	
+		    $(("#"+ onto + "_img_container")).css("border", "0px solid white");
 	    	jQuery("#_goannot_cntnt_img").css("border", "0px solid white");
 
-	    	if(jQuery("#imageLegend").css("display") != "none")
+	    	if(jQuery(("#imageLegend"+onto)).css("display") != "none")
 	    	{
 	    		processGlobalsOnload = true;
 	    	}
 	    	
-	    	jQuery("#imageLegend").hide();
+	    	jQuery(("#imageLegend"+onto)).hide();
+	    	
 	    	var imageContainer = jQuery("#" + onto + "_img_container");
 			imageContainer.empty();
 	    	
 	    	rows = tableObj[0].config.rowsCopy;
 			goTermsDictArray = new Array();
+			var goTermsDictArrayReduced;
 			
+			var goTermCounter = 0;
+			var tooManyTerms =false;
 			$(rows).each(function () {
 				
 				
@@ -323,10 +344,35 @@ var GOANNOT_VIEW = (function() {
 				currDict["score"] = $(currCells[3]).text();
 				currDict["checked"] = currBox.is(':checked') ;
 				
-				goTermsDictArray.push(currDict)
+				goTermsDictArray.push(currDict);
+				goTermCounter++;
+				
+				
 			})
 			
-			var requestString = generateAmigoRequest(goTermsDictArray);
+			if(goTermCounter > 50)
+			{
+				goTermsDictArrayReduced = new Array();
+				tooManyTerms=true;
+				for(var i = 0; i<goTermsDictArray.length; i++ )
+				{
+					if(goTermsDictArrayReduced.length<50)
+					{
+						currDict = goTermsDictArray[i];
+						if(currDict["checked"])
+						{
+							goTermsDictArrayReduced.push(currDict);
+						}
+					}
+					else
+					{
+						break;
+					}
+				}
+			}
+			
+
+			var requestString = generateAmigoRequest(tooManyTerms ? goTermsDictArrayReduced : goTermsDictArray);
 			
 				
 
@@ -363,16 +409,20 @@ var GOANNOT_VIEW = (function() {
 			      imagei.show();
 			      
 
-			    if(imageAct.width() != imageAct[0].naturalWidth)
+			    if(imageAct[0].width != imageAct[0].naturalWidth)
 			    {
 			    	  imageAct.magnify();
 			    }
 			    
-			    if(processGlobalsOnload)
+			    $(("#"+ onto + "_img_container")).css("border", "1px solid #E5E5E5");
+			    $(("#" +onto + "_img_container")).css("border-radius", "4px 4px 4px 4px");
+			    $(("#imageLegend"+onto)).show();
+			    $( ( "#openExternal" + onto ) ).attr("href", requestString);
+			    
+			    
+			    if (tooManyTerms)
 			    {
-			      $("#imageLegend").show();
-			      $("#_goannot_cntnt_img").css("border", "1px solid #E5E5E5");
-			      $("#_goannot_cntnt_img").css("border-radius", "4px 4px 4px 4px");
+			    	$(("#imageWarning"+onto)).show();
 			    }
 			      
 			  })});
@@ -381,6 +431,17 @@ var GOANNOT_VIEW = (function() {
 
 			imageContainer.append(imageLoaderDiv);
 			imageContainer.append(imageSpan);
+			
+			if(tooManyTerms)
+			{
+				var imageWarningDiv = $("<div>Warning: too many terms to display; only showing first 50 selected terms</div>");
+				imageWarningDiv.css("color", "red");
+				imageWarningDiv.css("font-weight", "bold");
+				imageWarningDiv.attr("id", "imageWarning"+onto);
+				imageWarningDiv.attr("padding-left", "5px;");
+				imageWarningDiv.hide();
+				imageContainer.append(imageWarningDiv);
+			}
 
 			$( ("#" + onto + "_img_link") ).click();
 			

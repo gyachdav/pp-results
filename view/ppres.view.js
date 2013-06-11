@@ -547,23 +547,34 @@ var PAGE = function(argument) {
 			jQuery((jQuery('.tableHolder').get().reverse())).each(function () {
 				var holder = jQuery(this);
 
-				holder.children("table").tablesorter({
-					sortList: [
-							   [3, 3]
-							   ],
-							   headers: {0: {sorter: false},1: {sorter: false}, 5: {sorter: false}}
-				});
-
-				jQuery(this).children("table").tablesorterPager({
-					container: holder.children(".pager"),
-					toggler: jQuery(".allToggler", holder)
-				});
-
+				var isEmpty = jQuery("td", holder.children("table")).length == 0;
+				
+				if (!isEmpty)
+				{
+					holder.children("table").tablesorter({
+						sortList: [
+								   [3, 3]
+								   ],
+								   headers: {0: {sorter: false},1: {sorter: false}, 5: {sorter: false}}
+					});
+				
+					jQuery(this).children("table").tablesorterPager({
+						container: holder.children(".pager"),
+						toggler: jQuery(".allToggler", holder)
+					});
+				}
 				var refreshorForm =  jQuery(".refreshorForm", jQuery(".refreshor", holder));
 				var onto = refreshorForm.attr("name");
 
 				refreshorForm.submit(function() {
-					GOANNOT_VIEW.renderImage(holder.children("table"), onto, targetDivCopy, jQuery('.tableHolder')[0] == holder[0]  );
+					if (!isEmpty)
+					{
+						GOANNOT_VIEW.renderImage(holder.children("table"), onto, targetDivCopy, jQuery('.tableHolder')[0] == holder[0]  );
+					}
+					else
+					{
+						jQuery(("#" + onto + "_img_container")).text("n/a");
+					}
 					return false;
 				});
 
@@ -580,7 +591,6 @@ var PAGE = function(argument) {
 			});
 
 			jQuery( "#_goannot_cntnt_img" ).show();
-
 		}
 	};
 
