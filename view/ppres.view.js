@@ -662,11 +662,16 @@ var PAGE = function(argument) {
 						var jobId = dataObj.getJobID();
 						var formatDiv = jQuery('<div/>');
 						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'html_results?req_id=' + jobId)
-							.append(jQuery('<span />').addClass('label label-info outer').text('HTML')));
-						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'xml_results?req_id=' + jobId)
-							.append(jQuery('<span />').addClass('label label-warning outer').text('XML')));
+																.attr('target', '_blank')
+															   .attr('title', 'Complete data formatted for web presentation.')
+															   .addClass('label label-info outer')
+															   .text('HTML'));
 						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'text_results?req_id=' + jobId)
-							.append(jQuery('<span />').addClass('label label-warning outer').text('TEXT')));
+																.attr('target', '_blank')
+															   .attr('title', 'Complete data in the original flat text format.')
+															   .addClass('label label-info outer')
+															   .text('TEXT'));
+						
 						formatDivContainer.append(formatDiv);
 
 					}());
