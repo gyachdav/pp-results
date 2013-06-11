@@ -407,7 +407,7 @@ var GOANNOT_VIEW = (function() {
 			      imagei.show();
 			      
 
-			    if(imageAct.width() != imageAct[0].naturalWidth)
+			    if(imageAct[0].width != imageAct[0].naturalWidth)
 			    {
 			    	  imageAct.magnify();
 			    }
