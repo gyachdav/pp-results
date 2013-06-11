@@ -21,6 +21,11 @@
   padding-left:50px;
 }
 
+.outer {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .info {
   text-align: justify;
 }

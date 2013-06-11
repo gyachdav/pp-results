@@ -66,9 +66,9 @@ var PAGE = function(argument) {
 					'Quotes'
 			],
 			GOAnnot: [
-							"GOAnnotViewer",
-							'Quotes'
-					]
+					"GOAnnotViewer",
+					'Quotes'
+			]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -376,8 +376,8 @@ var PAGE = function(argument) {
 		},
 		drawFeatureViewer: function(argument) {
 			// TODO this wil have to be refactored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
-			if (  argument.showAlignment )
-				quotes.push( dataObj.getReference(dataObj.getJsonData().entry.aliProviderGroup.ref));
+			if (argument.showAlignment)
+				quotes.push(dataObj.getReference(dataObj.getJsonData().entry.aliProviderGroup.ref));
 
 			if (!argument.providers) argument.providers = APP.providers;
 
@@ -415,19 +415,19 @@ var PAGE = function(argument) {
 			i = quotes.length;
 			var refList = jQuery('<div>').addClass('alert alert-info').append(jQuery('<p/>').text(pleaseCite).addClass('text-error'));
 			while (i--) {
-				if (quotes[i]){
-				refList.append(
-					jQuery('<ul/>')
-				   
+				if (quotes[i]) {
+					refList.append(
+						jQuery('<ul/>')
+
 					.append(jQuery('<li/>')
-					.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
-					.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
-					return n.name;
+						.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
+						.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
+						return n.name;
 					}).join(', ')))
 
-				.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
-					' ' + quotes[i].citation.volume + ': ' +
-					quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
+					.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
+						' ' + quotes[i].citation.volume + ': ' +
+						quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
 				}
 			}
 
@@ -439,9 +439,9 @@ var PAGE = function(argument) {
 				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
 				.append(jQuery('<span/>').text('References (Click to Exapnd)')));
 			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
-									.append(jQuery('<div>').addClass('accordion-inner')
-										.append(refList));
-		 	accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
+				.append(jQuery('<div>').addClass('accordion-inner')
+				.append(refList));
+			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
 			jQuery("#" + targetDiv).append(accordionContainer);
 
 			//jQuery("#" + targetDiv).addClass('alert alert-warning');
@@ -530,59 +530,65 @@ var PAGE = function(argument) {
 
 			return (jQuery("#" + targetDiv)).html();
 		},
-	   
-	   
+
+
 		drawGOAnnotViewer: function(argument) {
 			targetDiv = argument.targetDiv;
-		   
+
 			quotes.push(dataObj.getReferenceByProvider('Metastudent'));
-		   
+
 			GOANNOT_VIEW.renderGoAnnotHTML(dataObj, targetDiv);
-			
+
 			targetDivCopy = targetDiv
 
 
-			jQuery( "#_goannot_cntnt_img" ).hide();
+			jQuery("#_goannot_cntnt_img").hide();
 
-			jQuery((jQuery('.tableHolder').get().reverse())).each(function () {
+			jQuery((jQuery('.tableHolder').get().reverse())).each(function() {
 				var holder = jQuery(this);
 
 				var isEmpty = jQuery("td", holder.children("table")).length == 0;
-				
-				if (!isEmpty)
-				{
+
+				if (!isEmpty) {
 					holder.children("table").tablesorter({
 						sortList: [
-								   [3, 3]
-								   ],
-								   headers: {0: {sorter: false},1: {sorter: false}, 5: {sorter: false}}
+							[3, 3]
+						],
+						headers: {
+							0: {
+								sorter: false
+							},
+							1: {
+								sorter: false
+							},
+							5: {
+								sorter: false
+							}
+						}
 					});
-				
+
 					jQuery(this).children("table").tablesorterPager({
 						container: holder.children(".pager"),
 						toggler: jQuery(".allToggler", holder)
 					});
 				}
-				var refreshorForm =  jQuery(".refreshorForm", jQuery(".refreshor", holder));
+				var refreshorForm = jQuery(".refreshorForm", jQuery(".refreshor", holder));
 				var onto = refreshorForm.attr("name");
 
 				refreshorForm.submit(function() {
-					if (!isEmpty)
-					{
-						GOANNOT_VIEW.renderImage(holder.children("table"), onto, targetDivCopy, jQuery('.tableHolder')[0] == holder[0]  );
-					}
-					else
-					{
+					if (!isEmpty) {
+						GOANNOT_VIEW.renderImage(holder.children("table"), onto, targetDivCopy, jQuery('.tableHolder')[0] == holder[0]);
+					} else {
 						jQuery(("#" + onto + "_img_container")).text("n/a");
 					}
 					return false;
 				});
 
 
-				jQuery( ("[name=goSel" + onto + "]") ).each(function(){
-					jQuery(this).change( function() {
+				jQuery(("[name=goSel" + onto + "]")).each(function() {
+					jQuery(this).change(function() {
 
-						jQuery( ( "#showButton" + onto ) ).show();
+						jQuery(("#showButton" + onto)).show();
 
 					});
 				});
@@ -590,7 +596,7 @@ var PAGE = function(argument) {
 				jQuery(".refreshorForm", jQuery(".refreshor", holder)).submit();
 			});
 
-			jQuery( "#_goannot_cntnt_img" ).show();
+			jQuery("#_goannot_cntnt_img").show();
 		}
 	};
 
@@ -649,6 +655,21 @@ var PAGE = function(argument) {
 
 					if (navBar[currentPage])
 						var nb = new NAVBAR(navBar[currentPage]);
+
+
+					(function() {
+						var formatDivContainer = jQuery('.formats');
+						var jobId = dataObj.getJobID();
+						var formatDiv = jQuery('<div/>');
+						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'html_results?req_id=' + jobId)
+							.append(jQuery('<span />').addClass('label label-info outer').text('HTML')));
+						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'xml_results?req_id=' + jobId)
+							.append(jQuery('<span />').addClass('label label-warning outer').text('XML')));
+						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'text_results?req_id=' + jobId)
+							.append(jQuery('<span />').addClass('label label-warning outer').text('TEXT')));
+						formatDivContainer.append(formatDiv);
+
+					}());
 
 					cacheStore(currentPage, pageHTML);
 					jQuery.each(pageComponents[currentPage], function(i, component) {
