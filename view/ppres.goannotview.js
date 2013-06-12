@@ -242,9 +242,10 @@ var GOANNOT_VIEW = (function() {
          var mainHTML = "<div id=\"imageLegend" + onto + "\" style=\"display:none; padding-left: 5px; padding-right: 5px; margin-top: 10px;\">" +
          	  "<div style=\"float: left;\">" +
 		          "<table cellspacing=\"0\" border=\"0\">" +
+                  "<td>" +
 		              "<thead>" +
 		                  "<tr>" +
-	                      		"<th align=left colspan=9 style=\"padding-bottom:5px;\">Node color legend </th>" +
+	                      		"<th align=left colspan=9 style=\"padding-bottom:5px;\"><legend>Node color legend </legend></th>" +
 	                      "</tr>" +
 		              "</thead>" +
 		              "<tbody>" +
@@ -260,35 +261,38 @@ var GOANNOT_VIEW = (function() {
 		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#E5E4E2\"\"> </td>" +
 		                  "</tr>" +
 		              "</tbody>" +
+                      "</td>" +
+                      "<td>" +
 		                  "<thead>" +
 		                      "<tr>" +
-		                          "<th align=left colspan=9 style=\"padding-top: 15px;\">Edge color legend </th>" +
+		                          "<th align=left colspan=9 style=\"padding-top: 15px;\"><legend>Edge color legend </legend></th>" +
 		                      "</tr>" +
 		                  "</thead>" +
 		                  "<tbody>" +
 		                      "<tr>" +
 		                          "<td style=\"padding-left: 10px;\" > is_a </td>" +
 		                          "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: blue; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: blue; width:100%; height: 3px;\">&nbsp;</div></td>" +
 		                          "<td style=\"padding-left: 20px;\"> part_of </td>" +
 		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: lightblue; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: lightblue; width:100%; height: 3px;\">&nbsp;</div></td>" +
 		                          "<td style=\"padding-left: 20px;\"> develops_from </td>" +
 		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: brown; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: brown; width:100%; height: 3px;\">&nbsp;</div></td>" +
 		                      "</tr>" +
 		                      "<tr>" +
 		                          "<td style=\"padding-left: 10px;\"> regulates </td>" +
 		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: black; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: black; width:100%; height: 3px;\">&nbsp;</div></td>" +
 		                          "<td style=\"padding-left: 20px;\"> negatively_regulates </td>" +
 		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: red; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: red; width:100%; height: 3px;\">&nbsp;</div></td>" +
 		                          "<td style=\"padding-left: 20px;\"> positively_regulates </td>" +
 		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: green; width:100%; height: 5px;\">&nbsp;</div></td>" +
+		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: green; width:100%; height: 3px;\">&nbsp;</div></td>" +
 		                      "</tr>" +
 		                  "</tbody>" +
+                          "</td>" +
 		          "</table>" +
 	          "</div>" +
 	          "<div style=\"float: right\"> <a id=\"openExternal" + onto + "\" target=\"_blank\">Open image in new window</a> " +
