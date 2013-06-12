@@ -404,28 +404,29 @@ var GOANNOT_VIEW = (function() {
 			          $div.hide();
 			      });
 				
-				imageSpan.each(function () {
-			      var imagei = $(this);
-			      imagei.show();
-			      
 
-			    if(imageAct[0].width != imageAct[0].naturalWidth)
-			    {
-			    	  imageAct.magnify();
-			    }
-			    
 			    $(("#"+ onto + "_img_container")).css("border", "1px solid #E5E5E5");
 			    $(("#" +onto + "_img_container")).css("border-radius", "4px 4px 4px 4px");
 			    $(("#imageLegend"+onto)).show();
 			    $( ( "#openExternal" + onto ) ).attr("href", requestString);
 			    
-			    
 			    if (tooManyTerms)
 			    {
 			    	$(("#imageWarning"+onto)).show();
 			    }
-			      
-			  })});
+
+			    imageSpan.each(function () {
+				      var imagei = $(this);
+				      imagei.show();
+					});
+			    
+	
+				if(imageAct.width() != imageAct[0].naturalWidth)
+			    {
+			    	  imageAct.magnify();
+			    }
+			    
+			  });
 
 			imageSpan.append(imageAct);  
 
@@ -442,9 +443,7 @@ var GOANNOT_VIEW = (function() {
 				imageWarningDiv.hide();
 				imageContainer.append(imageWarningDiv);
 			}
-
 			$( ("#" + onto + "_img_link") ).click();
-			
 	    },
 	     
         init: function(subcell_features, target_div) {
