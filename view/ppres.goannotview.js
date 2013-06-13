@@ -239,67 +239,79 @@ var GOANNOT_VIEW = (function() {
         
         createHTMLLegend: function(dataObj, onto) {
         	
-         var mainHTML = "<div id=\"imageLegend" + onto + "\" style=\"display:none; padding-left: 5px; padding-right: 5px; margin-top: 10px;\">" +
-         	  "<div style=\"float: left;\">" +
-		          "<table cellspacing=\"0\" border=\"0\">" +
-                  "<td>" +
-		              "<thead>" +
-		                  "<tr>" +
-	                      		"<th align=left colspan=9 style=\"padding-bottom:5px;\"><legend>Node color legend </legend></th>" +
-	                      "</tr>" +
-		              "</thead>" +
-		              "<tbody>" +
-		                  "<tr>" +
-		                      "<td style=\"padding-left: 10px;\" > inferred </td>" +
-		                      "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
-		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"white\"></td>" +
-		                      "<td style=\"padding-left: 20px;\"> predicted & selected </td>" +
-		                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#FFFF99\"></td>" +
-		                      "<td style=\"padding-left: 20px;\"> predicted & deselected </td>" +
-		                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#E5E4E2\"\"> </td>" +
-		                  "</tr>" +
-		              "</tbody>" +
-                      "</td>" +
-                      "<td>" +
-		                  "<thead>" +
-		                      "<tr>" +
-		                          "<th align=left colspan=9 style=\"padding-top: 15px;\"><legend>Edge color legend </legend></th>" +
-		                      "</tr>" +
-		                  "</thead>" +
-		                  "<tbody>" +
-		                      "<tr>" +
-		                          "<td style=\"padding-left: 10px;\" > is_a </td>" +
-		                          "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: blue; width:100%; height: 3px;\">&nbsp;</div></td>" +
-		                          "<td style=\"padding-left: 20px;\"> part_of </td>" +
-		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: lightblue; width:100%; height: 3px;\">&nbsp;</div></td>" +
-		                          "<td style=\"padding-left: 20px;\"> develops_from </td>" +
-		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: brown; width:100%; height: 3px;\">&nbsp;</div></td>" +
-		                      "</tr>" +
-		                      "<tr>" +
-		                          "<td style=\"padding-left: 10px;\"> regulates </td>" +
-		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: black; width:100%; height: 3px;\">&nbsp;</div></td>" +
-		                          "<td style=\"padding-left: 20px;\"> negatively_regulates </td>" +
-		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: red; width:100%; height: 3px;\">&nbsp;</div></td>" +
-		                          "<td style=\"padding-left: 20px;\"> positively_regulates </td>" +
-		                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
-		                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: green; width:100%; height: 3px;\">&nbsp;</div></td>" +
-		                      "</tr>" +
-		                  "</tbody>" +
-                          "</td>" +
-		          "</table>" +
-	          "</div>" +
-	          "<div style=\"float: right\"> <a id=\"openExternal" + onto + "\" target=\"_blank\">Open image in new window</a> " +
-	          "</div>" +
-	          "<br style=\"clear: left;\" />" +
-	          "<br style=\"clear: right;\" />" +
-          "</div>";
+        	 var mainHTML = "<div id=\"imageLegend" + onto + "\" style=\"display:none; padding-left: 5px; padding-right: 5px; margin-top: 10px;\">" +
+        	 "<table cellpadding=\"0\" cellspacing=\"0\" style=\"padding:0px; margin:0px; border: 0px;width: 100%\">" +
+        	 	"<tr>" + 
+        	 		"<td>" +
+		        	 	"<div style=\"float: left;margin-right:100px;padding-bottom: 20px;\">" +
+					          "<table cellspacing=\"0\" border=\"0\">" +
+					              "<thead>" +
+					                  "<tr>" +
+				                      		"<th align=left colspan=9 style=\"padding-bottom:5px;\"><legend>Node color legend </legend></th>" +
+				                      "</tr>" +
+					              "</thead>" +
+					              "<tbody>" +
+					                  "<tr>" +
+					                      "<td style=\"padding-left: 10px;\" > inferred </td>" +
+					                      "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
+					                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"white\"></td>" +
+					                      "<td style=\"padding-left: 20px;\"> predicted & selected </td>" +
+					                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#FFFF99\"></td>" +
+					                      "<td style=\"padding-left: 20px;\"> predicted & deselected </td>" +
+					                      "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                      "<td style=\"padding-left: 30px; border: 1px solid black\" bgcolor=\"#E5E4E2\"\"> </td>" +
+					                  "</tr>" +
+					              "</tbody>" +
+					            "</table>" +
+					       "</div>" +
+					       "<div style=\"float: left;\">" +
+					            "<table cellspacing=\"0\" border=\"0\">" +
+					                  "<thead>" +
+					                      "<tr>" +
+					                          "<th align=left colspan=9 style=\"padding-bottom:5px;\"><legend>Edge color legend </legend></th>" +
+					                      "</tr>" +
+					                  "</thead>" +
+					                  "<tbody>" +
+					                      "<tr>" +
+					                          "<td style=\"padding-left: 10px;\" > is_a </td>" +
+					                          "<td style=\"padding-left: 10px;\"> &nbsp </td>" +
+					                          "<td style=\"width:30px\"><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: blue; width:100%; height: 3px;\">&nbsp;</div></td>" +
+					                          "<td style=\"padding-left: 20px;\"> part_of </td>" +
+					                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                          "<td style=\"width:30px\"><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: lightblue; width:100%; height: 3px;\">&nbsp;</div></td>" +
+					                          "<td style=\"padding-left: 20px;\"> develops_from </td>" +
+					                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                          "<td style=\"width:30px\"><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: brown; width:100%; height: 3px;\">&nbsp;</div></td>" +
+					                      "</tr>" +
+					                      "<tr>" +
+					                          "<td style=\"padding-left: 10px;\"> regulates </td>" +
+					                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: black; width:100%; height: 3px;\">&nbsp;</div></td>" +
+					                          "<td style=\"padding-left: 20px;\"> negatively_regulates </td>" +
+					                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: red; width:100%; height: 3px;\">&nbsp;</div></td>" +
+					                          "<td style=\"padding-left: 20px;\"> positively_regulates </td>" +
+					                          "<td style=\"padding-left: 10px;\">  &nbsp </td>" +
+					                          "<td><div style=\"line-height:1px; margin: 0px; padding:0px; border: 0px; background-color: green; width:100%; height: 3px;\">&nbsp;</div></td>" +
+					                      "</tr>" +
+					                  "</tbody>" +
+					          "</table>" +
+				          "</div>" +
+				          "<br style=\"clear: left;\" />" +
+				          "<br style=\"clear: right;\" />" +
+				       "</td>" +
+				       "<td style=\"vertical-align: top; width: 200px;\">" +
+					       "<div style=\"float: right\"> <a id=\"openExternal" + onto + "\" target=\"_blank\">Open image in new window</a> " +
+					       "</div>" +
+					       "<br style=\"clear: right;\" />" +
+				       "</td>" +
+				   "</tr>" +
+	          "</table>" +
+	          
+	          
+	          
+         "</div>";
 
           return mainHTML;
           
@@ -384,24 +396,91 @@ var GOANNOT_VIEW = (function() {
 			var imageLoaderDiv = $("<div data-toggle=\"goImageLoading\">Image loading...</div>");
 			var imageSpan = $("<div></div>");
 			imageSpan.css("display", "inline-block");
-			imageSpan.css("max-width", "99%");
+			imageSpan.css("width", "100%");
 			imageSpan.attr("data-toggle", "goImage");
 			
 			imageSpan.css("overflow-x", "hidden");
 			imageSpan.css("overflow-y", "hidden");
-			
-
 			imageSpan.hide();
-			 
-			var imageAct = $("<img></img>");
-			imageAct.attr("data-toggle", "magnify");
-			imageAct.addClass("magnifyGO");
-			imageAct.attr("id", "imgMine" + onto);
-			imageAct.attr("src", requestString);
+			
+			
+			var zoomifyWrapper = $("<div></div>");
+			zoomifyWrapper.attr("id", "image-zoom-wrapper-" + onto);
+			zoomifyWrapper.addClass("viewer");
+			zoomifyWrapper.css("width", "100%");
+			zoomifyWrapper.css("text-align", "center"); 
+			zoomifyWrapper.css("margin-left", "auto"); 
+			zoomifyWrapper.css("margin-right", "auto");
+			zoomifyWrapper.css("position", "relative");
+			
+			imageSpan.append(zoomifyWrapper);
+			
+			imageContainer.append(imageLoaderDiv);
+			imageContainer.append(imageSpan);
+			
+            var zoomifyWrapperObj = $(zoomifyWrapper).iviewer({
+                        src: requestString,
+                        update_on_resize: true,
+                        zoom_animation: false,
+        				zoom_min: 1,
+        				zoom_max: 100
+            });
+			
 
 
 			doMagnify = false;
-			imageAct.load(function(){
+			
+			$("#image-zoom-wrapper-" + onto).bind('ivieweronfinishload', function(ev, src) {
+				
+				if(zoomifyWrapper.children("img")[0].naturalWidth < 100)
+				{
+					$(zoomifyWrapper).children().each(function() {
+						$(this).hide();
+					});
+					$(zoomifyWrapper).text("n/a");
+					
+					imageLoaderDiv.each(function () {
+				          var $div = $(this);
+				          $div.hide();
+				      });
+				    
+					imageSpan.each(function () {
+					      var imagei = $(this);
+					      imagei.show();
+					});
+				    
+				    return;
+				}
+				else if($("#GOAnnotViewerContainer").width() <= zoomifyWrapper.children("img")[0].naturalWidth)
+			    {
+				
+					var resizeFactorNat = $("#GOAnnotViewerContainer").width() / zoomifyWrapper.children("img")[0].naturalWidth;
+					var heightFinal = zoomifyWrapper.children("img")[0].naturalHeight * resizeFactorNat;
+
+					if(resizeFactorNat < 1.0)
+					{
+	    				var heightForce = $("#GOAnnotViewerContainer").width() / 2;
+	    				var heightFinal = Math.max(heightFinal, heightForce)
+	    				
+					}
+
+					$(zoomifyWrapper).height( heightFinal * 0.98);
+					$(zoomifyWrapper).width($("#GOAnnotViewerContainer").width() * 0.98);
+
+			    }
+				else
+				{
+					$(zoomifyWrapper).width( zoomifyWrapper.children("img")[0].naturalWidth );
+					$(zoomifyWrapper).height( zoomifyWrapper.children("img")[0].naturalHeight );
+					$(zoomifyWrapper).children("div").each(function() {
+						$(this).hide();
+					});
+				}
+				
+				
+				$(zoomifyWrapper).iviewer('update');
+				$(zoomifyWrapper).iviewer('fit');
+				$(zoomifyWrapper).iviewer('center');
 				
 				imageLoaderDiv.each(function () {
 			          var $div = $(this);
@@ -422,21 +501,11 @@ var GOANNOT_VIEW = (function() {
 			    imageSpan.each(function () {
 				      var imagei = $(this);
 				      imagei.show();
-					});
+				});
 			    
-	
-				if(imageAct.width() != imageAct[0].naturalWidth)
-			    {
-			    	  imageAct.magnify();
-			    }
-			    
-			  });
+			});
 
-			imageSpan.append(imageAct);  
 
-			imageContainer.append(imageLoaderDiv);
-			imageContainer.append(imageSpan);
-			
 			if(tooManyTerms)
 			{
 				var imageWarningDiv = $("<div>Warning: too many terms to display; only showing first 50 selected terms</div>");
@@ -456,7 +525,6 @@ var GOANNOT_VIEW = (function() {
             jQuery("img").load(function() {
                 jQuery("#subcell_container").show();
             });
-
         },
 
         preload: function() {
@@ -476,5 +544,4 @@ var GOANNOT_VIEW = (function() {
             })
         }
     }
-
 })();
