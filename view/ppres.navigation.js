@@ -3,7 +3,7 @@ var NAVIGATION = (function() {
 	var navigation_items = {
 		"views": [{
 				id: "dash",
-				text: "Dashborad"
+				text: "Dashboard"
 			}
 		],
 		"structure annotation": [{
