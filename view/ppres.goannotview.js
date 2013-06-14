@@ -56,12 +56,12 @@ var GOANNOT_VIEW = (function() {
             var selected = 0;
             var all=0
            
-            $("input[name='" + onto + "']:checked").each(function ()
+            jQuery("input[name='" + onto + "']:checked").each(function ()
             {
                 selected++;
             });
            
-            $("input[name='" + onto + "']").each(function ()
+            jQuery("input[name='" + onto + "']").each(function ()
             {
                 all++;
             });
@@ -72,9 +72,9 @@ var GOANNOT_VIEW = (function() {
                 target=false;
             }
            
-            $("input[name='" + onto + "']").each(function ()
+            jQuery("input[name='" + onto + "']").each(function ()
             {
-                $(this).attr("checked", target);
+            	jQuery(this).attr("checked", target);
             });
            
         },
@@ -83,7 +83,7 @@ var GOANNOT_VIEW = (function() {
             var ontologyPredictionArray = dataObj.getGOAnnotations("");
             var _table, header_row, row, cell;
             
-            _maindiv = $('<div></div>');
+            _maindiv = jQuery('<div></div>');
             _mainMainDiv = document.createElement('div');
             _mainMainHTML = "<h3>Tabular Result</h3>";
             for (var i = 0; i < ontologyPredictionArray.length; i++)
@@ -329,7 +329,7 @@ var GOANNOT_VIEW = (function() {
 	    	
 	    	
 	    	jQuery( ( "#showButton" + onto ) ).hide();
-		    $(("#"+ onto + "_img_container")).css("border", "0px solid white");
+	    	jQuery(("#"+ onto + "_img_container")).css("border", "0px solid white");
 	    	jQuery("#_goannot_cntnt_img").css("border", "0px solid white");
 
 	    	if(jQuery(("#imageLegend"+onto)).css("display") != "none")
@@ -348,16 +348,16 @@ var GOANNOT_VIEW = (function() {
 			
 			var goTermCounter = 0;
 			var tooManyTerms =false;
-			$(rows).each(function () {
+			jQuery(rows).each(function () {
 				
 				
-				var currCells = $(this).children("td");
+				var currCells = jQuery(this).children("td");
 				var currBox = currCells.children("input");
 
 				currDict = {};
-				currDict["id"] = $(currCells[1]).text();
-				currDict["name"] = $(currCells[2]).text();
-				currDict["score"] = $(currCells[3]).text();
+				currDict["id"] = jQuery(currCells[1]).text();
+				currDict["name"] = jQuery(currCells[2]).text();
+				currDict["score"] = jQuery(currCells[3]).text();
 				currDict["checked"] = currBox.is(':checked') ;
 				
 				goTermsDictArray.push(currDict);
@@ -392,9 +392,11 @@ var GOANNOT_VIEW = (function() {
 			
 				
 
-			 
-			var imageLoaderDiv = $("<div data-toggle=\"goImageLoading\">Image loading...</div>");
-			var imageSpan = $("<div></div>");
+
+
+
+			var imageLoaderDiv = jQuery("<div data-toggle=\"goImageLoading\">Image loading...</div>");
+			var imageSpan = jQuery("<div></div>");
 			imageSpan.css("display", "inline-block");
 			imageSpan.css("width", "100%");
 			imageSpan.attr("data-toggle", "goImage");
@@ -404,7 +406,7 @@ var GOANNOT_VIEW = (function() {
 			imageSpan.hide();
 			
 			
-			var zoomifyWrapper = $("<div></div>");
+			var zoomifyWrapper = jQuery("<div></div>");
 			zoomifyWrapper.attr("id", "image-zoom-wrapper-" + onto);
 			zoomifyWrapper.addClass("viewer");
 			zoomifyWrapper.css("width", "100%");
@@ -418,7 +420,9 @@ var GOANNOT_VIEW = (function() {
 			imageContainer.append(imageLoaderDiv);
 			imageContainer.append(imageSpan);
 			
-            var zoomifyWrapperObj = $(zoomifyWrapper).iviewer({
+			console.log(zoomifyWrapper);
+			
+            var zoomifyWrapperObj = jQuery(zoomifyWrapper).iviewer({
                         src: requestString,
                         update_on_resize: true,
                         zoom_animation: false,
@@ -430,76 +434,75 @@ var GOANNOT_VIEW = (function() {
 
 			doMagnify = false;
 			
-			$("#image-zoom-wrapper-" + onto).bind('ivieweronfinishload', function(ev, src) {
+			jQuery("#image-zoom-wrapper-" + onto).bind('ivieweronfinishload', function(ev, src) {
 				
 				if(zoomifyWrapper.children("img")[0].naturalWidth < 100)
 				{
-					$(zoomifyWrapper).children().each(function() {
-						$(this).hide();
+					jQuery(zoomifyWrapper).children().each(function() {
+						jQuery(this).hide();
 					});
-					$(zoomifyWrapper).text("n/a");
+					jQuery(zoomifyWrapper).text("n/a");
 					
 					imageLoaderDiv.each(function () {
-				          var $div = $(this);
-				          $div.hide();
+				          var divi = jQuery(this);
+				          divi.hide();
 				      });
 				    
 					imageSpan.each(function () {
-					      var imagei = $(this);
+					      var imagei = jQuery(this);
 					      imagei.show();
 					});
 				    
 				    return;
 				}
-				else if($("#GOAnnotViewerContainer").width() <= zoomifyWrapper.children("img")[0].naturalWidth)
+				else if(jQuery("#GOAnnotViewerContainer").width() <= zoomifyWrapper.children("img")[0].naturalWidth)
 			    {
 				
-					var resizeFactorNat = $("#GOAnnotViewerContainer").width() / zoomifyWrapper.children("img")[0].naturalWidth;
+					var resizeFactorNat = jQuery("#GOAnnotViewerContainer").width() / zoomifyWrapper.children("img")[0].naturalWidth;
 					var heightFinal = zoomifyWrapper.children("img")[0].naturalHeight * resizeFactorNat;
 
 					if(resizeFactorNat < 1.0)
 					{
-	    				var heightForce = $("#GOAnnotViewerContainer").width() / 2;
+	    				var heightForce = jQuery("#GOAnnotViewerContainer").width() / 2;
 	    				var heightFinal = Math.max(heightFinal, heightForce)
 	    				
 					}
 
-					$(zoomifyWrapper).height( heightFinal * 0.98);
-					$(zoomifyWrapper).width($("#GOAnnotViewerContainer").width() * 0.98);
+					jQuery(zoomifyWrapper).height( heightFinal * 0.98);
+					jQuery(zoomifyWrapper).width(jQuery("#GOAnnotViewerContainer").width() * 0.98);
 
 			    }
 				else
 				{
-					$(zoomifyWrapper).width( zoomifyWrapper.children("img")[0].naturalWidth );
-					$(zoomifyWrapper).height( zoomifyWrapper.children("img")[0].naturalHeight );
-					$(zoomifyWrapper).children("div").each(function() {
-						$(this).hide();
+					jQuery(zoomifyWrapper).width( zoomifyWrapper.children("img")[0].naturalWidth );
+					jQuery(zoomifyWrapper).height( zoomifyWrapper.children("img")[0].naturalHeight );
+					jQuery(zoomifyWrapper).children("div").each(function() {
+						jQuery(this).hide();
 					});
 				}
 				
 				
-				$(zoomifyWrapper).iviewer('update');
-				$(zoomifyWrapper).iviewer('fit');
-				$(zoomifyWrapper).iviewer('center');
+				jQuery(zoomifyWrapper).iviewer('update');
+				jQuery(zoomifyWrapper).iviewer('fit');
+				jQuery(zoomifyWrapper).iviewer('center');
 				
 				imageLoaderDiv.each(function () {
-			          var $div = $(this);
-			          $div.hide();
+			          var divi = jQuery(this);
+			          divi.hide();
 			      });
 				
-
-			    $(("#"+ onto + "_img_container")).css("border", "1px solid #E5E5E5");
-			    $(("#" +onto + "_img_container")).css("border-radius", "4px 4px 4px 4px");
-			    $(("#imageLegend"+onto)).show();
-			    $( ( "#openExternal" + onto ) ).attr("href", requestString);
+				jQuery(("#"+ onto + "_img_container")).css("border", "1px solid #E5E5E5");
+				jQuery(("#" +onto + "_img_container")).css("border-radius", "4px 4px 4px 4px");
+				jQuery(("#imageLegend"+onto)).show();
+				jQuery( ( "#openExternal" + onto ) ).attr("href", requestString);
 			    
 			    if (tooManyTerms)
 			    {
-			    	$(("#imageWarning"+onto)).show();
+			    	jQuery(("#imageWarning"+onto)).show();
 			    }
-
+			    
 			    imageSpan.each(function () {
-				      var imagei = $(this);
+				      var imagei = jQuery(this);
 				      imagei.show();
 				});
 			    
@@ -508,7 +511,7 @@ var GOANNOT_VIEW = (function() {
 
 			if(tooManyTerms)
 			{
-				var imageWarningDiv = $("<div>Warning: too many terms to display; only showing first 50 selected terms</div>");
+				var imageWarningDiv = jQuery("<div>Warning: too many terms to display; only showing first 50 selected terms</div>");
 				imageWarningDiv.css("color", "red");
 				imageWarningDiv.css("font-weight", "bold");
 				imageWarningDiv.attr("id", "imageWarning"+onto);
@@ -516,7 +519,7 @@ var GOANNOT_VIEW = (function() {
 				imageWarningDiv.hide();
 				imageContainer.append(imageWarningDiv);
 			}
-			$( ("#" + onto + "_img_link") ).click();
+			jQuery( ("#" + onto + "_img_link") ).click();
 	    },
 	     
         init: function(subcell_features, target_div) {
@@ -534,13 +537,13 @@ var GOANNOT_VIEW = (function() {
         },
        
         showGoImage: function() {
-            $('[data-toggle="goImage"]').each(function () {
-                var $image = $(this);
-                $image.show();
+        	jQuery('[data-toggle="goImage"]').each(function () {
+                var imagei = $(this);
+                imagei.show();
             })
-            $('[data-toggle="goImageLoading"]').each(function () {
-                var $div = $(this);
-                $div.hide();
+            jQuery('[data-toggle="goImageLoading"]').each(function () {
+                var divi = jQuery(this);
+                divi.hide();
             })
         }
     }
