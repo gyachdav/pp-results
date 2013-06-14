@@ -585,7 +585,7 @@ var PAGE = function(argument) {
 				});
 
 
-				jQuery(("[name=goSel" + onto + "]")).each(function() {
+				jQuery( ("[name=goSel" + onto + "],") + ("[name=goSel" + onto + "All]") ).each(function(){
 					jQuery(this).change(function() {
 
 						jQuery(("#showButton" + onto)).show();
