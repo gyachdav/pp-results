@@ -586,7 +586,11 @@ var PAGE = function(argument) {
 
 
 				jQuery( ("[name=goSel" + onto + "],") + ("[name=goSel" + onto + "All]") ).each(function(){
+<<<<<<< HEAD
 					jQuery(this).change(function() {
+=======
+					jQuery(this).change( function() {
+>>>>>>> 56231b359cecc0667f2b67e1d0998d0a6083a1e9
 
 						jQuery(("#showButton" + onto)).show();
 

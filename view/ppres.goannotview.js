@@ -432,8 +432,16 @@ var GOANNOT_VIEW = (function() {
 			
 			jQuery("#image-zoom-wrapper-" + onto).bind('ivieweronfinishload', function(ev, src) {
 				
-				if(zoomifyWrapper.children("img")[0].naturalWidth < 100)
+				if(/chrome/.test(navigator.userAgent.toLowerCase()))
 				{
+<<<<<<< HEAD
+=======
+					jQuery(zoomifyWrapper).height( (jQuery("#GOAnnotViewerContainer").width() / 2) * 0.98);
+					jQuery(zoomifyWrapper).width(jQuery("#GOAnnotViewerContainer").width() * 0.98);
+				}
+				else if(zoomifyWrapper.children("img")[0].naturalWidth < 100)
+				{
+>>>>>>> 56231b359cecc0667f2b67e1d0998d0a6083a1e9
 					jQuery(zoomifyWrapper).children().each(function() {
 						jQuery(this).hide();
 					});
