@@ -328,6 +328,13 @@ var GOANNOT_VIEW = (function() {
 	    renderImage: function(tableObj, onto, targetDiv, processGlobalsOnload) {
 	    	
 	    	
+	    	var goTermLimit = 50;
+	    	if(/chrome/.test(navigator.userAgent.toLowerCase()) && onto == "BPO")
+	    	{
+	    		goTermLimit = 10;		    	
+	    	}
+	    	
+	    	
 	    	jQuery( ( "#showButton" + onto ) ).hide();
 		    jQuery(("#"+ onto + "_img_container")).css("border", "0px solid white");
 	    	jQuery("#_goannot_cntnt_img").css("border", "0px solid white");
@@ -366,13 +373,13 @@ var GOANNOT_VIEW = (function() {
 				
 			})
 			
-			if(goTermCounter > 50)
+			if(goTermCounter > goTermLimit)
 			{
 				goTermsDictArrayReduced = new Array();
 				tooManyTerms=true;
 				for(var i = 0; i<goTermsDictArray.length; i++ )
 				{
-					if(goTermsDictArrayReduced.length<50)
+					if(goTermsDictArrayReduced.length<goTermLimit)
 					{
 						currDict = goTermsDictArray[i];
 						if(currDict["checked"])
@@ -513,7 +520,7 @@ var GOANNOT_VIEW = (function() {
 
 			if(tooManyTerms)
 			{
-				var imageWarningDiv = jQuery("<div>Warning: too many terms to display; only showing first 50 selected terms</div>");
+				var imageWarningDiv = jQuery("<div>Warning: too many terms to display; only showing first " + goTermLimit + " selected terms</div>");
 				imageWarningDiv.css("color", "red");
 				imageWarningDiv.css("font-weight", "bold");
 				imageWarningDiv.attr("id", "imageWarning"+onto);
