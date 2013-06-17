@@ -63,25 +63,25 @@ var NAVIGATION = (function() {
 	},
 		active_item = 2;
 	var list_root = jQuery('<ul>');
-	for (var key in navigation_items) {
+	jQuery.each(navigation_items, function(key, value) {
 		var item = jQuery('<li>');
 		item.addClass("nav-header").text(key);
 		list_root.append(item);
-		var arr = navigation_items[key];
-		for (var prop in arr) {
+		jQuery.each(value, function(prop, v) {
 			item = jQuery('<li>');
-			item.attr('id', arr[prop].id)
+			item.attr('id', v.id)
 			var link = jQuery('<a>', {
-				text: arr[prop].text,
-				title: arr[prop].text,
+				text: v.text,
+				title: v.text,
 				href: '#'
 			});
 			link.addClass("nav-link");
 			link.append(jQuery("<i/>").addClass("icon-chevron-right"));
 			item.append(link);
 			list_root.append(item);
-		}
-	}
+		});
+	});
+
 	list_root.addClass("nav nav-list bs-docs-sidenav");
 	jQuery("li:nth-child(2)", jQuery(list_root)).addClass("active");
 	return {

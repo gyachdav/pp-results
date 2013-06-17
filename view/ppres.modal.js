@@ -27,6 +27,6 @@ var MODAL = function(config) {
         .attr("aria-hidden", "true")
         .attr("data-dismiss", "modal")
         .html('Close')));
-    jQuery('body').append(modalDiv);
+    jQuery('#modal-container').append(modalDiv);
 
 };

@@ -1,14 +1,15 @@
+<!doctype html>
+<html>
 <head>
-	<script language="JavaScript" type="text/javascript" src="/javascript/jquery/jquery.min.js"></script>
-	<script language="JavaScript" type="text/javascript" src="/javascript/underscore/underscore-min.js"></script>
-	<link rel="stylesheet" href="/ppres/vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
-	<link rel="stylesheet" href="/ppres//vendor/jquery/jquery-ui.css" />
-	<link rel="stylesheet" href="/ppres/css/ppres.css" />
-	<link rel="stylesheet" href="/ppres/css/bootstrap/css/docs.css">
-	<link rel="stylesheet" href="/style/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/style/bootstrap/css/bootstrap-responsive.min.css" />
-	<link rel="stylesheet" href="/ppres/css/tablesorter/style.css" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
+	<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
+	<link rel="stylesheet" href="css/ppres.css" />
+	<link rel="stylesheet" href="css/bootstrap/css/docs.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="css/tablesorter/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div class="container-fluid">
@@ -25,36 +26,53 @@
   </div>
 </div>
 
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/jquery/jquery-ui.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="/javascript/d3/d3.v3.min.js"></script>
+<div id="modal-container"></div>
+
+<!--[if gte IE 8]>
+	<script language="JavaScript" type="text/javascript" src="library/javascript.ie8.js"></script>
+<![endif]-->
+
+<script language="JavaScript" type="text/javascript" src="javascript/jquery/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="javascript/underscore/underscore-min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery-ui.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/modernizr/modernizr.js"></script>
 <!-- TODO lading the bootstrap jscript module twice seems to confuse and disable some functionality for now the shell app will be the one lodign this script -->
-<!-- <script language="JavaScript" type="text/javascript" src="/javascript/bootstrap/bootstrap.min.js"></script> -->
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/Biojs.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/Biojs.FeatureViewer.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/Biojs.Sequence.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.url.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/graphics/raphael.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/graphics/canvg.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/graphics/rgbcolor.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/library/jquery.xml2json.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/library/jquery.tablesorter.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/library/javascript.md5.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/model/ppres-data.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/view/ppres.piechart.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/view/ppres.alignview.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.subcellview.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.navigation.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.heatmapview.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.modal.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.sequenceview.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.navbar.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.namechange.js"></script>
-<script language="javascript" type="text/javascript" src="/ppres/view/ppres.view.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/control/ppres-control.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ppres/view/ppres.featureviewer.js"></script>
+<script language="JavaScript" type="text/javascript" src="javascript/bootstrap/bootstrap.min.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.browsersupport.js"></script>
+<script language="JavaScript" type="text/javascript" src="javascript/d3/d3.v3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.FeatureViewer.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.Sequence.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.url.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/raphael.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/canvg.js"></script>
+<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/rgbcolor.js"></script>
+<script language="JavaScript" type="text/javascript" src="library/jquery.xml2json.js"></script>
+<script language="JavaScript" type="text/javascript" src="library/jquery.tablesorter.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="library/javascript.md5.js"></script>
+<script language="JavaScript" type="text/javascript" src="model/ppres-data.js"></script>
+<script language="JavaScript" type="text/javascript" src="view/ppres.piechart.js"></script>
+<script language="JavaScript" type="text/javascript" src="view/ppres.alignview.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.subcellview.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.navigation.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.heatmapview.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.modal.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.sequenceview.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.navbar.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.namechange.js"></script>
+<script language="javascript" type="text/javascript" src="view/ppres.view.js"></script>
+<script language="JavaScript" type="text/javascript" src="view/ppres.featureviewer.js"></script>
+<script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
+<script language="JavaScript">
+if(!BROWSER_SUPPORT.check())
+if(!BROWSER_SUPPORT.is_ignored()) {
+	BROWSER_SUPPORT.draw();
+}
+</script>
 
 </body>
+</html>
