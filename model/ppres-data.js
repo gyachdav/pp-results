@@ -130,9 +130,11 @@ function PPResData() {
 			}));
 		},
 
-		populateData: function(data, reqID) {
+		populateData: function(data, reqID, reqName) {
 			xml_data = data;
 			this.setJobID(reqID);
+			if (reqName)
+				this.setProteinName( reqName );
 			setJsonData(jQuery.xml2json(data));
 			setDataReady();
 		},
@@ -337,9 +339,11 @@ function PPResData() {
 		getJobID: function() {
 			return (ppJobId);
 		},
+		
 		setJobID: function(id) {
 			ppJobId = id;
 		},
+		
 		getMD5Seq: function() {
 			return (md5Seq);
 		},

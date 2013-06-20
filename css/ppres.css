@@ -61,7 +61,7 @@ div.left {
 div.right {
   width: 40%;
   float: right;
-  text-align: right;
+#  text-align: right;
 }
 
 .magnify {

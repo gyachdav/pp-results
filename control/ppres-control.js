@@ -53,13 +53,16 @@ var EXPORT = function(argument) {
 var APP = (function() {
 
 	var req_id = jQuery("#req_id").val();
+	var req_name = jQuery("#req_name").val();
+
 	if (!req_id) req_id = 70;
 
 	var json,
 		ds,
 		debug = 0,
 		file_specs = {
-		 	path: "http://pp-dev.informatik.tu-muenchen.de",
+		 	//path: "http://pp-dev.informatik.tu-muenchen.de",
+		 	path: "",
 		 	name: 'xml_results?req_id=' + req_id,
 		 	type: 'xml'
 		 },
@@ -75,7 +78,7 @@ var APP = (function() {
 	listener = new Listeners();
 
 	mainObj.loadData(file_specs).done(function(data) {
-		mainObj.populateData(data, req_id);
+		mainObj.populateData(data, req_id, req_name);
 		page = new PAGE({
 			data: mainObj,
 			providers: APP.providers,
@@ -196,7 +199,7 @@ var APP = (function() {
 })();
 
 APP.path = '/ppres/';
-//APP.path = '/~hampt/pp-results/';
+
 
 
 APP.providers = [

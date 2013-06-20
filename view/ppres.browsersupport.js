@@ -25,7 +25,7 @@ var BROWSER_SUPPORT = (function($) {
 	}
 
 	function draw() {
-		var pagePath = "html/BrowserSupport.html";
+		var pagePath = "js/plugins/compat/BrowserSupport.html";
 		$.get(pagePath).done(function(result) {
 			$('#modal-container').remove('#browser-support');
 			$('#modal-container').append(result);
