@@ -62,10 +62,10 @@
 
 	<div id='moreInfoDiv' class='info tab-pane'>
 
-		<h3>Learn More about Secondary Structure Prediction</h3>
-		<object alt="Loading Video" width="480" height="400"><param name="movie" value="http://www.scivee.tv/flash/embedCast.swf" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /><param name="flashvars" value="id=30493&type=3" /><embed src="http://www.scivee.tv/flash/embedCast.swf" allowfullscreen="true" wmode="transparent" allowscriptaccess="always" width="480" height="400" flashvars="id=30493&type=3"></embed> </object>
+		<!-- <h3>Learn More about Secondary Structure Prediction</h3>
+		<object alt="Loading Video" width="480" height="400"><param name="movie" value="http://www.scivee.tv/flash/embedCast.swf" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /><param name="flashvars" value="id=30493&type=3" /><embed src="http://www.scivee.tv/flash/embedCast.swf" allowfullscreen="true" wmode="transparent" allowscriptaccess="always" width="480" height="400" flashvars="id=30493&type=3"></embed> </object> -->
 
-		<h3>What can you expect from secondary structure prediction?</h3>
+		<h2>What can you expect from secondary structure prediction?</h2>
 		<div>
 		How accurate are the predictions The expected levels of accuracy (PROFsec = 72¬±11% (three state per-residue accuracy); PROFacc = 75¬±7% (two-state per-residue accuracy); PHDhtm = 94¬±6% (two-state per-residue accuracy)) are valid for typical globular, water-soluble (PROFsec, PROFacc), or helical transmembrane proteins (PROFhtm) when the multiple alignment contains many and diverse sequences. High values for the reliability indices indicate more accurate predictions. (Note: for alignments with little variation in the sequences, the reliability indices adopt misleadingly high values.) PROFsec predictions tend to be relatively accurate for porins; however, for helical membrane proteins other programs ought to be used.<br>
 		Confusion between strand and helix? PROFphd (as well as other methods) focuses on predicting hydrogen bonds. Consequently, occasionally strongly predicted (high reliability index) helices are observed as strands and vice versa (expected accuracy of PROFsec).<br>
@@ -77,7 +77,7 @@
 		What about protein design and synthesised peptides? The PROFPHD networks are trained on naturally evolved proteins. However, the predictions have proven to be useful in some cases to investigate the influence of single mutations (e.g. for Chameleon ), or for Janus, Rost, unpublished). For short poly-peptides, the following should be taken into account: the network input consists of 17 adjacent residues, thus, shorter sequences may be dominated by the ends (which are treated as solvent).
 		</div>
 
-		<h3>In a Nutshell: how to avoid pitfalls?</h3>
+		<h2>In a Nutshell: how to avoid pitfalls?</h2>
 		<div>70% correct implies 30% incorrect. The most accurate methods for predicting secondary structure reach sustained levels of about 70% accuracy. When interpreting predictions for a particular protein it is often instructive to mark the 30% of the residues you suspect to be falsely predicted.<br>
 		Spread of prediction accuracy. An expected accuracy of 70% does NOT imply that for your protein U 70% of all residues are correctly predicted. Instead, values published for prediction accuracy are averaged over hundreds of unique proteins. An expected accuracy of 70¬±10% (one standard deviation) implies that, on average, for two thirds of all proteins between 60 and 80% of the residues will be predicted correctly (expected accuracy of PHDsec). Thus, prediction accuracy can be higher than 80% or lower than 60% for your protein. Few methods supply well tested indices for the reliability of predictions. Such indices can help to reduce or increase your trust in a particular prediction.<br>
 		Special classes of proteins. Prediction methods are usually derived from knowledge contained in subsets of proteins from databases. Consequently, they should not be applied to classes of proteins which have not been included in the subsets. For example, methods for predicting helices in globular proteins are likely to fail when applied to predict transmembrane helices. In general, results should be taken with caution for proteins with unusual features, such as proline-rich regions, unusually many cysteine bonds, or for domain interfaces.<br>
@@ -86,7 +86,7 @@
 		1D structure may or may not be sufficient to infer 3D structure. Say you obtain as prediction for regular secondary structure: helix-strand-strand-helix-strand-strand (H-E-E-H-E-E). Assume, you find a protein of known structure with the same motif (H-E-E-H-E-E). Can you conclude that the two proteins have the same fold? Yes and no, your guess may be correct, but there are various ways to realize the given motif by completely different structures. For example, the secondary structure motif 'H-E-E-H-E-E' is contained in, at least, 16 structurally unrelated proteins.
 		</div>
 
-		<h3>Nuts and Bolts: What to Keep in Mind?</h3>
+		<h2>Nuts and Bolts: What to Keep in Mind?</h2>
 		<div>
 		Information content in multiple sequence alignment. If the multiple sequence alignment contains only a few proteins very similar to the one you sent (pairwise sequence identity > 90%), the expected accuracy for 1D structure predictions (secondary structure, accessibility, transmembrane helices) drops significantly. Note: this implies a reduction of the expected accuracy for threading. The scores for expected accuracy (PROFsec, PROFacc., PHDhtm) are valid for typical alignments as to be found in the HSSP database. The information content of the alignment is difficult to measure. Two important parameters are:
 		Number of aligned sequences: the more sequences in the alignment, the better. The exact number of sequences needed for a 'good prediction' cannot be given, as it depends on the variation and on characteristics of the particular protein family. As a rule of thumb: one is clearly NOT sufficient, more than five sequences can be enough.
@@ -102,26 +102,26 @@
 		</div>
 
 
-		<h3>
+		<h2>
 		Cut-off For including Homologues in Alignment
-		</h3>
+		</h2>
 		<div>
 		In the multiple sequence alignment returned to you, only homologues down to levels of 30% pairwise sequence identity over 80 or more residues are included. This cut-off is five percentage points above the threshold for structural homology (Sander & Schneider, 1990), in an attempt to stay clearly off the twilight zone of sequence similarity, and provide high-quality multiple alignments in an automated fashion.
 		</div>
 
-		<h3>Quality of Multiple Sequence Alignment</h3>
+		<h2>Quality of Multiple Sequence Alignment</h2>
 		<div>
 		On average, more residues are falsely aligned for lower levels of pairwise sequence identity. Down to levels of about 30%, the automatic MaxHom alignments are usually quite accurate. However, for many families there are regions for which the 'correct' alignment is, in principle, not well defined. One way to spot such regions is the stability of the alignment with respect to including or excluding some of the aligned sequences. By providing different lists of sequences ("input option 'PIR list'") you can monitor the stability of the alignment. Often such regions may form surface loops. Predictions may be less accurate in such regions.
 		</div>
-		<h3>PROFphd Minimal Length of Sequences Limitation</h3>
+		<h2>PROFphd Minimal Length of Sequences Limitation</h2>
 		<div>
 		The PROFphd programs treat N- and C-terminal ends of proteins as solvent molecules. The size of the input window for predicting 1D structure is up to 17 residues. Thus, the first and the last 17 residues of your sequence will 'see solvent'. Especially for short fragments you did cut out from large proteins, this may result in false predictions.</div>
-		<h3>Insertions in Multiple Sequence Alignment</h3>
+		<h2>Insertions in Multiple Sequence Alignment</h2>
 		<div>
 		Insertions in guide sequence: Do NOT use insertions for the guide sequence when you supply your alignment to be used as input for the predictions ("input option 'MSF format'"). In the current implementation, PROFPHD will treat such insertions as if the corresponding positions were occupied by solvent. This may lead to particular prediction errors!
 		Split alignment into domains: If your alignment (of say 20 sequences) contains long (> 10 residues) regions for which only very few sequences do not have insertions (in positions R1-R2), split the alignment into fragments that are not full of insertions for all sequences. For the problematic region (R1-R2) it may be better to include only those sequences without insertions. The existence of such regions may indicate that the protein contains various domains (one for residues < R1, another for residues > R2). When you submit your alignment in fragments, mind the minimal length of sequences (see above).
 		</div>
-		<h3>Untypical proteins</h3>
+		<h2>Untypical proteins</h2>
 		<div>
 			Globular, water-soluble proteins. The PROFPHD neural networks have been trained on proteins with typical features as contained in the database of known protein structures (PDB). Thus, accuracy may be lower if the methods are applied to other proteins. For instance, PROFsec (secondary structure) correctly predicts only about 50% of the residues in transmembrane helices of integral membrane proteins. However, the network system trained on transmembrane proteins (PHDhtm) predicts residues in transmembrane helices on average at a level of well above 90% accuracy. In general, the PROFPHD methods learn to extract characteristics features of currently known protein structures. Problematic cases are proteins with many cysteine bridges that stabilize the particular protein structure, or proteins for which the structure is stabilised by functional constraints (co-factors).
 
@@ -131,16 +131,16 @@
 		Novel folds are NOT 'untypical proteins'. The expected prediction accuracy for the PROFPHD programs has been re-evaluated several times over the last years. So far, the results have always confirmed our estimates (Rost & Sander, 1995, Proteins, 1995, 23, 295-300).
 		</div>
 
-		<h3>Prediction of transmembrane helices (HTM's) and topology</h3>
+		<h2>Prediction of transmembrane helices (HTM's) and topology</h2>
 		<div>
 		False positives: globular proteins predicted with HTM's. By default we search for possible transmembrane helices in your sequence. The rate of false positive detection (i.e. proteins falsely predicted to contain transmembrane helices) is about 1.6%. Thus, a reported transmembrane segment may just indicate a rather hydrophobic patch in a globular protein. If you explicitly request a prediction of transmembrane helices (HTM's), we assume that you know the protein to contain HTM's and consequently apply a lower threshold to eliminate false positives.
 		Refined prediction of transmembrane helices and topology. By default we use the neural network system PHDhtm and an empirical filter to predict the locations of transmembrane helices. A refined (more accurate) version of that program, as well as, the prediction of transmembrane topology (orientation of N-terminal non-transmembrane region with respect to cell) is available upon request ("predict htm topology"). All predicted HTM's are sorted according to the reliability of the prediction. This may help experts to spot HTM's predicted falsely based on a reliability index provided. Note: try NOT to provide sequences that start or end with HTM regions as this may result in wrong topology predictions!
 		</div>
-		<h3>Reliability indices for PROFPHD predictions</h3>
+		<h2>Reliability indices for PROFPHD predictions</h2>
 		<div>
 		The reliability indices of the PROFPHD methods correlate well with prediction accuracy. In other words, residues predicted with high reliability (0 = low, 9 = high) are more likely to be predicted correctly. However, when basing the prediction on single sequences (rather than multiple alignments) the scale has to be shifted. For instance, values of RI > 4 usually imply an expected accuracy of > 80% for PROFsec. When using a single sequence as input the same level of accuracy is reached only for residues predicted at RI > 7.
 		</div>
-		<h3>Combination of results with that of other methods</h3>
+		<h2>Combination of results with that of other methods</h2>
 		<div>
 		A combination of two prediction methods is likely to improve the accuracy only if the following points are met:
 		The predictions are based on methods using independent information, e.g., prediction-based threading and potential-based threading,
