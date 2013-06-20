@@ -1,8 +1,3 @@
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
 		<div id='Disorder' style="width:100%;">
 			<div class='job-name'>
 				<h2>
@@ -47,13 +42,15 @@
 						What can you Expect from Intrinsically Disordered Proteins Prediction?
 					</h2>
 					<div>
-						The method, MD (Meta-Disorder predictor) is a combination of several orthogonal methods will capture many types of disorder at improved performance without sacrificing the distinction of the type of disorder that is detected. Combining the output from various prediction methods with sequence profiles and other useful features such as predicted solvent accessibility, secondary structure and low complexity regions, significantly outperformed each of its constituents on average and in our tests also topped commonly used top-of-the-line methods.<br>
-						This method outperformed any of its constituents (AUC = 0.78) as well as the best simple average over the original four methods<br>
-						The distribution of the normalized method output (compiled as the difference between the two output units) indicates that disordered residues tend to have higher output values than ordered residues. Therefore, we converted this normalized output into a reliability index (RI), and found that this measure correlated well with accuracy and coverage. In this analysis we focused on residues from long unstructured regions (&gt;30). For example, ~52% of the disordered residues from long unstructured regions in the DisProt data set were predicted at RI≥4; at that level, the prediction accuracy was&gt;68%, compared to 62% for all residues. The method is particularly accurate for ordered residues. For instance, for the same reliability index, ~55% of the residues that are not located in long unstructured regions were predicted at ~85% accuracy (coverage ordered and accuracy ordered in Eqn. 1).<br>
+						The method, MD (Meta-Disorder predictor) is a combination of several orthogonal methods will capture many types of disorder at improved performance without sacrificing the distinction of the type of disorder that is detected. Combining the output from various prediction methods with sequence profiles and other useful features such as predicted solvent accessibility, secondary structure and low complexity regions, significantly outperformed each of its constituents on average and in our tests also topped commonly used top-of-the-line methods.<br><br>
+						This method outperformed any of its constituents (AUC = 0.78) as well as the best simple average over the original four methods<br><br>
+						The distribution of the normalized method output (compiled as the difference between the two output units) indicates that disordered residues tend to have higher output values than ordered residues. Therefore, we converted this normalized output into a reliability index (RI), and found that this measure correlated well with accuracy and coverage. In this analysis we focused on residues from long unstructured regions (&gt;30). For example, ~52% of the disordered residues from long unstructured regions in the DisProt data set were predicted at RI≥4; at that level, the prediction accuracy was&gt;68%, compared to 62% for all residues. The method is particularly accurate for ordered residues. For instance, for the same reliability index, ~55% of the residues that are not located in long unstructured regions were predicted at ~85% accuracy (coverage ordered and accuracy ordered in Eqn. 1).<br><br>
 						<img src="https://rostlab.org/wiki/images/c/cb/RI_ACCCOV.png">
+						<div>
 						<pre>
  Eqn. 1:            Accuray ordered =  TN  / TN + FN       ;      Coverage ordered =  TN/ TN + FP  ;
 </pre>
+</div>
 					</div>
 					<h2>
 						Prediction Algorithm
@@ -91,5 +88,4 @@
 		</div>
 		<hr style="width:40%;">
 		<div id='QuotesContainer' style="width:100%;"></div>
-	</body>
-</html>
+	
