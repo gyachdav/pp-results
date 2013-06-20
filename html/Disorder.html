@@ -1,26 +1,95 @@
-<div id='Disorder' style="width:100%;">
-
-	<div class='job-name'>
-		<h2>
-			 Protein Disorder and Flexibility Prediction for <span class="readonly"></span>
-		</h2>
-	</div>
-	
-	<div class="navbar"></div>
-	<div class="alert alert-info"> 
-			<strong>What am I seeing Here?</strong> 
-			This viewer lays out predicted features that correspond to regions within the queried sequence. 	
-			Mouse over the different colored boxes to learn more about the annotations
-	</div>
-	<div id='FeatureViewerContainer' style="width:100%;" > </div>
-	
-	<h2>How do we Predict Protein Disorder</h2>
-	<div>
-Disordered proteins are highly abundant in regulatory processes such as transcription and cell-signaling. Different methods have been developed to predict protein disorder often focusing on different types of disordered regions. Metadisorder is a novel META-Disorder prediction method that molds various sources of information predominantly obtained from orthogonal prediction methods, to significantly improve in performance over its constituents. In sustained cross-validation, MD not only outperforms its origins, but it also compares favorably to other state-of-the-art prediction methods in a variety of tests that we applied.
-	</div>
-
-<hr style="width:40%;">
-<div id='QuotesContainer' style="width:100%;"></div>
-
-
-</div>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id='Disorder' style="width:100%;">
+			<div class='job-name'>
+				<h2>
+					Protein Disorder and Flexibility Prediction for
+					 <span class="readonly"></span>
+				</h2>
+			</div>
+			<div class="navbar"></div>
+			<ul id="navtabs" class="nav nav-tabs">
+				<li class="active">
+					<a href="#DisorderVisualDiv" data-toggle="tab">Visual</a>
+				</li>
+				<li>
+					<a href="#moreInfoDiv" data-toggle="tab">Additional Info</a>
+				</li>
+			</ul>
+			<div class="tab-content" style="width:100%;">
+				<div id="DisorderVisualDiv" class="tab-pane active" style="width:100%;">
+					<div class="alert alert-info">
+						<strong>What am I seeing Here?</strong> This viewer lays out predicted features that correspond to regions within the queried sequence. Mouse over the different colored boxes to learn more about the annotations
+					</div>
+					<div id='FeatureViewerContainer' style="width:100%;"></div>
+					<h2>
+						How do we Predict Protein Disorder
+					</h2>
+					<div>
+						Intrinsically disordered proteins are predicted by Meta-Disorder (MD) from protein sequences. The prediction is based on a system of neural networks that combines the outputs from several original prediction methods (NORSnet, DISOPRED2,PROFbval and Ucon), with the evolutionary profiles and sequence features that correlate with the protein disorder such as predicted solvent accessibility and protein flexibility. The method was developed in 2005 by Avner Schlessinger &amp; Burkhard Rost (Schlessinger &amp; al. 2005). For a detailed description of the method and the expected accuracy of the prediction see "Additional Info".
+					</div>
+				</div>
+				<div id='moreInfoDiv' class='info tab-pane'>
+					<h2>
+						What is Predicted?
+					</h2>
+					<div>
+						Many genes in higher organisms encode proteins or protein regions that do not adopt well-defined, stable three-dimensional (3D) structures under physiological conditions in isolation. These proteins are commonly labeled as intrinsically disordered, unfolded, or natively unstructured proteins. Different words reflect differences in the underlying biophysical traits of these regions.<br>
+						The assignment of disordered or unstructured regions is problematic, since by definition, these regions consist of an ensemble of rapidly inter-converting conformers that we cannot visualize. One way to circumvent this problem is by measuring biophysical characteristics that are associated with the lack of ordered 3D structure. Many techniques monitor properties such as distances between atoms, hydrodynamic features, and local or global changes in the environment of the atoms. Since different experimental techniques capture different aspects or types of protein disorder, they occasionally do not agree on the assignments of these regions.<br>
+						One of the main reasons for the predictability of unstructured regions is their amino-acid compositional bias. Unstructured regions are abundant in low complexity regions containing a reduced amino acid alphabet. They are usually depleted of hydrophobic and bulky amino acids, which are often referred to as “order promoting” residues. Unstructured regions have a large solvent-accessible area, which explains why polar and charged residues, which favorably interact with water, are prevalent in these regions. Due to the high net charge of these regions, it was suggested that the unfolding is driven by charge-charge repulsion. Other sequence-related biases in disordered regions include the high percentage of proline and frequent lack of regular secondary structure. The amino acid composition of disordered regions was also found to correlate with the length of disordered regions. For example, short disordered stretches are mainly negatively charged whereas long unstructured regions are either positively or negatively charged, but on average, nearly neutral.<br>
+						Two types of short amino acid patterns are highly abundant in disordered regions: a proline-rich pattern and and linear motivs. The polyproline-II (PPII) helix is a ubiquitous helical structure motif that is found in extended conformation and is abundant in molecular recognition features (MoRF) of unstructured regions. It has been estimated that ~85% of the linear motifs from Eukaryotic Linear Motif (ELM) database are located within disordered regions. A recent study demonstrated the link between linear motifs and the putative mechanism for the interaction between unstructured regions and their partners.<br>
+						Due to the fuzzy definitions of mobility/disorder/flexibility, some predictors focusing on different aspects of protein mobility can sometimes capture protein disorder. Our group identified long regions with no regular secondary structure (NORS), i.e. ≥70 sequence-consecutive surface residues depleted of helices and strands. NORS regions share many cellular, biochemical and biophysical properties with long unstructured regions in proteins. Loops with high B-factors also correlate with disorder. In fact, a recent study demonstrated that PROFbval, which was trained on regions with high normalized B-factors from the PDB, accurately predicted the long unstructured region in the adaptor protein GAD. Another method, NORSnet, distinguishes between long (&gt;30 residues) loops that are well-structured and those that are disordered. Ucon is a specific contact based prediction method. While most of these methods are not optimal for the identification of the “average” disorder, they are usually optimized on data sets that are very large and are not biased by current experimental means of capturing disorder. Thus, they reach into regions in sequence space that are not covered by the specialized disorder predictors.
+					</div>
+					<h2>
+						What can you Expect from Intrinsically Disordered Proteins Prediction?
+					</h2>
+					<div>
+						The method, MD (Meta-Disorder predictor) is a combination of several orthogonal methods will capture many types of disorder at improved performance without sacrificing the distinction of the type of disorder that is detected. Combining the output from various prediction methods with sequence profiles and other useful features such as predicted solvent accessibility, secondary structure and low complexity regions, significantly outperformed each of its constituents on average and in our tests also topped commonly used top-of-the-line methods.<br>
+						This method outperformed any of its constituents (AUC = 0.78) as well as the best simple average over the original four methods<br>
+						The distribution of the normalized method output (compiled as the difference between the two output units) indicates that disordered residues tend to have higher output values than ordered residues. Therefore, we converted this normalized output into a reliability index (RI), and found that this measure correlated well with accuracy and coverage. In this analysis we focused on residues from long unstructured regions (&gt;30). For example, ~52% of the disordered residues from long unstructured regions in the DisProt data set were predicted at RI≥4; at that level, the prediction accuracy was&gt;68%, compared to 62% for all residues. The method is particularly accurate for ordered residues. For instance, for the same reliability index, ~55% of the residues that are not located in long unstructured regions were predicted at ~85% accuracy (coverage ordered and accuracy ordered in Eqn. 1).<br>
+						<img src="https://rostlab.org/wiki/images/c/cb/RI_ACCCOV.png">
+						<pre>
+ Eqn. 1:            Accuray ordered =  TN  / TN + FN       ;      Coverage ordered =  TN/ TN + FP  ;
+</pre>
+					</div>
+					<h2>
+						Prediction Algorithm
+					</h2>
+					<h2>
+						Data Set
+					</h2>
+					<div>
+						We used all residues that were shown by at least one experimental technique to be in disordered regions according to DisProt version 3.4 as positives, and all other residues in those proteins as the negatives. Unlike in our other studies, we used residues from disordered regions of all lengths (expecting the meta-predictor to pick up all types of disorder). Note that DisProt regions are on average longer than regions of missing residues from X-ray structures, and have different amino acid composition. From the initial set of 460 proteins we discarded 60 proteins with &gt;780 residues as these could not be handled by all of the methods we tested. From the remaining set, 17 more proteins crashed when applying at least one of the predictors in this study, and were also discarded. We generated sequence-unique subsets through UniqueProt ascertaining that the pairwise sequence similarity between any pair of proteins corresponded to HSSP-values&lt;10 which translated to &lt;31% pairwise sequence identity for &gt;250 aligned residues. Alignments were generated by three iterations of PSI-BLAST searches against UniProt using our standard protocol for the generation of profiles. The entire data set included 298 sequence-unique proteins with 27,117 disordered (positives) and 61,118 well-structured (negatives) residues. Our results were qualitatively similar for sequence-unique filtering at HSSP-values&lt;0 (i.e., 21% pairwise sequence identity for &gt;250 aligned residues); however, for that number only 135 proteins remained in the DisProt data set.
+					</div>
+					<h2>
+						Neural Networks: Training, Cross-Training and Testing
+					</h2>
+					<div>
+						We randomly divided the sequence-unique data set into six equally sized groups, using proteins from four groups for training (optimization of junctions in the neural networks), one for cross-training (optimization of general network parameters, including “stop-training”), and one for testing (estimate performance). We then rotated through these sets so that each protein was used exactly once for testing, and averaged the performance measures over the six groups. All the results that we reported were valid for the independent testing sets. Input from prediction methods. In selecting the methods used as input to the Meta-disorder predictor (MD) we applied the following rationale:
+						<ul>
+							<li>Include the most unique methods: to prevent over-optimization for one particular type of disorder, we focused on methods that were based on different concepts.
+							</li>
+							<li>Preference for in-house methods: this focus originated solely from considerations that had to do with the prospect of having to manage the resulting method for a considerable amount of time in environments of constant changes.
+							</li>
+							<li>Preference for easily reproducible algorithms: methods that are based on simple concepts, such as the statistical potential based method IUPred and the hydrophobicity/net-charge based method FoldIndex can easily be reproduced by anyone. Our resulting local versions of these methods were slightly less accurate than the originals when tested on our data sets.
+							</li>
+							<li>Preference for methods that can be installed locally and can be used freely. Since one important aspect of protein disorder is the prediction of residues that are invisible in X-ray structures, we needed to use one of the methods that predict this aspect as input for our meta-predictor. Many machine learning based methods were optimized for residues missing from PDB structures. Despite many differences, these methods overlap. Therefore, we decided to represent this class by the incorporation of one single method, namely DISOPRED2. We used DISOPRED2 for several reasons: it was one of the best methods according to the CASP6 disorder assessment, it installed easily locally, and DISOPRED2 is quite orthogonal to our in-house methods.
+							</li>
+						</ul>
+					</div>
+					<h2>
+						Neural Network Architecture
+					</h2>
+					<div>
+						We trained standard feed-forward neural network with back-propagation and a momentum term Due to a significant difference in the number of positive and negative samples we used balanced training . The input features for the network included properties that were shown to be correlated with protein disorder: (1) local properties such as predicted secondary structure, local sequence profiles, solvent accessibility, the presence of low complexity regions, and amino acid composition of a given sequence window length; (2) global properties such as the length of the sequence; (3) predictions from other servers that included the probability for a given residue to be disordered. These included NORSnet, DISOPRED2,PROFbval and Ucon (where several models were implemented); (4) for the reproduction of predictors similar to the amino acid propensity based methods FoldIndex and IUPred, we calculated hydrophobicity/net-charge as described by Uversky and estimated the energy of a local sequence window using a statistical potential, respectively. Note that we also trained a method that used as input only predictions from NORSnet, DISOPRED2, PROFbval, Ucon and sequence profiles without using any other sequence properties.
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr style="width:40%;">
+		<div id='QuotesContainer' style="width:100%;"></div>
+	</body>
+</html>

@@ -1,33 +1,56 @@
-<div id='GOAnnot' style="width:100%;">
-	<div class='job-name'>
-    <h2>
-       Gene Ontology annotations for <span class="readonly"></span>
-    </h2>
-  </div>
-
-	<div class="navbar"></div>
-<ul id="goannot-nav" class="nav nav-tabs">
-<li class="active"><a href="#GoannotVisualDiv" data-toggle="tab">Visual</a>  </li>
-<li><a  href="#moreInfoDiv" data-toggle="tab">Additional Info</a> </li> 
-</ul>
-
-<div class="tab-content" style="width:100%;" >
-	<div id="GoannotVisualDiv" class="tab-pane active" style="width:100%;" >
-		<div class="alert alert-info"> 
-				<strong>What am I seeing Here?</strong> Below, you see the results of Metastudent, a method to predict Gene Ontology (GO) terms via homology to already annotated proteins ("Additional Info" for a practical guide). 
-				GO terms are organized in two different ontologies, Molecular Function Ontology and Biological Process Ontology (<a href="http://www.geneontology.org/">details</a>). 
-				Each predicted term is associated with a reliability (0-100), indicating the chance that the protein actually has this function. 
-				The graph additionally shows where the predicted terms lie with respect to their inferred parent terms. Predicted terms are shown in yellow boxes, inferred terms in white boxes. <br>
-				If you want to highlight specific terms, deselect all others in the Tabular Result and press 'show'.
-				<!-- Inferred terms describe functions not as precisely as predicted terms, but should be considered more reliable. -->
+		<div id='GOAnnot' style="width:100%;">
+			<div class='job-name'>
+				<h2>
+					Gene Ontology annotations for
+					<span class="readonly"></span>
+				</h2>
+			</div>
+			<div class="navbar"></div>
+			<ul id="navtabs" class="nav nav-tabs">
+				<li class="active">
+					<a href="#GoannotVisualDiv" data-toggle="tab">Visual</a>
+				</li>
+				<li>
+					<a href="#moreInfoDiv" data-toggle="tab">Additional Info</a>
+				</li>
+			</ul>
+			<div class="tab-content" style="width:100%;">
+				<div id="GoannotVisualDiv" class="tab-pane active" style="width:100%;">
+					<div class="alert alert-info">
+						<strong>What am I seeing Here?</strong> Below, you see the results of Metastudent, a method to predict Gene Ontology (GO) terms via homology to already annotated proteins ("Additional Info" for a practical guide). GO terms are organized in two different ontologies, Molecular Function Ontology and Biological Process Ontology (<a href="http://www.geneontology.org/">details</a>). Each predicted term is associated with a reliability (0-100), indicating the chance that the protein actually has this function. The graph additionally shows where the predicted terms lie with respect to their inferred parent terms. Predicted terms are shown in yellow boxes, inferred terms in white boxes.<br>
+						If you want to highlight specific terms, deselect all others in the Tabular Result and press 'show'. <!-- Inferred terms describe functions not as precisely as predicted terms, but should be considered more reliable. -->
+					</div>
+					<div id='GOAnnotViewerContainer' style="width:100%;"></div>
+				</div>
+					<h2>
+						How do we Predict Gene Ontology term
+					</h2>
+					<div>
+Metastudent predicts gene ontology (GO) terms for protein sequences through homology. It first runs a single BLAST query for all targets against a custom BLAST database containing sequences and GO terms of previously annotated proteins. The output is then used by three different base classifiers to calculate three separate sets of GO terms. Finally, a smart meta classifier converts them into one.
+					</div>
+				<div id='moreInfoDiv' class='info tab-pane'>
+					<h2>
+						What is Predicted?
+					</h2>
+					<div>
+The output of metastudent is a list of Gene Ontology (GO) terms. They describe the functions of a protein and are either part of the Molecular Function Ontology (MFO) or the Biological Process Ontology (BPO). An ontology is a rooted graph in which each node represents a GO term and each link a functional relationship. Thus, the prediction of metastudent can be seen as two subgraphs of the full ontologies. These two subgraphs are displayed below the tabular result. Often, the tabular result only contains very specific functional terms, and not the more general descriptions that can be inferred by going to the root of the ontology. The graphical results do show such terms (predicted: yellow boxes, inferred: white boxes).
+					</div>
+					<h2>
+						What can you Expect From GO Term Predictions?
+					</h2>
+					<div>
+Since the Gene Ontology is very big (> 50,000 terms), and the problem of sequence based protein function prediction very hard, the predictions usually have quite a low reliability (reliability measures the chance that the target protein actually has this particular function). A recent independent assessment showed that this is not a problem of metastudent in particular, but of any method in the field. Nevertheless, the output of metastudent can still be very useful: some terms are predicted with a very high reliability and all predicted terms for a protein together contain about 60% (BPO) to 80% (MFO) of all true functions of a protein. Hence, to find most of the functions of a protein experimentally, you only have to test the predicted functions, not the entire GO.
+					</div>
+					<h2>
+						Computational Details
+					</h2>
+					<div>
+Metastudent has four parts: three base classifiers and one meta classifier. First, a PSI-BLAST query is executed against a database of all proteins with known functions. The result is forwarded to each base classifier which compiles the GO terms of the BLAST hits, their eValues, sequence identities etc. into a list of predicted GO terms. All three base classifier solve this problem, but in different ways. The meta classifier finally takes all predictions from the base classifiers and combines them in an optimal way. Metastudent achieves its state-of-the-art accuracy through highly optimized free parameters (e.g. PSI-BLAST eValue cutoff, number of iterations, scoring scheme parameters, etc.) and by focussing only on the latest experimentally resolved GO term annotations.
+					</div>
+					
+				</div>
+			</div>
+			<hr style="width:40%;">
+			<div id='QuotesContainer' style="width:100%;"></div>
 		</div>
-		<div id='GOAnnotViewerContainer' style="width:100%;" >
-		</div>
-	</div>
-	<div id='moreInfoDiv' class='info tab-pane'>
-		<h2>How do we Predict Gene Ontology term</h2>
-	</div>
-</div>
-<hr style="width:40%;">
-<div id='QuotesContainer' style="width:100%;"></div>
-
+	
