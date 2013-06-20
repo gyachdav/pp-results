@@ -22,7 +22,7 @@
 					</div>
 					<div id='GOAnnotViewerContainer' style="width:100%;"></div>
 					<h2>
-						How do we Predict Gene Ontology term
+						How do we Predict Gene Ontology Terms
 					</h2>
 					<div>
 Metastudent predicts gene ontology (GO) terms for protein sequences through homology. It first runs a single BLAST query for all targets against a custom BLAST database containing sequences and GO terms of previously annotated proteins. The output is then used by three different base classifiers to calculate three separate sets of GO terms. Finally, a smart meta classifier converts them into one.
@@ -37,7 +37,7 @@ Metastudent predicts gene ontology (GO) terms for protein sequences through homo
 The output of metastudent is a list of Gene Ontology (GO) terms. They describe the functions of a protein and are either part of the Molecular Function Ontology (MFO) or the Biological Process Ontology (BPO). An ontology is a rooted graph in which each node represents a GO term and each link a functional relationship. Thus, the prediction of metastudent can be seen as two subgraphs of the full ontologies. These two subgraphs are displayed below the tabular result. Often, the tabular result only contains very specific functional terms, and not the more general descriptions that can be inferred by going to the root of the ontology. The graphical results do show such terms (predicted: yellow boxes, inferred: white boxes).
 					</div>
 					<h2>
-						What can you Expect From GO Term Predictions?
+						What Can you Expect From GO Term Predictions?
 					</h2>
 					<div>
 Since the Gene Ontology is very big (> 50,000 terms), and the problem of sequence based protein function prediction very hard, the predictions usually have quite a low reliability (reliability measures the chance that the target protein actually has this particular function). A recent independent assessment showed that this is not a problem of metastudent in particular, but of any method in the field. Nevertheless, the output of metastudent can still be very useful: some terms are predicted with a very high reliability and all predicted terms for a protein together contain about 60% (BPO) to 80% (MFO) of all true functions of a protein. Hence, to find most of the functions of a protein experimentally, you only have to test the predicted functions, not the entire GO.
