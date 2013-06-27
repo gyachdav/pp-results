@@ -17,7 +17,7 @@
   <div id="HeatMapVisualDiv" class="tab-pane active" style="width:100%;" >
     <div class="alert alert-info"> 
             <strong>What is Presented Here?</strong> 
-            The heatmap shows the predicted effect on protein function if changed by one residue. The columns in the grid represent the query sequence residues and the rows represent the substituting amino acids. The colors for each square on the grid range from dark green to dark red whereas red represents <strong>predicted functional change</strong> and green represents <strong>no functional change</strong>. Color intensity represents the prediction's confidence where dark is high confidence and bright is low confidence. Black colored squares mean a substitution of a resiude by itself and therefore the prediction should be ignored.
+	    We show each substitution independently for each position of a protein in a heatmap representation. Dark red indicates a high score (score > 50, strong signal for effect), white indicates weak signals (-50 < score < 50), and green a low score (score < -50, strong signal for neutral/no effect). Black marks the corresponding wildtype residues. 
         </div>
       <div id='heatmap' style="width:95%" class="text-warning">Loading Please Wait...</div>
       

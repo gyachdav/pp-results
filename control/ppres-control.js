@@ -1,14 +1,16 @@
 var EXPORT = function(argument) {
 	var exportALL = function() {
-		var urlBase = 'http://rostlab.org/~roos/get/ppc/tar.gz/';
+		var urlBase = '/~roos/get/ppc/tar.gz/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
+	    if (APP.getDataObj().getProteinName())
+	        urlREST += '&filename=predictprotein_'+ APP.getDataObj().getProteinName()+'.tar.gz';
 		window.open(urlREST);
 	};
 
 	var exportMethod = function(methodName) {
 		//http://rostlab.org/~roos/get/reprof/?md5=0ffaf7ed79c69f9db1c6fe1440558d57
-		var urlBase = 'http://rostlab.org/~roos/get/';
+		var urlBase = '/~roos/get/';
 		urlBase += methodName + '/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
