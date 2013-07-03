@@ -214,21 +214,21 @@ function PPResData() {
 			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
 			var ss_feature_array = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.split('');
 			var solvAccComposition = {
-				Hydrophobic: 0,
+				Buried: 0,
 				Intermediate: 0,
-				Hydrophilic: 0
+				Exposed: 0
 			};
 
-			var Hydrophobic = Intermediate = Hydrophilic = 0;
+			var Buried = Intermediate = Exposed = 0;
 
 			jQuery.each(ss_feature_array, function(index, obj) {
 				var n = parseInt(obj);
 				if (n == 5)
 					solvAccComposition.Intermediate++;
 				else if (n < 5)
-					solvAccComposition.Hydrophobic++;
+					solvAccComposition.Buried++;
 				else if (n > 5)
-					solvAccComposition.Hydrophilic++;
+					solvAccComposition.Exposed++;
 			});
 			return (solvAccComposition);
 		},
@@ -256,10 +256,10 @@ function PPResData() {
 					};
 					if (n > 5) {
 						r = _.range(6, 10);
-						obj.type = 'Hydrophilic';
+						obj.type = 'Exposed';
 					} else if (n < 5) {
 						r = _.range(0, 5);
-						obj.type = 'Hydrophobic';
+						obj.type = 'Buried';
 					} else {
 						r = _.range(5, 6);
 						obj.type = 'Intermediate';
@@ -271,23 +271,6 @@ function PPResData() {
 
 			return arrObjs;
 
-			// arrProps = jQuery.map(arrProps, function(n, i) {
-			// 	var _type;
-			// 	if (n == 5)
-			// 		_type = 'Intermediate';
-			// 	else if (n < 5)
-			// 		_type = 'Hydrophobic';
-			// 	else if (n > 5)
-			// 		_type = 'Hydrophilic';
-
-			// 	return ({
-			// 		begin: i,
-			// 		end: i,
-			// 		value: n,
-			// 		type: _type
-			// 	});
-			// });
-			// return arrProps;
 		},
 
 		getAAComposition: function(argument) {
