@@ -401,7 +401,7 @@ var PAGE = function(argument) {
 		},
 		drawSSConsistency: function(argument) {
 			targetDiv = argument.targetDiv;
-			jQuery("#" + targetDiv).append("<h3>Secondary Structure composition</h3>");
+			jQuery("#" + targetDiv).append("<h3>Secondary Structure Composition</h3>");
 			PIE_CHART.toPieData(dataObj.getSSComposition()).drawPieChart(targetDiv);
 		},
 
