@@ -23,7 +23,7 @@ var HEAT_MAP = function(params) {
   // console.log(gridSize);
 
   var colorLow = 'green',
-    colorMed = 'black',
+    colorMed = 'white',
     colorHigh = 'red';
 
   var margin = {

@@ -323,11 +323,14 @@ var PAGE = function(argument) {
 		},
 		drawHeatmapViewer: function(argument) {
 
-			var dataToFetch = 'http://rostlab.org/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
+			var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
 
-			jQuery.getJSON('proxy.php', {
+/*			jQuery.getJSON('proxy.php', {
 				url: dataToFetch
 			},
+*/
+
+			jQuery.getJSON(dataToFetch,
 
 			function(arr) {
 				jQuery("#heatmap").empty();

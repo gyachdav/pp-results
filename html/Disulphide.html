@@ -1,24 +1,67 @@
-<div id='Disulphide' style="width:100%;">
 
-	<div class='job-name'>
-		<h2>
-			 Disulphide Bridges Prediction for <span class="readonly"></span>
-		</h2>
-	</div>
-	
-	<div class="navbar"></div>
-	<div class="alert alert-info"> 
-			<strong>What am I seeing Here?</strong> 
-			This viewer lays out predicted features that correspond to regions within the queried sequence. 	
-			Mouse over the different colored boxes to learn more about the annotations
-	</div>
-	<div id='FeatureViewerContainer' style="width:100%;" > </div>
-	<h2>How do we Predict Disulphide Bridges</h2>
-	<div>
-	  <hr style="width:40%;">
-<div id='QuotesContainer' style="width:100%;"></div>
-
-
-
-</div>
-</div>
+		<div id='Disulphide' style="width:100%;">
+			<div class='job-name'>
+				<h2>
+					Disulphide Bridges Prediction for
+					 <span class="readonly"></span>
+				</h2>
+			</div>
+			<div class="navbar"></div>
+			<ul id="navtabs" class="nav nav-tabs">
+				<li class="active">
+					<a href="#DisulfindVisualDiv" data-toggle="tab">Visual</a>
+				</li>
+				<li>
+					<a href="#moreInfoDiv" data-toggle="tab">Additional Info</a>
+				</li>
+			</ul>
+			<div class="tab-content" style="width:100%;">
+				<div id="DisulfindVisualDiv" class="tab-pane active" style="width:100%;">
+					<div class="alert alert-info">
+						<strong>What am I seeing Here?</strong> This viewer lays out predicted features that correspond to regions within the queried sequence. Mouse over the different colored boxes to learn more about the annotations
+					</div>
+					<div id='FeatureViewerContainer' style="width:100%;"></div>
+					<div class='row-fluid'>
+						<h2>
+							What are Disulfide Bridges and How do we Predict Them?
+						</h2>
+						<div>
+							Disulfide bridges are covalent bonds that happen between cysteine (C) residues only. Disulfide bridges play a major role in the stabilization of the folding process and, consequently, in studies related to structural and functional properties of specific proteins. In addition, knowledge about the disulfide bonding state of cysteines may help the experimental structure determination process and may be useful in other genomic annotation tasks.<br><br>
+							For the automatic prediction of disulfide bridges we use the tool DISULFIND, developed in 2006 by Ceroni et. al. [1]. DISULFIND uses a combination of machine learning algorithms to predict intrachain bridges from sequence alone. Similar to many other tools of this kind, it solves the prediction problem in two steps. First, the disulfide bonding state of each cysteine is predicted by a binary classifier; second, cysteines that are known to participate in the formation of bridges are paired to obtain a connectivity pattern.<br><br>
+						</div>
+					</div>
+				</div>
+				<div id='moreInfoDiv' class='info tab-pane'>
+					<div class='row-fluid'>
+						<h2>
+							What is Predicted?
+						</h2>
+						<div>
+							The prediction task is to decide whether a pair of cysteine residues form a disulfide bridge (also called, a disulfide bond). DISULFIND takes as input the protein sequence alone and then incorporates evolutionary information encoded in multiple alignment profiles. Profiles are calculated by using one iteration of the PSI-BLAST program run on Swiss-Prot and TrEMBL using the BLOSUM62 matrix and an E-value cutoff of 0.005. Disulfide bonds are predicted in two computational stages:
+							<ol>
+								<li>the disulfide bonding state of each cysteine is predicted by a BRNN-SVM binary classifier (combined layer of a bidirectional recursive neural network and support vector machines).
+								</li>
+								<li>cysteines that are known to participate in the formation of bridges are paired by a Recursive Neural Network to obtain a connectivity pattern.
+								</li>
+							</ol>The DISULFIND tool is currently limited to a maximum prediction of 5 disulfide bonds per sequence. This is because of computation limitations and lack of enough training data (annotated protein sequences) that had 6 or more disulfide bonds. Note that the number (probability thereof) of disulfide bonds increases with the protein sequence's length.
+						</div>
+						<h2>
+							Prediction Performance
+						</h2>
+						<div>
+							DISULFIND was trained and tested on a set of 446 annotated protein sequences in a 4-fold cross validation setting. The predicted disulfide bonds were compared against the annotations to obtain the accuracy for 1) the prediction of whether a cysteine residue is part of a disulfide bond (Qc), and 2) the actual prediction of disulfide bonds (Qp). Table 1 shows the performance results.
+							<figure>
+								<img src="https://rostlab.org/wiki/images/f/ff/DISULFIND_performance.png">
+								<figcaption>
+									Table 1: DISULFIND performance accuracy for the prediction of whether a cysteine residue is part of a disulfide bonds (Qc) and for the prediction of disulfide bonds (Qp)
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<hr style="width:40%;">
+				<div id='QuotesContainer' style="width:100%;"></div>
+			</div>
+		</div>

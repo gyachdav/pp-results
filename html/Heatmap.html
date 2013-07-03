@@ -5,38 +5,117 @@
       Effect of Point Mutations Prediction for <span class="readonly"></span>
     </h2>
   </div>
-    <div class="navbar"></div>
-<div class="alert alert-info"> 
-        <strong>What is Presented Here?</strong> 
-        This heatmap in this page shows the predicted effect on  protein function if changed by one residue. The columns in the grid represent the query sequence residues and the rows represent the substituting amino acids. The colors for each square on the grid range from dark green to dark red whereas red represents <strong>predicted functional change</strong> and green represents <strong>no functional change</strong>. Color intensity represents the prediction's confidence where dark is high confidence and bright is low confidence. Black colored squares mean a substitution of a resiude by itself and therefore the prediction should be ignored.
+
+  <div class="navbar"></div>
+    <ul id="ss-nav" class="nav nav-tabs">
+    <li class="active"><a href="#HeatMapVisualDiv" data-toggle="tab">Visual</a>  </li>
+    <li><a  href="#moreInfoDiv" data-toggle="tab">Additional Info</a> </li> 
+  </ul>
+
+
+<div class="tab-content" style="width:100%;" >
+  <div id="HeatMapVisualDiv" class="tab-pane active" style="width:100%;" >
+    <div class="alert alert-info"> 
+            <strong>What is Presented Here?</strong> 
+	    We show each substitution independently for each position of a protein in a heatmap representation. Dark red indicates a high score (score > 50, strong signal for effect), white indicates weak signals (-50 < score < 50), and green a low score (score < -50, strong signal for neutral/no effect). Black marks the corresponding wildtype residues. 
+        </div>
+      <div id='heatmap' style="width:95%" class="text-warning">Loading Please Wait...</div>
+      
+      <h3>Zoom Panel</h3>
+      <div class="alert alert-info"> 
+        This panel is a blow out of a specific region in the heatmap presented above. Use the slider to scroll through the heatmap. 
+      </div>
+     
+    <div id="slider" style="width:50%;margin:25px;"></div>
+    <table class="table">
+      <tr>
+        <td>
+        <label for="start">Starting Position
+          <strong>
+        <span  id="start" class="text-warning"/>
+        </strong>
+        </label>
+       </td>
+       <td>
+        <label for="end">End Position
+          <strong>
+        <span id="end" class="text-warning"/>
+        </strong>
+        </label>
+      </td>
+      </tr>
+    </table>
+     
+    <div id='zoom'  style="width:95%" class="text-warning">Loading Please Wait...</div>
+    
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+    <div class='row-fluid'>
+      <h2>How We Predict Functional Effects?</h2>
     </div>
-  <div id='heatmap'  class="text-warning">Loading...</div>
+
+      <div>
+      Functional effects of mutations are predicted with SNAP2. SNAP2 is a trained classifier that is based on a machine learning device called "neural network". It distinguishes between effect and neutral variants/non-synonymous SNPs by taking a variety of sequence and variant features into account. The most important input signal for the prediction is the evolutionary information taken from an automatically generated multiple sequence alignment. Also structural features such as predicted secondary structure and solvent accessibility are considered. If available also annotation (i.e. known functional residues, pattern, regions) of the sequence or close homologs are pulled in. In a cross-validation over 100,000 experimentally annotated variants, SNAP2 reached a sustained two-state accuracy (effect/neutral) of 82% (at an AUC of 0.9). In our hands this constitutes an important and significant improvement over other methods.
+      </div>
+    </div>
+    <div id='moreInfoDiv' class='info tab-pane'>
+    <div class='row-fluid'>
+      <h2>What is Predicted?</h2>
+    </div>
+   <div class='row-fluid'>
+      SNAP2 predicts the impact (effect) of single amino acid substitutions on protein function. For a given substitution e.g. Arginine (R) at position 152 is substituted by Asparagine (N) -typically abbreviated to R152N- we predict a score (ranges from -100 strong neutral prediction to +100 strong effect prediction) that reflects the likelihood of this specific mutation to alter the native protein function. Moreover, our analysis suggests that the prediction score is to some extent correlated to the severity of effect as shown in Fig.1.<br><br>
+
+      <img src="https://rostlab.org/wiki/images/4/43/Snap_severity.jpg">
+      <br><br>
+    </div>
+
+    <div class='row-fluid'>
+      <h2>Prediction Visualization</h2>
+    </div>
+     <div class='row-fluid'>
+      We predict each substitution independently and show every possible substitution at each position of a protein in a heatmap representation. Dark red indicates a high score (score > 50, strong signal for effect), white indicates weak signals (-50 < score < 50), and green a low score (score < -50, strong signal for neutral/no effect). Black marks the corresponding wildtype residues. Fig. 2 shows an example of such a heatmap.
+      <br><br>
+      <img src="https://rostlab.org/wiki/images/c/cf/Snap_heatmap.jpg">
+      <br><br>
+    </div>
+
+    <div class='row-fluid'>
+      <h2>Prediction Algorithm</h2>
+    </div>
+      <div class='row-fluid'>
+      <div>
+        SNAP2 is a neural network based classifier. The feed-forward multilayer perceptron consists of ~650 nodes in the input layer, 100 nodes in the hiddenlayer and two nodes (one for each neutral/effect) in the output layer. In each training step, all samples are presented to the network and the connection weights are adjusted through a backpropagation algorithm. The final method consists of ten different models (created during 10-fold cross-validation using different subsets for training and optimization). Each model outputs one score for each output class (neutral/effect). These scores of 10 models are averaged in a jury decision. The final score is calculated as the difference of the average score for effect and the average score for neutral.
+      </div>
+      <h3>Implementation</h3>
+       <div>
+        All neccessary information (e.g. secondary structure, solvent accessibility, disorder, alignments of related sequences etc.) is produced by the PredictProtein pipeline. Feature calculation algorithms are written in Perl and transform the predictions into normalized numeric input values. The neural network implementation is provided through the Fast Artificial Neural Network Library.
+      </div>
+
+       <h3>Data Sets</h3>
+       <div>
+        SNAP2 that was trained on ~100.000 variants from OMIM, PMD and a set of pseudo-neutral variants based on the enzyme comission numbers. Details can be found in the SNAP publications.
+       </div>
+    </div>
+     <div class='row-fluid'>
+      <h2>Preditcion Reliability Score</h2>
+      <div>
+        The reliability score (Reliability Index: RI) is calculated from the final prediction score. Fig 3. shows that stronger predictions are more reliable. This measure is meant to simplify assessing prediction strength and to immediatly convey the reliabilty of a prediction. The score ranges from 0 (very low reliabilty) to 9 (very high reliabilty).
+      </div>
+      <br>
+      <img src="https://rostlab.org/wiki/images/thumb/3/3b/SNAP_reliablity.jpg/400px-SNAP_reliablity.jpg">
+      <br><br>
+    </div>   
+
+     <div class='row-fluid'>
+      <h2>Accuracy of Functional Effect Prediction</h2>
+      <div>
+       We evaluated the performance of SNAP2 in a 10-fold cross-validation and on two independent datasets. The overall two-state accuracy was shown to be above 82% in the cross-validation with an area under the ROC curve of 0.9. We estimated an standard error of 0.013 in a bootstrapping scenario of 1000 sets each consisting of 50k randomly drawn (with replacement) samples.
+      </div>
+    </div>   
   
-  <h3>Zoom Panel</h3>
-  <div class="alert alert-info"> 
-    This panel is a blow out of a specific region in the heatmap presented above. Use the slider to scroll through the heatmap. 
+
+    </div>
   </div>
- 
-<div id="slider" style="width:50%;margin:25px;"></div>
-<table class="table">
-  <tr>
-    <td>
-    <label for="start">Starting Position
-      <strong>
-    <span  id="start" class="text-warning"/>
-    </strong>
-    </label>
-   </td>
-   <td>
-    <label for="end">End Position
-      <strong>
-    <span id="end" class="text-warning"/>
-    </strong>
-    </label>
-  </td>
-  </tr>
-</table>
- 
-<div id='zoom'  class="text-warning">Loading...</div>
-</div>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+</div>  
+
+

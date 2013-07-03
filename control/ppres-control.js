@@ -1,14 +1,16 @@
 var EXPORT = function(argument) {
 	var exportALL = function() {
-		var urlBase = 'http://rostlab.org/~roos/get/ppc/tar.gz/';
+		var urlBase = '/~roos/get/ppc/tar.gz/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
+	    if (APP.getDataObj().getProteinName())
+	        urlREST += '&filename=predictprotein_'+ APP.getDataObj().getProteinName()+'.tar.gz';
 		window.open(urlREST);
 	};
 
 	var exportMethod = function(methodName) {
 		//http://rostlab.org/~roos/get/reprof/?md5=0ffaf7ed79c69f9db1c6fe1440558d57
-		var urlBase = 'http://rostlab.org/~roos/get/';
+		var urlBase = '/~roos/get/';
 		urlBase += methodName + '/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
@@ -53,13 +55,16 @@ var EXPORT = function(argument) {
 var APP = (function() {
 
 	var req_id = jQuery("#req_id").val();
+	var req_name = jQuery("#req_name").val();
+
 	if (!req_id) req_id = 70;
 
 	var json,
 		ds,
 		debug = 0,
 		file_specs = {
-		 	path: "http://pp-dev.informatik.tu-muenchen.de",
+		 	//path: "http://pp-dev.informatik.tu-muenchen.de",
+		 	path: "",
 		 	name: 'xml_results?req_id=' + req_id,
 		 	type: 'xml'
 		 },
@@ -75,7 +80,7 @@ var APP = (function() {
 	listener = new Listeners();
 
 	mainObj.loadData(file_specs).done(function(data) {
-		mainObj.populateData(data, req_id);
+		mainObj.populateData(data, req_id, req_name);
 		page = new PAGE({
 			data: mainObj,
 			providers: APP.providers,
@@ -196,7 +201,7 @@ var APP = (function() {
 })();
 
 APP.path = '/ppres/';
-//APP.path = '/~hampt/pp-results/';
+
 
 
 APP.providers = [
