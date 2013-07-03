@@ -104,14 +104,14 @@ var GOANNOT_VIEW = (function() {
                         "<table id=\"table"+ currOntologyShort +"\" class=\"table table-striped tablesorter\" style=\"width:100%;margin-bottom:0px;;margin-top:0px\">" +
                             "<thead>" +
                                 "<tr>" +
-                                    "<th colspan=5 style=\"text-align: center\"> <div style=\"font-size:larger\">" + currOntology + "</div></th>" +
+                                    "<th  style=\"background-color: rgb(205, 205, 205); color: #3D3D3D; font-size: 8pt; height: 2em; text-align: center\" colspan=5 > <div style=\"font-size:larger\">" + currOntology + "</div></th>" +
                                 "</tr>" +
                                 "<tr>" +
-                                    "<th width=\"5%\">#</th>" +
-                                    "<th width=\"15%\">GO ID</th>" +
-                                    "<th width=\"55%\">GO Term</th>" +
-                                    "<th width=\"20%\">Reliability (%)</th>" +
-                                    "<th width=\"5%\"><input class=\"allToggler\" type=\"checkbox\" name=\"goSel" + currOntologyShort + "All\" value=\"" + "all" + "\" checked/></th>" +
+                                    "<th style=\"background-color: rgb(205, 205, 205); color: #3D3D3D; font-size: 8pt; height: 2em;\" width=\"5%\">#</th>" +
+                                    "<th style=\"background-color: rgb(205, 205, 205); color: #3D3D3D; font-size: 8pt; height: 2em;\" width=\"15%\">GO ID</th>" +
+                                    "<th style=\"background-color: rgb(205, 205, 205); color: #3D3D3D; font-size: 8pt; height: 2em;\" width=\"55%\">GO Term</th>" +
+                                    "<th style=\"background-color: rgb(205, 205, 205); color: #3D3D3D; font-size: 8pt; height: 2em;\" width=\"20%\">Reliability (%)</th>" +
+                                    "<th style=\"background-color: rgb(205, 205, 205); color: #3D3D3D; font-size: 8pt; height: 2em;\" width=\"5%\"><input class=\"allToggler\" type=\"checkbox\" name=\"goSel" + currOntologyShort + "All\" value=\"" + "all" + "\" checked/></th>" +
                                 "</tr>" +
                             "</thead>" +
                                 "<tbody>";
@@ -328,6 +328,15 @@ var GOANNOT_VIEW = (function() {
 	    renderImage: function(tableObj, onto, targetDiv, processGlobalsOnload) {
 	    	
 	    	
+	    	var goTermLimit = 50;
+	    	var isChrome = /chrome/.test(navigator.userAgent.toLowerCase());
+	    	var isSafari = /safari/.test(navigator.userAgent.toLowerCase());
+	    	if(isChrome && onto == "BPO")
+	    	{
+	    		goTermLimit = 10;		    	
+	    	}
+	    	
+	    	
 	    	jQuery( ( "#showButton" + onto ) ).hide();
 		    jQuery(("#"+ onto + "_img_container")).css("border", "0px solid white");
 	    	jQuery("#_goannot_cntnt_img").css("border", "0px solid white");
@@ -366,13 +375,13 @@ var GOANNOT_VIEW = (function() {
 				
 			})
 			
-			if(goTermCounter > 50)
+			if(goTermCounter > goTermLimit)
 			{
 				goTermsDictArrayReduced = new Array();
 				tooManyTerms=true;
 				for(var i = 0; i<goTermsDictArray.length; i++ )
 				{
-					if(goTermsDictArrayReduced.length<50)
+					if(goTermsDictArrayReduced.length<goTermLimit)
 					{
 						currDict = goTermsDictArray[i];
 						if(currDict["checked"])
@@ -432,7 +441,7 @@ var GOANNOT_VIEW = (function() {
 			
 			jQuery("#image-zoom-wrapper-" + onto).bind('ivieweronfinishload', function(ev, src) {
 				
-				if(/chrome/.test(navigator.userAgent.toLowerCase()))
+				if(isChrome || (isSafari && zoomifyWrapper.children("img")[0].naturalWidth == 0))
 				{
 					jQuery(zoomifyWrapper).height( (jQuery("#GOAnnotViewerContainer").width() / 2) * 0.98);
 					jQuery(zoomifyWrapper).width(jQuery("#GOAnnotViewerContainer").width() * 0.98);
@@ -513,7 +522,7 @@ var GOANNOT_VIEW = (function() {
 
 			if(tooManyTerms)
 			{
-				var imageWarningDiv = jQuery("<div>Warning: too many terms to display; only showing first 50 selected terms</div>");
+				var imageWarningDiv = jQuery("<div>Warning: too many terms to display; only showing first " + goTermLimit + " selected terms</div>");
 				imageWarningDiv.css("color", "red");
 				imageWarningDiv.css("font-weight", "bold");
 				imageWarningDiv.attr("id", "imageWarning"+onto);
