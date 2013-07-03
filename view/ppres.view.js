@@ -98,7 +98,10 @@ var PAGE = function(argument) {
 					]
 				}, {
 					'Email': 'nothing'
+				}, {
+					'?': 'popOver'
 				}
+
 			]
 		},
 		SecondaryStructure: {
@@ -324,7 +327,6 @@ var PAGE = function(argument) {
 		drawHeatmapViewer: function(argument) {
 
 			var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
-
 /*			jQuery.getJSON('proxy.php', {
 				url: dataToFetch
 			},
@@ -335,7 +337,7 @@ var PAGE = function(argument) {
 			function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
-				dataObj = arr.contents;
+				dataObj = arr;
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
 					dataObj: dataObj

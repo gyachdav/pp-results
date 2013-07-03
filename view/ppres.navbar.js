@@ -26,7 +26,7 @@ var NAVBAR = function(config) {
 			    .append(jQuery('<a/>').attr('href', '#')
 			    .text(Object.keys(value)));
 		menu.click(function(){
-			var popOver = new POPOVER(jQuery(this));
+		    var popOver = new POPOVER(jQuery('a', this));
 			popOver.popOverPageIntro();
 		})	    
 	}

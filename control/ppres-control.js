@@ -50,6 +50,15 @@ var EXPORT = function(argument) {
 	};
 }
 
+var POPOVER = function (button){
+    var popOverPageIntro = function (){
+	button.attr('rel','popover').attr('data-content','blah blah').attr('data-original-title','What is Presented in This Page').popover();
+    };
+    return{
+	popOverPageIntro:popOverPageIntro
+    };
+}
+
 
 
 var APP = (function() {
