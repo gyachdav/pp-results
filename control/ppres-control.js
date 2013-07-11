@@ -198,7 +198,10 @@ var APP = (function() {
 					
 					break;
 				case 'tutorial':
-					target_div.html('<iframe src="http://prezi.com/embed/vg4s_lhh2gal/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0"></iframe>');
+					page = new PAGE({
+						page: "Tutorial",
+						data: mainObj
+					}).draw();
 					break;
 
 				default:
