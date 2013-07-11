@@ -19,8 +19,8 @@ var NAME_CHANGE = function(arguments) {
 		jQuery(this).hide();
 	});
 
-	writableDiv.change(function() {
-		event.preventDefault();
+	writableDiv.change(function(evt) {
+		evt.preventDefault();
 		var v = jQuery(this).val().trim();
 		if (v != '') {
 			dataObj.setJobName(v);
@@ -47,8 +47,8 @@ var NAME_CHANGE = function(arguments) {
 
 		jQuery(this).hide();
 		readOnlyDiv.show();
-	}).blur(function() {
-		event.preventDefault();
+	}).blur(function(evt) {
+		evt.preventDefault();
 		var v = jQuery(this).val().trim();
 		if (v != '') {
 			dataObj.setJobName(v);
