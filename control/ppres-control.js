@@ -211,11 +211,7 @@ var APP = (function() {
 	};
 })();
 
-<<<<<<< HEAD
 APP.path = '/pp-results/';
-=======
-APP.path = 'Users/jmcejuela/git/pp-results/ppres/';
->>>>>>> e2c8447caa911169e4ad10e37f7293f803356e9a
 
 
 
