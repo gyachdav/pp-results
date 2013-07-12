@@ -73,8 +73,9 @@ var APP = (function() {
 		debug = 0,
 		file_specs = {
 		 	//path: "http://pp-dev.informatik.tu-muenchen.de",
-		 	path: "",
-		 	name: 'xml_results?req_id=' + req_id,
+		 	path: "examples/",
+		 	// name: 'xml_results?req_id=' + req_id,
+		 	name: 'source.xml',
 		 	type: 'xml'
 		 },
 		mainObj = new PPResData();
@@ -212,7 +213,7 @@ var APP = (function() {
 	};
 })();
 
-APP.path = '/ppres/';
+APP.path = '/pp-results/';
 
 
 
