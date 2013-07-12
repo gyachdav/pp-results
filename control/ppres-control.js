@@ -72,10 +72,9 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		 	//path: "http://pp-dev.informatik.tu-muenchen.de",
-		 	path: "https://dl.dropboxusercontent.com", //"localhost:",
-		 	name: '/u/51598079/xml_results', //'//'xml_results?req_id=' + req_id,
-		 	type: 'xml'
+		    path: '',
+		    name: 'xml_results?req_id=' + req_id,
+		    type: 'xml'
 		 },
 		mainObj = new PPResData();
 
@@ -212,7 +211,7 @@ var APP = (function() {
 	};
 })();
 
-APP.path = 'Users/jmcejuela/git/pp-results/ppres/';
+APP.path = '/ppres/';
 
 
 
