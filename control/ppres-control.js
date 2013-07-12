@@ -202,6 +202,12 @@ var APP = (function() {
 						data: mainObj
 					}).draw();
 					break;
+				case 'litsearch':
+					page = new PAGE({
+						page: "Litsearch",
+						data: mainObj
+					}).draw();
+					break;
 
 				default:
 					target_div.children().hide();
