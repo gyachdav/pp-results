@@ -366,7 +366,7 @@ $.widget( "ui.iviewer", $.ui.mouse, {
         this.container.addClass("iviewer_cursor");
 
         if(this.options.zoom == "fit"){
-            this.fit(true);
+            this.fit(false);
         }
         else {
             this.set_zoom(this.options.zoom, true);
@@ -543,7 +543,7 @@ $.widget( "ui.iviewer", $.ui.mouse, {
         }
         
         
-        if(new_zoom > 0 && new_zoom < (this.options.width / this.img_object.orig_width() * 100))
+        if(new_zoom > 0 && new_zoom < (this.options.height / this.img_object.orig_height() * 100) && new_zoom < (this.options.width / this.img_object.orig_width() * 100))
         {
         	this.fit();
         	return;
