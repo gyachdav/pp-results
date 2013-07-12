@@ -21,9 +21,15 @@ var NAVBAR = function(config) {
 				}).text(this.text)));
 	    });
 	    menu.append(menuList);
-	} else var menu = jQuery('<li />')
-	    .append(jQuery('<a/>').attr('href', '#')
-		    .text(Object.keys(value)));
+	} else {
+		var menu = jQuery('<li />')
+			    .append(jQuery('<a/>').attr('href', '#')
+			    .text(Object.keys(value)));
+		menu.click(function(){
+		    var popOver = new POPOVER(jQuery('a', this));
+			popOver.popOverPageIntro();
+		})	    
+	}
 
 	ul.append(menu);
     });

@@ -50,6 +50,15 @@ var EXPORT = function(argument) {
 	};
 }
 
+var POPOVER = function (button){
+    var popOverPageIntro = function (){
+	button.attr('rel','popover').attr('data-content','blah blah').attr('data-original-title','What is Presented in This Page').popover();
+    };
+    return{
+	popOverPageIntro:popOverPageIntro
+    };
+}
+
 
 
 var APP = (function() {
@@ -63,8 +72,8 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		 	path:  'examples/', //"https://dl.dropboxusercontent.com", 
-		 	name: 'source.xml', //'/u/51598079/xml_results',
+		 	path: "examples/",
+		 	name: 'source.xml',
 		 	type: 'xml'
 		 },
 		mainObj = new PPResData();
@@ -188,7 +197,16 @@ var APP = (function() {
 					
 					break;
 				case 'tutorial':
-					target_div.html('<iframe src="http://prezi.com/embed/vg4s_lhh2gal/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0"></iframe>');
+					page = new PAGE({
+						page: "Tutorial",
+						data: mainObj
+					}).draw();
+					break;
+				case 'litsearch':
+					page = new PAGE({
+						page: "Litsearch",
+						data: mainObj
+					}).draw();
 					break;
 
 				default:

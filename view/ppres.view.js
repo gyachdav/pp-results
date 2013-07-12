@@ -96,9 +96,15 @@ var PAGE = function(argument) {
 							func: "exportJSON"
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , 
+				// {
+				// 	'Email': 'nothing'
+				// },
+				//  {
+				// 	'?': 'popOver'
+				// }
+
 			]
 		},
 		SecondaryStructure: {
@@ -116,9 +122,10 @@ var PAGE = function(argument) {
 							params: ['PROFsec']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Transmembrane: {
@@ -136,9 +143,11 @@ var PAGE = function(argument) {
 							params: ['PHDhtm']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 
@@ -172,9 +181,10 @@ var PAGE = function(argument) {
 							params: ['MD']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Disulphide: {
@@ -192,9 +202,10 @@ var PAGE = function(argument) {
 							params: ['DISULFIND']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Binding: {
@@ -212,9 +223,10 @@ var PAGE = function(argument) {
 							params: ['ISIS']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		SubcellLoc: {
@@ -232,9 +244,10 @@ var PAGE = function(argument) {
 							params: ['LocTree2']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		GOAnnot: {
@@ -252,9 +265,10 @@ var PAGE = function(argument) {
 							params: ['Metastudent']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Heatmap: {
@@ -267,9 +281,10 @@ var PAGE = function(argument) {
 							params: ["snap"]
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		}
 	};
@@ -324,7 +339,6 @@ var PAGE = function(argument) {
 		drawHeatmapViewer: function(argument) {
 
 			var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
-
 /*			jQuery.getJSON('proxy.php', {
 				url: dataToFetch
 			},
@@ -335,7 +349,7 @@ var PAGE = function(argument) {
 			function(arr) {
 				jQuery("#heatmap").empty();
 				jQuery("#zoom").empty();
-				dataObj = arr.contents;
+				dataObj = arr;
 				var hm = new HEAT_MAP({
 					targetDiv: "heatmap",
 					dataObj: dataObj
@@ -399,7 +413,7 @@ var PAGE = function(argument) {
 		},
 		drawSSConsistency: function(argument) {
 			targetDiv = argument.targetDiv;
-			jQuery("#" + targetDiv).append("<h3>Secondary Structure composition</h3>");
+			jQuery("#" + targetDiv).append("<h3>Secondary Structure Composition</h3>");
 			PIE_CHART.toPieData(dataObj.getSSComposition()).drawPieChart(targetDiv);
 		},
 

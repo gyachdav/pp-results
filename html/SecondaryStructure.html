@@ -23,10 +23,16 @@
 		<div id='FeatureViewerContainer' style="width:100%;" > </div>
 		<div class='summary left'>
 			<div id='SSConsistencyContainer'></div>
-			<div class="alert alert-info">
-		  		<i class="icon-remove icon-white topright"></i>
-		  		<strong>Good to know: </strong>
-				Protein can be classified as <strong>mixed</strong> given the following classes:
+		 </div>
+		 <div class='summary right'>
+			<div id='SolvAccContainer'></div>
+		 </div>
+
+		 <div style="clear:both">
+		   <div class='row-fluid'>&nbsp;</div>
+			<div class="alert alert-info alert-block">
+			   <button type="button" class="close" data-dismiss="alert">&times;</button>
+				Proteins can be classified as <strong>mixed</strong> given the following classes:
 				<ul>
 					<li>'all-alpha':   %H &gt; 45% AND %E &lt;  5%</li>
 					<li>'all-beta':    %H &lt;  5% AND %E &gt; 45%</li>
@@ -34,16 +40,8 @@
 					<li>'mixed':       All others</li>
 				</ul>
 			</div>
-		 </div>
-		 <div class='summary right'>
-			<div id='SolvAccContainer'></div>
-			<div class="alert alert-info">
-		  		<i class="icon-remove icon-white topright"></i>
-		  		<strong>Good to know: </strong>
-			</div>
-		 </div>
 
-		 <div style="clear:both">
+
 		 	<h2>How do we Predict Secondary Structure</h2>
 			<div>
 			Secondary structure is predicted by a system of neural networks rating at an expected average accuracy > 72% for the three states helix, strand and loop (Rost & Sander, PNAS, 1993 , 90, 7558-7562; Rost & Sander, JMB, 1993 , 232, 584-599; and Rost & Sander, Proteins, 1994 , 19, 55-72; evaluation of accuracy). Evaluated on the same data set, PROFsec is rated at ten percentage points higher three-state accuracy than methods using only single sequence information, and at more than six percentage points higher than, e.g., a method using alignment information based on statistics (Levin, Pascarella, Argos & Garnier, Prot. Engng., 6, 849-54, 1993). PHDsec predictions have three main features:
