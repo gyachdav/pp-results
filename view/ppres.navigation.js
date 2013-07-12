@@ -48,11 +48,11 @@ var NAVIGATION = (function() {
 			}
 		],
 
-		// "Additional Services": [{
-		// 		id: "litsearch",
-		// 		text: "Literature Search"
-		// 	}
-		// ],
+		"Additional Services": [{
+				id: "litsearch",
+				text: "Literature Search"
+			}
+		],
 
 		"Help": [{
 				id: "tutorial",
