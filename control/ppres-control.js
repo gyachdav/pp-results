@@ -72,9 +72,7 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		 	//path: "http://pp-dev.informatik.tu-muenchen.de",
 		 	path: "examples/",
-		 	// name: 'xml_results?req_id=' + req_id,
 		 	name: 'source.xml',
 		 	type: 'xml'
 		 },
@@ -213,7 +211,11 @@ var APP = (function() {
 	};
 })();
 
+<<<<<<< HEAD
 APP.path = '/pp-results/';
+=======
+APP.path = 'Users/jmcejuela/git/pp-results/ppres/';
+>>>>>>> e2c8447caa911169e4ad10e37f7293f803356e9a
 
 
 
