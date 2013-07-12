@@ -219,7 +219,10 @@ var GOANNOT_VIEW = (function() {
                 else
                 {
                     _curr_div = jQuery("<div />");
-                    _curr_div.append(  "Image loading..." );
+                    $('<img />').attr({ 'id': 'imageLoading' + currOntologyShort, 'src': '/ppres/assets/iviewer/image_loading.gif', 'alt':'Image loading...' }).appendTo(_curr_div);
+
+
+                    //_curr_div.append(  "Image loading..." );
                 }
                
                 _curr_div.attr("id",currOntologyShort + "_img_container");
@@ -331,7 +334,7 @@ var GOANNOT_VIEW = (function() {
 	    	var goTermLimit = 50;
 	    	var isChrome = /chrome/.test(navigator.userAgent.toLowerCase());
 	    	var isSafari = /safari/.test(navigator.userAgent.toLowerCase());
-	    	if(isChrome && onto == "BPO")
+	    	if((isChrome || isSafari) && onto == "BPO")
 	    	{
 	    		goTermLimit = 10;		    	
 	    	}
@@ -399,10 +402,9 @@ var GOANNOT_VIEW = (function() {
 
 			var requestString = generateAmigoRequest(tooManyTerms ? goTermsDictArrayReduced : goTermsDictArray);
 			
-				
+			var imageLoaderDiv = jQuery("<div data-toggle=\"goImageLoading\"></div>");
+            $('<img />').attr({ 'id': 'imageLoading' + onto, 'src': '/ppres/assets/iviewer/image_loading.gif', 'alt':'Image loading...' }).appendTo(imageLoaderDiv);
 
-			 
-			var imageLoaderDiv = jQuery("<div data-toggle=\"goImageLoading\">Image loading...</div>");
 			var imageSpan = jQuery("<div></div>");
 			imageSpan.css("display", "inline-block");
 			imageSpan.css("width", "100%");
