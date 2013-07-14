@@ -12,12 +12,62 @@
 			This viewer lays out predicted features that correspond to regions within the queried sequence. 	
 			Mouse over the different colored boxes to learn more about the annotations
 	</div>
-	<div id='FeatureViewerContainer' style="width:100%;" > </div>
+	
+	<ul id="subcel-nav" class="nav nav-tabs">
+		<li class="active">
+			<a href="#TMHVisualDiv" data-toggle="tab">Visual</a>
+		</li>
+		<li>
+			<a href="#moreInfoDiv" data-toggle="tab">Additional Info</a>
+		</li>
+	</ul>
 
-	<h2>How do We Preidict Transmembrane Helices</h2>
-	<div>
-Transmembrane helices in integral membrane proteins are predicted by a system of neural networks. The shortcoming of the network system is that often too long helices are predicted. These are cut by an empirical filter. The final prediction (Rost et al., Protein Science, 1995, 4, 521-533; evaluation of accuracy) has an expected per-residue accuracy of about 95%. The number of false positives, i.e., transmembrane helices predicted in globular proteins, is about 2%. The neural network prediction of transmembrane helices (PHDhtm) is refined by a dynamic programming-like algorithm. This method resulted in correct predictions of all transmembrane helices for 89% of the 131 proteins used in a cross-validation test; more than 98% of the transmembrane helices were correctly predicted. The output of this method is used to predict topology, i.e., the orientation of the N-term with respect to the membrane. The expected accuracy of the topology prediction is > 86%. Prediction accuracy is higher than average for eukaryotic proteins and lower than average for prokaryotes. PHDtopology is more accurate than all other methods tested on identical data sets.
+	<div class="tab-content" style="width:100%;">
+		<div id="TMHVisualDiv" class="tab-pane active" style="width:100%;">
+			<div class="alert alert-info">
+				<strong>What am I seeing Here?</strong> This viewer shows a cell schematic with the predicted subcellular localization compartment highlighted in green. The predicted compartment is also referenced by a GO ID for better clarity.
+			</div>
+			<div id='FeatureViewerContainer' style="width:100%;" > </div>
+			<div class='row-fluid'>
+				<h2>
+					How do We Preidict Transmembrane Helices
+				</h2>
+				<div>
+					Transmembrane helices in integral membrane proteins are predicted by a system of neural networks, PHDhtm. The first version was developed in 1995 by Rost et al. and has been further improved in the following year. The final prediction (Rost 1996) has an expected per-residue accuracy of about 86% (according to an evaluation of transmembrane helix prediction methods undertaken in 2012, unpublished data). The number of false positives, i.e., transmembrane helices predicted in globular proteins, is about 11% when no signal peptides are present and between 17-39% otherwise, depending on the organism. Of 130 proteins with a given high-resolution 3D structure, 81% are predicted with all transmembrane-helices at the correct location. PHDhtm also predicts topology, i.e. the orientation of the N-terminus with respect to the membrane. For this, the expected accuracy is >86% (Rost 1996).
+				</div>
+			</div>
+		</div>
+		<div id='moreInfoDiv' class='info tab-pane'>
+			<div class='row-fluid'>
+				<h2>
+					What is Predicted?
+				</h2>
+				<div>
+				Integral membrane proteins are an important class of proteins that carry out essential cellular processes like signalling or transport. They are involved in a multitude of diseases and large classes such as G-protein coupled receptors, which constitute approximately 30% of current drug targets, highlight their importance. Integral transmembrane proteins can be divided into two major groups: beta-barrels formed from beta-strands and alpha-helical transmembrane proteins. The latter class is much more abundant and assumed to constitute 20-30% of any organisms genome.<br>
+The strong constraint on hydrophobicity for the membrane-embedded residues has historically been the strongest feature used for prediction of transmembrane-helices from sequence. However what originally seemed like an easy task has turned out to be increasingly more difficult with the realization that signal peptides contain a very similar amino acid bias in their hydrophobic segments and are therefore often mistaken for transmembrane helices by the respective predictors. In addition, integral transmembrane proteins have shown more diversity than originally expected with the determination of structures containing so-called reentrant loops or helices that do not cross the membrane but rather penetrate it to some degree and exit at the side they enter it.<br>
+				</div>
+				<div>
+					<h2>
+						What Can You Expect from TRansmembrane Helix Prediction?
+					</h2>
+					<div>
+						PHDhtm prediction performance was found to be average among 11 other recent and older prediction methods (according to an evaluation of transmembrane helix prediction methods undertaken in 2012, unpublished data). The percentage of proteins with all transmembrane helices placed at the correct location and none overpredicted is higher than average for eukaryotic proteins and lower than average for prokaryotes. This value is in general higher the lower the number of transmembrane helices in the protein. While transmembrane proteins with a single helix are almost always correctly predicted (98%), it is only 66% for proteins with 2-5 helices and 33% for six or more helices. While it is clear that more helices also present more chances for errors, for proteins with more than six transmembrane helices in particular more recent methods have shown to achieve better results.
+					</div>
+					
+				</div>
+				<div>
+					<h2>
+						How do We Predict Transmembrane Helices
+					</h2>
+					<div>
+						PHDhtm uses a neuronal network with a window size of 17. Homology information is incorporated by performing a BLAST search against UniprotKB/SwissProt, aligning the results with MaxHom and then using them as input for the network. From the raw output all segments of length 18 with maximum preference for the state 'helix' were calculated. These are then used as input to a dynamic programming algorithm that selects the most likely model of transmembrane helix locations for the whole sequence. On this final prediction, the positive-inside rule is used to predict topology. For this, the amount of arginine and lysine residues situated in the loops between the transmembrane helices are added up for each side. The side with a higher number of these positively charged residues is assigned as cytoplasmic.
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+
 
 <hr style="width:40%;">
 <div id='QuotesContainer' style="width:100%;"></div>
