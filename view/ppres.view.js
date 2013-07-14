@@ -21,7 +21,7 @@ var PAGE = function(argument) {
 			],
 			SecondaryStructure: [{
 					FeatureViewer: {
-						providers: ["PROFsec", "PROFAcc", "ASP", "PROFtmb"],
+						providers: ["PROFsec", "PROFAcc", "PROFtmb"],
 						showAlignment: false
 					}
 				}, {
@@ -39,7 +39,7 @@ var PAGE = function(argument) {
 			],
 			Disorder: [{
 					'FeatureViewer': {
-						providers: ["PROFbval", "MD", "Ucon", "NORSnet"],
+						providers: ["PROFbval", "Ucon", "NORSnet", "MD"],
 						showAlignment: false
 					}
 				}, 'Quotes'
