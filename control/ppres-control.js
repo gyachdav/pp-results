@@ -9,14 +9,12 @@ var EXPORT = function(argument) {
 	};
 
 	var exportMethod = function(methodName) {
-		//http://rostlab.org/~roos/get/reprof/?md5=0ffaf7ed79c69f9db1c6fe1440558d57
 		var urlBase = '/~roos/get/';
 		urlBase += methodName + '/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
-	    jQuery.get('proxy.php',{url:urlREST}, function( data ){
+	    jQuery.get(urlREST, function( data ){
 		window.open('data:Application/octet-stream;filename=file.'+methodName+',' + encodeURIComponent(data));
-//		window.open('data:application/octet-stream;', data);
 	    }, 'text');
 	};
 
