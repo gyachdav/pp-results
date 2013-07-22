@@ -70,6 +70,8 @@ function PPResData() {
 	var getAlignmentsByDatabaseTopMatch = function(db_name) {
 		var alis = getAlignments();
 		var topmatch_id = '';
+		if (alis === undefined)
+			return topmatch_id;
 		jQuery.each(alis, function(i, v) {
 			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
 				topmatch_id = v.dbReference.id;

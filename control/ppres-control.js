@@ -82,7 +82,7 @@ var APP = (function() {
 	NAVIGATION_DIV = "#nav";
 
 
-	jQuery.noConflict(); // recommended to avoid conflict wiht other libs
+	jQuery.noConflict(); // recommended to avoid conflict with other libs
 	NAVIGATION.setActiveItem(2);
 	NAVIGATION.show(jQuery(NAVIGATION_DIV));
 
