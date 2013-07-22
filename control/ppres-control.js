@@ -70,9 +70,9 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		    path: '',
-		    name: 'xml_results?req_id=' + req_id,
-		    type: 'xml'
+		 	path: "examples/",
+		 	name: 'source.xml',
+		 	type: 'xml'
 		 },
 		mainObj = new PPResData();
 
@@ -200,6 +200,12 @@ var APP = (function() {
 						data: mainObj
 					}).draw();
 					break;
+				case 'litsearch':
+					page = new PAGE({
+						page: "Litsearch",
+						data: mainObj
+					}).draw();
+					break;
 
 				default:
 					target_div.children().hide();
@@ -209,7 +215,9 @@ var APP = (function() {
 	};
 })();
 
-APP.path = '/ppres/';
+
+APP.path = '/pp-results/';
+
 
 
 
