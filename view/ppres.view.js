@@ -68,7 +68,10 @@ var PAGE = function(argument) {
 			GOAnnot: [
 					"GOAnnotViewer",
 					'Quotes'
-			]
+			],
+        Litsearch: [
+            "LitsearchViewer"
+            ]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -97,7 +100,7 @@ var PAGE = function(argument) {
 						}
 					]
 				}
-				// , 
+				// ,
 				// {
 				// 	'Email': 'nothing'
 				// },
@@ -313,7 +316,30 @@ var PAGE = function(argument) {
 		delete(cached[elementName]);
 	};
 
-	var visualComponents = {
+	  var visualComponents = {
+        drawLitsearchViewer: function(argument) {
+            /*
+             * The following part should go to /views
+             */
+
+            function toHtmlViewSingleResult(x) {
+                return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(x.title + " - " + x.pubdate + " - " + x.source));
+            }
+
+            var toHtmlView = function(summariesResults) {
+                var ret = jQuery('<ul>');
+                for (var i = 0; i < summariesResults.length; i++) {
+                    ret.append(toHtmlViewSingleResult(summariesResults[i]));
+                }
+                return ret;
+            };
+
+            var $cached_pages = jQuery('#cached-pages');
+            var pageHtml = toHtmlView(dataObj.getLitsearchData());
+            var num = 0;
+            pageHtml.attr('id', 'page-'+num);
+            $cached_pages.append(pageHtml);
+        },
 		drawSequenceViewer: function(argument) {
 			sv = new SEQUENCE_VIEWER({
 				targetDiv: argument.targetDiv,
@@ -687,7 +713,7 @@ var PAGE = function(argument) {
 															   .attr('title', 'Complete data in the original flat text format.')
 															   .addClass('label label-warning outer')
 															   .text('TEXT'));
-						
+
 						formatDivContainer.append(formatDiv);
 
 					}());
