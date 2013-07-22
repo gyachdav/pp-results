@@ -9,14 +9,12 @@ var EXPORT = function(argument) {
 	};
 
 	var exportMethod = function(methodName) {
-		//http://rostlab.org/~roos/get/reprof/?md5=0ffaf7ed79c69f9db1c6fe1440558d57
 		var urlBase = '/~roos/get/';
 		urlBase += methodName + '/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
-	    jQuery.get('proxy.php',{url:urlREST}, function( data ){
+	    jQuery.get(urlREST, function( data ){
 		window.open('data:Application/octet-stream;filename=file.'+methodName+',' + encodeURIComponent(data));
-//		window.open('data:application/octet-stream;', data);
 	    }, 'text');
 	};
 
@@ -72,10 +70,9 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		 	//path: "http://pp-dev.informatik.tu-muenchen.de",
-		 	path: "",
-		 	name: 'xml_results?req_id=' + req_id,
-		 	type: 'xml'
+		    path: '',
+		    name: 'xml_results?req_id=' + req_id,
+		    type: 'xml'
 		 },
 		mainObj = new PPResData();
 
@@ -198,7 +195,10 @@ var APP = (function() {
 					
 					break;
 				case 'tutorial':
-					target_div.html('<iframe src="http://prezi.com/embed/vg4s_lhh2gal/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="550" height="400" frameBorder="0"></iframe>');
+					page = new PAGE({
+						page: "Tutorial",
+						data: mainObj
+					}).draw();
 					break;
 
 				default:
@@ -219,12 +219,12 @@ APP.providers = [
 		"PHDhtm",
 		"ISIS",
 		"DISIS",
-		"ASP",
+		// "ASP",
 		"DISULFIND",
 		"PredictNLS",
-		"NORSnet",
-		"PROFbval",
-		"Ucon",
+		// "NORSnet",
+		// "PROFbval",
+		// "Ucon",
 		"MD",
 		"PROFtmb",
 		"Metastudent"

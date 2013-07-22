@@ -21,7 +21,7 @@ var PAGE = function(argument) {
 			],
 			SecondaryStructure: [{
 					FeatureViewer: {
-						providers: ["PROFsec", "PROFAcc", "ASP", "PROFtmb"],
+						providers: ["PROFsec", "PROFAcc", "PROFtmb"],
 						showAlignment: false
 					}
 				}, {
@@ -39,7 +39,7 @@ var PAGE = function(argument) {
 			],
 			Disorder: [{
 					'FeatureViewer': {
-						providers: ["PROFbval", "MD", "Ucon", "NORSnet"],
+						providers: ["PROFbval", "Ucon", "NORSnet", "MD"],
 						showAlignment: false
 					}
 				}, 'Quotes'
@@ -96,11 +96,14 @@ var PAGE = function(argument) {
 							func: "exportJSON"
 						}
 					]
-				}, {
-					'Email': 'nothing'
-				}, {
-					'?': 'popOver'
 				}
+				// , 
+				// {
+				// 	'Email': 'nothing'
+				// },
+				//  {
+				// 	'?': 'popOver'
+				// }
 
 			]
 		},
@@ -119,9 +122,10 @@ var PAGE = function(argument) {
 							params: ['PROFsec']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Transmembrane: {
@@ -139,9 +143,11 @@ var PAGE = function(argument) {
 							params: ['PHDhtm']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 
@@ -175,9 +181,10 @@ var PAGE = function(argument) {
 							params: ['MD']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Disulphide: {
@@ -195,9 +202,10 @@ var PAGE = function(argument) {
 							params: ['DISULFIND']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Binding: {
@@ -215,9 +223,10 @@ var PAGE = function(argument) {
 							params: ['ISIS']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		SubcellLoc: {
@@ -235,9 +244,10 @@ var PAGE = function(argument) {
 							params: ['LocTree2']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		GOAnnot: {
@@ -255,9 +265,10 @@ var PAGE = function(argument) {
 							params: ['Metastudent']
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		},
 		Heatmap: {
@@ -270,9 +281,10 @@ var PAGE = function(argument) {
 							params: ["snap"]
 						}
 					]
-				}, {
-					'Email': 'nothing'
 				}
+				// , {
+				// 	'Email': 'nothing'
+				// }
 			]
 		}
 	};
@@ -442,7 +454,7 @@ var PAGE = function(argument) {
 			var accordionGroup = jQuery('<div/>').addClass('accordion-group');
 			var accordionHeader = jQuery('<div/>').addClass('accordion-heading')
 				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
-				.append(jQuery('<span/>').text('References (Click to Exapnd)')));
+				.append(jQuery('<span/>').text('References (Click to Expand)')));
 			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
 				.append(jQuery('<div>').addClass('accordion-inner')
 				.append(refList));
