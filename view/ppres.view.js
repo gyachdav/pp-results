@@ -341,10 +341,9 @@ var PAGE = function(argument) {
                 var $previous = $cached_pages.find('ul').not('.invisible');
                 $previous.addClass('disappearing');
 
-                //The interface is 1-indexed; the search is 0-indexed
                 dataObj.searchLitsearchData(
                     term,
-                    num - 1,
+                    num - 1, //The interface is 1-indexed; the search is 0-indexed
                     function(result) {
                         $cached_pages.find('.alert').hide(0);
 
