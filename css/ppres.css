@@ -103,3 +103,28 @@ div.tablesorterPager input {
 	border: 1px solid #330000;
 	text-align: center;
 }
+
+/*
+ * Litsearch
+ */
+
+#Litsearch #cached-pages ul {
+
+}
+
+#Litsearch #cached-pages li {
+    padding-bottom: 8px;
+}
+
+#Litsearch #cached-pages li a:hover {
+    text-decoration: none;
+}
+
+#Litsearch #cached-pages li .item-title {
+    font-weight: bold;
+}
+
+#Litsearch #cached-pages li .item-rest {
+    margin-top: -2px;
+    padding-left: 16px;
+}
