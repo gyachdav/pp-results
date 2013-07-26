@@ -318,10 +318,6 @@ var PAGE = function(argument) {
 
 	  var visualComponents = {
         drawLitsearchViewer: function(argument) {
-            /*
-             * The following part should go to /views
-             */
-
             function toHtmlViewSingleResult(x) {
                 return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(x.title + " - " + x.pubdate + " - " + x.source));
             }
