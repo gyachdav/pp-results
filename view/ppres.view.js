@@ -68,7 +68,10 @@ var PAGE = function(argument) {
 			GOAnnot: [
 					"GOAnnotViewer",
 					'Quotes'
-			]
+			],
+        Litsearch: [
+            "LitsearchViewer"
+            ]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -97,7 +100,7 @@ var PAGE = function(argument) {
 						}
 					]
 				}
-				// , 
+				// ,
 				// {
 				// 	'Email': 'nothing'
 				// },
@@ -313,7 +316,75 @@ var PAGE = function(argument) {
 		delete(cached[elementName]);
 	};
 
-	var visualComponents = {
+	  var visualComponents = {
+        drawLitsearchViewer: function(argument) {
+            function toHtmlViewSingleResult(x) {
+                return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(
+                    '<div class="item-title">'+x.title+'</div><div class="item-rest">'+x.pubdate+', '+x.source+'</div>'));
+            }
+
+            function toHtmlView(summariesResults) {
+                var ret = jQuery('<ul>');
+                for (var i = 0; i < summariesResults.length; i++) {
+                    ret.append(toHtmlViewSingleResult(summariesResults[i]));
+                }
+                return ret;
+            }
+
+            var term = "p53"; //dataObj.getProteinName();
+
+            var numPages = 23;
+            var pageHtml;
+            var $cached_pages = jQuery('#cached-pages');
+
+            function genAndCachePage(term, num) {
+                var $previous = $cached_pages.find('ul').not('.invisible');
+                $previous.addClass('disappearing');
+
+                //The interface is 1-indexed; the search is 0-indexed
+                dataObj.searchLitsearchData(
+                    term,
+                    num - 1,
+                    function(result) {
+                        $cached_pages.find('.alert').hide(0);
+
+                        dataObj.setLitsearchData(result.summaries);
+                        numPages = result.numPages;
+
+                        pageHtml = toHtmlView(dataObj.getLitsearchData());
+                        pageHtml.attr('id', 'page-'+num);
+
+                        $previous.addClass('invisible').hide(0);
+                        $cached_pages.append(pageHtml);
+                    },
+                    function() {
+                        $cached_pages.find('.alert').show(0);
+                    }
+                );
+
+            }
+
+            //Show first page
+            genAndCachePage(term, 1);
+
+            jQuery('#page-selection').bootpag({
+                total: Math.min(numPages, 23),
+                page: 1,
+                maxVisible: 10,
+                //href: "#page-{{number}}",
+                leaps: false
+            }).on("page", function(event, num) {
+                pageHtml = $cached_pages.find('#page-'+num);
+
+                if (!pageHtml.length) {
+                    genAndCachePage(term, num);
+                } else {
+                    $cached_pages.find('.alert').hide(0);
+                    $cached_pages.find('ul').css('display', 'none').addClass('invisible');
+                    pageHtml.removeClass('disappearing invisible').show(0);
+                }
+            });
+        },
 		drawSequenceViewer: function(argument) {
 			sv = new SEQUENCE_VIEWER({
 				targetDiv: argument.targetDiv,
@@ -687,7 +758,7 @@ var PAGE = function(argument) {
 															   .attr('title', 'Complete data in the original flat text format.')
 															   .addClass('label label-warning outer')
 															   .text('TEXT'));
-						
+
 						formatDivContainer.append(formatDiv);
 
 					}());

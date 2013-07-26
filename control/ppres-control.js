@@ -70,9 +70,12 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		 	path: "examples/",
-		 	name: 'source.xml',
-		 	type: 'xml'
+                  path: "https://dl.dropboxusercontent.com", //"localhost:",
+		    name: '/u/51598079/xml_results', //'//'xml_results?req_id=' + req_id,
+		    type: 'xml'
+      //  	 	path: "examples/",
+      //  	 	name: 'source.xml',
+      //  	 	type: 'xml'
 		 },
 		mainObj = new PPResData();
 
@@ -192,7 +195,7 @@ var APP = (function() {
 						page: "GOAnnot",
 						data: mainObj
 					}).draw();
-					
+
 					break;
 				case 'tutorial':
 					page = new PAGE({
@@ -217,7 +220,6 @@ var APP = (function() {
 
 
 APP.path = '/~guyyachdav/pp-results/';
-
 
 
 

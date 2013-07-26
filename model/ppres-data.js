@@ -21,6 +21,7 @@ function PPResData() {
 		sequence = '',
 		md5Seq = '',
 		alignments = {},
+    pubmedSummaries = {},
 		data_ready = false,
 		data = {
 			data_size: 0,
@@ -35,6 +36,10 @@ function PPResData() {
 	var getAlignments = function() {
 		return (alignments);
 	};
+
+    var setLitsearchData = function(data) {
+        pubmedSummaries = data;
+    };
 
 	var getReference = function(ref_id) {
 		var _ref;
@@ -106,6 +111,11 @@ function PPResData() {
 	return {
 		getReferenceByProvider: getReferenceByProvider,
 		getReference: getReference,
+      getLitsearchData: function() {
+          return pubmedSummaries;
+      },
+      setLitsearchData: setLitsearchData,
+
 		dataReady: function() {
 			return data_ready;
 		},
@@ -122,9 +132,9 @@ function PPResData() {
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					console.log(file_path + " load fail");
-					// throw new PPResException ( 
+					// throw new PPResException (
 					// 	textStatus,
-					// 	errorThrown 
+					// 	errorThrown
 					// 	jqXHR.status
 					// );
 				},
@@ -192,10 +202,10 @@ function PPResData() {
 			var provider = "Metastudent";
 			var goFeatureProviderGroup = this.getFeatureByProvider(this.getFeatureTypeGroup(), provider).featureProviderGroup;
 			var ontologyPredictionArray = goFeatureProviderGroup.goAnnotationRegion.goAnnotation.ontologyPrediction;
-			
+
 			return ontologyPredictionArray;
 		},
-		
+
 		getSSComposition: function(argument) {
 			var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
 			var ss_feature_array = this.getFeatureLocations(ss_feature);
@@ -324,11 +334,11 @@ function PPResData() {
 		getJobID: function() {
 			return (ppJobId);
 		},
-		
+
 		setJobID: function(id) {
 			ppJobId = id;
 		},
-		
+
 		getMD5Seq: function() {
 			return (md5Seq);
 		},
@@ -450,6 +460,90 @@ function PPResData() {
 				});
 			}
 			return (locations);
-		}
-	};
+		},
+
+  searchLitsearchData: function(term, page, successFun, errorFun) {
+  	console.log(term);
+      var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
+      var PAGE_ARG = "&retmax=";
+      var PAGE_SIZE = 10;
+      var START_ARG = "&retstart=";
+
+    /**
+     * Search on PubMed by term (all fields).
+     *
+     * @term term for search, for example 'p53'
+     * @page search page starting from 0 (if not given, defaults to 0)
+     *
+     *
+     * @return object with fields:
+     *   'pmids': array of found pmids for given page (if non empty)
+     *   'numPages': total number of pages for the search resul
+     */
+    var searchPubmedByTerm = function (term, page, successFun) {
+        if (page === undefined) {
+            page = 0;
+        }
+        var startItem = (page * PAGE_SIZE);
+        var url = SEARCH_URL + term + PAGE_ARG + PAGE_SIZE + START_ARG + startItem;
+
+        jQuery.ajax({
+            async: true,
+            timeout: 2000,
+            url: url,
+            dataType: "xml",
+            success: function(xml) {
+                var $xml = jQuery(xml);
+                var ret = {};
+                ret.pmids = jQuery.map($xml.find('IdList Id'), function (id) {
+                    return jQuery(id).text();
+                });
+                ret.numPages = Math.ceil(parseInt($xml.find('Count').text(), 10) / PAGE_SIZE);
+                successFun(ret);
+            },
+            error: errorFun
+        });
+    };
+
+    var SUMMARY_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=';
+    var PUBMED_LINK = 'http://www.ncbi.nlm.nih.gov/pubmed/';
+
+    var fetchSummariesByIds = function(searchResult, successFun) {
+        var url = SUMMARY_URL + searchResult.pmids.join(",");
+
+        jQuery.ajax({
+            async: false,
+            timeout: 2000,
+            url: url,
+            dataType: "xml",
+            success: function(xml) {
+                //debug: alert((new XMLSerializer()).serializeToString(xml));
+                var $xml = jQuery(xml);
+                var ret = { numPages: searchResult.numPages };
+
+                ret.summaries = jQuery.map($xml.find('DocSum'), function (doc) {
+                    var $doc = jQuery(doc);
+                    var id = $doc.find('Id').text();
+
+                    return {
+                        'id': id,
+                        'link': PUBMED_LINK + id,
+                        'title': $doc.find('[Name=Title]').text(),
+                        'pubdate': $doc.find('[Name=PubDate]').text(),
+                        'source': $doc.find('[Name=Source]').text()
+                    };
+                });
+
+                successFun(ret);
+            },
+            error: errorFun
+        });
+    };
+
+      searchPubmedByTerm(term, page, function(searchResult) {
+          fetchSummariesByIds(searchResult, successFun);
+      });
+  }
+
+  };
 }
