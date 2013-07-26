@@ -206,9 +206,6 @@ var APP = (function() {
 					}).draw();
 					break;
 				case 'litsearch':
-          var pubmedSummaries = mainObj.searchLitsearchData("p53");
-          mainObj.setLitsearchData(pubmedSummaries);
-
 					page = new PAGE({
 						page: "Litsearch",
 						data: mainObj

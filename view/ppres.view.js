@@ -319,22 +319,54 @@ var PAGE = function(argument) {
 	  var visualComponents = {
         drawLitsearchViewer: function(argument) {
             function toHtmlViewSingleResult(x) {
-                return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(x.title + " - " + x.pubdate + " - " + x.source));
+                return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(
+                    '<div class="item-title">'+x.title+'</div><div class="item-rest">'+x.pubdate+', '+x.source+'</div>'));
             }
 
-            var toHtmlView = function(summariesResults) {
+            function toHtmlView(summariesResults) {
                 var ret = jQuery('<ul>');
                 for (var i = 0; i < summariesResults.length; i++) {
                     ret.append(toHtmlViewSingleResult(summariesResults[i]));
                 }
                 return ret;
-            };
+            }
 
+            var term = "p53"; //dataObj.getProteinName();
+
+            var numPages;
+            var pageHtml;
             var $cached_pages = jQuery('#cached-pages');
-            var pageHtml = toHtmlView(dataObj.getLitsearchData());
-            var num = 0;
-            pageHtml.attr('id', 'page-'+num);
-            $cached_pages.append(pageHtml);
+
+            function genAndCachePage(term, num) {
+                //The interface is 1-indexed while the search is 0-indexed
+                var searchResult = dataObj.searchLitsearchData(term, num - 1);
+                dataObj.setLitsearchData(searchResult.summaries);
+                numPages = searchResult.numPages;
+
+                pageHtml = toHtmlView(dataObj.getLitsearchData());
+                pageHtml.attr('id', 'page-'+num);
+                $cached_pages.append(pageHtml);
+                return pageHtml;
+            }
+
+            //Show first page
+            genAndCachePage(term, 1);
+
+            jQuery('#page-selection').bootpag({
+                total: Math.min(numPages, 23),
+                page: 1,
+                maxVisible: 10,
+                href: "#page-{{number}}",
+                leaps: false
+            }).on("page", function(event, num) {
+                $cached_pages.children().css('display', 'none');
+                pageHtml = $cached_pages.find('#page-'+num);
+                if (!pageHtml.length) {
+                    //TODO show spinner
+                    genAndCachePage(term, num);
+                }
+                pageHtml.css('display', 'block');
+            });
         },
 		drawSequenceViewer: function(argument) {
 			sv = new SEQUENCE_VIEWER({
