@@ -460,10 +460,11 @@ function PPResData() {
 			return (locations);
 		},
 
-  searchLitsearchData: function(term) {
+  searchLitsearchData: function(term, page) {
       var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
-      var PAGE_SIZE = 20;
-      var START = "&retstart=";
+      var PAGE_ARG = "&retmax=";
+      var PAGE_SIZE = 10;
+      var START_ARG = "&retstart=";
 
     /**
      * Search on PubMed by term (all fields).
@@ -481,7 +482,7 @@ function PPResData() {
             page = 0;
         }
         var startItem = (page * PAGE_SIZE);
-        var url = SEARCH_URL + term + START + startItem;
+        var url = SEARCH_URL + term + PAGE_ARG + PAGE_SIZE + START_ARG + startItem;
 
         var ret = {};
         jQuery.ajax({
@@ -540,7 +541,12 @@ function PPResData() {
 
         return ret;
     };
-      return fetchSummariesByIds(searchPubmedByTerm(term).pmids.join(","));
+
+      var aux = searchPubmedByTerm(term, page);
+      return {
+          summaries: fetchSummariesByIds(aux.pmids.join(",")),
+          numPages: aux.numPages
+      };
   }
 
   };
