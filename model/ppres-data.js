@@ -460,7 +460,7 @@ function PPResData() {
 			return (locations);
 		},
 
-  searchLitsearchData: function(term, page) {
+  searchLitsearchData: function(term, page, successFun, errorFun) {
       var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
       var PAGE_ARG = "&retmax=";
       var PAGE_SIZE = 10;
@@ -477,50 +477,48 @@ function PPResData() {
      *   'pmids': array of found pmids for given page (if non empty)
      *   'numPages': total number of pages for the search resul
      */
-    var searchPubmedByTerm = function (term, page) {
+    var searchPubmedByTerm = function (term, page, successFun) {
         if (page === undefined) {
             page = 0;
         }
         var startItem = (page * PAGE_SIZE);
         var url = SEARCH_URL + term + PAGE_ARG + PAGE_SIZE + START_ARG + startItem;
 
-        var ret = {};
         jQuery.ajax({
-            async: false,
+            async: true,
+            timeout: 2000,
             url: url,
             dataType: "xml",
             success: function(xml) {
                 var $xml = jQuery(xml);
+                var ret = {};
                 ret.pmids = jQuery.map($xml.find('IdList Id'), function (id) {
                     return jQuery(id).text();
                 });
                 ret.numPages = Math.ceil(parseInt($xml.find('Count').text(), 10) / PAGE_SIZE);
+                successFun(ret);
             },
-            error: function(xhr, textStatus, error) {
-                // alert('Oops! Something wrong happened');
-                ret.pmids = [];
-                ret.numPages = 0;
-            }
+            error: errorFun
         });
-
-        return ret;
     };
 
     var SUMMARY_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=';
     var PUBMED_LINK = 'http://www.ncbi.nlm.nih.gov/pubmed/';
 
-    var fetchSummariesByIds = function(ids) {
-        var url = SUMMARY_URL + ids;
+    var fetchSummariesByIds = function(searchResult, successFun) {
+        var url = SUMMARY_URL + searchResult.pmids.join(",");
 
-        var ret;
         jQuery.ajax({
             async: false,
+            timeout: 2000,
             url: url,
             dataType: "xml",
             success: function(xml) {
                 //debug: alert((new XMLSerializer()).serializeToString(xml));
                 var $xml = jQuery(xml);
-                ret = jQuery.map($xml.find('DocSum'), function (doc) {
+                var ret = { numPages: searchResult.numPages };
+
+                ret.summaries = jQuery.map($xml.find('DocSum'), function (doc) {
                     var $doc = jQuery(doc);
                     var id = $doc.find('Id').text();
 
@@ -532,21 +530,16 @@ function PPResData() {
                         'source': $doc.find('[Name=Source]').text()
                     };
                 });
-            },
-            error: function(xhr, textStatus, error) {
-                // alert('Oops! Something wrong happened');
-                ret = [];
-            }
-        });
 
-        return ret;
+                successFun(ret);
+            },
+            error: errorFun
+        });
     };
 
-      var aux = searchPubmedByTerm(term, page);
-      return {
-          summaries: fetchSummariesByIds(aux.pmids.join(",")),
-          numPages: aux.numPages
-      };
+      searchPubmedByTerm(term, page, function(searchResult) {
+          fetchSummariesByIds(searchResult, successFun);
+      });
   }
 
   };

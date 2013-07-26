@@ -333,20 +333,35 @@ var PAGE = function(argument) {
 
             var term = "p53"; //dataObj.getProteinName();
 
-            var numPages;
+            var numPages = 23;
             var pageHtml;
             var $cached_pages = jQuery('#cached-pages');
 
             function genAndCachePage(term, num) {
-                //The interface is 1-indexed while the search is 0-indexed
-                var searchResult = dataObj.searchLitsearchData(term, num - 1);
-                dataObj.setLitsearchData(searchResult.summaries);
-                numPages = searchResult.numPages;
+                var $previous = $cached_pages.find('ul').not('.invisible');
+                $previous.addClass('disappearing');
 
-                pageHtml = toHtmlView(dataObj.getLitsearchData());
-                pageHtml.attr('id', 'page-'+num);
-                $cached_pages.append(pageHtml);
-                return pageHtml;
+                //The interface is 1-indexed; the search is 0-indexed
+                dataObj.searchLitsearchData(
+                    term,
+                    num - 1,
+                    function(result) {
+                        $cached_pages.find('.alert').hide(0);
+
+                        dataObj.setLitsearchData(result.summaries);
+                        numPages = result.numPages;
+
+                        pageHtml = toHtmlView(dataObj.getLitsearchData());
+                        pageHtml.attr('id', 'page-'+num);
+
+                        $previous.addClass('invisible').hide(0);
+                        $cached_pages.append(pageHtml);
+                    },
+                    function() {
+                        $cached_pages.find('.alert').show(0);
+                    }
+                );
+
             }
 
             //Show first page
@@ -356,16 +371,18 @@ var PAGE = function(argument) {
                 total: Math.min(numPages, 23),
                 page: 1,
                 maxVisible: 10,
-                href: "#page-{{number}}",
+                //href: "#page-{{number}}",
                 leaps: false
             }).on("page", function(event, num) {
-                $cached_pages.children().css('display', 'none');
                 pageHtml = $cached_pages.find('#page-'+num);
+
                 if (!pageHtml.length) {
-                    //TODO show spinner
                     genAndCachePage(term, num);
+                } else {
+                    $cached_pages.find('.alert').hide(0);
+                    $cached_pages.find('ul').css('display', 'none').addClass('invisible');
+                    pageHtml.removeClass('disappearing invisible').show(0);
                 }
-                pageHtml.css('display', 'block');
             });
         },
 		drawSequenceViewer: function(argument) {
