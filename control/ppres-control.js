@@ -216,7 +216,7 @@ var APP = (function() {
 })();
 
 
-APP.path = '/pp-results/';
+APP.path = '/~guyyachdav/pp-results/';
 
 
 
