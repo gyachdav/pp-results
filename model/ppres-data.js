@@ -14,6 +14,7 @@ function PPResData() {
 		jobName = '',
 		proteinName = '',
 		recommendedName = '',
+		defline = '',
 		ppJobId = -1,
 		json_data = {},
 		xml_data = {},
@@ -79,11 +80,11 @@ function PPResData() {
 			return topmatch_id;
 		jQuery.each(alis, function(i, v) {
 			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
-				topmatch_id = v.dbReference.id;
+				topmatch = v;
 				return (false);
 			}
 		});
-		return (topmatch_id);
+		return (topmatch);
 	};
 
 	var setJsonData = function(json) {
@@ -93,7 +94,9 @@ function PPResData() {
 		alignments = json_data.entry.aliProviderGroup.alignment;
 		protein = json_data.entry.protein;
 		organism = json_data.entry.organism;
-		recommendedName = getAlignmentsByDatabaseTopMatch('Swiss-Prot');
+		topmatch =  getAlignmentsByDatabaseTopMatch('Swiss-Prot');
+		recommendedName = topmatch.dbReference.entryname;
+		defline = topmatch.defline.value;
 		jobName = resolveJobName();
 
 	};
@@ -145,7 +148,8 @@ function PPResData() {
 		populateData: function(data, reqID, reqName) {
 			xml_data = data;
 			this.setJobID(reqID);
-			if (reqName)
+			
+			if (reqName && reqName != '%REQ_NAME%')
 				this.setProteinName( reqName );
 			setJsonData(jQuery.xml2json(data));
 			setDataReady();
@@ -352,6 +356,7 @@ function PPResData() {
 					begin: parseInt(alignment.queryStart.value),
 					end: parseInt(alignment.queryEnd.value),
 					id: alignment.dbReference.id,
+					entryname: alignment.dbReference.entryname,
 					db: alignment.dbReference.type,
 					eval: alignment.expect.value,
 					matchlen: alignment.matchLen.value,
@@ -384,6 +389,9 @@ function PPResData() {
 
 		getRecommendedName: function() {
 			return recommendedName;
+		},
+		getDefLine: function() {
+			return defline;
 		},
 
 		getOrganismName: function() {

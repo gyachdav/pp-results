@@ -4,11 +4,12 @@ var NAME_CHANGE = function(arguments) {
 
 
 	var readOnlyDiv = targetDiv.find('.readonly').text(dataObj.getJobName());
+
 	var writableDiv = jQuery('<input>').attr('type', 'text').addClass('input-large writable').hide();
-	jQuery(targetDiv).find('h2').append(writableDiv);
+	jQuery(targetDiv).find('#writable').append(writableDiv);
 
 	readOnlyDiv.mouseover(function() {
-		jQuery(targetDiv).find('h2').append(jQuery('<i>').addClass("icon-pencil"));
+		jQuery(this).parent('div').append(jQuery('<i>').addClass("icon-pencil"));
 		jQuery(this).addClass('border');
 	}).mouseout(function() {
 		jQuery(this).removeClass('border');

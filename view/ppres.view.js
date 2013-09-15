@@ -542,7 +542,7 @@ var PAGE = function(argument) {
 			jQuery("#" + targetDiv).append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
-			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) {
+			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryname) {
 				var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
 				var link = jQuery('<a>', {
 					text: _rec_name,
@@ -744,6 +744,10 @@ var PAGE = function(argument) {
 
 
 					(function() {
+						var defline = jQuery('.defline');
+						defline.text(dataObj.getDefLine());
+
+
 						var formatDivContainer = jQuery('.formats');
 						var jobId = dataObj.getJobID();
 						var formatDiv = jQuery('<div/>');
