@@ -90,8 +90,8 @@ var NAVIGATION = (function() {
 			v.item = jQuery('<li>');
 			v.item.attr('id', v.id)
 /** we use a function here that provides the difrent states of a nav item*/
-			var link=nav_state_link(v);
-			v.item.append(link);
+//			var link=nav_state_link(v);
+//			v.item.append(link);
 			list_root.append(v.item);
 		});
 	});

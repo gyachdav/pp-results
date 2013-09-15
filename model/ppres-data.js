@@ -75,7 +75,7 @@ function PPResData() {
 
 	var getAlignmentsByDatabaseTopMatch = function(db_name) {
 		var alis = getAlignments();
-		var topmatch_id = '';
+		var topmatch = '';
 		if (alis === undefined)
 			return topmatch_id;
 		jQuery.each(alis, function(i, v) {
