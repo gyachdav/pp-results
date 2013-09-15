@@ -1,7 +1,7 @@
 var NAVBAR = function(config) {
     var ul = jQuery('<ul/>').addClass('nav');
     jQuery.each(config.items, function(key, value) {
-	console.log(value[Object.keys(value)]);
+	// console.log(value[Object.keys(value)]);
 
 	if (typeof value[Object.keys(value)] === 'object') {
 	    var menu = jQuery('<li />').addClass('dropDown')

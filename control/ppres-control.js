@@ -70,16 +70,19 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		    path: '',
-		    name: 'xml_results?req_id=' + req_id,
-		    type: 'xml'
+      //             path: "https://dl.dropboxusercontent.com", //"localhost:",
+		    // name: '/u/51598079/xml_results', //'//'xml_results?req_id=' + req_id,
+		    // type: 'xml'
+       	 	path: "examples/",
+       	 	name: 'p53.xml',
+       	 	type: 'xml'
 		 },
 		mainObj = new PPResData();
 
 	NAVIGATION_DIV = "#nav";
 
 
-	jQuery.noConflict(); // recommended to avoid conflict wiht other libs
+	jQuery.noConflict(); // recommended to avoid conflict with other libs
 	NAVIGATION.setActiveItem(2);
 	NAVIGATION.show(jQuery(NAVIGATION_DIV));
 
@@ -192,11 +195,17 @@ var APP = (function() {
 						page: "GOAnnot",
 						data: mainObj
 					}).draw();
-					
+
 					break;
 				case 'tutorial':
 					page = new PAGE({
 						page: "Tutorial",
+						data: mainObj
+					}).draw();
+					break;
+				case 'litsearch':
+					page = new PAGE({
+						page: "Litsearch",
 						data: mainObj
 					}).draw();
 					break;
@@ -209,7 +218,8 @@ var APP = (function() {
 	};
 })();
 
-APP.path = '/ppres/';
+
+APP.path = '/~guyyachdav/pp-results/';
 
 
 

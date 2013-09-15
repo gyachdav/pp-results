@@ -68,7 +68,10 @@ var PAGE = function(argument) {
 			GOAnnot: [
 					"GOAnnotViewer",
 					'Quotes'
-			]
+			],
+        Litsearch: [
+            "LitsearchViewer"
+            ]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -97,7 +100,7 @@ var PAGE = function(argument) {
 						}
 					]
 				}
-				// , 
+				// ,
 				// {
 				// 	'Email': 'nothing'
 				// },
@@ -313,7 +316,74 @@ var PAGE = function(argument) {
 		delete(cached[elementName]);
 	};
 
-	var visualComponents = {
+	  var visualComponents = {
+        drawLitsearchViewer: function(argument) {
+            function toHtmlViewSingleResult(x) {
+                return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(
+                    '<div class="item-title">'+x.title+'</div><div class="item-rest">'+x.pubdate+', '+x.source+'</div>'));
+            }
+
+            function toHtmlView(summariesResults) {
+                var ret = jQuery('<ul>');
+                for (var i = 0; i < summariesResults.length; i++) {
+                    ret.append(toHtmlViewSingleResult(summariesResults[i]));
+                }
+                return ret;
+            }
+
+            var term = "p53"; //dataObj.getProteinName();
+
+            var numPages = 23;
+            var pageHtml;
+            var $cached_pages = jQuery('#cached-pages');
+
+            function genAndCachePage(term, num) {
+                var $previous = $cached_pages.find('ul').not('.invisible');
+                $previous.addClass('disappearing');
+
+                dataObj.searchLitsearchData(
+                    term,
+                    num - 1, //The interface is 1-indexed; the search is 0-indexed
+                    function(result) {
+                        $cached_pages.find('.alert').hide(0);
+
+                        dataObj.setLitsearchData(result.summaries);
+                        numPages = result.numPages;
+
+                        pageHtml = toHtmlView(dataObj.getLitsearchData());
+                        pageHtml.attr('id', 'page-'+num);
+
+                        $previous.addClass('invisible').hide(0);
+                        $cached_pages.append(pageHtml);
+                    },
+                    function() {
+                        $cached_pages.find('.alert').show(0);
+                    }
+                );
+
+            }
+
+            //Show first page
+            genAndCachePage(term, 1);
+
+            jQuery('#page-selection').bootpag({
+                total: Math.min(numPages, 23),
+                page: 1,
+                maxVisible: 10,
+                //href: "#page-{{number}}",
+                leaps: false
+            }).on("page", function(event, num) {
+                pageHtml = $cached_pages.find('#page-'+num);
+
+                if (!pageHtml.length) {
+                    genAndCachePage(term, num);
+                } else {
+                    $cached_pages.find('.alert').hide(0);
+                    $cached_pages.find('ul').css('display', 'none').addClass('invisible');
+                    pageHtml.removeClass('disappearing invisible').show(0);
+                }
+            });
+        },
 		drawSequenceViewer: function(argument) {
 			sv = new SEQUENCE_VIEWER({
 				targetDiv: argument.targetDiv,
@@ -472,7 +542,7 @@ var PAGE = function(argument) {
 			jQuery("#" + targetDiv).append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
-			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')) {
+			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryname) {
 				var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
 				var link = jQuery('<a>', {
 					text: _rec_name,
@@ -674,6 +744,10 @@ var PAGE = function(argument) {
 
 
 					(function() {
+						var defline = jQuery('.defline');
+						defline.text(dataObj.getDefLine());
+
+
 						var formatDivContainer = jQuery('.formats');
 						var jobId = dataObj.getJobID();
 						var formatDiv = jQuery('<div/>');
@@ -687,7 +761,7 @@ var PAGE = function(argument) {
 															   .attr('title', 'Complete data in the original flat text format.')
 															   .addClass('label label-warning outer')
 															   .text('TEXT'));
-						
+
 						formatDivContainer.append(formatDiv);
 
 					}());

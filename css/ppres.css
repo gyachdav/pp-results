@@ -1,5 +1,5 @@
 .arc path {
-  stroke: #fff;  
+  stroke: #fff;
 }
 
 .round-corners{
@@ -7,12 +7,12 @@
 }
 .summary{
   padding-right: 4%;
- } 
+ }
 
 .slice text {
   font-size: 16pt;
   font-family: Arial;
-}  
+}
 
 .inner {
   padding-top:25px;
@@ -41,7 +41,7 @@ span.border{
 
 
 div.load-div {
-    background-image:url('/ppres/assets/loader-inf.gif');
+    background-image:url('assets/loader-inf.gif');
     width: 128px;
     height: 78px;
     background-color: fff;
@@ -102,4 +102,33 @@ div.tablesorterPager input {
 	width: 50px;
 	border: 1px solid #330000;
 	text-align: center;
+}
+
+/*
+ * Litsearch
+ */
+
+#Litsearch #cached-pages ul {
+
+}
+
+#Litsearch #cached-pages ul.disappearing {
+    opacity: 0.3;
+}
+
+#Litsearch #cached-pages li {
+    padding-bottom: 8px;
+}
+
+#Litsearch #cached-pages li a:hover {
+    text-decoration: none;
+}
+
+#Litsearch #cached-pages li .item-title {
+    font-weight: bold;
+}
+
+#Litsearch #cached-pages li .item-rest {
+    margin-top: -2px;
+    padding-left: 16px;
 }

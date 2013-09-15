@@ -295,7 +295,7 @@ Feature.Alignment = function(_feature, _feature_provider, _feature_type) {
 	}
 
 	var _label = {
-		"featureLabel": "Aligned Target " + _feature.db + ":" + _feature.id,
+		"featureLabel": "Aligned Target " + _feature.db + ":" + _feature.entryname,
 		"typeCode": "Eval: " + _feature.eval,
 		"evidenceText": 'Alignment (NCBI-BLAST)',
 		"featureTypeLabel": " Matched Length: " + _feature.matchlen,

@@ -66,8 +66,7 @@ var NAVIGATION = (function() {
 
 		"Additional Services": [{
 				id: "litsearch",
-				text: "Literature Search",
-				st: "-2"
+				text: "Literature Search"
 			}
 		],
 
