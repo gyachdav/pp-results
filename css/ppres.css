@@ -41,7 +41,7 @@ span.border{
 
 
 div.load-div {
-    background-image:url('assets/loader-inf.gif');
+    background-image:url('../assets/loader-inf.gif');
     width: 128px;
     height: 78px;
     background-color: fff;
