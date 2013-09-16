@@ -76,9 +76,9 @@ function PPResData() {
 
 	var getAlignmentsByDatabaseTopMatch = function(db_name) {
 		var alis = getAlignments();
-		var topmatch = '';
+		var topmatch = undefined;
 		if (alis === undefined)
-			return topmatch_id;
+			return undefined;
 		jQuery.each(alis, function(i, v) {
 			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
 				topmatch = v;
@@ -96,10 +96,12 @@ function PPResData() {
 		protein = json_data.entry.protein;
 		organism = json_data.entry.organism;
 		topmatch =  getAlignmentsByDatabaseTopMatch('Swiss-Prot');
+	    if (topmatch){
 		recommendedName = topmatch.dbReference.entryname;
-	        proteinName = resolveJobName();
 	        proteinID = topmatch.dbReference.id;
 		defline = topmatch.defline.value;
+	    }
+	        proteinName = resolveJobName();
 		jobName = resolveJobName();
 
 	      

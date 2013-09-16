@@ -536,8 +536,6 @@ var PAGE = function(argument) {
 			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
 			jQuery("#" + targetDiv).append(accordionContainer);
 
-			//jQuery("#" + targetDiv).addClass('alert alert-warning');
-
 		},
 
 
@@ -547,14 +545,14 @@ var PAGE = function(argument) {
 			jQuery("#" + targetDiv).append("<h3>Summary</h3>");
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
-			if (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryname) {
+
+		    if ( (dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')!==undefined) && (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryName)) {
 				var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
 				var link = jQuery('<a>', {
 					text: _rec_name,
 					title: _rec_name,
 					href: "#",
 					click: function() {
-						//console.log(this);
 						window.open(url, '_blank');
 						window.focus;
 					}
