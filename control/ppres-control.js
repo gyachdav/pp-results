@@ -71,11 +71,8 @@ var APP = (function() {
 		debug = 0,
 		file_specs = {
 		    path: '/',
-//		    name: 'xml_results?req_id=' + req_id,
-//		    type: 'xml'
-//       	 	path: "examples/",
-       	 	name: 'p53',
-       	 	type: 'xml'
+		    name: 'xml_results?req_id=' + req_id,
+		    type: 'xml'
 		 },
 		mainObj = new PPResData();
 
