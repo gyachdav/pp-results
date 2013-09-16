@@ -354,7 +354,6 @@ var PAGE = function(argument) {
 
                         dataObj.setLitsearchData(result.summaries);
                         numPages = result.numPages;
-
                         pageHtml = toHtmlView(dataObj.getLitsearchData());
                         pageHtml.attr('id', 'page-'+num);
 
@@ -370,7 +369,6 @@ var PAGE = function(argument) {
 
             //Show first page
             genAndCachePage(term, 1);
-
             jQuery('#page-selection').bootpag({
                 total: Math.min(numPages, 23),
                 page: 1,
