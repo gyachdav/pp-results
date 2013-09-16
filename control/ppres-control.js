@@ -70,12 +70,12 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		    path: '',
-		    name: 'xml_results?req_id=' + req_id,
-		    type: 'xml'
+		    path: '/',
+//		    name: 'xml_results?req_id=' + req_id,
+//		    type: 'xml'
 //       	 	path: "examples/",
-//       	 	name: 'p53.xml',
-//       	 	type: 'xml'
+       	 	name: 'p53',
+       	 	type: 'xml'
 		 },
 		mainObj = new PPResData();
 
