@@ -13,6 +13,7 @@ function PPResData() {
 		organism = '',
 		jobName = '',
 		proteinName = '',
+		proteinID = '',
 		recommendedName = '',
 		defline = '',
 		ppJobId = -1,
@@ -96,9 +97,12 @@ function PPResData() {
 		organism = json_data.entry.organism;
 		topmatch =  getAlignmentsByDatabaseTopMatch('Swiss-Prot');
 		recommendedName = topmatch.dbReference.entryname;
+	        proteinName = resolveJobName();
+	        proteinID = topmatch.dbReference.id;
 		defline = topmatch.defline.value;
 		jobName = resolveJobName();
 
+	      
 	};
 
 	var resolveJobName = function() {
@@ -382,9 +386,16 @@ function PPResData() {
 		},
 		getProteinName: function() {
 			return proteinName;
+
 		},
 		setProteinName: function(name) {
 			proteinName = name;
+		},
+		getProteinID: function() {
+			return proteinID;
+		},
+		setProteinID: function(id) {
+			proteinID = id;
 		},
 
 		getRecommendedName: function() {
@@ -471,7 +482,7 @@ function PPResData() {
 		},
 
   searchLitsearchData: function(term, page, successFun, errorFun) {
-  	console.log(term);
+
       var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
       var PAGE_ARG = "&retmax=";
       var PAGE_SIZE = 10;
@@ -494,7 +505,7 @@ function PPResData() {
         }
         var startItem = (page * PAGE_SIZE);
         var url = SEARCH_URL + term + PAGE_ARG + PAGE_SIZE + START_ARG + startItem;
-
+	console.log(url);
         jQuery.ajax({
             async: true,
             timeout: 2000,
@@ -525,14 +536,13 @@ function PPResData() {
             url: url,
             dataType: "xml",
             success: function(xml) {
-                //debug: alert((new XMLSerializer()).serializeToString(xml));
+                //console.log((new XMLSerializer()).serializeToString(xml));
                 var $xml = jQuery(xml);
                 var ret = { numPages: searchResult.numPages };
 
                 ret.summaries = jQuery.map($xml.find('DocSum'), function (doc) {
                     var $doc = jQuery(doc);
                     var id = $doc.find('Id').text();
-
                     return {
                         'id': id,
                         'link': PUBMED_LINK + id,

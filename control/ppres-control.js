@@ -70,7 +70,7 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		    path: '/',
+		    path: '',
 		    name: 'xml_results?req_id=' + req_id,
 		    type: 'xml'
 		 },
@@ -215,8 +215,8 @@ var APP = (function() {
 	};
 })();
 
-
-APP.path = '/~guyyachdav/pp-results/';
+APP.path = '/ppres/';
+//APP.path = '/~guyyachdav/pp-results/';
 
 
 
