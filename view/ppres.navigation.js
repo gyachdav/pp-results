@@ -1,11 +1,6 @@
 var list_root;
 var navigation_items;
 var NAVIGATION = (function() {
-
-// added
-//	st: 	0=not run/reload,  1=show, 2=new data, 
-// 		-0 =dont know jet ...loading, -1=zero/ flatline result,  -2 =under construction, 
-
 	//var 
 	navigation_items = {
 		"views": [{
@@ -17,11 +12,11 @@ var NAVIGATION = (function() {
 		"structure annotation": [{
 				text: "Secondary Structure and Solvent Accessibility",
 				id: "secstruct",
-				st: "-0"
+				
 			}, {
 				id: "tmh",
 				text: "Transmembrane Helices",
-				st: "-0"
+				
 			},
 			//  {
 			// 	id: "nors",
@@ -30,11 +25,11 @@ var NAVIGATION = (function() {
 			{
 				id: "disorder",
 				text: "Protein Disorder and Flexibility",
-				st: "-0"
+				
 			}, {
 				id: "disulphide",
 				text: "Disulphide Bridges",
-				st: "-0"
+				
 			}
 			//  {
 			// 	id: "tmb",
@@ -44,23 +39,19 @@ var NAVIGATION = (function() {
 		
 		"Function Annotation": [{
 				id: "func",
-				text: "Effect of Point Mutations",
-				st: "-0" //HEAT_MAP.data === [] ? 0 : 1
+				text: "Effect of Point Mutations"
 			},
 
 			{
 				id: "goannotation",
 				text: "Gene Ontology Terms",
-				st: "-0" //getGOAnnotations() === {} ? 0 : 1
 			},
 			{
 				id: "subcell",
 				text: "Subcellular Localization",
-				st: "-0" //getSubCellLocations() === {} ? 0 : 1
 			}, {
 				id: "binding",
 				text: "Binding Sites",
-				st: "-0"
 			}
 		],
 
@@ -73,13 +64,11 @@ var NAVIGATION = (function() {
 		"Help": [{
 				id: "tutorial",
 				text: "Site Tutorial",
-				st: "1"
 			}
 		]
 
 	},
 		active_item = 2;
-//	var i
 		list_root = jQuery('<ul>');
 	list_root.attr('id', "nav_all");
 	jQuery.each(navigation_items, function(key, value) {
@@ -87,12 +76,17 @@ var NAVIGATION = (function() {
 		item.addClass("nav-header").text(key);
 		list_root.append(item);
 		jQuery.each(value, function(prop, v) {
-			v.item = jQuery('<li>');
-			v.item.attr('id', v.id)
-/** we use a function here that provides the difrent states of a nav item*/
-//			var link=nav_state_link(v);
-//			v.item.append(link);
-			list_root.append(v.item);
+			item = jQuery('<li>');
+			item.attr('id', v.id)
+			var link = jQuery('<a>', {
+				text: v.text,
+				title: v.text,
+				href: '#'
+			});
+			link.addClass("nav-link");
+			link.append(jQuery("<i/>").addClass("icon-chevron-right"));
+			item.append(link);
+			list_root.append(item);
 		});
 	});
 

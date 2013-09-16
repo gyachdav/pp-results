@@ -18,8 +18,9 @@ var ALI_VIEW = (function() {
 			));
 
 			jQuery.map(this.aliObj, function(target, index) {
-				var proteinId = chain = url='';
+				var prtoteinName = proteinId = chain = url='';
 				proteinId = target.id;
+				prtoteinName = target.entryname;
 				if (target.db.match(/pdb/i)) {
 					(__pdb) = target.id.split('_');
 					proteinId = __pdb[0];
@@ -31,8 +32,8 @@ var ALI_VIEW = (function() {
 
 				var link = jQuery('<a>', {
 					id:  url+proteinId,
-					text: proteinId+ " " + chain,
-					title: proteinId+ " " + chain,
+					text: prtoteinName+ " " + chain,
+					title: prtoteinName+ " " + chain,
 					href: "#",
 					click: function() {
 						window.open( this.id, '_blank');
