@@ -596,6 +596,11 @@ var PAGE = function(argument) {
 
 			// var domains = ["arch", "bact", "euka", "plant", "animal", "proka"];
 			var domains = ["arch", "bact", "euka"];
+
+
+			if (dataObj.getOrganismDomain() !='unknown')
+				domains = [dataObj.getOrganismDomain()];
+
 			for (var i in domains) {
 				var _curr_div;
 				var _curr_li = jQuery('<li><a data-toggle="tab" href="#' + domains[i] + '_localisation_container">' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
@@ -707,6 +712,9 @@ var PAGE = function(argument) {
 
 		return element;
 	};
+		function capitalize(s) {
+    			return s[0].toUpperCase() + s.slice(1);
+     		}
 
 	return {
 		getDefaultPage: function() {
@@ -746,7 +754,30 @@ var PAGE = function(argument) {
 
 					(function() {
 						var defline = jQuery('.defline');
-						defline.text(dataObj.getDefLine());
+						if (defline){
+							if (dl = dataObj.getDefLine())
+								defline.text( "Recommended Name: " + dl.match(/^(.+)OS\=.+$/)[1] );
+							
+								
+						}
+
+						// var organismDiv = jQuery('.organism');
+						// if (organismDiv){
+						// 	if (org = dataObj.getOrganismName())
+						// 		organismDiv.text( "Presumed Organism: " + capitalize(org.toLowerCase()) );
+						// }	
+
+
+						var subcellDiv = jQuery('.subcelllocdiv');
+						if (subcellDiv){
+							var domain = dataObj.getOrganismDomain();
+							var subcellLocation = dataObj.getSubCellLocations(domain);
+							if (subcellLocation){						
+								subcellDiv.text("Predicted subcellular localization: "+ subcellLocation[domain].localisation);
+								subcellDiv.append(" ("+SUBCELL_VIEW.linkToGO(subcellLocation[domain].goTermId)+")");
+							}
+							
+						}
 
 
 						var formatDivContainer = jQuery('.formats');

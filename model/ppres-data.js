@@ -31,7 +31,9 @@ function PPResData() {
 			xml: '',
 			json: ''
 		};
-
+	var setOrganism= function( _org ){
+			organism  = _org;
+		};
 	var setDataReady = function() {
 		data_ready = !data_ready;
 	};
@@ -93,16 +95,21 @@ function PPResData() {
 		sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
 		md5Seq = md5(sequence);
 		alignments = json_data.entry.aliProviderGroup.alignment;
-		protein = json_data.entry.protein;
-		organism = json_data.entry.organism;
+		protein = json_data.entry.protein;		
+		setOrganism(json_data.entry.organism);
+
+		if (protein.recommendedName.fullName !='unknown')
+			defline  = protein.recommendedName.fullName;
+
+		if (json_data.entry.accession != 'unknown')
+			recommendedName = json_data.entry.accession;
+
+		// TODO URGENT: put protein id into XML
 		topmatch =  getAlignmentsByDatabaseTopMatch('Swiss-Prot');
-	    if (topmatch){
-		recommendedName = topmatch.dbReference.entryname;
-	        proteinID = topmatch.dbReference.id;
-		defline = topmatch.defline.value;
-	    }
-	        proteinName = resolveJobName();
-		jobName = resolveJobName();
+        if (topmatch)
+            proteinID = topmatch.dbReference.id;
+
+		 proteinName = jobName = resolveJobName();
 
 	      
 	};
@@ -408,8 +415,12 @@ function PPResData() {
 		},
 
 		getOrganismName: function() {
-			return (this.organism.name);
+			return (organism.name);
 		},
+		getOrganismDomain: function() {
+			return (organism.domain);
+		},
+	
 
 		// Look up feature by feature types
 		getFeatureByType: function(featureName) {

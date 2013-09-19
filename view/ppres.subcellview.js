@@ -52,6 +52,7 @@ var SUBCELL_VIEW = (function() {
 		}
 
 	return {
+		linkToGO: linkToGO,
 		getDomainFullName: function (domain){
 			return (Domains[domain]);
 		},
