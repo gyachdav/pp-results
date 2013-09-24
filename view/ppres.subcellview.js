@@ -113,11 +113,11 @@ var SUBCELL_VIEW = (function() {
 
 			tmpDomain = Object.keys(domain_to_show)[0];
 			_tmp_pred_str = 'Predicted localisation for the ' + this.getDomainFullName(tmpDomain) +
-				' domain: ' + resolveName(domain_to_show[tmpDomain].localisation) +
+				' domain: ' + this.resolveName(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: ' + domain_to_show[tmpDomain].goTermId + ') Prediction confidence ' + domain_to_show[tmpDomain].score;
 
 			_tmp_pred_html = 'Predicted localization for the ' + this.getDomainFullName(tmpDomain) +
-				' domain: ' + resolveName(domain_to_show[tmpDomain].localisation) +
+				' domain: ' + this.resolveName(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: '+linkToGO(domain_to_show[tmpDomain].goTermId)+') Prediction confidence ' + domain_to_show[tmpDomain].score;
 			container = jQuery("<div>").attr('id', tmpDomain+"_localisation_container");
 			tmpImg = getPathToImage([tmpDomain], domain_to_show[tmpDomain].localisation);
