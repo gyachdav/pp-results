@@ -776,12 +776,15 @@ var PAGE = function(argument) {
 									    text: t_subcell_text,
 									    title: 'See prediction details',
 									    href : '#',
-									    click: function(){  APP.showPage('subcell'); return false;}
+									    click: function(){  
+									    	APP.showPage('subcell'); 
+									    	jQuery(".nav-list").children(".active").removeClass("active");
+											jQuery(".nav-list").children("#subcell").addClass("active");
+											return false;
+										}
 									});
-								// var subcell_link_span = jQuery('<span>').attr('id', 'subcell').append(subcell_link);
 
 								subcellDiv.text("Predicted Subcellular Localization: ").append(subcell_link);
-								// subcellDiv.append(" ("+SUBCELL_VIEW.linkToGO(subcellLocation[domain].goTermId)+")");
 								
 							}
 						}
