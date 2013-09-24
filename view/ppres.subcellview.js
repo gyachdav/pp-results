@@ -8,7 +8,8 @@ var SUBCELL_VIEW = (function() {
 		"animal": "Animal",
 		"bact": "Bacteria",
 		"proka": "Prokaryotic",
-		"arch": "Archaea"
+		"arch": "Archaea",
+		"virus": "Virus"
 	}
 
 		function linkToGO(go_term) {
@@ -57,6 +58,8 @@ var SUBCELL_VIEW = (function() {
 			return (Domains[domain]);
 		},
 		localisationDiv: function(domain_to_show) {
+			console.log (domain_to_show);
+
 			tmpDomain = Object.keys(domain_to_show)[0];
 			_tmp_pred_str = 'Predicted localisation for the ' + this.getDomainFullName(tmpDomain) +
 				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +

@@ -331,7 +331,6 @@ var PAGE = function(argument) {
                 return ret;
             }
 
-	    // var term = "p53"; //dataObj.getProteinName();
 
 	    var tmpProtName  = dataObj.getProteinName();
 	    if (tmpProtName.match(/\w+_\w+/))
@@ -412,10 +411,7 @@ var PAGE = function(argument) {
 		drawHeatmapViewer: function(argument) {
 
 			var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
-/*			jQuery.getJSON('proxy.php', {
-				url: dataToFetch
-			},
-*/
+
 
 			jQuery.getJSON(dataToFetch,
 
@@ -465,7 +461,7 @@ var PAGE = function(argument) {
 			});
 		},
 		drawFeatureViewer: function(argument) {
-			// TODO this wil have to be refactored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
+			// TODO this will have to be re-factored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
 			if (argument.showAlignment)
 				quotes.push(dataObj.getReference(dataObj.getJsonData().entry.aliProviderGroup.ref));
 
@@ -544,21 +540,21 @@ var PAGE = function(argument) {
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
 
-		    if ( (dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')!==undefined) && (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryName)) {
-				var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
-				var link = jQuery('<a>', {
-					text: _rec_name,
-					title: _rec_name,
-					href: "#",
-					click: function() {
-						window.open(url, '_blank');
-						window.focus;
-					}
-				});
-				table.append(jQuery('<tr/>')
-					.append(jQuery('<td/>').text('Recommended Name'))
-					.append(jQuery('<td/>').append(link)));
-			}
+		 //    if ( (dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')!==undefined) && (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryName)) {
+			// 	var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
+			// 	var link = jQuery('<a>', {
+			// 		text: _rec_name,
+			// 		title: _rec_name,
+			// 		href: "#",
+			// 		click: function() {
+			// 			window.open(url, '_blank');
+			// 			window.focus;
+			// 		}
+			// 	});
+			// 	table.append(jQuery('<tr/>')
+			// 		.append(jQuery('<td/>').text('Recommended Name'))
+			// 		.append(jQuery('<td/>').append(link)));
+			// }
 
 			seqModal = new MODAL({
 				modalName: 'SequenceViewer',
@@ -576,6 +572,9 @@ var PAGE = function(argument) {
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
 			if (arrAlignments > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
+			if (dataObj.getOrganismName)
+				table.append("<tr><td>Likely organism</td><td>" + dataObj.getOrganismName() + "</td></tr>");
+		
 			jQuery("#" + targetDiv).append(table);
 
 			return (jQuery("#" + targetDiv)).html();
@@ -598,18 +597,26 @@ var PAGE = function(argument) {
 			var domains = ["arch", "bact", "euka"];
 
 
-			if (dataObj.getOrganismDomain() !='unknown')
-				domains = [dataObj.getOrganismDomain()];
+			active_domain = 'euka';
+			if ((dataObj.getOrganismDomain() ) && (dataObj.getOrganismDomain() !='unknown'))
+				active_domain = domains = [dataObj.getOrganismDomain()];
+			
+			var seq_length_restrictions = ': prediction missing. Re-running this job will most likely generate subcellular localization prediction.';
+			if (dataObj.getSequence().length > 2045 )
+				seq_length_restrictions = ': this service cannot provide predictions for sequences longer than 2045 residues.';
+			if (dataObj.getSequence().length < 10 )
+				seq_length_restrictions = ': this service cannot provide predictions for sequences shorter than 10 residues.';
 
 			for (var i in domains) {
 				var _curr_div;
 				var _curr_li = jQuery('<li><a data-toggle="tab" href="#' + domains[i] + '_localisation_container">' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
 				var prediction = dataObj.getSubCellLocations(domains[i]);
-				if (!prediction) _curr_div = jQuery("<div />").text("Data unavailable");
+				if (domains[i] =='virus') _curr_div = jQuery("<div />").addClass('alert alert-error').text("Prediction unavailable for virus proteins");
+				else if (!prediction) _curr_div = jQuery("<div />").addClass('alert alert-error').text("Data unavailable"+seq_length_restrictions);
 				else _curr_div = SUBCELL_VIEW.localisationDiv(prediction);
 				_curr_div.addClass("tab-pane");
 				content_div.append(_curr_div);
-				if (domains[i] == 'euka') {
+				if (domains[i] == active_domain) {
 					_curr_li.addClass('active');
 					_curr_div.addClass('active');
 				}
@@ -714,7 +721,7 @@ var PAGE = function(argument) {
 	};
 		function capitalize(s) {
     			return s[0].toUpperCase() + s.slice(1);
-     		}
+     	}
 
 	return {
 		getDefaultPage: function() {
@@ -754,29 +761,45 @@ var PAGE = function(argument) {
 
 					(function() {
 						var defline = jQuery('.defline');
+						// defline.
 						if (defline){
-							if (dl = dataObj.getDefLine())
-								defline.text( "Recommended Name: " + dl.match(/^(.+)OS\=.+$/)[1] );
-							
-								
+							var rec_name = '';
+							var t_match;
+							var dl = dataObj.getDefLine();
+							 if (t_match =  dl.match(/^(.+)OS\=.+$/)){
+							 	rec_name = t_match[1];
+								if (rec_name){
+									rec_name_link = jQuery('<a>',{
+									    text: rec_name,
+									    title: 'Open '+dataObj.getProteinID()+' in UniProtKB',
+									    href: 'http://www.uniprot.org/uniprot/'+dataObj.getProteinID(),
+									    target: '_blank'
+									});
+									defline.text( "Recommended Name: ").append(rec_name_link);
+								}	
+							}
 						}
 
-						// var organismDiv = jQuery('.organism');
-						// if (organismDiv){
-						// 	if (org = dataObj.getOrganismName())
-						// 		organismDiv.text( "Presumed Organism: " + capitalize(org.toLowerCase()) );
-						// }	
-
-
+						
 						var subcellDiv = jQuery('.subcelllocdiv');
 						if (subcellDiv){
 							var domain = dataObj.getOrganismDomain();
 							var subcellLocation = dataObj.getSubCellLocations(domain);
-							if (subcellLocation){						
-								subcellDiv.text("Predicted subcellular localization: "+ subcellLocation[domain].localisation);
-								subcellDiv.append(" ("+SUBCELL_VIEW.linkToGO(subcellLocation[domain].goTermId)+")");
+							if ((subcellLocation) && (subcellLocation[domain])){	
+
+								var t_subcell_text = capitalize (subcellLocation[domain].localisation);
+								subcell_link = jQuery('<a>',{
+									    text: t_subcell_text,
+									    title: 'See prediction details',
+									    href : '#',
+									    click: function(){  APP.showPage('subcell'); return false;}
+									});
+								// var subcell_link_span = jQuery('<span>').attr('id', 'subcell').append(subcell_link);
+
+								subcellDiv.text("Predicted Subcellular Localization: ").append(subcell_link);
+								// subcellDiv.append(" ("+SUBCELL_VIEW.linkToGO(subcellLocation[domain].goTermId)+")");
+								
 							}
-							
 						}
 
 

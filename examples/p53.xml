@@ -4,7 +4,7 @@
 <accession>1</accession>
 <name>query</name>
 <protein>
-    <recommendedName><fullName>unknown protein name</fullName></recommendedName>
+    <recommendedName><fullName>unknown</fullName></recommendedName>
 </protein>
 <organism>
     <entryKey entryKeyValue="1" />
