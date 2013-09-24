@@ -415,7 +415,8 @@ function PPResData() {
 		},
 
 		getOrganismName: function() {
-			return (organism.name);
+			if ((organism.name) &&(organism.name.text))
+			return (organism.name.text);
 		},
 		getOrganismDomain: function() {
 			return (organism.domain);
