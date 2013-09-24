@@ -540,22 +540,6 @@ var PAGE = function(argument) {
 			var table = jQuery("<table/>");
 			table.addClass("table table-striped");
 
-		 //    if ( (dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot')!==undefined) && (_rec_name = dataObj.getAlignmentsByDatabaseTopMatch('Swiss-Prot').dbReference.entryName)) {
-			// 	var url = 'http://www.uniprot.org/uniprot/' + _rec_name;
-			// 	var link = jQuery('<a>', {
-			// 		text: _rec_name,
-			// 		title: _rec_name,
-			// 		href: "#",
-			// 		click: function() {
-			// 			window.open(url, '_blank');
-			// 			window.focus;
-			// 		}
-			// 	});
-			// 	table.append(jQuery('<tr/>')
-			// 		.append(jQuery('<td/>').text('Recommended Name'))
-			// 		.append(jQuery('<td/>').append(link)));
-			// }
-
 			seqModal = new MODAL({
 				modalName: 'SequenceViewer',
 				modalTitle: "Query Sequence"
@@ -572,7 +556,7 @@ var PAGE = function(argument) {
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
 			if (arrAlignments > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
-			if (dataObj.getOrganismName)
+			if (dataObj.getOrganismName())
 				table.append("<tr><td>Likely organism</td><td>" + dataObj.getOrganismName() + "</td></tr>");
 		
 			jQuery("#" + targetDiv).append(table);
