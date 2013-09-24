@@ -771,7 +771,7 @@ var PAGE = function(argument) {
 							var subcellLocation = dataObj.getSubCellLocations(domain);
 							if ((subcellLocation) && (subcellLocation[domain])){	
 
-								var t_subcell_text = capitalize (subcellLocation[domain].localisation);
+								var t_subcell_text = SUBCELL_VIEW.resolveName (subcellLocation[domain].localisation);
 								subcell_link = jQuery('<a>',{
 									    text: t_subcell_text,
 									    title: 'See prediction details',
