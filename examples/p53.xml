@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <predictprotein xmlns="http://www.predictprotein.org/predictprotein" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.predictprotein.org http://predictprotein.org/predictprotein-xsd/predictprotein.xsd">
 <entry dataset="PPJobDB" created="2013-09-14" modified="2013-09-14" version="1">
-<accession>1</accession>
+<accession>unknown</accession>
 <name>query</name>
 <protein>
     <recommendedName><fullName>unknown</fullName></recommendedName>
