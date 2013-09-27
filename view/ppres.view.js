@@ -10,14 +10,14 @@ var PAGE = function(argument) {
 						showAlignment: true
 					}
 				},
-				// 'SubcellLocViewer',
-				'SummaryTable',
+					'SummaryTable',
 					'SequenceViewer',
 					'AlignmentTable',
 					'AlignmentPDBTable',
 					'AAConsistency',
 					'SSConsistency',
 					'Quotes',
+					'DisuqsViewer'
 			],
 			SecondaryStructure: [{
 					FeatureViewer: {
@@ -556,11 +556,13 @@ var PAGE = function(argument) {
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
 			if (arrAlignments > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
-			if (dataObj.getOrganismName())
-				table.append("<tr><td>Likely organism</td><td>" + dataObj.getOrganismName() + "</td></tr>");
+			
+			if (dataObj.getOrganismName()){
+					table.append("<tr><td>Likely Organism</td><td> <a title='Link to the NCBI taxonomy database' href='http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id="+dataObj.getOrganismTaxID()+"' target='_blank'>"+dataObj.getOrganismName()+"</a></td></tr>");
+
+			}
 		
 			jQuery("#" + targetDiv).append(table);
-
 			return (jQuery("#" + targetDiv)).html();
 		},
 
@@ -680,6 +682,27 @@ var PAGE = function(argument) {
 			});
 
 			jQuery("#_goannot_cntnt_img").show();
+		},
+		drawDisuqsViewer: function(argument){
+			// existance of recommended name indicates
+			// that this is a swissprot protein
+			var recName = dataObj.getRecommendedName();
+			if (!recName || 0 === recName.length)
+				return;
+			if (!recName || /^\s*$/.test(recName))
+				return;
+
+
+			disqus_url =  'https://'+dataObj.getMD5Seq();
+			disqus_title =   dataObj.getProteinName();
+			jQuery("#disqus_div").show().removeClass('hidden');
+
+			(function() {
+			    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+
 		}
 	};
 
@@ -818,6 +841,8 @@ var PAGE = function(argument) {
 						if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
 					});
 				});
+				
+
 			} else {
 				var pageHTML = cacheFetch(currentPage)
 				mainContainerDiv.append(pageHTML);

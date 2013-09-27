@@ -415,11 +415,17 @@ function PPResData() {
 		},
 
 		getOrganismName: function() {
-			if ((organism.name) &&(organism.name.text))
-			return (organism.name.text);
+			if ((organism.name) &&(organism.name.text) &&(organism.name.text !='unknown'))
+				return (organism.name.text);
+			return undefined;
 		},
 		getOrganismDomain: function() {
 			return (organism.domain);
+		},
+		getOrganismTaxID: function() {
+			if (organism.dbReference.id != -1)
+				return (organism.dbReference.id);
+			return undefined;
 		},
 	
 
