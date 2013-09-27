@@ -54,6 +54,57 @@ var SUBCELL_VIEW = (function() {
 
 	return {
 		linkToGO: linkToGO,
+		resolveName: function(prediction){
+			var predictionName = prediction;
+			switch (prediction) {
+				  case 'endoplasmicReticulum':
+				    predictionName = 'Endoplasmic Reticulum';
+				    break;
+				  case 'endoplasmicReticulumMembrane':
+				    predictionName = 'Endoplasmic Reticulum Membrane';
+				    break;
+				  case 'golgiApparatus':
+				    predictionName = 'Golgi Apparatus';
+				    break;
+				case 'golgiApparatusMembrane':
+				    predictionName = 'Golgi Apparatus Membrane';
+				    break;
+				case 'innerMembrane':
+				    predictionName = 'Inner Membrane';
+				    break;
+				case 'mitochondriaMembrane':
+				    predictionName = 'mitochondria Membrane';
+				    break;
+				case 'nucleusMembrane':
+				    predictionName = 'Nucleus Membrane';
+				    break;
+				case 'outerMembrane':
+				    predictionName = 'Outer Membrane';
+				    break;
+				case 'peroxisomeMembrane':
+				    predictionName = 'Peroxisome Membrane';
+				    break;
+				case 'plasmaMembrane':
+				    predictionName = 'Plasma Membrane';
+				    break;
+				case 'vacuoleMembrane':
+				    predictionName = 'Vacuole Membrane';
+				    break;
+				case 'dNABinding':
+				    predictionName = 'DNA Binding';
+				    break;
+				case 'extraCellular':
+				    predictionName = 'Extra Cellular';
+				    break;
+				case 'notDNABinding':
+				    predictionName = 'Not DNAB inding';
+				    break;
+				  default:
+				    predictionName = capitalize(prediction);
+				    break;
+			}
+			return (predictionName);
+		},
 		getDomainFullName: function (domain){
 			return (Domains[domain]);
 		},
@@ -62,11 +113,11 @@ var SUBCELL_VIEW = (function() {
 
 			tmpDomain = Object.keys(domain_to_show)[0];
 			_tmp_pred_str = 'Predicted localisation for the ' + this.getDomainFullName(tmpDomain) +
-				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +
+				' domain: ' + this.resolveName(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: ' + domain_to_show[tmpDomain].goTermId + ') Prediction confidence ' + domain_to_show[tmpDomain].score;
 
 			_tmp_pred_html = 'Predicted localization for the ' + this.getDomainFullName(tmpDomain) +
-				' domain: ' + capitalize(domain_to_show[tmpDomain].localisation) +
+				' domain: ' + this.resolveName(domain_to_show[tmpDomain].localisation) +
 				' (GO term ID: '+linkToGO(domain_to_show[tmpDomain].goTermId)+') Prediction confidence ' + domain_to_show[tmpDomain].score;
 			container = jQuery("<div>").attr('id', tmpDomain+"_localisation_container");
 			tmpImg = getPathToImage([tmpDomain], domain_to_show[tmpDomain].localisation);
