@@ -81,12 +81,21 @@ function PPResData() {
 		var topmatch = undefined;
 		if (alis === undefined)
 			return undefined;
-		jQuery.each(alis, function(i, v) {
-			if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
-				topmatch = v;
+
+		if( Object.prototype.toString.call( alis ) === '[object Array]' ) {
+			jQuery.each(alis, function(i, v) {
+				if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
+					topmatch = v;
+					return (false);
+				}
+			});
+		}else{
+			if ((alis.dbReference.type.match(new RegExp(db_name, 'i'))) && (alis.identity.value == 1)) {
+				topmatch = alis;
 				return (false);
 			}
-		});
+		}
+		
 		return (topmatch);
 	};
 
@@ -317,18 +326,25 @@ function PPResData() {
 		getAlignmentsByDatabase: function(db_name) {
 			var alis = this.getAlignments();
 			var count = 0;
-			jQuery.each(alis, function(i, v) {
-				if (v.dbReference.type.match(new RegExp(db_name, 'i'))) {
-					console.log(v.dbReference.id + "\t" + v.identity.value);
-					count++;
-				}
-			});
+			
+			if( Object.prototype.toString.call( alis ) === '[object Array]' ) {
+				jQuery.each(alis, function(i, v) {
+					if (v.dbReference.type.match(new RegExp(db_name, 'i'))) 
+						count++;
+				});
+			}else{
+				if (alis.dbReference.type.match(new RegExp(db_name, 'i')))
+						count++;
+			}
 			return (count);
 		},
 
 
 		getAlignmentsCount: function() {
-			return (this.getAlignments().length);
+			if( Object.prototype.toString.call( this.getAlignments() ) === '[object Array]' ) 
+				return (this.getAlignments().length);
+			else
+				return (1);
 		},
 
 		getXMLData: function() {
@@ -362,20 +378,35 @@ function PPResData() {
 		getAlignmentLocations: function(database) {
 			var alis = this.getAlignments();
 			var locations_array = [];
-			jQuery.each(alis, function(index, alignment) {
-				if (database && alignment.dbReference.type.toUpperCase() != database.toUpperCase())
-					return true;
-				locations_array.push({
-					begin: parseInt(alignment.queryStart.value),
-					end: parseInt(alignment.queryEnd.value),
-					id: alignment.dbReference.id,
-					entryname: alignment.dbReference.entryname,
-					db: alignment.dbReference.type,
-					eval: alignment.expect.value,
-					matchlen: alignment.matchLen.value,
-					identity: alignment.identity.value
+
+
+			if( Object.prototype.toString.call( alis ) === '[object Array]' ) {
+				jQuery.each(alis, function(index, alignment) {
+					if (database && alignment.dbReference.type.toUpperCase() != database.toUpperCase())
+						return true;
+					locations_array.push({
+						begin: parseInt(alignment.queryStart.value),
+						end: parseInt(alignment.queryEnd.value),
+						id: alignment.dbReference.id,
+						entryname: alignment.dbReference.entryname,
+						db: alignment.dbReference.type,
+						eval: alignment.expect.value,
+						matchlen: alignment.matchLen.value,
+						identity: alignment.identity.value
+					});
 				});
-			});
+			}else{
+				locations_array.push({
+						begin: parseInt(alis.queryStart.value),
+						end: parseInt(alis.queryEnd.value),
+						id: alis.dbReference.id,
+						entryname: alis.dbReference.entryname,
+						db: alis.dbReference.type,
+						eval: alis.expect.value,
+						matchlen: alis.matchLen.value,
+						identity: alis.identity.value
+					});
+			}
 			return (locations_array);
 		},
 		convertIDtoURL: function(aliObj) {

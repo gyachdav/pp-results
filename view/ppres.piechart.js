@@ -19,7 +19,7 @@ var PIE_CHART = (function() {
 					};
 			});
 
-			console.log(dataArr);
+			// console.log(dataArr);
 			return this;
 		},
 
