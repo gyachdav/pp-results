@@ -73,7 +73,7 @@ var SUBCELL_VIEW = (function() {
 				    predictionName = 'Inner Membrane';
 				    break;
 				case 'mitochondriaMembrane':
-				    predictionName = 'mitochondria Membrane';
+				    predictionName = 'Mitochondria Membrane';
 				    break;
 				case 'nucleusMembrane':
 				    predictionName = 'Nucleus Membrane';
