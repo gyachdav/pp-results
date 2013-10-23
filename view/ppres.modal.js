@@ -2,6 +2,9 @@ var MODAL = function(config) {
     var modalName = config.modalName,
         modalContent = config.content;
     modalTitle = config.modalTitle;
+    modalDialog = config.modalDialog;
+
+    var dialog_answer = -1;
 
     var modalDiv = jQuery('<div />')
         .addClass("modal hide fade")
@@ -28,5 +31,50 @@ var MODAL = function(config) {
         .attr("data-dismiss", "modal")
         .html('Close')));
     jQuery('#modal-container').append(modalDiv);
+
+
+    if (modalDialog){
+        tmp_div = jQuery(".modal-footer");
+        tmp_div.empty();
+        tmp_div.append(jQuery('<button/>')
+        .addClass('btn btn-primary')
+        .attr('id','btn-yes')
+        .html('Yes'));
+        tmp_div.append(jQuery('<button/>')
+        .addClass('btn btn-danger')
+        .attr('id','btn-no')
+        .html('No'));
+
+
+        jQuery('#btn-yes').on('click', function(e) {
+            e.preventDefault();
+            dialog_answer = true;
+            modalDiv.modal('toggle');
+        });
+
+
+        jQuery('#btn-no').on('click', function(e) {
+            e.preventDefault();
+            dialog_answer = false;
+            modalDiv.modal('toggle');
+        });
+
+        jQuery('.close').on('click', function(){
+            dialog_answer = -1;
+        });
+
+    }
+
+    if (modalContent)
+        jQuery('.modal-body').text(modalContent);
+
+    return{
+        getDialogueAnswer: function getDialogueAnswer(){
+            return    dialog_answer;
+        }, 
+        getModalDiv: function getModalDiv () {
+           return    modalDiv;
+        }
+    }
 
 };

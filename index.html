@@ -1,75 +1,78 @@
 <head>
-<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
-<link rel="stylesheet" href="vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
-<link rel="stylesheet" href="vendor/jquery/jquery-ui.css" />
-<link rel="stylesheet" href="css/ppres.css" />
-<!-- <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css" /> -->
-<link rel="stylesheet" href="css/tablesorter/style.css" />
-<title>PredictProtein Results</title>
+	<script type="text/javascript">
+		var disqus_shortname = 'predictprotein';
+		var disqus_title  = '';
+		var disqus_url = '';
+	</script>
+	<script language="JavaScript" type="text/javascript" src="/javascript/jquery/jquery.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="/javascript/underscore/underscore-min.js"></script>
+	<link rel="stylesheet" href="/ppres/vendor/biojs/dependencies/jquery/jquery.tooltip.css"/>
+	<link rel="stylesheet" href="/ppres/vendor/jquery/jquery-ui.css" />
+	<link rel="stylesheet" href="/ppres/vendor/jquery/jquery.iviewer.css " />
+
+	<link rel="stylesheet" href="/ppres/css/ppres.css" />
+	<link rel="stylesheet" href="/ppres/css/bootstrap/css/docs.css">
+	<link rel="stylesheet" href="/style/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/style/bootstrap/css/bootstrap-responsive.min.css" />
+	<link rel="stylesheet" href="/ppres/css/tablesorter/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-
-<div id='msg'></div>
-<div id='err'></div>
-
-<h1>Dashboard Overview for <span class=".name">CD44_HUMAN</span></h1>
-<div id='FeatureViewer'>Loading </div>
-<div id="main_container" style="display:none;">
-	<hr>
-	<h1> Prediction Summary</h1>
-	<div id='summary_container' class=""></div>
-	<div style="clear:both;"/>
-	<hr>
-	<h1> Sub-cellular Localization Prediction</h1>
-	<div id='cell' ></div>
-	<hr>
-	<h1> Aligned Proteins</h1>
-	<div id='alignments' class=""  style= "display:block;"></div>
-	<hr>
+<input type='hidden' id='req_id' value='%REQ_ID%' />
+<input type='hidden' id='req_name' value='%REQ_NAME%' />
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div id="nav" class="span2 bs-docs-sidebar" >
+		</div>
+		<div class="span10 inner">
+			<div  id='err' class='err' width=100%></div>
+			<div  class='warn'></div>
+			<div  class='info'></div>
+			<div class='load-div'></div>
+			<div id='content'></div>
+		</div>
+  </div>
 </div>
-
-
-<script type="text/javascript">
-jQuery(window).load(function (){
-// jQuery(document).ready( function(){
-	APP.init();
-	jQuery("#main_container").show();
-	
-});
-</script>
-
-<script language="JavaScript" type="text/javascript" src="vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor//d3/d3.v3.min.js"></script>
-
-
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/Biojs.FeatureViewer.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
- 
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.delegate.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery.url.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/raphael.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/canvg.js"></script>
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/graphics/rgbcolor.js"></script>
-
-<script language="JavaScript" type="text/javascript" src="vendor/biojs/dependencies/jquery/jquery-ui-1.8.2.custom.min.js" ></script>
-<script language="JavaScript" type="text/javascript" src="library/jquery.xml2json.js"></script>
-<script language="JavaScript" type="text/javascript" src="library/jquery.tablesorter.min.js"></script>
-<script language="JavaScript" type="text/javascript" src="model/ppres-data.js"></script>
-<script language="JavaScript" type="text/javascript" src="view/ppres.alignview.js"></script>
-<script language="javascript" type="text/javascript" src="view/ppres.subcellview.js"></script>
-<script language="javascript" type="text/javascript" src="view/ppres.load_first.js"></script>
-<script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
-<script language="JavaScript" type="text/javascript" src="view/ppres.alignview.js"></script>
-<script language="javascript" type="text/javascript" src="view/ppres.navigation.js"></script>
-<script language="JavaScript" type="text/javascript" src="control/ppres-control.js"></script>
-<script language="JavaScript" type="text/javascript" src="view/ppres.featureviewer.js"></script>
-<script language="JavaScript" type="text/javascript" src="view/ppres.piechart.js"></script>
-<script language="javascript" type="text/javascript" src="view/ppres.load_last.js"></script>
+<div id="modal-container"></div>
 
 
 
 
-</body>
+<script language="JavaScript" type="text/javascript" src="/javascript/d3/d3.v3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/javascript/bootstrap/bootstrap-responsive.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/javascript/bootpag/jquery.bootpag.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/jquery/jquery-migrate-1.1.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/jquery/jquery-ui.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/jquery/jquery.mousewheel.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/jquery/jquery.iviewer.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/Biojs.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/Biojs.FeatureViewer.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/Biojs.Sequence.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.tooltip.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.bgiframe.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.dimensions.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/jquery/jquery.url.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/graphics/raphael.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/graphics/canvg.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/vendor/biojs/dependencies/graphics/rgbcolor.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/library/jquery.xml2json.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/library/jquery.tablesorter.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/library/jquery.tablesorter.pager.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/library/javascript.md5.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/model/ppres-data.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/view/ppres.piechart.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/view/ppres.alignview.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.subcellview.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.navigation.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.heatmapview.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.modal.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.sequenceview.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.navbar.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.namechange.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.goannotview.js"></script>
+<script language="javascript" type="text/javascript" src="/ppres/view/ppres.view.js"></script>
+<script type="text/javascript" async="" src="//predictprotein.disqus.com/embed.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="/ppres/control/ppres-control.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ppres/view/ppres.featureviewer.js"></script>
+

@@ -70,8 +70,8 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		    path: '',
-		    name: 'xml_results?req_id=' + req_id,
+		    path: 'examples/',
+		    name: 'CL12A_HUMAN.xml',
 		    type: 'xml'
 		 },
 		mainObj = new PPResData();

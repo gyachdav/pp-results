@@ -10,14 +10,14 @@ var PAGE = function(argument) {
 						showAlignment: true
 					}
 				},
-					'SummaryTable',
-					'SequenceViewer',
-					'AlignmentTable',
-					'AlignmentPDBTable',
-					'AAConsistency',
-					'SSConsistency',
-					'Quotes',
-					'DisuqsViewer'
+				'SummaryTable',
+				'SequenceViewer',
+				'AlignmentTable',
+				'AlignmentPDBTable',
+				'AAConsistency',
+				'SSConsistency',
+				'Quotes',
+				'DisuqsViewer'
 			],
 			SecondaryStructure: [{
 					FeatureViewer: {
@@ -28,50 +28,46 @@ var PAGE = function(argument) {
 					'SSConsistency': '',
 
 				}, 'SolvAcc',
-					'Quotes',
+				'Quotes',
 			],
 			Transmembrane: [{
-					'FeatureViewer': {
-						providers: ["PHDhtm"],
-						showAlignment: false
-					}
-				}, 'Quotes',
-			],
+				'FeatureViewer': {
+					providers: ["PHDhtm"],
+					showAlignment: false
+				}
+			}, 'Quotes', ],
 			Disorder: [{
-					'FeatureViewer': {
-						providers: ["PROFbval", "Ucon", "NORSnet", "MD"],
-						showAlignment: false
-					}
-				}, 'Quotes'
-			],
+				'FeatureViewer': {
+					providers: ["PROFbval", "Ucon", "NORSnet", "MD"],
+					showAlignment: false
+				}
+			}, 'Quotes'],
 			Binding: [{
-					'FeatureViewer': {
-						providers: ["ISIS", "DISIS"],
-						showAlignment: false
-					}
-				}, 'Quotes',
-			],
+				'FeatureViewer': {
+					providers: ["ISIS", "DISIS"],
+					showAlignment: false
+				}
+			}, 'Quotes', ],
 			Disulphide: [{
-					'FeatureViewer': {
-						providers: ["DISULFIND"],
-						showAlignment: false
-					}
-				}, 'Quotes',
-			],
+				'FeatureViewer': {
+					providers: ["DISULFIND"],
+					showAlignment: false
+				}
+			}, 'Quotes', ],
 			Heatmap: [
-					'HeatmapViewer'
+				'HeatmapViewer'
 			],
 			SubcellLoc: [
-					"SubcellLocViewer",
-					'Quotes'
+				"SubcellLocViewer",
+				'Quotes'
 			],
 			GOAnnot: [
-					"GOAnnotViewer",
-					'Quotes'
+				"GOAnnotViewer",
+				'Quotes'
 			],
-        Litsearch: [
-            "LitsearchViewer"
-            ]
+			Litsearch: [
+				"LitsearchViewer"
+			]
 		},
 		defaultPage = "Dashboard",
 		currentPage,
@@ -86,19 +82,18 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'allExport',
-							text: "Download All Data Files",
-							func: "exportALL"
-						}, {
-							name: 'xmlExport',
-							text: "Download in XML format",
-							func: "exportXML"
-						}, {
-							name: 'jsonExport',
-							text: "Download in JSON format",
-							func: "exportJSON"
-						}
-					]
+						name: 'allExport',
+						text: "Download All Data Files",
+						func: "exportALL"
+					}, {
+						name: 'xmlExport',
+						text: "Download in XML format",
+						func: "exportXML"
+					}, {
+						name: 'jsonExport',
+						text: "Download in JSON format",
+						func: "exportJSON"
+					}]
 				}
 				// ,
 				// {
@@ -114,17 +109,16 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'secstructExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["profRdb"]
-						}, {
-							name: 'jsonExport',
-							text: "Download in JSON format",
-							func: "exportJSON",
-							params: ['PROFsec']
-						}
-					]
+						name: 'secstructExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["profRdb"]
+					}, {
+						name: 'jsonExport',
+						text: "Download in JSON format",
+						func: "exportJSON",
+						params: ['PROFsec']
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -135,17 +129,16 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'htmExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["reprof"]
-						}, {
-							name: 'jsonExport',
-							text: "Download in JSON format",
-							func: "exportJSON",
-							params: ['PHDhtm']
-						}
-					]
+						name: 'htmExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["reprof"]
+					}, {
+						name: 'jsonExport',
+						text: "Download in JSON format",
+						func: "exportJSON",
+						params: ['PHDhtm']
+					}]
 				}
 
 				// , {
@@ -158,32 +151,31 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'disorderExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["mdisorder"]
-						}, {
-							name: 'jsonExport',
-							text: "Download PROFbval prediction in JSON format",
-							func: "exportJSON",
-							params: ['PROFbval']
-						}, {
-							name: 'jsonExport',
-							text: "Download UCON prediction in JSON format",
-							func: "exportJSON",
-							params: ['UCON']
-						}, {
-							name: 'jsonExport',
-							text: "Download NORSnet prediction in JSON format",
-							func: "exportJSON",
-							params: ['NORSnet']
-						}, {
-							name: 'jsonExport',
-							text: "Download MetaDisorder prediction in JSON format",
-							func: "exportJSON",
-							params: ['MD']
-						}
-					]
+						name: 'disorderExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["mdisorder"]
+					}, {
+						name: 'jsonExport',
+						text: "Download PROFbval prediction in JSON format",
+						func: "exportJSON",
+						params: ['PROFbval']
+					}, {
+						name: 'jsonExport',
+						text: "Download UCON prediction in JSON format",
+						func: "exportJSON",
+						params: ['UCON']
+					}, {
+						name: 'jsonExport',
+						text: "Download NORSnet prediction in JSON format",
+						func: "exportJSON",
+						params: ['NORSnet']
+					}, {
+						name: 'jsonExport',
+						text: "Download MetaDisorder prediction in JSON format",
+						func: "exportJSON",
+						params: ['MD']
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -194,17 +186,16 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'htmExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["disulfinder"]
-						}, {
-							name: 'jsonExport',
-							text: "Download DISULFIND prediction in JSON format",
-							func: "exportJSON",
-							params: ['DISULFIND']
-						}
-					]
+						name: 'htmExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["disulfinder"]
+					}, {
+						name: 'jsonExport',
+						text: "Download DISULFIND prediction in JSON format",
+						func: "exportJSON",
+						params: ['DISULFIND']
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -215,17 +206,16 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'isisExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["isis"]
-						}, {
-							name: 'jsonExport',
-							text: "Download ISIS prediction in JSON format",
-							func: "exportJSON",
-							params: ['ISIS']
-						}
-					]
+						name: 'isisExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["isis"]
+					}, {
+						name: 'jsonExport',
+						text: "Download ISIS prediction in JSON format",
+						func: "exportJSON",
+						params: ['ISIS']
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -236,17 +226,16 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'subcellExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["lc2"]
-						}, {
-							name: 'jsonExport',
-							text: "Download LocTree2 prediction in JSON format",
-							func: "exportJSON",
-							params: ['LocTree2']
-						}
-					]
+						name: 'subcellExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["lc2"]
+					}, {
+						name: 'jsonExport',
+						text: "Download LocTree2 prediction in JSON format",
+						func: "exportJSON",
+						params: ['LocTree2']
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -257,17 +246,16 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'goannotExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["metastudent"]
-						}, {
-							name: 'jsonExport',
-							text: "Download Metastudent prediction in JSON format",
-							func: "exportJSON",
-							params: ['Metastudent']
-						}
-					]
+						name: 'goannotExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["metastudent"]
+					}, {
+						name: 'jsonExport',
+						text: "Download Metastudent prediction in JSON format",
+						func: "exportJSON",
+						params: ['Metastudent']
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -278,12 +266,11 @@ var PAGE = function(argument) {
 			targetDiv: ".navbar",
 			items: [{
 					'Export': [{
-							name: 'heatmapExport',
-							text: "Download Raw Data File",
-							func: "exportMethod",
-							params: ["snap"]
-						}
-					]
+						name: 'heatmapExport',
+						text: "Download Raw Data File",
+						func: "exportMethod",
+						params: ["snap"]
+					}]
 				}
 				// , {
 				// 	'Email': 'nothing'
@@ -316,76 +303,77 @@ var PAGE = function(argument) {
 		delete(cached[elementName]);
 	};
 
-	  var visualComponents = {
-        drawLitsearchViewer: function(argument) {
-            function toHtmlViewSingleResult(x) {
-                return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-'+x.id).html(
-                    '<div class="item-title">'+x.title+'</div><div class="item-rest">'+x.pubdate+', '+x.source+'</div>'));
-            }
+	var visualComponents = {
+		drawLitsearchViewer: function(argument) {
+			function toHtmlViewSingleResult(x) {
+				return jQuery('<li>').html(jQuery('<a title="Link to PubMed">').attr('href', x.link).attr('id', 'pubmed-' + x.id).html(
+					'<div class="item-title">' + x.title + '</div><div class="item-rest">' + x.pubdate + ', ' + x.source + '</div>'));
+			}
 
-            function toHtmlView(summariesResults) {
-                var ret = jQuery('<ul>');
-                for (var i = 0; i < summariesResults.length; i++) {
-                    ret.append(toHtmlViewSingleResult(summariesResults[i]));
-                }
-                return ret;
-            }
+			function toHtmlView(summariesResults) {
+				var ret = jQuery('<ul>');
+				for (var i = 0; i < summariesResults.length; i++) {
+					ret.append(toHtmlViewSingleResult(summariesResults[i]));
+				}
+				return ret;
+			}
 
 
-	    var tmpProtName  = dataObj.getProteinName();
-	    if (tmpProtName.match(/\w+_\w+/))
-		tmpProtName = tmpProtName.split('_')[0];
-            var term = tmpProtName + '+OR+'+dataObj.getProteinID();
+			var tmpProtName = dataObj.getProteinName();
+			if (tmpProtName.match(/\w+_\w+/))
+				tmpProtName = tmpProtName.split('_')[0];
+			var term = tmpProtName + '+OR+' + dataObj.getProteinID();
 
-            var numPages = 23;
-            var pageHtml;
-            var $cached_pages = jQuery('#cached-pages');
+			var numPages = 23;
+			var pageHtml;
+			var $cached_pages = jQuery('#cached-pages');
 
-            function genAndCachePage(term, num) {
-                var $previous = $cached_pages.find('ul').not('.invisible');
-                $previous.addClass('disappearing');
+			function genAndCachePage(term, num) {
+				var $previous = $cached_pages.find('ul').not('.invisible');
+				$previous.addClass('disappearing');
 
-                dataObj.searchLitsearchData(
-                    term,
-                    num - 1, //The interface is 1-indexed; the search is 0-indexed
-                    function(result) {
-                        $cached_pages.find('.alert').hide(0);
+				dataObj.searchLitsearchData(
+					term,
+					num - 1, //The interface is 1-indexed; the search is 0-indexed
 
-                        dataObj.setLitsearchData(result.summaries);
-                        numPages = result.numPages;
-                        pageHtml = toHtmlView(dataObj.getLitsearchData());
-                        pageHtml.attr('id', 'page-'+num);
+					function(result) {
+						$cached_pages.find('.alert').hide(0);
 
-                        $previous.addClass('invisible').hide(0);
-                        $cached_pages.append(pageHtml);
-                    },
-                    function() {
-                        $cached_pages.find('.alert').show(0);
-                    }
-                );
+						dataObj.setLitsearchData(result.summaries);
+						numPages = result.numPages;
+						pageHtml = toHtmlView(dataObj.getLitsearchData());
+						pageHtml.attr('id', 'page-' + num);
 
-            }
+						$previous.addClass('invisible').hide(0);
+						$cached_pages.append(pageHtml);
+					},
+					function() {
+						$cached_pages.find('.alert').show(0);
+					}
+				);
 
-            //Show first page
-            genAndCachePage(term, 1);
-            jQuery('#page-selection').bootpag({
-                total: Math.min(numPages, 23),
-                page: 1,
-                maxVisible: 10,
-                //href: "#page-{{number}}",
-                leaps: false
-            }).on("page", function(event, num) {
-                pageHtml = $cached_pages.find('#page-'+num);
+			}
 
-                if (!pageHtml.length) {
-                    genAndCachePage(term, num);
-                } else {
-                    $cached_pages.find('.alert').hide(0);
-                    $cached_pages.find('ul').css('display', 'none').addClass('invisible');
-                    pageHtml.removeClass('disappearing invisible').show(0);
-                }
-            });
-        },
+			//Show first page
+			genAndCachePage(term, 1);
+			jQuery('#page-selection').bootpag({
+				total: Math.min(numPages, 23),
+				page: 1,
+				maxVisible: 10,
+				//href: "#page-{{number}}",
+				leaps: false
+			}).on("page", function(event, num) {
+				pageHtml = $cached_pages.find('#page-' + num);
+
+				if (!pageHtml.length) {
+					genAndCachePage(term, num);
+				} else {
+					$cached_pages.find('.alert').hide(0);
+					$cached_pages.find('ul').css('display', 'none').addClass('invisible');
+					pageHtml.removeClass('disappearing invisible').show(0);
+				}
+			});
+		},
 		drawSequenceViewer: function(argument) {
 			sv = new SEQUENCE_VIEWER({
 				targetDiv: argument.targetDiv,
@@ -415,50 +403,50 @@ var PAGE = function(argument) {
 
 			jQuery.getJSON(dataToFetch,
 
-			function(arr) {
-				jQuery("#heatmap").empty();
-				jQuery("#zoom").empty();
-				dataObj = arr;
-				var hm = new HEAT_MAP({
-					targetDiv: "heatmap",
-					dataObj: dataObj
-				});
-				var increments = Math.floor((dataObj.length / 20) * .1);
-				var start, end, zoom;
+				function(arr) {
+					jQuery("#heatmap").empty();
+					jQuery("#zoom").empty();
+					dataObj = arr;
+					var hm = new HEAT_MAP({
+						targetDiv: "heatmap",
+						dataObj: dataObj
+					});
+					var increments = Math.floor((dataObj.length / 20) * .1);
+					var start, end, zoom;
 
-				jQuery(function() {
-					jQuery("#slider").slider({
-						animate: "fast",
-						value: 0,
-						min: 0,
-						max: ((dataObj.length) / 20) - increments,
-						step: increments,
-						slide: function(event, ui) {
-							start = ui.value;
-							jQuery("#start").text(start);
-							((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
-							jQuery("#end").text(end);
-							jQuery("#zoom").empty();
-							zoom = new HEAT_MAP({
-								targetDiv: "zoom",
-								dataObj: dataObj,
-								startPoint: start,
-								increments: increments
-							});
-						}
-					});
-					start = jQuery("#slider").slider("value");
-					jQuery("#start").text(start);
-					((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
-					jQuery("#end").text(end);
-					zoom = new HEAT_MAP({
-						targetDiv: "zoom",
-						dataObj: dataObj,
-						startPoint: start,
-						increments: increments
+					jQuery(function() {
+						jQuery("#slider").slider({
+							animate: "fast",
+							value: 0,
+							min: 0,
+							max: ((dataObj.length) / 20) - increments,
+							step: increments,
+							slide: function(event, ui) {
+								start = ui.value;
+								jQuery("#start").text(start);
+								((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
+								jQuery("#end").text(end);
+								jQuery("#zoom").empty();
+								zoom = new HEAT_MAP({
+									targetDiv: "zoom",
+									dataObj: dataObj,
+									startPoint: start,
+									increments: increments
+								});
+							}
+						});
+						start = jQuery("#slider").slider("value");
+						jQuery("#start").text(start);
+						((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
+						jQuery("#end").text(end);
+						zoom = new HEAT_MAP({
+							targetDiv: "zoom",
+							dataObj: dataObj,
+							startPoint: start,
+							increments: increments
+						});
 					});
 				});
-			});
 		},
 		drawFeatureViewer: function(argument) {
 			// TODO this will have to be re-factored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
@@ -505,15 +493,15 @@ var PAGE = function(argument) {
 					refList.append(
 						jQuery('<ul/>')
 
-					.append(jQuery('<li/>')
-						.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
-						.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
-						return n.name;
-					}).join(', ')))
+						.append(jQuery('<li/>')
+							.append(jQuery('<strong/>').text(' "' + quotes[i].citation.title + '" '))
+							.append(jQuery('<span>').text(jQuery.map(quotes[i].citation.authorList.person, function(n, i) {
+								return n.name;
+							}).join(', ')))
 
-					.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
-						' ' + quotes[i].citation.volume + ': ' +
-						quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
+							.append(jQuery('<span/>').text(' ' + quotes[i].citation.name +
+								' ' + quotes[i].citation.volume + ': ' +
+								quotes[i].citation.first + '-' + quotes[i].citation.last + ' ' + '(' + quotes[i].citation.date + ')'))));
 				}
 			}
 
@@ -523,10 +511,10 @@ var PAGE = function(argument) {
 			var accordionGroup = jQuery('<div/>').addClass('accordion-group');
 			var accordionHeader = jQuery('<div/>').addClass('accordion-heading')
 				.append(jQuery('<a/>').addClass('accordion-toggle').attr('data-toggle', 'collapse').attr('data-parent', '#referencesInfo').attr('href', '#referencesInfoList')
-				.append(jQuery('<span/>').text('References (Click to Expand)')));
+					.append(jQuery('<span/>').text('References (Click to Expand)')));
 			var accordionInner = jQuery('<div>').attr('id', 'referencesInfoList').addClass('accordion-body collapse')
 				.append(jQuery('<div>').addClass('accordion-inner')
-				.append(refList));
+					.append(refList));
 			accordionContainer.append(accordionGroup.append(accordionHeader)).append(accordionInner);
 			jQuery("#" + targetDiv).append(accordionContainer);
 
@@ -556,12 +544,12 @@ var PAGE = function(argument) {
 			table.append("<tr><td>Number of Aligned Proteins</td><td><a href='#AlignmentTable' role='button' data-toggle='modal'>" + dataObj.getAlignmentsCount() + "</a></td></tr>");
 			arrAlignments = dataObj.getAlignmentsByDatabase('pdb');
 			if (arrAlignments > 0) table.append("<tr><td>Number of Matched PDB Structures</td><td><a href='#AlignmentPDBTable' role='button' data-toggle='modal'>" + arrAlignments + "<a/></td></tr>");
-			
-			if (dataObj.getOrganismName()){
-					table.append("<tr><td>Likely Organism</td><td> <a title='Link to the NCBI taxonomy database' href='http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id="+dataObj.getOrganismTaxID()+"' target='_blank'>"+dataObj.getOrganismName()+"</a></td></tr>");
+
+			if (dataObj.getOrganismName()) {
+				table.append("<tr><td>Likely Organism</td><td> <a title='Link to the NCBI taxonomy database' href='http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=" + dataObj.getOrganismTaxID() + "' target='_blank'>" + dataObj.getOrganismName() + "</a></td></tr>");
 
 			}
-		
+
 			jQuery("#" + targetDiv).append(table);
 			return (jQuery("#" + targetDiv)).html();
 		},
@@ -584,21 +572,21 @@ var PAGE = function(argument) {
 
 
 			active_domain = 'euka';
-			if ((dataObj.getOrganismDomain() ) && (dataObj.getOrganismDomain() !='unknown'))
+			if ((dataObj.getOrganismDomain()) && (dataObj.getOrganismDomain() != 'unknown'))
 				active_domain = domains = [dataObj.getOrganismDomain()];
-			
+
 			var seq_length_restrictions = ': prediction missing. Re-running this job will most likely generate subcellular localization prediction.';
-			if (dataObj.getSequence().length > 2045 )
+			if (dataObj.getSequence().length > 2045)
 				seq_length_restrictions = ': this service cannot provide predictions for sequences longer than 2045 residues.';
-			if (dataObj.getSequence().length < 10 )
+			if (dataObj.getSequence().length < 10)
 				seq_length_restrictions = ': this service cannot provide predictions for sequences shorter than 10 residues.';
 
 			for (var i in domains) {
 				var _curr_div;
 				var _curr_li = jQuery('<li><a data-toggle="tab" href="#' + domains[i] + '_localisation_container">' + SUBCELL_VIEW.getDomainFullName(domains[i]) + '</a></li>');
 				var prediction = dataObj.getSubCellLocations(domains[i]);
-				if (domains[i] =='virus') _curr_div = jQuery("<div />").addClass('alert alert-error').text("Prediction unavailable for virus proteins");
-				else if (!prediction) _curr_div = jQuery("<div />").addClass('alert alert-error').text("Data unavailable"+seq_length_restrictions);
+				if (domains[i] == 'virus') _curr_div = jQuery("<div />").addClass('alert alert-error').text("Prediction unavailable for virus proteins");
+				else if (!prediction) _curr_div = jQuery("<div />").addClass('alert alert-error').text("Data unavailable" + seq_length_restrictions);
 				else _curr_div = SUBCELL_VIEW.localisationDiv(prediction);
 				_curr_div.addClass("tab-pane");
 				content_div.append(_curr_div);
@@ -671,8 +659,8 @@ var PAGE = function(argument) {
 				});
 
 
-				jQuery( ("[name=goSel" + onto + "],") + ("[name=goSel" + onto + "All]") ).each(function(){
-					jQuery(this).change( function() {
+				jQuery(("[name=goSel" + onto + "],") + ("[name=goSel" + onto + "All]")).each(function() {
+					jQuery(this).change(function() {
 						jQuery(("#showButton" + onto)).show();
 
 					});
@@ -683,7 +671,7 @@ var PAGE = function(argument) {
 
 			jQuery("#_goannot_cntnt_img").show();
 		},
-		drawDisuqsViewer: function(argument){
+		drawDisuqsViewer: function(argument) {
 			// existance of recommended name indicates
 			// that this is a swissprot protein
 			var recName = dataObj.getRecommendedName();
@@ -693,14 +681,16 @@ var PAGE = function(argument) {
 				return;
 
 
-			disqus_url =  'https://'+dataObj.getMD5Seq();
-			disqus_title =   dataObj.getProteinName();
+			disqus_url = 'https://' + dataObj.getMD5Seq();
+			disqus_title = dataObj.getProteinName();
 			jQuery("#disqus_div").show().removeClass('hidden');
 
 			(function() {
-			    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				var dsq = document.createElement('script');
+				dsq.type = 'text/javascript';
+				dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			})();
 
 		}
@@ -726,9 +716,10 @@ var PAGE = function(argument) {
 
 		return element;
 	};
-		function capitalize(s) {
-    			return s[0].toUpperCase() + s.slice(1);
-     	}
+
+	function capitalize(s) {
+		return s[0].toUpperCase() + s.slice(1);
+	}
 
 	return {
 		getDefaultPage: function() {
@@ -755,93 +746,96 @@ var PAGE = function(argument) {
 				jQuery.get(pagePath)
 					.done(function(pageHTML) {
 
-					mainContainerDiv.append(pageHTML);
+						mainContainerDiv.append(pageHTML);
 
-					var nc = new NAME_CHANGE({
-						targetDiv: jQuery('.job-name'),
-						dataObj: dataObj
-					});
+						var nc = new NAME_CHANGE({
+							targetDiv: jQuery('.job-name'),
+							dataObj: dataObj
+						});
 
-					if (navBar[currentPage])
-						var nb = new NAVBAR(navBar[currentPage]);
+						if (navBar[currentPage])
+							var nb = new NAVBAR(navBar[currentPage]);
 
 
-					(function() {
-						var defline = jQuery('.defline');
-						// defline.
-						if (defline){
-							var rec_name = '';
-							var t_match;
-							var dl = dataObj.getDefLine();
-							 if (t_match =  dl.match(/^(.+)OS\=.+$/)){
-							 	rec_name = t_match[1];
-								if (rec_name){
-									rec_name_link = jQuery('<a>',{
-									    text: rec_name,
-									    title: 'Open '+dataObj.getProteinID()+' in UniProtKB',
-									    href: 'http://www.uniprot.org/uniprot/'+dataObj.getProteinID(),
-									    target: '_blank'
-									});
-									defline.text( "Recommended Name: ").append(rec_name_link);
-								}	
+						(function() {
+							var defline = jQuery('.defline');
+							// defline.
+							if (defline) {
+								var rec_name = '';
+								var t_match;
+								var dl = dataObj.getDefLine();
+								if (t_match = dl.match(/^(.+)OS\=.+$/)) {
+									rec_name = t_match[1];
+									if (rec_name) {
+										rec_name_link = jQuery('<a>', {
+											text: rec_name,
+											title: 'Open ' + dataObj.getProteinID() + ' in UniProtKB',
+											href: 'http://www.uniprot.org/uniprot/' + dataObj.getProteinID(),
+											target: '_blank'
+										});
+										defline.text("Recommended Name: ").append(rec_name_link);
+									}
+								}
 							}
-						}
 
-						
-						var subcellDiv = jQuery('.subcelllocdiv');
-						if (subcellDiv){
-							var domain = dataObj.getOrganismDomain();
-							var subcellLocation = dataObj.getSubCellLocations(domain);
-							if ((subcellLocation) && (subcellLocation[domain])){	
 
-								var t_subcell_text = SUBCELL_VIEW.resolveName (subcellLocation[domain].localisation);
-								subcell_link = jQuery('<a>',{
-									    text: t_subcell_text,
-									    title: 'See prediction details',
-									    href : '#',
-									    click: function(){  
-									    	APP.showPage('subcell'); 
-									    	jQuery(".nav-list").children(".active").removeClass("active");
+							var subcellDiv = jQuery('.subcelllocdiv');
+							if (subcellDiv) {
+								var domain = dataObj.getOrganismDomain();
+								var subcellLocation = dataObj.getSubCellLocations(domain);
+								if ((subcellLocation) && (subcellLocation[domain])) {
+
+									var t_subcell_text = SUBCELL_VIEW.resolveName(subcellLocation[domain].localisation);
+									subcell_link = jQuery('<a>', {
+										text: t_subcell_text,
+										title: 'See prediction details',
+										href: '#',
+										click: function() {
+											APP.showPage('subcell');
+											jQuery(".nav-list").children(".active").removeClass("active");
 											jQuery(".nav-list").children("#subcell").addClass("active");
 											return false;
 										}
 									});
 
-								subcellDiv.text("Predicted Subcellular Localization: ").append(subcell_link);
-								
+									subcellDiv.text("Predicted Subcellular Localization: ").append(subcell_link);
+
+								}
 							}
-						}
+
+							var job_run_div = JOB_RUN(2, '12/23/2012');
 
 
-						var formatDivContainer = jQuery('.formats');
-						var jobId = dataObj.getJobID();
-						var formatDiv = jQuery('<div/>');
-						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'html_results?req_id=' + jobId)
-																.attr('target', '_blank')
-															   .attr('title', 'Complete data formatted for web presentation.')
-															   .addClass('label label-info outer')
-															   .text('HTML'));
-						jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'text_results?req_id=' + jobId)
-																.attr('target', '_blank')
-															   .attr('title', 'Complete data in the original flat text format.')
-															   .addClass('label label-warning outer')
-															   .text('TEXT'));
 
-						formatDivContainer.append(formatDiv);
+							var formatDivContainer = jQuery('.formats');
+							var jobId = dataObj.getJobID();
+							var formatDiv = jQuery('<div/>');
+							jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'html_results?req_id=' + jobId)
+								.attr('target', '_blank')
+								.attr('title', 'Complete data formatted for web presentation.')
+								.addClass('label label-info outer')
+								.text('HTML'));
+							jQuery(formatDiv).append(jQuery('<a/>').attr('href', 'text_results?req_id=' + jobId)
+								.attr('target', '_blank')
+								.attr('title', 'Complete data in the original flat text format.')
+								.addClass('label label-warning outer')
+								.text('TEXT'));
 
-					}());
+							formatDivContainer.append(formatDiv);
 
-					cacheStore(currentPage, pageHTML);
-					jQuery.each(pageComponents[currentPage], function(i, component) {
-						if (typeof component === 'object') {
-							config = component[Object.keys(component)];
-							component = Object.keys(component)[0];
-						}
-						var element = getComponent(component, config);
-						if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
+						}());
+
+						cacheStore(currentPage, pageHTML);
+						jQuery.each(pageComponents[currentPage], function(i, component) {
+							if (typeof component === 'object') {
+								config = component[Object.keys(component)];
+								component = Object.keys(component)[0];
+							}
+							var element = getComponent(component, config);
+							if (element) jQuery("#" + component + "Container", mainContainerDiv).html(element);
+						});
 					});
-				});
-				
+
 
 			} else {
 				var pageHTML = cacheFetch(currentPage)
