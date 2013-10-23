@@ -803,7 +803,12 @@ var PAGE = function(argument) {
 								}
 							}
 
-						    var job_run_div = JOB_RUN({reqid:2, original_date:'12/23/2012', target_div:'job-run-div'});
+							if (dataObj.getIsExpired())
+								var job_run_div = JOB_RUN({
+									reqid: dataObj.getJobID(),
+									original_date: dataObj.getModificationDate(),
+									target_div: 'job-run-div'
+								});
 
 
 

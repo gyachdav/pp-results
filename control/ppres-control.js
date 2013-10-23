@@ -3,8 +3,8 @@ var EXPORT = function(argument) {
 		var urlBase = '/~roos/get/ppc/tar.gz/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
-	    if (APP.getDataObj().getProteinName())
-	        urlREST += '&filename=predictprotein_'+ APP.getDataObj().getProteinName()+'.tar.gz';
+		if (APP.getDataObj().getProteinName())
+			urlREST += '&filename=predictprotein_' + APP.getDataObj().getProteinName() + '.tar.gz';
 		window.open(urlREST);
 	};
 
@@ -13,9 +13,9 @@ var EXPORT = function(argument) {
 		urlBase += methodName + '/';
 		var urlParam = 'md5';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
-	    jQuery.get(urlREST, function( data ){
-		window.open('data:Application/octet-stream;filename=file.'+methodName+',' + encodeURIComponent(data));
-	    }, 'text');
+		jQuery.get(urlREST, function(data) {
+			window.open('data:Application/octet-stream;filename=file.' + methodName + ',' + encodeURIComponent(data));
+		}, 'text');
 	};
 
 
@@ -48,13 +48,13 @@ var EXPORT = function(argument) {
 	};
 }
 
-var POPOVER = function (button){
-    var popOverPageIntro = function (){
-	button.attr('rel','popover').attr('data-content','blah blah').attr('data-original-title','What is Presented in This Page').popover();
-    };
-    return{
-	popOverPageIntro:popOverPageIntro
-    };
+var POPOVER = function(button) {
+	var popOverPageIntro = function() {
+		button.attr('rel', 'popover').attr('data-content', 'blah blah').attr('data-original-title', 'What is Presented in This Page').popover();
+	};
+	return {
+		popOverPageIntro: popOverPageIntro
+	};
 }
 
 
@@ -70,10 +70,12 @@ var APP = (function() {
 		ds,
 		debug = 0,
 		file_specs = {
-		    path: '',
-		    name: 'xml_results?req_id=' + req_id,
-		    type: 'xml'
-		 },
+			path: 'examples',
+			name: 'CL12A_HUMAN.xml',
+			// path: '',
+			// name: 'xml_results?req_id=' + req_id,
+			type: 'xml'
+		},
 		mainObj = new PPResData();
 
 	NAVIGATION_DIV = "#nav";
@@ -221,20 +223,20 @@ APP.path = '/ppres/';
 
 
 APP.providers = [
-		"PROFsec",
-		"PROFAcc",
-		"PHDhtm",
-		"ISIS",
-		"DISIS",
-		// "ASP",
-		"DISULFIND",
-		"PredictNLS",
-		// "NORSnet",
-		// "PROFbval",
-		// "Ucon",
-		"MD",
-		"PROFtmb",
-		"Metastudent"
+	"PROFsec",
+	"PROFAcc",
+	"PHDhtm",
+	"ISIS",
+	"DISIS",
+	// "ASP",
+	"DISULFIND",
+	"PredictNLS",
+	// "NORSnet",
+	// "PROFbval",
+	// "Ucon",
+	"MD",
+	"PROFtmb",
+	"Metastudent"
 ];
 
 
@@ -297,21 +299,21 @@ function Demo(target_div) {
 	};
 
 	var providers = [
-			"PROFsec",
-			"PROFacc",
-			"NORSnet",
-			"ISIS",
-			"DISIS",
-			"ASP",
-			"DISULFIND",
-			"PredictNLS",
-			"PHDhtm",
-			"PROFbval",
-			"Ucon",
-			"MD",
-			"PROFtmb",
-			"LOCtree",
-			"Metastudent"
+		"PROFsec",
+		"PROFacc",
+		"NORSnet",
+		"ISIS",
+		"DISIS",
+		"ASP",
+		"DISULFIND",
+		"PredictNLS",
+		"PHDhtm",
+		"PROFbval",
+		"Ucon",
+		"MD",
+		"PROFtmb",
+		"LOCtree",
+		"Metastudent"
 	];
 
 

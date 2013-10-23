@@ -8,6 +8,41 @@ function PPResException(message, error, status) {
 
 
 function PPResData() {
+
+	// Helper funciton to calculate date difference
+	// TODO put in ppres.utils
+	var DateDiff = {
+
+		inDays: function(d1, d2) {
+			var t2 = d2.getTime();
+			var t1 = d1.getTime();
+
+			return parseInt((t2 - t1) / (24 * 3600 * 1000));
+		},
+
+		inWeeks: function(d1, d2) {
+			var t2 = d2.getTime();
+			var t1 = d1.getTime();
+
+			return parseInt((t2 - t1) / (24 * 3600 * 1000 * 7));
+		},
+
+		inMonths: function(d1, d2) {
+			var d1Y = d1.getFullYear();
+			var d2Y = d2.getFullYear();
+			var d1M = d1.getMonth();
+			var d2M = d2.getMonth();
+
+			return (d2M + 12 * d2Y) - (d1M + 12 * d1Y);
+		},
+
+		inYears: function(d1, d2) {
+			return d2.getFullYear() - d1.getFullYear();
+		}
+	}
+
+
+
 	var xml_data_source = '',
 		prof_data_source = '',
 		organism = '',
@@ -23,7 +58,10 @@ function PPResData() {
 		sequence = '',
 		md5Seq = '',
 		alignments = {},
-    pubmedSummaries = {},
+		pubmedSummaries = {},
+		creation_date = '1/1/1961',
+		modification_date = '1/1/1961',
+		is_expired = false,
 		data_ready = false,
 		data = {
 			data_size: 0,
@@ -31,9 +69,20 @@ function PPResData() {
 			xml: '',
 			json: ''
 		};
-	var setOrganism= function( _org ){
-			organism  = _org;
-		};
+
+
+	var isExpired = function(orig_date) {
+		var d1 = new Date(orig_date);
+		var d2 = new Date();
+
+		if (DateDiff.inMonths(d1, d2) > 3)
+			return true;
+		return false;
+
+	}
+	var setOrganism = function(_org) {
+		organism = _org;
+	};
 	var setDataReady = function() {
 		data_ready = !data_ready;
 	};
@@ -41,9 +90,9 @@ function PPResData() {
 		return (alignments);
 	};
 
-    var setLitsearchData = function(data) {
-        pubmedSummaries = data;
-    };
+	var setLitsearchData = function(data) {
+		pubmedSummaries = data;
+	};
 
 	var getReference = function(ref_id) {
 		var _ref;
@@ -74,28 +123,26 @@ function PPResData() {
 
 	};
 
-
-
 	var getAlignmentsByDatabaseTopMatch = function(db_name) {
 		var alis = getAlignments();
 		var topmatch = undefined;
 		if (alis === undefined)
 			return undefined;
 
-		if( Object.prototype.toString.call( alis ) === '[object Array]' ) {
+		if (Object.prototype.toString.call(alis) === '[object Array]') {
 			jQuery.each(alis, function(i, v) {
 				if ((v.dbReference.type.match(new RegExp(db_name, 'i'))) && (v.identity.value == 1)) {
 					topmatch = v;
 					return (false);
 				}
 			});
-		}else{
+		} else {
 			if ((alis.dbReference.type.match(new RegExp(db_name, 'i'))) && (alis.identity.value == 1)) {
 				topmatch = alis;
 				return (false);
 			}
 		}
-		
+
 		return (topmatch);
 	};
 
@@ -104,23 +151,25 @@ function PPResData() {
 		sequence = jQuery.trim(json_data.entry.sequence).replace(/(\r\n|\n|\r|\s)/gm, "");
 		md5Seq = md5(sequence);
 		alignments = json_data.entry.aliProviderGroup.alignment;
-		protein = json_data.entry.protein;		
+		protein = json_data.entry.protein;
 		setOrganism(json_data.entry.organism);
 
-		if (protein.recommendedName.fullName !='unknown')
-			defline  = protein.recommendedName.fullName;
+		if (protein.recommendedName.fullName != 'unknown')
+			defline = protein.recommendedName.fullName;
 
 		if (json_data.entry.accession != 'unknown')
 			recommendedName = json_data.entry.accession;
 
 		// TODO URGENT: put protein id into XML
-		topmatch =  getAlignmentsByDatabaseTopMatch('Swiss-Prot');
-        if (topmatch)
-            proteinID = topmatch.dbReference.id;
+		topmatch = getAlignmentsByDatabaseTopMatch('Swiss-Prot');
+		if (topmatch)
+			proteinID = topmatch.dbReference.id;
 
-		 proteinName = jobName = resolveJobName();
+		proteinName = jobName = resolveJobName();
+		creation_date = json_data.entry.created;
+		modification_date = json_data.entry.modified;
+		is_expired = isExpired(modification_date);
 
-	      
 	};
 
 	var resolveJobName = function() {
@@ -136,10 +185,10 @@ function PPResData() {
 	return {
 		getReferenceByProvider: getReferenceByProvider,
 		getReference: getReference,
-      getLitsearchData: function() {
-          return pubmedSummaries;
-      },
-      setLitsearchData: setLitsearchData,
+		getLitsearchData: function() {
+			return pubmedSummaries;
+		},
+		setLitsearchData: setLitsearchData,
 
 		dataReady: function() {
 			return data_ready;
@@ -170,9 +219,9 @@ function PPResData() {
 		populateData: function(data, reqID, reqName) {
 			xml_data = data;
 			this.setJobID(reqID);
-			
+
 			if (reqName && reqName != '%REQ_NAME%')
-				this.setProteinName( reqName );
+				this.setProteinName(reqName);
 			setJsonData(jQuery.xml2json(data));
 			setDataReady();
 		},
@@ -198,8 +247,6 @@ function PPResData() {
 					return (_ret_obj);
 				} else return null;
 			}
-
-
 
 			for (var provider in providers) {
 				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), providers[provider]);
@@ -326,22 +373,22 @@ function PPResData() {
 		getAlignmentsByDatabase: function(db_name) {
 			var alis = this.getAlignments();
 			var count = 0;
-			
-			if( Object.prototype.toString.call( alis ) === '[object Array]' ) {
+
+			if (Object.prototype.toString.call(alis) === '[object Array]') {
 				jQuery.each(alis, function(i, v) {
-					if (v.dbReference.type.match(new RegExp(db_name, 'i'))) 
+					if (v.dbReference.type.match(new RegExp(db_name, 'i')))
 						count++;
 				});
-			}else{
+			} else {
 				if (alis.dbReference.type.match(new RegExp(db_name, 'i')))
-						count++;
+					count++;
 			}
 			return (count);
 		},
 
 
 		getAlignmentsCount: function() {
-			if( Object.prototype.toString.call( this.getAlignments() ) === '[object Array]' ) 
+			if (Object.prototype.toString.call(this.getAlignments()) === '[object Array]')
 				return (this.getAlignments().length);
 			else
 				return (1);
@@ -380,7 +427,7 @@ function PPResData() {
 			var locations_array = [];
 
 
-			if( Object.prototype.toString.call( alis ) === '[object Array]' ) {
+			if (Object.prototype.toString.call(alis) === '[object Array]') {
 				jQuery.each(alis, function(index, alignment) {
 					if (database && alignment.dbReference.type.toUpperCase() != database.toUpperCase())
 						return true;
@@ -395,17 +442,17 @@ function PPResData() {
 						identity: alignment.identity.value
 					});
 				});
-			}else{
+			} else {
 				locations_array.push({
-						begin: parseInt(alis.queryStart.value),
-						end: parseInt(alis.queryEnd.value),
-						id: alis.dbReference.id,
-						entryname: alis.dbReference.entryname,
-						db: alis.dbReference.type,
-						eval: alis.expect.value,
-						matchlen: alis.matchLen.value,
-						identity: alis.identity.value
-					});
+					begin: parseInt(alis.queryStart.value),
+					end: parseInt(alis.queryEnd.value),
+					id: alis.dbReference.id,
+					entryname: alis.dbReference.entryname,
+					db: alis.dbReference.type,
+					eval: alis.expect.value,
+					matchlen: alis.matchLen.value,
+					identity: alis.identity.value
+				});
 			}
 			return (locations_array);
 		},
@@ -437,6 +484,18 @@ function PPResData() {
 		setProteinID: function(id) {
 			proteinID = id;
 		},
+		getCreationDate: function() {
+			return creation_date;
+		},
+		getModificationDate: function() {
+			return modification_date;
+		},
+		getIsExpired: function() {
+			return is_expired;
+		},
+		setProteinID: function(id) {
+			proteinID = id;
+		},
 
 		getRecommendedName: function() {
 			return recommendedName;
@@ -446,7 +505,7 @@ function PPResData() {
 		},
 
 		getOrganismName: function() {
-			if ((organism.name) &&(organism.name.text) &&(organism.name.text !='unknown'))
+			if ((organism.name) && (organism.name.text) && (organism.name.text != 'unknown'))
 				return (organism.name.text);
 			return undefined;
 		},
@@ -458,7 +517,7 @@ function PPResData() {
 				return (organism.dbReference.id);
 			return undefined;
 		},
-	
+
 
 		// Look up feature by feature types
 		getFeatureByType: function(featureName) {
@@ -532,87 +591,89 @@ function PPResData() {
 			return (locations);
 		},
 
-  searchLitsearchData: function(term, page, successFun, errorFun) {
+		searchLitsearchData: function(term, page, successFun, errorFun) {
 
-      var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
-      var PAGE_ARG = "&retmax=";
-      var PAGE_SIZE = 10;
-      var START_ARG = "&retstart=";
+			var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
+			var PAGE_ARG = "&retmax=";
+			var PAGE_SIZE = 10;
+			var START_ARG = "&retstart=";
 
-    /**
-     * Search on PubMed by term (all fields).
-     *
-     * @term term for search, for example 'p53'
-     * @page search page starting from 0 (if not given, defaults to 0)
-     *
-     *
-     * @return object with fields:
-     *   'pmids': array of found pmids for given page (if non empty)
-     *   'numPages': total number of pages for the search resul
-     */
-    var searchPubmedByTerm = function (term, page, successFun) {
-        if (page === undefined) {
-            page = 0;
-        }
-        var startItem = (page * PAGE_SIZE);
-        var url = SEARCH_URL + term + PAGE_ARG + PAGE_SIZE + START_ARG + startItem;
-	console.log(url);
-        jQuery.ajax({
-            async: true,
-            timeout: 2000,
-            url: url,
-            dataType: "xml",
-            success: function(xml) {
-                var $xml = jQuery(xml);
-                var ret = {};
-                ret.pmids = jQuery.map($xml.find('IdList Id'), function (id) {
-                    return jQuery(id).text();
-                });
-                ret.numPages = Math.ceil(parseInt($xml.find('Count').text(), 10) / PAGE_SIZE);
-                successFun(ret);
-            },
-            error: errorFun
-        });
-    };
+			/**
+			 * Search on PubMed by term (all fields).
+			 *
+			 * @term term for search, for example 'p53'
+			 * @page search page starting from 0 (if not given, defaults to 0)
+			 *
+			 *
+			 * @return object with fields:
+			 *   'pmids': array of found pmids for given page (if non empty)
+			 *   'numPages': total number of pages for the search resul
+			 */
+			var searchPubmedByTerm = function(term, page, successFun) {
+				if (page === undefined) {
+					page = 0;
+				}
+				var startItem = (page * PAGE_SIZE);
+				var url = SEARCH_URL + term + PAGE_ARG + PAGE_SIZE + START_ARG + startItem;
+				console.log(url);
+				jQuery.ajax({
+					async: true,
+					timeout: 2000,
+					url: url,
+					dataType: "xml",
+					success: function(xml) {
+						var $xml = jQuery(xml);
+						var ret = {};
+						ret.pmids = jQuery.map($xml.find('IdList Id'), function(id) {
+							return jQuery(id).text();
+						});
+						ret.numPages = Math.ceil(parseInt($xml.find('Count').text(), 10) / PAGE_SIZE);
+						successFun(ret);
+					},
+					error: errorFun
+				});
+			};
 
-    var SUMMARY_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=';
-    var PUBMED_LINK = 'http://www.ncbi.nlm.nih.gov/pubmed/';
+			var SUMMARY_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=';
+			var PUBMED_LINK = 'http://www.ncbi.nlm.nih.gov/pubmed/';
 
-    var fetchSummariesByIds = function(searchResult, successFun) {
-        var url = SUMMARY_URL + searchResult.pmids.join(",");
+			var fetchSummariesByIds = function(searchResult, successFun) {
+				var url = SUMMARY_URL + searchResult.pmids.join(",");
 
-        jQuery.ajax({
-            async: false,
-            timeout: 2000,
-            url: url,
-            dataType: "xml",
-            success: function(xml) {
-                //console.log((new XMLSerializer()).serializeToString(xml));
-                var $xml = jQuery(xml);
-                var ret = { numPages: searchResult.numPages };
+				jQuery.ajax({
+					async: false,
+					timeout: 2000,
+					url: url,
+					dataType: "xml",
+					success: function(xml) {
+						//console.log((new XMLSerializer()).serializeToString(xml));
+						var $xml = jQuery(xml);
+						var ret = {
+							numPages: searchResult.numPages
+						};
 
-                ret.summaries = jQuery.map($xml.find('DocSum'), function (doc) {
-                    var $doc = jQuery(doc);
-                    var id = $doc.find('Id').text();
-                    return {
-                        'id': id,
-                        'link': PUBMED_LINK + id,
-                        'title': $doc.find('[Name=Title]').text(),
-                        'pubdate': $doc.find('[Name=PubDate]').text(),
-                        'source': $doc.find('[Name=Source]').text()
-                    };
-                });
+						ret.summaries = jQuery.map($xml.find('DocSum'), function(doc) {
+							var $doc = jQuery(doc);
+							var id = $doc.find('Id').text();
+							return {
+								'id': id,
+								'link': PUBMED_LINK + id,
+								'title': $doc.find('[Name=Title]').text(),
+								'pubdate': $doc.find('[Name=PubDate]').text(),
+								'source': $doc.find('[Name=Source]').text()
+							};
+						});
 
-                successFun(ret);
-            },
-            error: errorFun
-        });
-    };
+						successFun(ret);
+					},
+					error: errorFun
+				});
+			};
 
-      searchPubmedByTerm(term, page, function(searchResult) {
-          fetchSummariesByIds(searchResult, successFun);
-      });
-  }
+			searchPubmedByTerm(term, page, function(searchResult) {
+				fetchSummariesByIds(searchResult, successFun);
+			});
+		}
 
-  };
+	};
 }
