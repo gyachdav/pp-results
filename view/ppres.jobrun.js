@@ -1,6 +1,7 @@
 var JOB_RUN = function(config) {
     var reqid = config.reqid;
     var original_date = config.original_date;
+    var target_div = config.target_div;
     if (!reqid)
         reqid = 2;
 
@@ -11,14 +12,18 @@ var JOB_RUN = function(config) {
         modalDialog: true
     });
 
-    var jobRunDiv = jQuery('div').addClass('container job-run')
-        .append(jQuery(div).text('The results for this sequence were generated on ' + original_date + ' and are older than 3 months. We recommend that you re run this job for a more up to date (and possibly accurate) result.'))
-        .append(jQuery(div).jQuery('a')
-            .attr('id', 'JobRunDialogueBttn')
-            .attr('href', '#JobRunDialogue')
-            .addClass('href', 'btn btn-danger')
-            .text('Resubmit Job')
-    );
+
+    var jobRunDiv = jQuery('<div/>').addClass('alert alert-error' )
+        .append(jQuery('<div/>').text('The results for this sequence were generated on ' + original_date + ' and are older than 3 months. We recommend that you re-run this job to get a more up-to-date (and possibly more accurate) result. You can resubmit the job by pressing the "Resubmit Job" button.'))
+	.append(jQuery('<div/>')).append(
+            jQuery('<a/>')
+		.attr('id', 'JobRunDialogueBttn')
+		.attr('href', '#JobRunDialogue')
+		.addClass('btn btn-danger')
+		.text('Resubmit Job'));
+
+    jQuery('.'+target_div).append(jobRunDiv);
+
 
     jQuery("#JobRunDialogueBttn").on("click", function() {
         jobRunModal.getModalDiv().modal('toggle');
@@ -52,4 +57,4 @@ var JOB_RUN = function(config) {
             });
         }
     });
-}
+};

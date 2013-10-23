@@ -803,7 +803,7 @@ var PAGE = function(argument) {
 								}
 							}
 
-							var job_run_div = JOB_RUN(2, '12/23/2012');
+						    var job_run_div = JOB_RUN({reqid:2, original_date:'12/23/2012', target_div:'job-run-div'});
 
 
 
