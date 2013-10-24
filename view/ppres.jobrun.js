@@ -1,6 +1,6 @@
 var JOB_RUN = function(config) {
     var reqid = config.reqid;
-    var original_date = config.original_date;
+    var original_date = new Date(config.original_date);
     var target_div = config.target_div;
     if (!reqid)
         reqid = 2;
@@ -8,13 +8,12 @@ var JOB_RUN = function(config) {
     var jobRunModal = new MODAL({
         modalName: 'JobRunDialogue',
         modalTitle: "Resubmit Job",
-        content: "Are you sure you would like to resubmit this job to the processing queue?",
+        content: "Are you sure you would like to resubmit this job? Resubmitting will make the results unavialable until the job completed",
         modalDialog: true
     });
 
-
     var jobRunDiv = jQuery('<div/>').addClass('alert alert-error' )
-        .append(jQuery('<div/>').text('The results for this sequence were generated on ' + original_date + ' and are older than 3 months. We recommend that you re-run this job to get a more up-to-date (and possibly more accurate) result. You can resubmit the job by pressing the "Resubmit Job" button.'))
+        .append(jQuery('<div/>').text('The results for this sequence were pre-calculated on ' + original_date.toDateString() + ' and are older than 3 months. We recommend that you resubmit this job to get a more up-to-date (and possibly more accurate) result. You can resubmit the job by pressing the "Resubmit Job" button.'))
 	.append(jQuery('<div/>')).append(
             jQuery('<a/>')
 		.attr('id', 'JobRunDialogueBttn')
@@ -23,7 +22,6 @@ var JOB_RUN = function(config) {
 		.text('Resubmit Job'));
 
     jQuery('.'+target_div).append(jobRunDiv);
-
 
     jQuery("#JobRunDialogueBttn").on("click", function() {
         jobRunModal.getModalDiv().modal('toggle');
@@ -44,7 +42,6 @@ var JOB_RUN = function(config) {
             }, 'json');
 
             posting.done(function() {
-                jQuery('.info').html('Resubmitted');
                 if (status != 'success') {
                     var responseText = jQuery('<div/>')
                         .html('Cannot resubmit request id ' + reqid + '. <br/><br/> Reason: ' + reason + '. <br/><br/> Please contact admin ')
@@ -52,8 +49,10 @@ var JOB_RUN = function(config) {
                     jQuery("#err").text('Error ');
                     jQuery('#err').html(responseText);
                     jQuery('#err').modal('show');
-                } else
-                    jQuery('.info').html('Resubmitted');
+                } else{
+		    window.location.href = '/getqueries';
+		    return;
+		}
             });
         }
     });
