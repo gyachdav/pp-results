@@ -399,10 +399,7 @@ var PAGE = function(argument) {
 		drawHeatmapViewer: function(argument) {
 
 			var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
-
-
-			jQuery.getJSON(dataToFetch,
-
+			var jqxhr = jQuery.getJSON(dataToFetch,
 				function(arr) {
 					jQuery("#heatmap").empty();
 					jQuery("#zoom").empty();
@@ -447,6 +444,14 @@ var PAGE = function(argument) {
 						});
 					});
 				});
+		    
+
+		    jqxhr.error ( function(xhr, textStatus, errorThrown){
+		     var msg = "Results currently unavailable";
+		     jQuery("#heatmap").empty().text(msg);
+                     jQuery("#zoom").empty().text(msg);
+			console.log('request failed');
+		    });
 		},
 		drawFeatureViewer: function(argument) {
 			// TODO this will have to be re-factored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
