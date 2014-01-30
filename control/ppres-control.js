@@ -1,8 +1,9 @@
 var EXPORT = function(argument) {
 	var exportALL = function() {
 		var urlBase = '/~roos/get/ppc/tar.gz/';
-		var urlParam = 'md5';
-		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
+		var urlParam = 'ppc';
+		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getPPCHashCode();
+
 		if (APP.getDataObj().getProteinName())
 			urlREST += '&filename=predictprotein_' + APP.getDataObj().getProteinName() + '.tar.gz';
 		window.open(urlREST);
@@ -63,6 +64,7 @@ var APP = (function() {
 
 	var req_id = jQuery("#req_id").val();
 	var req_name = jQuery("#req_name").val();
+	var ppc_hash_code = jQuery("#ppc_hash_code").val();
 
 	if (!req_id) req_id = 70;
 
@@ -86,7 +88,7 @@ var APP = (function() {
 	listener = new Listeners();
 
 	mainObj.loadData(file_specs).done(function(data) {
-		mainObj.populateData(data, req_id, req_name);
+	    mainObj.populateData(data, req_id, req_name, ppc_hash_code);
 		page = new PAGE({
 			data: mainObj,
 			providers: APP.providers,

@@ -216,15 +216,18 @@ function PPResData() {
 			}));
 		},
 
-		populateData: function(data, reqID, reqName) {
-			xml_data = data;
-			this.setJobID(reqID);
+	    populateData: function(data, reqID, reqName, ppc_hash_code) {
+		xml_data = data;
+		this.setJobID(reqID);
 
-			if (reqName && reqName != '%REQ_NAME%')
-				this.setProteinName(reqName);
-			setJsonData(jQuery.xml2json(data));
-			setDataReady();
-		},
+		if (ppc_hash_code !== undefined)
+		    this.setPPCHashCode(ppc_hash_code);
+
+		if (reqName && reqName != '%REQ_NAME%')
+		    this.setProteinName(reqName);
+		setJsonData(jQuery.xml2json(data));
+		setDataReady();
+	    },
 
 		getSubCellLocations: function(domain) {
 			var _ret_obj = {};
@@ -404,6 +407,12 @@ function PPResData() {
 
 		getSequence: function() {
 			return (sequence);
+		},
+		getPPCHashCode: function() {
+			return (ppc_hash_code);
+		},
+		setPPCHashCode: function(_ppc_hash_code) {
+			ppc_hash_code = _ppc_hash_code;
 		},
 		getJobName: function() {
 			return (jobName);
