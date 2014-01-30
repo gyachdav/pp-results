@@ -12,8 +12,9 @@ var EXPORT = function(argument) {
 	var exportMethod = function(methodName) {
 		var urlBase = '/~roos/get/';
 		urlBase += methodName + '/';
-		var urlParam = 'md5';
-		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getMD5Seq();
+		var urlParam = 'ppc';
+		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getPPCHashCode();
+
 		jQuery.get(urlREST, function(data) {
 			window.open('data:Application/octet-stream;filename=file.' + methodName + ',' + encodeURIComponent(data));
 		}, 'text');
