@@ -327,9 +327,15 @@ var PAGE = function(argument) {
 
             var confMaxNumPages = 100; //Change to arbitrarily large number to have no actual limit, like 9007199254740992
             var confMaxVisiblePages = 10;
-			var numPages = 23;
+			var numPages = 23; //arbitrary init
+            function confGetNumPages() {
+                return Math.min(numPages, confMaxNumPages);
+            }
+
 			var pageHtml;
 			var $cached_pages = jQuery('#cached-pages');
+
+
 
 			function genAndCachePage(term, num) {
 				var $previous = $cached_pages.find('ul').not('.invisible');
@@ -351,6 +357,7 @@ var PAGE = function(argument) {
 						$cached_pages.append(pageHtml);
 					},
 					function() {
+                        numPages = 1; //0 + 1: 0 pages is numbered as 1
 						$cached_pages.find('.alert').show(0);
 					}
 				);
@@ -359,7 +366,7 @@ var PAGE = function(argument) {
 			//Show first page
 			genAndCachePage(term, 1);
 			jQuery('#page-selection').bootpag({
-				total: Math.min(numPages, confMaxNumPages),
+				total: confGetNumPages(),
 				page: 1,
 				maxVisible: confMaxVisiblePages,
 				//href: "#page-{{number}}",
@@ -374,6 +381,8 @@ var PAGE = function(argument) {
 					$cached_pages.find('ul').css('display', 'none').addClass('invisible');
 					pageHtml.removeClass('disappearing invisible').show(0);
 				}
+
+                jQuery(this).bootpag({total: confGetNumPages(), maxVisible: confMaxVisiblePages});
 			});
 		},
 		drawSequenceViewer: function(argument) {
