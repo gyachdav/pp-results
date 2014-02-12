@@ -609,6 +609,7 @@ function PPResData() {
 		 *   `numPages`:  total number of pages for the search result
          *   `summaries:  array of search results, with objects including the fields:
          *       {id (pmid), link (url), title, pubdate (publication date), source (publication journal)
+         * @param errorFun function to apply when the search is unsuccessful. The function takes no parameters.
 		 */
 		searchLitsearchData: function(term, page, successFun, errorFun) {
 
