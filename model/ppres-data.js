@@ -600,6 +600,16 @@ function PPResData() {
 			return (locations);
 		},
 
+        /**
+		 * Search & Fetch by term on PubMed (all fields).
+		 *
+		 * @param term for search, for example 'p53'
+		 * @param page search page starting from 0 (if not given, defaults to 0)
+         * @param successFun function to apply when the search is successful. The function takes as parameter the search result, object with fields:
+		 *   `numPages`:  total number of pages for the search result
+         *   `summaries:  array of search results, with objects including the fields:
+         *       {id (pmid), link (url), title, pubdate (publication date), source (publication journal)
+		 */
 		searchLitsearchData: function(term, page, successFun, errorFun) {
 
 			var SEARCH_URL = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=';
@@ -610,13 +620,11 @@ function PPResData() {
 			/**
 			 * Search on PubMed by term (all fields).
 			 *
-			 * @term term for search, for example 'p53'
-			 * @page search page starting from 0 (if not given, defaults to 0)
-			 *
-			 *
-			 * @return object with fields:
-			 *   'pmids': array of found pmids for given page (if non empty)
-			 *   'numPages': total number of pages for the search resul
+			 * @param term term for search, for example 'p53'
+			 * @param page search page starting from 0 (if not given, defaults to 0)
+             * @param successFun function to apply when the search is successful. The function takes as parameter the search result, object with fields:
+			 *   `pmids`: array of found pmids for given page (if non empty)
+			 *   `numPages`: total number of pages for the search result
 			 */
 			var searchPubmedByTerm = function(term, page, successFun) {
 				if (page === undefined) {
