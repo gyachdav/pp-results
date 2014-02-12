@@ -320,8 +320,9 @@ var PAGE = function(argument) {
 
 
 			var tmpProtName = dataObj.getProteinName();
-			if (tmpProtName.match(/\w+_\w+/))
+			if (tmpProtName.match(/\w+_\w+/)) {
 				tmpProtName = tmpProtName.split('_')[0];
+            }
 			var term = tmpProtName + '+OR+' + dataObj.getProteinID();
 
 			var numPages = 23;
