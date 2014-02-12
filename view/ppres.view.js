@@ -340,7 +340,7 @@ var PAGE = function(argument) {
 					num - 1, //The interface is 1-indexed; the search is 0-indexed
 
 					function(result) {
-						$cached_pages.find('.alert').hide(0);
+						$cached_pages.find('.alert').hide(0); //.alert element to: activate/deactivate alert message hidden in html
 
 						dataObj.setLitsearchData(result.summaries);
 						numPages = result.numPages;
@@ -354,7 +354,6 @@ var PAGE = function(argument) {
 						$cached_pages.find('.alert').show(0);
 					}
 				);
-
 			}
 
 			//Show first page
