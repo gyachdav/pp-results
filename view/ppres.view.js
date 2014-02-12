@@ -325,6 +325,8 @@ var PAGE = function(argument) {
             }
 			var term = tmpProtName + '+OR+' + dataObj.getProteinID();
 
+            var confMaxNumPages = 100; //Change to arbitrarily large number to have no actual limit, like 9007199254740992
+            var confMaxVisiblePages = 10;
 			var numPages = 23;
 			var pageHtml;
 			var $cached_pages = jQuery('#cached-pages');
@@ -358,9 +360,9 @@ var PAGE = function(argument) {
 			//Show first page
 			genAndCachePage(term, 1);
 			jQuery('#page-selection').bootpag({
-				total: Math.min(numPages, 23),
+				total: Math.min(numPages, confMaxNumPages),
 				page: 1,
-				maxVisible: 10,
+				maxVisible: confMaxVisiblePages,
 				//href: "#page-{{number}}",
 				leaps: false
 			}).on("page", function(event, num) {
@@ -445,7 +447,7 @@ var PAGE = function(argument) {
 						});
 					});
 				});
-		    
+
 
 		    jqxhr.error ( function(xhr, textStatus, errorThrown){
 		     var msg = "Results currently unavailable";
