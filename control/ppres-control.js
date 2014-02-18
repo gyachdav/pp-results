@@ -3,7 +3,7 @@ var EXPORT = function(argument) {
 		var urlBase = '/~roos/get/ppc/tar.gz/';
 		var urlParam = 'ppc';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getPPCHashCode();
-
+	        console.log(urlREST);
 		if (APP.getDataObj().getProteinName())
 			urlREST += '&filename=predictprotein_' + APP.getDataObj().getProteinName() + '.tar.gz';
 		window.open(urlREST);
@@ -14,7 +14,7 @@ var EXPORT = function(argument) {
 		urlBase += methodName + '/';
 		var urlParam = 'ppc';
 		var urlREST = urlBase + "?" + urlParam + "=" + APP.getDataObj().getPPCHashCode();
-
+	    console.log(urlREST);
 		jQuery.get(urlREST, function(data) {
 			window.open('data:Application/octet-stream;filename=file.' + methodName + ',' + encodeURIComponent(data));
 		}, 'text');
