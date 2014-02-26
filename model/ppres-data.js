@@ -230,26 +230,27 @@ function PPResData() {
 	    },
 
 		getSubCellLocations: function(domain) {
-			var _ret_obj = {};
+		    var _ret_obj = {};
 
-			var providers = ["LOCtree", "LOCtree2"];
-			if (domain) {
-				if (jQuery.inArray(domain, ["arch", "bact", "euka"]) != -1) provider = providers[1];
-				else if (jQuery.inArray(domain, ["plant", "animal", "proka"]) != -1) provider = providers[0];
-				else return null;
-				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), provider);
+		    var providers = ["LOCtree2", "LOCtree3"];
+		    if (domain) {
+			
+			for (var provider in providers) {
+			    var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), providers[provider]);
+			    if (subcell_group)
 				_tmp_ref = subcell_group.subcellularLocalisation.localisation[domain];
-				if (_tmp_ref) {
-					_tmp_loc = Object.keys(_tmp_ref)[0];
-					_ret_obj[domain] = {
-						score: _tmp_ref[_tmp_loc].score,
-						goTermId: _tmp_ref[_tmp_loc].goTermId,
-						localisation: _tmp_loc,
-						provider: provider
-					};
-					return (_ret_obj);
-				} else return null;
 			}
+			if (_tmp_ref) {
+			    _tmp_loc = Object.keys(_tmp_ref)[0];
+			    _ret_obj[domain] = {
+				score: _tmp_ref[_tmp_loc].score,
+				goTermId: _tmp_ref[_tmp_loc].goTermId,
+				localisation: _tmp_loc,
+				provider: provider
+			    };
+			    return (_ret_obj);
+			} else return null;
+		    }
 
 			for (var provider in providers) {
 				var subcell_group = this.getFeatureByProvider(this.getFeatureTypeGroup(), providers[provider]);
