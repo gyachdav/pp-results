@@ -1,9 +1,9 @@
 // App Excpetions
 
 function PPResException(message, error, status) {
-	this.message = message;
-	this.name = error;
-	this.status = status;
+    this.message = message;
+    this.name = error;
+    this.status = status;
 }
 
 
