@@ -229,12 +229,12 @@ var PAGE = function(argument) {
 						name: 'subcellExport',
 						text: "Download Raw Data File",
 						func: "exportMethod",
-						params: ["lc2"]
+						params: ["lc3"]
 					}, {
 						name: 'jsonExport',
-						text: "Download LocTree2 prediction in JSON format",
+						text: "Download LocTree3 prediction in JSON format",
 						func: "exportJSON",
-						params: ['LocTree2']
+						params: ['LocTree3']
 					}]
 				}
 				// , {
