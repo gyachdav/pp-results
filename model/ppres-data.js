@@ -300,8 +300,11 @@ function PPResData() {
 		},
 
 		getSolvAccComposition: function(argument) {
-			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
-			var ss_feature_array = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.split('');
+			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "REPROFAcc");
+		        if (!solvAccFeature || solvAccFeature === undefined)
+			    solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
+//			var ss_feature_array = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.split('');
+			var ss_feature_array = solvAccFeature.solventAccessibility.featureString.split('');
 			var solvAccComposition = {
 				Buried: 0,
 				Intermediate: 0,
@@ -323,8 +326,12 @@ function PPResData() {
 		},
 
 		getSolvAcc: function(argument) {
-			var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
-			var arrProps = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.replace(/(\r\n|\n|\r|\s)/gm, "").split('');
+		    var solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "REPROFAcc");
+                    if (!solvAccFeature || solvAccFeature === undefined)
+                        solvAccFeature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFacc");
+
+//			var arrProps = solvAccFeature.featureProviderGroup.solventAccessibility.featureString.replace(/(\r\n|\n|\r|\s)/gm, "").split('');
+			var arrProps = solvAccFeature.solventAccessibility.featureString.replace(/(\r\n|\n|\r|\s)/gm, "").split('');
 
 			// convert solvent accessbility from positional annotation to continuous stretche
 			r = _.range(10, 11);

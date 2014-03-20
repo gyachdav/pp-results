@@ -95,7 +95,7 @@ var FEATURE_VIEWER = function(argument) {
                 if (provider == "DISULFIND") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
                 else track.setPosition(currentBottom);
 
-                if (provider == "PROFAcc") {
+                if (provider == "PROFAcc" || provider == "REPROFAcc") {
                     feature_properties = dataObj.getSolvAcc();
                     if (!feature_properties) return null;
                     var feature_type = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider).type;
@@ -331,8 +331,40 @@ Feature.PROFsec = function(_feature, _feature_provider, _feature_type) {
     return this.getFeature();
 };
 
+Feature.REPROFSec = function(_feature, _feature_provider, _feature_type) {
+    this.init.call(this, _feature, _feature_provider, _feature_type);
+
+    switch (_feature.type) {
+        case 'helix':
+            this.color = '#990000';
+            break;
+        case 'strand':
+            this.color = '#0000CC';
+            break;
+        default:
+            this.color = '#006600';
+            break;
+    }
+
+    this.setColor();
+    return this.getFeature();
+};
+
 
 Feature.PROFAcc = function(_feature, _feature_provider, _feature_type) {
+    this.init.call(this, _feature, _feature_provider, _feature_type);
+
+    if (_feature.type == 'Buried')
+        this.color = 'yellow';
+    else if (_feature.type == 'Exposed')
+        this.color = 'blue';
+    else
+        this.color = 'white';
+
+    this.setColor();
+    return this.getFeature();
+};
+Feature.REPROFAcc = function(_feature, _feature_provider, _feature_type) {
     this.init.call(this, _feature, _feature_provider, _feature_type);
 
     if (_feature.type == 'Buried')
