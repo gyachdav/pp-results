@@ -227,8 +227,10 @@ APP.path = '/~guyyachdav/pp-results/';
 
 APP.providers = [
     "PROFsec",
+    "REPROFSec",
     "PROFAcc",
     "PHDhtm",
+    "TMSEG",
     "ISIS",
     "DISIS",
     // "ASP",
