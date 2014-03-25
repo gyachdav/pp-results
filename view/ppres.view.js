@@ -398,59 +398,29 @@ var PAGE = function(argument) {
             PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
         },
         drawHeatmapViewer: function(argument) {
+            var dataToFetch = 'http://rostlab.org/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
 
-            var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
             var jqxhr = jQuery.getJSON(dataToFetch,
                 function(arr) {
                     jQuery("#heatmap").empty();
-                    jQuery("#zoom").empty();
-                    dataObj = arr;
-                    var hm = new HEAT_MAP({
-                        targetDiv: "heatmap",
-                        dataObj: dataObj
-                    });
-                    var increments = Math.floor((dataObj.length / 20) * .1);
-                    var start, end, zoom;
+                });
+            jqxhr.done(function(data) {
 
-                    jQuery(function() {
-                        jQuery("#slider").slider({
-                            animate: "fast",
-                            value: 0,
-                            min: 0,
-                            max: ((dataObj.length) / 20) - increments,
-                            step: increments,
-                            slide: function(event, ui) {
-                                start = ui.value;
-                                jQuery("#start").text(start);
-                                ((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
-                                jQuery("#end").text(end);
-                                jQuery("#zoom").empty();
-                                zoom = new HEAT_MAP({
-                                    targetDiv: "zoom",
-                                    dataObj: dataObj,
-                                    startPoint: start,
-                                    increments: increments
-                                });
-                            }
-                        });
-                        start = jQuery("#slider").slider("value");
-                        jQuery("#start").text(start);
-                        ((start + increments) > (dataObj.length / 20)) ? end = dataObj.length / 20 : end = start + increments;
-                        jQuery("#end").text(end);
-                        zoom = new HEAT_MAP({
-                            targetDiv: "zoom",
-                            dataObj: dataObj,
-                            startPoint: start,
-                            increments: increments
-                        });
-                    });
+                var painter = new Biojs.HeatmapViewer({
+                    jsonData: data,
+                    user_defined_config: {
+                        colorLow: 'green',
+                        colorMed: 'white',
+                        colorHigh: 'red'
+                    },
+                    target: 'heatmap'
                 });
 
+            });
 
             jqxhr.error(function(xhr, textStatus, errorThrown) {
                 var msg = "Results currently unavailable";
                 jQuery("#heatmap").empty().text(msg);
-                jQuery("#zoom").empty().text(msg);
                 console.log('request failed');
             });
         },
