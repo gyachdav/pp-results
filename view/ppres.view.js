@@ -22,7 +22,7 @@ var PAGE = function(argument) {
             ],
             SecondaryStructure: [{
                     FeatureViewer: {
-                        providers: ["PROFsec", "PROFAcc", "PROFtmb"],
+                        providers: ["REPROFSec", "PROFsec", "PROFAcc", "PROFtmb"],
                         showAlignment: false
                     }
                 }, {

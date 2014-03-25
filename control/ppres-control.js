@@ -76,6 +76,7 @@ var APP = (function() {
             // path: '',
             // name: 'xml_results?req_id=' + req_id,
             path: 'examples/',
+            //name: 'UVR8_ARATH.xml',
             name: 'CL12A_HUMAN.xml',
             type: 'xml'
         },

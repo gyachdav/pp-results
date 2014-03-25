@@ -3,6 +3,7 @@ var FEATURE_VIEWER = function(argument) {
         dataObj,
         showAlignment,
         prot_name = 'query',
+        secondaryStructureFeatureRendered = false,
         displayDivWidth = 0,
         sequence_line_y = 70,
         currentBottom = sequence_line_y + 5,
@@ -74,7 +75,17 @@ var FEATURE_VIEWER = function(argument) {
         return sequence_line_y;
     };
 
+    var setSecondaryStructureFeatureRendered = function(_SecondaryStructureFeatureRendered) {
+        secondaryStructureFeatureRendered = _SecondaryStructureFeatureRendered;
+    };
+
+    var getSecondaryStructureFeatureRendered = function() {
+        return secondaryStructureFeatureRendered;
+    };
+
+
     return {
+
         getSequenceLineY: function() {
             return sequence_line_y;
         },
@@ -99,6 +110,16 @@ var FEATURE_VIEWER = function(argument) {
                     feature_properties = dataObj.getSolvAcc();
                     if (!feature_properties) return null;
                     var feature_type = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider).type;
+                } else if ((provider == "PROFsec" || provider == "REPROFSec") && (!getSecondaryStructureFeatureRendered())) {
+                    // NOTE: The following is just a workaround to show reprof results (if avaialable)
+                    // during the transition from prof to reprof
+                    if ((getSecondaryStructureFeatureRendered) && (provider == "PROFsec")) return null;
+                    feature_properties = dataObj.getSecondaryStructure();
+                    if (!feature_properties) return null;
+
+                    var feature_type = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider).type;
+                    feature_properties = dataObj.getFeatureLocations(dataObj.getSecondaryStructure());
+                    setSecondaryStructureFeatureRendered(true);
                 } else {
                     var feature_group = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider);
                     if (!feature_group) return null;
@@ -128,7 +149,7 @@ var FEATURE_VIEWER = function(argument) {
                     var track = new Track(1, 3);
                     track.setPosition(currentBottom);
                     Feature.Alignment.prototype = new Feature();
-                    feature = new Feature.Alignment(target, 'blast', 'alignmnet');
+                    feature = new Feature.Alignment(target, 'blast ', 'alignmnet ');
                     track.addFeature(feature);
                     addTrack(track);
                     return track.getTrack();
@@ -149,13 +170,12 @@ var FEATURE_VIEWER = function(argument) {
 
                 function(obj) {
                     if (obj.featureId.match(/^alignment/)) {
-
-                        // 'alignment', (target.db"-"+target.id+"-"+index)
+                        // 'alignment ', (target.db"-"+target.id+"-"+index)
                         __id = /^alignment__(\w+[\-\w+]+)__(\w+)__(\w+)/.exec(obj.featureId);
                         if (__id[1] && __id[2]) {
                             if (__id[1].match(/pdb/i)) {
                                 (__pdb) = __id[2].split('_');
-                                __url = 'http://www.rcsb.org/pdb/explore.do?structureId=' + __pdb[0];
+                                __url = 'http: //www.rcsb.org/pdb/explore.do?structureId=' + __pdb[0];
                             } else __url = 'http://www.uniprot.org/uniprot/' + __id[2];
                             var win = window.open(__url, '_blank');
                             win.focus();
