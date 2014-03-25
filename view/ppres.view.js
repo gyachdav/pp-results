@@ -398,7 +398,7 @@ var PAGE = function(argument) {
             PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
         },
         drawHeatmapViewer: function(argument) {
-            var dataToFetch = 'http://rostlab.org/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
+            var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
 
             var jqxhr = jQuery.getJSON(dataToFetch,
                 function(arr) {
