@@ -102,7 +102,7 @@ var FEATURE_VIEWER = function(argument) {
                 var track, feature_properties;
                 track = new Track();
                 if (provider == "ISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
-                if (provider == "DISIS") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
+                if (provider == "SomeNA") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
                 if (provider == "DISULFIND") track.setShiftBottomLine(Track.NO_BOTTOMLINE_SHIFT);
                 else track.setPosition(currentBottom);
 
@@ -425,15 +425,29 @@ Feature.ISIS = function(_feature, _feature_provider, _feature_type, featurePos) 
 
 };
 
-Feature.DISIS = function(_feature, _feature_provider, _feature_type, featurePos) {
+Feature.SomeNA = function(_feature, _feature_provider, _feature_type, featurePos) {
     this.init.call(this, _feature, _feature_provider, _feature_type);
-    this.color = "orange";
+    var tmp_increment = 0;
+
+    switch (_feature.type) {
+        case 'RNA-binding region':
+            this.color = 'purple';
+            tmp_increment = 5;
+            break;
+        case 'Nucleotide-binding region':
+            this.color = 'black';
+            break;
+        default:
+            this.color = 'orange';
+            break;
+    }
+
     this.setColor();
 
     var feature = {
         "type": "circle",
         "r": 5,
-        "cy": featurePos - 30,
+        "cy": featurePos - 30 - tmp_increment,
     }
     this.setFeature(feature);
     return this.getFeature();

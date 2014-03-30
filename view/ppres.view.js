@@ -45,7 +45,7 @@ var PAGE = function(argument) {
             }, 'Quotes'],
             Binding: [{
                 'FeatureViewer': {
-                    providers: ["ISIS", "DISIS"],
+                    providers: ["ISIS", "SomeNA"],
                     showAlignment: false
                 }
             }, 'Quotes', ],

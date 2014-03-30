@@ -230,7 +230,7 @@ APP.providers = [
     "PHDhtm",
     "TMSEG",
     "ISIS",
-    "DISIS",
+    "SomeNA",
     // "ASP",
     "DISULFIND",
     "PredictNLS",
