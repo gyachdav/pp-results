@@ -19,10 +19,38 @@
 				<strong>What am I seeing Here?</strong> This viewer shows a cell schematic with the predicted subcellular localization compartment highlighted in green. The predicted compartment is also referenced by a GO ID for better clarity.
 			</div>
 			<div id='SubcellLocViewerContainer' style="width:100%;"></div>
+<script type="text/javascript">
+var rostlabWikiAPI = "https://rostlab.org/wiki/api.php?action=parse&disablepp=1&format=json&prop=text&callback=?";
+var rostlabWikiLoginAPI = "https://rostlab.org/wiki/api.php?action=login";
+
+jQuery.post(rostlabWikiLoginAPI, {
+	lgname: 'gyachdav',
+	lgpassword: 'magestik'
+}).done(function(date){
+ jQuery("#summary").html(data);
+});
+
+
+// jQuery.getJSON(rostlabWikiAPI, {
+//     page: 'Packages',
+//     section: 1,
+// })
+//     .done(function (data) {
+//     content = data.parse.text['*'];
+//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+//     jQuery("#summary").html(content);
+
+// });
+
+
+</script>
+
 			<div class='row-fluid'>
 				<h2>
 					How do we Predict Subcellular Localization
 				</h2>
+				<div id='summary'></div>
+
 				<div>
 					Subcellular localization is predicted by LocTree2, a system of hierarchically organized Support Vector Machines, implemented to imitate protein sorting mechanisms. Predictions are based on evolutionary information derived from sequence homologs. LocTree2 predicts transmembrane and water-soluble globular proteins in the the so far largest number of compartments:
 					<ul>

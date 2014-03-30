@@ -218,8 +218,8 @@ var APP = (function() {
     };
 })();
 
-APP.path = '/ppres/';
-//APP.path = '/~guyyachdav/pp-results/';
+//APP.path = '/ppres/';
+APP.path = '/~guyyachdav/pp-results/';
 
 
 
