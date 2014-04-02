@@ -43,9 +43,7 @@ var GOANNOT_VIEW = (function() {
 
     	
     	GETRequestString += "}";
-
 	GETRequestStringEncoded = "http://amigo1.geneontology.org/cgi-bin/amigo/visualize?mode=advanced&term_data=" + customEncode(GETRequestString) + "&term_data_type=json&format=png";
-
     	return GETRequestStringEncoded;
     	
     }

@@ -12,16 +12,16 @@ var JOB_RUN = function(config) {
         modalDialog: true
     });
 
-    var jobRunDiv = jQuery('<div/>').addClass('alert alert-error' )
+    var jobRunDiv = jQuery('<div/>').addClass('alert alert-error')
         .append(jQuery('<div/>').text('The results for this sequence were pre-calculated on ' + original_date.toDateString() + ' and are older than 3 months. We recommend that you resubmit this job to get a more up-to-date (and possibly more accurate) result. You can resubmit the job by pressing the "Resubmit Job" button.'))
-	.append(jQuery('<div/>')).append(
+        .append(jQuery('<div/>')).append(
             jQuery('<a/>')
-		.attr('id', 'JobRunDialogueBttn')
-		.attr('href', '#JobRunDialogue')
-		.addClass('btn btn-danger')
-		.text('Resubmit Job'));
+            .attr('id', 'JobRunDialogueBttn')
+            .attr('href', '#JobRunDialogue')
+            .addClass('btn btn-danger')
+            .text('Resubmit Job'));
 
-    jQuery('.'+target_div).append(jobRunDiv);
+    jQuery('.' + target_div).append(jobRunDiv);
 
     jQuery("#JobRunDialogueBttn").on("click", function() {
         jobRunModal.getModalDiv().modal('toggle');
@@ -33,7 +33,7 @@ var JOB_RUN = function(config) {
             var status, reason, reason_text;
 
             var posting = jQuery.post('api/job_resubmit', {
-                reqid: reqid
+		reqid: reqid
             }, function(data) {
                 console.log('success');
                 status = data.status;
@@ -50,7 +50,7 @@ var JOB_RUN = function(config) {
                     jQuery('#err').html(responseText);
                     jQuery('#err').modal('show');
                 } else{
-		    window.location.href = '/getqueries';
+		    window.location.href = '/monitor_job_state?req_id='+reqid;
 		    return;
 		}
             });
