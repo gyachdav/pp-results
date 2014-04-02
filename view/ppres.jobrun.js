@@ -5,6 +5,7 @@ var JOB_RUN = function(config) {
     if (!reqid)
         reqid = 2;
 
+
     var jobRunModal = new MODAL({
         modalName: 'JobRunDialogue',
         modalTitle: "Resubmit Job",
@@ -50,7 +51,7 @@ var JOB_RUN = function(config) {
                     jQuery('#err').html(responseText);
                     jQuery('#err').modal('show');
                 } else{
-		    window.location.href = '/getqueries';
+		    window.location.href = '/monitor_job_state?req_id='+reqid;
 		    return;
 		}
             });
