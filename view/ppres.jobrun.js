@@ -32,14 +32,9 @@ var JOB_RUN = function(config) {
 
             var status, reason, reason_text;
 
-            var posting = jjQuery.post('api/job_status', {
-                reqid: jobEncId
+            var posting = jQuery.post('api/job_resubmit', {
+		reqid: reqid
             }, function(data) {
-
-                // var posting = jQuery.post('api/job_resubmit', {
-                //     reqid: reqid
-                // }
-
                 console.log('success');
                 status = data.status;
                 reason = data.reason;
