@@ -420,8 +420,37 @@ var PAGE = function(argument) {
 
             jqxhr.error(function(xhr, textStatus, errorThrown) {
                 var msg = "Results currently unavailable";
-                jQuery("#heatmap").empty().text(msg);
-                console.log('request failed');
+		var run_button = jQuery('<input>').attr('type','button').attr('id','SnapRunButtn').attr('value','run method').addClass('btn btn-danger');
+		var run_div = jQuery('<div/>').append(run_button);
+                jQuery("#heatmap").empty().text(msg).append(run_div);
+
+		var jobRunModal = new MODAL({
+		    modalName: 'JobRunDialogue',
+		    modalTitle: "Generate Results",
+		    content: "Are you sure you would like to generate SNAP results (please keep in mind that this is an intensive job and take a lot of resources",
+		    modalDialog: true
+		});
+
+		jQuery("#SnapRunButtn").on("click", function() {
+		    jobRunModal.getModalDiv().modal('toggle');
+		});
+
+		jobRunModal.getModalDiv().on("hide", function() {
+		    if (jobRunModal.getDialogueAnswer() !== "-1" && jobRunModal.getDialogueAnswer() == true) {
+			console.log ("run snap job");
+			//http://rostlab.org/~roos/run/snap2/?md5=d074ccf2e1c80c6c13d6997dc7b46540
+			var api = '/~roos/run/snap2/';
+			var jqxhr = jQuery.post(api, {seq: dataObj.getSequence()});
+			jqxhr.done(function(data) {
+			    console.log (data);
+			})
+			jqxhr.error(function(data){
+			    console.log('fail');
+			});
+		    }else{
+			console.log ("DON'T run snap job");
+		    }
+		});
             });
         },
         drawFeatureViewer: function(argument) {
