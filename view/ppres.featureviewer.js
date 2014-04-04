@@ -4,6 +4,7 @@ var FEATURE_VIEWER = function(argument) {
         showAlignment,
         prot_name = 'query',
         secondaryStructureFeatureRendered = false,
+        TMHFeatureRendered = false,
         displayDivWidth = 0,
         sequence_line_y = 70,
         currentBottom = sequence_line_y + 5,
@@ -83,6 +84,15 @@ var FEATURE_VIEWER = function(argument) {
         return secondaryStructureFeatureRendered;
     };
 
+    var setTMHFeatureRendered = function(TMHFeatureRendered) {
+        TMHFeatureRendered = TMHFeatureRendered;
+    };
+
+    var getTMHFeatureRendered = function() {
+        return TMHFeatureRendered;
+    };
+
+
 
     return {
 
@@ -120,6 +130,17 @@ var FEATURE_VIEWER = function(argument) {
                     var feature_type = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider).type;
                     feature_properties = dataObj.getFeatureLocations(dataObj.getSecondaryStructure());
                     setSecondaryStructureFeatureRendered(true);
+                } else if ((provider == "PHDhtm" || provider == "TMSEG") && (!getTMHFeatureRendered())) {
+                    // NOTE: The following is just a workaround to show tmseg results (if avaialable)
+                    // during the transition from phdhtm to tmseg
+                    if ((getTMHFeatureRendered) && (provider == "PHDhtm")) return null;
+                    feature_properties = dataObj.getTransmembraneHelices();
+                    if (!feature_properties) return null;
+
+                    var feature_type = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider).type;
+                    feature_properties = dataObj.getFeatureLocations(dataObj.getTransmembraneHelices());
+                    setTMHFeatureRendered(true);
+
                 } else {
                     var feature_group = dataObj.getFeatureByProvider(dataObj.getFeatureTypeGroup(), provider);
                     if (!feature_group) return null;

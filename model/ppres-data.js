@@ -302,6 +302,16 @@ function PPResData() {
 
         },
 
+        getTransmembraneHelices: function(argument) {
+            // NOTE 2014_04_04: we are now returning tmseg results when avaialable
+            var htm_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "TMSEG");
+            if (htm_feature.feature === undefined)
+                htm_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PHDhtm");
+            return htm_feature;
+        },
+
+
+
         getSSComposition: function(argument) {
             var ss_feature = this.getFeatureByProvider(this.getFeatureTypeGroup(), "PROFsec");
             var ss_feature_array = this.getFeatureLocations(ss_feature);
