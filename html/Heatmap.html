@@ -19,7 +19,12 @@
             <strong>What is Presented Here?</strong> 
 	    We show each substitution independently for each position of a protein in a heatmap representation. Dark red indicates a high score (score > 50, strong signal for effect), white indicates weak signals (-50 &lt; score &lt; 50), and green a low score (score &lt; -50, strong signal for neutral/no effect). Black marks the corresponding wildtype residues. The zoom panel below the main panel  is a blow out of a specific region in the heatmap presented above and contained in the blue frame. Use the sliding blue frame to scroll through the heatmap.
         </div>
-      <div id='heatmap' class="text-warning">Loading Please Wait...</div>
+
+    <div id='status_message' class="row alert alert-warning" style="display:none">
+      <div id='status_message_text' class="span6 offset2 " />
+      <div id='status_message_bttn' class="span4"/>
+     </div>
+    <div id='heatmap' class="text-warning">Loading Please Wait...</div>
       
       
      

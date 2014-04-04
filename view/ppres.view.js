@@ -398,14 +398,99 @@ var PAGE = function(argument) {
             PIE_CHART.toPieData(dataObj.getAAComposition()).drawPieChart(targetDiv);
         },
         drawHeatmapViewer: function(argument) {
-            var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
-
-            var jqxhr = jQuery.getJSON(dataToFetch,
-                function(arr) {
-                    jQuery("#heatmap").empty();
+	    var msg_success = function  (argument) {
+		jQuery("#heatmap").empty();
+		jQuery("#status_message").show();  
+		jQuery("#status_message_text").text('Job submitted to the queue check back later. Note that on average a SNAP2 job takes 20 minutes to complete.');
+		jQuery("#status_message_bttn").empty();
+	    }
+	    var msg_err = function  (argument) {
+		jQuery("#heatmap").empty();
+		jQuery("#status_message").show();  
+		jQuery("#status_message").attr('class', 'row alert alert-error');
+		jQuery("#status_message_text").text('There was an error submitting this job please contact admin.');
+		jQuery("#status_message_bttn").empty();
+	    }	    
+	    var msg_running = function(){
+		jQuery("#heatmap").empty();
+		jQuery("#status_message").show();  
+		jQuery("#status_message_text").text('PredictProtein is working on generating the results for this section please check back later');
+	    }
+	    var job_submission_dialog = function (){
+		var msg = "Results currently unavailable, use the Run Method button to request PredictProtein to generate the results";
+                var run_button = jQuery('<input>').attr('type','button').attr('id','SnapRunButtn').attr('value','Run Method').addClass('btn btn-danger');
+                jQuery("#heatmap").empty();
+                jQuery("#status_message").show();
+                jQuery("#status_message_text").text(msg);
+                jQuery("#status_message_bttn").append(run_button);
+		
+                var jobRunModal = new MODAL({
+                    modalName: 'JobRunDialogue',
+                    modalTitle: "Generate Results",
+                    content: "Are you sure you would like to generate SNAP results",
+                    modalDialog: true
                 });
-            jqxhr.done(function(data) {
 
+                jQuery("#SnapRunButtn").on("click", function() {
+                    jobRunModal.getModalDiv().modal('toggle');
+                });
+
+		jobRunModal.getModalDiv().on("hide", function() {
+                    if (jobRunModal.getDialogueAnswer() !== "-1" && jobRunModal.getDialogueAnswer() == true) {
+		        snapJobSubmission(1);
+                    }else{
+                        console.log ("DON'T run snap job");
+                    }
+		});
+	    }
+
+	    var url_status = '/~roos/status/snap2/';
+	    var	params_status = {
+		seq:dataObj.getMD5Seq()
+	    };
+	    var	url_put =   '~roos/put/seq/';
+	    var	params_put ={
+		seq: dataObj.getSequence()
+	    };
+	    var url_run =   '/~roos/run/snap2/';
+	    var params_run ={
+		seq: dataObj.getSequence()
+	    };
+
+	    function snapJobSubmission(step) {
+                switch(step) {
+                case 0:
+                    var resp = jQuery.post( url_status, params_status, undefined, 'json' );
+                    resp.done(function(data){
+                        if (data.job_status == 'running'){
+			    msg_running();
+                            return;
+                        }else{
+                            snapJobSubmission(1);
+                        }
+                    });
+
+                    break;
+                case 1:
+                    var jqxhr  = jQuery.post(url_put, params_put, undefined, 'json');
+                    jqxhr.done(function(){ snapJobSubmission(2) })
+                        .fail(function(){ msg_err() });
+                    break;
+                case 2:
+                    var jqxhr  = jQuery.post(url_run, params_run, undefined, 'json');
+                    jqxhr.done(function(){ 
+			msg_success();
+		    }).fail(function(){ 
+			msg_err();
+		    });
+                    break;
+                }
+            }
+
+	    // Try to get results. if none start a submission pipeline
+            var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
+            var jqxhr = jQuery.getJSON(dataToFetch,function(arr) {	 jQuery("#heatmap").empty();	});
+            jqxhr.done(function(data) {
                 var painter = new Biojs.HeatmapViewer({
                     jsonData: data,
                     user_defined_config: {
@@ -417,41 +502,9 @@ var PAGE = function(argument) {
                 });
 
             });
-
             jqxhr.error(function(xhr, textStatus, errorThrown) {
-                var msg = "Results currently unavailable";
-		var run_button = jQuery('<input>').attr('type','button').attr('id','SnapRunButtn').attr('value','run method').addClass('btn btn-danger');
-		var run_div = jQuery('<div/>').append(run_button);
-                jQuery("#heatmap").empty().text(msg).append(run_div);
-
-		var jobRunModal = new MODAL({
-		    modalName: 'JobRunDialogue',
-		    modalTitle: "Generate Results",
-		    content: "Are you sure you would like to generate SNAP results (please keep in mind that this is an intensive job and take a lot of resources",
-		    modalDialog: true
-		});
-
-		jQuery("#SnapRunButtn").on("click", function() {
-		    jobRunModal.getModalDiv().modal('toggle');
-		});
-
-		jobRunModal.getModalDiv().on("hide", function() {
-		    if (jobRunModal.getDialogueAnswer() !== "-1" && jobRunModal.getDialogueAnswer() == true) {
-			console.log ("run snap job");
-			//http://rostlab.org/~roos/run/snap2/?md5=d074ccf2e1c80c6c13d6997dc7b46540
-			var api = '/~roos/run/snap2/';
-			var jqxhr = jQuery.post(api, {seq: dataObj.getSequence()});
-			jqxhr.done(function(data) {
-			    console.log (data);
-			})
-			jqxhr.error(function(data){
-			    console.log('fail');
-			});
-		    }else{
-			console.log ("DON'T run snap job");
-		    }
-		});
-            });
+		snapJobSubmission(0);
+	    });
         },
         drawFeatureViewer: function(argument) {
             // TODO this will have to be re-factored so the reference object is retrieve via the getReferenceByProvider in the ppres.data class
