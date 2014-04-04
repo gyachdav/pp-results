@@ -72,7 +72,7 @@ var APP = (function() {
         debug = 0,
         file_specs = {
             // path: 'examples',
-            // name: 'SMAD7_HUMAN',
+            // name: 'ADRB2_HUMAN.xml',
             path: '',
             name: 'xml_results?req_id=' + req_id,
             type: 'xml'
