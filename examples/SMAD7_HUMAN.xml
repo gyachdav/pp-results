@@ -1,0 +1,3319 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<predictprotein xmlns="http://www.predictprotein.org/predictprotein" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.predictprotein.org http://predictprotein.org/predictprotein-xsd/predictprotein.xsd">
+<entry dataset="PPJobDB" created="Fri Apr  4 14:57:41 2014" modified="Fri Apr  4 14:57:41 2014" version="1">
+<accession>SMAD7_HUMAN</accession>
+<name>query</name>
+<protein>
+    <recommendedName><fullName>Mothers against decapentaplegic homolog 7            OS=Homo sapiens GN=SMAD7 PE=1 SV=1</fullName></recommendedName>
+</protein>
+<organism>
+    <entryKey entryKeyValue="1" />
+    <name type="common">HUMAN</name>
+    <domain>euka</domain>
+    <dbReference type="NCBI Taxonomy" id="9606"><entryKey entryKeyValue="2" /></dbReference>
+</organism>
+<reference>
+  <entryKey entryKeyValue="3" />
+  <citation type="journal article" date="2004" name="Nucleic Acid Res." volume="32" first="321" last="326">
+    <title>The PredictProtein server.</title>
+    <authorList>
+      <person name="Rost B."/>
+      <person name="Yachdav G."/>
+      <person name="Liu J."/>
+    </authorList>
+    <dbReference type="PubMed" id="15215403"><entryKey entryKeyValue="4" /></dbReference>
+  </citation>
+  <scope>protein feature prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="5" />
+  <citation type="journal article" date="2012">
+    <title>Improvement of DNA- and RNA-Protein Binding Prediction</title>
+    <authorList>
+      <person name="Peter Hönigschmid"/>
+      <person name="Edda Kloppmann"/>
+      <person name="Burkhard Rost"/>
+    </authorList>
+    <dbReference type="" id=""><entryKey entryKeyValue="6" /></dbReference>
+  </citation>
+  <scope>DNA-binding region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="7" />
+  <citation type="journal article" date="2006" name="Nucleic Acids Res." volume="34" first="177" last="181">
+    <title>DISULFIND: a disulfide bonding state and cysteine connectivity prediction server.</title>
+    <authorList>
+      <person name="Ceroni A."/>
+      <person name="Passerini A."/>
+      <person name="Vullo A."/>
+      <person name="Frasconi P."/>
+    </authorList>
+    <dbReference type="PubMed" id="16844986"><entryKey entryKeyValue="8" /></dbReference>
+  </citation>
+  <scope>disulfide bond prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="9" />
+  <citation type="journal article" date="2007" name="Bioinformatics." volume="23" first="e13" last="e16">
+    <title>ISIS: interaction sites identified from sequence.</title>
+    <authorList>
+      <person name="Ofran Y."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17237081"><entryKey entryKeyValue="10" /></dbReference>
+  </citation>
+  <scope>protein binding region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="11" />
+  <citation type="journal article" date="2005" name="J Mol Biol." volume="348" first="85" last="100">
+    <title>Mimicking cellular sorting improves prediction of subcellular localization.</title>
+    <authorList>
+      <person name="Nair R."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="15808855"><entryKey entryKeyValue="12" /></dbReference>
+  </citation>
+  <scope>subcellular location prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="13" />
+  <citation type="journal article" date="2012" name="Bioinformatics" volume="28" first="i458" last="i465">
+    <title>LocTree2 predicts localization for all domains of life</title>
+    <authorList>
+      <person name="Goldberg T."/>
+      <person name="Hamp T."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="22962467"><entryKey entryKeyValue="14" /></dbReference>
+  </citation>
+  <scope>subcellular location prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="15" />
+  <citation type="journal article" date="2014" name="submitted to Nucleic Acids Research">
+    <title>LocTree3 prediction of localization </title>
+    <authorList>
+      <person name="Goldberg T."/>
+      <person name="Hecht M."/>
+      <person name="Hamp T."/>
+      <person name="Karl T."/>
+      <person name="Yachdav G."/>
+      <person name="Nielsen H."/>
+      <person name="Rost B"/>
+      <person name="et al."/>
+    </authorList>
+    <dbReference type="PubMed" id=""><entryKey entryKeyValue="16" /></dbReference>
+  </citation>
+  <scope>subcellular location prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="17" />
+  <citation type="journal article" date="2007" name="PLoS Comput Biol." volume="3" first="e140" last="e140">
+    <title>Natively unstructured loops differ from other loops.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Liu J."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17658943"><entryKey entryKeyValue="18" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="19" />
+  <citation type="journal article" date="2000" name="EMBO Rep." volume="1" first="411" last="415">
+    <title>Finding nuclear localization signals.</title>
+    <authorList>
+      <person name="Cokol M."/>
+      <person name="Nair R."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="11258480"><entryKey entryKeyValue="20" /></dbReference>
+  </citation>
+  <scope>nuclear localisation signal prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="21" />
+  <citation type="journal article" date="1996" name="Protein Sci." volume="5" first="1704" last="1718">
+    <title>Topology prediction for helical transmembrane proteins at 86% accuracy.</title>
+    <authorList>
+      <person name="Rost B."/>
+      <person name="Fariselli P."/>
+      <person name="Casadio R."/>
+    </authorList>
+    <dbReference type="PubMed" id="8844859"><entryKey entryKeyValue="22" /></dbReference>
+  </citation>
+  <scope>transmembrane protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="23" />
+  <citation type="journal article" date="2006" name="Bioinformatics." volume="22" first="891" last="893">
+    <title>PROFbval: predict flexible and rigid residues in proteins.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Yachdav G."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="16455751"><entryKey entryKeyValue="24" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="25" />
+  <citation type="journal article" date="2007" name="Bioinformatics." volume="23" first="2376" last="2384">
+    <title>Natively unstructured regions in proteins identified from contact predictions.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Punta M."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="17709338"><entryKey entryKeyValue="26" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="27" />
+  <citation type="journal article" date="2009" name="PLoS ONE" volume="4" first="e4433" last="e4433">
+    <title>Improved Disorder Prediction by Combination of Orthogonal Approaches.</title>
+    <authorList>
+      <person name="Schlessinger A."/>
+      <person name="Punta M."/>
+      <person name="Yachdav G."/>
+      <person name="Kajan L."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="19209228"><entryKey entryKeyValue="28" /></dbReference>
+  </citation>
+  <scope>disordered protein region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="29" />
+  <citation type="journal article" date="">
+    <title></title>
+    <authorList>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="" id=""><entryKey entryKeyValue="30" /></dbReference>
+  </citation>
+  <scope>disordered region prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="31" />
+  <citation type="journal article" date="2004" name="Nucleic Acids Res." volume="32" first="2566" last="2577">
+    <title>Predicting transmembrane beta-barrels in proteomes.</title>
+    <authorList>
+      <person name="Bigelow HR."/>
+      <person name="Petrey DS."/>
+      <person name="Liu J."/>
+      <person name="Przybylski D."/>
+      <person name="Rost B."/>
+    </authorList>
+    <dbReference type="PubMed" id="15141026"><entryKey entryKeyValue="32" /></dbReference>
+  </citation>
+  <scope>transmembrane beta-barrel prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="33" />
+  <citation type="journal article" date="1997" name="Nucleic Acids Res." volume="25" first="3389" last="3402">
+    <title>Gapped BLAST and PSI-BLAST: a new generation of protein database search programs.</title>
+    <authorList>
+      <person name="Altschul SF."/>
+      <person name="Madden TL."/>
+      <person name="Schäffer AA."/>
+      <person name="Zhang J."/>
+      <person name="Zhang Z."/>
+      <person name="Miller W."/>
+      <person name="Lipman DJ."/>
+    </authorList>
+    <dbReference type="PubMed" id="9254694"><entryKey entryKeyValue="34" /></dbReference>
+  </citation>
+  <scope>sequence alignment tool</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="35" />
+  <citation type="journal article" date="2013" name="BMC Bioinformatics (Suppl. Automated Function Prediction Meeting 2011)." volume="14" first="Suppl. 3: S7" last="Suppl. 3: S7">
+    <title>Homology-based inference sets the bar high for protein function prediction.</title>
+    <authorList>
+      <person name="Hamp T."/>
+      <person name="Kassner R."/>
+      <person name="Seemayer S."/>
+      <person name="Vicedo E."/>
+      <person name="Schaefer C."/>
+      <person name="Achten D."/>
+      <person name="Auer F."/>
+      <person name="Boehm A."/>
+      <person name="Braun T."/>
+      <person name="Hecht M."/>
+      <person name="Heron M."/>
+      <person name="Honigschmid P."/>
+      <person name="Hopf TA."/>
+      <person name="Kaufmann S."/>
+      <person name="Kiening M."/>
+      <person name="Krompass Denis."/>
+      <person name="Landerer C."/>
+      <person name="Mahlich Y."/>
+      <person name="Roos M."/>
+      <person name="Rost B"/>
+    </authorList>
+    <dbReference type="PubMed" id="23514582"><entryKey entryKeyValue="36" /></dbReference>
+  </citation>
+  <scope>GO term prediction</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="37" />
+  <citation type="journal article" date="2012" name="Nucleic Acids Research Database Issue." volume="40" first="D290" last="D301">
+    <title>Homology-based inference sets the bar high for protein function prediction.</title>
+    <authorList>
+      <person name="Punta M"/>
+      <person name="Coggill PC"/>
+      <person name="Eberhardt RY"/>
+      <person name="Mistry J"/>
+      <person name="Tate J"/>
+      <person name="Boursnell C"/>
+      <person name="Pang N"/>
+      <person name="Forslund K"/>
+      <person name="Ceric G"/>
+      <person name="Clements J"/>
+      <person name="Heger A"/>
+      <person name="Holm L"/>
+      <person name="Sonnhammer ELL"/>
+      <person name="Eddy SR"/>
+      <person name="Bateman A"/>
+      <person name="Finn RD"/>
+    </authorList>
+    <dbReference type="PubMed" id="22127870"><entryKey entryKeyValue="38" /></dbReference>
+  </citation>
+  <scope>domain annotation</scope>
+</reference>
+<reference>
+  <entryKey entryKeyValue="39" />
+  <citation type="master's thesis" date="2014" name="unpublished">
+    <title>Transmembrane Helix Prediction in Proteins.</title>
+    <authorList>
+      <person name="Bernhofer M."/>
+    </authorList>
+    <dbReference type="" id=""><entryKey entryKeyValue="40" /></dbReference>
+  </citation>
+  <scope>transmembrane protein region prediction</scope>
+</reference>
+<predictionRuns>
+<predRunProfTMB ref="31">
+  <entryKey entryKeyValue="41" />
+  <zScore value="" displayName="Z-value"/>
+</predRunProfTMB>
+</predictionRuns>
+<aliProviderGroup provider="PSI-BLAST" ref="33">
+<alignment>
+  <dbReference type="TrEMBL" id="S7Q5C9" entryname="S7Q5C9_MYOBR" ><entryKey entryKeyValue="42" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002263 PE=3 SV=1"/>
+  <bitscore value="458"/>
+  <expect value="e-125"/>
+  <identity value="0.164885496183206"/>
+  <matchLen value="655"/>
+  <queryStart value="19"/>
+  <queryEnd value="651"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="588"/>
+  <querySeq>
+SSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFT
+VNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVHM
+FLMARLHIKRIAVLPGTGAIRQGANMKGAITLTILIGVFVVCWAPFFLHLIFY----ISCPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRK
+TFKEIICCYPLGGLCDLSSRYMVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPM
+YFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASICS--LLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAAC
+TVSGILFIIYSDSSAVIICL-ITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL--------IGVFVVCWAPFFLHLIFY
+IS----CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICC
+  </querySeq>
+  <subjectSeq>
+MEPGNGTQISEFLLLGLSQALELQPLIFG--LFLSMYLVTVLGNLLIILAVSSDSHLHTPMYFFLSNLSLVDICFTSTTIPKML-------WNIQTQSKV
+ITYEGCITQMYFYTLFAVLDNFILTVMAYDRFVAICHPLHYMVIMNPQLCGLLVLLSWILSAMVSLLHSLMVLRLSFCSDLEIPHFFCELNQILYSYSKI
+L----------------------SSICGIPSAQGKYKAFSTCASHLSVVSLFYGRNLGVYLSSTAAHSAQLSATTSVMYTVVTPMLNPFIYSLRNNDIKR
+ALQRFFGSHLQHMEPGNGTQISEFLLLGLSQTLELQPLIFG-----------------------------LFLSMYLVTVLGNLLIILAVSSDSHLHTPM
+YFFLSNLSLVDICFTSTTIPKML-------WNIQTQSKVITYQGCITQMYFYILFAMLDNMILTVMAYDRFVAICHPLHYMVIMNPQLCGLLVLVSWIMS
+VLNSLLNSLMVLGLRFCSDLKIPHFFCELSQVVHIACSDTFLNNIIMYFSAGLLGGGPFAGILYSYSKILSSICGIPSAQGKYKAFSTCASHLSVVSLFY
+STSLGVYLSFTATQNAHSSATASVMYTVVTPMLNPFIYSLRNNDIKRALQRFLGR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7Q5C9" entryname="S7Q5C9_MYOBR" ><entryKey entryKeyValue="43" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002263 PE=3 SV=1"/>
+  <bitscore value="262"/>
+  <expect value="1e-66"/>
+  <identity value="0.184952978056426"/>
+  <matchLen value="319"/>
+  <queryStart value="14"/>
+  <queryEnd value="317"/>
+  <subjectStart value="277"/>
+  <subjectEnd value="586"/>
+  <querySeq>
+HLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTD
+AQSFTVNIDNVIDSVICSSLLASICS--LLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYSDSSAVIICL-ITMFFTMLALMAS
+LYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL--------IGVFVVCWAPFFLHLIFYISCPQNPYCVC----FMSHFNLYLILIMCNSIID
+PLIYALRSQELRKTFKEII
+  </querySeq>
+  <subjectSeq>
+SHLQHMEPGNGTQISEFLLLGLSQTLELQPLIFG--LFLSMYLVTVLGNLLIILAVSSDSHLHTPMYFFLSNLSLVDICFTSTTIPKML-------WNIQ
+TQSKVITYQGCITQMYFYILFAMLDNMILTVMAYDRFVAICHPLHYMVIMNPQLCGLLVLVSWIMSVLNSLLNSLMVLGLRFCSDLKIPHFFCELSQVVH
+IACSDTFLNNIIMYFSAGLLGGGPFAGILYSYSKILSSICGIPSAQGKYKAFSTCASHLSVVSLFYSTSLGVYLSFTATQNAHSSATASVMYTVVTPMLN
+PFIYSLRNNDIKRALQRFL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7Q5C9" entryname="S7Q5C9_MYOBR" ><entryKey entryKeyValue="44" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002263 PE=3 SV=1"/>
+  <bitscore value="221"/>
+  <expect value="3e-54"/>
+  <identity value="0.170818505338078"/>
+  <matchLen value="281"/>
+  <queryStart value="383"/>
+  <queryEnd value="656"/>
+  <subjectStart value="31"/>
+  <subjectEnd value="282"/>
+  <querySeq>
+FVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI--CSLLSIAVDRY
+FTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITL
+TILIGVFVVCWAPFFLHLIFY----ISCPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLGG
+  </querySeq>
+  <subjectSeq>
+FLSMYLVTVLGNLLIILAVSSDSHLHTPMYFFLSNLSLVDICFTSTTIPKML-------WNIQTQSKVITYEGCITQMYFYTLFAVLDNFILTVMAYDRF
+VAICHPLHYMVIMNPQLCGLLVLLSWILSAMVSLLHSLMVLRLSFCSDLEIPHFFCELNQILYSYSKIL----------------------SSICGIPSA
+QGKYKAFSTCASHLSVVSLFYGRNLGVYLSSTAAHSAQLSATTSVMYTVVTPMLNPFIYSLRNNDIKRALQRFFGSHLQHM
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="L8YA73" entryname="L8YA73_TUPCH" ><entryKey entryKeyValue="45" /></dbReference>
+  <defline value="Olfactory receptor 7A17 OS=Tupaia chinensis           GN=TREES_T100018202 PE=3 SV=1"/>
+  <bitscore value="454"/>
+  <expect value="e-124"/>
+  <identity value="0.178787878787879"/>
+  <matchLen value="660"/>
+  <queryStart value="19"/>
+  <queryEnd value="648"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="609"/>
+  <querySeq>
+SSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFT
+VNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVHM
+FLMARLHIKRIA--------VLPGTGAIRQGANMKGAITLTILIGVFVVCWAPFFLHLIFYISCPQNP----YCVCFMSHFNLYLILIMCNSIIDPLIYA
+LRSQELRKTFKEIICCYPLGGLCDLSSRYMVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAK
+NKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRVGII
+ISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMK--------GAITLTILIGVFVVCWAP
+FFLHLIFYIS----CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEI
+  </querySeq>
+  <subjectSeq>
+MEPGNDTQISEFLLLGLSEEPQLQPLLFG--LFLYMYLITVCGNLLIILATISDSHLHTPMYFFLSNLSFVDICFTSTTVPKMLAN-------IQTQSKV
+ITYAGCITQICVFTLFAGVDDCLLTVMAYDRYVAICHPLHYTVIMNPWLCGKLVLASWIMSLLYSLSQSLMALRLSFCTHVEIPHFFCEINQVIHLACSD
+TLLNDIVIYFVAVLLGGGPLIGILYSYCKILSSIRAISSVHGRHKAFSTCASHLSVVSLFYCTGMAVYLSSAATHSSHSSAAASVMYTVVTPMLNPFIYS
+LRNKDIKRALKGV-----------------------------------TMKPGNDTHISEFLLLGLSEKPELQPLIFGLFLSMYLITVCGNLLIILATIS
+DSHLHTPMYFFLSNLSFADICVTSTNIPKMLVN-------IQTQSKVITYAGCITQVFFYIVFLVLDDFLLTVMAYDRYVAICHPLHYTVIMNPWLCGML
+VLASWIIGVPYSLLQTLMALRLSFCTHVEIPHFFCELYQMIHLACSDTFLNAMVTYFATVLLGIGPLTGILYSYSKIISSICAISSAQGKYKAFSTCASH
+LSVVSLFYCTSLGVYLSAGAARSSPSSAAASVMYTVVTPMLNPFIYSLRNKDIKRALKRL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="L8YA73" entryname="L8YA73_TUPCH" ><entryKey entryKeyValue="46" /></dbReference>
+  <defline value="Olfactory receptor 7A17 OS=Tupaia chinensis           GN=TREES_T100018202 PE=3 SV=1"/>
+  <bitscore value="264"/>
+  <expect value="4e-67"/>
+  <identity value="0.207006369426752"/>
+  <matchLen value="314"/>
+  <queryStart value="18"/>
+  <queryEnd value="316"/>
+  <subjectStart value="305"/>
+  <subjectEnd value="609"/>
+  <querySeq>
+RSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSF
+TVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVH
+MFLMARLHIKRIAVLPGTGAIRQGANMKGAITLT--------ILIGVFVVCWAPFFLHLIFYIS----CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIY
+ALRSQELRKTFKEI
+  </querySeq>
+  <subjectSeq>
+TMKPGNDTHISEFLLLGLSEKPELQPLIFG--LFLSMYLITVCGNLLIILATISDSHLHTPMYFFLSNLSFADICVTSTNIPKMLVN-------IQTQSK
+VITYAGCITQVFFYIVFLVLDDFLLTVMAYDRYVAICHPLHYTVIMNPWLCGMLVLASWIIGVPYSLLQTLMALRLSFCTHVEIPHFFCELYQMIHLACS
+DTFLNAMVTYFATVLLGIGPLTGILYSYSKIISSICAISSAQGKYKAFSTCASHLSVVSLFYCTSLGVYLSAGAARSSPSSAAASVMYTVVTPMLNPFIY
+SLRNKDIKRALKRL
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O15105" entryname="SMAD7_HUMAN" ><entryKey entryKeyValue="47" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 7            OS=Homo sapiens GN=SMAD7 PE=1 SV=1"/>
+  <bitscore value="453"/>
+  <expect value="e-124"/>
+  <identity value="1"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="H2QEI2" entryname="H2QEI2_PANTR" ><entryKey entryKeyValue="48" /></dbReference>
+  <defline value="SMAD family member 7 OS=Pan troglodytes            GN=SMAD7 PE=2 SV=1"/>
+  <bitscore value="453"/>
+  <expect value="e-124"/>
+  <identity value="0.997652582159624"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGSGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="F1CK19" entryname="F1CK19_PIG" ><entryKey entryKeyValue="49" /></dbReference>
+  <defline value="Mothers against DPP 7 OS=Sus scrofa GN=SMAD7            PE=2 SV=1"/>
+  <bitscore value="452"/>
+  <expect value="e-124"/>
+  <identity value="0.985915492957746"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAWGGGGGGELRGEGATDGRAHGAGGGGAGRAGCCLGKAVRGAKGHHHPHPPAAGAGVAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGLGAPAGSQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7QBY2" entryname="S7QBY2_MYOBR" ><entryKey entryKeyValue="50" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002262 PE=3 SV=1"/>
+  <bitscore value="452"/>
+  <expect value="e-124"/>
+  <identity value="0.176100628930818"/>
+  <matchLen value="636"/>
+  <queryStart value="54"/>
+  <queryEnd value="651"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="622"/>
+  <querySeq>
+LGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTI
+FYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYSD-SSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL
+--------IGVFVVCWAPFFLHLIFYISCPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLGGLCDLSSRYMVN-------
+-----STHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNG
+SETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVII
+CLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL--------IGVFVVCWAPFFLHLIFYIS----CPQNPYCVCFMSH
+FNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICC
+  </querySeq>
+  <subjectSeq>
+MYLITVLGNLLIILAVSSDTHLHTPMYFFLCNLSLVDICFTSTTVPKML-------WNIQTQSKVITYEGCITQIYFFILFAVLDNFILTVMAYDRFVAI
+CHPLHYMVIMNPRLCGLLVLVSWIMSVLNSLLESLMVFGLRFCSDLEIPHFFCELRQVVQIACSDTFLNNMVMYFITVLLGGGPLAGILYSYSKIIASIC
+GIPSAQGKYKAFSTCASHLSVVSLFYGTSLGVYLSSTATHNATASVMYTVVTPMLNPFIYSLRNNDIKRALQRFLGRSFAVRIPHSLLPATMEAGEAPIT
+AAALASHEPGFWLSGTTLWERTDHQEAAPALSICSLVVSAKKPELQPLIFGLFLSMYLVTVLGNLLIILAVSSDSNLHTPMYFFLSNLSWVDICFTSTTV
+PKMLVN-------IQTQSKVITYEGCITQMYFYTFFAVLDNFILTVMAYDRFVAICHPLHYMVIMNPQLCRLLVLVSSSMSALHSLLHSLMVLRLTFCSD
+LEIPHFFCELNQVVHIACSDTFLNSLMINCLTVLLGGGPLAGILYSYSRILSSIWAIPSAQGKYKAFSTCASHLSVVSLFYGTSLGVYLSSAATQNSHSS
+ATASVIYTVVTPMLNPFIYSLRNNDIKRALERLFGR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7QBY2" entryname="S7QBY2_MYOBR" ><entryKey entryKeyValue="51" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002262 PE=3 SV=1"/>
+  <bitscore value="449"/>
+  <expect value="e-123"/>
+  <identity value="0.165165165165165"/>
+  <matchLen value="666"/>
+  <queryStart value="39"/>
+  <queryEnd value="651"/>
+  <subjectStart value="336"/>
+  <subjectEnd value="985"/>
+  <querySeq>
+GCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI-
+-CSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAI
+RQGANMKGAITLTIL--------IGVFVVCWAPFFLHLIFYIS----CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLG
+GLCDLSSRYMVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQL-----------------------FVSPEVFVTLGVISLLENILVIVA
+IAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRV
+GIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL--------IGVFVVC
+WAPFFLHLIFYIS----CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICC
+  </querySeq>
+  <subjectSeq>
+PELQPLIFG--LFLSMYLVTVLGNLLIILAVSSDSNLHTPMYFFLSNLSWVDICFTSTTVPKMLVN-------IQTQSKVITYEGCITQMYFYTFFAVLD
+NFILTVMAYDRFVAICHPLHYMVIMNPQLCRLLVLVSSSMSALHSLLHSLMVLRLTFCSDLEIPHFFCELNQVVHIACSDTFLNSLMINCLTVLLGGGPL
+AGILYSYSRILSSIWAIPSAQGKYKAFSTCASHLSVVSLFYGTSLGVYLSSAATQNSHSSATASVIYTVVTPMLNPFIYSLRNNDIKRALERLFGRELQS
+PSSAIQEFGLSHGDLPLRVPNQVSPKVRAENGHTNMEPQAYLSVGVLRHLRHMEAGNGTQISEFLLLGLSQSVELQPLIFGLFLSMYLVTMFGNLLIILA
+VSSDSHLHTPMYFFLSNLSLVDICFTSTTIPKMLVN-------IQTQSKVITYEGCITQLYFYTIFAVLDNFILTVMAYDRFVAICHPLHYMVIMNSRLC
+GLLVLVSWIMSAMVSLLHSLMVLRLSFCSDLEISHFFCELNQVLQLACSDIFLNNIMIYFLSVLLAGGPLAGILYSYSKIIASICGIPPAQGKYKAFSTC
+ASHLSVVSLFYGTSLGVYLSSAATQNAHSSTTASVMYTVVTPVLNPFIYSLRNNDIKRALERFFGR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7QBY2" entryname="S7QBY2_MYOBR" ><entryKey entryKeyValue="52" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002262 PE=3 SV=1"/>
+  <bitscore value="267"/>
+  <expect value="4e-68"/>
+  <identity value="0.187301587301587"/>
+  <matchLen value="315"/>
+  <queryStart value="18"/>
+  <queryEnd value="317"/>
+  <subjectStart value="678"/>
+  <subjectEnd value="983"/>
+  <querySeq>
+RSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSF
+TVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYS-DSSAVIICLITMFFTMLALMASLYVH
+MFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL--------IGVFVVCWAPFFLHLIFYIS----CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIY
+ALRSQELRKTFKEII
+  </querySeq>
+  <subjectSeq>
+HMEAGNGTQISEFLLLGLSQSVELQPLIFG--LFLSMYLVTMFGNLLIILAVSSDSHLHTPMYFFLSNLSLVDICFTSTTIPKMLVN-------IQTQSK
+VITYEGCITQLYFYTIFAVLDNFILTVMAYDRFVAICHPLHYMVIMNSRLCGLLVLVSWIMSAMVSLLHSLMVLRLSFCSDLEISHFFCELNQVLQLACS
+DIFLNNIMIYFLSVLLAGGPLAGILYSYSKIIASICGIPPAQGKYKAFSTCASHLSVVSLFYGTSLGVYLSSAATQNAHSSTTASVMYTVVTPVLNPFIY
+SLRNNDIKRALERFF
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7QBY2" entryname="S7QBY2_MYOBR" ><entryKey entryKeyValue="53" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10002262 PE=3 SV=1"/>
+  <bitscore value="233"/>
+  <expect value="6e-58"/>
+  <identity value="0.185314685314685"/>
+  <matchLen value="286"/>
+  <queryStart value="386"/>
+  <queryEnd value="660"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="279"/>
+  <querySeq>
+LGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASI--CSLLSIAVDRYFTI
+FYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYSDSS-AVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTIL
+--------IGVFVVCWAPFFLHLIFYISCPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLGGLCDL
+  </querySeq>
+  <subjectSeq>
+MYLITVLGNLLIILAVSSDTHLHTPMYFFLCNLSLVDICFTSTTVPKML-------WNIQTQSKVITYEGCITQIYFFILFAVLDNFILTVMAYDRFVAI
+CHPLHYMVIMNPRLCGLLVLVSWIMSVLNSLLESLMVFGLRFCSDLEIPHFFCELRQVVQIACSDTFLNNMVMYFITVLLGGGPLAGILYSYSKIIASIC
+GIPSAQGKYKAFSTCASHLSVVSLFYGTSLGVYLSSTATHNATASVMYTVVTPMLNPFIYSLRNNDIKRALQRFLGRSFAVRIPHS
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="I0FRQ6" entryname="I0FRQ6_MACMU" ><entryKey entryKeyValue="54" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 7            isoform 1 OS=Macaca mulatta GN=SMAD7 PE=2 SV=1"/>
+  <bitscore value="452"/>
+  <expect value="e-123"/>
+  <identity value="0.997652582159624"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="K7BAG3" entryname="K7BAG3_PANTR" ><entryKey entryKeyValue="55" /></dbReference>
+  <defline value="SMAD family member 7 OS=Pan troglodytes            GN=SMAD7 PE=2 SV=1"/>
+  <bitscore value="452"/>
+  <expect value="e-123"/>
+  <identity value="0.995305164319249"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGSGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQQPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="H2NWB5" entryname="H2NWB5_PONAB" ><entryKey entryKeyValue="56" /></dbReference>
+  <defline value="Uncharacterized protein OS=Pongo abelii            GN=SMAD7 PE=4 SV=1"/>
+  <bitscore value="452"/>
+  <expect value="e-123"/>
+  <identity value="0.995305164319249"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHAPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="U3D430" entryname="U3D430_CALJA" ><entryKey entryKeyValue="57" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 7            isoform 1 OS=Callithrix jacchus GN=SMAD7 PE=2 SV=1"/>
+  <bitscore value="452"/>
+  <expect value="e-123"/>
+  <identity value="0.992957746478873"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGAGRAGCCLGKAVRGAKGHHHPHPPATGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="B2RPW6" entryname="B2RPW6_MOUSE" ><entryKey entryKeyValue="58" /></dbReference>
+  <defline value="MAD homolog 7 (Drosophila), isoform CRA_b            OS=Mus musculus GN=Smad7 PE=2 SV=1"/>
+  <bitscore value="448"/>
+  <expect value="e-122"/>
+  <identity value="0.981220657276995"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGVGGGGGGGELRGEGATDGRAYGAGGGGAGRAGCCLGKAVRGAKGHHHPHPPTSGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTAGCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O35253" entryname="SMAD7_MOUSE" ><entryKey entryKeyValue="59" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 7            OS=Mus musculus GN=Smad7 PE=1 SV=1"/>
+  <bitscore value="448"/>
+  <expect value="e-122"/>
+  <identity value="0.981220657276995"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGVGGGGGGGELRGEGATDGRAYGAGGGGAGRAGCCLGKAVRGAKGHHHPHPPTSGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTAGCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="M3XP38" entryname="M3XP38_MUSPF" ><entryKey entryKeyValue="60" /></dbReference>
+  <defline value="Uncharacterized protein OS=Mustela putorius            furo GN=SMAD7 PE=4 SV=1"/>
+  <bitscore value="447"/>
+  <expect value="e-122"/>
+  <identity value="0.981220657276995"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSTLVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDGRAHGAGGGGAGRAGCCLGKAVRGAKGHHHPHPPATGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTAGLLLPGRLDCRLGLGAPAGSQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLRRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="K7DQY9" entryname="K7DQY9_PANTR" ><entryKey entryKeyValue="61" /></dbReference>
+  <defline value="SMAD family member 7 OS=Pan troglodytes            GN=SMAD7 PE=2 SV=1"/>
+  <bitscore value="445"/>
+  <expect value="e-122"/>
+  <identity value="0.990654205607477"/>
+  <matchLen value="428"/>
+  <queryStart value="663"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="69"/>
+  <subjectEnd value="496"/>
+  <querySeq>
+RYMFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHS
+VLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHL
+SRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCL
+GQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+PRMFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGSGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHS
+VLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQQPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHL
+SRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCL
+GQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="L5LCQ7" entryname="L5LCQ7_MYODS" ><entryKey entryKeyValue="62" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis davidii           GN=MDA_GLEAN10001271 PE=3 SV=1"/>
+  <bitscore value="439"/>
+  <expect value="e-120"/>
+  <identity value="0.144992526158445"/>
+  <matchLen value="669"/>
+  <queryStart value="18"/>
+  <queryEnd value="657"/>
+  <subjectStart value="82"/>
+  <subjectEnd value="701"/>
+  <querySeq>
+RSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSF
+TVNIDNVIDSVICSSLLA--SICSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAA-CTVSGILFIIYSDSSAVIICLITMFFTMLALMASLYVH
+--------MFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTILIGVFVVCWAPFFLHLIFYISCPQNPYCVCF----MSHFNLYLILIMCNSIIDPLIY
+ALRSQELRKTFKEIICCYPLGGLCDLSSRYMVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIA
+KNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASICS--LLSIAVDRYFTIFYALQYHNIMTVKRVGI
+IISCIWAACTVSGILFI-IYSDSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTI--------LIGVFVVCWA
+PFFLHLIFYIS---CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLGGL
+  </querySeq>
+  <subjectSeq>
+TMEWENLTSVSEFFLLGLPVQPEQQEVLFG--LFLSMYLITVAGNLLIILAIIADAQLHTPMYFFLVNLSLTDTCFVSTTVPKMLANIWI-------QSQ
+VISYAGCLSQLYFFLLFGMLEAFLLAVMAYDRYVAICHPLHYIMVMSPGLCVCLVSASWIVTALSSLLHTLLLDSLSFCAGHEIPHFFCDVNPLLSLSCT
+DPFTNELVIFTVGGLMGLVCVLCLIISYMSIFSTILKIPSAQGKRKAFSTCSSHLSVVSLFFGTSFCVYFSPPSTRSAQKGAVASVMYTVVTPMLNPFIY
+SLRNRDIKSSLRK---------------------------------KVGEMGGGNQSGVNEFLLLGISESPEDQRVLFGMFLSMYLVTVVGNVLIILAIS
+FDSRLHTPMYFFLANLSFTDLFFVTNTVPKMLVN-------LQSQNKAISYVGCLTQLYFLVSLVALDNLILATMAYDRFVAICRPLHYATAMSPRLCIL
+FLTLCWVFSVLYGLIHTLLMSKVIFCGSRKIHYIFCEMYVLLRLACSNTQINHTVLIATGSFIFLTPFGFMIMSYVWIARVILQMPSASSKYKAFSTCAS
+HLAVVTLFYGTLCMVYLKPLHTYSMTDSVATVMYAVVTPMMNPFIYSLRNKDMHGALGRLFLGKAFQRF
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="G1RRB2" entryname="G1RRB2_NOMLE" ><entryKey entryKeyValue="63" /></dbReference>
+  <defline value="Uncharacterized protein OS=Nomascus leucogenys            GN=SMAD3 PE=4 SV=2"/>
+  <bitscore value="432"/>
+  <expect value="e-117"/>
+  <identity value="0.221729490022173"/>
+  <matchLen value="451"/>
+  <queryStart value="686"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="148"/>
+  <subjectEnd value="587"/>
+  <querySeq>
+EDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGT
+RTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYP--MDFL
+KPTADCPDAVPSSAETG----------------------------------------GTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCV
+QEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYS
+LQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+RRSLGDRCRPRPSSPLRPRRAVEPSPAGGAPRRPRALPAMSSILPFTPPIVKRLLGWKKGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQ-NV
+NTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRAMELCEFAFNMKKDEVCVNPYHYQRVETPVLPPVLVPRHTEIPAEF
+PPLDDYSHSIPENTNFPAGIEPQSNIPETPPPGYLSEDGETSDHRMNHSMDAGSPNLSPNPMSPAHNNLDLQPVTYCEPAFWCSISYYELNQRVGETFHA
+SQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAA
+LLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="G5B883" entryname="G5B883_HETGA" ><entryKey entryKeyValue="64" /></dbReference>
+  <defline value="Mothers against decapentaplegic-like protein 2            OS=Heterocephalus glaber GN=GW7_16538 PE=4 SV=1"/>
+  <bitscore value="430"/>
+  <expect value="e-117"/>
+  <identity value="0.281767955801105"/>
+  <matchLen value="362"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="368"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDL
+RHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWE
+EKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFS
+IKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSAGGSGGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGRLDELEKAITTQNCNTKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDL
+HSHHELKAIENCEYAFNLKKDEVCVNPYHYQRVETPETPPPGYISEDGETSDQQLNQSMDTGSPAELSPTT-LSPVNHSLDLQPVTYSEPAFWCSIAYYE
+LNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCN
+LKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="G1RLB6" entryname="G1RLB6_NOMLE" ><entryKey entryKeyValue="65" /></dbReference>
+  <defline value="Uncharacterized protein (Fragment) OS=Nomascus            leucogenys GN=SMAD7 PE=4 SV=1"/>
+  <bitscore value="422"/>
+  <expect value="e-115"/>
+  <identity value="0.994652406417112"/>
+  <matchLen value="374"/>
+  <queryStart value="717"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="4"/>
+  <subjectEnd value="377"/>
+  <querySeq>
+GGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSS
+YSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLL
+LEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS
+RTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+GGPGRAGCFLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSS
+YSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLL
+LEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS
+RTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="G6D6U2" entryname="G6D6U2_DANPL" ><entryKey entryKeyValue="66" /></dbReference>
+  <defline value="Uncharacterized protein OS=Danaus plexippus            GN=KGM_04785 PE=4 SV=1"/>
+  <bitscore value="421"/>
+  <expect value="e-114"/>
+  <identity value="0.266666666666667"/>
+  <matchLen value="375"/>
+  <queryStart value="746"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="34"/>
+  <subjectEnd value="398"/>
+  <querySeq>
+AGAAGGAEADLKALTHSVLKKLKERQLE-LLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCNPHHLSRLCELESPP----------PPYSRYPMDFLKPTADCPDAVPSS-----------AETGGTNYLAPGGLSDSQ---LLLEPG
+DRSHWCVVAYWEEKTRVGRLYCVQEPS--LDIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-
+RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDSLVKKLKKRKGAIEELERALSCPGTPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLEIC
+QYPFSAKQKEVCINPYHYKRVESPVLPPVLVPRHSEFAPGHSLLPFQRTSEPAMPHNVSYSGSGFPPSATSELPDTPPPAYSPPSDDSEPPGEVAPVSYQ
+EPLYWASVAYYELNCRVGEVFHCNSHSVVVDGFTDPSNNSDRFCLGQLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDAAIFVQSRNCNHHHGF
+HPSTVCKIPPGCSLKIFNNREFAQLLSQSVNHGFEAVYELTKMCTIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="H9JLS9" entryname="H9JLS9_BOMMO" ><entryKey entryKeyValue="67" /></dbReference>
+  <defline value="Uncharacterized protein OS=Bombyx mori PE=4            SV=1"/>
+  <bitscore value="420"/>
+  <expect value="e-114"/>
+  <identity value="0.264"/>
+  <matchLen value="375"/>
+  <queryStart value="746"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="34"/>
+  <subjectEnd value="398"/>
+  <querySeq>
+AGAAGGAEADLKALTHSVLKKLKERQLE-LLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCNPHHLSRLCELESPP----------PPYSRYPMDFLKPTADCPDAVPSS-----------AETGGTNYLAPGGLSDSQ---LLLEPG
+DRSHWCVVAYWEEKTRVGRLYCVQEPS--LDIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-
+RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDSLVKKLKKRKGAVEELERALSCPGTPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLEIC
+QFPFSAKQKEVCINPYHYKRVESPVLPPVLVPRHSEFAPGHSLLPFQRTAEPSMPHNVSYSGSGFPPSASSELPDTPPPAYSPPSEDSEPPGEVAPVSYQ
+EPLYWASVAYYELNCRVGEVFHCNSHSVVVDGFTDPSNNSDRFCLGQLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDAAIFVQSRNCNHHHGF
+HPSTVCKIPPGCSLKIFNNREFAQLLSQSVNHGFEAVYELTKMCTIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="M3ZMX8" entryname="M3ZMX8_XIPMA" ><entryKey entryKeyValue="68" /></dbReference>
+  <defline value="Uncharacterized protein OS=Xiphophorus            maculatus PE=4 SV=1"/>
+  <bitscore value="418"/>
+  <expect value="e-113"/>
+  <identity value="0.240506329113924"/>
+  <matchLen value="395"/>
+  <queryStart value="743"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="17"/>
+  <subjectEnd value="401"/>
+  <querySeq>
+AAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLC
+CCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSSAETGGTNYLA--------------------
+-------PGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVY
+NRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGEQNGQEEKWCEKAVKSLVKKLKRTGQLEELEKAITTQNINTKCLTIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLQSHHELRAVD
+HCEFAFHTKKDEVCVNPYHYQRIETPILPPVLVPRHTDISAEFPPLDDYSPSIPENTNFPSGIEPQSNYIPETPPPGYLSEDGETNDHQLNHNMETSSPS
+LSPNPVSPTNNNSDPQPVTYCESAFWCSISYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNSAVELTRRHIGRGVRLYYIGGEVFAE
+CLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7PGD8" entryname="S7PGD8_MYOBR" ><entryKey entryKeyValue="69" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10001574 PE=3 SV=1"/>
+  <bitscore value="418"/>
+  <expect value="e-113"/>
+  <identity value="0.146706586826347"/>
+  <matchLen value="668"/>
+  <queryStart value="19"/>
+  <queryEnd value="657"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="619"/>
+  <querySeq>
+SSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFT
+VNIDNVIDSVICSSLLA--SICSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAA-CTVSGILFIIYSDSSAVIICLITMFFTMLALMASLYVH-
+-------MFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTILIGVFVVCWAPFFLHLIFYISCPQNPYCVCF----MSHFNLYLILIMCNSIIDPLIYA
+LRSQELRKTFKEIICCYPLGGLCDLSSRYMVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAK
+NKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASICS--LLSIAVDRYFTIFYALQYHNIMTVKRVGII
+ISCIWAACTVSGILFI-IYSDSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTI--------LIGVFVVCWAP
+FFLHLIFYIS---CPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLGGL
+  </querySeq>
+  <subjectSeq>
+MEWENLTSVSEFFLLGLSAQPEQQEVLFG--LFLSMYLITVAGNLLIILAITADAQLHTPMYFFLVNLSLADTCFVSTTVPKMLANIWIQNQ-------V
+ISYAGCLSQLYFFMLFGMLEAFLLAVMAYDRYVAICHPLHYIMVMSPGLCVCLVSASWILPALSSLLHTLLLDSLSFCADHEIPHFFCDINPLLSLSCTD
+PFINELVIFTIGGLTGLVCVLCLIISYTYIFSTILKIPSAQGKRKAFSTCSSHLSVVSLFFGTSFCVYFSPPSTRSAQKGAVASVMYTVVTPMLNPFIYS
+LRNRDIKSSLRK---------------------------------KVGEMGGGNQSGASAFLLLGISESPEGQRVLFWMFLSMYLVTVVGNVLIILAISF
+DSHLHTPMYFFLANLSFTDLFFVTNTVPKMLVN-------LQSQNKAISYVGCLTQLYFLVSLVALDNLILATMAYDRFVAICRPLHYATAMSPSLCILF
+LTLCWVFSALYGLIHTLLMSKVIFCGSRKIHYIFCEMYVLLRLACSNTQINHTVLIATGSFIFFTPFGFMIMSYVWIVRAILQIPSASSKYKAFSTCASH
+LAVVILFYGTLCMVYLKPLHTYSMKDSVATVMYAVVTPMMNPFIYSLRNKDMHGALGRLFLGKAFQRF
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="S7PGD8" entryname="S7PGD8_MYOBR" ><entryKey entryKeyValue="70" /></dbReference>
+  <defline value="Olfactory receptor OS=Myotis brandtii           GN=D623_10001574 PE=3 SV=1"/>
+  <bitscore value="234"/>
+  <expect value="3e-58"/>
+  <identity value="0.159235668789809"/>
+  <matchLen value="314"/>
+  <queryStart value="18"/>
+  <queryEnd value="317"/>
+  <subjectStart value="307"/>
+  <subjectEnd value="611"/>
+  <querySeq>
+RSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSF
+TVNIDNVIDSVICSSLLASICS--LLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFI-IYSDSSAVIICLITMFFTMLALMASLYVH
+MFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTI--------LIGVFVVCWAPFFLHLIFYISCPQNPYCV---CFMSHFNLYLILIMCNSIIDPLIYA
+LRSQELRKTFKEII
+  </querySeq>
+  <subjectSeq>
+EMGGGNQSGASAFLLLGISESPEGQRVLFW--MFLSMYLVTVVGNVLIILAISFDSHLHTPMYFFLANLSFTDLFFVTNTVPKMLVN-------LQSQNK
+AISYVGCLTQLYFLVSLVALDNLILATMAYDRFVAICRPLHYATAMSPSLCILFLTLCWVFSALYGLIHTLLMSKVIFCGSRKIHYIFCEMYVLLRLACS
+NTQINHTVLIATGSFIFFTPFGFMIMSYVWIVRAILQIPSASSKYKAFSTCASHLAVVILFYGTLCMVYLKPLHTYSMKDSVATVMYAVVTPMMNPFIYS
+LRNKDMHGALGRLF
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="D1LXE4" entryname="D1LXE4_SACKO" ><entryKey entryKeyValue="71" /></dbReference>
+  <defline value="Smad2/3 transcription factor OS=Saccoglossus            kowalevskii PE=2 SV=1"/>
+  <bitscore value="417"/>
+  <expect value="e-113"/>
+  <identity value="0.246786632390745"/>
+  <matchLen value="389"/>
+  <queryStart value="746"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="396"/>
+  <querySeq>
+AGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCE
+SYGKINPELVCCNPHHLSRLCELESPP---PPYSRYPMDFLKPTADCPDAVPSS-------------AETGGTNYLAPGGLSDSQ---------------
+---------LLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYP
+IFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGDSEDKWSEKAVKSLVKRLKKTGSLDELEKSISNQDASTKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLQSHHELRAIDSCE
+FAFNLKRDEVCVNPYHYERVETPVLPPVLVPRQTGDIPTDFPPLDDYSTSIPENTNFPVGVEAQSILPETPPPGYMSEDGDNQDQSMDTSTPGGNGADAA
+ASPNPSLDVQPVPYCEPPFWCSIAYYEMNTRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNINRNQTIELTRRHIGKGVRLYYIGGEVFAECLSESS
+IFVQSPQCNLRYGWHPATVCKIPPGCNLKIFNNQEFAALLSQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="H2M8L0" entryname="H2M8L0_ORYLA" ><entryKey entryKeyValue="72" /></dbReference>
+  <defline value="Uncharacterized protein (Fragment) OS=Oryzias            latipes GN=SMAD2 (1 of 2) PE=4 SV=1"/>
+  <bitscore value="414"/>
+  <expect value="e-112"/>
+  <identity value="0.25"/>
+  <matchLen value="380"/>
+  <queryStart value="741"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="24"/>
+  <subjectEnd value="392"/>
+  <querySeq>
+PPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKR
+LCCCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYP----------------MDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLL--------
+--LEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLD
+NPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKTPNGGGQEEKWCEKAVKSLVKKLKKTGQLDELEKAISTQ-NSNTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRA
+IDTCQYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDFTNSIPENTNFPAGIEPPNNYIPDTPPPGYMSEDGETSDQQMNQSMESDL
+QPVTYSEPAFWCSIAYYELNQRVGENFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCN
+QRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="R9TNQ6" entryname="R9TNQ6_ELECQ" ><entryKey entryKeyValue="73" /></dbReference>
+  <defline value="Smad2 OS=Eleutherodactylus coqui PE=2 SV=1"/>
+  <bitscore value="413"/>
+  <expect value="e-112"/>
+  <identity value="0.24384236453202"/>
+  <matchLen value="406"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="413"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDL
+RHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSSAETGGTNY------------
+----------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQ
+LTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCW
+LEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSASGTTGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNCNTKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDL
+HSHHELKAIENCEYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYIPETPPPGYISEDGETSDQQL
+NQSMDTGSPAELSPSTLSPVNHNLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVR
+LYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCW
+IELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="TrEMBL" id="Q07G47" entryname="Q07G47_XENTR" ><entryKey entryKeyValue="74" /></dbReference>
+  <defline value="OTTXETP00000005021 OS=Xenopus tropicalis            GN=smad2 PE=2 SV=1"/>
+  <bitscore value="413"/>
+  <expect value="e-112"/>
+  <identity value="0.24384236453202"/>
+  <matchLen value="406"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="413"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDL
+RHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSSAETGGTNY------------
+----------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQ
+LTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCW
+LEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSASGTTGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNCNTKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDL
+HSHHELKAIENCEYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYIPETPPPGYISEDGETSDQQL
+NQSMDTGSPAELSPSTLSPVNHNLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVR
+LYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCW
+IELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q15796" entryname="SMAD2_HUMAN" ><entryKey entryKeyValue="75" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 2            OS=Homo sapiens GN=SMAD2 PE=1 SV=1"/>
+  <bitscore value="407"/>
+  <expect value="e-110"/>
+  <identity value="0.227699530516432"/>
+  <matchLen value="426"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="443"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQ--------------------
+PPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSS
+AETGGTNY----------------------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLN
+SDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSAGGSGGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGRLDELEKAITTQNCNTKCVTIPSTCSEIWGLSTPNTIDQWDTTGLYSFSEQTRSLDGRLQV
+SHRKGLPHVIYCRLWRWPDLHSHHELKAIENCEYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYI
+PETPPPGYISEDGETSDQQLNQSMDTGSPAELSPTTLSPVNHSLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLS
+NVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMS
+FVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q5R7C0" entryname="SMAD2_PONAB" ><entryKey entryKeyValue="76" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 2            OS=Pongo abelii GN=SMAD2 PE=2 SV=1"/>
+  <bitscore value="407"/>
+  <expect value="e-110"/>
+  <identity value="0.227699530516432"/>
+  <matchLen value="426"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="443"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQ--------------------
+PPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSS
+AETGGTNY----------------------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLN
+SDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSAGGSGGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGRLDELEKAITTQNCNTKCVTIPSTCSEIWGLSTPNTIDQWDTTGLYSFSEQTRSLDGRLQV
+SHRKGLPHVIYCRLWRWPDLHSHHELKAIENCEYAFNLKEDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYI
+PETPPPGYISEDGETSDQQLNQSMDTGSPAELSPTTLSPVNHSLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLS
+NVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMS
+FVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O70436" entryname="SMAD2_RAT" ><entryKey entryKeyValue="77" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 2            OS=Rattus norvegicus GN=Smad2 PE=1 SV=1"/>
+  <bitscore value="406"/>
+  <expect value="e-110"/>
+  <identity value="0.225352112676056"/>
+  <matchLen value="426"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="443"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQ--------------------
+PPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSS
+AETGGTNY----------------------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLN
+SDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSAGGSGGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGRLDELEKAITTQNCNTKCVTIPSTCSEIWGLSTANTVDQWDTTGLYSFSEQTRSLDGRLQV
+SHRKGLPHVIYCRLWRWPDLHSHHELKAIENCEYAFSLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYI
+PETPPPGYISEDGETSDQQLNQSMDTGSPAELSPTTLSPVNHSLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLS
+NVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMS
+FVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q62432" entryname="SMAD2_MOUSE" ><entryKey entryKeyValue="78" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 2            OS=Mus musculus GN=Smad2 PE=1 SV=2"/>
+  <bitscore value="406"/>
+  <expect value="e-110"/>
+  <identity value="0.225352112676056"/>
+  <matchLen value="426"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="443"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQ--------------------
+PPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSS
+AETGGTNY----------------------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLN
+SDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSAGGSGGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGRLDELEKAITTQNCNTKCVTIPSTCSEIWGLSTANTVDQWDTTGLYSFSEQTRSLDGRLQV
+SHRKGLPHVIYCRLWRWPDLHSHHELKAIENCEYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYI
+PETPPPGYISEDGETSDQQLNQSMDTGSPAELSPTTLSPVNHSLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLS
+NVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMS
+FVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O88406" entryname="SMAD7_RAT" ><entryKey entryKeyValue="79" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 7            OS=Rattus norvegicus GN=Smad7 PE=2 SV=2"/>
+  <bitscore value="405"/>
+  <expect value="e-109"/>
+  <identity value="0.97887323943662"/>
+  <matchLen value="426"/>
+  <queryStart value="665"/>
+  <queryEnd value="1090"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="426"/>
+  <querySeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGELRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </querySeq>
+  <subjectSeq>
+MFRTKRSALVRRLWRSRAPGGEDEEEGVGGGGGGGGLRGEGATDGRAYGAGGGGAGRAGCCLGKAVRGAKGHHHPHPPSSGAGAAGGAEADLKALTHSVL
+KKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPASAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSR
+LCELESPPPPYSRYPMDFLKPTADCPDAVPSSDETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFV
+KGWGQCYTRQFISSCPCWLEVIFNSR
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q1W668" entryname="SMAD2_BOVIN" ><entryKey entryKeyValue="80" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 2            OS=Bos taurus GN=SMAD2 PE=2 SV=1"/>
+  <bitscore value="405"/>
+  <expect value="e-109"/>
+  <identity value="0.227699530516432"/>
+  <matchLen value="426"/>
+  <queryStart value="733"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="443"/>
+  <querySeq>
+AKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQ--------------------
+PPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSS
+AETGGTNY----------------------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLN
+SDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQIS
+FVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSAGGSGGAGGGEQNGQEEKWCEKAVKSLVKKLKKTGRLDELEKAITTQNCNTKCVTIPSTCSEIWGLSTPNTIDQWDTTGLYSFSEQTRSLDGRLQV
+SHRKGLPHVIYCRLWRWPDLHSHHELKAIENCEYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTHSIPENTNFPAGIEPQSNYI
+PETPPPGYISEDGETSDQQLNQSMDTGSPAELSPTTLSPVNHSLDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLS
+NVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQGFAALLAQSVNQGFEAVYQLTRMCTIRMS
+FVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q9I9P9" entryname="SMAD2_DANRE" ><entryKey entryKeyValue="81" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 2            OS=Danio rerio GN=smad2 PE=2 SV=1"/>
+  <bitscore value="405"/>
+  <expect value="e-109"/>
+  <identity value="0.22196261682243"/>
+  <matchLen value="428"/>
+  <queryStart value="731"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="444"/>
+  <querySeq>
+RGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYS------------
+--------LPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVP
+SSAETGGTNY----------------------------LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQ
+LNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQ
+ISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKSASGSSGAGGGGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQ-NRNTKCVTIPSNCSEIWGLSTPNTIEQWDTSGLYSYPDQTRSLDGRL
+QVSHRKGLPHVIYCRLWRWPDLHSHHELRAIETCEYAFNLKKDEVCVNPYHYQRVETPVLPPVLVPRHTEILTELPPLDDYTNSIPENTNFPTGIEPPNN
+YIPETPPPGYISEDGEASDQQMNQSMDTGSPAELSPSTLSPVNHGMDLQPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGL
+LSNVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIR
+MSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P84023" entryname="SMAD3_CHICK" ><entryKey entryKeyValue="82" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 3            OS=Gallus gallus GN=SMAD3 PE=2 SV=1"/>
+  <bitscore value="403"/>
+  <expect value="e-109"/>
+  <identity value="0.237974683544304"/>
+  <matchLen value="395"/>
+  <queryStart value="743"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="402"/>
+  <querySeq>
+AAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLC
+CCESYGKINPELVCCNPHHLSRLCELESPPP----------------PYSRYPMDFLKPTADCPDAVPSSAETGGT------------------------
+---NYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVY
+NRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNINTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRAME
+MCEYAFNMKKDEVCVNPYHYQRVETPVLPPVLVPRHTEIPAEFPPLDDYSHSIPENTNFPAGIEPQSNYIPETPPPGYLSEDGETSDHQMNPSMDAGSPN
+LSPNPMSPAHNNLDLQPVTYCEPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAE
+CLSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P84025" entryname="SMAD3_RAT" ><entryKey entryKeyValue="83" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 3            OS=Rattus norvegicus GN=Smad3 PE=1 SV=1"/>
+  <bitscore value="403"/>
+  <expect value="e-109"/>
+  <identity value="0.236040609137056"/>
+  <matchLen value="394"/>
+  <queryStart value="743"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="401"/>
+  <querySeq>
+AAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLC
+CCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYP--MDFLKPTADCPDAVPSSAETG----------------------------------------
+GTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYN
+RSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNVNTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRAME
+LCEFAFNMKKDEVCVNPYHYQRVETPVLPPVLVPRHTEIPAEFPPLDDYSHSIPENTNFPAGIEPQSNIPETPPPGYLSEDGETSDHQMNHSMDAGSPNL
+SPNPMSPAHNNLDLQPVTYCEPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAEC
+LSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P84024" entryname="SMAD3_PIG" ><entryKey entryKeyValue="84" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 3 OS=Sus            scrofa GN=SMAD3 PE=2 SV=1"/>
+  <bitscore value="403"/>
+  <expect value="e-109"/>
+  <identity value="0.236040609137056"/>
+  <matchLen value="394"/>
+  <queryStart value="743"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="401"/>
+  <querySeq>
+AAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLC
+CCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYP--MDFLKPTADCPDAVPSSAETG----------------------------------------
+GTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYN
+RSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNVNTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRAME
+LCEFAFNMKKDEVCVNPYHYQRVETPVLPPVLVPRHTEIPAEFPPLDDYSHSIPENTNFPAGIEPQSNIPETPPPGYLSEDGETSDHQMNHSMDAGSPNL
+SPNPMSPAHNNLDLQPVTYCEPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAEC
+LSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q8BUN5" entryname="SMAD3_MOUSE" ><entryKey entryKeyValue="85" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 3            OS=Mus musculus GN=Smad3 PE=1 SV=2"/>
+  <bitscore value="403"/>
+  <expect value="e-109"/>
+  <identity value="0.236040609137056"/>
+  <matchLen value="394"/>
+  <queryStart value="743"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="401"/>
+  <querySeq>
+AAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLC
+CCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYP--MDFLKPTADCPDAVPSSAETG----------------------------------------
+GTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYN
+RSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNVNTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRAME
+LCEFAFNMKKDEVCVNPYHYQRVETPVLPPVLVPRHTEIPAEFPPLDDYSHSIPENTNFPAGIEPQSNIPETPPPGYLSEDGETSDHQMNHSMDAGSPNL
+SPNPMSPAHNNLDLQPVTYCEPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAEC
+LSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P84022" entryname="SMAD3_HUMAN" ><entryKey entryKeyValue="86" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 3            OS=Homo sapiens GN=SMAD3 PE=1 SV=1"/>
+  <bitscore value="403"/>
+  <expect value="e-109"/>
+  <identity value="0.236040609137056"/>
+  <matchLen value="394"/>
+  <queryStart value="743"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="18"/>
+  <subjectEnd value="401"/>
+  <querySeq>
+AAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLC
+CCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYP--MDFLKPTADCPDAVPSSAETG----------------------------------------
+GTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYN
+RSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKKGEQNGQEEKWCEKAVKSLVKKLKKTGQLDELEKAITTQNVNTKCITIPRSLDGRLQVSHRKG----------LPHVIYCRLWRWPDLHSHHELRAME
+LCEFAFNMKKDEVCVNPYHYQRVETPVLPPVLVPRHTEIPAEFPPLDDYSHSIPENTNFPAGIEPQSNIPETPPPGYLSEDGETSDHQMNHSMDAGSPNL
+SPNPMSPAHNNLDLQPVTYCEPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAEC
+LSDSAIFVQSPNCNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P42003" entryname="MAD_DROME" ><entryKey entryKeyValue="87" /></dbReference>
+  <defline value="Protein mothers against dpp OS=Drosophila            melanogaster GN=Mad PE=1 SV=1"/>
+  <bitscore value="398"/>
+  <expect value="e-107"/>
+  <identity value="0.235294117647059"/>
+  <matchLen value="408"/>
+  <queryStart value="746"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="34"/>
+  <subjectEnd value="431"/>
+  <querySeq>
+AGAAGGAEADLKALTHSVLKKLKERQLE-LLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCNPHHLSRLCELESPP---PPYSRYPMDFLKPTADC-------------------------------------------------PDA
+VPSSAETGGTNYLAPGGL-----SDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQ--EPSLDIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGCG
+IQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCP
+CWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDSLVKKLKKRKGAIEELERALSCPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLELC
+QYPFSAKQKEVCINPYHYKRVESPVLPPVLVPRHSEFAPGHSMLQFNHVAEPSMPHNVSYSNSGFNSHSLSTSNTSVGSPSSVNSNPNSPYDSLAGTPPP
+AYSPSEDGNSNNPNDGGQLLDAQMGDVAQVSYSEPAFWASIAYYELNCRVGEVFHCNNNSVIVDGFTNPSNNSDRCCLGQLSNVNRNSTIENTRRHIGKG
+VHLYYVTGEVYAECLSDSAIFVQSRNCNYHHGFHPSTVCKIPPGCSLKIFNNQEFAQLLSQSVNNGFEAVYELTKMCTIRMSFVKGWGAEYHRQDVTSTP
+CWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q9W734" entryname="SMAD6_CHICK" ><entryKey entryKeyValue="88" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 6            OS=Gallus gallus GN=SMAD6 PE=2 SV=1"/>
+  <bitscore value="395"/>
+  <expect value="e-106"/>
+  <identity value="0.528023598820059"/>
+  <matchLen value="339"/>
+  <queryStart value="753"/>
+  <queryEnd value="1089"/>
+  <subjectStart value="103"/>
+  <subjectEnd value="429"/>
+  <querySeq>
+EADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINP
+ELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAET--GGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDI
+FYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFM
+QQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFNS
+  </querySeq>
+  <subjectSeq>
+ERELKAVTYALLKRLKERSLHSLLQAVESRGGTPGGCVLVARG-ELRLGAARR-----------PPPHLLLGKLFRWPDLQHPAELKALCECQSFGAADG
+PTVCCNPYHFSRLCGPESPPPPYSRLSPNDEQKPLDLSDSTLSYTETEATNSPNVTPGEFSDASTSPDAVKRSHWCNVAYWEHRTRVGRLYTVYEQSVSI
+FYDLPQGNGFCLGQLNLENRSETVRRTRSKIGYGILLSKEPDGVWAYNRSEHPIFVNSPTLDIPNCRTLIVRKVMPGYSIKVFDYEKSCLLQHTAELDYA
+DGPYDPNSVRISFAKGWGPCYSRQFITSCPCWLEILLSN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O43541" entryname="SMAD6_HUMAN" ><entryKey entryKeyValue="89" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 6            OS=Homo sapiens GN=SMAD6 PE=1 SV=2"/>
+  <bitscore value="393"/>
+  <expect value="e-106"/>
+  <identity value="0.502941176470588"/>
+  <matchLen value="340"/>
+  <queryStart value="753"/>
+  <queryEnd value="1089"/>
+  <subjectStart value="169"/>
+  <subjectEnd value="494"/>
+  <querySeq>
+EADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCE-SYGKIN
+PELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNY--LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLD
+IFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEF
+MQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFNS
+  </querySeq>
+  <subjectSeq>
+EQELKTVTYSLLKRLKERSLDTLLEAVESRGGVPGGCVLVPR-ADLRLGG------------QPAPPQLLLGRLFRWPDLQHAVELKPLCGCHSFAAAAD
+GPTVCCNPYHFSRLCGPESPPPPYSRLSPRDEYKPLDLSDSTLSYTETEATNSLITAPGEFSDASMSPDATKPSHWCSVAYWEHRTRVGRLYAVYDQAVS
+IFYDLPQGSGFCLGQLNLEQRSESVRRTRSKIGFGILLSKEPDGVWAYNRGEHPIFVNSPTLDAPGGRALVVRKVPPGYSIKVFDFERSG-LQHAPEPDA
+ADGPYDPNSVRISFAKGWGPCYSRQFITSCPCWLEILLNN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O35182" entryname="SMAD6_MOUSE" ><entryKey entryKeyValue="90" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 6            OS=Mus musculus GN=Smad6 PE=1 SV=1"/>
+  <bitscore value="390"/>
+  <expect value="e-105"/>
+  <identity value="0.505882352941176"/>
+  <matchLen value="340"/>
+  <queryStart value="753"/>
+  <queryEnd value="1089"/>
+  <subjectStart value="170"/>
+  <subjectEnd value="493"/>
+  <querySeq>
+EADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESY-GKIN
+PELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNY--LAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLD
+IFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEF
+MQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFNS
+  </querySeq>
+  <subjectSeq>
+EQELKTVTYSLLKRLKERSLDTLLEAVESRGGVPGGCVLVPR-ADLRLGG------------QPAPPQLLLGRLFRWPDLQHAVELKPLCGCHSFTAAAD
+GPTVCCNPYHFSRLCGPESPPPPYSRLSPPDQYKPLDLSDSTLSYTETEATNSLITAPGEFSDASMSPDATKPSHWCSVAYWEHRTRVGRLYAVYDQAVS
+IFYDLPQGSGFCLGQLNLEQRSESVRRTRSKIGFGILLSKEPDGVWAYNRGEHPIFVNSPTLDAPGGRALVVRKVPPGYSIKVFDFERSGLLQH---ADA
+AHGPYDPHSVRISFAKGWGPCYSRQFITSCPCWLEILLNN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P97588" entryname="SMAD1_RAT" ><entryKey entryKeyValue="91" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 1            OS=Rattus norvegicus GN=Smad1 PE=1 SV=1"/>
+  <bitscore value="384"/>
+  <expect value="e-103"/>
+  <identity value="0.229828850855746"/>
+  <matchLen value="409"/>
+  <queryStart value="771"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="47"/>
+  <subjectEnd value="444"/>
+  <querySeq>
+QLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELES
+PP---PPYSRYPMDFL-----------------------------------KPTADCPDAVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSH--------
+--------------------------------------WCVVAYWEEKTRVGRLYCVQEPS--LDIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGC
+GIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSC
+PCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+AMEELEKALSC-PGQPSNCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECCEFPFGSKQKEVCINPYHYKRVESPVL
+PPVLVPRHSEYNPQHSLLAQFRNLGQNEPHMPLNATFPDSFQQPHSHPFAQYPNSSYPNSPGSSSSTYPHSPTSSDPGSPFQMPADTPPPAYLPPEDPMA
+QDGSQPMDTNMTNMTAPTLPAEINRGDVQAVAYEEPKHWCSIVYYELNNRVGERFHASSTSVLVDGFTDPSNNKNRFCLGLLSNVNRNSTIENTRRHIGK
+GVHLYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFETEYELTKMCTIRMSFVKGWGAEYHRQDVTST
+PCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q9JIW5" entryname="SMAD9_MOUSE" ><entryKey entryKeyValue="92" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 9            OS=Mus musculus GN=Smad9 PE=1 SV=2"/>
+  <bitscore value="384"/>
+  <expect value="e-103"/>
+  <identity value="0.249363867684478"/>
+  <matchLen value="393"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="24"/>
+  <subjectEnd value="406"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCNPHHLSRLCELESPP------------------------------PPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLSDSQ
+LLLEPG------------DRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNR
+SSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDSLVKKLKKKKGAMDELERALSCPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECC
+EFPFGSKQKEVCINPYHYRRVETPVLPPVLVPRHSEYNPQLSLLAKFRSASLHSEPLMPHNATYPDSFQQSLCPAPPSSPGHVFPQSPCPTSYPHSPGSP
+SESDSPYQHSDFRPVCYEEPQHWCSVAYYELNNRVGETFQASSRSVLIDGFTDPSNNRNRFCLGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECV
+SDSSIFVQSRNCNYQHGFHPATVCKIPSGCSLKVFNNQLFAQLLAQSVHHGFEVVYELTKMCTIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O54835" entryname="SMAD9_RAT" ><entryKey entryKeyValue="93" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 9            OS=Rattus norvegicus GN=Smad9 PE=1 SV=1"/>
+  <bitscore value="373"/>
+  <expect value="e-100"/>
+  <identity value="0.244332493702771"/>
+  <matchLen value="397"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="24"/>
+  <subjectEnd value="410"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCNPHHLSRLCELESPP------------------------------PPYSRYPMDFLKPTADCPDAVP------------SSAETGGT
+NYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNR
+SSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDY-------EKAYSLQRPNDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDSLVKKLKKKKGAMDELERALSCPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECC
+EFPFGSKQKEVCINPYHYRRVETPVLPPVLVPRHSEYNPQLSLLAKFRSASLHSEPLMPHNATYPDSFQQSLGPAPPSSPGHVFPQSPCPTSYPQSPGSP
+SESDSPYQHSDFRPVCYEEPLHWCSVAYYELNNRVGETFQASSRSVLIDGFTDPSNNRNRFCLGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECV
+SDSSIFVQSRNCNYQHGFHPATVCKIPSGCSLKVFNNQLFAQLLAQLLAQSVHHGFEVVYELTKMCTIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="O15198" entryname="SMAD9_HUMAN" ><entryKey entryKeyValue="94" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 9            OS=Homo sapiens GN=SMAD9 PE=1 SV=1"/>
+  <bitscore value="372"/>
+  <expect value="e-100"/>
+  <identity value="0.225581395348837"/>
+  <matchLen value="430"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="24"/>
+  <subjectEnd value="443"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCNPHHLSRLC------------------------------------------------ELESPPPPYSRYPMDFLKPTADCPDAVPSS
+AETGGTNYLAPGGLS-------------------------------DSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFCL
+GQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFT
+VQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDSLVKKLKKKKGAMDELERALSCPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECC
+EFPFGSKQKEVCINPYHYRRVETPVLPPVLVPRHSEYNPQLSLLAKFRSASLHSEPLMPHNATYPDSFQQPPCSALPPSPSHAFSQSPCTASYPHSPGSP
+SEPESPYQHSVDTPPLPYHATEASETQSGQPVDATADRHVVLSIPNGDFRPVCYEEPQHWCSVAYYELNNRVGETFQASSRSVLIDGFTDPSNNRNRFCL
+GLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECVSDSSIFVQSRNCNYQHGFHPATVCKIPSGCSLKVFNNQLFAQLLAQSVHHGFEVVYELTKMCT
+IRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P70340" entryname="SMAD1_MOUSE" ><entryKey entryKeyValue="95" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 1            OS=Mus musculus GN=Smad1 PE=1 SV=2"/>
+  <bitscore value="372"/>
+  <expect value="1e-99"/>
+  <identity value="0.221674876847291"/>
+  <matchLen value="406"/>
+  <queryStart value="771"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="47"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+QLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCC-------------
+-----------NPHH----------------------------------LSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETGGTNYLAPGGLS-
+----------------------DSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFCLGQLNSDNKSQLVQKVRSKIGCGIQ
+LTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCW
+LEVIFN
+  </querySeq>
+  <subjectSeq>
+AMEELEKALSC-PGQPSNCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECCEFPFGSKQKEVCINPYHYKRVESPVL
+PPVLVPRHSEYNPQHSLLAQFRNLGQNEPHMPLNATFPDSFQQPNSHPFPHSPNSSYPNSPGGSSSTYPHSPTSSDPGSPFQMPADTPPPAYLPPEDPMA
+QDGSQPMDTNMMAPPLPAEISRGDVQAVAYEEPKHWCSIVYYELNNRVGEAFHASSTSVLVDGFTDPSNNKNRFCLGLLSNVNRNSTIENTRRHIGKGVH
+LYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFETVYELTKMCTIRMSFVKGWGAEYHRQDVTSTPCW
+IEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q15797" entryname="SMAD1_HUMAN" ><entryKey entryKeyValue="96" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 1            OS=Homo sapiens GN=SMAD1 PE=1 SV=1"/>
+  <bitscore value="371"/>
+  <expect value="2e-99"/>
+  <identity value="0.217592592592593"/>
+  <matchLen value="432"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="20"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCC------------------------NPHH----------------------------------LSRLCELESPPPPYSRYPMDFLKPT
+ADCPDAVPSSAETGGTNYLAPGGLSDSQ-----------------------LLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGF
+CLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTG
+FTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELEKALSCPGQPSNCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECC
+EFPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHSEYNPQHSLLAQFRNLGQNEPHMPLNATFPDSFQQPNSHPFPHSPNSSYPNSPGSSSSTYPHSPTS
+SDPGSPFQMPADTPPPAYLPPEDPMTQDGSQPMDTNMMAPPLPSEINRGDVQAVAYEEPKHWCSIVYYELNNRVGEAFHASSTSVLVDGFTDPSNNKNRF
+CLGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFETVYELTKM
+CTIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q1JQA2" entryname="SMAD1_BOVIN" ><entryKey entryKeyValue="97" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 1            OS=Bos taurus GN=SMAD1 PE=1 SV=1"/>
+  <bitscore value="371"/>
+  <expect value="2e-99"/>
+  <identity value="0.217592592592593"/>
+  <matchLen value="432"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="20"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCCN------------------------PHH----------------------------------LSRLCELESPPPPYSRYPMDFLKPT
+ADCPDAVPSSAETGGTNYLAPGGLSDSQ-----------------------LLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGF
+CLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTG
+FTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELEKALSCPGQPSNCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECC
+EFPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHSEYNPQHSLLAQFRNLGQNEPHMPLNATFPDSFQQPNSHPFPHSPNSSYPNSPGSSSSTYPHSPTS
+SDPGSPFQMPADTPPPAYLPPEDPMTQDGSQPMDTNMMAPSLPSEINRGDVQAVAYEEPKHWCSIVYYELNNRVGEAFHASSTSVLVDGFTDPSNNKNRF
+CLGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFETVYELTKM
+CTIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q9W7E7" entryname="SMAD5_DANRE" ><entryKey entryKeyValue="98" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 5            OS=Danio rerio GN=smad5 PE=2 SV=1"/>
+  <bitscore value="370"/>
+  <expect value="4e-99"/>
+  <identity value="0.227906976744186"/>
+  <matchLen value="430"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="21"/>
+  <subjectEnd value="440"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINPELVCC------------------------NPHH-----LSRLCELESPPPPYSRYPMDFLKPTADCPDAVPS--------------------
+---------SAETGGTNYLAPGGLSDSQ---------------------LLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFCL
+GQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFT
+VQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEDLEKALSSPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLEVC
+EYPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHSEFNPQHSLLVQFRNLSHNEPHMPLNATFPESFQQHSGGSSFPISPNSPYPPSPASSGTYPNSPAS
+SGPSSPFQLPADTPPPAYMPPDEQMGQDGSQSMETGSSLAPQNMPRGDVQPVEYQEPSHWCSIVYYELNNRVGEAYHASSTSVLVDGFTDPSNNKNRFCL
+GLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDTSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFEAVYELTKMCT
+IRMSFVKGWGAEYHRQDVTSTPCWIEVHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q9I962" entryname="SMAD1_COTJA" ><entryKey entryKeyValue="99" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 1            OS=Coturnix coturnix japonica GN=SMAD1 PE=2 SV=1"/>
+  <bitscore value="355"/>
+  <expect value="2e-94"/>
+  <identity value="0.212962962962963"/>
+  <matchLen value="432"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="20"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ES------------YGKINPELVCC------------NPHH----------------------------------LSRLCELESPPPPYSRYPMDFLKPT
+ADCPDAVPSSAETGGTNYLAPGGLSDSQ-----------------------LLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPS--LDIFYDLPQG-NGF
+CLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTG
+FTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELEKALSCPGQPSNCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLECC
+EFPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHSEYNPQHSLLAQFRNLGQNEPHMPHNATFPDSFQQPNSHPFPHSPNSSYPNSPGSSSSTYPHSPAS
+SDPGSPFQMPADTPPPAYLPPEDQMTHDTSQPMDTNMMAPGIHPDIHRGDVQAVAYEEPKHWCSIVYYELNNRVGEAFHASSTSILVDGFTDPSNNKNRF
+CLGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFETVYELTKM
+CTLRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q9I8V2" entryname="SMAD1_DANRE" ><entryKey entryKeyValue="100" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 1            OS=Danio rerio GN=smad1 PE=2 SV=1"/>
+  <bitscore value="352"/>
+  <expect value="1e-93"/>
+  <identity value="0.214123006833713"/>
+  <matchLen value="439"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="20"/>
+  <subjectEnd value="448"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCC
+ESYGKINP-------------ELVCCNPHHLSRL-----------------CELESPPPPYSRYPMDFLKPTADCPDAVPSSA-----------------
+-----------------ETGGTNYLAPGGLSDSQLLLEP------------------------GDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDL
+PQG-NGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEF
+MQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELERALSCPGQPSNCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKALECC
+EFPFGSKQKDVCINPYHYKRVDSPVLPPVLVPRNSEFNAKLSMLPRFRNPLHQTEPPMPQNATFPDSFPQQPANALPFTPNSPTNSYPSSPNSGTGSTAT
+FPHSPSSSDPGSPFQMPETPPPAYMPPEEPMTQDCPQPMDTNLLAPNLPLEISNRTDVHPVAYQEPKHWCSIVYYELNNRVGEAFLASSTSVLVDGFTDP
+SNNRNRFCLGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSRCSLKIFNNQEFAELLAQSVNHGFEA
+VYELTKMCTIRMSFVKGWGAKYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q56I99" entryname="SMAD5_CHICK" ><entryKey entryKeyValue="101" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 5            OS=Gallus gallus GN=SMAD5 PE=2 SV=1"/>
+  <bitscore value="346"/>
+  <expect value="6e-92"/>
+  <identity value="0.211136890951276"/>
+  <matchLen value="431"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="21"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRL---
+---------CCCESYGKINPELVCC------------NPHH-----LSRLCELESPPPPYSRYP------------------------------------
+-------------MDFLKPTADCPDAVPSSAETGGT--NYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFC
+LGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGF
+TVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELEKALSSPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLDIC
+EFPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHSEFNPQHSLLVQFRNLSHNEPHMPHNATFPDSFQQPNSTPFSISPNSPYPPSPASSTYPSSPASSG
+PSSPFQLPADTPPPAYMPPDDQMGQDNSQSMDTSNTMIPQIMPNISTRDVQPVAYEEPKHWCSIVYYELNNRVGEAFHASSTSVLVDGFTDPSNNKNRFC
+LGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNYHHGFHPTTVCKIPSGCSLKIFNNQEFAQLLAQSVNHGFEAVYELTKMC
+TIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="P97454" entryname="SMAD5_MOUSE" ><entryKey entryKeyValue="102" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 5            OS=Mus musculus GN=Smad5 PE=1 SV=2"/>
+  <bitscore value="345"/>
+  <expect value="2e-91"/>
+  <identity value="0.201856148491879"/>
+  <matchLen value="431"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="21"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRL---
+---------CCCESYGKINPELVCC------------NPHH------------------------------------------------LSRLCELESPP
+PPYSRYPMDFLKPTADCPDAVPSSAETGGT--------NYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFC
+LGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGF
+TVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELEKALSSPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLDIC
+EFPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHNEFNPQHSLLVQFRNLSHNEPHMPQNATFPDSFHQPNNAPFPLSPNSPYPPSPASSTYPNSPASSG
+PGSPFQLPADTPPPAYMPPDDQMAPDNSQPMDTSSNMIPQTMPSISSRDVQPVAYEEPKHWCSIVYYELNNRVGEAFHASSTSVLVDGFTDPSNNKSRFC
+LGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNFHHGFHPTTVCKIPSSCSLKIFNNQEFAQLLAQSVNHGFEAVYELTKMC
+TIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="Swiss-Prot" id="Q5R6H7" entryname="SMAD5_PONAB" ><entryKey entryKeyValue="103" /></dbReference>
+  <defline value="Mothers against decapentaplegic homolog 5            OS=Pongo abelii GN=SMAD5 PE=2 SV=1"/>
+  <bitscore value="344"/>
+  <expect value="4e-91"/>
+  <identity value="0.204176334106729"/>
+  <matchLen value="431"/>
+  <queryStart value="745"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="21"/>
+  <subjectEnd value="441"/>
+  <querySeq>
+GAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRLGPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRL---
+---------CCCESYGKINPELVCC------------NPHH------------------------------------------------LSRLCELESPP
+PPYSRYPMDFLKPTADCPD--------AVPSSAETGGTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSL--DIFYDLPQG-NGFC
+LGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGF
+TVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+WKQGDEEEKWAEKAVDALVKKLKKKKGAMEELEKALSSPGQPSKCVTIPRSLDGRLQVSHRKG----------LPHVIYCRVWRWPDLQSHHELKPLDIC
+EFPFGSKQKEVCINPYHYKRVESPVLPPVLVPRHNEFNPQHSLLVQFRNLSHNEPHMPQNATFPDSFHQPNNTPFPLSPNSPYPPSPASSTYPNSPASSG
+PGSPFQLPADTPPPAYMPPDDQMGQDNSQPMDTSNNMIPQIMPSISSRDVQPVAYEEPKHWCSIVYYELNNRVGEAFHASSTSVLVDGFTDPSNNKSRFC
+LGLLSNVNRNSTIENTRRHIGKGVHLYYVGGEVYAECLSDSSIFVQSRNCNFHHGFHPTTVCKIPSSCSLKIFNNQEFAQLLAQSVNHGFEAVYELTKMC
+TIRMSFVKGWGAEYHRQDVTSTPCWIEIHLH
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="PDB" id="1dev_A" entryname="1dev_A" ><entryKey entryKeyValue="104" /></dbReference>
+  <defline value=""/>
+  <bitscore value="289"/>
+  <expect value="9e-75"/>
+  <identity value="0.305555555555556"/>
+  <matchLen value="180"/>
+  <queryStart value="915"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="2"/>
+  <subjectEnd value="181"/>
+  <querySeq>
+LLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLD
+NPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+QPVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCN
+QRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="PDB" id="1mk2_A" entryname="1mk2_A" ><entryKey entryKeyValue="105" /></dbReference>
+  <defline value=""/>
+  <bitscore value="288"/>
+  <expect value="3e-74"/>
+  <identity value="0.296703296703297"/>
+  <matchLen value="182"/>
+  <queryStart value="913"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="182"/>
+  <querySeq>
+SQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSAT
+LDNPDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+DLQPVTYCEPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPN
+CNQRYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="PDB" id="1khx_A" entryname="1khx_A" ><entryKey entryKeyValue="106" /></dbReference>
+  <defline value=""/>
+  <bitscore value="286"/>
+  <expect value="7e-74"/>
+  <identity value="0.307262569832402"/>
+  <matchLen value="179"/>
+  <queryStart value="916"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="179"/>
+  <querySeq>
+LLEPGDRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDN
+PDS-RTLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+PVTYSEPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQ
+RYGWHPATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="PDB" id="1u7v_A" entryname="1u7v_A" ><entryKey entryKeyValue="107" /></dbReference>
+  <defline value=""/>
+  <bitscore value="285"/>
+  <expect value="2e-73"/>
+  <identity value="0.316091954022989"/>
+  <matchLen value="174"/>
+  <queryStart value="921"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="174"/>
+  <querySeq>
+DRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-R
+TLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+EPAFWCSIAYYELNQRVGETFHASQPSLTVDGFTDPSNSERFCLGLLSNVNRNATVEMTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWH
+PATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+<alignment>
+  <dbReference type="PDB" id="1u7f_A" entryname="1u7f_A" ><entryKey entryKeyValue="108" /></dbReference>
+  <defline value=""/>
+  <bitscore value="283"/>
+  <expect value="6e-73"/>
+  <identity value="0.310344827586207"/>
+  <matchLen value="174"/>
+  <queryStart value="921"/>
+  <queryEnd value="1088"/>
+  <subjectStart value="1"/>
+  <subjectEnd value="174"/>
+  <querySeq>
+DRSHWCVVAYWEEKTRVGRLYCVQEP--SLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRSSYPIFIKSATLDNPDS-R
+TLLVHKVFPGFSIKAFDYEKAYSLQRP---NDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFN
+  </querySeq>
+  <subjectSeq>
+EPAFWCSISYYELNQRVGETFHASQPSMTVDGFTDPSNSERFCLGLLSNVNRNAAVELTRRHIGRGVRLYYIGGEVFAECLSDSAIFVQSPNCNQRYGWH
+PATVCKIPPGCNLKIFNNQEFAALLAQSVNQGFEAVYQLTRMCTIRMSFVKGWGAEYRRQTVTSTPCWIELHLN
+  </subjectSeq>
+</alignment>
+</aliProviderGroup>
+<proteinExistence type="Uncertain"/>
+<featureTypeGroup type="Polynucelotide-binding region">
+  <featureProviderGroup provider="SomeNA" ref="5">
+<feature type="DNA-binding region" soTermId="SO:0001429"><location><begin position="73"/><end position="74"/></location></feature>
+<feature type="DNA-binding region" soTermId="SO:0001429"><location><begin position="158"/><end position="158"/></location></feature>
+<feature type="DNA-binding region" soTermId="SO:0001429"><location><begin position="162"/><end position="162"/></location></feature>
+<feature type="DNA-binding region" soTermId="SO:0001429"><location><begin position="494"/><end position="494"/></location></feature>
+<feature type="RNA-binding region" soTermId="SO:0000934"><location><begin position="162"/><end position="162"/></location></feature>
+<feature type="RNA-binding region" soTermId="SO:0000934"><location><begin position="164"/><end position="164"/></location></feature>
+<feature type="RNA-binding region" soTermId="SO:0000934"><location><begin position="496"/><end position="496"/></location></feature>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="disulfide bond">
+  <featureProviderGroup provider="DISULFIND" ref="7">
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="protein binding region">
+  <featureProviderGroup provider="ISIS" ref="9">
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="1"/><end position="1"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="4"/><end position="4"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="6"/><end position="7"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="17"/><end position="17"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="21"/><end position="22"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="327"/><end position="327"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="330"/><end position="332"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="339"/><end position="339"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="349"/><end position="350"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="354"/><end position="354"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="657"/><end position="657"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="659"/><end position="663"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="668"/><end position="671"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="675"/><end position="675"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="679"/><end position="681"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="687"/><end position="690"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="700"/><end position="702"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="707"/><end position="707"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="709"/><end position="709"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="718"/><end position="718"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="809"/><end position="809"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="811"/><end position="812"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="814"/><end position="815"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="875"/><end position="878"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="880"/><end position="881"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="885"/><end position="885"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="887"/><end position="887"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="889"/><end position="889"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="891"/><end position="891"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="904"/><end position="904"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="912"/><end position="912"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="921"/><end position="921"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="934"/><end position="934"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="956"/><end position="956"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="976"/><end position="976"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="1013"/><end position="1016"/></location></feature>
+<feature type="protein binding region" soTermId="SO:0000410"><location><begin position="1078"/><end position="1078"/></location></feature>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="nuclear localisation signal">
+  <featureProviderGroup provider="PredictNLS" ref="19">
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="helical transmembrane region">
+  <featureProviderGroup provider="PHDhtm" ref="21">
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="50"/><end position="67"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="81"/><end position="98"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="132"/><end position="152"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="169"/><end position="186"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="191"/><end position="213"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="247"/><end position="267"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="281"/><end position="298"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="383"/><end position="400"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="411"/><end position="428"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="462"/><end position="479"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="504"/><end position="528"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="533"/><end position="550"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="581"/><end position="600"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="613"/><end position="630"/></location></feature>
+  </featureProviderGroup>
+  <featureProviderGroup provider="TMSEG" ref="39">
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="44"/><end position="68"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="79"/><end position="102"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="121"/><end position="144"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="165"/><end position="186"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="192"/><end position="213"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="245"/><end position="268"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="285"/><end position="302"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="380"/><end position="402"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="411"/><end position="434"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="453"/><end position="476"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="498"/><end position="518"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="524"/><end position="544"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="581"/><end position="603"/></location></feature>
+<feature type="helical transmembrane region" soTermId="SO:0001812"><location><begin position="616"/><end position="637"/></location></feature>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="disordered region">
+  <featureProviderGroup provider="NORSnet" ref="17">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="673"/><end position="673"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="675"/><end position="729"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="740"/><end position="743"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="804"/><end position="805"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="807"/><end position="807"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="868"/><end position="915"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1090"/><end position="1090"/></location></feature>
+  </featureProviderGroup>
+  <featureProviderGroup provider="PROFbval" ref="23">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1"/><end position="4"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="14"/><end position="14"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="18"/><end position="24"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="36"/><end position="41"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="73"/><end position="74"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="107"/><end position="117"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="248"/><end position="248"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="250"/><end position="251"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="277"/><end position="284"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="305"/><end position="309"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="311"/><end position="311"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="314"/><end position="314"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="319"/><end position="321"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="329"/><end position="333"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="345"/><end position="360"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="369"/><end position="375"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="405"/><end position="408"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="440"/><end position="448"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="610"/><end position="616"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="637"/><end position="641"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="643"/><end position="644"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="650"/><end position="654"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="659"/><end position="704"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="707"/><end position="758"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="760"/><end position="761"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="763"/><end position="788"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="794"/><end position="800"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="803"/><end position="818"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="832"/><end position="838"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="840"/><end position="842"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="845"/><end position="854"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="863"/><end position="923"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="935"/><end position="936"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="945"/><end position="946"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="952"/><end position="952"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="954"/><end position="959"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="968"/><end position="972"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="976"/><end position="976"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="979"/><end position="980"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="990"/><end position="993"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1000"/><end position="1000"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1009"/><end position="1009"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1011"/><end position="1016"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1027"/><end position="1027"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1034"/><end position="1035"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1037"/><end position="1037"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1044"/><end position="1046"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1048"/><end position="1048"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1052"/><end position="1054"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1070"/><end position="1070"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1072"/><end position="1075"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1077"/><end position="1078"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1087"/><end position="1090"/></location></feature>
+  </featureProviderGroup>
+  <featureProviderGroup provider="Ucon" ref="25">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="196"/><end position="202"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="211"/><end position="211"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="251"/><end position="253"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="257"/><end position="257"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="260"/><end position="263"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="265"/><end position="265"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="528"/><end position="534"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="543"/><end position="543"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="583"/><end position="585"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="589"/><end position="589"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="592"/><end position="595"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="597"/><end position="597"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="641"/><end position="641"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="682"/><end position="691"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="703"/><end position="704"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="706"/><end position="708"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="731"/><end position="732"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="735"/><end position="738"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="752"/><end position="752"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="756"/><end position="756"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="763"/><end position="769"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="781"/><end position="781"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="808"/><end position="810"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="812"/><end position="812"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="834"/><end position="834"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="871"/><end position="871"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="888"/><end position="888"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="892"/><end position="892"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="894"/><end position="894"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="970"/><end position="974"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1010"/><end position="1012"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="1040"/><end position="1040"/></location></feature>
+  </featureProviderGroup>
+  <featureProviderGroup provider="MD" ref="27">
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="682"/><end position="683"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="685"/><end position="686"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="890"/><end position="892"/></location></feature>
+<feature type="disordered region" soTermId="SO:0100003"><location><begin position="894"/><end position="895"/></location></feature>
+<disorderedRegion>
+  <location><begin position="1"/><end position="1090"/></location>
+  <featureString>
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------DD-DD--------------
+----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------DDD-DD-----
+----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+  </featureString>
+  <reliability>
+0234566776665677777666678888888988988999999999999999999999999999999999989999999999999999999999999888
+9988888777788899999999999999999999999999999999999999999899999999999999999999999999999999999998888888
+8888888888898899999999999999999999999999999988888888888888888999899898898899988898999999999999999999
+9999999999999999988898899999999989888888988888988888888888878888898888888999999999999999999999999999
+9998999999999999999999999999989999989888788889999999999999999999999999999999999999999998999999999999
+9999999999999999999999999988888888889988889999999999999999999999999999999999888888888988888899998999
+9889999998889899999999999999999999999998899999999888887888887776666655556666554110000010112343222110
+1000011233435444455555444433222232223344445566554433334455544453334545677888877556677888888776543545
+6665420213335678889999999999988777798888888776777877889988887655644444244554343233321210000100000122
+3344443334443444555566789999998888999999999888888999888777788886632233346778888899999999999999999999
+989999987755778888999899888999999987766566656666788898889999999999999999988888898988765523
+  </reliability>
+</disorderedRegion>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="secondary structures">
+  <featureProviderGroup provider="PROFsec" ref="3">
+<feature type="helix" soTermId="SO:0001114"><location><begin position="14"/><end position="18"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="27"/><end position="28"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="30"/><end position="33"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="39"/><end position="61"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="65"/><end position="70"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="78"/><end position="85"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="88"/><end position="90"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="91"/><end position="92"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="99"/><end position="107"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="120"/><end position="145"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="147"/><end position="149"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="150"/><end position="152"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="158"/><end position="160"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="163"/><end position="189"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="206"/><end position="236"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="237"/><end position="239"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="240"/><end position="271"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="284"/><end position="293"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="301"/><end position="303"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="307"/><end position="320"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="361"/><end position="367"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="373"/><end position="392"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="396"/><end position="403"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="410"/><end position="427"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="431"/><end position="439"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="451"/><end position="452"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="453"/><end position="477"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="479"/><end position="481"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="482"/><end position="484"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="490"/><end position="493"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="495"/><end position="520"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="529"/><end position="548"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="549"/><end position="565"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="568"/><end position="572"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="573"/><end position="590"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="594"/><end position="601"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="616"/><end position="625"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="632"/><end position="636"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="639"/><end position="651"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="752"/><end position="768"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="772"/><end position="781"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="789"/><end position="792"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="800"/><end position="801"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="821"/><end position="827"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="855"/><end position="857"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="925"/><end position="932"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="940"/><end position="943"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="960"/><end position="961"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="962"/><end position="965"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="972"/><end position="981"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="985"/><end position="989"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="994"/><end position="998"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1003"/><end position="1007"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1020"/><end position="1024"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1030"/><end position="1032"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="1036"/><end position="1044"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="1049"/><end position="1051"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1057"/><end position="1064"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1082"/><end position="1087"/></location></feature>
+<secondaryStructures>
+  <location><begin position="1"/><end position="1090"/></location>
+  <featureString>
+LLLLLLLLLLLLLHHHHHLLLLLLLLEELEEEELLLLLHHHHHHHHHHHHHHHHHHHHHHHLLLEEEEEELLLLLLLHHHHHHHHLLHHHEELLLLLLHH
+HHHHHHHLLLLLLLLLLLLHHHHHHHHHHHHHHHHHHHHHHHHHHLHHHEEELLLLLEEELLHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLLLLLLLL
+LLLLLHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLLLLLLLLLEEEEEEEEEELLLLLLL
+EEELLLHHHHHHHHHHHHHHLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLEEEEEEELLLLLHHHHHHHHHHHHHHHHHHHHLLLEEEEE
+EEELLLLLLHHHHHHHHHHHHHHHHHHLLLHHHHHHHHHLLLLLLLLLLLEEHHHHHHHHHHHHHHHHHHHHHHHHHLHHHEEELLLLLHHHHLHHHHHH
+HHHHHHHHHHHHHHHHHHHHLLLLLLLLHHHHHHHHHHHHHHHHHHHHEEEEEEEEEEEEEEEEELLEEEEEHHHHHHHHHHHHHHHHHHLLLEEEEEEE
+ELLLLLLLLLLLLLLEEEEEEEEEELLLLLLEEEEELLHHHHHHHHHHHHHLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHHHLLLHHHHHHHHHHLLLLLLLEEEELLLLLLLE
+ELLLLLLLLLLLLLLLLLLLEEEEEEELLLLLLLLLLLLLLLLLLLLLLLLLLLEEELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+LLLLLLLLLLLLLLLLLLLLLLLLEEEEEEEELLLLLLLEEEELLLLLLLLLLLLLLLLEEHHHHLLLLLLHHHHHHHHHHLLLEEEEELLLLEEEEELL
+LLEEEEELLLLLLLLLLLLEEEEELLLLLEEELLLHHHHHHHHHLLLLHHHLLLLLEEEEEEEELLLLLLLLLLLLLLLLLEEEEEELLL
+  </featureString>
+  <reliability>
+9553222121110121101213542000000101477534456677777777766765630000123464043333225677641001100000011147
+8887652022224322100034556666666677767777655421010000023301110335777777776777778888877642011233220000
+0121123443110012334433433333211111000000022222433444443211112211000121101000023343304567765422444510
+1110526788889988864101011122222221222110001111012332112345320244320245530123334344332000001112012456
+6504333432578887534330111211104788876630221222221010236666667777777777776543210001110122000001467777
+6655566655655666553102212110001100011444322111000111110111111110000011000000011223333322000001122221
+0000121012332211344433321343353023304256888898886411444344554332223455433344444455666666445666667642
+1234555445555555555554444443333333234445433445567502567888889888763015647888887523677752244302245530
+0013456644455445666147864200345565200132100213235576502213443222225567777666667554555545666665655566
+6555566655544443455666501577664301220102430143100000577553201001022464324787775404313687504505678415
+642787425446655764234441464320111624788765422530010222421577644115653323332234642013431268
+  </reliability>
+</secondaryStructures>
+  </featureProviderGroup>
+  <featureProviderGroup provider="REPROFSec" ref="29">
+<feature type="strand" soTermId="SO:0001111"><location><begin position="26"/><end position="27"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="29"/><end position="32"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="42"/><end position="66"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="67"/><end position="71"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="80"/><end position="107"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="115"/><end position="117"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="118"/><end position="149"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="150"/><end position="152"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="163"/><end position="188"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="193"/><end position="201"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="202"/><end position="223"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="237"/><end position="243"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="248"/><end position="255"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="256"/><end position="257"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="260"/><end position="262"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="263"/><end position="268"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="280"/><end position="297"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="299"/><end position="304"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="307"/><end position="321"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="329"/><end position="329"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="374"/><end position="390"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="395"/><end position="403"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="412"/><end position="439"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="447"/><end position="450"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="451"/><end position="478"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="480"/><end position="480"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="481"/><end position="484"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="495"/><end position="520"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="525"/><end position="533"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="534"/><end position="555"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="569"/><end position="574"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="580"/><end position="589"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="594"/><end position="594"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="595"/><end position="602"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="612"/><end position="629"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="631"/><end position="632"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="634"/><end position="636"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="639"/><end position="652"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="760"/><end position="765"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="774"/><end position="780"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="791"/><end position="791"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="821"/><end position="828"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="838"/><end position="839"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="927"/><end position="933"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="936"/><end position="937"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="940"/><end position="942"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="948"/><end position="951"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="961"/><end position="964"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="974"/><end position="980"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="985"/><end position="990"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="993"/><end position="998"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1003"/><end position="1007"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1020"/><end position="1024"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1029"/><end position="1033"/></location></feature>
+<feature type="helix" soTermId="SO:0001114"><location><begin position="1035"/><end position="1044"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1057"/><end position="1063"/></location></feature>
+<feature type="strand" soTermId="SO:0001111"><location><begin position="1082"/><end position="1087"/></location></feature>
+<secondaryStructures>
+  <location><begin position="1"/><end position="1090"/></location>
+  <featureString>
+LLLLLLLLLLLLLLLLLLLLLLLLLEELEEEELLLLLLLLLHHHHHHHHHHHHHHHHHHHHHHHHHEEEEELLLLLLLLHHHHHHHHHHHHHHHHHHHHH
+HHHHHHHLLLLLLLEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEELLLLLLLLLLHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLEEEEEEEE
+EHHHHHHHHHHHHHHHHHHHHHHLLLLLLLLLLLLLEEEEEEELLLLEEEEEEEEHHLLHHHEEEEEELLLLLLLLLLLHHHHHHHHHHHHHHHHHHLHH
+HHHHLLHHHHHHHHHHHHHHHLLLLLLLHLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLHHHHHHHHHHHHHHHHHLLLLEEEEEE
+EEELLLLLLLLHHHHHHHHHHHHHHHHHHHHHHHHHHHHLLLLLLLEEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHLHEEEELLLLLLLLLLHHHHHH
+HHHHHHHHHHHHHHHHHHHHLLLLEEEEEEEEEHHHHHHHHHHHHHHHHHHHHHHLLLLLLLLLLLLLEEEEEELLLLLEEEEEEEEEELLLLHEEEEEE
+EELLLLLLLLLHHHHHHHHHHHHHHHHHHLHHLHHHLLHHHHHHHHHHHHHHLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLHHHHHHLLLLLLLLHHHHHHHLLLLLLLLLLELLLLLLLLL
+LLLLLLLLLLLLLLLLLLLLEEEEEEEELLLLLLLLLEELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+LLLLLLLLLLLLLLLLLLLLLLLLLLEEEEEEELLEELLEEELLLLLEEEELLLLLLLLLEEEELLLLLLLLLHHHHHHHLLLLEEEEEELLEEEEEELL
+LLEEEEELLLLLLLLLLLLEEEEELLLLEEEEELHHHHHHHHHHLLLLLLLLLLLLEEEEEEELLLLLLLLLLLLLLLLLLEEEEEELLL
+  </featureString>
+  <reliability>
+9456566665630000142442230220035256788743105789999999898998997566412334089878724467887889988899888899
+9999884053545325106798889889888899989989998883031043788866322636787531699899899978999861466637788743
+2034789999988887543210001123344554310122442223202578763320513316764011556666655067899999999986531623
+0652798889999999875200022100000000000000000000111111111222222222111111000001011132146655311234148877
+6748987863335788688998889988789999998840545351253225888898898888999899999988820023547888663225578888
+8899989999998888875157662878874222237899889899886432110012223445442011213213332002688874127300278763
+1055666665326789899888888663170115308988899999999864023555555534434445654321133444544445445544557762
+2364455454444356655432133665454444334266444333343335444343213433103445642234212205766766401246657656
+6444565666667767662079999986689887896032567788777788754468767754545667677776677665556667666666766667
+7666677654565565566776666011466504313001524788267760588784000030478789811478885227617888718858998678
+871898036678777857657983889858887268999885305876425750040788885238889988887298882388874489
+  </reliability>
+</secondaryStructures>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="solvent accessibility">
+  <featureProviderGroup provider="PROFacc" ref="3">
+<solventAccessibility>
+  <location><begin position="1"/><end position="1090"/></location>
+  <featureString>
+9575556524530640660787355500000000058575000000000000000000000000000000003400000000000000000000000004
+0000004766718855300000000000000000000000000000000000000000000004000000000000000000000000000000003000
+0000000004000000000400000000000000000000000000050004000000000000000000000030455376530000000000000000
+0000437504700560065402443453355343443344344434445535363578554000000047955600000000000000000000000000
+0003550240000000000000000000000500000005567378553000000000000000000000000000000000000000000000040000
+0000000000000000000000000000000000000000030000000003000000000000000000000000000400040000000000000000
+0000353434334500000000000000000000005576047005600654523532553853525498844355435855545958888465885857
+4545344655556498885854845355556536555555685685899877775066006500760798737600740595998714000000528050
+0000599585966995300000000000005075576066154053038486740000000344056495485648845884486888488846888858
+6584458984888545575965500000000005050050050665605000449955000000000535574066006400500504353630003000
+400000004538589835000040365250500637600600675737005502500000000040004635436085300000000599
+  </featureString>
+  <reliability>
+3010011111100211120202010121056733312221312366456889896997864347999993200110239378952654336633311231
+3951330200201000112333375638765476639689986933256977244121335201394499769464867277635643032221000311
+4332512760455233353036536555556552536664611233112301744263426699999464341100100120012577748663323144
+8344102272469435612202110110011110110001011000110110010010011003332011121100236656777959978533469989
+9220011112836896377543653332133139634421102010101112433766276553765393699669332679772330112233013924
+8967945375535653464203222210353254535338605542332430323333333333304254535013231022115432645256977862
+3211001011000001366463644232314584451221524293345112110100011111110011100010110001000100010000100201
+1100100000000010000100001000010010000000010010211131232233353371640442303321538233211201453630102011
+0210112000100110102279792840111211111220011110011120212333300001011121001011210030110013101010000101
+0010110211021001120301102859864011023211222100111320212201046643420101020323722331239293120218292101
+115989351001102021114212000103232201351304111223041121113481975402011101111100015391823015
+  </reliability>
+</solventAccessibility>
+  </featureProviderGroup>
+  <featureProviderGroup provider="REPROFAcc" ref="29">
+<solventAccessibility>
+  <location><begin position="1"/><end position="1090"/></location>
+  <featureString>
+9466037878770788780787074700500000048988255000000000000000000000000000038714600000000000000000000000
+0000000040909020000000000000000000000000000000000000400525050454000000000000000000000000000000000000
+0000000000000000000000000000000000000005000000000000000000000000000000000075070050000000000000000000
+0000038503700360000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0003871740000000000000000000000000000000008090200000000000000000000000000000000000004005250502540000
+0000000000000000000000000000000000000000000000000000000000000000000000050000000000000000000000000000
+0000007900000000000000000000000000000386037003600000000000775777507979770087877879778777877899999997
+7977977887878899997777780908757777770508778778999999899779007702760789778770700889999959108066748988
+8989899988999888954400000000205059954065294264049889851103844255569999999949899999999999999999999999
+9899998999998988889996952050002005530065290794000000549999500007287896984066018502750504459950104000
+720000405505589956500200078000300007500700788887787604500004000060259927577076300203040699
+  </featureString>
+  <reliability>
+2000000100000000000000000010002000000000000224355645554555652034565873100000001035562434424544654420
+3633163100000000255153260446356662624224476560304773002000001000376477777356776456424655212235565544
+4355554565654375512212111121000110111000003011233243756622423275672444321100002001413765567661234215
+6455100040005004501221111111111111111111111111111111111111111111111111111111111233667645312011456658
+8320000000113556243442453565432036331620000000002552532614463566636242244766603047730020000010003754
+7777645566535542464511224547554343534456756552755122121111110001001110001000113321447566224222555724
+3431000000111253375656766024421464550000300050045021100000000000000000000000000000000000000000000100
+0000000000000000000000000000000000000000000000000000000000100000000010000100002000121100000000000000
+0100001000100000000023561720000000000100000000100000000020000000000010000000001110001111001010010110
+0000000000000000001020000101110100001100001000020400000001012100000000000100400020004040000002050420
+002415030000001000023014000004050000060101000000000010001240412101000000000000002040401004
+  </reliability>
+</solventAccessibility>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="sub-cellular localisation">
+  <featureProviderGroup provider="LocTree2" ref="13">
+<subcellularLocalisation>
+  <location><begin position="1"/><end position="1090"/></location>
+<localisation></localisation></subcellularLocalisation>
+  </featureProviderGroup>
+  <featureProviderGroup provider="LocTree3" ref="15">
+<subcellularLocalisation>
+  <location><begin position="1"/><end position="1090"/></location>
+<localisation><arch><plasmaMembrane goTermId='GO:0005886'><score>99</score></plasmaMembrane></arch>
+<bact><innerMembrane goTermId='GO:0005886'><score>100</score></innerMembrane></bact>
+<euka><plasmaMembrane goTermId='GO:0005886'><score>100</score></plasmaMembrane></euka>
+</localisation></subcellularLocalisation>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="GO term annotations">
+  <featureProviderGroup provider="Metastudent" ref="35">
+<goAnnotationRegion>
+  <location><begin position="1"/><end position="1090"/></location>
+	<goAnnotation>
+		<ontologyPrediction>
+			<ontology>Molecular Function Ontology</ontology>
+			<goTermWithScore>
+				<gotermid>GO:0005515</gotermid>
+				<gotermname>protein binding</gotermname>
+				<gotermscore>42</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004930</gotermid>
+				<gotermname>G-protein coupled receptor activity</gotermname>
+				<gotermscore>30</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0003700</gotermid>
+				<gotermname>transcription factor activity</gotermname>
+				<gotermscore>18</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0019901</gotermid>
+				<gotermname>protein kinase binding</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0042277</gotermid>
+				<gotermname>peptide binding</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008528</gotermid>
+				<gotermname>peptide receptor activity, G-protein coupled</gotermname>
+				<gotermscore>11</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0005072</gotermid>
+				<gotermname>transforming growth factor beta receptor, cytoplasmic mediator activity</gotermname>
+				<gotermscore>11</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008144</gotermid>
+				<gotermname>drug binding</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004993</gotermid>
+				<gotermname>serotonin receptor activity</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0070411</gotermid>
+				<gotermname>I-SMAD binding</gotermname>
+				<gotermscore>7</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0005518</gotermid>
+				<gotermname>collagen binding</gotermname>
+				<gotermscore>7</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008013</gotermid>
+				<gotermname>beta-catenin binding</gotermname>
+				<gotermscore>7</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030165</gotermid>
+				<gotermname>PDZ domain binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008134</gotermid>
+				<gotermname>transcription factor binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0070410</gotermid>
+				<gotermname>co-SMAD binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0003682</gotermid>
+				<gotermname>chromatin binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0070412</gotermid>
+				<gotermname>R-SMAD binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0031625</gotermid>
+				<gotermname>ubiquitin protein ligase binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0017046</gotermid>
+				<gotermname>peptide hormone binding</gotermname>
+				<gotermscore>6</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0042923</gotermid>
+				<gotermname>neuropeptide binding</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030594</gotermid>
+				<gotermname>neurotransmitter receptor activity</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0048185</gotermid>
+				<gotermname>activin binding</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0035240</gotermid>
+				<gotermname>dopamine binding</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0042803</gotermid>
+				<gotermname>protein homodimerization activity</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008020</gotermid>
+				<gotermname>G-protein coupled photoreceptor activity</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004980</gotermid>
+				<gotermname>melanocyte stimulating hormone receptor activity</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008179</gotermid>
+				<gotermname>adenylate cyclase binding</gotermname>
+				<gotermscore>5</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0010843</gotermid>
+				<gotermname>promoter binding</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0051380</gotermid>
+				<gotermname>norepinephrine binding</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004937</gotermid>
+				<gotermname>alpha1-adrenergic receptor activity</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030618</gotermid>
+				<gotermname>transforming growth factor beta receptor, pathway-specific cytoplasmic mediator activity</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0042562</gotermid>
+				<gotermname>hormone binding</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008188</gotermid>
+				<gotermname>neuropeptide receptor activity</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030617</gotermid>
+				<gotermname>transforming growth factor beta receptor, inhibitory cytoplasmic mediator activity</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0035255</gotermid>
+				<gotermname>ionotropic glutamate receptor binding</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004994</gotermid>
+				<gotermname>somatostatin receptor activity</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0051379</gotermid>
+				<gotermname>epinephrine binding</gotermname>
+				<gotermscore>4</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004941</gotermid>
+				<gotermname>beta2-adrenergic receptor activity</gotermname>
+				<gotermscore>3</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0016563</gotermid>
+				<gotermname>transcription activator activity</gotermname>
+				<gotermscore>3</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030616</gotermid>
+				<gotermname>transforming growth factor beta receptor, common-partner cytoplasmic mediator activity</gotermname>
+				<gotermscore>3</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0003690</gotermid>
+				<gotermname>double-stranded DNA binding</gotermname>
+				<gotermscore>3</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0016497</gotermid>
+				<gotermname>substance K receptor activity</gotermname>
+				<gotermscore>3</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0034713</gotermid>
+				<gotermname>type I transforming growth factor beta receptor binding</gotermname>
+				<gotermscore>3</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0003706</gotermid>
+				<gotermname>ligand-regulated transcription factor activity</gotermname>
+				<gotermscore>2</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0016566</gotermid>
+				<gotermname>specific transcriptional repressor activity</gotermname>
+				<gotermscore>2</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0015459</gotermid>
+				<gotermname>potassium channel regulator activity</gotermname>
+				<gotermscore>2</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0070698</gotermid>
+				<gotermname>type I activin receptor binding</gotermname>
+				<gotermscore>2</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0004977</gotermid>
+				<gotermname>melanocortin receptor activity</gotermname>
+				<gotermscore>1</gotermscore>
+			</goTermWithScore>
+		</ontologyPrediction>
+		<ontologyPrediction>
+			<ontology>Biological Process Ontology</ontology>
+			<goTermWithScore>
+				<gotermid>GO:0031398</gotermid>
+				<gotermname>positive regulation of protein ubiquitination</gotermname>
+				<gotermscore>23</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030819</gotermid>
+				<gotermname>positive regulation of cAMP biosynthetic process</gotermname>
+				<gotermscore>22</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0032925</gotermid>
+				<gotermname>regulation of activin receptor signaling pathway</gotermname>
+				<gotermscore>19</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030514</gotermid>
+				<gotermname>negative regulation of BMP signaling pathway</gotermname>
+				<gotermscore>19</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0060373</gotermid>
+				<gotermname>regulation of ventricular cardiomyocyte membrane depolarization</gotermname>
+				<gotermscore>18</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007188</gotermid>
+				<gotermname>G-protein signaling, coupled to cAMP nucleotide second messenger</gotermname>
+				<gotermscore>18</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0050821</gotermid>
+				<gotermname>protein stabilization</gotermname>
+				<gotermscore>18</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007631</gotermid>
+				<gotermname>feeding behavior</gotermname>
+				<gotermscore>18</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030512</gotermid>
+				<gotermname>negative regulation of transforming growth factor beta receptor signaling pathway</gotermname>
+				<gotermscore>18</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0043433</gotermid>
+				<gotermname>negative regulation of transcription factor activity</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0060412</gotermid>
+				<gotermname>ventricular septum morphogenesis</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0034629</gotermid>
+				<gotermname>cellular protein complex localization</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0048844</gotermid>
+				<gotermname>artery morphogenesis</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0010944</gotermid>
+				<gotermname>negative regulation of transcription by competitive promoter binding</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0045780</gotermid>
+				<gotermname>positive regulation of bone resorption</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0001657</gotermid>
+				<gotermname>ureteric bud development</gotermname>
+				<gotermscore>17</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0060394</gotermid>
+				<gotermname>negative regulation of pathway-restricted SMAD protein phosphorylation</gotermname>
+				<gotermscore>16</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0010553</gotermid>
+				<gotermname>negative regulation of gene-specific transcription from RNA polymerase II promoter</gotermname>
+				<gotermscore>16</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0034616</gotermid>
+				<gotermname>response to laminar fluid shear stress</gotermname>
+				<gotermscore>16</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0022409</gotermid>
+				<gotermname>positive regulation of cell-cell adhesion</gotermname>
+				<gotermscore>16</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0055010</gotermid>
+				<gotermname>ventricular cardiac muscle tissue morphogenesis</gotermname>
+				<gotermscore>16</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006350</gotermid>
+				<gotermname>transcription</gotermname>
+				<gotermscore>16</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0045768</gotermid>
+				<gotermname>positive regulation of anti-apoptosis</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0034333</gotermid>
+				<gotermname>adherens junction assembly</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0033137</gotermid>
+				<gotermname>negative regulation of peptidyl-serine phosphorylation</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0060389</gotermid>
+				<gotermname>pathway-restricted SMAD protein phosphorylation</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0051444</gotermid>
+				<gotermname>negative regulation of ubiquitin-protein ligase activity</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0010719</gotermid>
+				<gotermname>negative regulation of epithelial to mesenchymal transition</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0010801</gotermid>
+				<gotermname>negative regulation of peptidyl-threonine phosphorylation</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030336</gotermid>
+				<gotermname>negative regulation of cell migration</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0031327</gotermid>
+				<gotermname>negative regulation of cellular biosynthetic process</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0032436</gotermid>
+				<gotermname>positive regulation of proteasomal ubiquitin-dependent protein catabolic process</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0035467</gotermid>
+				<gotermname>negative regulation of signaling pathway</gotermname>
+				<gotermscore>15</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030073</gotermid>
+				<gotermname>insulin secretion</gotermname>
+				<gotermscore>14</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0032868</gotermid>
+				<gotermname>response to insulin stimulus</gotermname>
+				<gotermscore>13</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0023034</gotermid>
+				<gotermname>intracellular signaling pathway</gotermname>
+				<gotermscore>11</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007243</gotermid>
+				<gotermname>intracellular protein kinase cascade</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007610</gotermid>
+				<gotermname>behavior</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030509</gotermid>
+				<gotermname>BMP signaling pathway</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007275</gotermid>
+				<gotermname>multicellular organismal development</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0009653</gotermid>
+				<gotermname>anatomical structure morphogenesis</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007608</gotermid>
+				<gotermname>sensory perception of smell</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007190</gotermid>
+				<gotermname>activation of adenylate cyclase activity</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007267</gotermid>
+				<gotermname>cell-cell signaling</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0050890</gotermid>
+				<gotermname>cognition</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007187</gotermid>
+				<gotermname>G-protein signaling, coupled to cyclic nucleotide second messenger</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006171</gotermid>
+				<gotermname>cAMP biosynthetic process</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007600</gotermid>
+				<gotermname>sensory perception</gotermname>
+				<gotermscore>9</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008015</gotermid>
+				<gotermname>blood circulation</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006464</gotermid>
+				<gotermname>protein modification process</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0032147</gotermid>
+				<gotermname>activation of protein kinase activity</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006936</gotermid>
+				<gotermname>muscle contraction</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006915</gotermid>
+				<gotermname>apoptosis</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0016477</gotermid>
+				<gotermname>cell migration</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007202</gotermid>
+				<gotermname>activation of phospholipase C activity</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0000187</gotermid>
+				<gotermname>activation of MAPK activity</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007268</gotermid>
+				<gotermname>synaptic transmission</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007179</gotermid>
+				<gotermname>transforming growth factor beta receptor signaling pathway</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006874</gotermid>
+				<gotermname>cellular calcium ion homeostasis</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006939</gotermid>
+				<gotermname>smooth muscle contraction</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007420</gotermid>
+				<gotermname>brain development</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0048514</gotermid>
+				<gotermname>blood vessel morphogenesis</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006928</gotermid>
+				<gotermname>cellular component movement</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006954</gotermid>
+				<gotermname>inflammatory response</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0030182</gotermid>
+				<gotermname>neuron differentiation</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007189</gotermid>
+				<gotermname>activation of adenylate cyclase activity by G-protein signaling pathway</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007399</gotermid>
+				<gotermname>nervous system development</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007210</gotermid>
+				<gotermname>serotonin receptor signaling pathway</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0000165</gotermid>
+				<gotermname>MAPKKK cascade</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0002024</gotermid>
+				<gotermname>diet induced thermogenesis</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007602</gotermid>
+				<gotermname>phototransduction</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0008283</gotermid>
+				<gotermname>cell proliferation</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007204</gotermid>
+				<gotermname>elevation of cytosolic calcium ion concentration</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006355</gotermid>
+				<gotermname>regulation of transcription, DNA-dependent</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006898</gotermid>
+				<gotermname>receptor-mediated endocytosis</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0043410</gotermid>
+				<gotermname>positive regulation of MAPKKK cascade</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007623</gotermid>
+				<gotermname>circadian rhythm</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007417</gotermid>
+				<gotermname>central nervous system development</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006955</gotermid>
+				<gotermname>immune response</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0046849</gotermid>
+				<gotermname>bone remodeling</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007191</gotermid>
+				<gotermname>activation of adenylate cyclase activity by dopamine receptor signaling pathway</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0009880</gotermid>
+				<gotermname>embryonic pattern specification</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0045453</gotermid>
+				<gotermname>bone resorption</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007212</gotermid>
+				<gotermname>dopamine receptor signaling pathway</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0002032</gotermid>
+				<gotermname>desensitization of G-protein coupled receptor protein signaling pathway by arrestin</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007193</gotermid>
+				<gotermname>inhibition of adenylate cyclase activity by G-protein signaling pathway</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0009582</gotermid>
+				<gotermname>detection of abiotic stimulus</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007601</gotermid>
+				<gotermname>visual perception</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0006468</gotermid>
+				<gotermname>protein amino acid phosphorylation</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007200</gotermid>
+				<gotermname>activation of phospholipase C activity by G-protein coupled receptor protein signaling pathway coupled to IP3 second messenger</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0048511</gotermid>
+				<gotermname>rhythmic process</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0007194</gotermid>
+				<gotermname>negative regulation of adenylate cyclase activity</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+			<goTermWithScore>
+				<gotermid>GO:0018298</gotermid>
+				<gotermname>protein-chromophore linkage</gotermname>
+				<gotermscore>8</gotermscore>
+			</goTermWithScore>
+		</ontologyPrediction>
+	</goAnnotation>
+</goAnnotationRegion>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="domain annotations">
+  <featureProviderGroup provider="pfam" ref="37">
+<pfamAnnotationRegion>
+  <location><begin position="1"/><end position="1090"/></location>
+	<pfamAnnotation>
+		<pfamTemplate>
+			<accession>PF00001.16</accession>
+			<evalue>4e-75</evalue>
+			<desc>7 transmembrane receptor (rhodopsin family)</desc>
+			<score>252.2</score>
+			<bias>72.6</bias>
+			<nrDomains>2</nrDomains>
+			<pfamDomain>
+				<domNr>1</domNr>
+				<startIndex>61</startIndex>
+				<endIndex>302</endIndex>
+				<score>127.5</score>
+				<ivalue>4.8e-37</ivalue>
+				<cvalue>1.3e-40</cvalue>
+				<bias>22.4</bias>
+			</pfamDomain>
+			<pfamDomain>
+				<domNr>2</domNr>
+				<startIndex>393</startIndex>
+				<endIndex>634</endIndex>
+				<score>127.5</score>
+				<ivalue>4.8e-37</ivalue>
+				<cvalue>1.3e-40</cvalue>
+				<bias>22.4</bias>
+			</pfamDomain>
+		</pfamTemplate>
+		<pfamTemplate>
+			<accession>PF03166.9</accession>
+			<evalue>9.4e-62</evalue>
+			<desc>MH2 domain</desc>
+			<score>208.0</score>
+			<bias>0.1</bias>
+			<nrDomains>1</nrDomains>
+			<pfamDomain>
+				<domNr>1</domNr>
+				<startIndex>921</startIndex>
+				<endIndex>1089</endIndex>
+				<score>207.4</score>
+				<ivalue>1.4e-61</ivalue>
+				<cvalue>3.8e-65</cvalue>
+				<bias>0.1</bias>
+			</pfamDomain>
+		</pfamTemplate>
+		<pfamTemplate>
+			<accession>PF03165.11</accession>
+			<evalue>3.5e-30</evalue>
+			<desc>MH1 domain</desc>
+			<score>104.0</score>
+			<bias>0.4</bias>
+			<nrDomains>1</nrDomains>
+			<pfamDomain>
+				<domNr>1</domNr>
+				<startIndex>757</startIndex>
+				<endIndex>866</endIndex>
+				<score>102.6</score>
+				<ivalue>9.7e-30</ivalue>
+				<cvalue>2.6e-33</cvalue>
+				<bias>0.3</bias>
+			</pfamDomain>
+		</pfamTemplate>
+		<pfamTemplate>
+			<accession>PF10320.4</accession>
+			<evalue>2.3e-19</evalue>
+			<desc>Serpentine type 7TM GPCR chemoreceptor Srsx</desc>
+			<score>69.5</score>
+			<bias>70.6</bias>
+			<nrDomains>2</nrDomains>
+			<pfamDomain>
+				<domNr>1</domNr>
+				<startIndex>56</startIndex>
+				<endIndex>316</endIndex>
+				<score>37.6</score>
+				<ivalue>1.2e-09</ivalue>
+				<cvalue>3.3e-13</cvalue>
+				<bias>21.7</bias>
+			</pfamDomain>
+			<pfamDomain>
+				<domNr>2</domNr>
+				<startIndex>388</startIndex>
+				<endIndex>648</endIndex>
+				<score>37.6</score>
+				<ivalue>1.2e-09</ivalue>
+				<cvalue>3.3e-13</cvalue>
+				<bias>21.7</bias>
+			</pfamDomain>
+		</pfamTemplate>
+	</pfamAnnotation>
+</pfamAnnotationRegion>
+  </featureProviderGroup>
+</featureTypeGroup>
+<featureTypeGroup type="transmembrane beta-barrel">
+  <featureProviderGroup provider="PROFtmb" ref="31" predRunRef="41">
+  </featureProviderGroup>
+</featureTypeGroup>
+<sequence length="1090" modified="Fri Apr  4 14:57:41 2014" version="1">
+MVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVAIAKNKNLHSPMYFFICSLAVADMLVSVSNGSE
+TIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASICSLLSIAVDRYFTIFYALQYHNIMTVKRVGIIISCIWAACTVSGILFIIYSDSSAVIICLITM
+FFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTILIGVFVVCWAPFFLHLIFYISCPQNPYCVCFMSHFNLYLILIMCNSIIDPL
+IYALRSQELRKTFKEIICCYPLGGLCDLSSRYMVNSTHRGMHTSLHLWNRSSYRLHSNASESLGKGYSDGGCYEQLFVSPEVFVTLGVISLLENILVIVA
+IAKNKNLHSPMYFFICSLAVADMLVSVSNGSETIVITLLNSTDTDAQSFTVNIDNVIDSVICSSLLASICSLLSIAVDRYFTIFYALQYHNIMTVKRVGI
+IISCIWAACTVSGILFIIYSDSSAVIICLITMFFTMLALMASLYVHMFLMARLHIKRIAVLPGTGAIRQGANMKGAITLTILIGVFVVCWAPFFLHLIFY
+ISCPQNPYCVCFMSHFNLYLILIMCNSIIDPLIYALRSQELRKTFKEIICCYPLGGLCDLSSRYMFRTKRSALVRRLWRSRAPGGEDEEEGAGGGGGGGE
+LRGEGATDSRAHGAGGGGPGRAGCCLGKAVRGAKGHHHPHPPAAGAGAAGGAEADLKALTHSVLKKLKERQLELLLQAVESRGGTRTACLLLPGRLDCRL
+GPGAPAGAQPAQPPSSYSLPLLLCKVFRWPDLRHSSEVKRLCCCESYGKINPELVCCNPHHLSRLCELESPPPPYSRYPMDFLKPTADCPDAVPSSAETG
+GTNYLAPGGLSDSQLLLEPGDRSHWCVVAYWEEKTRVGRLYCVQEPSLDIFYDLPQGNGFCLGQLNSDNKSQLVQKVRSKIGCGIQLTREVDGVWVYNRS
+SYPIFIKSATLDNPDSRTLLVHKVFPGFSIKAFDYEKAYSLQRPNDHEFMQQPWTGFTVQISFVKGWGQCYTRQFISSCPCWLEVIFNSR
+</sequence>
+</entry>
+<copyright>
+Copyright László Kaján
+</copyright>
+</predictprotein>
