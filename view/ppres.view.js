@@ -471,6 +471,10 @@ var PAGE = function(argument) {
                 switch(step) {
                 case 0:
                     var resp = jQuery.post( url_status, params_status, undefined, 'json' );
+		    resp.fail(function(data){
+			console.log("This step has failed");
+			job_submission_dialog();
+		    });
                     resp.done(function(data){
                         if (data.job_status == 'running'){
 			    msg_running();
