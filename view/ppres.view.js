@@ -33,7 +33,7 @@ var PAGE = function(argument) {
             ],
             Transmembrane: [{
                 'FeatureViewer': {
-                    providers: ["PHDhtm"],
+                    providers: ["TMSEG", "PHDhtm"],
                     showAlignment: false
                 }
             }, 'Quotes', ],
@@ -207,10 +207,20 @@ var PAGE = function(argument) {
             targetDiv: ".navbar",
             items: [{
                     'Export': [{
+                        name: 'somenaExport',
+                        text: "Download SomeNA Raw Data File",
+                        func: "exportMethod",
+                        params: ["somena"]
+                    }, {
                         name: 'isisExport',
-                        text: "Download Raw Data File",
+                        text: "Download ISIS Raw Data File",
                         func: "exportMethod",
                         params: ["isis"]
+                    }, {
+                        name: 'jsonExport',
+                        text: "Download SomeNA prediction in JSON format",
+                        func: "exportJSON",
+                        params: ['SomeNA']
                     }, {
                         name: 'jsonExport',
                         text: "Download ISIS prediction in JSON format",
