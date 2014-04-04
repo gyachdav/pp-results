@@ -1,23 +1,98 @@
 <div id='Binding' style="width:100%;">
 	<div class='job-name'>
-    <h2>
-       Binding Sites Prediction for <span class="readonly"></span><span id="writable"></span>
-    </h2>
-  </div>
+		<h2>
+			Protein-Protein and Protein-Polynucelotide Binding Sites Prediction for <span id="writable"></span>
+		</h2>
+	</div>
 	<div class="navbar"></div>
-	<div class="alert alert-info"> 
-			<strong>What am I seeing Here?</strong> 
-			This viewer lays out predicted features that correspond to regions within the queried sequence. 	
-			Mouse over the different colored boxes to learn more about the annotations
+	<ul id="binding-nav" class="nav nav-tabs">
+		<li class="active">
+			<a href="#bindingVisualDiv" data-toggle="tab">Visual</a>
+		</li>
+		<li>
+			<a href="#divHelpISIS" data-toggle="tab">Help for ISIS2</a>
+		</li>
+		<li>
+			<a href="#divHelpSomeNA" data-toggle="tab">Help for SomeNA</a>
+		</li>
+	</ul>
+	<div class="tab-content" style="width:100%;">
+		<div id="bindingVisualDiv" class="tab-pane active" style="width:100%;">
+			<div class="alert alert-info">
+				<strong>What am I seeing Here?</strong> This viewer lays out predicted features that correspond to regions within the queried sequence. Mouse over the different colored boxes to learn more about the annotations. <strong>NOTE:</strong>  this section shows prediction from two methods: ISIS2 (protein-protein binding sites) and SomeNA (polynucleotide binding sites). Refer to the respective help pages for more information. 
+			</div>
+			<div id='FeatureViewerContainer' style="width:100%;"></div>
+			
+		</div>
+		<div id='divHelpISIS' class='info tab-pane'>
+
+			<h2>
+				How do we predict protein-protein binding sites
+			</h2>
+			<div>
+				profisis (ISIS) is a machine learning-based method that identifies interacting residues from sequence alone. Although the method is developed using transient protein–protein interfaces from complexes of experimentally known 3D structures, it never explicitly uses 3D information. Instead, we combine predicted structural features with evolutionary information. The strongest predictions of the method reached over 90% accuracy in a cross-validation experiment. Our results suggest that despite the significant diversity in the nature of protein–protein interactions, they all share common basic principles and that these principles are identifiable from sequence alone.
+			</div>
+		</div>
+	<div id='divHelpSomeNA' class='info tab-pane'>
+
+			<div id='contents-prediction'></div>
+			<div id='contents-define'></div>
+			<div id='contents-how'></div>
+			<!-- <div id='contents-confidence'></div> -->
+			<div id='contents-accuracy'></div>
+
+		</div>
+		<hr style="width:40%;">
+		<div id='QuotesContainer' style="width:100%;"></div>
 	</div>
-	<div id='FeatureViewerContainer' style="width:100%;" > </div>
-	<h2>How do we predict Binding Sites</h2>
-	<div>
-profisis (ISIS) is a machine learning-based method that identifies interacting residues from sequence alone. Although the method is developed using transient protein–protein interfaces from complexes of experimentally known 3D structures, it never explicitly uses 3D information. Instead, we combine predicted structural features with evolutionary information. The strongest predictions of the method reached over 90% accuracy in a cross-validation experiment. Our results suggest that despite the significant diversity in the nature of protein–protein interactions, they all share common basic principles and that these principles are identifiable from sequence alone.
-
-	</div>
-
-<hr style="width:40%;">
-<div id='QuotesContainer' style="width:100%;"></div>
-
 </div>
+
+
+<script type="text/javascript">
+
+			var rostlabWikiAPI = "https://rostlab.org/owiki/api.php?action=parse&disablepp=1&format=json&prop=text&callback=?";
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'SomeNA',
+				    section: 1
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-prediction").html(content);
+
+				});
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'SomeNA',
+				    section: 2
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-define").html(content);
+
+
+				});
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'SomeNA',
+				    section: 3
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-how").html(content);
+
+				});
+
+
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'SomeNA',
+				    section: 4
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-how").append(content);
+
+				});
+
+	</script>

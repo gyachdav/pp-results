@@ -14,14 +14,18 @@
 			<a href="#TMHVisualDiv" data-toggle="tab">Visual</a>
 		</li>
 		<li>
-			<a href="#moreInfoDiv" data-toggle="tab">Help</a>
+			<a href="#moreInfoDiv_TMSEG" data-toggle="tab">Help for TMSEG</a>
+		</li>
+
+		<li>
+			<a href="#moreInfoDiv_PHDhtm" data-toggle="tab">Help for PHDhtm</a>
 		</li>
 	</ul>
 
 	<div class="tab-content" style="width:100%;">
 		<div id="TMHVisualDiv" class="tab-pane active" style="width:100%;">
 			<div class="alert alert-info">
-				<strong>What am I seeing Here?</strong> This viewer lays out predicted features that correspond to regions within the queried sequence. Mouse over the different colored boxes to learn more about the annotations
+				<strong>What am I seeing Here?</strong> This viewer lays out predicted features that correspond to regions within the queried sequence. Mouse over the different colored boxes to learn more about the annotations. <strong>Note that this panel may show results from two prediction methods: TMSEG (new) and PHDhtm (veteran). The PHDhtm method will be retired by the end of 2014. See references below and help sections for more information. </strong>
 			</div>
 			<div id='FeatureViewerContainer' style="width:100%;" > </div>
 			<div class='row-fluid'>
@@ -33,7 +37,42 @@
 				</div>
 			</div>
 		</div>
-		<div id='moreInfoDiv' class='info tab-pane'>
+		<div id='moreInfoDiv_TMSEG' class='info tab-pane'>
+			<div class='row-fluid'>
+				<div id='tmseg-contents-method'></div>
+				<script type="text/javascript">
+				var rostlabWikiAPI = "https://rostlab.org/owiki/api.php?action=parse&disablepp=1&format=json&prop=text&callback=?";
+
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Tmseg',
+				    section: 1
+				    
+				}).done(function (data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#tmseg-contents-method").html(content);
+
+				});
+				</script>
+				<div id='tmseg-contents-performance'></div>
+				<script type="text/javascript">
+				var rostlabWikiAPI = "https://rostlab.org/owiki/api.php?action=parse&disablepp=1&format=json&prop=text&callback=?";
+
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Tmseg',
+				    section: 2
+				    
+				}).done(function (data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#tmseg-contents-performance").html(content);
+
+				});
+				</script>
+
+			</div>
+		</div>
+		<div id='moreInfoDiv_PHDhtm' class='info tab-pane'>
 			<div class='row-fluid'>
 				<h2>
 					What is Predicted?

@@ -19,151 +19,87 @@
 				<strong>What am I seeing Here?</strong> This viewer shows a cell schematic with the predicted subcellular localization compartment highlighted in green. The predicted compartment is also referenced by a GO ID for better clarity.
 			</div>
 			<div id='SubcellLocViewerContainer' style="width:100%;"></div>
-<script type="text/javascript">
-var rostlabWikiAPI = "https://rostlab.org/wiki/api.php?action=parse&disablepp=1&format=json&prop=text&callback=?";
-var rostlabWikiLoginAPI = "https://rostlab.org/wiki/api.php?action=login";
-
-jQuery.post(rostlabWikiLoginAPI, {
-	lgname: 'gyachdav',
-	lgpassword: 'magestik'
-}).done(function(date){
- jQuery("#summary").html(data);
-});
-
-
-// jQuery.getJSON(rostlabWikiAPI, {
-//     page: 'Packages',
-//     section: 1,
-// })
-//     .done(function (data) {
-//     content = data.parse.text['*'];
-//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
-//     jQuery("#summary").html(content);
-
-// });
-
-
-</script>
 
 			<div class='row-fluid'>
-				<h2>
-					How do we Predict Subcellular Localization
-				</h2>
-				<div id='summary'></div>
+				<div id='contents-how'></div> 
 
-				<div>
-					Subcellular localization is predicted by LocTree2, a system of hierarchically organized Support Vector Machines, implemented to imitate protein sorting mechanisms. Predictions are based on evolutionary information derived from sequence homologs. LocTree2 predicts transmembrane and water-soluble globular proteins in the the so far largest number of compartments:
-					<ul>
-						<li>18 localization classes for Eukaryota: chloroplast, chloroplast membrane, cytosol, ER, Golgi, ER membrane, Golgi membrane, extra-cellular, mitochondria, mitochondria membrane, nucleus, nucleus membrane, peroxisome, peroxisome membrane, plasma membrane, plastid, vacuole and vacuole membrane
-						</li>
-						<li>6 classes for Bacteria: cytosol, extra-cellular, fimbrium, outer membrane, periplasmic space and plasma membrane
-						</li>
-						<li>3 classes for Archaea: cytosol, extra-cellular and plasma membrane
-						</li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<div id='moreInfoDiv' class='info tab-pane'>
-			<div class='row-fluid'>
-				<h2>
-					What is Predicted?
-				</h2>
-				<div>
-					LocTree2 predicts the sub-cellular localization for all proteins in all domains of life. It incorporates a system of hierarchically organized Support Vector Machines to mimic the protein trafficking mechanism in cells. LocTree2 reaches high levels of sustained performance:
-					<ul>
-						<li>Eukaryota: 65% accuracy in predicting one of 18 localizatoin classes
-						</li>
-						<li>Bacteria: 84% accuracy in predicting one of 6 localization classes
-						</li>
-					</ul>LocTree2 also accurately distinguishes membrane and non-membrane proteins. In our hands, it performed well even for protein fragments. LocTree2 predicts 3 localization classes in Archaea (cytosol, extra-cellular and plasma membrane), 6 classes in Bacteria (cytosol, extra-cellular, fimbrium, outer membrane, periplasmic space and plasma membrane) and 18 classes in Eukaryota (chloroplast, chloroplast membrane, cytosol, ER, Golgi, ER membrane, Golgi membrane, extra-cellular, mitochondria, mitochondria membrane, nucleus, nucleus membrane, peroxisome, peroxisome membrane, plasma membrane, plastid, vacuole and vacuole membrane).
-				</div>
-				<div>
-					<h2>
-						Prediction Visualization
-					</h2>
-					<div>
-						We predict the sub-cellular localization for a query protein in all three domains of life (Archaea, Bacteria and Eukaryota) and highlight the results in green. For example:
-					</div>
-					<table>
-						<tr>
-							<td>
-								Nucleus in Eukaryota
-							</td>
-							<td>
-								Plasma membrane in Bacteria
-							</td>
-							<td>
-								Extra-cellular in Archaea
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<img src="https://rostlab.org/wiki/images/d/d9/Euk-Cell-3D-nucleus.png">
-							</td>
-							<td>
-								<img src="https://rostlab.org/wiki/images/e/e0/Bacteria-outer-membrane.png">
-							</td>
-							<td>
-								<img src="https://rostlab.org/wiki/images/b/b1/Archaea-secreted.png">
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div>
-					<h2>
-						Prediction Algorithm
-					</h2>
-					<div>
-						LocTree2 combines three different systems of decision trees, one for each domain of life (Figure 1). These were built by incorporating a hierarchical ontology of localization classes modeled onto the biological sorting mechanism in that domain. In Eukaryotes pathways for membrane and non-membrane proteins are treated separately. The branches represent paths of protein sorting, internal nodes (circles) the decision points along the paths, and leaves (rectangles) the predicted localization classes.
-					</div>
-					<figure>
-						<img src="https://rostlab.org/wiki/images/7/7f/800px-LocTree2_HierarchicalArchitecture.jpg">
-						<figcaption>
-							Fig 1: Hierarchical architecture of LocTree2. Prediction of protein localization follows a different tree for each of the three domains of life: (a) Archaea, (b) Bacteria and (c) Eukaryota. Abbreviations: CHL, chloroplast; CHLM, chloroplast membrane; CYT, cytosol; ER, endoplasmic reticulum; ERM, endoplasmic reticulum membrane; EXT, extra-cellular; FIM, fimbrium; GOL, Golgi apparatus; GOLM, Golgi apparatus membrane; MIT, mitochondria; MITM, mitochondria membrane; NUC, nucleus; NUCM, nucleus membrane; OM, outer membrane; PERI, periplasmic space; PER, peroxisome; PERM, peroxisome membrane; PM, plasma membrane; PLAS, plastid; VAC, vacuole; VACM, vacuole membrane.
-						</figcaption>
-					</figure>
-					<h3>
-						Implementation
-					</h3>
-					<div>
-						The decision points along the paths in the hierarchical trees were implemented as binary Support Vector Machines (SVMs). As the SVM model, we chose the WEKA version of Sequential Minimal Optimization. Each SVM was trained on a different set of proteins. For example, the SVM at the root node in the archaeal tree (Figure 1a) was trained on the full set of proteins (comprising cytoplasmic and non-cytoplasmic classes), while the SVM at a lower level in the tree was trained on plasma-membrane and extra-cellular proteins only.<br>
-						The SVM classification is based on the Profile Kernel, a kernel that identifies sets of k-mers (stretches of k adjacent residues) that are most informative for the prediction of localization and then matches these in a query protein.
-					</div>
-				</div>
-				<h3>
-					Data Sets
-				</h3>
-				<div>
-					Data sets used for the development and evaluation of LocTree2 were extracted from SWISS-PROT release 2012_04. Proteins with non-experimental or ambiguous annotations were excluded. Homology reduction was performed at BLAST E-value&lt;=10-03 and HSSP-value&gt;0.
-				</div>
-				<h2>
-					Preditcion Reliability Score
-				</h2>
-				<div>
-					In addition to the predicted localization class we provide a Reliability Index (RI) measuring the strength of a prediction. For a predicted class (leaf node) the RI is compiled as the product over the reliabilities of all its parental nodes. The RI is a value between 0 and 100, with 100 denoting the most confident predictions. On our test set, half of all proteins (coverage=50%) reached levels of overall accuracy Q6=98% for Bacteria (gray arrow; Figure 2) and Q18=92% for Eukaryota (black arrow; Figure 2). To pick another point, almost 40% of all eukaryotic proteins were predicted at RI greater than 85; for these, Q18 was above 95%. Thus, two in the top 40 predictions in 100 were wrong in one of 18 states (e.g. nuclear instead of nuclear membrane).
-					<ul>
-						<li>Q6 is six-state accuracy for correctly predicting localization to six classes
-						</li>
-						<li>Q18 is eighteen-state accuracy
-						</li>
-					</ul>
-					<figure>
-						<img src="https://rostlab.org/wiki/images/0/04/LocTree2_ReliabilityIndices.jpg">
-						<figcaption>
-							Fig 2: More reliable predictions better. The curves show the percentage Accuracy vs. Coverage for LocTree2 predictions above a given RI threshold (from 0=unreliable to 100=most reliable). The curves were obtained on cross-validated test sets of bacterial (gray line) and eukaryotic (black line) proteins. Half of all eukaryotic proteins are predicted at RI&gt;80; for these Q18 is above 92% (black arrow). As the number of localization classes is lower for Bacteria, the corresponding number in accuracy is higher (Q6 is above 95% at 50% coverage, gray arrow).
-						</figcaption>
-					</figure>
-				</div>
-				<h2>
-					Accuracy of Localization Prediction
-				</h2>
-				<div>
-					We evaluated the performance of LocTree2 in a stratified five-fold cross-validation, never using any information from a test split during the training phase. LocTree2 achieved a sustained level of 65% accuracy for predicting 18 localization classes for Eukaryota. The first decision made for eukaryotic proteins was correct in 94%: whether a protein is membrane-spanning or not. This performance is comparable to that of the best methods, designed explicitly for this type of a prediction. The most accurately predicted class for eukaryotes was extra-cellular, followed by nucleus. Overall, LocTree2 tended to predict membrane-bound classes better than the corresponding non-membrane bound classes (e.g. mitochondria membrane vs. mitochondria). LocTree2 performed extremely well also for Prokaryotes, predicting 6 classes at 84% accuracy for Bacteria and three classes at 100% accuracy for Archaea. We assume, that 100% is an over-estimate of the performance for Archaea due to the limited data we had. For Bacteria, the most accurate predictions were made for plasma membrane followed by cytosolic proteins.
-				</div>
-			</div>
-		</div>
-	</div>
+			<div id='contents-prediction'></div>
+			<!-- <div id='contents-vis'></div> -->
+			<!-- <div id='contents-how'></div> -->
+			<!-- <div id='contents-confidence'></div> -->
+			<div id='contents-accuracy'></div>
+
+			<script type="text/javascript">
+
+			var rostlabWikiAPI = "https://rostlab.org/owiki/api.php?action=parse&disablepp=1&format=json&prop=text&callback=?";
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Loctree3_for_PP',
+				    section: 1
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-how").html(content);
+				});
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Loctree3_for_PP',
+				    section: 2
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-prediction").html(content);
+
+				});
+
+				// jQuery.getJSON(rostlabWikiAPI, {
+				//     page: 'Loctree3_for_PP',
+				//     section: 3
+
+				// }).done(function(data) {
+				//     content = data.parse.text['*'];
+				//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				//     jQuery("#contents-vis").html(content);
+
+				// });
+
+				// jQuery.getJSON(rostlabWikiAPI, {
+				//     page: 'Loctree3_for_PP',
+				//     section: 4
+
+				// }).done(function(data) {
+				//     content = data.parse.text['*'];
+				//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				//     jQuery("#contents-how").html(content);
+
+				// });
+
+				// jQuery.getJSON(rostlabWikiAPI, {
+				//     page: 'Loctree3_for_PP',
+				//     section: 5
+
+				// }).done(function(data) {
+				//     content = data.parse.text['*'];
+				//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				//     jQuery("#contents-confidence").html(content);
+
+				// });
+
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Loctree3_for_PP',
+				    section: 6
+
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    jQuery("#contents-accuracy").html(content);
+
+				});
+
+			</script>	
 	<hr style="width:40%;">
 	<div id='QuotesContainer' style="width:100%;"></div>
 </div>
