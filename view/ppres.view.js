@@ -401,7 +401,7 @@ var PAGE = function(argument) {
 	    var msg_success = function  (argument) {
 		jQuery("#heatmap").empty();
 		jQuery("#status_message").show();  
-		jQuery("#status_message_text").text('Job submitted to the queue check back later. Note that on average a SNAP2 job takes 20 minutes to complete.');
+		jQuery("#status_message_text").text('Job submitted to the processing queue, please check back later. Note that on average a SNAP2 job takes 20 minutes to complete.');
 		jQuery("#status_message_bttn").empty();
 	    }
 	    var msg_err = function  (argument) {
@@ -446,7 +446,7 @@ var PAGE = function(argument) {
 
 	    var url_status = '/~roos/status/snap2/';
 	    var	params_status = {
-		seq:dataObj.getMD5Seq()
+		md5:dataObj.getMD5Seq()
 	    };
 	    var	url_put =   '~roos/put/seq/';
 	    var	params_put ={
@@ -465,8 +465,9 @@ var PAGE = function(argument) {
                         if (data.job_status == 'running'){
 			    msg_running();
                             return;
+			    
                         }else{
-                            snapJobSubmission(1);
+			    job_submission_dialog();
                         }
                     });
 
