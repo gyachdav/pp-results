@@ -50,7 +50,7 @@ var JOB_RUN = function(config) {
                     jQuery('#err').html(responseText);
                     jQuery('#err').modal('show');
                 } else{
-		    window.location.href = '/monitor_job_state?req_id='+reqid;
+		    window.location.href = '/getqueries';
 		    return;
 		}
             });
