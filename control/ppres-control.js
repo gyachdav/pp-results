@@ -73,8 +73,8 @@ var APP = (function() {
         ds,
         debug = 0,
         file_specs = {
-            path: 'examples/',
-            name: 'SMAD7_HUMAN',
+            path: '',
+	    name: 'xml_results?req_id=' + req_id,
             type: 'xml'
         },
         mainObj = new PPResData();
