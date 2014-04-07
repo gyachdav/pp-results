@@ -420,7 +420,7 @@ var PAGE = function(argument) {
         drawHeatmapViewer: function(argument) {
             var msg_success = function(argument) {
                 jQuery("#heatmap").empty();
-                jQuery("#status_message").show();
+                jQuery("#status_message").show().attr('class','row alert alert-success');
                 jQuery("#status_message_text").text('Job submitted to the processing queue, please check back later. Note that on average a SNAP2 job takes 20 minutes to complete.');
                 jQuery("#status_message_bttn").empty();
             }
@@ -433,7 +433,7 @@ var PAGE = function(argument) {
             }
             var msg_running = function() {
                 jQuery("#heatmap").empty();
-                jQuery("#status_message").show();
+                jQuery("#status_message").show().attr('class','row alert alert-success');
                 jQuery("#status_message_text").text('PredictProtein is working on generating the results for this section please check back later');
             }
             var job_submission_dialog = function() {
