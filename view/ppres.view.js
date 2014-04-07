@@ -428,7 +428,7 @@ var PAGE = function(argument) {
                 jQuery("#heatmap").empty();
                 jQuery("#status_message").show();
                 jQuery("#status_message").attr('class', 'row alert alert-error');
-                jQuery("#status_message_text").text('There was an error submitting this job please contact admin.');
+                jQuery("#status_message_text").text('There was an error processing this job please contact admin.');
                 jQuery("#status_message_bttn").empty();
             }
             var msg_running = function() {
@@ -457,7 +457,7 @@ var PAGE = function(argument) {
 
                 jobRunModal.getModalDiv().on("hide", function() {
                     if (jobRunModal.getDialogueAnswer() !== "-1" && jobRunModal.getDialogueAnswer() == true) {
-                        snapJobSubmission(1);
+			snapJobSubmission(1);
                     } else {
                         console.log("DON'T run snap job");
                     }
@@ -479,43 +479,29 @@ var PAGE = function(argument) {
 
             function snapJobSubmission(step) {
                 switch (step) {
-                    case 0:
-                        var resp = jQuery.post(url_status, params_status, undefined, 'json');
-                        resp.fail(function(data) {
-                            console.log("function snapJobSubmission: step: " + step + " has failed");
-                            job_submission_dialog();
+                case 0:
+		    job_submission_dialog();
+		    break;
+                case 1:
+                    var jqxhr = jQuery.post(url_put, params_put, undefined, 'json');
+                    jqxhr.done(function() {
+                        snapJobSubmission(2)
+                    })
+                        .fail(function() {
+                            msg_err()
                         });
-                        resp.done(function(data) {
-                            if ((data.job_status == 'running') || (data.job_status == 'pending')) {
-                                msg_running();
-                                return;
-
-                            } else {
-                                job_submission_dialog();
-                            }
-                        });
-
-                        break;
-                    case 1:
-                        var jqxhr = jQuery.post(url_put, params_put, undefined, 'json');
-                        jqxhr.done(function() {
-                            snapJobSubmission(2)
-                        })
-                            .fail(function() {
-                                msg_err()
-                            });
-                        break;
-                    case 2:
-                        var jqxhr = jQuery.post(url_run, params_run, undefined, 'json');
-                        jqxhr.done(function() {
-                            msg_success();
-                        }).fail(function() {
-                            msg_err();
-                        });
-                        break;
+                    break;
+                case 2:
+                    var jqxhr = jQuery.post(url_run, params_run, undefined, 'json');
+                    jqxhr.done(function() {
+                        msg_success();
+                    }).fail(function() {
+                        msg_err();
+                    });
+                    break;
                 }
             }
-
+	    
             // Try to get results. if none start a submission pipeline
             var dataToFetch = '/~roos//get/snap/json/?md5=' + dataObj.getMD5Seq();
             var jqxhr = jQuery.getJSON(dataToFetch, function(arr) {
@@ -538,16 +524,21 @@ var PAGE = function(argument) {
                 var params_status = {
                     md5: dataObj.getMD5Seq()
                 };
-                var resp = jQuery.post(url_status, params_status, undefined, 'json');
-                resp.done(function() {
-                    if ((data.job_status == 'running') || (data.job_status == 'pending')) {
+                var resp_status = jQuery.post(url_status, params_status, undefined, 'json');
+		resp_status.done(function(data) {
+		    if ((data.job_status == 'running') || (data.job_status == 'pending')) {
                         msg_running();
                         return;
-
-                    }
+		    }
+		    else if (data.job_status == 'fail'){
+                        msg_err();
+			return;
+		    }
+		    snapJobSubmission(0);
                 });
-
-                snapJobSubmission(0);
+		resp_status.fail(function(){
+		    snapJobSubmission(0);
+		});
             });
         },
         drawFeatureViewer: function(argument) {
