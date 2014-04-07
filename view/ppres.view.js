@@ -482,11 +482,11 @@ var PAGE = function(argument) {
                     case 0:
                         var resp = jQuery.post(url_status, params_status, undefined, 'json');
                         resp.fail(function(data) {
-                            console.log("This step has failed");
+                            console.log("function snapJobSubmission: step: " + step + " has failed");
                             job_submission_dialog();
                         });
                         resp.done(function(data) {
-                            if (data.job_status == 'running') {
+                            if ((data.job_status == 'running') || (data.job_status == 'pending')) {
                                 msg_running();
                                 return;
 
@@ -533,7 +533,20 @@ var PAGE = function(argument) {
                 });
 
             });
-            jqxhr.error(function(xhr, textStatus, errorThrown) {
+            jqxhr.fail(function(xhr, textStatus, errorThrown) {
+                var url_status = '/~roos/status/snap2/';
+                var params_status = {
+                    md5: dataObj.getMD5Seq()
+                };
+                var resp = jQuery.post(url_status, params_status, undefined, 'json');
+                resp.done(function() {
+                    if ((data.job_status == 'running') || (data.job_status == 'pending')) {
+                        msg_running();
+                        return;
+
+                    }
+                });
+
                 snapJobSubmission(0);
             });
         },
