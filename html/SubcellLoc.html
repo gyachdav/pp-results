@@ -58,12 +58,12 @@
 				    section: 3
 
 				}).done(function(data) {
-				    content = data.parse.text['*'];
-				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
-				    content = content.replace(/\/owiki/g, "http:\/\/www.rostlab.org\/owiki");
-				    jQuery("#contents-vis").html(content);
-
-
+				  content = data.parse.text['*'];
+				  content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				      content = content.replace(/\/owiki/g, "http:\/\/www.rostlab.org\/owiki");
+				      jQuery("#contents-vis").html(content);
+				      jQuery(".image").find("img").width("100%");
+				     // jQuery(".image").find("img").height("100%");
 				});
 
 				
