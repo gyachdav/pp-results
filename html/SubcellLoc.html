@@ -21,15 +21,13 @@
 			<div id='SubcellLocViewerContainer' style="width:100%;"></div>
 
 			<div class='row-fluid'>
-				<div id='contents-how'></div> 
-
+				<div id='contents-prediction'></div>
 			</div>
 		</div>
 		<div id='moreInfoDiv' class='info tab-pane'>
-			<div id='contents-prediction'></div>
-			<!-- <div id='contents-vis'></div> -->
-			<!-- <div id='contents-how'></div> -->
-			<!-- <div id='contents-confidence'></div> -->
+			<div id='contents-vis'></div>
+			<div id='contents-how'></div>
+			<div id='contents-confidence'></div>
 			<div id='contents-accuracy'></div>
 
 			<script type="text/javascript">
@@ -55,38 +53,43 @@
 
 				});
 
-				// jQuery.getJSON(rostlabWikiAPI, {
-				//     page: 'Loctree3_for_PP',
-				//     section: 3
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Loctree3_for_PP',
+				    section: 3
 
-				// }).done(function(data) {
-				//     content = data.parse.text['*'];
-				//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
-				//     jQuery("#contents-vis").html(content);
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    content = content.replace(/\/owiki/g, "http:\/\/www.rostlab.org\/owiki");
+				    jQuery("#contents-vis").html(content);
 
-				// });
 
-				// jQuery.getJSON(rostlabWikiAPI, {
-				//     page: 'Loctree3_for_PP',
-				//     section: 4
+				});
 
-				// }).done(function(data) {
-				//     content = data.parse.text['*'];
-				//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
-				//     jQuery("#contents-how").html(content);
+				
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Loctree3_for_PP',
+				    section: 4
 
-				// });
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    content = content.replace(/\/owiki/g, "http:\/\/www.rostlab.org\/owiki");
+				    jQuery("#contents-how").html(content);
 
-				// jQuery.getJSON(rostlabWikiAPI, {
-				//     page: 'Loctree3_for_PP',
-				//     section: 5
+				});
 
-				// }).done(function(data) {
-				//     content = data.parse.text['*'];
-				//     content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
-				//     jQuery("#contents-confidence").html(content);
+				jQuery.getJSON(rostlabWikiAPI, {
+				    page: 'Loctree3_for_PP',
+				    section: 5
 
-				// });
+				}).done(function(data) {
+				    content = data.parse.text['*'];
+				    content = content.replace(/<span class="editsection">(.*?)<\/span>/g, "");
+				    content = content.replace(/\/owiki/g, "http:\/\/www.rostlab.org\/owiki");
+				    jQuery("#contents-confidence").html(content);
+
+				});
 
 				jQuery.getJSON(rostlabWikiAPI, {
 				    page: 'Loctree3_for_PP',

@@ -8,7 +8,6 @@ function PPResException(message, error, status) {
 
 
 function PPResData() {
-
     // Helper funciton to calculate date difference
     // TODO put in ppres.utils
     var DateDiff = {
