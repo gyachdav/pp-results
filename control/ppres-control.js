@@ -71,10 +71,10 @@ var APP = (function() {
         ds,
         debug = 0,
         file_specs = {
-            path: 'examples',
-            name: 'ADRB2_HUMAN.xml',
-            // path: '',
-            // name: 'xml_results?req_id=' + req_id,
+            // path: 'examples',
+            // name: 'ADRB2_HUMAN.xml',
+            path: '',
+            name: 'xml_results?req_id=' + req_id,
             type: 'xml'
         },
         mainObj = new PPResData();
@@ -218,8 +218,8 @@ var APP = (function() {
     };
 })();
 
-// APP.path = '/ppres/';
-APP.path = '/~guyyachdav/pp-results/';
+APP.path = '/ppres/';
+// APP.path = '/~guyyachdav/pp-results/';
 
 
 
